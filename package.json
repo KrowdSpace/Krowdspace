@@ -13,10 +13,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently  --kill-others \"cd www && python -m SimpleHTTPServer \" \"npm run buildwatch\"",
+    "start": "concurrently  --kill-others \"npm run hostServer\" \"npm run buildwatch\" ",
     "install": "npm run build",
-    "build": "riot riot-tags/ www/riot-tag/tags.js",
-    "buildwatch": "riot -w riot-tags/ www/riot-tag/tags.js",
+    "hostServer": "cd www && python -m SimpleHTTPServer",
+    "build": "riot riot-tags/ www/js/tags.js",
+    "buildwatch": "riot -w riot-tags/ www/js/tags.js",
     "tests": ""
   },
   "repository": {
