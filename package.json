@@ -1,0 +1,32 @@
+{
+  "name": "krowdspace-v2",
+  "version": "0.5.0",
+  "description": "KrowdSpace ClientSide",
+  "main": "www/index.html",
+  "dependencies": {
+    "browserify": "^14.1.0",
+    "riot": "^3.4.0",
+    "riotify": "^2.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently  --kill-others \"cd www && python -m SimpleHTTPServer \" \"npm run buildwatch\"",
+    "install": "npm run build",
+    "build": "riot riot-tags/ www/riot-tag/tags.js",
+    "buildwatch": "riot -w riot-tags/ www/riot-tag/tags.js",
+    "tests": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrowdSpace/KrowdspaceV2.git"
+  },
+  "author": "Andre Dihn and Mason Halstead",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KrowdSpace/KrowdspaceV2/issues"
+  },
+  "homepage": "https://github.com/KrowdSpace/KrowdspaceV2#readme"
+}
