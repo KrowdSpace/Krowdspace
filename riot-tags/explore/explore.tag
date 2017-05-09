@@ -1,5 +1,5 @@
 <explore>   
-     <style type="text/css">
+    <style type="text/css">
     .slider {
         width: 100%;
         position: relative;
@@ -29,16 +29,16 @@
     }
     </style>
 
-    <div class="row">
-            <explore-nav></explore-nav>
-            <explore-header></explore-header>
+ <div class="row">
+            <explore-navigation></explore-navigation>
+            <explore-slider-hero></explore-slider-hero>
         </div>
         <div class="container">
-            <explore-filter></explore-filter>
-            <explore-content></explore-content>
+            <explore-content-filter></explore-content-filter>
+            <explore-content-card></explore-content-card>
         </div>
         <div class="row">
-            <explore-footer></explore-footer>
+            <global-footer></global-footer>
         </div>
 
 </explore>
