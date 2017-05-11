@@ -1,7 +1,7 @@
 <tab-boosts-featured>
-    <div class="row no-gutter" style="margin-top:20px;">
+    <div class="row no-gutter dash-boost-row">
         <div class="col-sm-9">
-            <p class="boost-purchase-header" style="padding-left: 35px;">FEATURED LISTING + BANNER LISTING</p>
+            <p class="boost-purchase-header" style="padding-top: 0px;">FEATURED LISTING + BANNER LISTING</p>
         </div>
         <div class="col-sm-3 text-center">
             <p class="boost-purchase-header-right">SELECT FEATURED AREA</p>

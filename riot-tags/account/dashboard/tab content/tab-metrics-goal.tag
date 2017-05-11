@@ -6,18 +6,16 @@
                 <div id="goalMetrics"></div>
             </div>
         </div>
-        <div class="social-content-box" style="border: none;">
             <div class="col-sm-6 metric-left">
                 <div class="divider-inside-right">
 					<p class="text-center social-metric">28K</p>
                 <p class="social-content-sub">TOTAL<span class="social-content-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 3%</span></p>
                 </div>
             </div>
-            <div class="col-sm-6 social-content-box-right" style="padding: 5px; margin: 0px;">
+            <div class="col-sm-6 social-content-box-right">
                  <p class="text-center social-metric">100K</p>
                     <p class="text-center social-content-sub">FUNDING GOAL</p>
             </div>
-        </div>
     </div>
     <script>
         this.on('mount', function() {

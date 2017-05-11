@@ -4,10 +4,10 @@
         </div>
         <div class="container">
                 <project-content-header></project-content-header>
+			    <div class="row dash-row-top dash-row-bottom">
                 <project-content-body></project-content-body>
+				</div>
         </div>
-        <div class="row">
-            <global-footer></global-footer>
-        </div>
+        <global-footer></global-footer>
 </project>
 

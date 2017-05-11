@@ -1,6 +1,6 @@
 <dash-content-social>
         <div class="social-container">
-            <div class="social-header-dropdown">
+            <div class="social-header-dropdown text-center">
 				<p class="social-title">SOCIAL MEDIA</p>
 				<ul class="add-dropdown text-right">
 					<li class="dropdown">
