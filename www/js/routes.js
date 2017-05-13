@@ -1,25 +1,35 @@
 route.start(true);
 var route = route.create();
 
-route('/', function(){
+route('/', function()
+{
 	riot.mount("#main","home");
 });
-route('/account/dashboard', function(slug, id){
+
+route('/account/dashboard', function(slug, id)
+{
 	riot.mount("#main","dashboard");
 });
 route('/account/profile', function(slug, id){
+
 	riot.mount("#main","profile");
 });
-route('/account/register', function(slug, id){
+route('/account/register', function(slug, id)
+{
 	riot.mount("#main","register");
 });
-route('/account/modify-project', function(slug, id){
+
+route('/account/modify-project', function(slug, id)
+{
 	riot.mount("#main","modify-project");
 });
-route('/account/verify/..', function(slug, id){
+route('/account/verify/..', function(slug, id)
+{
 	riot.mount("#main","verify");
 });
- route('/explore', function(){
+
+ route('/explore', function()
+ {
 	riot.mount("#main","explore");
 });
 route('/explore/project', function(slug, id){
