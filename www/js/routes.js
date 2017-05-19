@@ -25,3 +25,10 @@ route('/account/verify/..', function(slug, id){
 route('/explore/project', function(slug, id){
 	riot.mount("#main","project");
 });
+route('/api/facebook', function(slug, id){
+	riot.mount("#main","facebook");
+});
+
+route('/login',function(){
+	riot.mount("#main","account-login-verify");
+});

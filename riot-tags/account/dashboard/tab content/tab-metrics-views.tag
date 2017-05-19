@@ -6,18 +6,16 @@
                 <div id="daysMetrics"></div>
             </div>
         </div>
-        <div class="social-content-box" style="border: none;">
             <div class="col-sm-6 metric-left">
                 <div class="divider-inside-right">
 					<p class="text-center social-metric">185</p>
                 <p class="social-content-sub">TODAY<span class="social-content-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 9%</span></p>
                 </div>
             </div>
-            <div class="col-sm-6 social-content-box-right" style="padding: 5px; margin: 0px;">
+            <div class="col-sm-6 social-content-box-right">
                  <p class="text-center social-metric">2.2K</p>
                     <p class="text-center social-content-sub">TOTAL VIEWS</p>
             </div>
-        </div>
     	</div>
     <script>
         this.on('mount', function() {

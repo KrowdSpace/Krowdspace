@@ -6,18 +6,18 @@
                 <div id="viewMetrics"></div>
             </div>
         </div>
-        <div class="social-content-box" style="border: none;">
+        
             <div class="col-sm-6 metric-left">
                 <div class="divider-inside-right">
 					<p class="text-center social-metric">15</p>
                 <p class="text-center social-content-sub">DAYS LEFT</p>
                 </div>
             </div>
-            <div class="col-sm-6 social-content-box-right" style="padding: 5px; margin: 0px;">
+            <div class="col-sm-6 social-content-box-right">
                  <p class="text-center social-metric">30</p>
                     <p class="text-center social-content-sub">DAYS LEFT</p>
             </div>
-        </div>
+
     </div>
     <script>
         this.on('mount', function() {

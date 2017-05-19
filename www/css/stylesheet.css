@@ -1592,31 +1592,73 @@ body {
 	outline: none;
     background-color: #fec503;
 }
+.modify-content-row {
+	padding-left: 0px;
+}
+.resource-icon-container {
+	padding: 10px 0px; 
+	margin: 25px 0px 0px 0px; 
+}
+.resource-price-text {
+	font-size: 30px; 
+	font-weight: 600; 
+	color: #3f434f; 
+	margin-top: 65px;
+}
+.resource-download {
+	margin:0px; 
+	line-height: 1; 
+	font-weight: 600;
+}
+.bar-metrics-title {
+	font-size: 14px; 
+	font-weight: 600; 
+	margin-bottom: 25px;
+}
 .boost-purchase-header {
 	font-size: 14px; 
 	font-weight: 600;
 	padding: 15px 20px 6px 35px;
-	border-top: 1px solid #cccccc; 
+	margin: 0px;
+}
+.boost-purchase-content {
+	font-size: 14px; 
+	padding-left: 35px;
+}
+.dash-boost-price {
+	font-size: 30px; 
+	font-weight: 600; 
+	color: #3f434f; 
+	margin-top: 10px;
 }
 .boost-purchase-header-right {
 	font-size: 14px; 
 	font-weight: 600;
-	padding: 15px 0px 6px 0px;
-	border-top: 1px solid #cccccc; 
+	padding: 0px 0px 6px 0px;
+}
+.dash-boost-row {
+	margin-top:20px; 
+	padding-top:20px; 
+	border-top:1px solid #cccccc;
+}
+.boost-row-bottom {
+	margin-top:20px;
+	margin-bottom:20px; 
+	padding-top:20px; 
+	border-top:1px solid #cccccc;
 }
 .boost-package-header {
-	font-size: 14px; 
+	font-size: 16px; 
 	background-color: #fed136; 
 	color: #fff;
 	font-weight: 600;
 	margin: 0px;
-	margin-top: 20px;
-	padding: 6px 15px;
+	padding: 3px 15px;
 }
 .purchase-description {
 	margin: 0px; 
 	font-size: 14px; 
-	padding: 0px 15px;
+	padding-left: 35px;
 }
 .social-purchase {
 	width: 40px; 
@@ -1740,6 +1782,9 @@ body {
 	overflow:scroll; 
 	height:672px;
 	background-color: #fff;
+	border-left: 1px solid #3f434f; 
+	border-right: 1px solid #3f434f; 
+	border-bottom: 1px solid #3f434f;
 }
 .project-content {
 	overflow:scroll; 
@@ -1762,12 +1807,19 @@ body {
 	margin-bottom: 15px;
 }
 .dash-project-description {
+	margin-top: 20px;
 	font-size: 14px; 
 	font-weight: 600;
 }
 .dash-project-content {
 	font-size: 14px; 
-	margin-bottom: 22px;
+	margin-bottom: 20px;
+}
+.dash-project-content p {
+	font-size: 14px;
+}
+.dash-project-content ul {
+	font-size: 14px;
 }
 .refresh-btn {
 	text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
@@ -1938,4 +1990,78 @@ span.round-tab:hover {
 }
 .image-upload-text {
 	margin-bottom: 20px;
+}
+.dash-row-top {
+	padding-top: 35px;
+}
+.dash-row-bottom {
+	padding-bottom: 50px;
+}
+.dash-col-right {
+	padding-left: 0px;
+}
+.profile-box {
+	margin-top: 50px; 
+	margin-bottom: 50px; 
+	padding: 0px; 
+	border:1px solid #3f434f;
+}
+.profile-image-box {
+	border-right:1px solid #3f434f;
+}
+.profile-info-box {
+	padding: 19px 0px;
+}
+.profile-edit-btn {
+	position: absolute; 
+	top: 0px; 
+	right: 0px; 
+	color: #3f434f;
+	font-size:12px; 
+	padding: 7px 10px; 
+	line-height: 1;
+}
+.profile-edit-btn:hover {
+	background-color: #3f434f;
+	color: #fff;
+	cursor: pointer;
+}
+.profile-name {
+	font-size: 16px; 
+	margin: 10px 0px; 
+	color: #3f434f;
+}
+.profile-email {
+	font-size: 14px; 
+	margin: 10px 0px 30px 0px; 
+	color: #3f434f;
+}
+.profile-crowdfund {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.crowdfund-username {
+	font-size: 14px;
+	color: #3f434f;
+}
+.profile-project-box {
+	margin-bottom: 50px; 
+	padding: 20px; 
+	border:1px solid #3f434f;
+}
+.profile-project-title {
+	margin-bottom: 20px; 
+	font-size:16px;
+}
+.profile-reward-box {
+	margin-top: 20px;
+}
+.profile-reward-image {
+	width: 175px; 
+	float: left; 
+	padding-right: 20px;
+}
+.profile-reward-text {
+	font-size: 14px; 
+	line-height: 1;
 }

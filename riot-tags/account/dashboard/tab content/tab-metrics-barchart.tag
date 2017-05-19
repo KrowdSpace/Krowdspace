@@ -1,6 +1,6 @@
 <tab-metrics-barchart>
 <div class="project-views-box">
-	<p style="font-size: 14px; font-weight: 600; margin-bottom: 25px;">PROJECT VIEWS PER DAY</p>
+	<p class="bar-metrics-title">PROJECT VIEWS PER DAY</p>
 	<canvas id="myBar" height="100"></canvas>
 </div>
 <script>

@@ -15,7 +15,6 @@
                     <p>Submitting a project to Krowdspace is free. As a Krowdspace project owner you receive access to our innovative dashboard which includes detailed metrics on your projects performance. All you need to get started is a live crowdfunding project on either Kickstarter or Indiegogo and a commitment to offer an exclusive reward to backers who fund your project through Krowdspace. Find out more about <a href="#modal-rewards" data-toggle="modal" class="home-links">backer rewards</a> or <a href="#modal-login" data-toggle="modal" class="home-links">submit a project here</a>.</p>
                 </div>
                 <div class="col-md-6 faq text-left faq-sm">
-
                     <p><strong>What can I expect as a project backer when becoming a member at Krowdspace?</strong></p>
                     <p>As a project backer on Krowdspace, rewards are instant. All you need to do is sign up and discover projects with our easy to use platform. Keep backing projects as you normally would, but now as a Krowdspace member, you earn exclusive extra rewards! It is as easy as that and there is no extra work on your end.</p>
                     <p><strong>How can Krowdspace help my project become successful?</strong></p>

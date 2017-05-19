@@ -1,26 +1,27 @@
 <global-modal-giveaway>
-    <div class="krowdspace-modal modal fade" id="modal-giveaway" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
+<div class="krowdspace-modal modal fade" id="modal-giveaway" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
                     </div>
                 </div>
-                <div class="container">
+            </div>
+            <div class="container">
                 <div class="row">
                     <div class="col-sm-10 col-sm-offset-1 shadow text-left user-modal no-gutters" style="margin-bottom:50px;">
-                    <div class="col-lg-7 col-md-12">
-                        <iframe style="margin:0;padding:0;border:none; width:100%; height:1100px;" src="https://gleam.io/ZRCtj/krowdspace-landing-page-launch-giveaway" frameBorder="0"></iframe>
+                        <div class="col-lg-7 col-md-12">
+                            <iframe style="margin:0;padding:0;border:none; width:100%; height:1200px;" src="https://gleam.io/soffh/k-pop-sauce-crowdfunding-launch-giveaway" frameBorder="0"></iframe>
                         </div>
-                     <div class="col-lg-5 hidden-md hidden-sm hidden-xs">
-                     <div class="text-center user-title">
-                            <p class="modal-heading">Previous Winners</p>
+                        <div class="col-lg-5 hidden-md hidden-sm hidden-xs">
+                            <div class="text-center user-title">
+                                <p class="modal-heading">Previous Giveaways</p>
+                            </div>
+                            <p><span class="sign-in-small"><strong>$50 Amazon Card - 04/01/17</strong></span></p>
+                            <p><span class="sign-in-small"><strong>$75 K POP Prize Package - 05/14/17</strong></span></p>
                         </div>
-                    <p><span class="sign-in-small"><strong>$50 Amazon Card - 04/01/17</strong></span></p>
-                     </div>
-                     </div>
+                    </div>
                     <div class="col-sm-10 col-sm-offset-1 shadow text-left user-modal">
                         <div class="text-left modal-container">
                             <p class="modal-heading">Giveaway Rules</p>
@@ -32,11 +33,11 @@
                         <br>
                         <p><span class="modal-text"><strong>Agreement to Rules:</strong></span> By participating, the Contestant (“You”) agree to be fully unconditionally bound by these Rules, and You represent and warrant that You meet the eligibility requirements. In addition, You agree to accept the decisions of Krowdspace as final and binding as it relates to the content of this Campaign.</p>
                         <br>
-                        <p><span class="modal-text"><strong>Campaign Period:</strong></span> Entries will be accepted online starting on 02/26/17 18:00PM PST and ending on 03/23/17 11:59PM PST. All online entries must be received by 03/23/17 11:59PM PST.</p>
+                        <p><span class="modal-text"><strong>Campaign Period:</strong></span> Entries will be accepted online starting on 04/23/17 18:00PM PST and ending on 04/23/17 11:59PM PST. All online entries must be received by 05/14/17 11:59PM PST.</p>
                         <br>
                         <p><span class="modal-text"><strong>How to Enter:</strong></span> The Campaign must be entered by submitting an entry using the online form provided at www.Krowdspace.com/?giveaway=1. The entry must fulfill all Campaign requirements, as specified, to be eligible to win a prize. Entries that are incomplete or do not adhere to the rules or specifications may be disqualified at the sole discretion of Krowdspace. You may not enter more times than indicated by using multiple email addresses, identities, or devices in an attempt to circumvent the rules. If You use fraudulent methods or otherwise attempt to circumvent the rules, your submission may be removed from eligibility at the sole discretion of Krowdspace.</p>
                         <br>
-                        <p><span class="modal-text"><strong>Prizes:</strong></span> The Winner(s) of the Campaign (the “Winner”) will receive A $50.00 Amazon Gift Card. Actual/appraised value may differ at time of prize award. The specifics of the prize shall be solely determined by Krowdspace. No cash or other prize substitution shall be permitted except at Krowdspace's discretion. The prize is nontransferable. Any and all prize-related expenses, including without limitation any and all federal, state, and/or local taxes, shall be the sole responsibility of Winner. No substitution of prize or transfer/assignment of prize to others or request for the cash equivalent by Winner is permitted. Acceptance of prize constitutes permission for Krowdspace to use Winner’s name, likeness, and entry for purposes of advertising and trade without further compensation, unless prohibited by law.</p>
+                        <p><span class="modal-text"><strong>Prizes:</strong></span> The Winner(s) of the Campaign (the “Winner”) will receive 6 K POP Sauce Bottles, 1 bottle opener, 1 custom t-shirt and K POP decals. Actual/appraised value may differ at time of prize award. The specifics of the prize shall be solely determined by Krowdspace. No cash or other prize substitution shall be permitted except at Krowdspace's discretion. The prize is nontransferable. Any and all prize-related expenses, including without limitation any and all federal, state, and/or local taxes, shall be the sole responsibility of Winner. No substitution of prize or transfer/assignment of prize to others or request for the cash equivalent by Winner is permitted. Acceptance of prize constitutes permission for Krowdspace to use Winner’s name, likeness, and entry for purposes of advertising and trade without further compensation, unless prohibited by law.</p>
                         <br>
                         <p><span class="modal-text"><strong>Odds:</strong></span> The odds of winning depend on the number of eligible entries received.</p>
                         <br>
@@ -59,10 +60,10 @@
                         <p><span class="modal-text"><strong>Facebook:</strong></span> The Campaign hosted by Krowdspace is in no way sponsored, endorsed, administered by, or associated with Facebook.</p>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
     </div>
+</div>
 <script>
     this.on('mount', function() {
         var url = window.location.href;
