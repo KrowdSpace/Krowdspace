@@ -4,8 +4,8 @@
             <p class="social-title">CAMPAIGN BACKERS</p>
 		<ul class="add-dropdown text-right" style="padding-left: 950px;">
 					<li class="dropdown">
-						<a href="#" id="dropdown-image2" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus plus-dropdown" aria-hidden="true"></i></a>
-						<ul class="dropdown-menu2 add-dropdown-menu" style="border-left: 1px solid #3f434f;">
+						<a href="#" id="backer-dropdown" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus plus-dropdown" aria-hidden="true"></i></a>
+						<ul id="backer-list" class="dropdown-menu add-dropdown-menu" style="border-left: 1px solid #3f434f;">
 							<li><a>EXPORT LIST</a></li>
 						</ul>
 					</li>
@@ -54,8 +54,8 @@
 </script>
 <script>
         this.on('mount', function() {
-            $("#dropdown-image2").click(function(){
-                $(".dropdown-menu2").toggle(300);
+            $("#backer-dropdown").click(function(){
+                $("#backer-list").toggle(300);
             });
         });
     </script>

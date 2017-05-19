@@ -40,7 +40,7 @@
 						],			
 					}],	
 			};  
-			var options = { 
+			var options = {  
 				cutoutPercentage:0,
 				legend: {
 					display: false

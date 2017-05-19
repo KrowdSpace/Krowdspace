@@ -18,5 +18,6 @@
 			</div>
 		</div>
 	</div>
+	<account-login-verify></account-login-verify>
 	<global-footer></global-footer>  
 </dashboard>

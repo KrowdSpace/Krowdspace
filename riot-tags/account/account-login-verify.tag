@@ -1,5 +1,5 @@
 <account-login-verify>
-    <div style="background: rgba(50, 48, 49, .99); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:9999;" ref="login_cont" if={ !logged_in }>
+    <div style="background: rgba(50, 48, 49, .99); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index:9999;" ref="login_cont" show={ !logged_in }>
         
 		<div class="col-md-5 col-centered shadow user-modal" style="margin-top:100px;">
                             <div class="text-left modal-container">
@@ -42,16 +42,16 @@
 			STAYLOGGED = true;// andre just added this. The old way was keeping it true.
 				console.log(USERNAME);
 				console.log(PASSWORD);
-			console.log(STAYLOGGED); 
 			krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then(
 				(res) => 
 				{
 					this.logged_in = true;
-					window.location.replace("/account/dashboard.html"); 
+					this.update();
+					
 				},
 				(err) => 
 				{
-					console.log('winning');
+					console.log(err);
 			});
 		}
     </script>
