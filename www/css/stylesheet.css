@@ -207,7 +207,6 @@ section {
 .timeline > li .timeline-panel {
     width: 100%;
     float: right;
-    padding: 0 20px 0 50px;
     position: relative;
     text-align: left;
 }
@@ -267,7 +266,7 @@ section {
     .timeline > li .timeline-panel {
         width: 41%;
         float: left;
-        padding: 0 20px 20px 30px;
+
         text-align: right;
     }
     .timeline > li .timeline-image {
@@ -287,7 +286,6 @@ section {
         min-height: 150px;
     }
     .timeline > li .timeline-panel {
-        padding: 0 20px 20px;
     }
     .timeline > li .timeline-image {
         width: 150px;
@@ -295,7 +293,6 @@ section {
         margin-left: -75px;
     }
     .timeline > li.timeline-inverted > .timeline-panel {
-        padding: 0 20px 20px;
     }
 }
 @media (min-width: 1200px) {
@@ -309,19 +306,24 @@ section {
     }
 }
 footer {
-    padding: 8px 0;
+    padding: 0;
     text-align: center;
 }
 footer .copyright,
 .social-icons,
 .boost-warning {
     margin-top: 20px;
+	
+}
+.copyright {
+	color: #fff;
 }
 footer ul.quicklinks,
 .quicklinks {
     font-size: 15px;
     padding-left: 0px;
     line-height: 1.5;
+	color: #fff;
     text-decoration: none;
     list-style-type: none;
     margin-bottom: 0;
@@ -329,23 +331,28 @@ footer ul.quicklinks,
     text-transform: uppercase;
     text-transform: none;
 }
-.krowdspace-modal .modal-dialog {
+.modal-close {
+	margin: 20px 0px 25px 0px;
+    color: white;
+    background-color: #fed136;
+    font-size: 16px;
+    border: 0px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 3px;
+}
+.modal-close:hover,
+.modal-close:focus,
+.modal-close:active,
+.modal-close.active {
+	background-color: #fec503;
+	outline: none;
+}
+.modal-dialog {
     margin: 0;
     height: 100%;
     width: auto;
-}
-.krowdspace-modal .modal-content {
-    border-radius: 0;
-    background-clip: border-box;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: none;
-    min-height: 100%;
-    padding: 115px 0;
-    text-align: center;
-}
-.krowdspace-modal .modal-content img {
-    margin-bottom: 30px;
 }
 .close-modal-full {
     position: absolute;
@@ -358,7 +365,7 @@ footer ul.quicklinks,
     left: 0px;
     cursor: pointer;
 }
-.krowdspace-modal .close-modal {
+.close-modal {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -367,10 +374,10 @@ footer ul.quicklinks,
     right: 25px;
     cursor: pointer;
 }
-.krowdspace-modal .close-modal:hover {
+.close-modal:hover {
     opacity: 0.8;
 }
-.krowdspace-modal .close-modal .lr {
+.close-modal .lr {
     height: 75px;
     width: 2px;
     margin-left: 97%;
@@ -384,7 +391,11 @@ footer ul.quicklinks,
     
     z-index: 1051;
 }
-.krowdspace-modal .close-modal .lr .rl {
+.krowdspace-modal {
+	margin-top: 50px; 
+	margin-bottom: 100px;
+}
+.close-modal .lr .rl {
     height: 75px;
     width: 2px;
     background-color: #fed136;
@@ -421,7 +432,7 @@ body {
     webkit-tap-highlight-color: #fed136;
 }
 .alternate-background {
-    background-image: url('../img/content/background-grey.jpg');
+    background-image: url('../img/content/background-white.jpg');
 }
 .boost-table {
     font-size: 28px !important;
@@ -443,6 +454,23 @@ body {
         width: 75%;
         margin: 0 auto;
     }
+	.timeline > li .timeline-panel {
+		width: 80%;
+	}
+	.timeline > li.timeline-inverted > .timeline-panel {
+		padding: 0px 0px 0px 0px;
+	}
+}
+@media screen and (max-width: 767px) {
+	.krowdspace-modal {
+	margin: 0px;
+	padding: 0px;
+}
+}
+@media screen and (max-width: 530px) {
+	.timeline > li .timeline-panel {
+		width: 75%;
+	}
 }
 .popular-boost {
     background-color: #fed136;
@@ -518,7 +546,7 @@ body {
 .footer-text {
     text-align: left;
     line-height: 1;
-    color: #323031;
+    color: #fff;
     font-size: 18px;
     letter-spacing: 2px;
     margin: 20px 0px 30px 0px;
@@ -604,6 +632,7 @@ body {
     padding-bottom: 125px;
 }
 .containter-right-box {
+	padding: 5px 20px;
     background: white;
 	border:1px solid #888888;
     -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
@@ -641,8 +670,9 @@ body {
     background-color: #fec503;
 }
 .boost-purchase {
-    margin: 7px 0px;
+    letter-spacing: 1px;
     color: white;
+	margin-left: 100px;
     background-color: #fed136;
     font-size: 16px;
     border: 0px;
@@ -712,9 +742,19 @@ body {
     font-size: 15px;
     line-height: 1.5;
 }
+.neutral-footer-link {
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.neutral-footer-link:hover {
+    color: #fed136;
+    font-size: 15px;
+    line-height: 1.5;
+}
 .sign-in,
 .modal-heading {
-    line-height: 1;
+    line-height: 24px;
     color: #323031;
     font-size: 18px;
     letter-spacing: 2px;
@@ -722,12 +762,26 @@ body {
 }
 .verify-heading {
     font-size: 22px;
+	padding: 10px 0px 25px 0px;
+}
+.verify-message {
+	padding: 25px 0px;
 }
 .sign-in-small,
 .about-heading,
 .modal-text {
     line-height: 1;
     color: #323031;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.giveaway-winner {
+	line-height: 1;
+    color: #323031;
+	padding: 20px 0px 0px 0px;
+	width: 50%; 
+	float:left;
     font-size: 15px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -857,7 +911,7 @@ body {
     padding-bottom: 15px;
 }
 .register-text {
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     color: #333;
 }
 .register-button-box {
@@ -866,6 +920,7 @@ body {
 }
 .custom-footer {
     border-top: 1px solid #cccccc;
+	background-color: rgba(50, 48, 49, .90);
 }
 .dashboard-footer {
 	margin-top: 50px;
@@ -912,10 +967,10 @@ body {
     text-transform: uppercase;
 }
 .social-btn {
-    color: #333;
+    color: #fed136;
 }
 .social-btn:hover {
-    color: #fed136;
+    color: #fec503;
 }
 .margin-text {
     margin-bottom: 0px;
@@ -930,6 +985,9 @@ body {
     .boost-left-btn {
         padding-top: 146px;
     }
+	.header-left {
+		padding-top: 100px;
+	}
 }
 .boost-middle-btn {
     padding-top: 108px;
@@ -2064,4 +2122,10 @@ span.round-tab:hover {
 .profile-reward-text {
 	font-size: 14px; 
 	line-height: 1;
+}
+.background-modal-close {
+	width: 100%; 
+	height: 100%; 
+	position: absloute; 
+	z-index: -1;
 }

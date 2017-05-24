@@ -310,7 +310,7 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -5050,17 +5050,23 @@ button.list-group-item-danger.active:focus {
   font-weight: bold;
   line-height: 1;
   color: #000;
-  text-shadow: 0 1px 0 #fff;
-  filter: alpha(opacity=20);
-  opacity: .2;
+  opacity: 1;
+}
+.btn-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0px !important;
+  padding-right: 4px !important;
 }
 .close:hover,
-.close:focus {
+.close:focus,
+.close:active,
+.close.active {
+  outline: none;
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  filter: alpha(opacity=70);
-  opacity: .7;
 }
 button.close {
   -webkit-appearance: none;
@@ -5112,9 +5118,8 @@ button.close {
   position: relative;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, .2);
-  border-radius: 6px;
+  border: 4px solid #fed136;
+  background-color: #fff;
   outline: 0;
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
           box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
@@ -5137,11 +5142,14 @@ button.close {
   opacity: .7;
 }
 .modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 30px;
 }
 .modal-header .close {
   margin-top: -2px;
+}
+.modal-heading {
+	margin:0px; 
+	line-height: 26px;
 }
 .modal-title {
   margin: 0;
@@ -5149,7 +5157,7 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding: 10px 30px 15px 30px;
 }
 .modal-footer {
   padding: 15px;

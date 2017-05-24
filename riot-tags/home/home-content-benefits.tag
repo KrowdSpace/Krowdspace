@@ -18,7 +18,7 @@
                     <img src="/img/content/reward-icon.png" class="img-responsive img-icon" alt="Rewards Icon">
                     <p><strong>Offer an Extra Reward</strong></p>
                     <br>
-                    <p class="text-left text-left">In order to have your project published on Krowdspace, you must offer an exclusive reward for backers who support you through our community. You can view examples and more information about <a href="#modal-rewards" data-toggle="modal" class="home-links">project rewards here</a>. Krowdspace tracks each backer that accesses your project through our platform and notes their Kickstarter or Indiegogo pledge on your Krowdspace dashboard. After your project is funded, you have a convenient list of Krowdspace backers to send your exclusive rewards to.</p>
+                    <p class="text-left text-left">In order to have your project published on Krowdspace, you must offer an exclusive reward for backers who support you through our community. You can view examples and more information about <a href="#modal-reward" data-toggle="modal" class="home-links">project rewards here</a>. Krowdspace tracks each backer that accesses your project through our platform and notes their Kickstarter or Indiegogo pledge on your Krowdspace dashboard. After your project is funded, you have a convenient list of Krowdspace backers to send your exclusive rewards to.</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <img src="/img/content/backer-icon.png" class="img-responsive img-icon" alt="Gain Backers Icon">

@@ -10,7 +10,7 @@
                         <a href="#modal-login" data-toggle="modal" class="btn btn-landing">Submit a Project</a>
                     </div>
                 </div>
-                <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs">
+                <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px;">
                     <div class="col-sm-12 text-left containter-right-box">
                         <p class="text-left landing-text">Get extra rewards for backing the same crowdfunding projects you already have been or sign up and submit your own!</p>
                         <form class="form-vertical" id="commentForm" onsubmit={ submit }>
@@ -64,15 +64,16 @@
         PASSWORD = $("#PASSWORD").val(),
         KSUSER = $("#KS_USER").val(),
         IGUSER = $("#IG_USER").val();
-            
-        krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER, (res) => {
-            if(!res.success){
-                alert('error');
-            }else{
-                 window.location.replace("/?success=1");  
-                }
+       	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then(
+            (res) => 
+			{
+                window.location.replace("/?success=1");
+            },
+            (err) => 
+			{
+                console.log(err);
             });
-        }
+    	}    
     </script>
     <script>
         this.on('mount', function() {
