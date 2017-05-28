@@ -15,11 +15,8 @@
                     <li>
                         <a class="page-scroll explore-scroll" href="/#explore"><span class="compass-none">Explore</a>
                     </li>
-                    <li show= { logged_in }>
-                        <a class="page-scroll explore-scroll" href="/#account/register">Submit Project</a>
-                    </li>
-					<li show= { !logged_in }>
-                        <a class="page-scroll explore-scroll" href="/#account/modify-project">Modify Project</a>
+					<li>
+                        <a class="page-scroll explore-scroll" href="/#account/boosts">Boosts</a>
                     </li>
                 </ul>
                 <img class="logo-float" src="/../img/krowdspace-explore.png" style="width:55px;">

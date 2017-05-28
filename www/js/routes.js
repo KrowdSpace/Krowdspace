@@ -13,7 +13,7 @@ route('/account/profile', function(slug, id){
 route('/account/register', function(slug, id){
 	riot.mount("#main","register");
 });
-route('/account/modify-project', function(slug, id){
+route('/account/boosts', function(slug, id){
 	riot.mount("#main","modify-project");
 });
 route('/account/verify/..', function(slug, id){

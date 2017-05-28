@@ -66,7 +66,7 @@
                 <div class="col-sm-6 social-metric-left">
                     <div class="divider-inside-right">
 						<!-- PINTEREST REPINS GO HERE -->
-                        <p id="pinterestPins" class="text-center social-metric">0</p>
+                        <p id="pinterestPiePins" class="text-center social-metric">{ pinterest }</p>
                         <p class="text-center social-content-sub">REPINS</p>
                     </div>
                 </div>

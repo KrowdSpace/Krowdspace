@@ -22,7 +22,7 @@ riot.tag2('account-login-verify', '<div style="background: rgba(50, 48, 49, .99)
             });
     }.bind(this)
 });
-riot.tag2('account-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt navbar-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i> </button> <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" style="width:55px;"></a> </div> <div class="collapse navbar-collapse" id="navigation-collapse"> <ul class="nav navbar-nav navbar-left "> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="page-scroll explore-scroll" href="/#explore"><span class="compass-none">Explore</a> </li> <li show="{logged_in}"> <a class="page-scroll explore-scroll" href="/#account/register">Submit Project</a> </li> <li show="{!logged_in}"> <a class="page-scroll explore-scroll" href="/#account/modify-project">Modify Project</a> </li> </ul> <img class="logo-float" src="/../img/krowdspace-explore.png" style="width:55px;"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="page-scroll explore-scroll" href="/#account/dashboard">Dashboard</a> </li> <li> <a class="page-scroll explore-scroll" href="/#account/profile">Profile</a> </li> </ul> </div> </div> </nav> <div class="nav-push"></div>', '', '', function(opts) {
+riot.tag2('account-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt navbar-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i> </button> <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" style="width:55px;"></a> </div> <div class="collapse navbar-collapse" id="navigation-collapse"> <ul class="nav navbar-nav navbar-left "> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="page-scroll explore-scroll" href="/#explore"><span class="compass-none">Explore</a> </li> <li> <a class="page-scroll explore-scroll" href="/#account/boosts">Boosts</a> </li> </ul> <img class="logo-float" src="/../img/krowdspace-explore.png" style="width:55px;"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="page-scroll explore-scroll" href="/#account/dashboard">Dashboard</a> </li> <li> <a class="page-scroll explore-scroll" href="/#account/profile">Profile</a> </li> </ul> </div> </div> </nav> <div class="nav-push"></div>', '', '', function(opts) {
         this.on('mount', function() {
             $('a.page-scroll').bind('click', function(event) {
                 var $anchor = $(this);
@@ -79,7 +79,7 @@ riot.tag2('dash-content-backers', '<div class="social-container"> <div class="so
 });
 riot.tag2('dash-content-social-pie', '<div class="social-container"> <div class="social-header-dropdown"> <p class="social-title">SOCIAL MEDIA SHARE</p> </div> <div class="social-share-box"> <canvas id="myChart"></canvas> </div> <div class="social-share-content"> <p class="social-content-title"><i class="fa fa-square facebook-sq" aria-hidden="true"></i>FACEBOOK<span style="float:right; padding-right: 50px;">0</span></p> <p class="social-content-title"><i class="fa fa-square twitter-sq" aria-hidden="true"></i>TWITTER<span style="float:right; padding-right: 50px;">0</span></p> <p class="social-content-title"><i class="fa fa-square pinterest-sq" aria-hidden="true"></i>PINTEREST<span id="pinterestPiePins" style="float:right; padding-right: 50px;">0</span></p> <p class="social-content-title"><i class="fa fa-square instagram-sq" aria-hidden="true"></i>INSTAGRAM<span id="instagramPieLikes" style="float:right; padding-right: 50px;">0</span></p> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('dash-content-social', '<div class="social-container"> <div style="position:absolute; top: -20px;"> <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> </div> <div class="social-header-dropdown text-center"> <p class="social-title">SOCIAL MEDIA</p> <ul class="add-dropdown text-right"> <li class="dropdown"> <a href="#" id="dropdown-image" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus plus-dropdown" aria-hidden="true"></i></a> <ul class="dropdown-menu add-dropdown-menu"> <li><a>BOOST SINGLE POST</a></li> <li><a href="#" data-toggle="modal" class="dropdown-general drop-list">BOOST ALL POSTS</a></li> </ul> </li> </ul> </div> <div class="text-center social-slider-box single-item"> <div data-index="1"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-fb-color"></i><i class="fa fa-facebook fa-stack-1x fa-inverse social-icon-text"></i></span> </div> <div data-index="2"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-tw-color"></i><i class="fa fa-twitter fa-stack-1x fa-inverse social-icon-text"></i></span> </div> <div data-index="3"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-pt-color"></i><i class="fa fa-pinterest fa-stack-1x fa-inverse social-icon-text"></i></span> </div> <div data-index="4"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-ig-color"></i><i class="fa fa-instagram fa-stack-1x fa-inverse social-icon-text"></i></span> </div> </div> <div class="social-content-box slider-social one" data-id="1"> <p class="text-center social-content-title">FACEBOOK METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p id="FBimpressions" class="text-center social-metric">0</p> <p class="text-center social-content-sub">IMPRESSIONS</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="FBreactions" class="text-center social-metric">0</p> <p class="text-center social-content-sub">REACTIONS</p> </div> <div class="clearfix"></div> </div> <div class="social-content-box slider-social two" data-id="2"> <p class="text-center social-content-title">TWITTER METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p class="text-center social-metric">0</p> <p class="text-center social-content-sub">IMPRESSIONS</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="" class="text-center social-metric">0</p> <p class="text-center social-content-sub">LIKES</p> </div> <div class="clearfix"></div> </div> <div class="social-content-box slider-social three" data-id="3"> <p class="text-center social-content-title">PINTEREST METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p id="pinterestPins" class="text-center social-metric">0</p> <p class="text-center social-content-sub">REPINS</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="pinterestComments" class="text-center social-metric">0</p> <p class="text-center social-content-sub">COMMENTS</p> </div> <div class="clearfix"></div> </div> <div class="social-content-box slider-social four" data-id="4"> <p class="text-center social-content-title">INSTAGRAM METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p id="instagramLikes" class="text-center social-metric">0</p> <p class="text-center social-content-sub">POST LIKES</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="instagramComments" class="text-center social-metric">0</p> <p class="text-center social-content-sub">COMMENTS</p> </div> <div class="clearfix"></div> </div> </div>', '', '', function(opts) {
+riot.tag2('dash-content-social', '<div class="social-container"> <div style="position:absolute; top: -20px;"> <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button> </div> <div class="social-header-dropdown text-center"> <p class="social-title">SOCIAL MEDIA</p> <ul class="add-dropdown text-right"> <li class="dropdown"> <a href="#" id="dropdown-image" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-plus plus-dropdown" aria-hidden="true"></i></a> <ul class="dropdown-menu add-dropdown-menu"> <li><a>BOOST SINGLE POST</a></li> <li><a href="#" data-toggle="modal" class="dropdown-general drop-list">BOOST ALL POSTS</a></li> </ul> </li> </ul> </div> <div class="text-center social-slider-box single-item"> <div data-index="1"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-fb-color"></i><i class="fa fa-facebook fa-stack-1x fa-inverse social-icon-text"></i></span> </div> <div data-index="2"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-tw-color"></i><i class="fa fa-twitter fa-stack-1x fa-inverse social-icon-text"></i></span> </div> <div data-index="3"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-pt-color"></i><i class="fa fa-pinterest fa-stack-1x fa-inverse social-icon-text"></i></span> </div> <div data-index="4"> <span class="fa-stack fa-3x"><i class="fa fa-square fa-stack-2x social-ig-color"></i><i class="fa fa-instagram fa-stack-1x fa-inverse social-icon-text"></i></span> </div> </div> <div class="social-content-box slider-social one" data-id="1"> <p class="text-center social-content-title">FACEBOOK METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p id="FBimpressions" class="text-center social-metric">0</p> <p class="text-center social-content-sub">IMPRESSIONS</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="FBreactions" class="text-center social-metric">0</p> <p class="text-center social-content-sub">REACTIONS</p> </div> <div class="clearfix"></div> </div> <div class="social-content-box slider-social two" data-id="2"> <p class="text-center social-content-title">TWITTER METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p class="text-center social-metric">0</p> <p class="text-center social-content-sub">IMPRESSIONS</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="" class="text-center social-metric">0</p> <p class="text-center social-content-sub">LIKES</p> </div> <div class="clearfix"></div> </div> <div class="social-content-box slider-social three" data-id="3"> <p class="text-center social-content-title">PINTEREST METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p id="pinterestPiePins" class="text-center social-metric">{pinterest}</p> <p class="text-center social-content-sub">REPINS</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="pinterestComments" class="text-center social-metric">0</p> <p class="text-center social-content-sub">COMMENTS</p> </div> <div class="clearfix"></div> </div> <div class="social-content-box slider-social four" data-id="4"> <p class="text-center social-content-title">INSTAGRAM METRICS</p> <div class="col-sm-6 social-metric-left"> <div class="divider-inside-right"> <p id="instagramLikes" class="text-center social-metric">0</p> <p class="text-center social-content-sub">POST LIKES</p> </div> </div> <div class="col-sm-6 social-content-box-right"> <p id="instagramComments" class="text-center social-metric">0</p> <p class="text-center social-content-sub">COMMENTS</p> </div> <div class="clearfix"></div> </div> </div>', '', '', function(opts) {
 
     this.on('mount', function() {
         $('.single-item').slick({
@@ -101,107 +101,7 @@ riot.tag2('dash-content-social', '<div class="social-container"> <div style="pos
 });
 riot.tag2('dash-content-tabs', '<div class="social-container"> <div class="text-center social-sub-header"> <ul class="dash-sub-nav"> <li><a data-toggle="tab" href="#menu2">BOOSTS</a></li> <li class="active"><a data-toggle="tab" href="#home">CAMPAIGN METRICS</a></li> <li><a data-toggle="tab" href="#menu3">RESOURCES</a></li> </ul> </div> <div class="tab-content tab-dashboard"> <div id="home" class="tab-pane fade in active"> <tab-metrics-barchart></tab-metrics-barchart> <tab-metrics-daysleft></tab-metrics-daysleft> <tab-metrics-views></tab-metrics-views> <tab-metrics-goal></tab-metrics-goal> <div class="clearfix"></div> </div> <div id="menu2" class="tab-pane fade"> <div class="project-boost-box"> <tab-boosts-package></tab-boosts-package> <tab-boosts-mix></tab-boosts-mix> <tab-boosts-featured></tab-boosts-featured> <tab-boosts-social></tab-boosts-social> </div> </div> <div id="menu3" class="tab-pane fade"> <tab-resource-content></tab-resource-content> </div> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('dashboard', '<div class="row"> <account-navigation></account-navigation> </div> <div class="container-alt"> <div class="row dash-row-top"> <div class="col-md-3"> <dash-content-social></dash-content-social> <dash-content-social-pie></dash-content-social-pie> </div> <div class="col-md-9 dash-col-right"> <dash-content-tabs></dash-content-tabs> </div> </div> <div class="row dash-row-bottom"> <div class="col-sm-12"> <dash-content-backers></dash-content-backers> </div> </div> </div> <account-login-verify></account-login-verify> <global-footer></global-footer>', '', '', function(opts) {
-
-var social = {
-	labels:
-	[
-	" Facebook",
-	" Twitter",
-	" Pinterest",
-	" Instagram"
-	],
-	datasets:
-	[
-		{
-			data:
-			[
-				'0',
-				'0',
-				'0',
-				'0'
-			],
-			backgroundColor:
-			[
-				"#3b5998",
-				"#0084b4",
-				"#C92228",
-				"#125688"
-			],
-			hoverBackgroundColor:
-			[
-				"#3b5998",
-				"#0084b4",
-				"#C92228",
-				"#125688"
-			],
-		}
-	],
-};
-
-let INSTA_URL = "https://api.instagram.com/v1/media/",
-	INSTA_POST_ID = "1500905039610194798",
-	INSTA_CODE = "/?access_token=4163437312.5f0ec4e.f66076806af249ae95f7dfdfc70c4c03",
-
-	FB_URL = "https://graph.facebook.com/v2.9/330201904004972_",
-	FB_POST_ID = "414542278904267",
-	FB_QUERY = "/insights/post_impressions_organic_unique",
-	FB_QUERY2 = "/insights/post_impressions_organic_unique",
-	FB_CODE = "/?access_token=EAACEdEose0cBACkawgGGJOT9iOQmc19MQ6JjNT2ER0dCYM4fCYZBcIz49Hoep3iIWYIH3pYqFzaqtLk9TTbZAu9fzhQZCOZCoxIeASFArT",
-
-	PIN_ID = "https://api.pinterest.com/v1/pins/",
-	PIN_POST_ID = "672162313105809308",
-	PIN_CODE = "/?access_token=AcXfn0UPLaJJ9w_tSHbdvSARJ_seFL_I33XQkDlEBLLJJmBBigAAAAA&fields=counts";
-
-let promiseA = [];
-
-promiseA[0] = fetch(INSTA_URL + INSTA_POST_ID + INSTA_CODE).then((response)=>
-{
-	return response.json();
-})
-	.then(function(data)
-{
-	document.getElementById('instagramLikes').innerHTML = data.data.likes.count;
-	document.getElementById('instagramPieLikes').innerHTML = data.data.likes.count;
-	document.getElementById('instagramComments').innerHTML = data.data.comments.count;
-	social.datasets[0].data[3] = data.data.likes.count;
-});
-
-promiseA[1] = fetch(PIN_ID + PIN_POST_ID + PIN_CODE).then((response)=>
-{
-	return response.json();
-})
-	.then(function(data)
-{
-	console.log(data.data.counts);
-	document.getElementById('pinterestPins').innerHTML = data.data.counts.repins;
-	document.getElementById('pinterestPiePins').innerHTML = data.data.counts.repins;
-	document.getElementById('pinterestComments').innerHTML = data.data.counts.comments;
-	social.datasets[0].data[2] = data.data.counts.repins;
-});
-
-function onMount()
-{
-    Promise.all(promiseA).then((resA)=>
-    {
-        var ctx = document.getElementById("myChart");
-			var data = social;
-			var options = {
-				cutoutPercentage:0,
-				legend: {
-					display: false
-				},
-			};
-			var myDoughnutChart = new Chart(ctx, {
-				type: 'doughnut',
-				data: data,
-				options: options
-			});
-    });
-}
-
-onMount();
-
+riot.tag2('dashboard', '<div class="row"> <account-navigation></account-navigation> </div> <div class="container-alt"> <div class="row dash-row-top dash-row-bottom"> <div class="col-fixed-3"> <modify-content-image></modify-content-image> <modify-content-reward></modify-content-reward> </div> <div class="col-fixed-9 modify-content-row"> <modify-content-project></modify-content-project> </div> </div> <div class="row dash-row-bottom"> <div></div> <div class="col-sm-12"> <dash-content-backers></dash-content-backers> </div> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
 });
 
 riot.tag2('tab-boosts-featured', '<div class="row no-gutter dash-boost-row"> <div class="col-sm-9"> <p class="boost-purchase-header" style="padding-top: 0px;">FEATURED LISTING + BANNER LISTING</p> </div> <div class="col-sm-3 text-center"> <p class="boost-purchase-header-right">SELECT FEATURED AREA</p> </div> <div class="col-sm-9"> <div class="row featured-box"> <img class="img-responsive feature-icon" src="/img/content/featured-project-icon.jpg"> <p class="purchase-description"><strong>Featured Project:</strong> Your crowdfunding campaign will be featured on our explore page and filter as the first project card. </p> </div> <div class="row featured-box"> <img class="img-responsive feature-icon" src="/img/content/featured-slider-icon.jpg"> <p class="purchase-description"><strong>Feature Explore Banner:</strong> In addition to being a featured project your campaign will display on our explore page banner.</p> </div> <div class="row featured-box" style="margin-bottom: 0px;"> <img class="img-responsive feature-icon" src="/img/content/featured-landing-icon.jpg"> <p class="purchase-description"><strong>Landing Page Banner:</strong> In addition to being a featured project and on our explore page banner your campaign will be featured on our landing page.</p> </div> </div> <div class="col-sm-3 text-center"> <form> <div class="featured-price-box"> <label class="featured-radio"><input type="radio" name="optradio"></label> <p class="featured-price">$10</p> </div> <div class="featured-price-box"> <label class="featured-radio"><input type="radio" name="optradio"></label> <p class="featured-price">$15</p> </div> <div class="featured-price-box" style="width: 84px; margin-bottom: 0px;"> <label class="featured-radio"><input type="radio" name="optradio"></label> <p class="featured-price">$20</p> </div> <p class="add-cart-center">ADD TO CART</p> </form> </div> </div>', '', '', function(opts) {
@@ -420,7 +320,7 @@ riot.tag2('modify-content-project', '<div class="social-container"> <div class="
 });
 riot.tag2('modify-content-reward', '<div class="social-container"> <div class="social-header-dropdown"> <p class="social-title">CAMPAIGN REWARD</p> </div> <div class="backer-reward-box"> <p class="backer-reward-text">REWARD: For every $20 backed a free swag bag will be sent out with your product.</p> <p class="backer-reward-text">Upon succesful completion of your crowdfunding project you have agreed to send out any additional rewards to the backers who have supported your campaign.</p> <a href="#modal-edit-reward" data-toggle="modal"><p class="package-add-cart text-center" style="margin-top: 15px;">EDIT REWARD</p></a> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('modify-project', '<div class="row"> <account-navigation></account-navigation> </div> <div class="container-alt"> <div class="row dash-row-top dash-row-bottom"> <div class="col-fixed-3"> <modify-content-image></modify-content-image> <modify-content-reward></modify-content-reward> </div> <div class="col-fixed-9 modify-content-row"> <modify-content-project></modify-content-project> </div> </div> </div> <modify-modal-image></modify-modal-image> <modify-modal-reward></modify-modal-reward> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('modify-project', '<div class="row"> <account-navigation></account-navigation> </div> <div class="container-alt"> <div class="project-boost-box"> <tab-boosts-package></tab-boosts-package> <tab-boosts-mix></tab-boosts-mix> <tab-boosts-featured></tab-boosts-featured> <tab-boosts-social></tab-boosts-social> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
 });
 riot.tag2('profile-content-information', '<div class="col-sm-10 col-sm-offset-1 no-gutter profile-box"> <div class="col-sm-6 profile-image-box;"> <img class="img-responsive" src="/img/projects/bahari-bag.jpg"> </div> <div class="col-sm-6 text-center no-gutter profile-info-box"> <p class="profile-edit-btn">EDIT PROFILE</p> <p class="profile-name">MASON HALSTEAD</p> <p class="profile-email">MASON@KROWDSPACE.COM</p> <div class="col-sm-4 text-center"> <div class="divider-inside-right" style="padding: 0px;"> <p class="social-title-alt">PROJECTS LAUNCHED</p> <p class="social-metric">1</p> </div> </div> <div class="col-sm-4 text-center"> <div class="divider-inside-right"> <p class="social-title-alt">PROJECTS BACKED</p> <p class="social-metric">8</p> </div> </div> <div class="col-sm-4 text-center"> <p class="social-title-alt">REWARD VALUE</p> <p class="social-metric">$300</p> </div> <div class="col-sm-6 text-center"> <p class="social-title-alt profile-crowdfund">KICKSTARTER USERNAME</p> <p class="crowdfund-username">KrowdspaceKS</p> </div> <div class="col-sm-6 text-center"> <p class="social-title-alt profile-crowdfund">INDIEGOGO USERNAME</p> <p class="crowdfund-username">IndiegogoIG</p> </div> </div> </div> <div class="col-sm-10 col-sm-offset-1 no-gutter profile-project-box"> <p class="social-title-alt text-center profile-project-title">PROJECTS BACKED ON KROWDSPACE</p> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> </div>', '', '', function(opts) {
 });
@@ -832,47 +732,61 @@ riot.tag2('home-content-benefits', '<section id="project"> <div class="container
 });
 riot.tag2('home-content-boosts', '<img src="img/content/page-break.jpg" class="img-responsive auto-width hidden-sm hidden-xs"> <section id="boost"> <div class="container"> <div class="row"> <div class="col-lg-offset-2 col-lg-8 col-md-12"> <h2 class="landing-header text-center">Project Boosts</h2> <p class="text-left landing-description text-left">Our boost plans offer some much-needed exposure to really get your project going. Don’t want to purchase a full plan? We also offer <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">individual boosts</a>. Each plan will last for 30 days or the duration of your project, whichever is less. </p> </div> </div> <div class="row hidden-sm hidden-xs"> <div class="col-sm-offset-8 col-sm-4 text-center"> <p class="popular-boost">Most Popular</p> </div> </div> <div class="row hidden-sm hidden-xs"> <div class="col-sm-4"> <div class="boost-tier-box shadow"> <div class="text-center price-box"> <p class="price-title"> <strong>&#160;Classic</strong> </p> <p class="price-lg"> <sup class="super-money">$</sup>29 </p> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Social Media Posts Are Within 24 Hours</i> </p> </div> <div class="table-responsive"> <table class="table"> <tbody class="boost-table-row"> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Social Media Posts </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Weekly Newsletter </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Project Listing </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Access to Dashboard Metrics </td> </tr> </tbody> </table> </div> <div class="boost-button boost-left-btn"> <a href="#modal-login" data-toggle="modal" class="btn btn-xl modal-link plan-submit">Purchase Classic</a> </div> </div> </div> <div class="col-sm-4"> <div class="boost-tier-box shadow"> <div class="text-center price-box"> <p class="price-title"> <strong>&#160;Premium</strong> </p> <p class="price-lg"> <sup class="super-money">$</sup>49 </p> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Social Media Posts Every 7 Days</i> </p> </div> <div class="table-responsive" style="background-color:white;"> <table class="table"> <tbody class="boost-table-row"> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Social Media Posts (x2) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Weekly Newsletter (x2) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Project Listing </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Access to Dashboard Metrics </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Image Banner (7 Days) </td> </tr> </tbody> </table> </div> <div class="boost-button boost-middle-btn"> <a href="#modal-login" data-toggle="modal" class="btn btn-xl modal-link plan-submit">Purchase Premium</a> </div> </div> </div> <div class="col-sm-4"> <div class="boost-tier-box shadow"> <div class="text-center price-box"> <p class="price-title"> <strong>&#160;Elite</strong> </p> <p class="price-lg"> <sup class="super-money">$</sup>69 </p> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Social Media Posts Every 7 Days (Custom Available)</i> </p> </div> <div class="table-responsive"> <table class="table"> <tbody class="boost-table-row"> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Social Media Posts (x4) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Weekly Newsletter (x4) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Project Listing </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Access to Dashboard Metrics </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Image Banner </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Landing Page Featured Project </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Media List (500+ Contacts) </td> </tr> </tbody> </table> </div> <div class="boost-button"> <a href="#modal-login" data-toggle="modal" class="btn btn-xl modal-link plan-submit">Purchase Elite</a> </div> </div> </div> </div> <div class="row"> <h2 class="landing-header text-center" style="margin-top:50px;">Social Media Marketing</h2> <div class="col-lg-offset-2 col-lg-8 col-md-12 text-left"> <p class="landing-description">Figuring out how to advertise through social media can be a full-time job. We want to simplify the process and do the work for you. To help you gain exposure for your project we will run your social media advertisement campaign based on a quick survey from you for FREE. We will not take a cut and 100% of your money will go back to your project. We will provide you with detailed metrics on every social media post. Please <a class="page-scroll home-links" href="#contact">contact us</a> with any concerns or questions. We know your money was earned through hard work and we want to make every dollar count. Start with a small amount and let us prove it’s worth. Our minimum Social Media Marketing purchase is $25.</p> </div> </div> <div class="row hidden-md hidden-sm hidden-xs"> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Start Small</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>25 </p> <p class="boost-small"> <i>This is Our Minimum Amount</i> </p> </div> </a> </div> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Gain Momentum</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>50 </p> <p class="boost-small"> <i>Middle of the Road Price</i> </p> </div> </a> </div> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Social Media Pro</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>75 </p> <p class="boost-small"> <i>Most Popular Package</i> </p> </div> </a> </div> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Backing Frenzy</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>100 </p> <p class="boost-small"> <i>Custom Amounts Are Avail.</i> </p> </div> </a> </div> </div> <div class="col-sm-12 text-center boost-warning hidden-md hidden-sm hidden-xs"> <p class="boost-small"> <i>*There is a 2.9% + 30&#162; transaction fee applied by our payment gateway that will be taken off your advertising budget.</i> </p> </div> </div> </section>', '', '', function(opts) {
 });
-riot.tag2('home-content-hero', '<header alt="Back the project, not the platform. Launch your project with Krowdspace today!"> <div class="container-header"> <div class="row"> <div class="col-lg-8 col-md-12 header-left text-left"> <h1 class="header-title hidden-xs">Back the Project, not the Platform</h1> <div class="container-top-header"> <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p> <p>Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p> <a href="#modal-login" data-toggle="modal" class="btn btn-landing">Submit a Project</a> </div> </div> <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px;"> <div class="col-sm-12 text-left containter-right-box"> <p class="text-left landing-text">Get extra rewards for backing the same crowdfunding projects you already have been or sign up and submit your own!</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" name="FNAME" id="FNAME" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" name="LNAME" id="LNAME" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input name="EMAIL" id="EMAIL" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" name="USERNAME" id="USERNAME" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input type="password" placeholder="New Password" id="PASSWORD" class="masked form-control placeholder-color" name="PASSWORD" required="required"> <div class="input-group-btn"> <button type="button" id="eye" class="btn btn-default"> <i class="fa fa-eye fa-lg"></i> </button> </div> </div> <div class="form-group"> <input type="text" name="KSUSER" id="KS_USER" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" name="IGUSER" id="IG_USER" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div> <input type="submit" class="landing-submit" name="submit" value="Join Krowdspace"> </div> </form> </div> </div> </div> </div> </header>', '', '', function(opts) {
-        this.submit = function(e){
-        e.preventDefault();
-        var FNAME = $("#FNAME").val(),
-        LNAME = $("#LNAME").val(),
-        EMAIL = $("#EMAIL").val(),
-        USERNAME = $("#USERNAME").val(),
-        PASSWORD = $("#PASSWORD").val(),
-        KSUSER = $("#KS_USER").val(),
-        IGUSER = $("#IG_USER").val();
-       	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then(
-            (res) =>
-			{
-                window.location.replace("/?success=1");
-            },
-            (err) =>
-			{
-                console.log(err);
-            });
-    	}.bind(this)
+riot.tag2('home-content-hero', '<header alt="Back the project, not the platform. Launch your project with Krowdspace today!"> <div class="container-header"> <div class="row"> <div class="col-lg-8 col-md-12 header-left text-left"> <h1 class="header-title hidden-xs">Back the Project, not the Platform</h1> <div class="container-top-header"> <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p> <p>Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p> <a href="#modal-login" data-toggle="modal" class="btn btn-landing">Submit a Project</a> </div> </div> <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px;"> <div class="col-sm-12 text-left containter-right-box"> <p class="text-left landing-text">Get extra rewards for backing the same crowdfunding projects you already have been or sign up and submit your own!</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye" class="btn btn-default"> <i class="fa fa-eye fa-lg"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div> <input type="submit" class="landing-submit" name="submit" value="Join Krowdspace"> </div> </form> </div> </div> </div> </div> </header>', '', '', function(opts) {
 
-        this.on('mount', function() {
-              function show() {
-        var p = document.getElementById('PASSWORD');
-        p.setAttribute('type', 'text');
-        }
-        function hide() {
-        var p = document.getElementById('PASSWORD');
-        p.setAttribute('type', 'password');
-        }
-        var pwShown = 0;
-        document.getElementById("eye").addEventListener("click", function () {
-        if (pwShown == 0) {
-            pwShown = 1;
-            show();
-        } else {
-            pwShown = 0;
-            hide();
-        }
-        }, false);
-            });
+
+this.submit = function(e)
+{
+	e.preventDefault();
+
+	var FNAME = this.refs.firstname.value;
+	var	LNAME = this.refs.lastname.value;
+	var	EMAIL = this.refs.email.value;
+	var	USERNAME = this.refs.username.value;
+	var	PASSWORD = this.refs.password.value;
+	var	KSUSER = this.refs.kickstarter_user.value;
+	var	IGUSER = this.refs.indiegogo_user.value;
+
+	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+	((res) =>
+	{
+		window.location.replace("/?success=1");
+	},
+	(err) =>
+	{
+		console.log(err);
+	});
+}.bind(this)
+
+this.on('mount', function()
+{
+	function show()
+	{
+		var pass = document.getElementById('PASSWORD');
+		pass.setAttribute('type', 'text');
+	}
+	function hide()
+	{
+		var pass = document.getElementById('PASSWORD');
+		pass.setAttribute('type', 'password');
+	}
+
+	var pwShown = 0;
+
+	document.getElementById("eye").addEventListener("click", function ()
+	{
+		if (pwShown == 0)
+		{
+			pwShown = 1;
+			show();
+		}
+		else
+		{
+			pwShown = 0;
+			hide();
+		}
+	}, false);
+});
 });
 riot.tag2('home-content-influence', '<section id="benefits"> <div class="container"> <div class="row"> <div class="col-md-6 text-left"> <p><strong>How is Krowdspace different?</strong></p> <p>Krowdspace was created on the idea of providing open and honest crowdfunding support. While promoting our own projects, we’ve experienced the broken promises of paid content and “guaranteed” success that didn’t show a return on investment. There was no proof that work had been done. Where had our money gone? Was our promotional investment helping our project gain momentum? We felt scammed. At Krowdspace, we provide transparent, detailed metrics on every purchased project boost. We are committed to the success of our community and providing easy to use and affordable tools to take your hard work to the next level. </p> <br> <br> <p><strong>What are some benefits of submitting a project to Krowdspace?</strong></p> <p>It is well known that Kickstarter and Indiegogo make up the majority of the crowdfunding marketplace. If you choose to host your project on one of these platforms you potentially miss out on accessing the large number of backers from the other’s site. At Krowdspace we pull projects from both sites into a unified platform. That means backers can make unbiased decisions about what projects they want to support without being swayed by where the project is being hosted. A larger audience will translate into more backers!</p> <br> <br> <p><strong>How important is Social Media advertising?</strong></p> <p>As of today, there are over 1.65 billion active social media accounts. 71% of people who have had a good social media experience with a given product are likely to recommend that brand. 20% of people who have recommended a brand are likely to make a product purchase. Navigating through advertising software and providing the right content to a targeted user base can be a challenge. At Krowdspace we do the heavy lifting for you. We can take your marketing budget and create a targeted campaign for you at a cost much lower than that offered by our competitors. 100% of your money will be used to advertise your project and not line our pocketbooks. We offer full transparency and will show you exactly where your money is being spent.</p> </div> <div class="col-md-6 text-left faq-sm"> <p><strong>How much does it cost to submit a project on Krowdspace?</strong></p> <p>Submitting a project to Krowdspace is free. As a Krowdspace project owner you receive access to our innovative dashboard which includes detailed metrics on your projects performance. All you need to get started is a live crowdfunding project on either Kickstarter or Indiegogo and a commitment to offer an exclusive reward to backers who fund your project through Krowdspace. Find out more about <a href="#modal-rewards" data-toggle="modal" class="home-links">backer rewards</a> or <a href="#modal-login" data-toggle="modal" class="home-links">submit a project here</a>.</p> <br> <br> <p><strong>What can I expect as a project backer when becoming a member at Krowdspace?</strong></p> <p>As a project backer on Krowdspace, rewards are instant. All you need to do is sign up and discover projects with our easy to use platform. Keep backing projects as you normally would, but now as a Krowdspace member, you earn exclusive extra rewards! It is as easy as that and there is no extra work on your end.</p> <br> <br> <p><strong>How can Krowdspace help my project become successful?</strong></p> <p>In addition to combining the two major crowdfunding communities into one unified platform, we also offer additional <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">project boosts</a> for campaigns. For a small fee, project boosts will provide promotional benefits such as being featured on our social media channels or becoming a highlighted project listing within high traffic areas of our site. Krowdspace will also give you free access to our Press Release template and combined with our detailed media list with over 500 contacts you can get the media exposure that is essential for every crowdfunding campaign.</p> </div> </div> </div> </section>', '', '', function(opts) {
 });
@@ -990,61 +904,103 @@ riot.tag2('home-modal-boosts', '<div id="modal-boost" class="modal fade"> <div c
         window.location.replace('/');
         }.bind(this)
 });
-riot.tag2('home-modal-login', '<div id="modal-login" class="modal fade"> <div class="krowdspace-modal col-lg-offset-1 col-md-5 col-md-offset-0 col-sm-7 col-sm-offset-2"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Login</p> </div> <div class="modal-body"> <div id="errorLog" class="alert alert-danger alert-dismissable fade in" style="display:none;"> <a href="#" class="close" onclick="$(\'.alert\').hide()">&times;</a> <strong>Error:</strong> Invalid username or password. </div> <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit="{loginSubmit}"> <div> <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" id="LOGINUSER" autocorrect="off" autocapitalize="off"> </div> <div class="col-xs-8 form-group"> <input type="password" class="form-control placeholder-color" placeholder="Password" value="" id="LOGINPASSWORD"> </div> <div class="col-xs-4 form-group" style="padding-left:10px;"> <button class="button-login" type="submit">Login</button> </div> <div class="col-xs-6 check-terms checkbox text-left" style="margin:10px 0px 0px 0px;"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 check-terms checkbox text-right" style="font-size: 14px; margin:10px 0px 0px 0px;"> <span>Forgot Password?</span> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="krowdspace-modal col-lg-5 col-md-6 hidden-sm hidden-xs"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit22}"> <div class="form-group form-split-right"> <input type="text" name="FNAME2" id="FNAME2" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" name="LNAME2" id="LNAME2" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input name="EMAIL2" id="EMAIL2" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" name="USERNAME2" id="USERNAME2" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input type="password" placeholder="New Password" id="PASSWORD2" class="masked form-control placeholder-color" name="PASSWORD2" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-default"> <i class="glyphicon glyphicon-eye-open"></i> </button> </div> </div> <div class="form-group"> <input type="text" name="KSUSER2" id="KSUSER2" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" name="IGUSER2" id="IGUSER2" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div> </div>', '', '', function(opts) {
-      this.on('mount', function() {
-                  var url = window.location.href;
-                  if (url.indexOf('?login=1') != -1) {
-                      $("#modal-login").modal('show');
-                      $("#modal-login").fadeIn(100);
-                  };
-              });
-	   this.close = function(e){
-        e.preventDefault();
-        window.location.replace('/');
-        }.bind(this)
+riot.tag2('home-modal-login', '<div id="modal-login" class="modal fade"> <div class="krowdspace-modal col-lg-offset-1 col-md-5 col-md-offset-0 col-sm-7 col-sm-offset-2"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Login</p> </div> <div class="modal-body"> <div id="errorLog" class="alert alert-danger alert-dismissable fade in" style="display:none;"> <a href="#" class="close" onclick="$(\'.alert\').hide()">&times;</a> <strong>Error:</strong> Invalid username or password. </div> <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit="{loginSubmit}"> <div> <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="username" autocorrect="off" autocapitalize="off"> </div> <div class="col-xs-8 form-group"> <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="password"> </div> <div class="col-xs-4 form-group" style="padding-left:10px;"> <button class="button-login" type="submit">Login</button> </div> <div class="col-xs-6 check-terms checkbox text-left" style="margin:10px 0px 0px 0px;"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 check-terms checkbox text-right" style="font-size: 14px; margin:10px 0px 0px 0px;"> <span>Forgot Password?</span> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="krowdspace-modal col-lg-5 col-md-6 hidden-sm hidden-xs"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit22}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input id="PASSWORD2" type="password" ref="password" placeholder="New Password" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-default"> <i class="glyphicon glyphicon-eye-open"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div> </div>', '', '', function(opts) {
 
-      this.loginSubmit = function(e){
-      e.preventDefault();
-      var errorMessage = $("#errorLog");
-      var USERNAME = $("#LOGINUSER").val(),
-      PASSWORD = $("#LOGINPASSWORD").val(),
-      STAYLOGGED = document.getElementById("checkbox").checked;
-          console.log(USERNAME);
-          console.log(PASSWORD);
-      console.log(STAYLOGGED);
-	        krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then(
-            (res) =>
-			{
-                this.logged_in = true;
-				window.location.replace("/account/dashboard.html");
-            },
-            (err) =>
-			{
-                console.log(err);
-				document.getElementById('errorLog').style.display = 'block';
-            });
-    }.bind(this)
 
-      this.on('mount', function() {
-            function show() {
-      var p = document.getElementById('PASSWORD2');
-      p.setAttribute('type', 'text');
-      }
-      function hide() {
-      var p = document.getElementById('PASSWORD2');
-      p.setAttribute('type', 'password');
-      }
-      var pwShown = 0;
-      document.getElementById("eye2").addEventListener("click", function () {
-      if (pwShown == 0) {
-          pwShown = 1;
-          show();
-      } else {
-          pwShown = 0;
-          hide();
-      }
-      }, false);
-          });
+this.on('mount', function()
+{
+	var url = window.location.href;
+
+	if (url.indexOf('?login=1') != -1)
+	{
+		$("#modal-login").modal('show');
+		$("#modal-login").fadeIn(100);
+	};
+});
+
+this.close = function(e)
+{
+	e.preventDefault();
+	window.location.replace('/');
+}.bind(this)
+
+this.on('mount', function()
+{
+	function show()
+	{
+		var pass = document.getElementById('PASSWORD2');
+		pass.setAttribute('type', 'text');
+	}
+	function hide()
+	{
+		var pass = document.getElementById('PASSWORD2');
+		pass.setAttribute('type', 'password');
+	}
+
+	var pwShown = 0;
+
+	document.getElementById("eye2").addEventListener("click", function ()
+	{
+		if (pwShown == 0)
+		{
+			pwShown = 1;
+			show();
+		}
+		else
+		{
+			pwShown = 0;
+			hide();
+		}
+	}, false);
+});
+
+this.loginSubmit = function(e)
+{
+
+	e.preventDefault();
+
+	var USERNAME = this.refs.username.value;
+	var PASSWORD = this.refs.password.value;
+
+	STAYLOGGED = true;
+
+	console.log(USERNAME);
+	console.log(PASSWORD);
+
+	krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+	((res) =>
+	{
+		this.logged_in = true;
+		this.update();
+	},
+	(err) =>
+	{
+		console.log(err);
+	});
+}.bind(this)
+
+this.submit = function(e)
+{
+	e.preventDefault();
+
+	var FNAME = this.refs.firstname.value;
+	var	LNAME = this.refs.lastname.value;
+	var	EMAIL = this.refs.email.value;
+	var	USERNAME = this.refs.username.value;
+	var	PASSWORD = this.refs.password.value;
+	var	KSUSER = this.refs.kickstarter_user.value;
+	var	IGUSER = this.refs.indiegogo_user.value;
+
+	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+	((res) =>
+	{
+		window.location.replace("/?success=1");
+	},
+	(err) =>
+	{
+		console.log(err);
+	});
+}.bind(this)
 });
 riot.tag2('home-modal-rewards', '<div id="modal-reward" class="modal fade"> <div class="krowdspace-modal col-sm-10 col-sm-offset-1"> <div id="modal" class="modal-content"> <div class="modal-header"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Reward Examples</p> </div> <div class="modal-body"> <p>For every project that is submitted to Krowdspace an exclusive reward will need to be provided for backers who support you through our platform. Krowdspace will look over each submission and the reward will need to be approved by our staff. This can take up to 24 hours. Make sure you can achieve these extra rewards when your project is successful. You will be obligated to fulfill any extra rewards listed on your Krowdspace project profile.</p> <p>One of the most common rewards is offering an extra 10%-20% off a backer’s tier pledge. You will need to make sure that it is clear for all backers to pledge a custom backing amount in the $1 "Thank You" area. They will need to put in the correct tier amount minus the 10%-20% you have chosen. Make sure to take into account your shipping costs. Another option would be to refund that 10%-20% on the tail end of your project after it has been completed. This is just an example amount and you can decide what reward amount or add-on you would like to offer. Here are some additional examples: </p> <ul class="example-reward"> <li>All Krowdspace members will get a free upgrade to the next tier automatically.</li> <li>Krowdspace members who back this item will get to choose from additional colors that won’t be available to anyone else.</li> <li>If you back our 3-item tier we will send you an extra item.</li> <li>All Krowdspace members will be given protective cases with your pledge item.</li> <li>All Krowdspace members will receive free shipping. Pledge the custom amount for the tier you would like minus the shipping cost.</li> <li>All Krowdspace members who back over $50 will receive another item free.</li> <li>All Krowdspace members will have continued access to Early Bird Pricing. Pledge the Early Bird Price in the custom pledge area.</li> <li>All Krowdspace members will receive 15% off their pledges. Select the custom pledge amount and put in the tier you would like minus 15%.</li> <li>All Krowdspace members will be given a custom engraved frisbee.</li> </ul> <p>Keep it simple and make it creative. People love to see that their pledge is helping your project come to life and personal touches make all the difference. if you have any questions about rewards please <a class="home-links" href="mailto:Mason@Krowdspace.com">contact us</a>.</p> <div class="text-center"> <button type="button" class="text-center modal-close" data-dismiss="modal" data-dismiss="modal">Close</button> </div> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div> </div>', '', '', function(opts) {
         this.on('mount', function() {

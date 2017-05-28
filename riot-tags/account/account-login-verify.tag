@@ -29,7 +29,7 @@
             </form>
             <div class="clearfix"></div>
         </div>
-    </div>
+    </div> 
 <script>
     loginSubmit(e) 
 	{

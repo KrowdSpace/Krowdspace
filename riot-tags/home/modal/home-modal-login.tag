@@ -12,10 +12,10 @@
                </div>
                <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit={ loginSubmit }>
                   <div>
-                     <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" id="LOGINUSER" autocorrect="off" autocapitalize="off">
+                     <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="username" autocorrect="off" autocapitalize="off">
                   </div>
                   <div class="col-xs-8 form-group">
-                     <input type="password" class="form-control placeholder-color" placeholder="Password" value="" id="LOGINPASSWORD">
+                     <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="password">
                   </div>
                   <div class="col-xs-4 form-group" style="padding-left:10px;">
                      <button class="button-login" type="submit">Login</button>
@@ -42,19 +42,19 @@
                <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p>
                <form class="form-vertical" id="commentForm" onsubmit={ submit22 }>
                   <div class="form-group form-split-right">
-                     <input type="text" name="FNAME2" id="FNAME2" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
+                     <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                   </div>
                   <div class="form-group form-split-left">
-                     <input type="text" name="LNAME2" id="LNAME2" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
+                     <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
                   </div>
                   <div class="form-group">
-                     <input type="email" name="EMAIL2" id="EMAIL2" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
+                     <input type="email" ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
                   </div>
                   <div class="form-group">
-                     <input type="username" name="USERNAME2" id="USERNAME2" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
+                     <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
                   </div>
                   <div class="input-group">
-                     <input type="password" placeholder="New Password" id="PASSWORD2" class="masked form-control placeholder-color" name="PASSWORD2" required="required">
+                     <input id="PASSWORD2" type="password" ref="password" placeholder="New Password"  class="masked form-control placeholder-color"  required="required">
                      <div class="input-group-btn">
                         <button type="button" id="eye2" class="btn btn-default">
                         <i class="glyphicon glyphicon-eye-open"></i>
@@ -62,10 +62,10 @@
                      </div>
                   </div>
                   <div class="form-group">
-                     <input type="text" name="KSUSER2" id="KSUSER2" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)">
+                     <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)">
                   </div>
                   <div class="form-group">
-                     <input type="text" name="IGUSER2" id="IGUSER2" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)">
+                     <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)">
                   </div>
                   <div class="check-terms checkbox text-left">
                      <label>
@@ -82,62 +82,110 @@
       </div>
 	  <div class="background-modal-close" data-dismiss="modal"> </div>
    </div>
-   <script>
-      this.on('mount', function() {
-                  var url = window.location.href;
-                  if (url.indexOf('?login=1') != -1) {
-                      $("#modal-login").modal('show');
-                      $("#modal-login").fadeIn(100);
-                  };
-              });
-	   close(e){
-        e.preventDefault();
-        window.location.replace('/');
-        }
-   </script>
-   <script>
-      loginSubmit(e){
-      e.preventDefault();
-      var errorMessage = $("#errorLog");
-      var USERNAME = $("#LOGINUSER").val(),
-      PASSWORD = $("#LOGINPASSWORD").val(),
-      STAYLOGGED = document.getElementById("checkbox").checked;// andre just added this. The old way was keeping it true.
-          console.log(USERNAME);
-          console.log(PASSWORD);
-      console.log(STAYLOGGED); 
-	        krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then(
-            (res) => 
-			{
-                this.logged_in = true;
-				window.location.replace("/account/dashboard.html"); 
-            },
-            (err) => 
-			{
-                console.log(err);
-				document.getElementById('errorLog').style.display = 'block';
-            });
-    }
-   </script>
-   <script>
-      this.on('mount', function() {
-            function show() {
-      var p = document.getElementById('PASSWORD2');
-      p.setAttribute('type', 'text');
-      }
-      function hide() {
-      var p = document.getElementById('PASSWORD2');
-      p.setAttribute('type', 'password');
-      }
-      var pwShown = 0;
-      document.getElementById("eye2").addEventListener("click", function () {
-      if (pwShown == 0) {
-          pwShown = 1;
-          show();
-      } else {
-          pwShown = 0;
-          hide();
-      }
-      }, false);
-          });
-   </script>
+<script>
+// --- Add a Unique URI and Fade In Modal --- //	   
+	   
+this.on('mount', function() 
+{
+	var url = window.location.href;
+	
+	if (url.indexOf('?login=1') != -1) 
+	{
+		$("#modal-login").modal('show');
+		$("#modal-login").fadeIn(100);
+	};
+});
+	   
+// --- Close Modal --- //
+	   
+close(e)
+{
+	e.preventDefault();
+	window.location.replace('/');
+}
+
+// --- Show Password and Hide Password --- //	   
+	   
+this.on('mount', function() 
+{
+	function show() 
+	{
+		var pass = document.getElementById('PASSWORD2');
+		pass.setAttribute('type', 'text');
+	}
+	function hide() 
+	{
+		var pass = document.getElementById('PASSWORD2');
+		pass.setAttribute('type', 'password');
+	}
+	
+	var pwShown = 0;
+	
+	document.getElementById("eye2").addEventListener("click", function () 
+	{
+		if (pwShown == 0) 
+		{
+			pwShown = 1;
+			show();
+		} 
+		else 
+		{
+			pwShown = 0;
+			hide();
+		}
+	}, false);
+});
+	   
+// --- Login Submit --- //
+
+loginSubmit(e) 
+{
+	
+	e.preventDefault();
+
+	var USERNAME = this.refs.username.value;
+	var PASSWORD = this.refs.password.value;
+
+	STAYLOGGED = true;
+
+	console.log(USERNAME);
+	console.log(PASSWORD);
+
+	krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+	((res) => 
+	{
+		this.logged_in = true;
+		this.update();
+	},
+	(err) => 
+	{
+		console.log(err);
+	});
+}
+	   
+// --- Register Submit --- //   
+	   
+submit(e)
+{
+	e.preventDefault();
+	
+	var FNAME = this.refs.firstname.value;
+	var	LNAME = this.refs.lastname.value;
+	var	EMAIL = this.refs.email.value;
+	var	USERNAME = this.refs.username.value;
+	var	PASSWORD = this.refs.password.value;
+	var	KSUSER = this.refs.kickstarter_user.value;
+	var	IGUSER = this.refs.indiegogo_user.value;
+	
+	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+	((res) => 
+	{
+		window.location.replace("/?success=1");
+	},
+	(err) => 
+	{
+		console.log(err);
+	});
+}    
+</script>
 </home-modal-login>
