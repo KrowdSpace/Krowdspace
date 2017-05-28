@@ -3,7 +3,7 @@
 		<account-navigation></account-navigation>
 	</div>
 	<div class="container-alt">
-		<div class="row dash-row-top dash-row-bottom"> 
+		<div class="row dash-row-top"> 
 			<div class="col-fixed-3">
 				<modify-content-image></modify-content-image>
 				<modify-content-reward></modify-content-reward>

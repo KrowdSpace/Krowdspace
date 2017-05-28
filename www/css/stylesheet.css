@@ -1492,6 +1492,7 @@ body {
 	padding-right:10px
 }
 .backer-reward-box {
+	border-top: 1px solid #3f434f;
 	border-right: 1px solid #3f434f;
 	border-left: 1px solid #3f434f;
 	border-bottom: 1px solid #3f434f;
@@ -1846,7 +1847,8 @@ body {
 }
 .project-content {
 	overflow:scroll; 
-	height:682.84px;
+	height:474.84px;
+	border-top:1px solid #3f434f;
 	border-right:1px solid #3f434f;
 	border-left:1px solid #3f434f;
 	border-bottom:1px solid #3f434f;
@@ -1862,7 +1864,7 @@ body {
 }
 .thumbnail-project-img {
 	border: 1px solid #3f434f;
-	margin-bottom: 15px;
+	margin-bottom: 0px;
 }
 .dash-project-description {
 	margin-top: 20px;
