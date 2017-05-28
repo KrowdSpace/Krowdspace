@@ -1,28 +1,19 @@
 <global-modal-about>
-    <div class="krowdspace-modal modal fade" id="modal-about" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
+    <div id="modal-about" class="modal fade">
+        <div class="krowdspace-modal col-sm-10 col-sm-offset-1">
+            <div id="modal" class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button>
+                    <p class="modal-heading">About Krowdspace</p>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-10 col-sm-offset-1 shadow user-modal">
-                            <div class="text-left modal-container">
-                                <p class="modal-heading">About Krowdspace</p>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <ul class="timeline">
+                <div class="modal-body">
+                    <ul class="timeline">
                                         <li>
                                             <div class="timeline-image">
                                                 <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
                                             </div>
                                             <div class="timeline-panel">
-                                                <div class="text-right user-title">
+                                                <div class="text-left">
                                                     <p class="about-heading"><strong>October 2016</strong></p>
                                                     <p class="about-heading"><strong>The Crowdfunding Experiment</strong></p>
                                                     <div class="text-left">
@@ -36,7 +27,7 @@
                                                 <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
                                             </div>
                                             <div class="timeline-panel">
-                                                <div class="text-left user-title">
+                                                <div class="text-left">
                                                     <p class="about-heading"><strong>November 2016</strong></p>
                                                     <p class="about-heading"><strong>The Seed is Planted</strong></p>
                                                     <div class="text-left">
@@ -50,7 +41,7 @@
                                                 <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
                                             </div>
                                             <div class="timeline-panel">
-                                                <div class="text-right user-title">
+                                                <div class="text-left">
                                                     <p class="about-heading"><strong>December 2016</strong></p>
                                                     <p class="about-heading"><strong>Krowdspace is Born</strong></p>
                                                     <div class="text-left">
@@ -64,7 +55,7 @@
                                                 <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
                                             </div>
                                             <div class="timeline-panel">
-                                                <div class="text-left user-title">
+                                                <div class="text-left">
                                                     <p class="about-heading"><strong>January 2017</strong></p>
                                                     <p class="about-heading"><strong>Building our Platform</strong></p>
                                                     <div class="text-left">
@@ -78,7 +69,7 @@
                                                 <img class="img-circle img-responsive" src="img/about/5.jpg" alt="">
                                             </div>
                                             <div class="timeline-panel">
-                                                <div class="text-right user-title">
+                                                <div class="text-left">
                                                     <p class="about-heading"><strong>March 2017</strong></p>
                                                     <p class="about-heading"><strong>Krowdspace Launch</strong></p>
                                                     <div class="text-left">
@@ -87,12 +78,12 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="timeline-inverted">
+                                        <li class="timeline-inverted" style="padding-bottom:25px;">
                                             <div class="timeline-image">
                                                 <img class="img-circle img-responsive" src="img/about/6.jpg" alt="">
                                             </div>
                                             <div class="timeline-panel">
-                                                <div class="text-left user-title">
+                                                <div class="text-left">
                                                     <p class="about-heading"><strong>Krowdspace</strong></p>
                                                     <div class="text-left">
                                                         <p>Krowdspace consists of a small team from the Seattle Washington area. Each one of us brings a special skill set to create something special. Support us on this journey and see how Krowdspace takes shape.</p>
@@ -101,12 +92,25 @@
                                             </div>
                                         </li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="text-center">
+                        <button type="button" class="text-center modal-close" data-dismiss="modal" style="margin-top: 0px;">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+		<div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
+    <script>
+        this.on('mount', function() {
+                    var url = window.location.href;
+                    if (url.indexOf('?about=1') != -1) {
+                        $("#modal-about").modal('show');
+                        $('#modal-about').fadeIn(100);
+                    };
+                });
+		close(e){
+        e.preventDefault();
+        window.location.replace('/');
+        }
+    </script>
 </global-modal-about>

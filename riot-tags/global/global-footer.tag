@@ -1,27 +1,28 @@
 <global-footer>
-    <footer class="alternate-background custom-footer">
-        <div class="container">
+    <footer class="alternate-background">
+        <div class="custom-footer">
+			<div class="container">
             <div class="row">
                 <div class="col-md-3 hidden-sm hidden-xs">
                     <p class="footer-text">
                         <strong>Quick Links</strong>
                     </p>
                     <ul class="text-left quicklinks">
-                        <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-link">About Krowdspace</a></li>
-                        <li><a class="page-scroll neutral-link" href="#project">Submit A Project</a></li>
-                        <li><a class="page-scroll neutral-link" href="#benefits">Our Benefits</a></li>
-                        <li><a class="page-scroll neutral-link" href="#boost">View Boosts</a></li>
-                        <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-link">Privacy Policy</a></li>
-                        <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-link">Terms of Service</a></li>
-                        <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-link">Giveaways</a></li>
-                        <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-link">Press Kit</a></li>
+                        <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li>
+                        <li><a class="page-scroll neutral-footer-link" href="#project">Submit A Project</a></li>
+                        <li><a class="page-scroll neutral-footer-link" href="#benefits">Our Benefits</a></li>
+                        <li><a class="page-scroll neutral-footer-link" href="#boost">View Boosts</a></li>
+                        <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li>
+                        <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li>
+                        <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li>
+                        <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-1 col-xs-10">
                     <p class="footer-text">
                         <strong>Follow Us On Social Media</strong>
                     </p>
-                    <p class="text-left">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways.
+                    <p class="text-left" style="color: #fff; ">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways.
                     </p>
                     <div class="text-left social-icons">
                         <a href="https://www.facebook.com/Krowdspaced" target="_blank">
@@ -75,6 +76,7 @@
                 <p class="copyright">&#169; Krowdspace 2017</p>
             </div>
         </div>
+		</div>
     </footer>
     <script>
     var self = this;
