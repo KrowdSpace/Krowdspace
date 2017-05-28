@@ -1,5 +1,5 @@
 <project-content-header>
-    <div class="row" style="padding-top: 30px;">
+    <div class="row" style="padding-top: 93px;">
         <div each= { exploreContent } style="display:flex;">
             <div class="col-sm-7">
                 <img class="img-responsive" src="{ projectImage}">

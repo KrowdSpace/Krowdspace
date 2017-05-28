@@ -19,6 +19,7 @@ route('/account/register', function()
 });
 route('/account/modify-project', function()
 {
+
 	riot.mount("#main","modify-project");
 });
 route('/account/verify/..', function()
@@ -31,4 +32,10 @@ route('/account/verify/..', function()
 });
 route('/explore/project', function(){
 	riot.mount("#main","project");
+});
+route('/api/facebook', function(slug, id){
+	riot.mount("#main","facebook");
+});
+route('/login',function(){
+	riot.mount("#main","account-login-verify");
 });

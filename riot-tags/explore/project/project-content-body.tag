@@ -1,5 +1,4 @@
 <project-content-body>
-    <div class="row" style="margin-top: 30px;">
     <div class="col-sm-9">
 	<div style=" border: 1px solid #cccccc; padding:30px; font-size: 14px;">
 <p>LALA BAHARI: THE FIRST CONVERTIBLE TOTE OF ITS KIND</p>
@@ -43,7 +42,6 @@
             </section>
       </aside>
         </div>
-   </div>
     <script type="text/javascript">
          this.on('mount', function() {
            $('.slider').slick({

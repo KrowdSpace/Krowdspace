@@ -1,6 +1,9 @@
 <dash-content-social>
         <div class="social-container">
-            <div class="social-header-dropdown">
+			<div style="position:absolute; top: -20px;">
+			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+			</div>
+            <div class="social-header-dropdown text-center">
 				<p class="social-title">SOCIAL MEDIA</p>
 				<ul class="add-dropdown text-right">
 					<li class="dropdown">
@@ -30,13 +33,15 @@
                 <p class="text-center social-content-title">FACEBOOK METRICS</p>
                 <div class="col-sm-6 social-metric-left">
                     <div class="divider-inside-right">
-                        <p class="text-center social-metric">435</p>
+						<!-- FACEBOOK IMPRESSION GO HERE -->
+                        <p id ="FBimpressions" class="text-center social-metric">0</p>
                         <p class="text-center social-content-sub">IMPRESSIONS</p>
                     </div>
                 </div>
                 <div class="col-sm-6 social-content-box-right">
-                    <p class="text-center social-metric">14</p>
-                    <p class="social-content-sub">TODAY<span class="social-content-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 4%</span></p>
+					<!-- FACEBOOK REACTIONS GO HERE -->
+                    <p id="FBreactions" class="text-center social-metric">0</p>
+                    <p class="text-center social-content-sub">REACTIONS</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -44,13 +49,15 @@
                 <p class="text-center social-content-title">TWITTER METRICS</p>
                 <div class="col-sm-6 social-metric-left">
                     <div class="divider-inside-right">
-                        <p class="text-center social-metric">235</p>
+						<!-- TWITTER REACH GOES HERE -->
+                        <p class="text-center social-metric">0</p>
                         <p class="text-center social-content-sub">IMPRESSIONS</p>
                     </div>
                 </div>
                 <div class="col-sm-6 social-content-box-right">
-                    <p class="text-center social-metric">10</p>
-                    <p class="social-content-sub">TODAY<span class="social-content-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 2%</span></p>
+					<!-- TWITTER LIKES GO HERE -->
+                    <p id ="" class="text-center social-metric">0</p>
+                    <p class="text-center social-content-sub">LIKES</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -58,13 +65,15 @@
                 <p class="text-center social-content-title">PINTEREST METRICS</p>
                 <div class="col-sm-6 social-metric-left">
                     <div class="divider-inside-right">
-                        <p class="text-center social-metric">331</p>
-                        <p class="text-center social-content-sub">IMPRESSIONS</p>
+						<!-- PINTEREST REPINS GO HERE -->
+                        <p id="pinterestPiePins" class="text-center social-metric">{ pinterest }</p>
+                        <p class="text-center social-content-sub">REPINS</p>
                     </div>
                 </div>
                 <div class="col-sm-6 social-content-box-right">
-                    <p class="text-center social-metric">7</p>
-                    <p class="social-content-sub">TODAY<span class="social-content-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 3%</span></p>
+					<!-- PINTEREST COMMENST GO HERE -->
+                    <p id ="pinterestComments" class="text-center social-metric">0</p>
+                    <p class="text-center social-content-sub">COMMENTS</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -72,35 +81,38 @@
                 <p class="text-center social-content-title">INSTAGRAM METRICS</p>
                 <div class="col-sm-6 social-metric-left">
                     <div class="divider-inside-right">
-                        <p class="text-center social-metric">188</p>
-                        <p class="text-center social-content-sub">IMPRESSIONS</p>
+						<!-- INSTAGRAM LIKES -->
+                        <p id="instagramLikes" class="text-center social-metric">0</p>
+                        <p class="text-center social-content-sub">POST LIKES</p>
                     </div>
                 </div>
                 <div class="col-sm-6 social-content-box-right">
-                    <p class="text-center social-metric">21</p>
-                    <p class="social-content-sub">TODAY<span class="social-content-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 3%</span></p>
+					<!-- INSTAGRAM COMMENTS -->
+                    <p id="instagramComments" class="text-center social-metric">0</p>
+                    <p class="text-center social-content-sub">COMMENTS</p>
                 </div>
 				<div class="clearfix"></div>
             </div>
         </div>
-    <script>
-this.on('mount', function() {
-	$('.single-item').slick({
-    	dots: false,
-        arrows:true,
-        infinite: true,
-	});
-    $('.single-item').on('afterChange', function(event, slick, currentSlide){   
-    	$('.slider-social').hide();
-    	$('.slider-social[data-id=' + (currentSlide + 1) + ']').show();
-    });	
-});
-    </script>
-	<script>
-        this.on('mount', function() {
-            $("#dropdown-image").click(function(){
-                $(".dropdown-menu").toggle(300);
-            });
+<script>
+    // Social Media Slider Controls
+    this.on('mount', function() {
+        $('.single-item').slick({
+            dots: false,
+            arrows: true,
+            infinite: true,
         });
-    </script>
+        $('.single-item').on('afterChange', function(event, slick, currentSlide) {
+            $('.slider-social').hide();
+            $('.slider-social[data-id=' + (currentSlide + 1) + ']').show();
+        });
+    });
+	
+    // Social Media Widget Dropdown Menu
+    this.on('mount', function() {
+        $("#dropdown-image").click(function() {
+            $(".dropdown-menu").toggle(300);
+        });
+    });
+</script>
 </dash-content-social>

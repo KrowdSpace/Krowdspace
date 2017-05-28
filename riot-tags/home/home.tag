@@ -16,10 +16,9 @@
     <home-modal-boosts></home-modal-boosts>
     <home-modal-login></home-modal-login>
     <home-modal-rewards></home-modal-rewards>
-    <home-modal-error></home-modal-error>
-    <home-modal-live></home-modal-live>
     <home-modal-verification></home-modal-verification>
-	<home-modal-register></home-modal-register>
+	<home-modal-submission></home-modal-submission>
+	<global-analytics-google id="UA-92584644-1"></global-analytics-google>
 
     <script>krowdspace.setDomain("api.dev.krowdspace.com");</script>
 <!-- <script>

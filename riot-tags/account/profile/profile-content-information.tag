@@ -1,54 +1,62 @@
 <profile-content-information>
-    <div>
-        <div class="col-sm-6 no-gutter">
-			<div class="text-center" style="padding: 20px 0px;">
-				<img class="text-center" style="width: 150px;" src="/img/content/reward-icon-sq.png">
-				<p class="social-title-alt" style="font-size:16px; margin: 10px 0px;">MASON HALSTEAD</p>
-				<p class="social-title-alt" style="font-size:14px;">MASON@KROWDSPACE.COM</p>
-			</div>
-			<div class="col-sm-4 text-center" style="padding: 30px 0px;">
-				<div class="divider-inside-right">
-			<p class="social-title-alt" style="padding-bottom:15px;">PROJECTS LAUNCHED</p>
+ 	<div class="col-sm-10 col-sm-offset-1 no-gutter profile-box">
+		<div class="col-sm-6 profile-image-box;">
+		<img class="img-responsive" src="/img/projects/bahari-bag.jpg">
+		</div>
+		<div class="col-sm-6 text-center no-gutter profile-info-box">
+		<p class="profile-edit-btn">EDIT PROFILE</p>
+		<p class="profile-name">MASON HALSTEAD</p>
+		<p class="profile-email">MASON@KROWDSPACE.COM</p>
+		<div class="col-sm-4 text-center">
+				<div class="divider-inside-right" style="padding: 0px;">
+			<p class="social-title-alt">PROJECTS LAUNCHED</p>
 				<p class="social-metric">1</p>
 				</div>
 			</div>
-			<div class="col-sm-4 text-center" style="padding: 30px 0px;">
+			<div class="col-sm-4 text-center">
 				<div class="divider-inside-right">
-					<p class="social-title-alt" style="padding-bottom:15px;">PROJECTS BACKED</p>
+					<p class="social-title-alt">PROJECTS BACKED</p>
 					<p class="social-metric">8</p>
 				</div>
 			</div>
-			<div class="col-sm-4 text-center" style="padding: 30px 0px;">
-			<p class="social-title-alt" style="padding-bottom:15px;">REWARD VALUE</p>
+			<div class="col-sm-4 text-center">
+			<p class="social-title-alt">REWARD VALUE</p>
 			<p class="social-metric">$300</p>
 			</div>
-			<div class="col-sm-6 text-center" style="padding: 30px 0px 0px 0px;">
-				<p class="social-title-alt">KICKSTARTER USERNAME</p>
-				<p>KrowdspaceKS</p>
+			<div class="col-sm-6 text-center">
+				<p class="social-title-alt profile-crowdfund">KICKSTARTER USERNAME</p>
+				<p class="crowdfund-username">KrowdspaceKS</p>
 			</div>
-			<div class="col-sm-6 text-center" style="padding: 30px 0px 0px 0px;">
-				<p class="social-title-alt">INDIEGOGO USERNAME</p>
-				<p>IndiegogoIG</p>
+			<div class="col-sm-6 text-center">
+				<p class="social-title-alt profile-crowdfund">INDIEGOGO USERNAME</p>
+				<p class="crowdfund-username">IndiegogoIG</p>
 			</div>
-			<div class="clearfix"></div>
 		</div>
-		<div class="col-sm-6 no-gutter">
-			<p class="social-title-alt text-center" style="font-size:16px; margin: 10px 0px; padding-top: 50px;">PROJECT BACKED ON KROWDSPACE</p>
-			<div class="col-sm-12" style="margin-top: 20px;">
-			<img class="img-responsive" src="/img/projects/bahari-bag.jpg" style="width: 175px; float: left; padding-right: 20px;">
-			<p style="font-size: 14px; line-height: 1;">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
-			<p style="font-size: 14px; line-height: 1;">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
-			</div>
-			<div class="col-sm-12" style="margin-top: 20px;">
-			<img class="img-responsive" src="/img/projects/bahari-bag.jpg" style="width: 175px; float: left; padding-right: 20px;">
-			<p style="font-size: 14px; line-height: 1;">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
-			<p style="font-size: 14px; line-height: 1;">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
-			</div>
-			<div class="col-sm-12" style="margin-top: 20px;">
-			<img class="img-responsive" src="/img/projects/bahari-bag.jpg" style="width: 175px; float: left; padding-right: 20px;">
-			<p style="font-size: 14px; line-height: 1;">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
-			<p style="font-size: 14px; line-height: 1;">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
-			</div>	
+	</div>
+
+		<div class="col-sm-10 col-sm-offset-1 no-gutter profile-project-box">
+			<p class="social-title-alt text-center profile-project-title">PROJECTS BACKED ON KROWDSPACE</p>
+		<div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box">
+			<img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg">
+			<p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
+			<p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
+		</div>
+			<div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box">
+			<img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg">
+			<p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
+			<p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
+		</div>
+			<div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box">
+			<img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg">
+			<p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
+			<p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
+		</div>
+			<div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box">
+			<img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg">
+			<p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p>
+			<p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p>
+		</div>
+			
         </div>
-    </div>
+
 </profile-content-information>

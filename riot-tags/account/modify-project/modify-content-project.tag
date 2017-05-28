@@ -6,32 +6,32 @@
         <div class="project-content">
             <div class="project-views-box no-gutter">
 				<div class="col-sm-6">
-					<p style="margin: 0px 0px 0px 0px; font-size: 14px; font-weight: 600;">PROJECT URL</p>
-					<p>Krowdspace.com/project?=1321432</p>
+					<p class="dash-project-description">PROJECT URL</p>
+					<p style="font-size: 14px;">Krowdspace.com/project?=1321432</p>
 				</div>
 				<div class="col-sm-6">
-					<a href="#" style="float:right;">
+					<a href="#" style="float:right; margin-top: 20px;">
                     	<span class="fa-stack fa-2x">
                     	<i class="fa fa-circle fa-stack-2x refresh-btn"></i>
                     	<i class="fa fa-refresh fa-stack-1x" style="color: #fff;"></i>
                     	</span>
 					</a>
 				<div class="col-sm-10 text-right">
-					<p style="margin: 0px; font-size: 14px; font-weight: 600;">REFRESH PROJECT CONTENT<br>LIMIT 3 PER DAY</p>
+					<p class="dash-project-description">REFRESH PROJECT CONTENT<br>LIMIT 3 PER DAY</p>
                 </div>
 				</div>
-                <div class="col-sm-12" style="margin-top: 20px;">
+                <div class="col-sm-12">
                     <p class="dash-project-description">PROJECT DESCRIPTION</p>
                     <p style="">Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism.</p>
                 </div>
-                <div class="col-sm-12 dash-project-content" style="margin-top: 20px;">
+                <div class="col-sm-12 dash-project-content">
                     <p class="dash-project-description">PROJECT CONTENT</p>
                     <p>My name is David Barron. I am originally from Africa and I feel a deep connection to the continent as my home. Every single bag is hand made in Kenya and we focus on providing jobs to the local communities of that area.</p>
                     <p>We started this company as a way to show the world the great artistry and craftsmanship Africans have to offer. Part of my personal commitment to the continent keeps me traveling to Kenya to meet and support Kenyan communities, marine preservation projects, orphanages and schools. Our aspiration here at Lala Bahari are to bring awareness and support to honorable foundations that help good people in the areas where our products are made so that we can assure you that you are buying a very responsibly sourced product from a responsible and compassionate company.</p>
                     <p>5% of our net profits from normal business operations (outside of this Kickstarter campaign) will be split amongst these 3 charities. Please check out the organizations above at LalaBahari.com and see the good work they are doing right now!</p>
                     <p>We hope that you support Lala Bahari so that we can grow the kind of business that brings great products from good people and does good things.</p>
                     <p>The Bahari Bag uses authentic materials to create an original product that helps keep local communities beautiful for you to explore! This bag becomes a charismatic tote in just three easy steps. It can be used as a blanket, shawl, beach wrap or pillow and when you are ready to leave turns into a beautiful bag. The Bahari Bag is perfect for the the beach, concerts, the park, traveling or even exploring your own town! The Bahari Bag measures 3' x 5'.</p>
-                    <ul style="font-size: 14px;">
+                    <ul>
                         The Bahari Bag features:
                         <li>A soft absorbent towel backing</li>
                         <li>Made from an authentic cotton kikoy</li>
