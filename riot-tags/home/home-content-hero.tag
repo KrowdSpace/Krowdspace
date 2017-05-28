@@ -72,6 +72,7 @@ submit(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
+      //  console.log('success');
 		window.location.replace("/?success=1");
 	},
 	(err) => 

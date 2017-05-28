@@ -165,7 +165,7 @@ loginSubmit(e)
 	   
 // --- Register Submit --- //   
 	   
-submit(e)
+submit22(e)
 {
 	e.preventDefault();
 	
