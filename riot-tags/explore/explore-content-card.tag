@@ -2,14 +2,13 @@
     <div class="row">
         <div each= { exploreCard } class="col-sm-4">
             <div class="no-gutter explore-container">
-                <a href="{ imageURL }"><img class="img-responsive" src="{ image }"></a>
+                <a href="{ imageURL }"><img class="img-responsive" src="{ image }" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a>
                 <span class="fa-stack fa-lg explore-feature-icon" style="display:{ featuredIcon }">
                 <i class="fa fa-circle fa-stack-xx text-primary"></i>
                 <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
                 </span>
-                <div style="height: 85px;">
+                <div style="height: 35px; ">
                     <p class="card-text-alt"><strong>{ projectTitle }</strong></p>
-                    <p class="card-text-alt explore-card-description" style="margin-top:10px;">{ projectDescription }</p>
                 </div>
                 <p class="card-text-alt explore-reward"><strong>Reward:</strong> { reward }</p>
                 <div class="col-sm-6">

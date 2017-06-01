@@ -1078,10 +1078,10 @@ body {
 }
 .explore-container {
     position:relative; 
-    border: 1px solid #dcdedd; 
-    margin: 40px 0px;
-    -webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.2); 
-    -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+    border: 1px solid #3f434f; 
+    margin: 40px 0px 0px 0px;
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 .explore-feature-icon {
     position:absolute !important; 
@@ -1106,7 +1106,7 @@ body {
 .card-text-alt {
         font-family: "Montserrat","Helvetica Neue";
         font-size:13px;
-        margin: 5px 8px;
+        margin: 5px 15px;
         line-height: 1.1;
 }
 .verify-header {
@@ -1119,7 +1119,7 @@ body {
     font-size: 24px; 
 }
 .register-confirmation {
-    padding-top: 50px;
+    padding-top: 15px;
     font-size: 24px; 
 }
 .verify-text {
@@ -1697,18 +1697,19 @@ body {
 .dash-boost-row {
 	margin-top:20px; 
 	padding-top:20px; 
-	border-top:1px solid #cccccc;
+	border-top:1px solid #3f434f;
 }
 .boost-row-bottom {
 	margin-top:20px;
 	margin-bottom:20px; 
 	padding-top:20px; 
-	border-top:1px solid #cccccc;
+	border-top:1px solid #3f434f;
 }
 .boost-package-header {
 	font-size: 16px; 
 	background-color: #fed136; 
 	color: #fff;
+    border-bottom: 1px solid #3f434f;
 	font-weight: 600;
 	margin: 0px;
 	padding: 3px 15px;
@@ -1740,7 +1741,7 @@ body {
 }
 .featured-price-box {
 	height: 63px; 
-	margin-left: 57px; 
+	margin-left: 75px; 
 	margin-bottom: 33px; 
 	width: 75px;
 }
@@ -1757,8 +1758,8 @@ body {
 	margin-top: 15px;
 }
 .package-title-box {
-	border-right: 1px solid #cccccc;
-	border-bottom: 1px solid #cccccc;
+	border-right: 1px solid #3f434f;
+	border-bottom: 1px solid #3f434f;
 	padding: 15px 0px;
 }
 .package-title {
@@ -1780,7 +1781,7 @@ body {
 	padding-left: 40px !important; 
 	padding-bottom: 10px;
 	margin-bottom: 0px;
-	border-right: 1px solid #cccccc;  
+	border-right: 1px solid #3f434f;  
 }
 .package-icon {
 	font-size: 20px;
@@ -1789,8 +1790,8 @@ body {
 	font-size: 14px;
 }
 .package-purchase-box {
-	border-right: 1px solid #cccccc; 
-	border-bottom: 1px solid #cccccc; 
+	border-right: 1px solid #3f434f; 
+	border-bottom: 1px solid #3f434f; 
 	padding-top: 20px; 
 	padding-bottom: 15px;
 }
@@ -1846,10 +1847,7 @@ body {
 }
 .project-content {
 	overflow:scroll; 
-	height:682.84px;
-	border-right:1px solid #3f434f;
-	border-left:1px solid #3f434f;
-	border-bottom:1px solid #3f434f;
+	height:554.28px;
 	background-color: #fff;
 }
 .project-reward-value {
@@ -2050,7 +2048,7 @@ span.round-tab:hover {
 	margin-bottom: 20px;
 }
 .dash-row-top {
-	padding-top: 35px;
+	padding-top: 50px;
 }
 .dash-row-bottom {
 	padding-bottom: 50px;
@@ -2060,9 +2058,12 @@ span.round-tab:hover {
 }
 .profile-box {
 	margin-top: 50px; 
-	margin-bottom: 50px; 
+	margin-bottom: 15px; 
 	padding: 0px; 
 	border:1px solid #3f434f;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 .profile-image-box {
 	border-right:1px solid #3f434f;
@@ -2106,6 +2107,9 @@ span.round-tab:hover {
 	margin-bottom: 50px; 
 	padding: 20px; 
 	border:1px solid #3f434f;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
 }
 .profile-project-title {
 	margin-bottom: 20px; 

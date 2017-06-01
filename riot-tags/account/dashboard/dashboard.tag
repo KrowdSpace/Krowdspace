@@ -3,12 +3,13 @@
 		<account-navigation></account-navigation>
 	</div>
 	<div class="container-alt">
-		<div class="row dash-row-top dash-row-bottom"> 
-			<div class="col-fixed-3">
+		<div class="row dash-row-top"> 
+			<div class="col-fixed-4">
 				<modify-content-image></modify-content-image>
 				<modify-content-reward></modify-content-reward>
+				<modify-content-category></modify-content-category>
 			</div>
-			<div class="col-fixed-9 modify-content-row">
+			<div class="col-fixed-8 modify-content-row">
 				<modify-content-project></modify-content-project>
 			</div>
         </div>

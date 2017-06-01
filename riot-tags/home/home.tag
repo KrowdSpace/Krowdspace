@@ -8,11 +8,6 @@
     <home-content-boosts></home-content-boosts>
     <home-slider-clients></home-slider-clients>
     <global-footer></global-footer>
-    <global-modal-about></global-modal-about>
-	<global-modal-privacy></global-modal-privacy>
-    <global-modal-press></global-modal-press>
-    <global-modal-giveaway></global-modal-giveaway>
-	<global-modal-service></global-modal-service>
     <home-modal-boosts></home-modal-boosts>
     <home-modal-login></home-modal-login>
     <home-modal-rewards></home-modal-rewards>

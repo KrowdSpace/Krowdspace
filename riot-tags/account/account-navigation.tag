@@ -16,7 +16,7 @@
                         <a class="page-scroll explore-scroll" href="/#explore"><span class="compass-none">Explore</a>
                     </li>
 					<li>
-                        <a class="page-scroll explore-scroll" href="/#account/boosts">Boosts</a>
+                        <a class="page-scroll explore-scroll" href="/#account/boosts">Boosts Project</a>
                     </li>
                 </ul>
                 <img class="logo-float" src="/../img/krowdspace-explore.png" style="width:55px;">

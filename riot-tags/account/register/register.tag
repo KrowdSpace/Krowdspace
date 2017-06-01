@@ -2,7 +2,7 @@
  <div class="row">
             <account-navigation></account-navigation>
         </div>
-        <div class="container">
+        <div class="container" style="margin-bottom: 50px;">
             <register-content-signup></register-content-signup>
             <register-content-reward></register-content-reward> 
         </div>

@@ -17,9 +17,8 @@ route('/account/register', function()
 {
 	riot.mount("#main","register");
 });
-route('/account/modify-project', function()
+route('/account/boosts', function()
 {
-
 	riot.mount("#main","modify-project");
 });
 route('/account/verify/..', function()

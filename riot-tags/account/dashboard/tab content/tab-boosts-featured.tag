@@ -30,7 +30,7 @@
                     <label class="featured-radio"><input type="radio" name="optradio"></label>
                     <p class="featured-price">$15</p>
                 </div>
-                <div class="featured-price-box" style="width: 84px; margin-bottom: 0px;">
+                <div class="featured-price-box" style="margin-bottom: 0px;">
                     <label class="featured-radio"><input type="radio" name="optradio"></label>
                     <p class="featured-price">$20</p>
                 </div>
