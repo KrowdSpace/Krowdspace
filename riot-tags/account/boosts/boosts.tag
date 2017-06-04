@@ -4,7 +4,7 @@
 	</style>
     <boosts-page></boosts-page>
     <script>	
-        krowdspace.users.check().then((res)=>
+        krowdspace.v1.check().then((res)=>
             {
                 logged_in = true;
                 this.update();

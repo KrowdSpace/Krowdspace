@@ -5,7 +5,7 @@
 		</style>
 	</admin-page>
 	<script>	
-		krowdspace.users.check().then((res)=>
+		krowdspace.v1.check().then((res)=>
 			{
 				logged_in = true;
 				this.update();
