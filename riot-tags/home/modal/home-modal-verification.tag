@@ -13,12 +13,14 @@
 		<div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
     <script>
-        this.on('mount', function() {
-                    var url = window.location.href;
-                    if (url.indexOf('?verify=1') != -1) {
-        $("#modal-verification").modal('show');
-        $('#modal-verification').fadeIn(100);
-                    };
-                });
+        this.on('mount', function() 
+        {
+            var url = window.location.href;
+            if (url.indexOf('?verify=1') != -1) 
+            {
+                $("#modal-verification").modal('show');
+                $('#modal-verification').fadeIn(100);
+            };
+        });
     </script>
 </home-modal-verification>

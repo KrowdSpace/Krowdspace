@@ -105,10 +105,12 @@
         <div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
     <script>
-        this.on('mount', function() {
-			var url = window.location.href;
-			if (url.indexOf('?service-terms=1') != -1) {
-				$("#modal-service-terms").modal('show');
+        this.on('mount', function() 
+        {
+		    var url = window.location.href;
+			if (url.indexOf('?service-terms=1') != -1) 
+            {
+			    $("#modal-service-terms").modal('show');
 				$('#modal-service-terms').fadeIn(100);
 			};
         });

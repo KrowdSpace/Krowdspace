@@ -1,18 +1,18 @@
 <explore-slider-hero>
-			<div class="autoplay slider explore-header" style="padding-top: 57px; margin-bottom: 40px;">
-				<div each= { indexProject } class="slick-image" style="position:relative">
-				    <img src="{ image }" alt="{ imageAlt }">
-                    <div style="position:absolute;top: 0;left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, .3)">
-                        <div class="col-sm-9 explore-feature-left">
-                            <p class="explore-title">{ projectTitle }</p>
-                            <p class="explore-description">{ projectDescription }</p>
-                        </div>
-                        <div class="col-sm-3 explore-feature-right text-center">
-                            <a href="{ imageURL }"><span class="learn-more">Learn More</span></a>
-                        </div>
-                    </div>
+    <div class="autoplay slider explore-header" style="padding-top: 57px; margin-bottom: 40px;">
+        <div each= { indexProject } class="slick-image" style="position:relative">
+            <img src="{ image }" alt="{ imageAlt }">
+            <div style="position:absolute;top: 0;left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, .3)">
+                <div class="col-sm-9 explore-feature-left">
+                    <p class="explore-title">{ projectTitle }</p>
+                    <p class="explore-description">{ projectDescription }</p>
+                </div>
+                <div class="col-sm-3 explore-feature-right text-center">
+                    <a href="{ imageURL }"><span class="learn-more">Learn More</span></a>
                 </div>
             </div>
+        </div>
+    </div>
     <script type="text/javascript">
         this.indexProject = [
         { image:"/img/projects/bahari-bag.jpg",
@@ -41,7 +41,8 @@
         ]
     </script>
     <script type="text/javascript">
-        this.on('mount', function() {
+        this.on('mount', function() 
+        {
           $('.autoplay').slick({
           arrows: false,
           slidesToShow: 3,
