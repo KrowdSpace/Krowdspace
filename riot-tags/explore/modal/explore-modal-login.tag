@@ -149,12 +149,12 @@ submit3(e)
 	e.preventDefault();
 	
 	var FNAME = this.refs.firstname.value;
-	var	LNAME = this.refs.lastname.value;
-	var	EMAIL = this.refs.email.value;
-	var	USERNAME = this.refs.username.value;
-	var	PASSWORD = this.refs.password.value;
-	var	KSUSER = this.refs.kickstarter_user.value;
-	var	IGUSER = this.refs.indiegogo_user.value;
+            LNAME = this.refs.lastname.value;
+	    EMAIL = this.refs.email.value;
+	    USERNAME = this.refs.username.value;
+	    PASSWORD = this.refs.password.value;
+	    KSUSER = this.refs.kickstarter_user.value;
+	    IGUSER = this.refs.indiegogo_user.value;
 	
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
@@ -167,12 +167,12 @@ submit3(e)
 		console.log(err);
 	});
 }    
-                krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
                 ((res) => 
                 {
                         this.logged_in = true;
                         this.update();
-                console.log(res);
+                         console.log(res);
                 $('#modal-explore-login').modal('hide');
                 },
                 (err) => 
@@ -180,32 +180,6 @@ submit3(e)
                         console.log(err);
                 $("#errorLog").show();
                 });
-        }
-                
-        // --- Register Submit --- //   
-                
-        submit3(e)
-        {
-                e.preventDefault();
-                
-                var FNAME = this.refs.firstname.value,
-                    LNAME = this.refs.lastname.value,
-                    EMAIL = this.refs.email.value,
-                    USERNAME = this.refs.username.value,
-                    PASSWORD = this.refs.password.value,
-                    KSUSER = this.refs.kickstarter_user.value,
-                    IGUSER = this.refs.indiegogo_user.value;
-                
-                krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
-                ((res) => 
-                {
-                        $('#modal-explore-login').modal('hide');
-                        $('#modal-submission').modal('show');
-                },
-                (err) => 
-                {
-                        console.log(err);
-                });
-        }    
+                  
 </script>
 </explore-modal-login>

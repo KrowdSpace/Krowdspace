@@ -92,7 +92,7 @@ riot.tag2('dashboard', '<dashboard-page show="{logged_in}"></dashboard-page>', '
 		});
 });
 
-riot.tag2('login-account', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-1 col-md-5 col-md-offset-0 col-sm-7 col-sm-offset-2"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Login</p> </div> <div class="modal-body"> <div id="errorLog" class="alert alert-danger alert-dismissable fade in" style="display:none;"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit="{loginSubmit}"> <div> <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> </div> <div class="col-xs-8 form-group"> <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="passwordlogin"> </div> <div class="col-xs-4 form-group" style="padding-left:10px;"> <button class="button-login" type="submit">Login</button> </div> <div class="col-xs-6 check-terms checkbox text-left" style="margin:10px 0px 0px 0px;"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 check-terms checkbox text-right" style="margin:10px 0px 0px 0px;"> <p>Forgot Password?</p> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="krowdspace-modal col-lg-5 col-md-6 hidden-sm hidden-xs"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input id="PASSWORD2" type="password" ref="password" placeholder="New Password" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-default"> <i class="glyphicon glyphicon-eye-open"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div> </div> ======= krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then ((res) => {this.logged_in = true;                 this.update();                 $(\'#modal-login\').modal(\'hide\');                 window.location.replace(⁗/#account/dashboard⁗);}, (err) => {console.log(err);                 $(⁗#errorLog⁗).show();}); } // --- Register Submit --- // submit(e) {e.preventDefault();             var FNAME = this.refs.firstname.value,             	LNAME = this.refs.lastname.value,             	EMAIL = this.refs.email.value,             	USERNAME = this.refs.username.value,             	PASSWORD = this.refs.password.value,             	KSUSER = this.refs.kickstarter_user.value,             	IGUSER = this.refs.indiegogo_user.value;             krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then             ((res) =>             {                 window.location.replace(⁗/#account/success⁗);             },             (err) =>             {                 console.log(err);             });} </script>', '', '', function(opts) {
+riot.tag2('login-account', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-1 col-md-5 col-md-offset-0 col-sm-7 col-sm-offset-2"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Login</p> </div> <div class="modal-body"> <div id="errorLog" class="alert alert-danger alert-dismissable fade in" style="display:none;"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit="{loginSubmit}"> <div> <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> </div> <div class="col-xs-8 form-group"> <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="passwordlogin"> </div> <div class="col-xs-4 form-group" style="padding-left:10px;"> <button class="button-login" type="submit">Login</button> </div> <div class="col-xs-6 check-terms checkbox text-left" style="margin:10px 0px 0px 0px;"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 check-terms checkbox text-right" style="margin:10px 0px 0px 0px;"> <p>Forgot Password?</p> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="krowdspace-modal col-lg-5 col-md-6 hidden-sm hidden-xs"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input id="PASSWORD2" type="password" ref="password" placeholder="New Password" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-default"> <i class="glyphicon glyphicon-eye-open"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
 
 
         this.on('mount', function()
@@ -129,14 +129,13 @@ riot.tag2('login-account', '<div class="container login-check-container"> <div c
         {
 
             e.preventDefault();
+
             var USERNAME = this.refs.usernamelogin.value,
                 PASSWORD = this.refs.passwordlogin.value;
                 STAYLOGGED = true;
 
             console.log(USERNAME);
             console.log(PASSWORD);
-
-
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) =>
 	{
@@ -174,7 +173,6 @@ this.submit = function(e)
 		console.log(err);
 	});
 }.bind(this)
-
 });
 riot.tag2('profile-content-information', '<div class="col-sm-10 col-sm-offset-1 no-gutter profile-box"> <div class="col-sm-6 profile-image-box;"> <img class="img-responsive" src="/img/projects/bahari-bag.jpg"> </div> <div class="col-sm-6 text-center no-gutter profile-info-box" style="position: relative;"> <span class="fa-stack fa-lg social-btn" style="position: absolute; top: 5px; right: 5px;"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> <p class="profile-name">MASON HALSTEAD</p> <p class="profile-email">MASON@KROWDSPACE.COM</p> <div class="col-sm-4 text-center"> <div class="divider-inside-right" style="padding: 0px;"> <p class="social-title-alt">PROJECTS LAUNCHED</p> <p class="social-metric">1</p> </div> </div> <div class="col-sm-4 text-center"> <div class="divider-inside-right"> <p class="social-title-alt">PROJECTS BACKED</p> <p class="social-metric">8</p> </div> </div> <div class="col-sm-4 text-center"> <p class="social-title-alt">REWARD VALUE</p> <p class="social-metric">$300</p> </div> <div class="col-sm-6 text-center"> <p class="social-title-alt profile-crowdfund">KICKSTARTER USERNAME</p> <p class="crowdfund-username">KrowdspaceKS</p> </div> <div class="col-sm-6 text-center"> <p class="social-title-alt profile-crowdfund">INDIEGOGO USERNAME</p> <p class="crowdfund-username">IndiegogoIG</p> </div> </div> </div> <div class="col-sm-10 col-sm-offset-1 no-gutter profile-project-box"> <p class="social-title-alt text-center profile-project-title">PROJECTS BACKED ON KROWDSPACE</p> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> <div class="col-sm-8 col-sm-offset-2 no-gutter profile-reward-box"> <img class="img-responsive profile-reward-image" src="/img/projects/bahari-bag.jpg"> <p class="profile-reward-text">Lala Bahari: The First Convertible Tote Bag of its Kind</p> <p class="profile-reward-text">Reward: All pledges over $50 will receive a Bahari Sarong and Scarf.</p> </div> </div>', '', '', function(opts) {
 });
@@ -197,6 +195,7 @@ riot.tag2('profile', '<profile-page show="{logged_in}"></profile-page>', 'profil
 riot.tag2('register-content-reward', '<div class="row"> <div class="col-sm-10 col-sm-offset-1 no-gutter profile-box" style="padding: 15px;"> <p class="text-left register-project-title project-reward">PROJECT REWARDS</p> <div class="text-left"> <p class="project-reward">For every project that is submitted to Krowdspace an exclusive reward will need to be provided for backers who support you through our platform. Krowdspace will look over each submission and the reward will need to be approved by our staff. This can take up to 24 hours. Make sure you can achieve these extra rewards when your project is successful. You will be obligated to fulfill any extra rewards listed on your Krowdspace project profile.</p> <p class="project-reward">One of the most common rewards is offering an extra 10%-20% off a backer’s tier pledge. You will need to make sure that it is clear for all backers to pledge a custom backing amount in the $1 "Thank You" area. They will need to put in the correct tier amount minus the 10%-20% you have chosen. Make sure to take into account your shipping costs. Another option would be to refund that 10%-20% on the tail end of your project after it has been completed. This is just an example amount and you can decide what reward amount or add-on you would like to offer. Here are some additional examples: </p> <ul class="project-reward project-list"> <li>All Krowdspace members will get a free upgrade to the next tier automatically.</li> <li>Krowdspace members who back this item will get to choose from additional colors that won’t be available to anyone else.</li> <li>If you back our 3-item tier we will send you an extra item.</li> <li>All Krowdspace members will be given protective cases with your pledge item.</li> <li>All Krowdspace members will receive free shipping. Pledge the custom amount for the tier you would like minus the shipping cost.</li> <li>All Krowdspace members who back over $50 will receive another item free.</li> <li>All Krowdspace members will have continued access to Early Bird Pricing. Pledge the Early Bird Price in the custom pledge area.</li> <li>All Krowdspace members will receive 15% off their pledges. Select the custom pledge amount and put in the tier you would like minus 15%.</li> <li>All Krowdspace members will be given a custom engraved frisbee.</li> </ul> <p>Keep it simple and make it creative. People love to see that their pledge is helping your project come to life and personal touches make all the difference. if you have any questions about rewards please <a class="home-links" href="mailto:Mason@Krowdspace.com">contact us</a>.</p> </div> </div> </div>', '', '', function(opts) {
 });
 riot.tag2('register-content-signup', '<div class="row"> <div class="col-sm-10 col-sm-offset-1 no-gutter profile-box"> <p class="text-center register-confirmation">Register your crowdfunding campaign and accelerate your growth today!</p> <div class="wizard"> <div class="wizard-inner"> <div class="connecting-line"></div> <ul class="nav nav-tabs" role="tablist"> <li role="presentation" class="active"> <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1"> <span class="round-tab"> <img class="img-responsive" src="/img/content/submit-icon-sq.png"> </span> </a> </li> <li role="presentation" class="disabled"> <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2"> <span class="round-tab"> <img class="img-responsive" src="/img/content/reward-icon-sq.png"> </span> </a> </li> <li role="presentation" class="disabled"> <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3"> <span class="round-tab"> <img class="img-responsive" src="/img/content/image-icon-sq.png"> </span> </a> </li> <li role="presentation" class="disabled"> <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete"> <span class="round-tab"> <img class="img-responsive" src="/img/content/backer-icon-sq.png"> </span> </a> </li> </ul> </div> <div class="col-sm-8 col-sm-offset-2"> <form role="form" onsubmit="{submit}"> <div class="tab-content tab-content-wizard"> <div class="tab-pane active" role="tabpanel" id="step1"> <p class="text-left">Do you own this crowdfunding project?</p> <div class="form-group"> <select class="form-control" ref="pvalid" required="required" aria-required="true"> <option disabled selected value>Select Yes or No</option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> <p class="text-left project-questions">What category best fits your project?</p> <div class="form-group"> <select class="form-control" ref="category" required="required" aria-required="true"> <option disabled selected value>Choose a Category</option> <option value="art">Art</option> <option value="design">Design</option> <option value="film">Film</option> <option value="food">Food</option> <option value="music">Music</option> <option value="photography">Photography</option> <option value="technology">Technology</option> <option value="videogames">Video Games</option> <option value="publishing">Publishing</option> </select> </div> <p class="text-left project-questions">Please provide your live crowdfunding project url.</p> <div class="form-group"> <input type="url" ref="projecturl" class="form-control placeholder-color" placeholder="https://" required="required" aria-required="true" aria-invalid="true"> </div> <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;"> <li style="padding: 0px;"><button type="button" class="btn-register next-step">continue</button></li> </ul> </div> <div class="tab-pane" role="tabpanel" id="step2"> <p class="text-left">Please provide an exclusive reward for our Krowdspace users. see examples</p> <div class="form-group"> <input ref="reward" class="form-control placeholder-color" placeholder="Backer Rewards" required="required" aria-required="true" aria-invalid="true"> </div> <p class="text-left project-questions">Does your reward have a value or is it a discount?</p> <div class="form-group"> <select class="form-control" ref="rewardoption" required="required" aria-required="true"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <p class="text-left project-questions">Please provide the dollar amount or discount percentage of the reward.</p> <div class="form-group"> <input ref="rewardvalue" class="form-control placeholder-color" placeholder="Estimated Value or Discount Percentage" required="required" aria-required="true" aria-invalid="true"> </div> <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;"> <li style="padding: 0px; margin-right: 20px;"><button type="button" class="btn-register prev-step">Previous</button></li> <li style="padding: 0px;"><button type="button" class="btn-register next-step">continue</button></li> </ul> </div> <div class="tab-pane" role="tabpanel" id="step3"> <div class="imageupload panel panel-default"> <div class="panel-image clearfix no-gutter"> <p class="text-left image-upload-text">Please upload a project image that represents your campaign as a whole. All images must be 1225 x 700px.</p> </div> <div class="file-tab panel-body"> <label class="btn btn-default btn-file"> <span style="image-upload-btn">Upload From Desktop</span> <input type="file" name="image-file" class="thumbnail-tooltip" id="fileUpload" required="required"> </label> <button type="button" class="btn btn-default">Remove</button> </div> <div class="url-tab panel-body"> <div class="input-group"> <input type="text" class="form-control hasclear placeholder-color" placeholder="Image URL"> <div class="input-group-btn"> <button type="button" class="btn btn-default">Submit</button> </div> </div> <input type="hidden" name="image-url" required="required"> </div> <div class="clearfix"></div> </div> <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;"> <li style="padding: 0px; margin-right: 20px;"><button type="button" class="btn-register prev-step">Previous</button></li> <li style="padding: 0px;"><button type="button" class="btn-register next-step">continue</button></li> </ul> </div> <div class="tab-pane" role="tabpanel" id="complete"> <p class="text-left register-project-title">TERMS AND CONDITIONS</p> <p class="text-left">Krowdspace is not liable for any damages or losses related to using our services.</p> <p class="text-left">Project owners are legally bound to fullfill any rewards promised to the Krowdspace user.</p> <p class="text-left">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p> <p class="text-left">Project owners are obligated to respond promptly and truthfully to all questions posed to them by Krowdspace or Krowdspace users.</p> <p class="text-left">You have read through and understand the terms and conditions of Krowdspace.</p> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a class="modal-link" href="#">Krowdspace terms</a> </label> </div> <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;"> <li style="padding: 0px; margin-right: 20px;"><button type="button" class="btn-register prev-step">Previous</button></li> <li style="padding: 0px;"><button type="submit" name="submit" class="btn-register btn-info-full next-step">Submit Project</button></li> </ul> </div> <div class="clearfix"></div> </div> </form> </div> </div> </div> </div>', '', '', function(opts) {
+
 this.submit = function(e)
 {
 	e.preventDefault();
@@ -228,26 +227,6 @@ this.submit = function(e)
 		console.log(err);
 	});
 }.bind(this)
-=======
- this.update(
-    krowdspace.users.login("", "", "").then(
-        (res) =>
-		    {
-                if(res.already_logged_in = true)
-                {
-                    this.logged_in = true;
-                    this.update();
-                    console.log(res);
-                } else{
-                    console.log("not logged in");
-                }
-
-            },
-        (err) =>
-			{
-                console.log(err);
-            })
-        );
     this.submit = function(e)
     {
         e.preventDefault();
@@ -268,19 +247,18 @@ this.submit = function(e)
                     REWARDAMOUNT,
                     };
 
-this.submit = function(e)
-{
-	e.preventDefault();
         krowdspace.register.project(DATA).then
         ((res) =>
             {
-            console.log('winning');
+            console.log('Your Project is Submitted');
             },
         (err) =>
             {
+            console.log('Your Project is Not Submitted');
             console.log(err);
             });
     }.bind(this)
+
         this.on('mount', function()
         {
             var $imageupload = $('.imageupload');
@@ -359,7 +337,7 @@ riot.tag2('register', '<register-page show="{logged_in}"></register-page>', 'reg
 			window.location.replace("/#account/login");
 		});
 });
-riot.tag2('success-page-register', '<div class="row"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div class="modal-content"> <div class="modal-header"> <p class="modal-heading">Thank You From Krowdspace</p> </div> <div class="modal-body"> <p>Thank you for registering with Krowdspace. If you selected to submit a project we will most likely be contacting you shortly. If you are joining as a member we look forward to launching our unique crowdfunding dashboard with you!</p> <p>We will be sending updates on the latest news, promotions and exclusive giveaways leading up to our official launch. Until then, make sure to stay connected with our social media channels:</p> <div class="text-left boost-warning"> <a href="https://www.facebook.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.pinterest.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.twitter.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.instagram.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-instagram fa-stack-1x fa-inverse"></i> </span> </a> </div> </div> </div> </div> </div> <div class="row"> <div class="text-center"> <a href="/#explore" class="back-project">EXPLORE KROWDSPCE</a> </div> </div>', '', '', function(opts) {
+riot.tag2('success-page-register', '<div class="row"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div class="modal-content"> <div class="modal-header"> <p class="modal-heading">Thank You From Krowdspace</p> </div> <div class="modal-body"> <p>Thank you for registering with Krowdspace. If you selected to submit a project we will most likely be contacting you shortly. If you are joining as a member we look forward to launching our unique crowdfunding dashboard with you!</p> <p>We will be sending updates on the latest news, promotions and exclusive giveaways leading up to our official launch. Until then, make sure to stay connected with our social media channels:</p> <div class="text-left boost-warning"> <a href="https://www.facebook.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.pinterest.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.twitter.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.instagram.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-instagram fa-stack-1x fa-inverse"></i> </span> </a> </div> </div> </div> </div> </div>', '', '', function(opts) {
 });
 riot.tag2('error', '<h1>Something went wrong</h1>', '', '', function(opts) {
 });
@@ -575,7 +553,7 @@ riot.tag2('explore-modal-login', '<div id="modal-explore-login" class="modal fad
 
                 console.log(USERNAME);
                 console.log(PASSWORD);
-	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
+	krowdspace.user.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) =>
 	{
 		this.logged_in = true;
@@ -595,12 +573,12 @@ this.submit3 = function(e)
 	e.preventDefault();
 
 	var FNAME = this.refs.firstname.value;
-	var	LNAME = this.refs.lastname.value;
-	var	EMAIL = this.refs.email.value;
-	var	USERNAME = this.refs.username.value;
-	var	PASSWORD = this.refs.password.value;
-	var	KSUSER = this.refs.kickstarter_user.value;
-	var	IGUSER = this.refs.indiegogo_user.value;
+            LNAME = this.refs.lastname.value;
+	    EMAIL = this.refs.email.value;
+	    USERNAME = this.refs.username.value;
+	    PASSWORD = this.refs.password.value;
+	    KSUSER = this.refs.kickstarter_user.value;
+	    IGUSER = this.refs.indiegogo_user.value;
 
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) =>
@@ -613,13 +591,12 @@ this.submit3 = function(e)
 		console.log(err);
 	});
 }.bind(this)
-=======
-                krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
                 ((res) =>
                 {
                         this.logged_in = true;
                         this.update();
-                console.log(res);
+                         console.log(res);
                 $('#modal-explore-login').modal('hide');
                 },
                 (err) =>
@@ -627,34 +604,7 @@ this.submit3 = function(e)
                         console.log(err);
                 $("#errorLog").show();
                 });
-        }
-=======
->>>>>>> 4431e6119a230a6992fab67a041dadda430d3747
 
-        this.submit3 = function(e)
-        {
-                e.preventDefault();
-
-                var FNAME = this.refs.firstname.value,
-                    LNAME = this.refs.lastname.value,
-                    EMAIL = this.refs.email.value,
-                    USERNAME = this.refs.username.value,
-                    PASSWORD = this.refs.password.value,
-                    KSUSER = this.refs.kickstarter_user.value,
-                    IGUSER = this.refs.indiegogo_user.value;
-
-                krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
-                ((res) =>
-                {
-                        $('#modal-explore-login').modal('hide');
-                        $('#modal-submission').modal('show');
-                },
-                (err) =>
-                {
-                        console.log(err);
-                });
-        }.bind(this)
->>>>>>> master
 });
 riot.tag2('explore-modal-register', '<div id="modal-explore-register" class="modal fade"> <div class="krowdspace-modal col-lg-offset-3 col-lg-6 col-md-6 hidden-sm hidden-xs"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input id="PASSWORD2" type="password" ref="password" placeholder="New Password" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-default"> <i class="glyphicon glyphicon-eye-open"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
 
@@ -748,24 +698,14 @@ riot.tag2('project-modal-login', '<div class="container login-check-container"> 
         	}, false);
         });
 
-        loginProjectSubmit(e)
-            {
-                e.preventDefault();
+        this.loginProjectSubmit = function(e)
+        {
+            e.preventDefault();
 
-                var USERNAME = this.refs.usernamelogin.value;
-                var PASSWORD = this.refs.passwordlogin.value;
-                STAYLOGGED = true;
+            var USERNAME = this.refs.usernamelogin.value;
+            var PASSWORD = this.refs.passwordlogin.value;
+            STAYLOGGED = true;
 
-                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) =>
-                    {
-                        this.logged_in = true;
-                        this.update();
-                        window.location.replace("/#explore");
-                    },(err) =>
-                    {
-                        $("#errorLog").show();
-                    });
-            }
             krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then((res) =>
                 {
                     this.logged_in = true;
@@ -775,18 +715,7 @@ riot.tag2('project-modal-login', '<div class="container login-check-container"> 
                 {
                     $("#errorLog").show();
                 });
-        }
-                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) =>
-                    {
-                        this.logged_in = true;
-                        this.update();
-                        window.location.replace("/#explore");
-                    },(err) =>
-                    {
-                        $("#errorLog").show();
-                    });
-            }.bind(this)
-
+        }.bind(this)
 
         this.submit = function(e)
         {

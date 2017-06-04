@@ -180,26 +180,6 @@ submit(e)
 		console.log(err);
 	});
 }    
-
- this.update(
-    krowdspace.users.login("", "", "").then(
-        (res) =>
-		    {
-                if(res.already_logged_in = true)
-                {
-                    this.logged_in = true;
-                    this.update();
-                    console.log(res);
-                } else{
-                    console.log("not logged in");
-                }
-
-            },
-        (err) =>
-			{
-                console.log(err);
-            })
-        );
     submit(e)
     {
         e.preventDefault();
@@ -223,10 +203,11 @@ submit(e)
         krowdspace.register.project(DATA).then
         ((res) =>
             {
-            console.log('winning');
+            console.log('Your Project is Submitted');
             },
         (err) =>
             {
+            console.log('Your Project is Not Submitted');
             console.log(err);
             });
     }
