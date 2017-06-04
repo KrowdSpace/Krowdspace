@@ -190,10 +190,11 @@ submit(e)
 	krowdspace.register.project(DATA).then
 	((res) => 
 	{
-		console.log('winning');
+		console.log('Your Project Has Been Submitted');
 	},
 	(err) => 
 	{
+        console.log('Your Project is Not Submitted');
 		console.log(err);
 	});
 }    

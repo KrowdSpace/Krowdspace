@@ -62,7 +62,7 @@ this.on('mount', function() {
         }
     })
 });
-krowdspace.users.check().then((res)=>
+krowdspace.v1.check().then((res)=>
 		{
 			logged_in = true;
 			this.update();

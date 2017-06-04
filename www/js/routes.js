@@ -21,6 +21,10 @@ route('/account/boosts', function()
 {
 	riot.mount("#main","boosts");
 });
+route('/account/admin', function()
+{
+	riot.mount("#main","admin");
+});
 route('/account/verify/..', function()
 {
 	riot.mount("#main","verify");
