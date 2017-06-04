@@ -19,19 +19,4 @@
 	<global-analytics-google id="UA-92584644-1"></global-analytics-google>
 
     <script>krowdspace.setDomain("api.dev.krowdspace.com");</script>
-<!-- <script>
-	riot.compile(function() {
-		riot.mount('*')
-		route.start(true)
-	});
-
-	var route = route.create();
-	route('/', function(){
-		riot.mount("#main","home");
-	});
-	route('/verify/..', function(slug, id){
-		riot.mount("#verify","verify");
-		console.log("you hit verify page");
-	});
-</script> -->
 </home>

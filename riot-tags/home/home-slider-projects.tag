@@ -87,7 +87,8 @@
         ]
     </script>
     <script type="text/javascript">
-        this.on('mount', function() {
+        this.on('mount', function() 
+        {
           $('.single-item').slick({
             dots: false,
             arrows:false,

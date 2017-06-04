@@ -20,7 +20,8 @@
         ]
 </script>
 <script type="text/javascript">
-    this.on('mount', function() {
+    this.on('mount', function() 
+    {
         $('.center').slick({
         centerMode: true,
         arrows: false,
@@ -28,7 +29,7 @@
         slidesToShow: 5,
         autoplay: true,
         autoplaySpeed: 3000,
-    });
         });
+    });
 </script>
 </home-slider-clients>

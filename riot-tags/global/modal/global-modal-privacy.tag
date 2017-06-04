@@ -75,10 +75,12 @@
         <div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
     <script>
-        this.on('mount', function() {
+        this.on('mount', function() 
+        {
 			var url = window.location.href;
-			if (url.indexOf('?privacy-policy=1') != -1) {
-				$("#modal-privacy-policy").modal('show');
+			if (url.indexOf('?privacy-policy=1') != -1) 
+            {
+			    $("#modal-privacy-policy").modal('show');
 				$('#modal-privacy-policy').fadeIn(100);
 			};
         });

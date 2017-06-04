@@ -9,5 +9,4 @@
         </div>
         <div class="clearfix"></div>
     </div>
-
 </dashboard-content-image>

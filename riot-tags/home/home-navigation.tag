@@ -41,8 +41,10 @@
         </div>
     </nav>
 <script>
-this.on('mount', function() {
-    $('a.page-scroll').bind('click', function(event) {
+this.on('mount', function()
+{
+    $('a.page-scroll').bind('click', function(event)
+    {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -53,7 +55,7 @@ this.on('mount', function() {
         target: '.navbar-fixed-top',
         offset: 51
     }),
-    $('.navbar-collapse ul li a').click(function(){ 
+    $('.navbar-collapse ul li a').click(function(){
             $('.navbar-toggle:visible').click();
     }),
     $('#mainNav').affix({
@@ -70,7 +72,7 @@ krowdspace.v1.check().then((res)=>
 		},
 		(err)=>
 		{
-			console.log('You are not logged in');
-		});
+		console.log('You are not logged in');
+    });
 </script>
 </home-navigation>

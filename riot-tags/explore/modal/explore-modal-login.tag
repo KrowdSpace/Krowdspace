@@ -84,51 +84,49 @@
 <script> 
 // --- Show Password and Hide Password --- //	   
 	   
-this.on('mount', function() 
-{
-	function show() 
-	{
-		var pass = document.getElementById('PASSWORD2');
-		pass.setAttribute('type', 'text');
-	}
-	function hide() 
-	{
-		var pass = document.getElementById('PASSWORD2');
-		pass.setAttribute('type', 'password');
-	}
-	
-	var pwShown = 0;
-	
-	document.getElementById("eye2").addEventListener("click", function () 
-	{
-		if (pwShown == 0) 
-		{
-			pwShown = 1;
-			show();
-		} 
-		else 
-		{
-			pwShown = 0;
-			hide();
-		}
-	}, false);
-});
-	   
-// --- Login Submit --- //
+        this.on('mount', function() 
+                {
+                        function show() 
+                        {
+                                var pass = document.getElementById('PASSWORD2');
+                                pass.setAttribute('type', 'text');
+                        }
+                        function hide() 
+                        {
+                                var pass = document.getElementById('PASSWORD2');
+                                pass.setAttribute('type', 'password');
+                        }
+                        
+                        var pwShown = 0;
+                        
+                        document.getElementById("eye2").addEventListener("click", function () 
+                        {
+                                if (pwShown == 0) 
+                                {
+                                        pwShown = 1;
+                                        show();
+                                } 
+                                else 
+                                {
+                                        pwShown = 0;
+                                        hide();
+                                }
+                        }, false);
+                });
+                
+        // --- Login Submit --- //
 
-loginSubmit2(e) 
-{
-	
-	e.preventDefault();
+        loginSubmit2(e) 
+        {
+                e.preventDefault();
 
-	var USERNAME = this.refs.usernamelogin.value;
-	var PASSWORD = this.refs.passwordlogin.value;
+                var USERNAME = this.refs.usernamelogin.value;
+                var PASSWORD = this.refs.passwordlogin.value;
 
-	STAYLOGGED = true;
+                STAYLOGGED = true;
 
-	console.log(USERNAME);
-	console.log(PASSWORD);
-
+                console.log(USERNAME);
+                console.log(PASSWORD);
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) => 
 	{

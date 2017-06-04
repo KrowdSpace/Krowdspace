@@ -8,7 +8,7 @@
                 <boosts-content-mix></boosts-content-mix>
                 <boosts-content-featured></boosts-content-featured>
                 <boosts-content-social></boosts-content-social>
-            </div>
+        </div>
     </div>
-        <global-footer></global-footer>
+    <global-footer></global-footer>
 </boosts-page>
