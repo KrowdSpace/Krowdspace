@@ -133,7 +133,7 @@ if (typeof jQuery === 'undefined') {
     }
 
     function getImageThumbnailHtml(src) {
-        return '<img src="' + src + '" alt="Image preview" id="PIMAGE" name="PIMAGE" class="thumbnail" style="max-width: ' + options.maxWidth + 'px; max-height: ' + options.maxHeight + 'px">';
+        return '<img src="' + src + '" alt="Image preview" ref="projectimage" class="thumbnail" style="max-width: ' + options.maxWidth + 'px; max-height: ' + options.maxHeight + 'px">';
     }
 
     function getFileExtension(path) {

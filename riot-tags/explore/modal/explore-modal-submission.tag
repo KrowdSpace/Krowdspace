@@ -1,4 +1,4 @@
-<global-modal-submission>
+<explore-modal-submission>
     <div id="modal-submission" class="modal fade">
 		<div class="krowdspace-modal col-sm-6 col-sm-offset-3">
 			<div id="modal" class="modal-content">
@@ -39,4 +39,4 @@
 		</div>
 		<div class="background-modal-close" data-dismiss="modal"> </div>
 	</div>
-</global-modal-submission>
+</explore-modal-submission>

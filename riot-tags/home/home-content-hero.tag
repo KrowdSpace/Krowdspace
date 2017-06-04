@@ -72,7 +72,7 @@ submit(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
-		window.location.replace("/?success=1");
+        $('#modal-submission').modal('show');
 	},
 	(err) => 
 	{

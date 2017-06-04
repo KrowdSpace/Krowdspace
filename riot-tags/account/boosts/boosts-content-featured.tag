@@ -1,4 +1,4 @@
-<tab-boosts-featured>
+<boosts-content-featured>
     <div class="row no-gutter dash-boost-row">
         <div class="col-sm-9">
             <p class="boost-purchase-header" style="padding-top: 0px;">FEATURED LISTING + BANNER LISTING</p>
@@ -30,7 +30,7 @@
                     <label class="featured-radio"><input type="radio" name="optradio"></label>
                     <p class="featured-price">$15</p>
                 </div>
-                <div class="featured-price-box" style="width: 84px; margin-bottom: 0px;">
+                <div class="featured-price-box" style="margin-bottom: 0px;">
                     <label class="featured-radio"><input type="radio" name="optradio"></label>
                     <p class="featured-price">$20</p>
                 </div>
@@ -38,4 +38,4 @@
             </form>
         </div>
     </div>
-</tab-boosts-featured>
+</boosts-content-featured>

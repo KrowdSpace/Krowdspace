@@ -1,13 +1,21 @@
-<project>   
-    <div class="row">
-            <explore-navigation></explore-navigation>
-        </div>
-        <div class="container">
-                <project-content-header></project-content-header>
-			    <div class="row dash-row-top dash-row-bottom">
-                <project-content-body></project-content-body>
-				</div>
-        </div>
-        <global-footer></global-footer>
+<project>
+	<project-modal-login show={ !logged_in }></project-modal-login>
+	<project-page show={ logged_in }>
+		<style scoped>
+			:scope { background-color: #fff }
+		</style>
+	</project-page>
+	<script>	
+		krowdspace.users.check().then((res)=>
+			{
+				logged_in = true;
+				this.update();
+				console.log('You are logged in');
+			},
+			(err)=>
+			{
+				console.log('You are not logged in');  
+			});
+	</script>
 </project>
 

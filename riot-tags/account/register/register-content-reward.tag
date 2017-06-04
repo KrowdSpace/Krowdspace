@@ -1,6 +1,6 @@
 <register-content-reward>
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 text-left" style="padding-top: 50px; border-top:1px solid #cccccc;">
+         <div class="col-sm-10 col-sm-offset-1 no-gutter profile-box" style="padding: 15px;">
             <p class="text-left register-project-title project-reward">PROJECT REWARDS</p>
             <div class="text-left">
                 <p class="project-reward">For every project that is submitted to Krowdspace an exclusive reward will need to be provided for backers who support you through our platform. Krowdspace will look over each submission and the reward will need to be approved by our staff. This can take up to 24 hours. Make sure you can achieve these extra rewards when your project is successful. You will be obligated to fulfill any extra rewards listed on your Krowdspace project profile.</p>

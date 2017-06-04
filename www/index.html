@@ -28,6 +28,12 @@
 </head>
     <body id="page-top" class="index">	
     	<div id="main"></div>
+        <global-modal-about></global-modal-about>
+        <global-modal-privacy></global-modal-privacy>
+        <global-modal-press></global-modal-press>
+        <global-modal-giveaway></global-modal-giveaway>
+        <global-modal-service></global-modal-service>
+        <global-modal-submission></global-modal-submission>
 		
         <script src="js/jquery-easing.js" type="text/javascript"></script>
         <script src="js/bootstrap.js" type="text/javascript"></script>
@@ -40,10 +46,14 @@
         <script src="js/routes.js" type="text/javascript"></script>
         <script src="js/tags.js" type="text/javascript"></script>
 		<script src="js/ksc.js" type="text/javascript"></script>
-		<script src="https://js.stripe.com/v3/"></script>
 		<script>
 		krowdspace.setDomain("api.dev.krowdspace.com");
             riot.mount('*');
+        $(window).on('popstate', function() {
+        $('.modal').modal('hide');
+        $( ".modal-backdrop" ).remove();
+        $( ".in" ).remove();
+        });
         </script>
     </body>
 </html>

@@ -1,46 +1,25 @@
 <project-content-header>
-    <div class="row" style="padding-top: 93px;">
-        <div each= { exploreContent } style="display:flex;">
-            <div class="col-sm-7">
+    <div class="row" style="margin-top: 93px;">
+        <div class="no-gutter" each= { exploreContent } style="display: flex;">
+            <div class="col-sm-7 project-content-left">
+                <div class="project-relative">
                 <img class="img-responsive" src="{ projectImage}">
-            </div>
-            <div class="col-sm-5">
-                <p><strong>{ projectTitle }</strong></p>
-                <p>{ projectDescription }</p>
-                <br>
-                <p><strong>Reward:</strong> { reward }</p>
-                <div style="margin-top:45px;">
-                    <a href="#modal-error" data-toggle="modal" class="project-backer-btn">Back Project</a>
+                                <p class="metrics-absolute">
+                                    <span class="learn-metrics" style="float: left">Pledged $3,243</span>
+                                    <span class="learn-metrics" style="float: right">Project Goal ${ goal }</span>
+                                </p>
                 </div>
-                <div class="no-gutter funding-box">
-                    <div class="col-sm-6">
-                        <p class="project-details">${ goal }</p>
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        <p class="project-details">{ category }</p>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="progress-index">
-                            <div class="progress-bar" role="progressbar" style="width: { progressBar }%" aria-valuenow="{ progressBar }" aria-valuemin="0" aria-valuemax="100">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <p class="project-details">{ progressBar }%</p>
-                        <p class="project-details">Funded</p>
-                    </div>
-                    <div class="col-sm-3 text-center">
-                        <p class="project-details">${ pledged }</p>
-                        <p class="project-details">Pledged</p>
-                    </div>
-                    <div class="col-sm-3 text-center">
-                        <p class="project-details">{ backers }</p>
-                        <p class="project-details">Backers</p>
-                    </div>
-                    <div class="col-sm-4 text-right">
-                        <p class="project-details">{ days }</p>
-                        <p class="project-details">Days Left</p>
-                    </div>
+            </div>
+            <div class="col-sm-5 project-content-right" style="position:relative;">
+                <div class="text-center coupon-code-box">
+                        <p class="coupon-code">USE CODE 1XD6D3</p>
+                </div>
+                <p><strong>{ projectTitle }</strong></p>
+                </p>{ projectDescription }</p>
+                <p><strong>Reward:</strong> { reward }</p>
+                <p><strong>Coupon Code:</strong> Send the following coupon code as a comment after you have backed the project through the crowdfunding portal. The project owner will fulfill your reward upon successful funding.</p>
+                <div class="text-center" style="margin-top: 30px;">
+                <a href="#" class="back-project">BACK PROJECT</a>
                 </div>
             </div>
         </div>

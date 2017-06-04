@@ -1,7 +1,7 @@
-<global-modal-submission>
-    <div id="modal-submission" class="modal fade">
+<success-page-register>
+    <div class="row">
 		<div class="krowdspace-modal col-sm-6 col-sm-offset-3">
-			<div id="modal" class="modal-content">
+			<div class="modal-content">
 				<div class="modal-header">
 					<p class="modal-heading">Thank You From Krowdspace</p>
 				</div>
@@ -37,6 +37,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="background-modal-close" data-dismiss="modal"> </div>
-	</div>
-</global-modal-submission>
+    </div>
+    <div class="row">
+        <div class="text-center">
+            <a href="/#explore" class="back-project">EXPLORE KROWDSPCE</a>
+        </div>
+    </div>
+</success-page-register>

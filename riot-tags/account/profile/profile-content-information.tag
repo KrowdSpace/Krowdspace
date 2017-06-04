@@ -3,8 +3,12 @@
 		<div class="col-sm-6 profile-image-box;">
 		<img class="img-responsive" src="/img/projects/bahari-bag.jpg">
 		</div>
-		<div class="col-sm-6 text-center no-gutter profile-info-box">
-		<p class="profile-edit-btn">EDIT PROFILE</p>
+		
+		<div class="col-sm-6 text-center no-gutter profile-info-box" style="position: relative;">
+            <span class="fa-stack fa-lg social-btn" style="position: absolute; top: 5px; right: 5px;">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+            </span>
 		<p class="profile-name">MASON HALSTEAD</p>
 		<p class="profile-email">MASON@KROWDSPACE.COM</p>
 		<div class="col-sm-4 text-center">

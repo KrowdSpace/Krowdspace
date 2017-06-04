@@ -20,9 +20,5 @@
         $('#modal-verification').fadeIn(100);
                     };
                 });
-		close(e){
-        e.preventDefault();
-        window.location.replace('/');
-        }
     </script>
 </home-modal-verification>

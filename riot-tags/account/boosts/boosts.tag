@@ -1,8 +1,8 @@
-<profile>
+<boosts>
     <style scoped>
 		:scope { background-color: #fff }
 	</style>
-    <profile-page show={ logged_in }></profile-page>
+    <boosts-page></boosts-page>
     <script>	
         krowdspace.users.check().then((res)=>
             {
@@ -12,8 +12,8 @@
             },
             (err)=>
             {
-                console.log('You are not logged in');
-                window.location.replace("/#account/login");
+                console.log('You are not logged in'); 
+                window.location.replace("/#account/login");  
             });
-    </script> 
-</profile>
+    </script>
+</boosts>

@@ -53,18 +53,18 @@
                 </div>
                 <div class="col-sm-1 hidden-xs"></div>
                 <div id="contact" class="col-md-4 col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10 shadow contact-area">
-                    <form class="form-vertical no-gutter form-style" id="messageForm" onsubmit={ submit }>
+                    <form class="form-vertical no-gutter form-style" id="messageForm" onsubmit={ footerMessage }>
                         <div class="form-group">
-                            <input type="text" name="FNAME1" id="FNAME1" class="form-control placeholder-color" placeholder="First Name" required="" aria-required="true" aria-invalid="true">
+                            <input type="text" ref="firstnameform" class="form-control placeholder-color" placeholder="First Name" required="" aria-required="true" aria-invalid="true">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="LNAME1" id="LNAME1" class="form-control placeholder-color" placeholder="Last Name" required="" aria-required="true" aria-invalid="true">
+                            <input type="text" ref="lastnameform" class="form-control placeholder-color" placeholder="Last Name" required="" aria-required="true" aria-invalid="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="EMAIL1" id="EMAIL1" class="form-control placeholder-color" placeholder="Email Address" required="" aria-required="true" aria-invalid="true">
+                            <input type="email" ref="emailform" class="form-control placeholder-color" placeholder="Email Address" required="" aria-required="true" aria-invalid="true">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control placeholder-color" type="text" name="COMMENT1" placeholder="Your Message" id="COMMENT1" rows="3" required=""></textarea>
+                            <textarea class="form-control placeholder-color" ref="commentform" type="text" placeholder="Your Message" rows="3" required=""></textarea>
                         </div>
                         <div>
                             <input type="submit" class="contact-btn" name="submit" value="Send Message">
@@ -89,5 +89,24 @@
                 event.preventDefault();
             })
         });
+      footerMessage(e)
+    {
+	    e.preventDefault();
+	
+	var FNAME = this.refs.firstnameform.value,
+	    LNAME = this.refs.lastnameform.value,
+	    EMAIL = this.refs.emailform.value,
+	    COMMENT = this.refs.commentform.value;
+	
+	krowdspace.register.contact_us(FNAME,LNAME,EMAIL,COMMENT).then
+	((res) => 
+	{
+		$('#modal-submission').modal('show');
+	},
+	(err) => 
+	{
+		console.log(err);
+	});
+}  
     </script>
 </global-footer>

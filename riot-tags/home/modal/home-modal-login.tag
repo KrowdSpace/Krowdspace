@@ -7,15 +7,15 @@
             </div>
             <div class="modal-body">
                <div id="errorLog" class="alert alert-danger alert-dismissable fade in" style="display:none;">
-                  <a href="#" class="close" onclick="$('.alert').hide()">&times;</a>
+                  <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
                   <strong>Error:</strong> Invalid username or password.
                </div>
                <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit={ loginSubmit }>
                   <div>
-                     <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="username" autocorrect="off" autocapitalize="off">
+                     <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off">
                   </div>
                   <div class="col-xs-8 form-group">
-                     <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="password">
+                     <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="passwordlogin">
                   </div>
                   <div class="col-xs-4 form-group" style="padding-left:10px;">
                      <button class="button-login" type="submit">Login</button>
@@ -40,7 +40,7 @@
             </div>
             <div class="modal-body" style="padding-top: 0px;">
                <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p>
-               <form class="form-vertical" id="commentForm" onsubmit={ submit22 }>
+               <form class="form-vertical" id="commentForm" onsubmit={ submit2 }>
                   <div class="form-group form-split-right">
                      <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                   </div>
@@ -73,37 +73,15 @@
                      </label>
                   </div>
                   <div class="register-button-box">
-                     <input type="submit" class="button-login" name="submit" value="Register">
+                     <input type="submit" class="button-login" name="submit" value="Register" >
                   </div>
                </form>
                <div class="clearfix"></div>
             </div>
          </div>
       </div>
-	  <div class="background-modal-close" data-dismiss="modal"> </div>
    </div>
 <script>
-// --- Add a Unique URI and Fade In Modal --- //	   
-	   
-this.on('mount', function() 
-{
-	var url = window.location.href;
-	
-	if (url.indexOf('?login=1') != -1) 
-	{
-		$("#modal-login").modal('show');
-		$("#modal-login").fadeIn(100);
-	};
-});
-	   
-// --- Close Modal --- //
-	   
-close(e)
-{
-	e.preventDefault();
-	window.location.replace('/');
-}
-
 // --- Show Password and Hide Password --- //	   
 	   
 this.on('mount', function() 
@@ -143,8 +121,8 @@ loginSubmit(e)
 	
 	e.preventDefault();
 
-	var USERNAME = this.refs.username.value;
-	var PASSWORD = this.refs.password.value;
+	var USERNAME = this.refs.usernamelogin.value;
+	var PASSWORD = this.refs.passwordlogin.value;
 
 	STAYLOGGED = true;
 
@@ -156,16 +134,19 @@ loginSubmit(e)
 	{
 		this.logged_in = true;
 		this.update();
+        $('#modal-login').modal('hide');
+        window.location.replace("/#account/dashboard");
 	},
 	(err) => 
 	{
 		console.log(err);
+        $("#errorLog").show();
 	});
 }
 	   
 // --- Register Submit --- //   
 	   
-submit(e)
+submit2(e)
 {
 	e.preventDefault();
 	
@@ -180,7 +161,8 @@ submit(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
-		window.location.replace("/?success=1");
+		$('#modal-login').modal('hide');
+        $('#modal-submission').modal('show');
 	},
 	(err) => 
 	{
