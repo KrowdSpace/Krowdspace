@@ -148,25 +148,6 @@
         </div>
     </div>
 <script>
- this.update(	
-        krowdspace.users.login("", "", "").then(
-            (res) => 
-			{   
-                if(res.already_logged_in = true)
-                {
-                    this.logged_in = true;
-                this.update();
-                console.log(res);
-                } else{
-                    console.log("not logged in");
-                }
-                
-            },
-            (err) => 
-			{
-                console.log(err);
-            })
-            );
 submit(e)
 {
 	e.preventDefault();

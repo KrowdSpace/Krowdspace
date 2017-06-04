@@ -4,7 +4,7 @@
 	</style>
  	<register-page show={ logged_in }></register-page>
 <script>	
-	krowdspace.users.check().then((res)=>
+	krowdspace.v1.check().then((res)=>
 		{
 			logged_in = true;
 			this.update();

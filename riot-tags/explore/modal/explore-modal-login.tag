@@ -129,7 +129,7 @@ loginSubmit2(e)
 	console.log(USERNAME);
 	console.log(PASSWORD);
 
-	krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) => 
 	{
 		this.logged_in = true;

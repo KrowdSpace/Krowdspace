@@ -123,7 +123,7 @@
                 var PASSWORD = this.refs.passwordlogin.value; 
                 STAYLOGGED = true;
         
-                krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
+                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
                     {
                         this.logged_in = true;
                         this.update();
