@@ -6,7 +6,7 @@
 		</style>
 	</project-page>
 	<script>	
-		krowdspace.v1.check().then((res)=>
+		krowdspace.users.check().then((res)=>
 			{
 				logged_in = true;
 				this.update();

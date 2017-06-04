@@ -116,23 +116,23 @@
         	   
         // --- Login Submit --- //
         loginProjectSubmit(e) 
-            {
-                e.preventDefault();
-        
-                var USERNAME = this.refs.usernamelogin.value;
-                    PASSWORD = this.refs.passwordlogin.value,
-                STAYLOGGED = true;
-        
-                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
-                    {
-                        this.logged_in = true;
-                        this.update();
-                        window.location.replace("/#explore");
-                    },(err) => 
-                    {
-                        $("#errorLog").show();
-                    });
-            }
+        {
+            e.preventDefault();
+    
+            var USERNAME = this.refs.usernamelogin.value;
+            var PASSWORD = this.refs.passwordlogin.value; 
+            STAYLOGGED = true;
+    
+            krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
+                {
+                    this.logged_in = true;
+                    this.update();
+                    window.location.replace("/#explore");
+                },(err) => 
+                {
+                    $("#errorLog").show();
+                });
+        }
         
         // --- Register Submit --- //   
         	   
