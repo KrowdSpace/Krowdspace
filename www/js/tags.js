@@ -234,6 +234,7 @@ riot.tag2('register-content-signup', '<div class="row"> <div class="col-sm-10 co
                     REWARDVALUE,
                     REWARDAMOUNT,
                     };
+
         krowdspace.register.project(DATA).then
         ((res) =>
             {
@@ -244,6 +245,7 @@ riot.tag2('register-content-signup', '<div class="row"> <div class="col-sm-10 co
             console.log(err);
             });
     }.bind(this)
+
         this.on('mount', function()
         {
             var $imageupload = $('.imageupload');
@@ -307,6 +309,7 @@ riot.tag2('register-content-signup', '<div class="row"> <div class="col-sm-10 co
             }
         });
 });
+
 riot.tag2('register-page', '<div class="row"> <account-navigation></account-navigation> </div> <div class="container" style="margin-bottom: 50px;"> <register-content-signup></register-content-signup> <register-content-reward></register-content-reward> </div> <global-footer></global-footer>', '', '', function(opts) {
 });
 riot.tag2('register', '<register-page show="{logged_in}"></register-page>', 'register,[data-is="register"]{ background-color: #fff }', '', function(opts) {
@@ -944,6 +947,7 @@ krowdspace.v1.check().then((res)=>
 		console.log('You are not logged in');
     });
 });
+
 riot.tag2('home-slider-clients', '<img src="img/content/page-break.jpg" class="hidden-sm hidden-xs auto-width"> <aside class="hidden-sm hidden-xs"> <div class="container text-center"> <section class="center slider"> <div each="{indexClients}"> <a href="{imageURL}" target="_blank"><img riot-src="{image}" alt="{imageAlt}"></a> </div> </section> </div> </aside>', '', '', function(opts) {
         this.indexClients = [
         { image:"img/clients/digital-ocean-logo.png", imageURL:"https://m.do.co/c/0d0a3c0340d3", imageAlt:"Digital Ocean"},
