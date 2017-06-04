@@ -36,8 +36,10 @@
     </nav>
     <div class="nav-push"></div>
     <script>
-        this.on('mount', function() {
-            $('a.page-scroll').bind('click', function(event) {
+        this.on('mount', function() 
+        {
+            $('a.page-scroll').bind('click', function(event) 
+            {
                 var $anchor = $(this);
                 $('html, body').stop().animate({
                     scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -48,14 +50,15 @@
                 target: '.explore-fixed-top',
                 offset: 51
             }),
-            $('.navbar-collapse ul li a').click(function(){ 
+            $('.navbar-collapse ul li a').click(function()
+            { 
                     $('.navbar-toggle:visible').click();
             }),
             $('#mainNav').affix({
                 offset: {
                     top: 10
                 }
-            })
+            });
         });
     </script>
 </account-navigation>

@@ -84,51 +84,51 @@
 <script> 
 // --- Show Password and Hide Password --- //	   
 	   
-this.on('mount', function() 
-{
-	function show() 
-	{
-		var pass = document.getElementById('PASSWORD2');
-		pass.setAttribute('type', 'text');
-	}
-	function hide() 
-	{
-		var pass = document.getElementById('PASSWORD2');
-		pass.setAttribute('type', 'password');
-	}
-	
-	var pwShown = 0;
-	
-	document.getElementById("eye2").addEventListener("click", function () 
-	{
-		if (pwShown == 0) 
-		{
-			pwShown = 1;
-			show();
-		} 
-		else 
-		{
-			pwShown = 0;
-			hide();
-		}
-	}, false);
-});
-	   
-// --- Login Submit --- //
+        this.on('mount', function() 
+                {
+                        function show() 
+                        {
+                                var pass = document.getElementById('PASSWORD2');
+                                pass.setAttribute('type', 'text');
+                        }
+                        function hide() 
+                        {
+                                var pass = document.getElementById('PASSWORD2');
+                                pass.setAttribute('type', 'password');
+                        }
+                        
+                        var pwShown = 0;
+                        
+                        document.getElementById("eye2").addEventListener("click", function () 
+                        {
+                                if (pwShown == 0) 
+                                {
+                                        pwShown = 1;
+                                        show();
+                                } 
+                                else 
+                                {
+                                        pwShown = 0;
+                                        hide();
+                                }
+                        }, false);
+                });
+                
+        // --- Login Submit --- //
 
-loginSubmit2(e) 
-{
-	
-	e.preventDefault();
+        loginSubmit2(e) 
+        {
+                e.preventDefault();
 
-	var USERNAME = this.refs.usernamelogin.value;
-	var PASSWORD = this.refs.passwordlogin.value;
+                var USERNAME = this.refs.usernamelogin.value;
+                var PASSWORD = this.refs.passwordlogin.value;
 
-	STAYLOGGED = true;
+                STAYLOGGED = true;
 
-	console.log(USERNAME);
-	console.log(PASSWORD);
+                console.log(USERNAME);
+                console.log(PASSWORD);
 
+<<<<<<< HEAD
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) => 
 	{
@@ -169,5 +169,47 @@ submit3(e)
 		console.log(err);
 	});
 }    
+=======
+                krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+                ((res) => 
+                {
+                        this.logged_in = true;
+                        this.update();
+                console.log(res);
+                $('#modal-explore-login').modal('hide');
+                },
+                (err) => 
+                {
+                        console.log(err);
+                $("#errorLog").show();
+                });
+        }
+                
+        // --- Register Submit --- //   
+                
+        submit3(e)
+        {
+                e.preventDefault();
+                
+                var FNAME = this.refs.firstname.value,
+                    LNAME = this.refs.lastname.value,
+                    EMAIL = this.refs.email.value,
+                    USERNAME = this.refs.username.value,
+                    PASSWORD = this.refs.password.value,
+                    KSUSER = this.refs.kickstarter_user.value,
+                    IGUSER = this.refs.indiegogo_user.value;
+                
+                krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+                ((res) => 
+                {
+                        $('#modal-explore-login').modal('hide');
+                        $('#modal-submission').modal('show');
+                },
+                (err) => 
+                {
+                        console.log(err);
+                });
+        }    
+>>>>>>> master
 </script>
 </explore-modal-login>

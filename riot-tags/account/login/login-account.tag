@@ -82,51 +82,54 @@
       </div>
     </div>
 
-<script>
-// --- Show Password and Hide Password --- //	   
-	   
-this.on('mount', function() 
-{
-	function show() 
-	{
-		var pass = document.getElementById('PASSWORD');
-		pass.setAttribute('type', 'text');
-	}
-	function hide() 
-	{
-		var pass = document.getElementById('PASSWORD');
-		pass.setAttribute('type', 'password');
-	}
-	
-	var pwShown = 0;
-	
-	document.getElementById("eye2").addEventListener("click", function () 
-	{
-		if (pwShown == 0) 
-		{
-			pwShown = 1;
-			show();
-		} 
-		else 
-		{
-			pwShown = 0;
-			hide();
-		}
-	}, false);
-});
-	   
-// --- Login Submit --- //
+    <script>
+    // --- Show Password and Hide Password --- //	   
+        
+        this.on('mount', function() 
+        {
+            function show() 
+            {
+                var pass = document.getElementById('PASSWORD');
+                pass.setAttribute('type', 'text');
+            }
+            function hide() 
+            {
+                var pass = document.getElementById('PASSWORD');
+                pass.setAttribute('type', 'password');
+            }
+            
+            var pwShown = 0;
+            
+            document.getElementById("eye2").addEventListener("click", function () 
+            {
+                if (pwShown == 0) 
+                {
+                    pwShown = 1;
+                    show();
+                } 
+                else 
+                {
+                    pwShown = 0;
+                    hide();
+                }
+            }, false);
+        });
+        
+    // --- Login Submit --- //
 
-loginSubmit(e) 
-{
-	
-	e.preventDefault();
+        loginSubmit(e) 
+        {
+            
+            e.preventDefault();
 
-	var USERNAME = this.refs.usernamelogin.value;
-	var PASSWORD = this.refs.passwordlogin.value;
+            var USERNAME = this.refs.usernamelogin.value,
+                PASSWORD = this.refs.passwordlogin.value;
+                STAYLOGGED = true;
 
-	STAYLOGGED = true;
+            console.log(USERNAME);
+            console.log(PASSWORD);
 
+<<<<<<< HEAD
 	console.log(USERNAME);
 	console.log(PASSWORD);
 
@@ -170,4 +173,46 @@ submit(e)
 	});
 }    
 </script>
+=======
+            krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+            ((res) => 
+            {
+                this.logged_in = true;
+                this.update();
+                $('#modal-login').modal('hide');
+                window.location.replace("/#account/dashboard");
+            },
+            (err) => 
+            {
+                console.log(err);
+                $("#errorLog").show();
+            });
+        }
+            
+        // --- Register Submit --- //   
+            
+        submit(e)
+        {
+            e.preventDefault();
+            
+            var FNAME = this.refs.firstname.value,
+            	LNAME = this.refs.lastname.value,
+            	EMAIL = this.refs.email.value,
+            	USERNAME = this.refs.username.value,
+            	PASSWORD = this.refs.password.value,
+            	KSUSER = this.refs.kickstarter_user.value,
+            	IGUSER = this.refs.indiegogo_user.value;
+            
+            krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+            ((res) => 
+            {
+                window.location.replace("/#account/success");
+            },
+            (err) => 
+            {
+                console.log(err);
+            });
+        }    
+    </script>
+>>>>>>> master
 </login-account>

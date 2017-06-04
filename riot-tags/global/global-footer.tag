@@ -80,8 +80,10 @@
     </footer>
     <script>
     var self = this;
-        this.on('mount', function() {
-            $('a.page-scroll').bind('click', function(event) {
+        this.on('mount', function() 
+        {
+            $('a.page-scroll').bind('click', function(event) 
+            {
                 var $anchor = $(this);
                 $('html, body').stop().animate({
                     scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -90,23 +92,23 @@
             })
         });
       footerMessage(e)
-    {
-	    e.preventDefault();
-	
-	var FNAME = this.refs.firstnameform.value,
-	    LNAME = this.refs.lastnameform.value,
-	    EMAIL = this.refs.emailform.value,
-	    COMMENT = this.refs.commentform.value;
-	
-	krowdspace.register.contact_us(FNAME,LNAME,EMAIL,COMMENT).then
-	((res) => 
-	{
-		$('#modal-submission').modal('show');
-	},
-	(err) => 
-	{
-		console.log(err);
-	});
-}  
+        {
+            e.preventDefault();
+            
+            var FNAME = this.refs.firstnameform.value,
+                LNAME = this.refs.lastnameform.value,
+                EMAIL = this.refs.emailform.value,
+                COMMENT = this.refs.commentform.value;
+        
+            krowdspace.register.contact_us(FNAME,LNAME,EMAIL,COMMENT).then
+            ((res) => 
+            {
+                $('#modal-submission').modal('show');
+            },
+            (err) => 
+            {
+                console.log(err);
+            });
+        }  
     </script>
 </global-footer>

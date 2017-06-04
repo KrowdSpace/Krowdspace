@@ -57,12 +57,14 @@
 		<div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
     <script>
-        this.on('mount', function() {
-                    var url = window.location.href;
-                    if (url.indexOf('?giveaway=1') != -1) {
-                        $("#modal-giveaway").modal('show');
-                        $('#modal-giveaway').fadeIn(100);
-                    };
-                });
+        this.on('mount', function() 
+        {
+            var url = window.location.href;
+            if (url.indexOf('?giveaway=1') != -1) 
+            {
+                $("#modal-giveaway").modal('show');
+                $('#modal-giveaway').fadeIn(100);
+            };
+        });
     </script>
 </global-modal-giveaway>
