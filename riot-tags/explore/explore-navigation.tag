@@ -54,7 +54,8 @@ krowdspace.users.check().then((res)=>
 
 </script>
     <script>
-        this.on('mount', function() {
+        this.on('mount', function() 
+        {
             $('a.page-scroll').bind('click', function(event) {
                 var $anchor = $(this);
                 $('html, body').stop().animate({

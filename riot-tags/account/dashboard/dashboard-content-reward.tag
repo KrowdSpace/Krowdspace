@@ -7,7 +7,6 @@
             </span>
             <p class="backer-reward-text" style="padding-right: 50px;">REWARD: For every $20 backed a free swag bag will be sent out with your product.</p>
             <p class="backer-reward-text" style="margin: 0px;">Upon succesful completion of your crowdfunding project you have agreed to send out any additional rewards to the backers who have supported your campaign.</p>
-        
         </div>
         <div class="clearfix"></div>
     </div>

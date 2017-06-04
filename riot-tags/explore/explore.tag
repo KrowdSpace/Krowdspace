@@ -33,17 +33,17 @@
     }
     </style>
 
- <div class="row">
-            <explore-navigation></explore-navigation>
-            <explore-slider-hero></explore-slider-hero>
-        </div>
-        <div class="container" style="margin-bottom: 50px;">
-            <explore-content-filter></explore-content-filter>
-            <explore-content-card></explore-content-card>
-        </div>
-        <div class="row">
-            <global-footer></global-footer>
-        </div>
-        <explore-modal-login></explore-modal-login>
-        <explore-modal-register></explore-modal-register>
+    <div class="row">
+        <explore-navigation></explore-navigation>
+        <explore-slider-hero></explore-slider-hero>
+    </div>
+    <div class="container" style="margin-bottom: 50px;">
+        <explore-content-filter></explore-content-filter>
+        <explore-content-card></explore-content-card>
+    </div>
+    <div class="row">
+        <global-footer></global-footer>
+    </div>
+    <explore-modal-login></explore-modal-login>
+    <explore-modal-register></explore-modal-register>
 </explore>

@@ -41,8 +41,10 @@
         </div>
     </nav>
 <script>
-this.on('mount', function() {
-    $('a.page-scroll').bind('click', function(event) {
+this.on('mount', function() 
+{
+    $('a.page-scroll').bind('click', function(event) 
+    {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: ($($anchor.attr('href')).offset().top - 50)
@@ -62,15 +64,15 @@ this.on('mount', function() {
         }
     })
 });
-krowdspace.users.check().then((res)=>
-		{
-			logged_in = true;
-			this.update();
-			console.log('You are logged in');
+    krowdspace.users.check().then((res)=>
+	{
+	    logged_in = true;
+		this.update();
+		console.log('You are logged in');
 		},
 		(err)=>
 		{
-			console.log('You are not logged in');
-		});
+		console.log('You are not logged in');
+    });
 </script>
 </home-navigation>

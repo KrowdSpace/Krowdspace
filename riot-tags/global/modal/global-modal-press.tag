@@ -27,9 +27,11 @@
         <div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
     <script>
-        this.on('mount', function() {
+        this.on('mount', function() 
+        {
 			var url = window.location.href;
-			if (url.indexOf('?press-kit=1') != -1) {
+			if (url.indexOf('?press-kit=1') != -1) 
+            {
 				$("#modal-press-kit").modal('show');
 				$('#modal-press-kit').fadeIn(100);
 			};
