@@ -4,7 +4,7 @@
 	</style>
     <profile-page show={ logged_in }></profile-page>
     <script>	
-        krowdspace.users.check().then((res)=>
+        krowdspace.v1.check().then((res)=>
             {
                 logged_in = true;
                 this.update();

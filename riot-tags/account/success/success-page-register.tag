@@ -38,9 +38,4 @@
 			</div>
 		</div>
     </div>
-    <div class="row">
-        <div class="text-center">
-            <a href="/#explore" class="back-project">EXPLORE KROWDSPCE</a>
-        </div>
-    </div>
 </success-page-register>

@@ -127,46 +127,46 @@
 
                 console.log(USERNAME);
                 console.log(PASSWORD);
+	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
+	((res) => 
+	{
+		this.logged_in = true;
+		this.update();
+        console.log(res);
+        $('#modal-explore-login').modal('hide');
+	},
+	(err) => 
+	{
+		console.log(err);
+        $("#errorLog").show();
+	});
+}
+	   
+// --- Register Submit --- //   
+	   
+submit3(e)
+{
+	e.preventDefault();
+	
+	var FNAME = this.refs.firstname.value;
+            LNAME = this.refs.lastname.value;
+	    EMAIL = this.refs.email.value;
+	    USERNAME = this.refs.username.value;
+	    PASSWORD = this.refs.password.value;
+	    KSUSER = this.refs.kickstarter_user.value;
+	    IGUSER = this.refs.indiegogo_user.value;
+	
+	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+	((res) => 
+	{
+        $('#modal-explore-login').modal('hide');
+        $('#modal-submission').modal('show');
+	},
+	(err) => 
+	{
+		console.log(err);
+	});
+}    
 
-                krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
-                ((res) => 
-                {
-                        this.logged_in = true;
-                        this.update();
-                console.log(res);
-                $('#modal-explore-login').modal('hide');
-                },
-                (err) => 
-                {
-                        console.log(err);
-                $("#errorLog").show();
-                });
-        }
-                
-        // --- Register Submit --- //   
-                
-        submit3(e)
-        {
-                e.preventDefault();
-                
-                var FNAME = this.refs.firstname.value,
-                    LNAME = this.refs.lastname.value,
-                    EMAIL = this.refs.email.value,
-                    USERNAME = this.refs.username.value,
-                    PASSWORD = this.refs.password.value,
-                    KSUSER = this.refs.kickstarter_user.value,
-                    IGUSER = this.refs.indiegogo_user.value;
-                
-                krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
-                ((res) => 
-                {
-                        $('#modal-explore-login').modal('hide');
-                        $('#modal-submission').modal('show');
-                },
-                (err) => 
-                {
-                        console.log(err);
-                });
-        }    
 </script>
 </explore-modal-login>

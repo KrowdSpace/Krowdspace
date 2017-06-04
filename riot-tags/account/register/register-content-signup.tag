@@ -148,25 +148,6 @@
         </div>
     </div>
 <script>
- this.update(
-    krowdspace.users.login("", "", "").then(
-        (res) =>
-		    {
-                if(res.already_logged_in = true)
-                {
-                    this.logged_in = true;
-                    this.update();
-                    console.log(res);
-                } else{
-                    console.log("not logged in");
-                }
-
-            },
-        (err) =>
-			{
-                console.log(err);
-            })
-        );
     submit(e)
     {
         e.preventDefault();
@@ -194,6 +175,69 @@
             },
         (err) =>
             {
+            console.log(err);
+            });
+    }
+
+submit(e)
+{
+	e.preventDefault();
+	
+	let PVALID = this.refs.pvalid.value,
+		CATEGORY = this.refs.category.value,
+		URL = this.refs.projecturl.value,
+		REWARD = this.refs.reward.value,
+		REWARDVALUE = this.refs.rewardoption.value,
+    	REWARDAMOUNT = this.refs.rewardvalue.value;
+    
+    let DATA = {
+                PVALID, 
+                CATEGORY, 
+                URL, 
+                REWARD, 
+                REWARDVALUE, 
+                REWARDAMOUNT, 
+                };
+	
+	krowdspace.register.project(DATA).then
+	((res) => 
+	{
+		console.log('Your Project Has Been Submitted');
+	},
+	(err) => 
+	{
+        console.log('Your Project is Not Submitted');
+		console.log(err);
+	});
+}    
+    submit(e)
+    {
+        e.preventDefault();
+
+        let PVALID = this.refs.pvalid.value,
+            CATEGORY = this.refs.category.value,
+            URL = this.refs.projecturl.value,
+            REWARD = this.refs.reward.value,
+            REWARDVALUE = this.refs.rewardoption.value,
+            REWARDAMOUNT = this.refs.rewardvalue.value;
+
+        let DATA = {
+                    PVALID,
+                    CATEGORY,
+                    URL,
+                    REWARD,
+                    REWARDVALUE,
+                    REWARDAMOUNT,
+                    };
+
+        krowdspace.register.project(DATA).then
+        ((res) =>
+            {
+            console.log('Your Project is Submitted');
+            },
+        (err) =>
+            {
+            console.log('Your Project is Not Submitted');
             console.log(err);
             });
     }
