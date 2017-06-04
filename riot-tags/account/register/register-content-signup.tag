@@ -148,6 +148,36 @@
         </div>
     </div>
 <script>
+    submit(e)
+    {
+        e.preventDefault();
+
+        let PVALID = this.refs.pvalid.value,
+            CATEGORY = this.refs.category.value,
+            URL = this.refs.projecturl.value,
+            REWARD = this.refs.reward.value,
+            REWARDVALUE = this.refs.rewardoption.value,
+            REWARDAMOUNT = this.refs.rewardvalue.value;
+
+        let DATA = {
+                    PVALID,
+                    CATEGORY,
+                    URL,
+                    REWARD,
+                    REWARDVALUE,
+                    REWARDAMOUNT,
+                    };
+
+        krowdspace.register.project(DATA).then
+        ((res) =>
+            {
+            console.log('winning');
+            },
+        (err) =>
+            {
+            console.log(err);
+            });
+    }
 
 submit(e)
 {
