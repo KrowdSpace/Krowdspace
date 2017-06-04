@@ -148,10 +148,10 @@
         </div>
     </div>
 <script>
- this.update(	
+ this.update(
     krowdspace.users.login("", "", "").then(
-        (res) => 
-		    {   
+        (res) =>
+		    {
                 if(res.already_logged_in = true)
                 {
                     this.logged_in = true;
@@ -160,9 +160,9 @@
                 } else{
                     console.log("not logged in");
                 }
-                
+
             },
-        (err) => 
+        (err) =>
 			{
                 console.log(err);
             })
@@ -170,52 +170,53 @@
     submit(e)
     {
         e.preventDefault();
-        
+
         let PVALID = this.refs.pvalid.value,
             CATEGORY = this.refs.category.value,
             URL = this.refs.projecturl.value,
             REWARD = this.refs.reward.value,
             REWARDVALUE = this.refs.rewardoption.value,
             REWARDAMOUNT = this.refs.rewardvalue.value;
-        
+
         let DATA = {
-                    PVALID, 
-                    CATEGORY, 
-                    URL, 
-                    REWARD, 
-                    REWARDVALUE, 
-                    REWARDAMOUNT, 
+                    PVALID,
+                    CATEGORY,
+                    URL,
+                    REWARD,
+                    REWARDVALUE,
+                    REWARDAMOUNT,
                     };
-        
+
         krowdspace.register.project(DATA).then
-        ((res) => 
+        ((res) =>
             {
             console.log('winning');
             },
-        (err) => 
+        (err) =>
             {
             console.log(err);
             });
-    }    
+    }
+
 </script>
     <script>
-        this.on('mount', function() 
+        this.on('mount', function()
         {
             var $imageupload = $('.imageupload');
             $imageupload.imageupload();
-            $('#imageupload-disable').on('click', function() 
+            $('#imageupload-disable').on('click', function()
             {
                     $imageupload.imageupload('disable');
                     $(this).blur();
             });
 
-            $('#imageupload-enable').on('click', function() 
+            $('#imageupload-enable').on('click', function()
             {
                 $imageupload.imageupload('enable');
                 $(this).blur();
             });
 
-            $('#imageupload-reset').on('click', function() 
+            $('#imageupload-reset').on('click', function()
             {
                 $imageupload.imageupload('reset');
                 $(this).blur();
@@ -223,44 +224,44 @@
         });
     </script>
     <script>
-        this.on('mount', function() 
+        this.on('mount', function()
         {
-            $(document).ready(function () 
+            $(document).ready(function ()
             {
             //Initialize tooltips
                 $('.nav-tabs > li a[title]').tooltip();
             //Wizard
-                $('a[data-toggle="tab"]').on('show.bs.tab', function (e) 
+                $('a[data-toggle="tab"]').on('show.bs.tab', function (e)
                 {
                     var $target = $(e.target);
-                    if ($target.parent().hasClass('disabled')) 
+                    if ($target.parent().hasClass('disabled'))
                     {
                         return false;
                     }
             });
-            
-                $(".next-step").click(function (e) 
+
+                $(".next-step").click(function (e)
                 {
                     var $active = $('.wizard .nav-tabs li.active');
                     $active.next().removeClass('disabled');
                     nextTab($active);
                 });
 
-                $(".prev-step").click(function (e) 
+                $(".prev-step").click(function (e)
                 {
                     var $active = $('.wizard .nav-tabs li.active');
                     prevTab($active);
                 });
             });
-            
-            function nextTab(elem) 
+
+            function nextTab(elem)
             {
                 $(elem).next().find('a[data-toggle="tab"]').click();
             }
-            function prevTab(elem) 
+            function prevTab(elem)
             {
                 $(elem).prev().find('a[data-toggle="tab"]').click();
             }
-        });	
+        });
     </script>
 </register-content-signup>

@@ -41,9 +41,9 @@
         </div>
     </nav>
 <script>
-this.on('mount', function() 
+this.on('mount', function()
 {
-    $('a.page-scroll').bind('click', function(event) 
+    $('a.page-scroll').bind('click', function(event)
     {
         var $anchor = $(this);
         $('html, body').stop().animate({
@@ -55,7 +55,7 @@ this.on('mount', function()
         target: '.navbar-fixed-top',
         offset: 51
     }),
-    $('.navbar-collapse ul li a').click(function(){ 
+    $('.navbar-collapse ul li a').click(function(){
             $('.navbar-toggle:visible').click();
     }),
     $('#mainNav').affix({
@@ -64,11 +64,11 @@ this.on('mount', function()
         }
     })
 });
-    krowdspace.users.check().then((res)=>
-	{
-	    logged_in = true;
-		this.update();
-		console.log('You are logged in');
+krowdspace.v1.check().then((res)=>
+		{
+			logged_in = true;
+			this.update();
+			console.log('You are logged in');
 		},
 		(err)=>
 		{

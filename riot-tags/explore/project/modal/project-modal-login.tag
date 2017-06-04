@@ -1,5 +1,5 @@
 <project-modal-login>
-    <div class="login-check-container">
+    <div class="container login-check-container">
         <div class="krowdspace-modal col-lg-offset-1 col-md-5 col-md-offset-0 col-sm-7 col-sm-offset-2">
             <div id="modal" class="modal-content">
                 <div class="modal-header">

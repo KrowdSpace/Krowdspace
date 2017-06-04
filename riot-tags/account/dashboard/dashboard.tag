@@ -4,7 +4,7 @@
 	</style>
  	<dashboard-page show={ logged_in }></dashboard-page>
 <script>	
-	krowdspace.users.check().then((res)=>
+	krowdspace.v1.check().then((res)=>
 		{
 			logged_in = true;
 			this.update();
