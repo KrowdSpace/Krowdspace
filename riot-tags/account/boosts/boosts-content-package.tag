@@ -1,4 +1,4 @@
-<tab-boosts-package>
+<boosts-content-package>
     <div class="row text-center no-gutter">
         <p class="boost-package-header">KROWDSPACE BOOST PACKAGES</p>
         <div class="col-sm-4">
@@ -51,4 +51,4 @@
             </div>
         </div>
     </div>
-</tab-boosts-package>
+</boosts-content-package>

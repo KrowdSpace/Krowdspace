@@ -1,4 +1,8 @@
 <explore>   
+    <style scoped>
+		:scope { background-color: #fff }
+	</style>
+    
     <style type="text/css">
     .slider {
         width: 100%;
@@ -40,5 +44,6 @@
         <div class="row">
             <global-footer></global-footer>
         </div>
-
+        <explore-modal-login></explore-modal-login>
+        <explore-modal-register></explore-modal-register>
 </explore>

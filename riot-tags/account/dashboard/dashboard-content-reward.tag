@@ -1,4 +1,4 @@
-<modify-content-reward>
+<dashboard-content-reward>
     <div class="social-container" style="border: 1px solid #3f434f;">
         <div style="position: relative; padding: 15px 15px;">
             <span class="fa-stack fa-lg social-btn" style="position: absolute; top: 15px; right: 10px;">
@@ -9,5 +9,7 @@
             <p class="backer-reward-text" style="margin: 0px;">Upon succesful completion of your crowdfunding project you have agreed to send out any additional rewards to the backers who have supported your campaign.</p>
         
         </div>
+        <div class="clearfix"></div>
     </div>
-</modify-content-reward>
+    
+</dashboard-content-reward>

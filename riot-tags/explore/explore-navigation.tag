@@ -25,18 +25,34 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll explore-scroll" href="/#account/dashboard">Dashboard</a>
+                        <a show={ logged_in } class="page-scroll explore-scroll" href="/#account/dashboard">Dashboard</a>
                     </li>
                     <li>
-                        <a href="#modal-login" class="modal-link" data-toggle="modal">Login</a>
+                        <a show={ !logged_in } href="#modal-explore-login" class="modal-link" data-toggle="modal">Login</a>
                     </li>
                     <li>
-                        <a href="#modal-register" class="modal-link" data-toggle="modal">Sign Up</a>
+                        <a show={ !logged_in } href="#modal-explore-register" class="modal-link" data-toggle="modal">Sign Up</a>
+                    </li>
+                    <li>
+                        <a show={ logged_in } href="/#account/profile" class="modal-link" data-toggle="modal">Profile</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <script>	
+krowdspace.users.check().then((res)=>
+	{
+		logged_in = true;
+		this.update();
+		console.log('You are logged in');
+	},
+	(err)=>
+	{
+		console.log('You are not logged in');
+	});
+
+</script>
     <script>
         this.on('mount', function() {
             $('a.page-scroll').bind('click', function(event) {

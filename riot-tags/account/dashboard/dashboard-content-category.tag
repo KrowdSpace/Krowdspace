@@ -1,5 +1,6 @@
-<modify-content-category>
+<dashboard-content-category>
 <div class="social-container" style="padding: 15px; border: 1px solid #3f434f;">
+<p class="backer-reward-text" style="margin: 0px 0px 15px 0px;">If you would like to change your project category please select from the dropdown menu and hit the refresh icon.</p>
         <form role="search">
                 <div class="input-group">
                     <select class="form-control remove-arrow">
@@ -18,6 +19,6 @@
                     </div>
                 </div>
             </form>
-            <p class="backer-reward-text" style="margin: 15px 0px 0px 0px;">If you would like to change your project category please select from the dropdown menu and hit the refresh icon.</p>
 </div>
-</modify-content-category>
+
+</dashboard-content-category>

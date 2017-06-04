@@ -1,4 +1,4 @@
-<tab-boosts-featured>
+<boosts-content-featured>
     <div class="row no-gutter dash-boost-row">
         <div class="col-sm-9">
             <p class="boost-purchase-header" style="padding-top: 0px;">FEATURED LISTING + BANNER LISTING</p>
@@ -38,4 +38,4 @@
             </form>
         </div>
     </div>
-</tab-boosts-featured>
+</boosts-content-featured>

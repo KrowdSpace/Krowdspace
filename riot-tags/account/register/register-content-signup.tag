@@ -42,7 +42,7 @@
                             <div class="tab-pane active" role="tabpanel" id="step1">
                                 <p class="text-left">Do you own this crowdfunding project?</p>
                                 <div class="form-group">
-                                    <select class="form-control" name="PVALID" id="PVALID" required="required" aria-required="true">
+                                    <select class="form-control" ref="pvalid" required="required" aria-required="true">
                                         <option disabled selected value>Select Yes or No</option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
@@ -50,7 +50,7 @@
                                 </div>
                                 <p class="text-left project-questions">What category best fits your project?</p>
                                 <div class="form-group">
-                                    <select class="form-control" name="PCATEGORY" id="PCATEGORY" required="required" aria-required="true">
+                                    <select class="form-control" ref="category" required="required" aria-required="true">
                                         <option disabled selected value>Choose a Category</option>
                                         <option value="art">Art</option>
                                         <option value="design">Design</option>
@@ -65,7 +65,7 @@
                                 </div>
                                 <p class="text-left project-questions">Please provide your live crowdfunding project url.</p>
                                 <div class="form-group">
-                                    <input type="url" name="PROJECTURL" id="PROJECTURL" class="form-control placeholder-color" placeholder="https://" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="url" ref="projecturl" class="form-control placeholder-color" placeholder="https://" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;">
                                     <li style="padding: 0px;"><button type="button" class="btn-register next-step">continue</button></li>
@@ -74,11 +74,11 @@
                             <div class="tab-pane" role="tabpanel" id="step2">
                                 <p class="text-left">Please provide an exclusive reward for our Krowdspace users. see examples</p>
                                 <div class="form-group">
-                                    <input name="PREWARD" id="PREWARD" class="form-control placeholder-color" placeholder="Backer Rewards" required="required" aria-required="true" aria-invalid="true">
+                                    <input ref="reward" class="form-control placeholder-color" placeholder="Backer Rewards" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <p class="text-left project-questions">Does your reward have a value or is it a discount?</p>
                                 <div class="form-group">
-                                    <select class="form-control" name="PVALID" id="PVALID" required="required" aria-required="true">
+                                    <select class="form-control" ref="rewardoption" required="required" aria-required="true">
                                         <option disabled selected value>Choose an Option</option>
                                         <option value="Yes">Reward has a Value</option>
                                         <option value="No">Reward is a Discount</option>
@@ -86,7 +86,7 @@
                                 </div>
                                 <p class="text-left project-questions">Please provide the dollar amount or discount percentage of the reward.</p>
                                 <div class="form-group">
-                                    <input name="PREWARD" id="PREWARD" class="form-control placeholder-color" placeholder="Estimated Value or Discount Percentage" required="required" aria-required="true" aria-invalid="true">
+                                    <input ref="rewardvalue" class="form-control placeholder-color" placeholder="Estimated Value or Discount Percentage" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;">
                                     <li style="padding: 0px; margin-right: 20px;"><button type="button" class="btn-register prev-step">Previous</button></li>
@@ -137,7 +137,7 @@
                                 </div>
                                 <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;">
                                     <li style="padding: 0px; margin-right: 20px;"><button type="button" class="btn-register prev-step">Previous</button></li>
-                                    <li style="padding: 0px;"><button type="button" class="btn-register btn-info-full next-step">Submit Project</button></li>
+                                    <li style="padding: 0px;"><button type="submit" name="submit" class="btn-register btn-info-full next-step">Submit Project</button></li>
                                 </ul>
                             </div>
                             <div class="clearfix"></div>
@@ -147,31 +147,57 @@
             </div>
         </div>
     </div>
-    <script>
-        submit(e){
-        e.preventDefault();
-        var formArr = {
-          PLATFORM: $("#PLATFORM").val(),
-          PCATEGORY: $("#PCATEGORY").val(),
-          PROJECTURL: $("#PROJECTURL").val(),
-          PREWARD: $("#PREWARD").val(),
-          PIMAGE: $("#PIMAGE").val()
-        };
-        $.ajax({
-           contentType:"application/json",
-           url: 'https://api.krowdspace.com/',
-           type: 'POST',
-           data: JSON.stringify(formArr),
-           success: function(data) {
-                if(!data.success)
-                window.location.replace("/?success=1");
-           },
-           error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log(XMLHttpRequest.responseText);
-              }
-        });
-        }
-    </script>
+<script>
+ this.update(	
+        krowdspace.users.login("", "", "").then(
+            (res) => 
+			{   
+                if(res.already_logged_in = true)
+                {
+                    this.logged_in = true;
+                this.update();
+                console.log(res);
+                } else{
+                    console.log("not logged in");
+                }
+                
+            },
+            (err) => 
+			{
+                console.log(err);
+            })
+            );
+submit(e)
+{
+	e.preventDefault();
+	
+	let PVALID = this.refs.pvalid.value,
+		CATEGORY = this.refs.category.value,
+		URL = this.refs.projecturl.value,
+		REWARD = this.refs.reward.value,
+		REWARDVALUE = this.refs.rewardoption.value,
+    	REWARDAMOUNT = this.refs.rewardvalue.value;
+    
+    let DATA = {
+                PVALID, 
+                CATEGORY, 
+                URL, 
+                REWARD, 
+                REWARDVALUE, 
+                REWARDAMOUNT, 
+                };
+	
+	krowdspace.register.project(DATA).then
+	((res) => 
+	{
+		console.log('winning');
+	},
+	(err) => 
+	{
+		console.log(err);
+	});
+}    
+</script>
     <script>
         this.on('mount', function() {
           var $imageupload = $('.imageupload');

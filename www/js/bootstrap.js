@@ -1012,6 +1012,8 @@ if (typeof jQuery === 'undefined') {
 
       var e = $.Event('shown.bs.modal', { relatedTarget: _relatedTarget })
 
+      
+
       transition ?
         that.$dialog // wait for modal to slide in
           .one('bsTransitionEnd', function () {
@@ -1021,7 +1023,7 @@ if (typeof jQuery === 'undefined') {
         that.$element.trigger('focus').trigger(e)
     })
   }
-
+  
   Modal.prototype.hide = function (e) {
     if (e) e.preventDefault()
 

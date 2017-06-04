@@ -1,4 +1,4 @@
-<tab-boosts-mix>
+<boosts-content-mix>
 	<div class="row no-gutter">
 		<div class="col-sm-9">
 			<p class="boost-purchase-header">SOCIAL MEDIA POST</p>
@@ -25,4 +25,4 @@
 			<p class="add-cart-center">ADD TO CART</p>
 		</div>
 	</div>
-</tab-boosts-mix>
+</boosts-content-mix>

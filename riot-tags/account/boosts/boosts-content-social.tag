@@ -1,4 +1,4 @@
-<tab-boosts-social>
+<boosts-content-social>
    		<div class="row no-gutter boost-row-bottom">
             <div class="col-sm-9"> 
                 <p class="boost-purchase-header" style="padding-top: 0px;">SOCIAL MEDIA MARKETING</p>
@@ -28,4 +28,4 @@
                 </form>
             </div>
         </div>
-</tab-boosts-social>
+</boosts-content-social>

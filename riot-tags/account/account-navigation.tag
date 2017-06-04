@@ -58,17 +58,4 @@
             })
         });
     </script>
-    <script>
-				krowdspace.users.check().then((res)=>
-					{
-						logged_in = true;
-						this.update();
-						console.log('test');
-					},
-				(err)=>
-					{
-					console.log('bad');
-				});
-				
-    </script>
 </account-navigation>

@@ -112,9 +112,5 @@
 				$('#modal-service-terms').fadeIn(100);
 			};
         });
-        close(e){
-			e.preventDefault();
-			window.location.replace('/');
-        }
     </script>
 </global-modal-service>

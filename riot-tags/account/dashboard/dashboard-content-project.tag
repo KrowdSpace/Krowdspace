@@ -1,4 +1,4 @@
-<modify-content-project>
+<dashboard-content-project>
     <div class="social-container project-content" style="border: 1px solid #3f434f; margin-top: 0px;">
         <div style="position: relative; padding: 15px 15px;">
             <span class="fa-stack fa-lg social-btn" style="position: absolute; top: 15px; right: 10px;">
@@ -41,5 +41,7 @@
             <p>A special thanks to Ryan Villasanti who was able to hit our deadline and create a beautiful video! Check out more of his work at RyanVillasanti.com. </p>
         
         </div>
+        <div class="clearfix"></div>
     </div>
-</modify-content-project>
+
+</dashboard-content-project>

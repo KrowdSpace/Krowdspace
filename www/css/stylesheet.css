@@ -38,7 +38,7 @@ h1 {
     font-size: 30px;
 }
 .navbar-custom {
-    background-color: rgba(50, 48, 49, .95);
+    background-color: rgba(0, 0, 0, .9);
     border-color: transparent;
 }
 .navbar-custom .navbar-toggle {
@@ -99,7 +99,7 @@ h1 {
     }
     .navbar-alt {
         color: #fff;
-		background-color: #313132;
+		background-color: #000;
     }
     .navbar-custom .navbar-nav > .active > a {
         display: block;
@@ -107,7 +107,7 @@ h1 {
 }
 @media (min-width: 992px) {
     .navbar-custom.affix {
-        background-color: rgba(50, 48, 49, .95);
+        background-color: rgba(0, 0, 0, .9);
     }
 }
 .logo-float {
@@ -627,6 +627,29 @@ body {
     color: white;
     background-color: #fec503;
 }
+.backer-button {
+    color: white;
+    width: 100%;
+    background-color: #fed136;
+    font-size: 16px;
+    border: 0px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 8px 10px;
+    margin-top: 28px;
+}
+.backer-button:focus,
+.backer-button:active,
+.backer-button.active,
+.backer-button:active:focus {
+    outline: none;
+    color: white;
+    background-color: #fec503;
+}
+.backer-button:hover {
+    color: white;
+    background-color: #fec503;
+}
 .header-right {
     padding-top: 150px;
     padding-bottom: 125px;
@@ -1069,6 +1092,13 @@ body {
     padding: 8px 8px;
     border: 2px solid #fed136;
     color: #fed136;
+}
+.learn-metrics {
+    padding: 9px 8px;
+    font-size: 15px;
+    border: 2px solid #fff;
+    color: #fff; 
+    background-color: rgba(50, 48, 49, .5);
 }
 .explore-feature-left {
     margin-top:330px;
@@ -1847,7 +1877,7 @@ body {
 }
 .project-content {
 	overflow:scroll; 
-	height:554.28px;
+	height:748.28px;
 	background-color: #fff;
 }
 .project-reward-value {
@@ -2132,4 +2162,62 @@ span.round-tab:hover {
 	height: 100%; 
 	position: absloute; 
 	z-index: -1;
+}
+.project-containter {
+    border: 1px solid #3f434f; 
+    padding:30px; 
+    font-size: 14px;
+}
+.login-check-container {
+    background: rgba(50, 48, 49, 1); 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+}
+.project-content-left {
+    border: 1px solid #3f434f; 
+    margin-right: 15px;
+}
+.project-content-right {
+    padding: 15px !important; 
+    border: 1px solid #3f434f;
+}
+.project-relative {
+    position: relative;
+}
+.metrics-absolute {
+    position: absolute; 
+    bottom: 0px; 
+    color: #fff; 
+    padding: 5px 15px; 
+    width: 100%; 
+    line-height: 1;
+}
+.coupon-code-box {
+    border: 3px solid #fed136; 
+    margin: 0px 0px 20px 0px;
+}
+.coupon-code {
+    font-size: 26px; 
+    margin: 0px; 
+    font-weight: 600; 
+    color: #fed136;
+}
+.back-project {
+    padding: 10px 16px; 
+    background-color: #fed136; 
+    border-radius: 3px;
+    color: #fff; 
+    font-weight: 600;
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+.back-project:hover,
+.back-project:focus,
+.back-project:active,
+.back-project.active {
+    background-color: #fec503; 
+    color: #fff;
 }
