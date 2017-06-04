@@ -129,45 +129,44 @@
             console.log(USERNAME);
             console.log(PASSWORD);
 
-	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
-	((res) => 
-	{
-		this.logged_in = true;
-		this.update();
-        $('#modal-login').modal('hide');
-        window.location.replace("/#account/dashboard");
-	},
-	(err) => 
-	{
-		console.log(err);
-        $("#errorLog").show();
-	});
-}
-	   
-// --- Register Submit --- //   
-	   
-submit(e)
-{
-	e.preventDefault();
-	
-	var FNAME = this.refs.firstname.value;
-	var	LNAME = this.refs.lastname.value;
-	var	EMAIL = this.refs.email.value;
-	var	USERNAME = this.refs.username.value;
-	var	PASSWORD = this.refs.password.value;
-	var	KSUSER = this.refs.kickstarter_user.value;
-	var	IGUSER = this.refs.indiegogo_user.value;
-	
-	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
-	((res) => 
-	{
-        window.location.replace("/#account/success");
-	},
-	(err) => 
-	{
-		console.log(err);
-	});
-}    
-</script>
-
+            krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
+            ((res) => 
+            {
+                this.logged_in = true;
+                this.update();
+                $('#modal-login').modal('hide');
+                window.location.replace("/#account/dashboard");
+            },
+            (err) => 
+            {
+                console.log(err);
+                $("#errorLog").show();
+            });
+        }
+            
+        // --- Register Submit --- //   
+            
+        submit(e)
+        {
+            e.preventDefault();
+            
+            var FNAME = this.refs.firstname.value,
+            	LNAME = this.refs.lastname.value,
+            	EMAIL = this.refs.email.value,
+            	USERNAME = this.refs.username.value,
+            	PASSWORD = this.refs.password.value,
+            	KSUSER = this.refs.kickstarter_user.value,
+            	IGUSER = this.refs.indiegogo_user.value;
+            
+            krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+            ((res) => 
+            {
+                window.location.replace("/#account/success");
+            },
+            (err) => 
+            {
+                console.log(err);
+            });
+        }    
+    </script>
 </login-account>
