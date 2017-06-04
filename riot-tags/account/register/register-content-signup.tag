@@ -148,7 +148,7 @@
         </div>
     </div>
 <script>
-<<<<<<< HEAD
+
 submit(e)
 {
 	e.preventDefault();
@@ -180,7 +180,7 @@ submit(e)
 		console.log(err);
 	});
 }    
-=======
+
  this.update(
     krowdspace.users.login("", "", "").then(
         (res) =>
@@ -231,7 +231,6 @@ submit(e)
             });
     }
 
->>>>>>> master
 </script>
     <script>
         this.on('mount', function()

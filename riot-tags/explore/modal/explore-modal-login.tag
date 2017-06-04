@@ -127,9 +127,7 @@
 
                 console.log(USERNAME);
                 console.log(PASSWORD);
-
-<<<<<<< HEAD
-	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
+	krowdspace.user.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) => 
 	{
 		this.logged_in = true;
@@ -169,7 +167,6 @@ submit3(e)
 		console.log(err);
 	});
 }    
-=======
                 krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
                 ((res) => 
                 {
@@ -210,6 +207,5 @@ submit3(e)
                         console.log(err);
                 });
         }    
->>>>>>> master
 </script>
 </explore-modal-login>

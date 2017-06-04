@@ -116,25 +116,6 @@
         	   
         // --- Login Submit --- //
         loginProjectSubmit(e) 
-<<<<<<< HEAD
-            {
-                e.preventDefault();
-        
-                var USERNAME = this.refs.usernamelogin.value;
-                var PASSWORD = this.refs.passwordlogin.value; 
-                STAYLOGGED = true;
-        
-                krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
-                    {
-                        this.logged_in = true;
-                        this.update();
-                        window.location.replace("/#explore");
-                    },(err) => 
-                    {
-                        $("#errorLog").show();
-                    });
-            }
-=======
         {
             e.preventDefault();
     
@@ -152,7 +133,6 @@
                     $("#errorLog").show();
                 });
         }
->>>>>>> master
         
         // --- Register Submit --- //   
         	   

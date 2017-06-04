@@ -128,11 +128,6 @@
 
             console.log(USERNAME);
             console.log(PASSWORD);
-
-<<<<<<< HEAD
-	console.log(USERNAME);
-	console.log(PASSWORD);
-
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) => 
 	{
@@ -173,6 +168,7 @@ submit(e)
 	});
 }    
 </script>
+<<<<<<< HEAD
 =======
             krowdspace.users.login(USERNAME, PASSWORD, STAYLOGGED).then
             ((res) => 
@@ -215,4 +211,7 @@ submit(e)
         }    
     </script>
 >>>>>>> master
+=======
+
+>>>>>>> 4431e6119a230a6992fab67a041dadda430d3747
 </login-account>
