@@ -430,7 +430,11 @@ body {
     background-image: url('../img/content/background-white.jpg');
 }
 .alternate-gradient-background {
-    background-image: url('../img/content/background-gradient.jpg');
+background: #1c81a5;
+background: -moz-linear-gradient(-45deg, #1c81a5 0%, #4c4474 100%);
+background: -webkit-linear-gradient(-45deg, #1c81a5 0%,#4c4474 100%);
+background: linear-gradient(135deg, #1c81a5 0%,#4c4474 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', endColorstr='#4c4474',GradientType=1 );
 }
 .boost-table {
     font-size: 28px !important;
