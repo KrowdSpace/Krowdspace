@@ -69,7 +69,7 @@
                   </div>
                   <div class="check-terms checkbox text-left">
                      <label>
-                     <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a>
+                     <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a>
                      </label>
                   </div>
                   <div class="register-button-box">
@@ -134,7 +134,7 @@
 		this.logged_in = true;
 		this.update();
         $('#modal-login').modal('hide');
-        window.location.replace("/#account/dashboard");
+        window.location.replace("/#/account/dashboard");
 	},
 	(err) => 
 	{
@@ -160,7 +160,7 @@ submit(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
-        window.location.replace("/#account/success");
+        window.location.replace("/#/account/success");
 	},
 	(err) => 
 	{

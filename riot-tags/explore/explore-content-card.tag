@@ -7,34 +7,25 @@
                 <i class="fa fa-circle fa-stack-xx text-primary"></i>
                 <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
                 </span>
-                <div style="height: 35px; ">
+                <div style="height: 90px; ">
                     <p class="card-text-alt"><strong>{ projectTitle }</strong></p>
+                <p class="card-text-alt explore-reward" style="padding-top: 5px;"><strong>Reward:</strong> { reward }</p>
                 </div>
-                <p class="card-text-alt explore-reward"><strong>Reward:</strong> { reward }</p>
-                <div class="col-sm-6">
-                    <p class="card-text-alt">${ goal }</p>
+                <div class="col-sm-4 text-left">
+                    <p class="card-text-alt">${ pledged } Raised</p>
                 </div>
-                <div class="col-sm-6 text-right">
-                    <p class="card-text-alt">{ category }</p>
+                <div class="col-sm-4 text-center">
+                    <p class="card-text-alt">{ days } Days</p>
+                </div>
+                <div class="col-sm-4 text-right">
+                    <p class="card-text-alt">${ goal } Goal</p>
                 </div>
                 <div class="col-sm-12">
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" style="width:{ progressBar }%" aria-valuenow="{ progressBar }" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
-                <div class="col-sm-4">
-                    <p class="card-text-alt">{ progressBar }%</p>
-                    <p class="card-text-alt">Funded</p>
-                </div>
-                <div class="col-sm-4 text-left">
-                    <p class="card-text-alt">${ pledged }</p>
-                    <p class="card-text-alt">Pledged</p>
-                </div>
-                <div class="col-sm-4 text-right">
-                    <p class="card-text-alt">{ days }</p>
-                    <p class="card-text-alt">Days Left</p>
-                </div>
-                <div class="clearfix" style="margin:10px;"></div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
@@ -42,7 +33,7 @@
         this.exploreCard = [
         { 
         image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/#explore/project",
+        imageURL:"/#/explore/project",
         featuredIcon: "visible",
         projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
         projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
@@ -55,7 +46,7 @@
         
         { 
         image:"/img/projects/computer.jpg",
-        imageURL:"//#explore/project",
+        imageURL:"/#/explore/project",
         featuredIcon: "visible",
         projectTitle:"Creating A Modular Computer App for All of Your Organizing Needs",
         projectDescription:"We bring a way to organize your day and connect all of your devices through one app.",
@@ -68,7 +59,7 @@
         
         { 
         image:"/img/projects/pizza.jpg",
-        imageURL:"/#explore/project" ,
+        imageURL:"/#/explore/project" ,
         featuredIcon: "visible",
         projectTitle:"The Only Restaurant to use Recipes From our Guests",
         projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
@@ -81,7 +72,7 @@
         
         {
         image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/#explore/project",
+        imageURL:"/#/explore/project",
         featuredIcon: "visible",
         projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
         projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
@@ -94,7 +85,7 @@
         
         { 
         image:"/img/projects/computer.jpg",
-        imageURL:"/#explore/project",
+        imageURL:"/#/explore/project",
         featuredIcon: "none",
         projectTitle:"Creating A Modular Computer App for All of Your Organizing Needs",
         projectDescription:"We bring a way to organize your day and connect all of your devices through one app.",
@@ -107,7 +98,7 @@
         
         { 
         image:"/img/projects/pizza.jpg",
-        imageURL:"/#explore/project" ,
+        imageURL:"/#/explore/project" ,
         featuredIcon: "none",
         projectTitle:"The Only Restaurant to use Recipes From our Guests",
         projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",

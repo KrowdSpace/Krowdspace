@@ -32,18 +32,22 @@
         color: black;
     }
     </style>
-
-    <div class="row">
-        <explore-navigation></explore-navigation>
-        <explore-slider-hero></explore-slider-hero>
-    </div>
-    <div class="container" style="margin-bottom: 50px;">
-        <explore-content-filter></explore-content-filter>
-        <explore-content-card></explore-content-card>
-    </div>
-    <div class="row">
-        <global-footer></global-footer>
-    </div>
-    <explore-modal-login></explore-modal-login>
-    <explore-modal-register></explore-modal-register>
+        <style scoped>
+		:scope { background-color: #fff }
+	</style>
+    <explore-page show={ remove }></explore-page>
+    <global-coming-soon show={ logged_in }></global-coming-soon>
+    <script>	
+        krowdspace.v1.check().then((res)=>
+            {
+                logged_in = true;
+                this.update();
+                console.log('You are logged in');
+            },
+            (err)=>
+            {
+                console.log('You are not logged in');
+                window.location.replace("/#/account/login");
+            });
+    </script> 
 </explore>

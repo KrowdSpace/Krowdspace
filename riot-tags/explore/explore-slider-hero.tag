@@ -16,25 +16,25 @@
     <script type="text/javascript">
         this.indexProject = [
         { image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/#explore/project",
+        imageURL:"/#/explore/project",
         imageAlt:"Bahari Beach bag on the beach",
         projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
         projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",},
 
         { image:"/img/projects/computer.jpg",
-        imageURL:"/#explore/project",
+        imageURL:"/#/explore/project",
         imageAlt:"Computer and accessories sitting on a desk",
         projectTitle:"Creating A Modular Computer App for All of Your Needs",
         projectDescription:"We bring a way to organize your day and connect all of your devices through one app."},
         
         { image:"/img/projects/computer.jpg",
-        imageURL:"/#explore/project",
+        imageURL:"/#/explore/project",
         imageAlt:"Computer and accessories sitting on a desk",
         projectTitle:"Creating A Modular Computer App for All of Your Needs",
         projectDescription:"We bring a way to organize your day and connect all of your devices through one app."},
 
         { image:"/img/projects/pizza.jpg",
-        imageURL:"/#explore/project" ,
+        imageURL:"/#/explore/project" ,
         imageAlt:"Pizza slice sitting on a table with condiments",
         projectTitle:"The Only Restaurant to use Recipes From our Guests",
         projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",}

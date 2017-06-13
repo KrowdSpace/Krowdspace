@@ -13,7 +13,7 @@
                 <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px;">
                     <div class="col-sm-12 text-left containter-right-box">
                         <p class="text-left landing-text">Get extra rewards for backing the same crowdfunding projects you already have been or sign up and submit your own!</p>
-                        <form class="form-vertical" id="commentForm" onsubmit={ submit }>
+                        <form class="form-vertical" id="commentForm" ref="registerform" onsubmit={ submit }>
                             <div class="form-group form-split-right">
                                 <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                             </div>
@@ -42,7 +42,7 @@
                             </div>
                             <div class="check-terms checkbox">
                                 <label>
-                                <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a>
+                                <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a>
                                 </label>
                             </div>
                             <div>
@@ -72,7 +72,9 @@ submit(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
+
         $('#modal-submission').modal('show');
+        this.refs.registerform.reset();
 	},
 	(err) => 
 	{

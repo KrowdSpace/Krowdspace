@@ -37,9 +37,9 @@
                     </ul>
                 </div>
                 <div class="col-sm-8 col-sm-offset-2">
-                    <form role="form" onsubmit={ submit }>
+                    <form role="form" onsubmit={ submit } novalidate>
                         <div class="tab-content tab-content-wizard">
-                            <div class="tab-pane active" role="tabpanel" id="step1">
+                            <div class="tab-pane active no-gutter" role="tabpanel" id="step1">
                                 <p class="text-left">Do you own this crowdfunding project?</p>
                                 <div class="form-group">
                                     <select class="form-control" ref="pvalid" required="required" aria-required="true">
@@ -64,8 +64,15 @@
                                     </select>
                                 </div>
                                 <p class="text-left project-questions">Please provide your live crowdfunding project url.</p>
-                                <div class="form-group">
-                                    <input type="url" ref="projecturl" class="form-control placeholder-color" placeholder="https://" required="required" aria-required="true" aria-invalid="true">
+                                <div class="form-group col-sm-4" style="margin: 0px;">
+                                    <select class="form-control" ref="crowdportal" required="required" aria-required="true">
+                                        <option disabled selected value>Choose Site</option>
+                                        <option value="https://www.kickstarter.com/">Kickstarter.com</option>
+                                        <option value="https://www.indiegogo.com/">Indiegogo.com</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-8" style="padding-left: 15px; margin: 0px;">
+                                    <input type="url" ref="projecturl" class="form-control placeholder-color" placeholder="put-project-url-here" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;">
                                     <li style="padding: 0px;"><button type="button" class="btn-register next-step">continue</button></li>
@@ -94,29 +101,14 @@
                                 </ul>
                             </div>
                             <div class="tab-pane" role="tabpanel" id="step3">
-                                <div class="imageupload panel panel-default">
-                                    <div class="panel-image clearfix no-gutter">
-                                        <p class="text-left image-upload-text">Please upload a project image that represents your campaign as a whole. All images must be 1225 x 700px.</p>
-                                    </div>
-                                    <div class="file-tab panel-body">
-                                        <label class="btn btn-default btn-file">
-                                            <span style="image-upload-btn">Upload From Desktop</span>
-                                            <!-- The file is stored here. -->
-                                            <input type="file" name="image-file" class="thumbnail-tooltip" id="fileUpload" required="required">
-                                        </label>
-                                        <button type="button" class="btn btn-default">Remove</button>
-                                    </div>
-                                    <div class="url-tab panel-body">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control hasclear placeholder-color" placeholder="Image URL">
-                                            <div class="input-group-btn">
-                                                <button type="button" class="btn btn-default">Submit</button>
-                                            </div>
-                                        </div>
-                                        <!-- The URL is stored here. -->
-                                        <input type="hidden" name="image-url" required="required">
-                                    </div>
-                                    <div class="clearfix"></div>
+                                <p class="text-left">To verify that you are the crowdfunding project owner please upload one of these images to your project page before submitting it to Krowdspace. We will check to see if the image is present to prevent false project submissions. Thank you for your understanding!</p>
+                                <div class="row text-center" style="margin-top: 30px;">
+                                <img src="img/press/featured-krowdspace-v1.png" style="width: 450px;">
+                                </div>
+                                <div class="row text-center" style="margin-top: 25px;">
+                                <img src="img/press/featured-krowdspace-v2.png" style="width: 75px;">
+                                <img src="img/press/featured-krowdspace-v3.png" style="width: 100px; margin: 0px 50px;">
+                                <img src="img/press/featured-krowdspace-v4.png" style="width: 75px;">
                                 </div>
                                 <ul class="list-inline pull-right" style="position: absolute; bottom: 0; right: 0;">
                                     <li style="padding: 0px; margin-right: 20px;"><button type="button" class="btn-register prev-step">Previous</button></li>
@@ -154,14 +146,18 @@
 
         let PVALID = this.refs.pvalid.value,
             CATEGORY = this.refs.category.value,
-            URL = this.refs.projecturl.value,
+            DOMAINURL = this.refs.crowdportal.options[this.refs.crowdportal.selectedIndex].value,
+            URL =  this.refs.projecturl.value,
             REWARD = this.refs.reward.value,
             REWARDVALUE = this.refs.rewardoption.value,
             REWARDAMOUNT = this.refs.rewardvalue.value;
 
+            console.log(DOMAINURL);
+
         let DATA = {
                     PVALID,
                     CATEGORY,
+                    DOMAINURL,
                     URL,
                     REWARD,
                     REWARDVALUE,
@@ -178,70 +174,6 @@
             console.log(err);
             });
     }
-
-submit(e)
-{
-	e.preventDefault();
-	
-	let PVALID = this.refs.pvalid.value,
-		CATEGORY = this.refs.category.value,
-		URL = this.refs.projecturl.value,
-		REWARD = this.refs.reward.value,
-		REWARDVALUE = this.refs.rewardoption.value,
-    	REWARDAMOUNT = this.refs.rewardvalue.value;
-    
-    let DATA = {
-                PVALID, 
-                CATEGORY, 
-                URL, 
-                REWARD, 
-                REWARDVALUE, 
-                REWARDAMOUNT, 
-                };
-	
-	krowdspace.register.project(DATA).then
-	((res) => 
-	{
-		console.log('Your Project Has Been Submitted');
-	},
-	(err) => 
-	{
-        console.log('Your Project is Not Submitted');
-		console.log(err);
-	});
-}    
-    submit(e)
-    {
-        e.preventDefault();
-
-        let PVALID = this.refs.pvalid.value,
-            CATEGORY = this.refs.category.value,
-            URL = this.refs.projecturl.value,
-            REWARD = this.refs.reward.value,
-            REWARDVALUE = this.refs.rewardoption.value,
-            REWARDAMOUNT = this.refs.rewardvalue.value;
-
-        let DATA = {
-                    PVALID,
-                    CATEGORY,
-                    URL,
-                    REWARD,
-                    REWARDVALUE,
-                    REWARDAMOUNT,
-                    };
-
-        krowdspace.register.project(DATA).then
-        ((res) =>
-            {
-            console.log('Your Project is Submitted');
-            },
-        (err) =>
-            {
-            console.log('Your Project is Not Submitted');
-            console.log(err);
-            });
-    }
-
 </script>
     <script>
         this.on('mount', function()

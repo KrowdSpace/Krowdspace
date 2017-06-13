@@ -1,15 +1,11 @@
 <admin>
-	<admin-page show={ logged_in }>
-		<style scoped>
-			:scope { background-color: #fff }
-		</style>
-	</admin-page>
+	<admin-page show={ remove }></admin-page>
+	<global-coming-soon show={ logged_in }></global-coming-soon>
 	<script>	
 		krowdspace.v1.check().then((res)=>
 			{
 				logged_in = true;
 				this.update();
-				console.log('You are logged in');
 			},
 			(err)=>
 			{

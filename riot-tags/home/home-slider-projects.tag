@@ -1,6 +1,6 @@
 <home-slider-projects>
 		<div class="container hidden-md hidden-sm hidden-xs">
-			<section class="single-item slider" >
+			<div class="single-item slider" >
 				<div each= { indexProject } class="slick-image" style="display:flex;">
 					<div class="col-sm-7">
 						<a href="{ imageURL }"><img src="{ image }" alt="{ imageAlt }"></a>
@@ -42,7 +42,7 @@
 				        </div>
 				    </div>
                 </div>
-            </section>
+            </div>
         </div>
     <script type="text/javascript">
         this.indexProject = [

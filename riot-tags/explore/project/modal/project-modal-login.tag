@@ -127,7 +127,7 @@
                 {
                     this.logged_in = true;
                     this.update();
-                    window.location.replace("/#explore");
+                    window.location.replace("/#/explore");
                 },(err) => 
                 {
                     $("#errorLog").show();
@@ -151,7 +151,7 @@
         	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
         	((res) => 
         	{
-                window.location.replace("/#account/success");
+                window.location.replace("/#/account/success");
         	},
         	(err) => 
         	{

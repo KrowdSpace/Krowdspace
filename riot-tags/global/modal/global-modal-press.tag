@@ -7,17 +7,17 @@
                     <p class="modal-heading">Press Kit</p>
                 </div>
                 <div class="modal-body">
-                    <p>If you would like to use one of our branded logo images and have not submitted a project to Krowdspace please contact us. If you have a project submitted on Krowdspace we ask that you put the "Featured on Krowdspace" banner with a link to our website somewhere on your crowdfunding project content page. If you need help to add the image and a hyperlink please follow the instructions below.</p>
-                    <p>To put our "Featured on Krowdspace" banner into your project save the image to your desktop and then import it onto your project page. Click on the image and you can then add the hyperlink "www.krowdspace.com". You can also copy and paste the HTML code below the images into your project.</p>
-                    <img class="img-responsive" style="margin: 30px auto;" src="img/press/krowdspace-feat-grey.png">
-                    <img class="img-responsive" style="margin: 30px auto;" src="img/press/krowdspace-feat-light-grey.png">
-                    <p>
-                        For an easy way to add our "Featured on Krowdspace" banner please copy and paste the below HTML into your project page. Each line is referenced to an individual picture. You do not need to add both lines just one of the HTML line. If you would like a specific color combination please <a href="mailto:Mason@Krowdspace.com">contact us</a>.
-                    </p>
-                    <div class="text-center">
-                        <p>&#060;a href="www.krowdspace.com"&#062;&#060;img src="www.krowdspace.com/img/press/krowdspace-feat-grey.png"&#062;&#060;/a&#062;</p>
-                        <p>&#060;a href="www.krowdspace.com"&#062;&#060;img src="www.krowdspace.com/img/press/krowdspace-feat-light-grey.png"&#062;&#060;/a&#062;</p>
-                    </div>
+                    <p>If you would like to use one of our branded logo images and have not submitted a project to Krowdspace please contact us. If you have a project submitted on Krowdspace we ask that you put the "Featured on Krowdspace" banner with a link to our website somewhere on your crowdfunding project content page. If you need help adding the image and the hyperlink please follow the instructions below.</p>
+                    <p>To put our "Featured on Krowdspace" banner into your project save the image to your desktop and then import it onto your project page. Click on the image and you can then add the hyperlink "www.krowdspace.com".</p>
+                    <div class="row text-center" style="margin-top: 30px;">
+                                <img src="img/press/featured-krowdspace-v1.png" alt="Featured on Krowdspace" style="width: 450px;">
+                                </div>
+                                <div class="row text-center" style="margin-top: 25px; margin-bottom: 30px;">
+                                <img src="img/press/featured-krowdspace-v2.png"  alt="Featured on Krowdspace Logo" style="width: 75px;">
+                                <img src="img/press/featured-krowdspace-v3.png" alt="Featured on Krowdspace Badge" style="width: 100px; margin: 0px 50px;">
+                                <img src="img/press/featured-krowdspace-v4.png" alt="Featured on Krowdspace Logo Alt" style="width: 75px;">
+                                </div>
+                    <p class="text-center">If you have any questions please feel free to to reach out to us directly!</p>
                     <div class="text-center">
                         <button type="button" class="text-center modal-close" data-dismiss="modal">Close</button>
                     </div>

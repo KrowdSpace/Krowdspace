@@ -45,7 +45,3 @@ route('/explore/project', function()
 {
 	riot.mount("#main","project");
 });
-route('/login',function()
-{
-	riot.mount("#main","account-login-verify");
-});

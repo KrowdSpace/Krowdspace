@@ -78,7 +78,21 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline-inverted" style="padding-bottom:25px;">
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/7.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="text-left">
+                                    <p class="about-heading"><strong>June 2017</strong></p>
+                                    <p class="about-heading"><strong>Finish Strong</strong></p>
+                                    <div class="text-left">
+                                        <p>Krowdspace is nearing completion and we are getting closer to the final launch! A date has been set and we should be launching August 22, 2017. Krowdspace has made a slight pivot to stay within the bounds of the internet and are excited to bring you the first ever crowdfunding discount site.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline" style="padding-bottom:50px;">
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" src="img/about/6.jpg" alt="">
                             </div>

@@ -2,7 +2,8 @@
 	<style scoped>
 		:scope { background-color: #fff }
 	</style>
- 	<register-page show={ logged_in }></register-page>
+ 	<register-page show={ remove }></register-page>
+	 <global-coming-soon show={ logged_in }></global-coming-soon>
 <script>	
 	krowdspace.v1.check().then((res)=>
 		{
@@ -11,7 +12,7 @@
 		},
 		(err)=>
 		{
-			window.location.replace("/#account/login");
+			window.location.replace("/#/account/login");
 		});
 </script>
 </register>

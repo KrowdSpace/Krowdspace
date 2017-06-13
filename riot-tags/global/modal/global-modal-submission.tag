@@ -6,7 +6,7 @@
 					<p class="modal-heading">Thank You From Krowdspace</p>
 				</div>
 				<div class="modal-body">
-					<p>Thank you for registering with Krowdspace. If you selected to submit a project we will most likely be contacting you shortly. If you are joining as a member we look forward to launching our unique crowdfunding dashboard with you!</p>
+					<p>Thank you for registering with Krowdspace. If you are joining as a member we look forward to launching our unique crowdfunding dashboard with you! We are currently building our site content and should be live in the coming months.</p>
 					<p>We will be sending updates on the latest news, promotions and exclusive giveaways leading up to our official launch. Until then, make sure to stay connected with our social media channels:</p>
 					<div class="text-left boost-warning">
 						<a href="https://www.facebook.com/Krowdspaced" target="_blank">
