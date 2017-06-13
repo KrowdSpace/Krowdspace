@@ -1,5 +1,5 @@
 <explore-modal-register>
-   <div id="modal-explore-register" class="modal fade">
+   <div id="modal-explore-register" class="modal container fade">
       <div class="krowdspace-modal col-lg-offset-3 col-lg-6 col-md-6 hidden-sm hidden-xs">
          <div id="modal" class="modal-content">
             <div class="modal-header">

@@ -1,5 +1,5 @@
 <home-modal-boosts>
-    <div id="modal-boost" class="modal fade">
+    <div id="modal-boost" class="modal container fade">
 		<div class="krowdspace-modal col-sm-10 col-sm-offset-1">
 			<div id="modal" class="modal-content">
 				<div class="modal-header">

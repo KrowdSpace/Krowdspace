@@ -1,5 +1,5 @@
 <dashboard-edit-reward>
-    <div id="edit-reward" class="modal fade">
+    <div id="edit-reward" class="modal container fade">
     <div class="krowdspace-modal col-sm-6 col-sm-offset-3">
         <div id="modal" class="modal-content">
             <div class="modal-header">

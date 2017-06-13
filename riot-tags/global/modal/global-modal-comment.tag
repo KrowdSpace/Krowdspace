@@ -1,5 +1,5 @@
 <global-modal-comment>
-    <div id="modal-comment" class="modal fade">
+    <div id="modal-comment" class="modal container fade">
 		<div class="krowdspace-modal col-sm-6 col-sm-offset-3">
 			<div id="modal" class="modal-content">
 				<div class="modal-header">
