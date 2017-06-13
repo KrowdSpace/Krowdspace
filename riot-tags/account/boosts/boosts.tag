@@ -2,7 +2,8 @@
     <style scoped>
 		:scope { background-color: #fff }
 	</style>
-    <boosts-page></boosts-page>
+    <boosts-page show={ remove }></boosts-page>
+    <global-coming-soon show={ logged_in }></global-coming-soon>
     <script>	
         krowdspace.v1.check().then((res)=>
             {
@@ -13,7 +14,7 @@
             (err)=>
             {
                 console.log('You are not logged in'); 
-                window.location.replace("/#account/login");  
+                window.location.replace("/#/account/login");  
             });
     </script>
 </boosts>

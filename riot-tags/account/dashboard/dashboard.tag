@@ -2,7 +2,8 @@
 	<style scoped>
 		:scope { background-color: #fff }
 	</style>
- 	<dashboard-page show={ logged_in }></dashboard-page>
+ 	<dashboard-page show={ remove }></dashboard-page>
+	<global-coming-soon show={ logged_in }></global-coming-soon>
 <script>	
 	krowdspace.v1.check().then((res)=>
 		{

@@ -18,9 +18,9 @@
     <div class="row verify-text-bottom">
         <div class="col-sm-7" style="line-height: 38px;"> Would you like to submit your own crowdfunding project to Krowdspace?</div>
         <div class="col-sm-4 text-center">
-            <a href="/account/register.html"><span class="verify-submit"><strong>YES</strong>
+            <a href="/#/account/register"><span class="verify-submit"><strong>YES</strong>
             </span></a>
-            <a href="/explore.html"><span class="verify-submit"><strong>NO</strong>
+            <a href="/#/explore.html"><span class="verify-submit"><strong>NO</strong>
             </span></a>
         </div>
     </div>

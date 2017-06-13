@@ -18,7 +18,7 @@
                 </p>{ projectDescription }</p>
                 <p><strong>Reward:</strong> { reward }</p>
                 <p><strong>Coupon Code:</strong> Send the following coupon code as a comment after you have backed the project through the crowdfunding portal. The project owner will fulfill your reward upon successful funding.</p>
-                <div class="text-center" style="margin-top: 30px;">
+                <div class="text-center" style="margin-top: 25px;">
                 <a href="#" class="back-project">BACK PROJECT</a>
                 </div>
             </div>

@@ -40,7 +40,7 @@
             </div>
             <div class="modal-body" style="padding-top: 0px;">
                <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p>
-               <form class="form-vertical" id="commentForm" onsubmit={ submit2 }>
+               <form class="form-vertical" id="commentForm" ref="modalform" onsubmit={ submit2 }>
                   <div class="form-group form-split-right">
                      <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                   </div>
@@ -69,7 +69,7 @@
                   </div>
                   <div class="check-terms checkbox text-left">
                      <label>
-                     <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a>
+                     <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a>
                      </label>
                   </div>
                   <div class="register-button-box">
@@ -135,7 +135,7 @@ loginSubmit(e)
 		this.logged_in = true;
 		this.update();
         $('#modal-login').modal('hide');
-        window.location.replace("/#account/dashboard");
+        window.location.replace("/#/account/dashboard");
 	},
 	(err) => 
 	{
@@ -157,11 +157,13 @@ submit2(e)
 		PASSWORD = this.refs.password.value,
 		KSUSER = this.refs.kickstarter_user.value,
 		IGUSER = this.refs.indiegogo_user.value;
+        this.refs.modalform.reset();
 	
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
 		$('#modal-login').modal('hide');
+        this.refs.modalform.reset();
         $('#modal-submission').modal('show');
 	},
 	(err) => 

@@ -1,4 +1,4 @@
-<krowdspace-navigation>
+<global-krowdspace-navigation>
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt explore-fixed-top" >
         <div class="container">
             <div class="navbar-header page-scroll">
@@ -45,11 +45,10 @@ krowdspace.v1.check().then((res)=>
 	{
 		logged_in = true;
 		this.update();
-		console.log('You are logged in');
 	},
 	(err)=>
 	{
-		console.log('You are not logged in');
+		console.log(err);
 	});
 
 </script>
@@ -77,4 +76,4 @@ krowdspace.v1.check().then((res)=>
             })
         });
     </script>
-</krowdspace-navigation>
+</global-krowdspace-navigation>

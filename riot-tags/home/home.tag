@@ -18,5 +18,5 @@
 	<home-modal-submission></home-modal-submission>
 	<global-analytics-google id="UA-92584644-1"></global-analytics-google>
 
-    <script>krowdspace.setDomain("api.dev.krowdspace.com");</script>
+    <script>krowdspace.setDomain("api.krowdspace.com");</script>
 </home>

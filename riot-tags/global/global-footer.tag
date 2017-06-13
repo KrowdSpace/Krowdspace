@@ -103,7 +103,7 @@
             krowdspace.register.contact_us(FNAME,LNAME,EMAIL,COMMENT).then
             ((res) => 
             {
-                $('#modal-submission').modal('show');
+                $('#modal-comment').modal('show');
             },
             (err) => 
             {

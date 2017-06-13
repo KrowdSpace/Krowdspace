@@ -1,10 +1,10 @@
 <project>
-	<project-modal-login show={ !logged_in }></project-modal-login>
-	<project-page show={ logged_in }>
-		<style scoped>
+	<style scoped>
 			:scope { background-color: #fff }
 		</style>
-	</project-page>
+	<project-modal-login show={ !logged_in }></project-modal-login>
+	<project-page show={ remove }></project-page>
+	<global-coming-soon show={ logged_in }></global-coming-soon>	
 	<script>	
 		krowdspace.v1.check().then((res)=>
 			{

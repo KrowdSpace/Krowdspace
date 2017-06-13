@@ -429,6 +429,9 @@ body {
 .alternate-background {
     background-image: url('../img/content/background-white.jpg');
 }
+.alternate-gradient-background {
+    background-image: url('../img/content/background-gradient.jpg');
+}
 .boost-table {
     font-size: 28px !important;
     vertical-align: middle !important;
@@ -990,6 +993,15 @@ body {
 .social-btn:hover {
     color: #fec503;
 }
+.dash-action-btn {
+    color: #fed136;
+    position: absolute !important; 
+    top: 5px; 
+    right: 5px;
+}
+.dash-action-btn:hover {
+    color: #fec503;
+}
 .margin-text {
     margin-bottom: 0px;
 }
@@ -1132,7 +1144,7 @@ body {
 .card-text-alt {
     font-family: "Montserrat", "Helvetica Neue";
     font-size: 13px;
-    margin: 5px 15px;
+    margin: 5px 10px;
     line-height: 1.1;
 }
 .verify-header {
@@ -1386,7 +1398,6 @@ body {
 }
 .project-growth-box {
     background-color: #fff;
-    padding: 20px 0px;
 }
 .social-fb-color {
     color: #3b5998;
@@ -1418,8 +1429,8 @@ body {
     border-bottom: 1px solid #3f434f;
 }
 .social-content-box-right {
-    padding: 5px 15px;
-    margin: 4px 0px;
+    padding: 5px 0px;
+    margin: 10px 0px;
 }
 .social-content-title {
     padding: 4px 15px;
@@ -1429,9 +1440,9 @@ body {
     margin: 0px;
 }
 .social-content-sub {
-    font-size: 12px;
+    font-size: 13px;
     color: #3f434f;
-    margin: 0px;
+    margin: 5px 0px;
 }
 .social-content-right {
     float: right;
@@ -1443,10 +1454,10 @@ body {
 }
 .metric-left {
     padding: 5px 0px;
-    margin: 0px;
+    margin: 10px 0px;
 }
 .social-metric {
-    font-size: 30px;
+    font-size: 20px;
     margin: 0px;
     font-weight: 600;
     color: #3f434f;
@@ -1460,7 +1471,6 @@ body {
 .divider-inside-right {
     position: relative;
     overflow: hidden;
-    padding: 0px 15px;
 }
 .divider-inside-right:before {
     content: "";
@@ -1541,8 +1551,8 @@ body {
 }
 .chart-box {
     position: relative;
-    width: 60%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0px auto 0px auto;
 }
 .social-selections > input {
     /* HIDE RADIO */
@@ -1755,6 +1765,17 @@ body {
     margin: 0px;
     padding: 3px 15px;
 }
+.project-package-header {
+    font-size: 16px;
+    text-align: center;
+    background-color: #fed136;
+    color: #fff;
+    border-top: 1px solid #3f434f;
+    border-bottom: 1px solid #3f434f;
+    font-weight: 600;
+    margin: 0px 0px 15px 0px;
+    padding: 3px 15px;
+}
 .purchase-description {
     margin: 0px;
     font-size: 14px;
@@ -1773,12 +1794,12 @@ body {
     padding: 0px 20px;
 }
 .featured-box {
-    margin: 0px 0px 20px 15px;
+    margin: 0px 0px 20px 0px;
 }
 .feature-icon {
     width: 30%;
     float: left;
-    padding: 0px 10px 0px 5px;
+    padding: 0px 10px 0px 0px;
 }
 .featured-price-box {
     height: 63px;
@@ -1888,8 +1909,11 @@ body {
 }
 .project-content {
     overflow: scroll;
-    height: 748.28px;
+    height: 494px;
     background-color: #fff;
+    border: 1px solid #3f434f; 
+    margin-top: 0px;
+    padding: 15px 0px;
 }
 .project-reward-value {
     overflow: scroll;
@@ -1904,9 +1928,16 @@ body {
     margin-bottom: 15px;
 }
 .dash-project-description {
+    text-transform: uppercase;
     margin-top: 20px;
     font-size: 14px;
     font-weight: 600;
+}
+.dash-project-title {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
 }
 .dash-project-content {
     font-size: 14px;
@@ -1935,7 +1966,7 @@ body {
     background: #fff;
 }
 .tab-content-wizard > .active {
-    height: 400px;
+    height: 450px;
     margin: 20px 0px;
 }
 .wizard .nav-tabs {
@@ -2205,8 +2236,6 @@ span.round-tab:hover {
     border-radius: 3px;
     color: #fff;
     font-weight: 600;
-    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .back-project:hover,
 .back-project:focus,
@@ -2214,4 +2243,18 @@ span.round-tab:hover {
 .back-project.active {
     background-color: #fec503;
     color: #fff;
+}
+div.dashboard-project p {
+    font-size: 14px;
+}
+div.dashboard-project img {
+    display: block;
+    margin: 10px auto;
+}
+.indiegogo-image {
+    height: 290px; 
+    margin: -10px auto;
+}
+.kickstarter-image {
+    margin: 0 auto;
 }

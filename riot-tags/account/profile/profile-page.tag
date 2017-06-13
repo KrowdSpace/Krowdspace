@@ -1,8 +1,8 @@
 <profile-page>
     <div class="row">
-        <account-navigation></account-navigation>
+        <global-krowdspace-navigation></global-krowdspace-navigation>
     </div>
-        <div class="container-alt">
+        <div class="container-alt" style="margin-top: 50px;">
             <div class="row">
                 <profile-content-information></profile-content-information>
 			</div>

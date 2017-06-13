@@ -1,6 +1,6 @@
 <project-page>
     <div class="row">
-        <explore-navigation></explore-navigation>
+        <global-krowdspace-navigation></global-krowdspace-navigation>
     </div>
         <div class="container">
             <project-content-header></project-content-header>

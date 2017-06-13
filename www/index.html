@@ -6,7 +6,7 @@
     <title>Krowdspace - Back the Project, Not the Platform.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Krowdspace brings a unified dashboard to showcase projects from the top crowdfunding sites.">
-    <meta name="keywords" content="Krowdspace, crowdfunding, crowdfunded, marketing, social media, Kickstarter, Indiegogo, entreprenuer, art, design, technology, music, tech, press release, PR, media list, contacts">
+    <meta name="keywords" content="Krowdspace, crowdfunding, crowdfunded, crowdfunding discounts, kickstarter discounts, kickstarter discount, indiegogo discounts, indiegogo discount, crowdfunding loyalty program, kickstarter loyalty program, indiegogo loyalty program, crowdfunding loyalty rewards, crowdfunding marketing, Kickstarter, Indiegogo, crowdfunding entreprenuer, crowdfunding press release, crowdfunding PR, crowdfunding media list">
     <meta name="author" content="Krowdspace LLC">
     <meta name="language" content="English">
 	<!-- Pinterest Domain Verify -->
@@ -34,6 +34,7 @@
         <global-modal-giveaway></global-modal-giveaway>
         <global-modal-service></global-modal-service>
         <global-modal-submission></global-modal-submission>
+        <global-modal-comment></global-modal-comment>
 		
         <script src="js/jquery-easing.js" type="text/javascript"></script>
         <script src="js/bootstrap.js" type="text/javascript"></script>
@@ -41,19 +42,15 @@
 		<script src="js/chart-bundle.js" type="text/javascript"></script>
 		<script src="js/progress-bar.js" type="text/javascript"></script>
 		<script src="js/slick-slider.js" type="text/javascript"></script>
+        <script src="js/countdown.js" type="text/javascript"></script>
         <script src="js/riot.min.js" type="text/javascript"></script>
         <script src="js/riot.route.js" type="text/javascript"></script>
         <script src="js/routes.js" type="text/javascript"></script>
         <script src="js/tags.js" type="text/javascript"></script>
 		<script src="js/ksc.js" type="text/javascript"></script>
 		<script>
-		krowdspace.setDomain("api.dev.krowdspace.com");
+		krowdspace.setDomain("api.krowdspace.com");
             riot.mount('*');
-        $(window).on('popstate', function() {
-        $('.modal').modal('hide');
-        $( ".modal-backdrop" ).remove();
-        $( ".in" ).remove();
-        });
         </script>
     </body>
 </html>
