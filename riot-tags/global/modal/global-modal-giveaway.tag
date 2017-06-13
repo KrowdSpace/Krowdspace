@@ -1,5 +1,5 @@
 <global-modal-giveaway>
-    <div id="modal-giveaway" class="modal fade">
+    <div id="modal-giveaway" class="modal container fade">
         <div class="krowdspace-modal col-sm-10 col-sm-offset-1" style="margin-bottom: 0px;">
             <div id="modal" class="modal-content text-center">
                 <div class="modal-header">

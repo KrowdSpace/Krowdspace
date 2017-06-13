@@ -1,5 +1,5 @@
 <global-modal-privacy>
-    <div id="modal-privacy-policy" class="modal fade">
+    <div id="modal-privacy-policy" class="modal container fade">
         <div class="krowdspace-modal col-sm-10 col-sm-offset-1">
             <div id="modal" class="modal-content">
                 <div class="modal-header">

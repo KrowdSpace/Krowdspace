@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i>
                 </button>
-                <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" style="width:55px;"></a>
+                <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a>
             </div>
             <div class="collapse navbar-collapse text-center" id="explore-nav-collapse">
                 <ul class="nav navbar-nav navbar-left">
@@ -19,7 +19,7 @@
                         <a class="explore-scroll" href="/#/account/register">Submit Project</a>
                     </li>
                 </ul>
-                <img class="logo-float" src="img/krowdspace-explore.png" style="width:55px;">
+                <img class="logo-float" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>

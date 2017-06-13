@@ -1,5 +1,5 @@
 <dashboard-refresh-project>
-    <div id="refresh-project" class="modal fade">
+    <div id="refresh-project" class="modal container fade">
     <div class="krowdspace-modal col-sm-6 col-sm-offset-3">
         <div id="modal" class="modal-content">
             <div class="modal-header">

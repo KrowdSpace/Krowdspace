@@ -1,5 +1,5 @@
 <home-slider-clients>
-<img src="img/content/page-break.jpg" class="hidden-sm hidden-xs auto-width">
+<img src="img/content/page-break.jpg" alt="Krowdspace Page Break" class="hidden-sm hidden-xs auto-width">
 	<aside class="hidden-sm hidden-xs">
 		<div class="container text-center">
 			<section class="center slider">

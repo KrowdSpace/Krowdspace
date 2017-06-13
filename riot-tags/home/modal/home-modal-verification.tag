@@ -1,5 +1,5 @@
 <home-modal-verification>
-    <div id="modal-verification" class="modal fade">
+    <div id="modal-verification" class="modal container fade">
         <div class="krowdspace-modal col-sm-6 col-sm-offset-3">
             <div id="modal" class="modal-content text-center">
                 <div class="modal-header">

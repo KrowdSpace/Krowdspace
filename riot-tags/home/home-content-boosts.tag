@@ -1,6 +1,6 @@
 <home-content-boosts>
 
-<img src="img/content/page-break.jpg" class="img-responsive auto-width hidden-sm hidden-xs">
+<img src="img/content/page-break.jpg" alt="Krowdspace Page Break" class="img-responsive auto-width hidden-sm hidden-xs">
 	<section id="boost">
 		<div class="container">
 			<div class="row">
