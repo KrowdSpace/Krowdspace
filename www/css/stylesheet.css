@@ -468,6 +468,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
         margin: 0px;
         padding: 0px;
     }
+    .landing-header {
+        margin-top: 0px !important;
+    }
+    section {
+        padding: 20px;
+    }
 }
 @media screen and (max-width: 530px) {
     .timeline > li .timeline-panel {
@@ -580,6 +586,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 @media screen and (max-width: 767px) {
     .container-top-header {
         max-width: 100%;
+    }
+    #modal-login {
+        padding-top: 25px;
     }
 }
 .btn-register {
