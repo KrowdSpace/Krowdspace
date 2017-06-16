@@ -53,7 +53,7 @@
                 </div>
                 <div class="col-sm-1 hidden-xs"></div>
                 <div id="contact" class="col-md-4 col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10 shadow contact-area">
-                    <form class="form-vertical no-gutter form-style" id="messageForm" onsubmit={ footerMessage }>
+                    <form class="form-vertical no-gutter form-style" id="messageForm" ref="comment" onsubmit={ footerMessage }>
                         <div class="form-group">
                             <input type="text" ref="firstnameform" class="form-control placeholder-color" placeholder="First Name" required="" aria-required="true" aria-invalid="true">
                         </div>
@@ -104,6 +104,7 @@
             ((res) => 
             {
                 $('#modal-comment').modal('show');
+                this.refs.comment.reset();
             },
             (err) => 
             {
