@@ -853,7 +853,8 @@ riot.tag2('global-analytics-google', '', '', '', function(opts) {
   ga('send', 'pageview')
 });
 riot.tag2('global-coming-soon', '<div class="alternate-gradient-background img-responsive text-center" style="position: relative; width: 100%; height: 100vh; "> <img src="/img/content/krowdspace-icon-lg.png" style="width: 125px; margin-top: 75px; margin-bottom: 30px;"> <p style="color:#fff; font-size: 26px; font-weight: 600; padding: 0px 10px;">Our website is currently under construction</p> <p style="color:#fff; font-size: 26px; font-weight: 100; margin-top: 20px; margin:0px;">We\'ll be live in</p> <div class="timer-next-service"> <input type="hidden" id="time_remaining"> <div class="col-sm-6 col-sm-offset-3 no-gutter" style="margin-top: 30px;"> <div class="col-xs-3 text-center"> <p id="days" class="data" style="color:#fff; font-size: 40px; font-weight: 100;">00</p> <p class="label" style="color:#fff; font-size: 20px; font-weight: 100;">Days</p> </div> <div class="col-xs-3 text-center"> <p id="hours" class="data" style="color:#fff; font-size: 40px; font-weight: 100;">00</p> <p class="label" style="color:#fff; font-size: 20px; font-weight: 100;">Hours</p> </div> <div class="col-xs-3 text-center"> <p id="minutes" class="data" style="color:#fff; font-size: 40px; font-weight: 100;">00</p> <p class="label" style="color:#fff; font-size: 20px; font-weight: 100;">Minutes</p> </div> <div class="col-xs-3 text-center"> <p id="seconds" class="data" style="color:#fff; font-size: 40px; font-weight: 100;">00</p> <p class="label" style="color:#fff; font-size: 20px; font-weight: 100;">Seconds</p> </div> </div> </div> </div>', '', '', function(opts) {
-        var end = new Date('08/22/2017 11:59 AM');
+
+    var end = new Date('08/22/2017 11:59 AM');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -861,14 +862,14 @@ riot.tag2('global-coming-soon', '<div class="alternate-gradient-background img-r
     var _day = _hour * 24;
     var timer;
 
-    function showRemaining() {
+    function showRemaining()
+    {
         var now = new Date();
         var distance = end - now;
-        if (distance < 0) {
-
+        if (distance < 0)
+        {
             clearInterval(timer);
-            document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
+            document.getElementById('countdown').innerHTML = 'Krowdspace Launch!';
             return;
         }
         var days = Math.floor(distance / _day);
@@ -881,7 +882,6 @@ riot.tag2('global-coming-soon', '<div class="alternate-gradient-background img-r
         document.getElementById('minutes').innerHTML = minutes;
         document.getElementById('seconds').innerHTML = seconds;
     }
-
     timer = setInterval(showRemaining, 1000);
 });
 riot.tag2('global-footer', '<footer class="alternate-background"> <div class="custom-footer"> <div class="container"> <div class="row"> <div class="col-md-3 hidden-sm hidden-xs"> <p class="footer-text"> <strong>Quick Links</strong> </p> <ul class="text-left quicklinks"> <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li> <li><a class="page-scroll neutral-footer-link" href="#project">Submit A Project</a></li> <li><a class="page-scroll neutral-footer-link" href="#benefits">Our Benefits</a></li> <li><a class="page-scroll neutral-footer-link" href="#boost">View Boosts</a></li> <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li> <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li> <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li> <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li> </ul> </div> <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-1 col-xs-10"> <p class="footer-text"> <strong>Follow Us On Social Media</strong> </p> <p class="text-left" style="color: #fff; ">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways. </p> <div class="text-left social-icons"> <a href="https://www.facebook.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.pinterest.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.twitter.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.instagram.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-instagram fa-stack-1x fa-inverse"></i> </span> </a> </div> </div> <div class="col-sm-1 hidden-xs"></div> <div id="contact" class="col-md-4 col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10 shadow contact-area"> <form class="form-vertical no-gutter form-style" id="messageForm" ref="comment" onsubmit="{footerMessage}"> <div class="form-group"> <input type="text" ref="firstnameform" class="form-control placeholder-color" placeholder="First Name" required="" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input type="text" ref="lastnameform" class="form-control placeholder-color" placeholder="Last Name" required="" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="emailform" class="form-control placeholder-color" placeholder="Email Address" required="" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <textarea class="form-control placeholder-color" ref="commentform" type="text" placeholder="Your Message" rows="3" required=""></textarea> </div> <div> <input type="submit" class="contact-btn" name="submit" value="Send Message"> </div> </form> </div> </div> <div class="text-left"> <p class="copyright">&#169; Krowdspace 2017</p> </div> </div> </div> </footer>', '', '', function(opts) {

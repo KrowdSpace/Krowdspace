@@ -26,7 +26,8 @@
         </div>
     </div>
     <script>
-        var end = new Date('08/22/2017 11:59 AM');
+
+    var end = new Date('08/22/2017 11:59 AM');
 
     var _second = 1000;
     var _minute = _second * 60;
@@ -34,14 +35,14 @@
     var _day = _hour * 24;
     var timer;
 
-    function showRemaining() {
+    function showRemaining() 
+    {
         var now = new Date();
         var distance = end - now;
-        if (distance < 0) {
-
+        if (distance < 0) 
+        {
             clearInterval(timer);
-            document.getElementById('countdown').innerHTML = 'EXPIRED!';
-
+            document.getElementById('countdown').innerHTML = 'Krowdspace Launch!';
             return;
         }
         var days = Math.floor(distance / _day);
@@ -54,7 +55,6 @@
         document.getElementById('minutes').innerHTML = minutes;
         document.getElementById('seconds').innerHTML = seconds;
     }
-
     timer = setInterval(showRemaining, 1000);
     </script>
     
