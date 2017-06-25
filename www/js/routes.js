@@ -43,5 +43,9 @@ route('/account/success', function()
 });
 route('/explore/project', function()
 {
-	riot.mount("#main","project");
+	riot.mount("#main","explore");
+});
+route('/explore/project/*', function(uri)
+{
+	riot.mount("#main", "project", {test: 'test', uri: uri});
 });

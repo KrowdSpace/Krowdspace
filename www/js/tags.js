@@ -1231,7 +1231,10 @@ getUserTest().then((usrname)=>
 	
 riot.tag2('project-page-title', '<div class="col-sm-6 text-left no-gutter user-container" style="padding: 20px;"> <p class="dashboard-text" style="height: 38px;">{projectTitle}</p> <p class="dashboard-text" style="height: 74px;">{projectDescription}</p> <p class="dashboard-text" style="height: 38px;">Reward: {projectReward}</p> <p class="dashboard-text">To view the coupon code or directly link to the rewards page please follow the "Support Project button below</p> <div class="col-sm-6 text-center divider-inside-right" style="padding-right: 20px; margin-top: 15px;"> <p class="back-project">BACK PROJECT</p> </div> <div class="col-sm-6 text-center" style="padding-left: 20px; margin-top: 25px;"> <p class="social-metric">{countdown} DAYS LEFT</p> </div> </div>', '', '', function(opts) {
 
-    krowdspace.projects.project('Adam').then((res)=>
+    this.uri = opts.uri;
+
+    console.log(this.opts.uri);
+    krowdspace.projects.project(this.opts.uri).then((res)=>
     {
         this.projectTitle = res.data[0].project_data.web_data.title.content;
         this.projectDescription = res.data[0].project_data.web_data.description.content;
@@ -1268,10 +1271,11 @@ riot.tag2('project-page-title', '<div class="col-sm-6 text-left no-gutter user-c
     });
 });	
 	
-riot.tag2('project-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <project-page-share></project-page-share> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <project-page-image></project-page-image> <project-page-title></project-page-title> </div> </div> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row project-row no-gutter dash"> <project-page-content></project-page-content> </div> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('project-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <project-page-share uri="{opts.uri}"></project-page-share> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <project-page-image uri="{opts.uri}"></project-page-image> <project-page-title uri="{opts.uri}"></project-page-title> </div> </div> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row project-row no-gutter dash"> <project-page-content uri="{opts.uri}"></project-page-content> </div> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
 });
-riot.tag2('project', '<project-modal-login show="{!logged_in}"></project-modal-login> <project-page show="{logged_in}"></project-page>', 'project,[data-is="project"]{ background-color: #fff }', '', function(opts) {
-
+riot.tag2('project', '<project-modal-login show="{!logged_in}" uri="{opts.uri}"></project-modal-login> <project-page show="{logged_in}" uri="{opts.uri}"></project-page>', 'project,[data-is="project"]{ background-color: #fff }', '', function(opts) {
+		this.uri = opts.uri;
+		console.log(this.uri);
 		krowdspace.v1.check().then((res)=>
 			{
 				logged_in = true;

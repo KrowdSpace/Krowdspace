@@ -12,8 +12,11 @@
 			</div>
 	</div>
 <script>
-
-    krowdspace.projects.project('Adam').then((res)=>
+        
+    this.uri = opts.uri;
+    
+    console.log(this.opts.uri);
+    krowdspace.projects.project(this.opts.uri).then((res)=>
     {
         this.projectTitle = res.data[0].project_data.web_data.title.content;
         this.projectDescription = res.data[0].project_data.web_data.description.content;
