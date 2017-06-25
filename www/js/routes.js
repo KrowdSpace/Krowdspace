@@ -45,8 +45,3 @@ route('/explore/project', function()
 {
 	riot.mount("#main","project");
 });
-route('/andreTest', function()
-{
-	console.log("andretest page");
-	riot.mount('main', "explore-page");
-})

@@ -47,7 +47,7 @@
     {
         return function(el)
         {
-            return el.category === filterText;
+            return el.category == filterText;
         }
     }
     
