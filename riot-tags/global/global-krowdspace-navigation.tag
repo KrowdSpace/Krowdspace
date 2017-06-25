@@ -34,7 +34,7 @@
                         <a show={ !logged_in } href="#modal-explore-register" class="modal-link" data-toggle="modal">Sign Up</a>
                     </li>
                     <li>
-                        <a show={ logged_in } href="/#/account/profile">Profile</a>
+                        <a show={ logged_in } href="/#/account/resource">Resource</a>
                     </li>
                 </ul>
             </div>

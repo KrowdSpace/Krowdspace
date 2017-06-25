@@ -16,5 +16,4 @@
     <home-modal-rewards></home-modal-rewards>
     <home-modal-verification></home-modal-verification>
 	<home-modal-submission></home-modal-submission>
-	<global-analytics-google id="UA-92584644-1"></global-analytics-google>
 </home>

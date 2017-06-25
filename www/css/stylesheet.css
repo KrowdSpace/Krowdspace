@@ -100,6 +100,8 @@ h1 {
     .navbar-alt {
         color: #fff;
         background-color: #000;
+        -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
     }
     .navbar-custom .navbar-nav > .active > a {
         display: block;
@@ -108,6 +110,8 @@ h1 {
 @media (min-width: 992px) {
     .navbar-custom.affix {
         background-color: rgba(0, 0, 0, .9);
+        -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
     }
 }
 .logo-float {
@@ -751,8 +755,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     background-color: #fec503;
 }
 .shadow {
-    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
 .funding-box {
     position: absolute;
@@ -1002,6 +1006,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 }
 .social-btn {
     color: #fed136;
+    cursor: pointer;
 }
 .social-btn:hover {
     color: #fec503;
@@ -1394,6 +1399,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     font-size: 12px;
     margin: 0px;
     color: #3f434f;
+    text-transform: uppercase;
 }
 .social-title-right {
     float: right;
@@ -2136,9 +2142,6 @@ span.round-tab:hover {
 .profile-image-box {
     border-right: 1px solid #3f434f;
 }
-.profile-info-box {
-    padding: 19px 0px;
-}
 .profile-edit-btn {
     position: absolute;
     top: 0px;
@@ -2153,16 +2156,6 @@ span.round-tab:hover {
     color: #fff;
     cursor: pointer;
 }
-.profile-name {
-    font-size: 16px;
-    margin: 10px 0px;
-    color: #3f434f;
-}
-.profile-email {
-    font-size: 14px;
-    margin: 10px 0px 30px 0px;
-    color: #3f434f;
-}
 .profile-crowdfund {
     margin-top: 30px;
     margin-bottom: 10px;
@@ -2174,6 +2167,12 @@ span.round-tab:hover {
 .profile-project-box {
     margin-bottom: 50px;
     padding: 20px;
+    border: 1px solid #3f434f;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.project-box-item {
     border: 1px solid #3f434f;
     background-color: #fff;
     -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -2244,7 +2243,9 @@ span.round-tab:hover {
     color: #fed136;
 }
 .back-project {
-    padding: 10px 16px;
+    display: inline-block;
+    margin: 10px 0px;
+    padding: 6px 10px;
     background-color: #fed136;
     border-radius: 3px;
     color: #fff;
@@ -2257,12 +2258,32 @@ span.round-tab:hover {
     background-color: #fec503;
     color: #fff;
 }
-div.dashboard-project p {
-    font-size: 14px;
+.project-header-box {
+    -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
 }
-div.dashboard-project img {
+.explore-project {
+    border: solid 1px #3f434f;
+    padding: 15px;
+    -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+div.explore-project p {
+    font-size: 13px;
+}
+div.explore-project img {
     display: block;
     margin: 10px auto;
+}
+div.explore-project a {
+    color: #333;
+    background-color: #ffe58f;
+    padding: 0px 3px; 
+}
+div.explore-project a:hover {
+    color: #333;
+    background-color: #fed136;
+
 }
 .indiegogo-image {
     height: 290px; 
@@ -2270,4 +2291,269 @@ div.dashboard-project img {
 }
 .kickstarter-image {
     margin: 0 auto;
+}
+.dashboard {
+    margin-top: 93px; 
+    margin-bottom: 50px; 
+    padding: 0px;
+}
+.dash-row {
+    margin: 20px 0px 0px 0px;
+}
+.project-row {
+    margin: 30px 0px 0px 0px;
+}
+.dash-bar {
+    height: 52px;
+    overflow: hidden;
+    border: 1px solid #3f434f; 
+    padding: 5px 0px 5px 0px;
+    -webkit-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); 
+   -moz-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); 
+     -o-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); 
+        transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
+}
+.dash-bar:hover,
+.dash-bar:focus,
+.dash-bar:active,
+.dash-bar.active {
+    height: 75px;
+    -webkit-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); 
+   -moz-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); 
+     -o-transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); 
+        transition: all 200ms cubic-bezier(0.250, 0.100, 0.250, 1.000); /* ease (default) */
+}
+.dash-divider {
+    display: none;
+}
+.dash-bar:hover .dash-divider {
+    display: block;
+}
+.facebook {
+    color: #3b5998;
+    margin-right: 15px
+}
+.facebook-back {
+    background-color: #3b5998;
+}
+.twitter {
+    color: #4099FF;
+    margin-right: 15px
+}
+.twitter-back {
+    background-color: #4099FF;
+}
+.linkedin {
+    color:#007bb6;
+    margin-right: 15px
+}
+.linked-back {
+    background-color: #007bb6;
+}
+.reddit {
+    color: #FF5700;
+    margin-right: 15px
+}
+.reddit-back {
+    background-color: #FF5700;
+}
+.digg {
+    color: #356AA0;
+    margin-right: 15px
+}
+.digg-back {
+    background-color: #356AA0;
+}
+.stumbleupon {
+    color: #eb4924;
+}
+.stumble-back {
+    background-color: #eb4924;
+}
+.krowdspace-back {
+    background-color: #fed136;
+}
+.filterdark:hover,
+.filterdark:focus,
+.filterdark:active,
+.filterdark.active {
+    -webkit-filter: brightness(0.85);
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+.fixed-image-box {
+    margin-top: 0px; 
+    overflow: hidden; 
+    height: 270px;
+}
+.image-container {
+    border-left: 1px solid #3f434f; 
+    border-top: 1px solid #3f434f; 
+    border-bottom: 1px solid #3f434f; 
+    position: relative; 
+    padding: 0px;
+}
+.dashboard-text-bar {
+    font-size: 12px;
+    margin: 0px;
+    color: #3f434f;
+    text-transform: uppercase; 
+    padding-top: 5px;
+}
+.dashboard-text {
+    font-size: 12px;
+    margin: 0px;
+    color: #3f434f;
+    text-transform: uppercase;
+}
+.funding-text-left {
+    font-size: 12px;
+    margin: 0px;
+    text-transform: uppercase;
+    position: absolute; 
+    bottom: 30px; 
+    left: 10px; 
+    color: #fff; 
+    border: 1px solid #fff; 
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.5);
+}
+.funding-text-right {
+    font-size: 12px;
+    margin: 0px;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 30px; 
+    right: 10px; 
+    color: #fff; 
+    border: 1px solid #fff; 
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.5);
+}
+.description-text {
+    padding-top: 20px;
+}
+.crowdfunding-text {
+    padding: 10px 0px;
+}
+.profile-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0px 0px 15px 0px;
+}
+.profile-email {
+    padding: 0px 0px 10px 0px;
+    color: #3f434f;
+}
+.edit-text-title {
+    margin: 15px 0px 3px 0px;
+}
+.profile-padding {
+    padding-top: 20px;
+}
+.user-container {
+    position: relative; 
+    border: 1px solid #3f434f; 
+    height: 292px; 
+    padding: 20px 0px;
+}
+.dashboard-hours-container {
+    padding-bottom: 15px; 
+    border: 1px solid #3f434f; 
+    height: 240px;
+}
+.user-stat-box {
+    margin: 15px 0px;
+    padding: 10px 0px 5px 0px;
+}
+#circleChart {
+    padding: 10px 30px 10px 30px; 
+    position: relative;
+}
+.chardata {
+    padding-top: 5px;
+}
+.dashboard-title-container {
+    border: 1px solid #3f434f; 
+    padding: 15px; 
+    height: 150px;
+}
+.dashboard-title-box {
+    height: 120px; 
+    padding-right: 15px;
+}
+.disclaimer-text {
+    padding-top: 20px;
+}
+.couponcode-box {
+    border: 3px solid #fed136; 
+    margin: 18px auto; 
+    width: 300px;
+}
+.couponcode {
+    font-size: 30px; 
+    margin: 0px; 
+    font-weight: 600; 
+    color: #fed136; 
+    text-transform: uppercase;
+}
+.icon-share {
+    margin: 0px 20px;
+    width: 40px;
+}
+.icon-reset {
+    margin: 0px;
+    padding: 0px 1px;
+}
+.dashboard-reward-container {
+    padding-left: 20px; 
+    padding-right: 0px;
+}
+.dashboard-reward-box {
+    padding: 15px; 
+    position: relative; 
+    border: 1px solid #3f434f; 
+    height: 240px;
+}
+.reward-text {
+    height: 30px;
+}
+.float-btn {
+    position: absolute !important; 
+    top: 5px; 
+    right: 5px;
+}
+.banner {
+    padding: 15px 30px 10px 30px;
+}
+.feature-box {
+    position: relative;
+}
+.feature-hover {
+    display: none;
+    cursor: pointer;
+    position: absolute; 
+    background: #000;
+    opacity: .7; 
+    width: 115px;
+    height: 57px; 
+    top: 20px; right: 50px;
+}
+.feature-box:hover .feature-hover {
+    display: block;
+}
+.feature-hover-icon {
+    display: none !important;
+    cursor: pointer;
+    position: absolute !important;
+    top: 29px; 
+    right: 86px; 
+    z-index: 2;
+}
+.feature-box:hover .feature-hover-icon {
+    display: block !important;
+}
+#progressBar {
+    height: 20px;
 }

@@ -27,28 +27,28 @@
     </div>
     <script>
 
-    var end = new Date('08/22/2017 11:59 AM');
+    let end = new Date('08/22/2017 11:59 AM'),
 
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
+        _second = 1000,
+        _minute = _second * 60,
+        _hour = _minute * 60,
+        _day = _hour * 24,
+        timer;
 
     function showRemaining() 
     {
-        var now = new Date();
-        var distance = end - now;
+        let now = new Date(),
+            distance = end - now;
         if (distance < 0) 
         {
             clearInterval(timer);
             document.getElementById('countdown').innerHTML = 'Krowdspace Launch!';
             return;
         }
-        var days = Math.floor(distance / _day);
-        var hours = Math.floor((distance % _day) / _hour);
-        var minutes = Math.floor((distance % _hour) / _minute);
-        var seconds = Math.floor((distance % _minute) / _second);
+        let days = Math.floor(distance / _day),
+            hours = Math.floor((distance % _day) / _hour),
+            minutes = Math.floor((distance % _hour) / _minute),
+            seconds = Math.floor((distance % _minute) / _second);
 
         document.getElementById('days').innerHTML = days;
         document.getElementById('hours').innerHTML = hours;
