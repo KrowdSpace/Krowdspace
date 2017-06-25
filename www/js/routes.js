@@ -9,9 +9,9 @@ route('/account/dashboard', function()
 {
 	riot.mount("#main","dashboard");
 });
-route('/account/profile', function(){
+route('/account/resource', function(){
 
-	riot.mount("#main","profile");
+	riot.mount("#main","resource");
 });
 route('/account/register', function()
 {

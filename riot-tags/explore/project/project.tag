@@ -3,18 +3,16 @@
 			:scope { background-color: #fff }
 		</style>
 	<project-modal-login show={ !logged_in }></project-modal-login>
-	<project-page show={ remove }></project-page>
-	<global-coming-soon show={ logged_in }></global-coming-soon>	
+	<project-page show={ logged_in }></project-page>
 	<script>	
 		krowdspace.v1.check().then((res)=>
 			{
 				logged_in = true;
 				this.update();
-				console.log('You are logged in');
 			},
 			(err)=>
 			{
-				console.log('You are not logged in');  
+				console.log(err);  
 			});
 	</script>
 </project>

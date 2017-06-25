@@ -83,6 +83,7 @@
     </div>
 
     <script>
+
     // --- Show Password and Hide Password --- //	   
         
         this.on('mount', function() 
@@ -128,8 +129,8 @@
 
             console.log(USERNAME);
             console.log(PASSWORD);
-	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
-	((res) => 
+    
+	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res)=>
 	{
 		this.logged_in = true;
 		this.update();
