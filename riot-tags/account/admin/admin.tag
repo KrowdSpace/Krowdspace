@@ -1,6 +1,6 @@
 <admin>
-	<admin-page show={ remove }></admin-page>
-	<global-coming-soon show={ logged_in }></global-coming-soon>
+	<admin-page show={ logged_in }></admin-page>
+	<global-coming-soon show={ remove }></global-coming-soon>
 	<script>	
 		krowdspace.v1.check().then((res)=>
 			{
@@ -9,7 +9,7 @@
 			},
 			(err)=>
 			{
-				console.log('You are not logged in');  
+				console.log(err);  
 			});
 	</script>
 </admin>

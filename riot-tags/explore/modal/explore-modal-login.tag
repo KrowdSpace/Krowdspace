@@ -132,7 +132,6 @@
 	{
 		this.logged_in = true;
 		this.update();
-        console.log(res);
         $('#modal-explore-login').modal('hide');
 	},
 	(err) => 
