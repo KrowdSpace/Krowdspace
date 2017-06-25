@@ -696,88 +696,120 @@ riot.tag2('verify-content-confirm', '<div class="row row-verify"> <p class="text
 });
 riot.tag2('verify', '<success></success>', '', '', function(opts) {
 });
-riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard}" class="col-sm-4"> <div class="no-gutter explore-container"> <a href="{imageURL}"><img class="img-responsive" riot-src="{image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span class="fa-stack fa-lg explore-feature-icon" riot-style="display:{featuredIcon}"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 90px; "> <p class="card-text-alt"><strong>{projectTitle}</strong></p> <p class="card-text-alt explore-reward" style="padding-top: 5px;"><strong>Reward:</strong> {reward}</p> </div> <div class="col-sm-4 text-left"> <p class="card-text-alt">${pledged} Raised</p> </div> <div class="col-sm-4 text-center"> <p class="card-text-alt">{days} Days</p> </div> <div class="col-sm-4 text-right"> <p class="card-text-alt">${goal} Goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressbar" riot-style="width:{progressBar}%" aria-valuenow="{progressBar}" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div>', '', '', function(opts) {
-        this.exploreCard = [
+riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.category"> <div class="no-gutter explore-container"> <a href="{exploreCard.imageURL}"><img class="img-responsive" riot-src="{exploreCard.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span class="fa-stack fa-lg explore-feature-icon" riot-style="display:{exploreCard.featuredIcon}"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 90px; "> <p class="card-text-alt"><strong>{exploreCard.projectTitle}</strong></p> <p class="card-text-alt explore-" reward style="padding-top: 5px;"><strong>reward:</strong> {exploreCard.reward}</p> </div> <div class="col-sm-4 text-left"> <p class="card-text-alt">${exploreCard.pledged} Raised</p> </div> <div class="col-sm-4 text-center"> <p class="card-text-alt">{exploreCard.days} days</p> </div> <div class="col-sm-4 text-right"> <p class="card-text-alt">${exploreCard.goal} goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style="width:{exploreCard.progressBar}%" aria-valuenow="{exploreCard.progressBar}" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
+        this.displayCards = [];
+        this.exploreCards = [
         {
-        image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/#/explore/project",
-        featuredIcon: "visible",
-        projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
-        reward:"All pledges over $50 will receive a Bahari Sarong and Scarf.",
-        goal:"40,000",
-        category:"Design",
-        progressBar:'26',
-        pledged:'10,544',
-        days:'19'},
+        "image":"/img/projects/bahari-bag.jpg",
+        "imageURL":"/#/explore/project",
+        "featuredIcon": "visible",
+        "projectTitle":"Lala Bahari: The First Convertible Tote Bag of its Kind",
+        "projectDescription":"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
+        "reward":"All pledges over $50 will receive a Bahari Sarong and Scarf.",
+        "goal":"40,000",
+        "category":"Design",
+        "progressBar":'26',
+        "pledged":'10,544',
+        "days":'19'},
 
         {
-        image:"/img/projects/computer.jpg",
-        imageURL:"/#/explore/project",
-        featuredIcon: "visible",
-        projectTitle:"Creating A Modular Computer App for All of Your Organizing Needs",
-        projectDescription:"We bring a way to organize your day and connect all of your devices through one app.",
-        reward:"All Krowdspace members will receive a free year subscription to our organizing app.",
-        goal:"100,000",
-        category:"Tech",
-        progressBar:'46',
-        pledged:'45,798',
-        days:'14'},
+        "image":"/img/projects/computer.jpg",
+        "imageURL":"/#/explore/project",
+        "featuredIcon": "visible",
+        "projectTitle":"Creating A Modular Computer App for All of Your Organizing Needs",
+        "projectDescription":"We bring a way to organize your day and connect all of your devices through one app.",
+        "reward":"All Krowdspace members will receive a free year subscription to our organizing app.",
+        "goal":"100,000",
+        "category":"Tech",
+        "progressBar":'46',
+        "pledged":'45,798',
+        "days":'14'},
 
         {
-        image:"/img/projects/pizza.jpg",
-        imageURL:"/#/explore/project" ,
-        featuredIcon: "visible",
-        projectTitle:"The Only Restaurant to use Recipes From our Guests",
-        projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
-        reward:"All Krowdspace members will receive our Cookbook.",
-        goal:"50,000",
-        category:"Food",
-        progressBar:'83',
-        pledged:'41,765',
-        days:'2'},
+        "image":"/img/projects/pizza.jpg",
+        "imageURL":"/#/explore/project" ,
+        "featuredIcon": "visible",
+        "projectTitle":"The Only Restaurant to use Recipes From our Guests",
+        "projectDescription":"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
+        "reward":"All Krowdspace members will receive our Cookbook.",
+        "goal":"50,000",
+        "category":"Food",
+        "progressBar":'83',
+        "pledged":'41,765',
+        "days":'2'},
 
         {
-        image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/#/explore/project",
-        featuredIcon: "visible",
-        projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
-        reward:"All pledges over $50 will receive a Bahari Sarong and Scarf.",
-        goal:"40,000",
-        category:"Design",
-        progressBar:'26',
-        pledged:'10,544',
-        days:'19'},
+        "image":"/img/projects/bahari-bag.jpg",
+        "imageURL":"/#/explore/project",
+        "featuredIcon": "visible",
+        "projectTitle":"Lala Bahari: The First Convertible Tote Bag of its Kind",
+        "projectDescription":"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
+        "reward":"All pledges over $50 will receive a Bahari Sarong and Scarf.",
+        "goal":"40,000",
+        "category":"Design",
+        "progressBar":'26',
+        "pledged":'10,544',
+        "days":'19'},
 
         {
-        image:"/img/projects/computer.jpg",
-        imageURL:"/#/explore/project",
-        featuredIcon: "none",
-        projectTitle:"Creating A Modular Computer App for All of Your Organizing Needs",
-        projectDescription:"We bring a way to organize your day and connect all of your devices through one app.",
-        reward:"All Krowdspace members will receive a free year subscription to our organizing app.",
-        goal:"100,000",
-        category:"Tech",
-        progressBar:'46',
-        pledged:'45,798',
-        days:'14'},
+        "image":"/img/projects/computer.jpg",
+        "imageURL":"/#/explore/project",
+        "featuredIcon": "none",
+        "projectTitle":"Creating A Modular Computer App for All of Your Organizing Needs",
+        "projectDescription":"We bring a way to organize your day and connect all of your devices through one app.",
+        "reward":"All Krowdspace members will receive a free year subscription to our organizing app.",
+        "goal":"100,000",
+        "category":"Tech",
+        "progressBar":'46',
+        "pledged":'45,798',
+        "days":'14'},
 
         {
-        image:"/img/projects/pizza.jpg",
-        imageURL:"/#/explore/project" ,
-        featuredIcon: "none",
-        projectTitle:"The Only Restaurant to use Recipes From our Guests",
-        projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
-        reward:"All Krowdspace members will receive our Cookbook.",
-        goal:"50,000",
-        category:"Food",
-        progressBar:'83',
-        pledged:'41,765',
-        days:'2'},
-        ]
+        "image":"/img/projects/pizza.jpg",
+        "imageURL":"/#/explore/project" ,
+        "featuredIcon": "none",
+        "projectTitle":"The Only Restaurant to use Recipes From our Guests",
+        "projectDescription":"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
+        "reward":"All Krowdspace members will receive our Cookbook.",
+        "goal":"50,000",
+        "category":"Food",
+        "progressBar":'83',
+        "pledged":'41,765',
+        "days":'2'},
+        ];
+
+        this.setExploreCards = function setExploreCards(neA)
+        {
+            this.displayCards = neA;
+            this.update();
+        };
+
+        this.setExploreCards(this.exploreCards);
 });
-riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Popular</option> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control"> <option value="">All Categories</option> <option value="">Art</option> <option value="">Design</option> <option value="">Film</option> <option value="">Food</option> <option value="">Music</option> <option value="">Photography</option> <option value="">Technology</option> <option value="">Video Games</option> <option value="">Writing</option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" class="form-control" placeholder="Search Projects"> <div class="input-group-btn"> <button class="btn btn-default" type="submit"><i class="fa fa-search fa-lg"></i></button> </div> </div> </form> </div> </div>', '', '', function(opts) {
+
+riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Popular</option> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control"> <option value="">All Categories</option> <option value="">Art</option> <option value="">Design</option> <option value="">Film</option> <option value="">Food</option> <option value="">Music</option> <option value="">Photography</option> <option value="">Technology</option> <option value="">Video Games</option> <option value="">Writing</option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{myFunction}"> <div class="input-group-btn"> <button class="btn btn-default" type="submit"><i class="fa fa-search fa-lg"></i></button> </div> </div> </form> </div> </div>', '', '', function(opts) {
+    this.on('mount', function(){
+        this.update();
+        this.filterTag = this.opts.filtersearch;
+    });
+
+    function categoriesFilter(filterText)
+    {
+        return function(el)
+        {
+            return el.category.toLowerCase().includes(filterText.toLowerCase()) || el.projectTitle.toLowerCase().includes(filterText.toLowerCase());
+        }
+    }
+
+    this.myFunction = function()
+    {
+        var value = this.refs.searchBox.value;
+        var exploreCards = this.filterTag.exploreCards;
+        let filterArray = exploreCards.filter(categoriesFilter(value));
+
+        this.filterTag.setExploreCards(filterArray);
+    }.bind(this)
+
 });
 riot.tag2('krowdspace-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt explore-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i> </button> <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a> </div> <div class="collapse navbar-collapse text-center" id="explore-nav-collapse"> <ul class="nav navbar-nav navbar-left"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="explore-scroll" href="/#/explore">Explore</a> </li> <li> <a class="explore-scroll" href="/#/account/register">Submit Project</a> </li> </ul> <img class="logo-float" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a show="{logged_in}" class="explore-scroll" href="/#/account/dashboard">Dashboard</a> </li> <li> <a show="{!logged_in}" href="#modal-explore-login" class="modal-link" data-toggle="modal">Login</a> </li> <li> <a show="{!logged_in}" href="#modal-explore-register" class="modal-link" data-toggle="modal">Sign Up</a> </li> <li> <a show="{logged_in}" href="/#/account/profile">Profile</a> </li> </ul> </div> </div> </nav>', '', '', function(opts) {
 
@@ -815,7 +847,13 @@ krowdspace.v1.check().then((res)=>
             })
         });
 });
-riot.tag2('explore-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> <explore-slider-hero></explore-slider-hero> </div> <div class="container" style="margin-bottom: 50px;"> <explore-content-filter></explore-content-filter> <explore-content-card></explore-content-card> </div> <div class="row"> <global-footer></global-footer> </div> <explore-modal-login></explore-modal-login> <explore-modal-register></explore-modal-register>', 'explore-page .slider,[data-is="explore-page"] .slider{ width: 100%; position: relative; margin: 0px auto; } explore-page .slick-slide,[data-is="explore-page"] .slick-slide{ margin: 0px; } explore-page .slick-slide p,[data-is="explore-page"] .slick-slide p,explore-page .slick-slide .learn-more,[data-is="explore-page"] .slick-slide .learn-more{ display: none; } explore-page .slick-current p,[data-is="explore-page"] .slick-current p,explore-page .slick-current .learn-more,[data-is="explore-page"] .slick-current .learn-more{ display: block; } explore-page .slick-slide img,[data-is="explore-page"] .slick-slide img{ border-top: 1px solid #dcdedd; border-bottom: 1px solid #dcdedd; width: 750px; } explore-page .slick-prev:before,[data-is="explore-page"] .slick-prev:before,explore-page .slick-next:before,[data-is="explore-page"] .slick-next:before{ color: black; }', '', function(opts) {
+riot.tag2('explore-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> <explore-slider-hero></explore-slider-hero> </div> <div class="container" style="margin-bottom: 50px;"> <explore-content-filter filtersearch="{refs.filter}"></explore-content-filter> <explore-content-card ref="filter"></explore-content-card> </div> <div class="row"> <global-footer></global-footer> </div> <explore-modal-login></explore-modal-login> <explore-modal-register></explore-modal-register>', 'explore-page .slider,[data-is="explore-page"] .slider{ width: 100%; position: relative; margin: 0px auto; } explore-page .slick-slide,[data-is="explore-page"] .slick-slide{ margin: 0px; } explore-page .slick-slide p,[data-is="explore-page"] .slick-slide p,explore-page .slick-slide .learn-more,[data-is="explore-page"] .slick-slide .learn-more{ display: none; } explore-page .slick-current p,[data-is="explore-page"] .slick-current p,explore-page .slick-current .learn-more,[data-is="explore-page"] .slick-current .learn-more{ display: block; } explore-page .slick-slide img,[data-is="explore-page"] .slick-slide img{ border-top: 1px solid #dcdedd; border-bottom: 1px solid #dcdedd; width: 750px; } explore-page .slick-prev:before,[data-is="explore-page"] .slick-prev:before,explore-page .slick-next:before,[data-is="explore-page"] .slick-next:before{ color: black; }', '', function(opts) {
+    this.on('mount',function(){
+
+        this.filter = this.refs.filter;
+
+    });
+
 });
 riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header" style="padding-top: 57px; margin-bottom: 40px;"> <div each="{indexProject}" class="slick-image" style="position:relative"> <img riot-src="{image}" alt="{imageAlt}"> <div style="position:absolute;top: 0;left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, .3)"> <div class="col-sm-9 explore-feature-left"> <p class="explore-title">{projectTitle}</p> <p class="explore-description">{projectDescription}</p> </div> <div class="col-sm-3 explore-feature-right text-center"> <a href="{imageURL}"><span class="learn-more">Learn More</span></a> </div> </div> </div> </div>', '', '', function(opts) {
         this.indexProject = [

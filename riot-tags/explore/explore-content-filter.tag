@@ -27,7 +27,7 @@
         <div class="col-sm-4">
             <form role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Projects">
+                    <input type="text" ref= "searchBox" class="form-control" placeholder="Search Projects" onkeyup={ myFunction }>
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="fa fa-search fa-lg"></i></button>
                     </div>
@@ -35,4 +35,30 @@
             </form>
         </div>
     </div>   
+
+    <script>
+    this.on('mount', function(){
+        this.update();
+        this.filterTag = this.opts.filtersearch;
+    });
+
+
+    function categoriesFilter(filterText) 
+    {
+        return function(el)
+        {
+            return el.category.toLowerCase().includes(filterText.toLowerCase()) || el.projectTitle.toLowerCase().includes(filterText.toLowerCase());
+        }
+    }
+    
+    myFunction() 
+    {
+        var value = this.refs.searchBox.value;
+        var exploreCards = this.filterTag.exploreCards;
+        let filterArray = exploreCards.filter(categoriesFilter(value));
+
+        this.filterTag.setExploreCards(filterArray);
+    }
+    
+    </script>
 </explore-content-filter>
