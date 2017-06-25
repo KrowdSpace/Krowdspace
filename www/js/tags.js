@@ -165,6 +165,23 @@ getUserTest().then((usrname)=>
             circleProgress = Math.abs(z);
 
         bar.animate(circleProgress);
+
+        let pID = res.data.username,
+        pData = {
+            project_data: {
+                info_data: {
+                    days: showRemaining(),
+                }
+            }
+        };
+        krowdspace.projects.set_project(pID, pData).then((res)=>
+        {
+
+        },
+        (err)=>
+        {
+            console.log(err);
+        });
         this.update();
     },
     (err)=>
@@ -220,8 +237,9 @@ getUserTest().then((usrname)=>
     this.refs.dataBacked.innerHTML = '$' + finishedvalue + ' RAISED';
 
     let goalstring = res.data[0].project_data.web_data.funding.text,
-        goalarray = goalstring.split('$'),
+        goalarray = goalstring.split(/[\$?\€?]/g),
         target = goalarray[1];
+        convertedgoal = target;
 
     this.refs.dataGoal.innerHTML = '$' + target + ' GOAL';
 
@@ -242,6 +260,25 @@ getUserTest().then((usrname)=>
     let goalpercent = z/x;
     bar.animate(goalpercent);
 
+    let pID = res.data.username,
+        pData = {
+            project_data: {
+                info_data: {
+                    goal: convertedgoal,
+                    raised: finishedvalue,
+                    percent: goalpercent,
+                }
+            }
+        };
+        krowdspace.projects.set_project(pID, pData).then((res)=>
+        {
+            console.log(res);
+        },
+        (err)=>
+        {
+            console.log(err);
+        });
+
     this.update();
 },
 (err)=>
@@ -249,6 +286,7 @@ getUserTest().then((usrname)=>
     console.log(err);
 }
 );
+
 });	
 	
 riot.tag2('dashboard-project-reward', '<div class="col-sm-9 dashboard-reward-container"> <div class="dashboard-reward-box shadow"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text reward-text">Reward: <span ref="projectReward"></span></p> <p class="dashboard-text disclaimer-text">Upon succesful completion of your crowdfunding project you have agreed to send out any additional rewards to the backers who have supported your campaign.</p> <div class="couponcode-box text-center"> <p class="couponcode" ref="couponCode">1XD6D3</p> </div> <p class="dashboard-text">This is your project reward code. Backers from Krowdspace will send you this code through your crowdfunding platform website so that you can verify their discount.</p> </div> </div>', '', '', function(opts) {
@@ -696,87 +734,18 @@ riot.tag2('verify-content-confirm', '<div class="row row-verify"> <p class="text
 });
 riot.tag2('verify', '<success></success>', '', '', function(opts) {
 });
-riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.category"> <div class="no-gutter explore-container"> <a href="{exploreCard.imageURL}"><img class="img-responsive" riot-src="{exploreCard.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span class="fa-stack fa-lg explore-feature-icon" riot-style="display:{exploreCard.featuredIcon}"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 90px; "> <p class="card-text-alt"><strong>{exploreCard.projectTitle}</strong></p> <p class="card-text-alt explore-" reward style="padding-top: 5px;"><strong>reward:</strong> {exploreCard.reward}</p> </div> <div class="col-sm-4 text-left"> <p class="card-text-alt">${exploreCard.pledged} Raised</p> </div> <div class="col-sm-4 text-center"> <p class="card-text-alt">{exploreCard.days} days</p> </div> <div class="col-sm-4 text-right"> <p class="card-text-alt">${exploreCard.goal} goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style="width:{exploreCard.progressBar}%" aria-valuenow="{exploreCard.progressBar}" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.project_data.info_data.category"> <div class="no-gutter explore-container"> <a href="/#/explore/project"><img class="img-responsive" riot-src="{exploreCard.project_data.web_data.mainImg.content}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span class="fa-stack fa-lg explore-feature-icon" style="display:visible"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 90px; "> <p class="card-text-alt"><strong>{exploreCard.project_data.web_data.title.content}</strong></p> <p class="card-text-alt explore-" reward style="padding-top: 5px;"><strong>reward:</strong> {exploreCard.project_data.info_data.reward}</p> </div> <div class="col-sm-4 text-left"> <p class="card-text-alt">${exploreCard.project_data.info_data.raised} Raised</p> </div> <div class="col-sm-4 text-center"> <p class="card-text-alt">{exploreCard.project_data.info_data.days} days</p> </div> <div class="col-sm-4 text-right"> <p class="card-text-alt">${exploreCard.project_data.info_data.goal} goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" style=" width: 60%;" aria-valuenow="{exploreCard.project_data.info_data.percent}" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
         this.displayCards = [];
-        this.exploreCards = [
+        this.exploreCards = [];
+        krowdspace.projects.explore().then((res) =>
         {
-        "image":"/img/projects/bahari-bag.jpg",
-        "imageURL":"/#/explore/project",
-        "featuredIcon": "visible",
-        "projectTitle":"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        "projectDescription":"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
-        "reward":"All pledges over $50 will receive a Bahari Sarong and Scarf.",
-        "goal":"40,000",
-        "category":"Design",
-        "progressBar":'26',
-        "pledged":'10,544',
-        "days":'19'},
-
+            console.log(res);
+            this.setExploreCards(res.data);
+        },
+        (err)=>
         {
-        "image":"/img/projects/computer.jpg",
-        "imageURL":"/#/explore/project",
-        "featuredIcon": "visible",
-        "projectTitle":"Creating A Modular Computer App for All of Your Organizing Needs",
-        "projectDescription":"We bring a way to organize your day and connect all of your devices through one app.",
-        "reward":"All Krowdspace members will receive a free year subscription to our organizing app.",
-        "goal":"100,000",
-        "category":"Tech",
-        "progressBar":'46',
-        "pledged":'45,798',
-        "days":'14'},
-
-        {
-        "image":"/img/projects/pizza.jpg",
-        "imageURL":"/#/explore/project" ,
-        "featuredIcon": "visible",
-        "projectTitle":"The Only Restaurant to use Recipes From our Guests",
-        "projectDescription":"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
-        "reward":"All Krowdspace members will receive our Cookbook.",
-        "goal":"50,000",
-        "category":"Food",
-        "progressBar":'83',
-        "pledged":'41,765',
-        "days":'2'},
-
-        {
-        "image":"/img/projects/bahari-bag.jpg",
-        "imageURL":"/#/explore/project",
-        "featuredIcon": "visible",
-        "projectTitle":"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        "projectDescription":"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
-        "reward":"All pledges over $50 will receive a Bahari Sarong and Scarf.",
-        "goal":"40,000",
-        "category":"Design",
-        "progressBar":'26',
-        "pledged":'10,544',
-        "days":'19'},
-
-        {
-        "image":"/img/projects/computer.jpg",
-        "imageURL":"/#/explore/project",
-        "featuredIcon": "none",
-        "projectTitle":"Creating A Modular Computer App for All of Your Organizing Needs",
-        "projectDescription":"We bring a way to organize your day and connect all of your devices through one app.",
-        "reward":"All Krowdspace members will receive a free year subscription to our organizing app.",
-        "goal":"100,000",
-        "category":"Tech",
-        "progressBar":'46',
-        "pledged":'45,798',
-        "days":'14'},
-
-        {
-        "image":"/img/projects/pizza.jpg",
-        "imageURL":"/#/explore/project" ,
-        "featuredIcon": "none",
-        "projectTitle":"The Only Restaurant to use Recipes From our Guests",
-        "projectDescription":"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
-        "reward":"All Krowdspace members will receive our Cookbook.",
-        "goal":"50,000",
-        "category":"Food",
-        "progressBar":'83',
-        "pledged":'41,765',
-        "days":'2'},
-        ];
+            console.log(err)
+        });
 
         this.setExploreCards = function setExploreCards(neA)
         {

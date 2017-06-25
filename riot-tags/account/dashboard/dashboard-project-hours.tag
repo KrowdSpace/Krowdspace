@@ -98,6 +98,23 @@ getUserTest().then((usrname)=>
             circleProgress = Math.abs(z);
 
         bar.animate(circleProgress);  // Number from 0.0 to 1.0
+
+        let pID = res.data.username,
+        pData = {
+            project_data: {
+                info_data: {
+                    days: showRemaining(),
+                }
+            }
+        };
+        krowdspace.projects.set_project(pID, pData).then((res)=>
+        {
+            
+        },
+        (err)=>
+        {
+            console.log(err);
+        });
         this.update();
     },
     (err)=> 
