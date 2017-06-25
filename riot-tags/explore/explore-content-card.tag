@@ -9,7 +9,7 @@
                 <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
                 </span>
                 <div style="height: 90px; ">
-                    <p class="card-text-alt"><strong>{ "projectTitle" }</strong></p>
+                    <p class="card-text-alt"><strong>{ exploreCard.projectTitle }</strong></p>
                 <p class="card-text-alt explore-"reward"" style="padding-top: 5px;"><strong>reward:</strong> { exploreCard.reward }</p>
                 </div>
                 <div class="col-sm-4 text-left">

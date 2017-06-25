@@ -47,7 +47,7 @@
     {
         return function(el)
         {
-            return el.category == filterText;
+            return el.category.toLowerCase().includes(filterText.toLowerCase()) || el.projectTitle.toLowerCase().includes(filterText.toLowerCase());
         }
     }
     
