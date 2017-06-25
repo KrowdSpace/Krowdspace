@@ -54,8 +54,9 @@ getUserTest().then((usrname)=>
     this.refs.dataBacked.innerHTML = '$' + finishedvalue + ' RAISED';
 
     let goalstring = res.data[0].project_data.web_data.funding.text,
-        goalarray = goalstring.split('$'),
+        goalarray = goalstring.split(/[\$?\€?]/g),
         target = goalarray[1];
+        convertedgoal = target;
 
     this.refs.dataGoal.innerHTML = '$' + target + ' GOAL';
 
@@ -76,6 +77,25 @@ getUserTest().then((usrname)=>
     let goalpercent = z/x;
     bar.animate(goalpercent);  // Number from 0.0 to 1.0
 
+    let pID = res.data.username,
+        pData = {
+            project_data: {
+                info_data: {
+                    goal: convertedgoal,
+                    raised: finishedvalue,
+                    percent: goalpercent,
+                }
+            }
+        };
+        krowdspace.projects.set_project(pID, pData).then((res)=>
+        {
+            console.log(res);
+        },
+        (err)=>
+        {
+            console.log(err);
+        });
+        
     this.update(); 
 },
 (err)=> 
@@ -83,6 +103,7 @@ getUserTest().then((usrname)=>
     console.log(err);
 }
 );
+ 
 </script>
 </dashboard-project-image>	
 	
