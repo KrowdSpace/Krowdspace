@@ -696,7 +696,7 @@ riot.tag2('verify-content-confirm', '<div class="row row-verify"> <p class="text
 });
 riot.tag2('verify', '<success></success>', '', '', function(opts) {
 });
-riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.category"> <div class="no-gutter explore-container"> <a href="{exploreCard.imageURL}"><img class="img-responsive" riot-src="{exploreCard.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span class="fa-stack fa-lg explore-feature-icon" riot-style="display:{exploreCard.featuredIcon}"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 90px; "> <p class="card-text-alt"><strong>{⁗projectTitle⁗}</strong></p> <p class="card-text-alt explore-" reward style="padding-top: 5px;"><strong>reward:</strong> {exploreCard.reward}</p> </div> <div class="col-sm-4 text-left"> <p class="card-text-alt">${exploreCard.pledged} Raised</p> </div> <div class="col-sm-4 text-center"> <p class="card-text-alt">{exploreCard.days} days</p> </div> <div class="col-sm-4 text-right"> <p class="card-text-alt">${exploreCard.goal} goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style="width:{exploreCard.progressBar}%" aria-valuenow="{exploreCard.progressBar}" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.category"> <div class="no-gutter explore-container"> <a href="{exploreCard.imageURL}"><img class="img-responsive" riot-src="{exploreCard.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span class="fa-stack fa-lg explore-feature-icon" riot-style="display:{exploreCard.featuredIcon}"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 90px; "> <p class="card-text-alt"><strong>{exploreCard.projectTitle}</strong></p> <p class="card-text-alt explore-" reward style="padding-top: 5px;"><strong>reward:</strong> {exploreCard.reward}</p> </div> <div class="col-sm-4 text-left"> <p class="card-text-alt">${exploreCard.pledged} Raised</p> </div> <div class="col-sm-4 text-center"> <p class="card-text-alt">{exploreCard.days} days</p> </div> <div class="col-sm-4 text-right"> <p class="card-text-alt">${exploreCard.goal} goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style="width:{exploreCard.progressBar}%" aria-valuenow="{exploreCard.progressBar}" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
         this.displayCards = [];
         this.exploreCards = [
         {
@@ -797,7 +797,7 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <s
     {
         return function(el)
         {
-            return el.category === filterText;
+            return el.category.toLowerCase().includes(filterText.toLowerCase()) || el.projectTitle.toLowerCase().includes(filterText.toLowerCase());
         }
     }
 
