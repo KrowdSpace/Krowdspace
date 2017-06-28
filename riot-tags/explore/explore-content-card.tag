@@ -36,7 +36,7 @@
         this.exploreCards = []; 
         krowdspace.projects.explore().then((res) =>
         {
-            console.log(res);
+            console.log(res.data);
             this.setExploreCards(res.data);
         },
         (err)=>
@@ -52,6 +52,7 @@
         };
 
         this.setExploreCards(this.exploreCards);
+       
     </script>
 
 </explore-content-card>
