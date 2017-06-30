@@ -740,6 +740,7 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
         krowdspace.projects.explore().then((res) =>
         {
             console.log(res.data);
+            this.exploreCards = res.data;
             this.setExploreCards(res.data);
         },
         (err)=>
