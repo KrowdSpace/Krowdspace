@@ -37,6 +37,7 @@
         krowdspace.projects.explore().then((res) =>
         {
             console.log(res.data);
+            this.exploreCards = res.data;
             this.setExploreCards(res.data);
         },
         (err)=>
