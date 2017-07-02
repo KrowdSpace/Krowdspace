@@ -1,57 +1,73 @@
 <explore-slider-hero>
-    <div class="autoplay slider explore-header" style="padding-top: 57px; margin-bottom: 40px;">
-        <div each= { indexProject } class="slick-image" style="position:relative">
-            <img src="{ image }" alt="{ imageAlt }">
-            <div style="position:absolute;top: 0;left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, .3)">
-                <div class="col-sm-9 explore-feature-left">
-                    <p class="explore-title">{ projectTitle }</p>
-                    <p class="explore-description">{ projectDescription }</p>
+    <div class="autoplay slider explore-header">
+        <div class="explore-banner-box" each= { ExploreBannerFilter }>
+            <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
+            <div class="explore-box">
+                <div class="col-sm-9">
+                    <div style="position: relative; height: 301px;">
+                        <div class="explore-feature-left">
+                            <div>
+                            <span class="explore-title">{ name }</span>
+                            </div>
+                            <div class="explore-box-text">
+                                <span class="explore-title">{ project_data.info_data.reward }</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-sm-3 explore-feature-right text-center">
-                    <a href="{ imageURL }"><span class="learn-more">Learn More</span></a>
+                    <a href="{ '/#/explore/project/' + unique_id }"><p class="learn-more">Learn More</p></a>
                 </div>
             </div>
         </div>
     </div>
     <script type="text/javascript">
-        this.indexProject = [
-        { image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/#/explore/project",
-        imageAlt:"Bahari Beach bag on the beach",
-        projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",},
-
-        { image:"/img/projects/computer.jpg",
-        imageURL:"/#/explore/project",
-        imageAlt:"Computer and accessories sitting on a desk",
-        projectTitle:"Creating A Modular Computer App for All of Your Needs",
-        projectDescription:"We bring a way to organize your day and connect all of your devices through one app."},
-        
-        { image:"/img/projects/computer.jpg",
-        imageURL:"/#/explore/project",
-        imageAlt:"Computer and accessories sitting on a desk",
-        projectTitle:"Creating A Modular Computer App for All of Your Needs",
-        projectDescription:"We bring a way to organize your day and connect all of your devices through one app."},
-
-        { image:"/img/projects/pizza.jpg",
-        imageURL:"/#/explore/project" ,
-        imageAlt:"Pizza slice sitting on a table with condiments",
-        projectTitle:"The Only Restaurant to use Recipes From our Guests",
-        projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",}
-        ]
-    </script>
-    <script type="text/javascript">
-        this.on('mount', function() 
+        krowdspace.projects.explore().then((res) =>
         {
-          $('.autoplay').slick({
-          arrows: false,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          autoplay: true,
-          autoplaySpeed: 5000,
-          centerMode: true,
-          variableWidth: true,
+            let ExploreBannerData = res.data,
+                FilterExplore = ExploreBannerData.filter((element) => {
+                return (element.project_data.meta_data.explore === true);
             });
+
+            let newObject={
+                        unique_id: 'project-feature-popup',
+                        name: '',
+                        project_data: 
+                        {
+                            web_data: 
+                            {
+                                mainImg: {
+                                    content: '/img/projects/krowdspace-banner-1.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data: 
+                            {
+                                reward: ''
+                            }
+                        }
+                    };
+
+            FilterExplore.push(newObject);
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                centerMode: true,
+                variableWidth: true,
+            });
+        },
+        (err)=>
+        {
+            console.log(err)
         });
     </script>
 </explore-slider-hero>

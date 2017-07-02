@@ -22,49 +22,34 @@
                     <p class="footer-text">
                         <strong>Follow Us On Social Media</strong>
                     </p>
-                    <p class="text-left" style="color: #fff; ">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways.
+                    <p class="text-left social-footer">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways.
                     </p>
                     <div class="text-left social-icons">
                         <a href="https://www.facebook.com/Krowdspaced" target="_blank">
-                        <span class="fa-stack fa fa-2x social-btn">
-                        <i class="fa fa-circle fa-stack-2x" ></i>
-                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                        </span>
+                        <i class="fa fa-facebook footer-social-icon filterprimary"></i>
                         </a>
                         <a href="https://www.pinterest.com/Krowdspace" target="_blank">
-                        <span class="fa-stack fa fa-2x social-btn">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
-                        </span>
+                        <i class="fa fa-pinterest footer-social-icon filterprimary"></i>
                         </a>
                         <a href="https://www.twitter.com/Krowdspaced" target="_blank">
-                        <span class="fa-stack fa fa-2x social-btn">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                        </span>
+                        <i class="fa fa-twitter footer-social-icon filterprimary"></i>
                         </a>
                         <a href="https://www.instagram.com/Krowdspace" target="_blank">
-                        <span class="fa-stack fa fa-2x social-btn">
-                        <i class="fa fa-circle fa-stack-2x"></i>
-                        <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                        </span>
+                        <i class="fa fa-instagram footer-social-icon filterprimary"></i>
                         </a>
                     </div>
                 </div>
-                <div class="col-sm-1 hidden-xs"></div>
-                <div id="contact" class="col-md-4 col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10 shadow contact-area">
-                    <form class="form-vertical no-gutter form-style" id="messageForm" ref="comment" onsubmit={ footerMessage }>
+                <div class="col-lg-push-1 col-lg-4 text-center">
+                    <p class="footer-text" style="margin-bottom: 26px;"><strong>Contact Krowdspace</strong></p>
+                    <form onsubmit={ contactMessage } ref="commentForm">
                         <div class="form-group">
-                            <input type="text" ref="firstnameform" class="form-control placeholder-color" placeholder="First Name" required="" aria-required="true" aria-invalid="true">
+                            <input type="text" ref="fullname" class="form-control" placeholder="Full Name" required="required" aria-required="true" aria-invalid="true">
                         </div>
                         <div class="form-group">
-                            <input type="text" ref="lastnameform" class="form-control placeholder-color" placeholder="Last Name" required="" aria-required="true" aria-invalid="true">
+                            <input type="email" ref="email" class="form-control" placeholder="Email Address" required="" aria-required="true" aria-invalid="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" ref="emailform" class="form-control placeholder-color" placeholder="Email Address" required="" aria-required="true" aria-invalid="true">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control placeholder-color" ref="commentform" type="text" placeholder="Your Message" rows="3" required=""></textarea>
+                            <textarea class="form-control" ref="comment" type="text" placeholder="Your Message" rows="3" required="required"></textarea>
                         </div>
                         <div>
                             <input type="submit" class="contact-btn" name="submit" value="Send Message">
@@ -73,13 +58,12 @@
                 </div>
             </div>
             <div class="text-left">
-                <p class="copyright">&#169; Krowdspace 2017</p>
+                <p class="copyright">&copy; Krowdspace { year }</p>
             </div>
         </div>
 		</div>
     </footer>
     <script>
-    var self = this;
         this.on('mount', function() 
         {
             $('a.page-scroll').bind('click', function(event) 
@@ -91,25 +75,26 @@
                 event.preventDefault();
             })
         });
-      footerMessage(e)
+      contactMessage(e)
         {
             e.preventDefault();
             
-            var FNAME = this.refs.firstnameform.value,
-                LNAME = this.refs.lastnameform.value,
-                EMAIL = this.refs.emailform.value,
-                COMMENT = this.refs.commentform.value;
+            var FULLNAME = this.refs.fullname.value,
+                EMAIL = this.refs.email.value,
+                COMMENT = this.refs.commentForm.value;
         
-            krowdspace.register.contact_us(FNAME,LNAME,EMAIL,COMMENT).then
+            krowdspace.register.contact_us(FULLNAME,EMAIL,COMMENT).then
             ((res) => 
             {
                 $('#modal-comment').modal('show');
-                this.refs.comment.reset();
+                this.refs.commentForm.reset();
             },
             (err) => 
             {
                 console.log(err);
             });
         }  
+        this.year = new Date().getFullYear();
+        this.update();
     </script>
 </global-footer>

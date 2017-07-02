@@ -2,7 +2,6 @@
     <div class="row">
         <div class="col-sm-3">
             <select class="form-control">
-                <option value="">Popular</option>
                 <option value="">Featured Projects</option>
                 <option value="">Just Launched</option>
                 <option value="">Closing Soon</option>
@@ -29,7 +28,7 @@
                 <div class="input-group">
                     <input type="text" ref= "searchBox" class="form-control" placeholder="Search Projects" onkeyup={ myFunction }>
                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="fa fa-search fa-lg"></i></button>
+                        <div class="btn btn-void"><i class="fa fa-search fa-lg"></i></div>
                     </div>
                 </div>
             </form>
@@ -47,7 +46,7 @@
     {
         return function(el)
         {
-            return el.category.toLowerCase().includes(filterText.toLowerCase()) || el.projectTitle.toLowerCase().includes(filterText.toLowerCase());
+            return el.project_data.info_data.category.toLowerCase().includes(filterText.toLowerCase()) || el.name.toLowerCase().includes(filterText.toLowerCase());
         }
     }
     

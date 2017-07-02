@@ -4,7 +4,7 @@
             <a href="{ kickstarterShare }" target="_blank">
                 <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png"/>
             </a>
-            <a href="/#/explore/project?{ krowdspaceShare }"> 
+            <a href="/#/explore/project/{ krowdspacePage }"> 
                 <img class="icon-share filterdark" src="img/fav/krowdspace-share-icon.png"/>
             </a>
             <p class="dashboard-text-bar dash-divider">Live Project Links</p>
@@ -66,40 +66,25 @@
         </div>
     </div>
 <script>
-getUserTest();
-
-function getUserTest(usr)
-{
-    return krowdspace.users.user(usr).then((res)=>
+krowdspace.projects.project(this.opts.userkey).then((res)=>
     {
+        this.kickstarterShare = res.data[0].project_data.info_data.url; 
+
+        this.krowdspacePage = res.data[0].unique_id;
+
+        this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
         
-    },
-    (err)=>
-    {
-        console.log('Error: ', err);
-    });
-};
+        this.twitterShare = 'https://twitter.com/intent/tweet?text=Get extra rewards and support my crowdfunding project at Krowdspace.com &via=krowdspaced&hashtags=krowdspace, crowdfunding, rewards';
+        
+        this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
 
-getUserTest().then((usrname)=>
-{
-    return krowdspace.projects.project(usrname);
-}).then((res)=>
-{
-    this.kickstarterShare = res.data[0].project_data.info_data.url;    
+        this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
 
-    this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
-    
-    this.twitterShare = 'https://twitter.com/intent/tweet?text=Get extra rewards and support my crowdfunding project at Krowdspace.com &via=krowdspaced&hashtags=krowdspace, crowdfunding, rewards';
-    
-    this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+        this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
 
-    this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
+        this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
 
-    this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
-
-    this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
-
-    this.update();
+        this.update();
     },
     (err)=> 
     {

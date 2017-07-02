@@ -13,18 +13,18 @@
     .slick-slide {
       margin: 0px;
     }
-    .slick-slide p,
+    .slick-slide span,
     .slick-slide .learn-more {
       display: none;   
     }
-    .slick-current p,
+    .slick-current span,
     .slick-current .learn-more {
-      display: block;       
+      display: inline;       
     }
     .slick-slide img {
       border-top: 1px solid #dcdedd;
       border-bottom: 1px solid #dcdedd;
-      width: 750px;
+      width: 550px;
     }
 
     .slick-prev:before,
