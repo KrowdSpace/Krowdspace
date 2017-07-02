@@ -8,17 +8,11 @@
             </select>
         </div>
         <div class="col-sm-3">
-            <select class="form-control">
+            <select class="form-control" ref="options" onchange={ testing } >
                 <option value="">All Categories</option>
-                <option value="">Art</option>
-                <option value="">Design</option>
-                <option value="">Film</option>
-                <option value="">Food</option>
-                <option value="">Music</option>
-                <option value="">Photography</option>
-                <option value="">Technology</option>
-                <option value="">Video Games</option>
-                <option value="">Writing</option>
+                <option each={ cat in catArr }  value="{ cat }"> 
+                    { cat }
+                </option>
             </select>
         </div>
         <div class="col-sm-2">
@@ -38,16 +32,71 @@
     <script>
     this.on('mount', function(){
         this.update();
+        this.exploreCardsCatergory();
         this.filterTag = this.opts.filtersearch;
     });
 
 
-    function categoriesFilter(filterText) 
+    exploreCardsCatergory(){
+        this.displayCards = [];
+        this.exploreCards = [];
+
+        this.catArr = [];
+
+        krowdspace.projects.explore().then((res) =>
+        {
+           // console.log(res.data);
+            this.exploreCards = res.data;
+            this.setExploreCards(res.data);
+
+            let catSet = new Set();
+
+            res.data.forEach((el)=>
+            {
+                catSet.add(el.project_data.info_data.category);
+            });
+
+            catSet.forEach((el)=>
+            {
+                this.catArr.push(el);
+            });
+            
+            this.update();
+        },
+        (err)=>
+        {
+            console.log(err)
+        });
+       
+
+        this.setExploreCards = function setExploreCards(neA)
+        {
+            this.displayCards = neA;
+            this.update();
+        };
+
+        this.setExploreCards(this.exploreCards);
+    };
+
+
+
+    categoriesFilter(filterText) 
     {
+        let o = this.refs.options;
+        let option = o.options[o.selectedIndex].value.toLowerCase();
+        filterText = filterText.toLowerCase();
+      
+
         return function(el)
         {
-            return el.project_data.info_data.category.toLowerCase().includes(filterText.toLowerCase()) 
-            || el.name.toLowerCase().includes(filterText.toLowerCase());
+            let cat = el.project_data.info_data.category.toLowerCase();
+
+            console.log(cat.includes( option ), cat, option);
+            console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+
+            return cat.includes( option )
+            || (filterText != '' && cat.includes( filterText ) )
+            || (filterText != '' && el.name.toLowerCase().includes( filterText ));
         }
     }
     
@@ -55,10 +104,24 @@
     {
         var value = this.refs.searchBox.value;
         var exploreCards = this.filterTag.exploreCards;
-        let filterArray = exploreCards.filter(categoriesFilter(value));
+
+        console.log(value);
+       
+        let filterArray = exploreCards.filter(this.categoriesFilter(value));
+
+        console.log(filterArray);
 
         this.filterTag.setExploreCards(filterArray);
-        console.log(categoriesFilter());
+       
+       // console.log(categoriesFilter());
+    
+    }
+    this.testing = function testing(){
+        
+        let o = this.refs.options;
+        let option = o.options[o.selectedIndex].value;
+        console.log(option);
+        this.myFunction();
     }
     
     </script>
