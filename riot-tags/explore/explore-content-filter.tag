@@ -46,7 +46,8 @@
     {
         return function(el)
         {
-            return el.project_data.info_data.category.toLowerCase().includes(filterText.toLowerCase()) || el.name.toLowerCase().includes(filterText.toLowerCase());
+            return el.project_data.info_data.category.toLowerCase().includes(filterText.toLowerCase()) 
+            || el.name.toLowerCase().includes(filterText.toLowerCase());
         }
     }
     
@@ -57,6 +58,7 @@
         let filterArray = exploreCards.filter(categoriesFilter(value));
 
         this.filterTag.setExploreCards(filterArray);
+        console.log(categoriesFilter());
     }
     
     </script>

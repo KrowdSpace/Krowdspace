@@ -90,5 +90,6 @@
         };
 
         this.setExploreCards(this.exploreCards);
+       
     </script>
 </explore-content-card>
