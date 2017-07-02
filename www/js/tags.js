@@ -36,7 +36,7 @@ riot.tag2('boosts', '<boosts-page show="{logged_in}"></boosts-page> <global-comi
                 window.location.replace("/#/account/login");
             });
 });
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{i in projects}"> <button onclick="{krowdspaceProject}" ref="{\'button\' + count}" riot-value="{i}">{name}</button> </div> <dashboard-project-image userkey="{userkey}" project="{project}"></dashboard-project-image> <dashboard-project-user userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title project="{project}" userkey="{userkey}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"> </project-button> </div> <dashboard-project-image userkey="{userkey}" project="{project}"></dashboard-project-image> <dashboard-project-user userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title project="{project}" userkey="{userkey}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
 	this.projectNum = 0;
 	this.projects = [];
 	this.project = null;
@@ -58,22 +58,29 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 		.then((res)=>
 		{
 			this.projects = res.data;
-			this.setProject(this.projectNum);
+			this.setProject(res.data[0]);
 		});
 	});
 
-	this.setProject = function(index)
+	this.setProject = function(proj)
 	{
-		this.project = this.projects[index];
+		this.project = proj;
 		this.update();
 	}.bind(this)
 
-	this.krowdspaceProject = function(e)
+	this.makeButtF = function(proj)
 	{
-		let projectNum = e.target.value;
-		this.setProject(projectNum);
+		let p = proj;
+		return function(e)
+		{
+			this.setProject(p);
+		};
 	}.bind(this);
 
+});
+
+riot.tag2('project-button', '<button>{project.name}</button>', '', '', function(opts) {
+		this.project = opts.project;
 });
 riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <div class="col-sm-3 text-center divider-inside-right"> <a href="{kickstarterShare}" target="_blank"> <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png"> </a> <a href="/#/explore/project/{krowdspacePage}"> <img class="icon-share filterdark" src="img/fav/krowdspace-share-icon.png"> </a> <p class="dashboard-text-bar dash-divider">Live Project Links</p> </div> <div class="col-sm-7 text-center divider-inside-right"> <div class="col-sm-8"> <a href="{facebookShare}" target="_blank"> <span class="fa-stack fa-lg facebook filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="{twitterShare}" target="_blank"> <span class="fa-stack fa-lg twitter filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="{linkedinShare}" target="_blank"> <span class="fa-stack fa-lg linkedin filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> <a href="{redditShare}" target="_blank"> <span class="fa-stack fa-lg reddit filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i> </span> </a> <a href="{diggShare}" target="_blank"> <span class="fa-stack fa-lg digg filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-digg fa-stack-1x fa-inverse"></i> </span> </a> <a href="{stumbleuponShare}" target="_blank"> <span class="fa-stack fa-lg stumbleupon filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text-bar dash-divider">Share Your Project on Social Media</p> </div> <div class="col-sm-4"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Social Media Boost</p> </div> </div> <div class="col-sm-2 text-center"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-refresh fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Refresh Content</p> </div> </div>', '', '', function(opts) {
 krowdspace.projects.project(this.opts.userkey).then((res)=>
@@ -254,16 +261,11 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 riot.tag2('dashboard-project-title', '<div class="col-sm-12 dashboard-title-container no-gutter"> <div class="col-sm-4 divider-inside-right dashboard-title-box"> <p class="dashboard-text-alt">{projectTitle}</p> <p class="dashboard-text-alt description-text">{projectDescription}</p> </div> <div class="col-sm-8 no-gutter text-center"> <div class="col-sm-4 feature-box"> <a href="#purchase-featured" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-project-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Project</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-explore" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-slider-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Explore Banner</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-landing" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-landing-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> <a></a> <p class="dashboard-text-alt">Landing Page Banner</p> </div> </div> </div>', '', '', function(opts) {
     this.on('update', ()=>
     {
-        krowdspace.projects.project(this.opts.userkey).then((res)=>
-        {
-            this.projectTitle = opts.project.project_data.web_data.title.content;
-            this.projectDescription = opts.project.project_data.web_data.description.content;
-            this.update();
-        },
-        (err)=>
-        {
-            console.log(err);
-        });
+        if(!opts.project)
+            return;
+
+        this.projectTitle = opts.project.project_data.web_data.title.content;
+        this.projectDescription = opts.project.project_data.web_data.description.content;
     });
 
 console.log(this.opts.project);

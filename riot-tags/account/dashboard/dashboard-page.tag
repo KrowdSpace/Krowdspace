@@ -6,8 +6,11 @@
 			<global-logout show={ logged_in } uri={ uri }></global-logout>
 			<div class="col-sm-10 col-sm-offset-1" style="padding: 0px;">
 				<div class="row dash-row no-gutter shadow">
-					<div each = { i in projects }>
-						<button onclick={ krowdspaceProject } ref={ 'button' + count } value={ i }>{ name }</button>
+					<div each = { p in projects }>
+						
+					<project-button onclick={ makeButtF(p) } project = { p }>
+					</project-button>
+
 					</div>
 					<dashboard-project-image userkey = { userkey } project = { project }></dashboard-project-image>	
 					<dashboard-project-user userkey = { userkey }></dashboard-project-user>
@@ -17,7 +20,7 @@
 					<dashboard-project-reward userkey = { userkey }></dashboard-project-reward>
 				</div>	
 				<div class="row dash-row no-gutter shadow">
-					<dashboard-project-title project={ project } userkey={ userkey }> </dashboard-project-title>
+					<dashboard-project-title project ={ project } userkey={ userkey }> </dashboard-project-title>
 				</div>
 				<div class="row dash-row no-gutter shadow">
 					<dashboard-project-bar userkey = { userkey }></dashboard-project-bar>
@@ -52,20 +55,23 @@
 		.then((res)=>
 		{
 			this.projects = res.data;
-			this.setProject(this.projectNum);
+			this.setProject(res.data[0]);
 		});
 	});
 
-	setProject(index)
+	setProject(proj)
 	{
-		this.project = this.projects[index];
+		this.project = proj;
 		this.update();
 	}
 
-	krowdspaceProject(e)
+	makeButtF(proj)
 	{
-		let projectNum = e.target.value;
-		this.setProject(projectNum);
+		let p = proj;
+		return function(e)
+		{
+			this.setProject(p);
+		};
 	};
 
 	// krowdspace.projects.project(this.opts.userkey).then((res)=>
@@ -88,3 +94,13 @@
 
 </script>
 </dashboard-page>
+
+<project-button>
+
+	<button>{ project.name }</button>
+	
+	<script>
+		this.project = opts.project;
+	</script>
+
+</project-button>
