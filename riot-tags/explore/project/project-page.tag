@@ -4,6 +4,7 @@
     </div>
         <div class="container dashboard">
 			<project-page-share uri={ opts.uri }></project-page-share>
+			<global-logout show={ logged_in } uri={ opts.uri }></global-logout>
 			<div class="col-sm-10 col-sm-offset-1" style="padding: 0px;">
 				<div class="row dash-row no-gutter shadow">
 					<project-page-image uri={ opts.uri }></project-page-image>	
@@ -16,6 +17,6 @@
 				</div>
 			</div>
         </div>
+	<project-modal-reward uri={ opts.uri }></project-modal-reward>
     <global-footer></global-footer>
-
 </project-page>

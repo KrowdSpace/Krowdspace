@@ -3,34 +3,14 @@
         <div class="fixed-image-box"> 
             <img show={ imagebox } class="img-responsive kickstarter-image" ref="kickstarterImage" src=""/>
             <img show={ !imagebox } class="img-responsive indiegogo-image" ref="indiegogoImage" src=""/>
-            <p class="funding-text-left text-left" ref="dataBacked"></p>
-        <p class="funding-text-right text-right" ref="dataGoal"></p>
+            <p class="funding-text-left text-left">$ { dataBacked } RAISED</p>
+            <p class="funding-text-right text-right">$ { dataGoal } GOAL</p>
         </div>
         <div id="progressBar"></div>
     </div>
 <script>
-getUserTest();
-
-function getUserTest(usr)
+krowdspace.projects.project(this.opts.userkey).then((res)=>
 {
-    return krowdspace.users.user(usr).then((res)=>
-    {
-        
-    },
-    (err)=>
-    {
-        console.log('Error: ', err);
-    });
-};
-
-getUserTest().then((usrname)=>
-{
-    return krowdspace.projects.project(usrname);
-}).then((res)=>
-{
-    console.log(res);
-    let raisedvalue = res.data[0].project_data.web_data.stats['data-percent-raised'];
-    let rawdecimal = Number.parseFloat(raisedvalue);
     let platform = res.data[0].platform;
 
     if (platform == 'kickstarter') 
@@ -43,66 +23,42 @@ getUserTest().then((usrname)=>
         this.refs.indiegogoImage.src = res.data[0].project_data.web_data.mainImg.content;
     }; 
 
-    let raisedstring = res.data[0].project_data.web_data.funding.text,
-        raisedarray = raisedstring.split('$'),
-        backed = raisedarray[1],
-        rawvalue = parseFloat(backed.replace(',','')),
-        rawnumber = rawvalue * rawdecimal,
-        wholenumber = Math.round(rawnumber),
-        finishedvalue = wholenumber.toLocaleString();
+    let goalValue = res.data[0].project_data.meta_data.funding,
+        goalNumber = parseFloat(goalValue.replace(/,/g, '')),
 
-    this.refs.dataBacked.innerHTML = '$' + finishedvalue + ' RAISED';
+        percentValue = res.data[0].project_data.meta_data.raisedPercent,
+        numberMax = Math.min(Math.max(percentValue, 0), 1),
 
-    let goalstring = res.data[0].project_data.web_data.funding.text,
-        goalarray = goalstring.split(/[\$?\€?]/g),
-        target = goalarray[1];
-        convertedgoal = target;
+        raisedRawNumber = goalNumber * percentValue,
+        raisedNumber = Math.round(raisedRawNumber),
+        raisedValue = raisedNumber.toLocaleString(),
 
-    this.refs.dataGoal.innerHTML = '$' + target + ' GOAL';
+        raisedvalue = res.data[0].project_data.web_data.stats['data-percent-raised'],
+        rawdecimal = Number.parseFloat(raisedvalue);
 
-    let x = parseInt(target),
-        y = parseInt(backed),
-        z = y * rawdecimal,
-        bar = new ProgressBar.Line(progressBar, 
-    {
-        strokeWidth: 4,
-        easing: 'easeInOut',
-        duration: 1400,
-        color: '#fed136',
-        trailColor: '#eee',
-        trailWidth: 4,
-        svgStyle: {width: '100%', height: '100%'}
-    });
+        this.dataBacked = raisedValue;
+        this.dataGoal = goalValue;
 
-    let goalpercent = z/x;
-    bar.animate(goalpercent);  // Number from 0.0 to 1.0
-
-    let pID = res.data.username,
-        pData = {
-            project_data: {
-                info_data: {
-                    goal: convertedgoal,
-                    raised: finishedvalue,
-                    percent: goalpercent,
-                }
-            }
-        };
-        krowdspace.projects.set_project(pID, pData).then((res)=>
+        let bar = new ProgressBar.Line(progressBar, 
         {
-            console.log(res);
-        },
-        (err)=>
-        {
-            console.log(err);
+            strokeWidth: 4,
+            easing: 'easeInOut',
+            duration: 1400,
+            color: '#fed136',
+            trailColor: '#eee',
+            trailWidth: 4,
+            svgStyle: {width: '100%', height: '100%'}
         });
         
-    this.update(); 
-},
-(err)=> 
-{
-    console.log(err);
-}
+        bar.animate(numberMax);  // Number from 0.0 to 1.0
+        this.update();
+    },
+    (err)=> 
+    {
+        console.log(err);
+    }
 );
+
  
 </script>
 </dashboard-project-image>	
