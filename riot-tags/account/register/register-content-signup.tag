@@ -125,6 +125,7 @@
                 URL =  this.refs.projecturl.value,
                 REWARD = this.refs.rewardtext.value,
                 REWARDVALUE = this.refs.rewardoption.value,
+                IGREWARD = 'test',
                 REWARDAMOUNT = this.refs.rewardvalue.value;
     
             let DATA = {
@@ -135,6 +136,7 @@
                         REWARD,
                         REWARDVALUE,
                         REWARDAMOUNT,
+                        IGREWARD,
                         };
         
             krowdspace.register.project(DATA).then

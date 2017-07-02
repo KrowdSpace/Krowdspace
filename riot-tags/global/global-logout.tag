@@ -22,5 +22,4 @@
         });
     };
 </script>
-</global-logout>	
-	
+</global-logout>

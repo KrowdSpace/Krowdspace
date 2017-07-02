@@ -36,50 +36,43 @@ riot.tag2('boosts', '<boosts-page show="{logged_in}"></boosts-page> <global-comi
                 window.location.replace("/#/account/login");
             });
 });
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{opts.uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{counterObj}"> <p onclick="{krowdspaceProject}">{count}</p> </div> <dashboard-project-image opts userkey="{userkey}"></dashboard-project-image> <dashboard-project-user opts userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours opts userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward opts userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title opts userkey="{userkey}"></dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar opts userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase opts userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase opts userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase opts userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile opts userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward opts userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
-getUserTest();
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{i in projects}"> <button onclick="{krowdspaceProject}" ref="{\'button\' + count}" riot-value="{i}">{name}</button> </div> <dashboard-project-image userkey="{userkey}" project="{project}"></dashboard-project-image> <dashboard-project-user userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title project="{project}" userkey="{userkey}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
+	this.projectNum = 0;
+	this.projects = [];
+	this.project = null;
 
-function getUserTest(usr)
-{
-	return krowdspace.users.user(usr).then((res)=>
-	{
+	this.userKey = "";
 
-	},
-	(err)=>
+	this.counterObj = [{}];
+
+	this.on('mount', ()=>
 	{
-		console.log('Error: ', err);
+		krowdspace.users.user()
+		.catch(err=>err)
+		.then((res)=>
+		{
+			console.log(res);
+			this.userkey = res.data.username;
+			return krowdspace.projects.project(this.userkey);
+		})
+		.then((res)=>
+		{
+			this.projects = res.data;
+			this.setProject(this.projectNum);
+		});
 	});
-};
 
-getUserTest().then((usrname)=>
-{
-	return krowdspace.users.user(usrname);
-}).then((res)=>
+	this.setProject = function(index)
 	{
-		this.userkey = res.data.username;
+		this.project = this.projects[index];
 		this.update();
-	},
-	(err)=>
+	}.bind(this)
+
+	this.krowdspaceProject = function(e)
 	{
-
-	}
-);
-krowdspace.projects.project(this.opts.userkey).then((res)=>
-    {
-		var counter=[];
-
-		for( var i=0; i < res.data.length; i++ ) {
-			counter.push({ count : i + ' number'});
-		}
-		console.log(counter);
-		this.counterObj = counter;
-		this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
+		let projectNum = e.target.value;
+		this.setProject(projectNum);
+	}.bind(this);
 
 });
 riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <div class="col-sm-3 text-center divider-inside-right"> <a href="{kickstarterShare}" target="_blank"> <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png"> </a> <a href="/#/explore/project/{krowdspacePage}"> <img class="icon-share filterdark" src="img/fav/krowdspace-share-icon.png"> </a> <p class="dashboard-text-bar dash-divider">Live Project Links</p> </div> <div class="col-sm-7 text-center divider-inside-right"> <div class="col-sm-8"> <a href="{facebookShare}" target="_blank"> <span class="fa-stack fa-lg facebook filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="{twitterShare}" target="_blank"> <span class="fa-stack fa-lg twitter filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="{linkedinShare}" target="_blank"> <span class="fa-stack fa-lg linkedin filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> <a href="{redditShare}" target="_blank"> <span class="fa-stack fa-lg reddit filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i> </span> </a> <a href="{diggShare}" target="_blank"> <span class="fa-stack fa-lg digg filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-digg fa-stack-1x fa-inverse"></i> </span> </a> <a href="{stumbleuponShare}" target="_blank"> <span class="fa-stack fa-lg stumbleupon filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text-bar dash-divider">Share Your Project on Social Media</p> </div> <div class="col-sm-4"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Social Media Boost</p> </div> </div> <div class="col-sm-2 text-center"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-refresh fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Refresh Content</p> </div> </div>', '', '', function(opts) {
@@ -195,56 +188,53 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 });	
 	
 riot.tag2('dashboard-project-image', '<div class="col-sm-6 image-container"> <div class="fixed-image-box"> <img show="{imagebox}" class="img-responsive kickstarter-image" ref="kickstarterImage" src=""> <img show="{!imagebox}" class="img-responsive indiegogo-image" ref="indiegogoImage" src=""> <p class="funding-text-left text-left">$ {dataBacked} RAISED</p> <p class="funding-text-right text-right">$ {dataGoal} GOAL</p> </div> <div id="progressBar"></div> </div>', '', '', function(opts) {
-krowdspace.projects.project(this.opts.userkey).then((res)=>
-{
-    let platform = res.data[0].platform;
-
-    if (platform == 'kickstarter')
+    this.on('mount', ()=>
     {
-        imagebox = true;
-        console.log('Kickstarter Image');
-        this.refs.kickstarterImage.src = res.data[0].project_data.web_data.mainImg.content;
-    }else{
-        console.log('Indiegogo Image');
-        this.refs.indiegogoImage.src = res.data[0].project_data.web_data.mainImg.content;
-    };
+        if(!opts.project)
+            return;
 
-    let goalValue = res.data[0].project_data.meta_data.funding,
-        goalNumber = parseFloat(goalValue.replace(/,/g, '')),
+        let platform = opts.project.platform;
 
-        percentValue = res.data[0].project_data.meta_data.raisedPercent,
-        numberMax = Math.min(Math.max(percentValue, 0), 1),
-
-        raisedRawNumber = goalNumber * percentValue,
-        raisedNumber = Math.round(raisedRawNumber),
-        raisedValue = raisedNumber.toLocaleString(),
-
-        raisedvalue = res.data[0].project_data.web_data.stats['data-percent-raised'],
-        rawdecimal = Number.parseFloat(raisedvalue);
-
-        this.dataBacked = raisedValue;
-        this.dataGoal = goalValue;
-
-        let bar = new ProgressBar.Line(progressBar,
+        if (platform == 'kickstarter')
         {
-            strokeWidth: 4,
-            easing: 'easeInOut',
-            duration: 1400,
-            color: '#fed136',
-            trailColor: '#eee',
-            trailWidth: 4,
-            svgStyle: {width: '100%', height: '100%'}
-        });
+            imagebox = true;
+            console.log('Kickstarter Image');
+            this.refs.kickstarterImage.src = opts.project.project_data.web_data.mainImg.content;
+        }else{
+            console.log('Indiegogo Image');
+            this.refs.indiegogoImage.src = opts.project.project_data.web_data.mainImg.content;
+        };
 
-        bar.animate(numberMax);
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
+        let goalValue = opts.project.project_data.meta_data.funding,
+            goalNumber = parseFloat(goalValue.replace(/,/g, '')),
 
+            percentValue = opts.project.project_data.meta_data.raisedPercent,
+            numberMax = Math.min(Math.max(percentValue, 0), 1),
+
+            raisedRawNumber = goalNumber * percentValue,
+            raisedNumber = Math.round(raisedRawNumber),
+            raisedValue = raisedNumber.toLocaleString(),
+
+            raisedvalue = opts.project.project_data.web_data.stats['data-percent-raised'],
+            rawdecimal = Number.parseFloat(raisedvalue);
+
+            this.dataBacked = raisedValue;
+            this.dataGoal = goalValue;
+
+            let bar = new ProgressBar.Line(progressBar,
+            {
+                strokeWidth: 4,
+                easing: 'easeInOut',
+                duration: 1400,
+                color: '#fed136',
+                trailColor: '#eee',
+                trailWidth: 4,
+                svgStyle: {width: '100%', height: '100%'}
+            });
+
+            bar.animate(numberMax);
+            this.update();
+    });
 });	
 	
 riot.tag2('dashboard-project-reward', '<div class="col-sm-9 dashboard-reward-container"> <div class="dashboard-reward-box shadow"> <a href="#edit-reward" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text-alt reward-text">Reward: {projectReward}</p> <p class="dashboard-text-alt disclaimer-text">Upon succesful completion of your crowdfunding project you have agreed to send out any additional rewards to the backers who have supported your campaign.</p> <div class="couponcode-box text-center"> <p class="couponcode">{couponCode}</p> </div> <p class="dashboard-text-alt">This is your project reward code. Backers from Krowdspace will send you this code through your crowdfunding platform website so that you can verify their discount.</p> </div> </div>', '', '', function(opts) {
@@ -262,17 +252,21 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 });	
 	
 riot.tag2('dashboard-project-title', '<div class="col-sm-12 dashboard-title-container no-gutter"> <div class="col-sm-4 divider-inside-right dashboard-title-box"> <p class="dashboard-text-alt">{projectTitle}</p> <p class="dashboard-text-alt description-text">{projectDescription}</p> </div> <div class="col-sm-8 no-gutter text-center"> <div class="col-sm-4 feature-box"> <a href="#purchase-featured" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-project-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Project</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-explore" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-slider-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Explore Banner</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-landing" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-landing-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> <a></a> <p class="dashboard-text-alt">Landing Page Banner</p> </div> </div> </div>', '', '', function(opts) {
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
-        this.projectTitle = res.data[0].project_data.web_data.title.content;
-        this.projectDescription = res.data[0].project_data.web_data.description.content;
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
+        krowdspace.projects.project(this.opts.userkey).then((res)=>
+        {
+            this.projectTitle = opts.project.project_data.web_data.title.content;
+            this.projectDescription = opts.project.project_data.web_data.description.content;
+            this.update();
+        },
+        (err)=>
+        {
+            console.log(err);
+        });
+    });
+
+console.log(this.opts.project);
 });	
 	
 riot.tag2('dashboard-project-user', '<div class="col-sm-6 text-center no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Projects Launched</p> <p class="social-metric">1</p> </div> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Hours Remaining</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-sm-4 text-center user-stat-box"> <p class="dashboard-user">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> <div class="col-sm-8 text-left"> <div class="col-sm-4 user-box-left"> <p class="dashboard-user">Username:</p> <p class="dashboard-user">Email:</p> <p class="dashboard-user">Kickstarter:</p> <p class="dashboard-user">Indiegogo:</p> </div> <div class="col-sm-8 user-box-right"> <p class="dashboard-user">{username}</p> <p class="dashboard-user">{email}</p> <p class="dashboard-user">{kickstarter || \'N/A\'}</p> <p class="dashboard-user">{indiegogo || \'N/A\'}</p> </div> </div> <div class="col-sm-4"> </div> </div>', '', '', function(opts) {
@@ -640,6 +634,7 @@ riot.tag2('register-content-signup', '<div class="no-gutter register-background 
                 URL =  this.refs.projecturl.value,
                 REWARD = this.refs.rewardtext.value,
                 REWARDVALUE = this.refs.rewardoption.value,
+                IGREWARD = 'test',
                 REWARDAMOUNT = this.refs.rewardvalue.value;
 
             let DATA = {
@@ -650,6 +645,7 @@ riot.tag2('register-content-signup', '<div class="no-gutter register-background 
                         REWARD,
                         REWARDVALUE,
                         REWARDAMOUNT,
+                        IGREWARD,
                         };
 
             krowdspace.register.project(DATA).then
@@ -1539,8 +1535,7 @@ riot.tag2('global-logout', '<div class="col-sm-1 text-right no-gutter share-cont
             console.log(err);
         });
     }.bind(this);
-});	
-	
+});
 riot.tag2('global-modal-about', '<div id="modal-about" class="modal container fade"> <div class="krowdspace-modal col-sm-10 col-sm-offset-1"> <div id="modal" class="modal-content"> <div class="modal-header"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">About Krowdspace</p> </div> <div class="modal-body"> <ul class="timeline"> <li> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/1.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>October 2016</strong></p> <p class="about-heading"><strong>The Crowdfunding Experiment</strong></p> <div class="text-left"> <p>We had our first encounter with crowdfunding while attempting to launch our original product "The Bahari Bag" on Kickstarter. We had the great product, a full functioning website, personal story and a well crafted project page. It became very clear that we were missing one thing. Our community wasnt large enough and it was very difficulty to gain any traction. We searched high and low for a free or affordable website to show off our hard work and build our community but there was none.</p> </div> </div> </div> </li> <li class="timeline-inverted"> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/2.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>November 2016</strong></p> <p class="about-heading"><strong>The Seed is Planted</strong></p> <div class="text-left"> <p>As we came to terms with the results of our Kickstarter our team decided to analyze and learn from our mistakes. We had invested a lot of money into companies who promised promotions and news coverage or articles but never delivered. Our hard work and dreams had been taken advantage of by people looking to make a quick profit. The idea of a new and innovative company started to take shape to help others navigate the extreme world of crowdfunding.</p> </div> </div> </div> </li> <li> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/3.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>December 2016</strong></p> <p class="about-heading"><strong>Krowdspace is Born</strong></p> <div class="text-left"> <p>Krowdspace begins development to create a unified platform for people who need help launching their own crowdfunding projects. We wanted to offer a service that is appreciated and transparent. As our development continued new features were added regularly. Our social media channels go live and we start building our own brand.</p> </div> </div> </div> </li> <li class="timeline-inverted"> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/4.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>January 2017</strong></p> <p class="about-heading"><strong>Building our Platform</strong></p> <div class="text-left"> <p>Along with social media boosts and featured banners for our users, we have also collected news media contacts for Press Kits to help gain traction. We are also providing targeted ad campaigns that will be fully transparent. By investing in our advertisements plans we will put 100% of the money you provide towards your campaigns. Krowdspace will not take a cut.</p> </div> </div> </div> </li> <li class="timeline"> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/5.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>March 2017</strong></p> <p class="about-heading"><strong>Krowdspace Launch</strong></p> <div class="text-left"> <p>The Krowdspace Landing page is launched! With the hard work and dedication of our team we were able to launch a month ahead of schedule. Next step is bringing to life the unified dashboard to pull in crowdfunding projects from the top sites. We have also launched limited crowdfunding tools to help your project be successful.</p> </div> </div> </div> </li> <li class="timeline-inverted"> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/7.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>June 2017</strong></p> <p class="about-heading"><strong>Finish Strong</strong></p> <div class="text-left"> <p>Krowdspace is nearing completion and we are getting closer to the final launch! A date has been set and we should be launching August 22, 2017. Krowdspace has made a slight pivot to stay within the bounds of the internet and are excited to bring you the first ever crowdfunding discount site.</p> </div> </div> </div> </li> <li class="timeline" style="padding-bottom:50px;"> <div class="timeline-image"> <img class="img-circle img-responsive" src="img/about/6.jpg" alt=""> </div> <div class="timeline-panel"> <div class="text-left"> <p class="about-heading"><strong>Krowdspace</strong></p> <div class="text-left"> <p>Krowdspace consists of a small team from the Seattle Washington area. Each one of us brings a special skill set to create something special. Support us on this journey and see how Krowdspace takes shape.</p> </div> </div> </div> </li> </ul> <div class="text-center"> <button type="button" class="text-center modal-close" data-dismiss="modal" style="margin-top: 0px;">Close</button> </div> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div> </div>', '', '', function(opts) {
         this.on('mount', function()
         {
