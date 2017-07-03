@@ -20,38 +20,43 @@
     </div>
     <div class="background-modal-close" data-dismiss="modal"> </div>
 <script>
-submitLanding(e) 
-{
-    e.preventDefault();
+   submitFeatured(e) 
+    {
+        e.preventDefault();
 
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user},
+            projRes = {data: [opts.project]};
+
+        setUserDeets(userRes, projRes);
+
+    }; 
+
+    setUserDeets(res, pRes)
     {
         let project = res.data.username,
-        projectData = 
-        {
-            project_data: 
+            projectData = 
             {
-				meta_data: 
+                project_data: 
                 {
-					landing : true,
-				}
-            }
+                    meta_data: 
+                    {
+                        landing : true,
+                    }
+                }
         };
 
+        setProjDeets(pRes);
+    }
+    
+    setProjDeets(res)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
-            window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
+                window.location.reload();
         });
-    },
-        (err)=> 
-        {
-            console.log(err);
-        }
-    );
-}; 
+    }
 </script>
 </dashboard-landing-purchase>

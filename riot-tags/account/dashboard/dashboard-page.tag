@@ -5,39 +5,55 @@
         <div class="container dashboard">
 			<global-logout show={ logged_in } uri={ uri }></global-logout>
 			<div class="col-sm-10 col-sm-offset-1" style="padding: 0px;">
+
 				<div class="row dash-row no-gutter shadow">
-					<div each = { i in projects }>
-						<button onclick={ krowdspaceProject } ref={ 'button' + count } value={ i }>{ name }</button>
+
+					<div each = { p in projects }>
+						<project-button onclick={ makeButtF(p) } project = { p }></project-button>
 					</div>
-					<dashboard-project-image userkey = { userkey } project = { project }></dashboard-project-image>	
-					<dashboard-project-user userkey = { userkey }></dashboard-project-user>
+
+					<dashboard-project-image project = { project }></dashboard-project-image>	
+
+					<dashboard-project-user user={ user } project = { project }></dashboard-project-user>
 				</div>
+
 				<div class="row dash-row no-gutter">
-					<dashboard-project-hours userkey = { userkey }></dashboard-project-hours>
-					<dashboard-project-reward userkey = { userkey }></dashboard-project-reward>
+
+					<dashboard-project-hours project = { project }></dashboard-project-hours>
+
+					<dashboard-project-reward project = { project }></dashboard-project-reward>
+
 				</div>	
+
 				<div class="row dash-row no-gutter shadow">
-					<dashboard-project-title project={ project } userkey={ userkey }> </dashboard-project-title>
+
+					<dashboard-project-title project={ project }> </dashboard-project-title>
+
 				</div>
+
 				<div class="row dash-row no-gutter shadow">
-					<dashboard-project-bar userkey = { userkey }></dashboard-project-bar>
+
+					<dashboard-project-bar project = { project }></dashboard-project-bar>
+
 				</div>
 			</div>
         </div>
-	<dashboard-featured-purchase userkey = { userkey }></dashboard-featured-purchase>
-	<dashboard-explore-purchase userkey = { userkey }></dashboard-explore-purchase>
-	<dashboard-landing-purchase userkey = { userkey }></dashboard-landing-purchase>
-	<dashboard-edit-profile userkey = { userkey }></dashboard-edit-profile>
-	<dashboard-edit-reward userkey = { userkey }></dashboard-edit-reward>
+
+	<dashboard-featured-purchase project = { project }></dashboard-featured-purchase>
+	<dashboard-explore-purchase project = { project }></dashboard-explore-purchase>
+	<dashboard-landing-purchase project = { project }></dashboard-landing-purchase>
+	<dashboard-edit-profile project = { project }></dashboard-edit-profile>
+	<dashboard-edit-reward project = { project }></dashboard-edit-reward>
+
     <global-footer></global-footer> 
 <script>
 	this.projectNum = 0;
 	this.projects = [];
+
 	this.project = null;
+	this.user = null;
 
 	this.userKey = "";
-
-	this.counterObj = [{}];
 
 	this.on('mount', ()=>
 	{
@@ -45,27 +61,33 @@
 		.catch(err=>err)
 		.then((res)=>
 		{	
-			console.log(res);
+			this.user = res.data;
 			this.userkey = res.data.username;
+
+			console.log(res.data);
+
 			return krowdspace.projects.project(this.userkey);
 		})
 		.then((res)=>
 		{
 			this.projects = res.data;
-			this.setProject(this.projectNum);
+			this.setProject(res.data[0]);
 		});
 	});
 
-	setProject(index)
+	setProject(proj)
 	{
-		this.project = this.projects[index];
+		this.project = proj;
 		this.update();
 	}
 
-	krowdspaceProject(e)
+	makeButtF(proj)
 	{
-		let projectNum = e.target.value;
-		this.setProject(projectNum);
+		let p = proj;
+		return function(e)
+		{
+			this.setProject(p);
+		};
 	};
 
 	// krowdspace.projects.project(this.opts.userkey).then((res)=>
@@ -88,3 +110,13 @@
 
 </script>
 </dashboard-page>
+
+<project-button>
+
+	<button>{ project.name }</button>
+	
+	<script>
+		this.project = opts.project;
+	</script>
+
+</project-button>

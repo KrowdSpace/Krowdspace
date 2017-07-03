@@ -36,7 +36,7 @@ riot.tag2('boosts', '<boosts-page show="{logged_in}"></boosts-page> <global-comi
                 window.location.replace("/#/account/login");
             });
 });
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{i in projects}"> <button onclick="{krowdspaceProject}" ref="{\'button\' + count}" riot-value="{i}">{name}</button> </div> <dashboard-project-image userkey="{userkey}" project="{project}"></dashboard-project-image> <dashboard-project-user userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title project="{project}" userkey="{userkey}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"> </project-button> </div> <dashboard-project-image userkey="{userkey}" project="{project}"></dashboard-project-image> <dashboard-project-user userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title project="{project}" userkey="{userkey}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
 	this.projectNum = 0;
 	this.projects = [];
 	this.project = null;
@@ -58,22 +58,29 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 		.then((res)=>
 		{
 			this.projects = res.data;
-			this.setProject(this.projectNum);
+			this.setProject(res.data[0]);
 		});
 	});
 
-	this.setProject = function(index)
+	this.setProject = function(proj)
 	{
-		this.project = this.projects[index];
+		this.project = proj;
 		this.update();
 	}.bind(this)
 
-	this.krowdspaceProject = function(e)
+	this.makeButtF = function(proj)
 	{
-		let projectNum = e.target.value;
-		this.setProject(projectNum);
+		let p = proj;
+		return function(e)
+		{
+			this.setProject(p);
+		};
 	}.bind(this);
 
+});
+
+riot.tag2('project-button', '<button>{project.name}</button>', '', '', function(opts) {
+		this.project = opts.project;
 });
 riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <div class="col-sm-3 text-center divider-inside-right"> <a href="{kickstarterShare}" target="_blank"> <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png"> </a> <a href="/#/explore/project/{krowdspacePage}"> <img class="icon-share filterdark" src="img/fav/krowdspace-share-icon.png"> </a> <p class="dashboard-text-bar dash-divider">Live Project Links</p> </div> <div class="col-sm-7 text-center divider-inside-right"> <div class="col-sm-8"> <a href="{facebookShare}" target="_blank"> <span class="fa-stack fa-lg facebook filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="{twitterShare}" target="_blank"> <span class="fa-stack fa-lg twitter filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="{linkedinShare}" target="_blank"> <span class="fa-stack fa-lg linkedin filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> <a href="{redditShare}" target="_blank"> <span class="fa-stack fa-lg reddit filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i> </span> </a> <a href="{diggShare}" target="_blank"> <span class="fa-stack fa-lg digg filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-digg fa-stack-1x fa-inverse"></i> </span> </a> <a href="{stumbleuponShare}" target="_blank"> <span class="fa-stack fa-lg stumbleupon filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text-bar dash-divider">Share Your Project on Social Media</p> </div> <div class="col-sm-4"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Social Media Boost</p> </div> </div> <div class="col-sm-2 text-center"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-refresh fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Refresh Content</p> </div> </div>', '', '', function(opts) {
 krowdspace.projects.project(this.opts.userkey).then((res)=>
@@ -254,16 +261,11 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 riot.tag2('dashboard-project-title', '<div class="col-sm-12 dashboard-title-container no-gutter"> <div class="col-sm-4 divider-inside-right dashboard-title-box"> <p class="dashboard-text-alt">{projectTitle}</p> <p class="dashboard-text-alt description-text">{projectDescription}</p> </div> <div class="col-sm-8 no-gutter text-center"> <div class="col-sm-4 feature-box"> <a href="#purchase-featured" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-project-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Project</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-explore" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-slider-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Explore Banner</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-landing" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-landing-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> <a></a> <p class="dashboard-text-alt">Landing Page Banner</p> </div> </div> </div>', '', '', function(opts) {
     this.on('update', ()=>
     {
-        krowdspace.projects.project(this.opts.userkey).then((res)=>
-        {
-            this.projectTitle = opts.project.project_data.web_data.title.content;
-            this.projectDescription = opts.project.project_data.web_data.description.content;
-            this.update();
-        },
-        (err)=>
-        {
-            console.log(err);
-        });
+        if(!opts.project)
+            return;
+
+        this.projectTitle = opts.project.project_data.web_data.title.content;
+        this.projectDescription = opts.project.project_data.web_data.description.content;
     });
 
 console.log(this.opts.project);
@@ -862,30 +864,93 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
 
 });
 
-riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control"> <option value="">All Categories</option> <option value="">Art</option> <option value="">Design</option> <option value="">Film</option> <option value="">Food</option> <option value="">Music</option> <option value="">Photography</option> <option value="">Technology</option> <option value="">Video Games</option> <option value="">Writing</option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{myFunction}"> <div class="input-group-btn"> <div class="btn btn-void"><i class="fa fa-search fa-lg"></i></div> </div> </div> </form> </div> </div>', '', '', function(opts) {
+riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control" ref="options" onchange="{testing}"> <option value="">All Categories</option> <option each="{cat in catArr}" riot-value="{cat}"> {cat} </option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{myFunction}"> <div class="input-group-btn"> <div class="btn btn-void"><i class="fa fa-search fa-lg"></i></div> </div> </div> </form> </div> </div>', '', '', function(opts) {
     this.on('mount', function(){
         this.update();
+        this.exploreCardsCatergory();
         this.filterTag = this.opts.filtersearch;
     });
 
-    function categoriesFilter(filterText)
+    this.exploreCardsCatergory = function(){
+        this.displayCards = [];
+        this.exploreCards = [];
+
+        this.catArr = [];
+
+        krowdspace.projects.explore().then((res) =>
+        {
+
+            this.exploreCards = res.data;
+            this.setExploreCards(res.data);
+
+            let catSet = new Set();
+
+            res.data.forEach((el)=>
+            {
+                catSet.add(el.project_data.info_data.category);
+            });
+
+            catSet.forEach((el)=>
+            {
+                this.catArr.push(el);
+            });
+
+            this.update();
+        },
+        (err)=>
+        {
+            console.log(err)
+        });
+
+        this.setExploreCards = function setExploreCards(neA)
+        {
+            this.displayCards = neA;
+            this.update();
+        };
+
+        this.setExploreCards(this.exploreCards);
+    }.bind(this);
+
+    this.categoriesFilter = function(filterText)
     {
+        let o = this.refs.options;
+        let option = o.options[o.selectedIndex].value.toLowerCase();
+        filterText = filterText.toLowerCase();
+
         return function(el)
         {
-            return el.project_data.info_data.category.toLowerCase().includes(filterText.toLowerCase())
-            || el.name.toLowerCase().includes(filterText.toLowerCase());
+            let cat = el.project_data.info_data.category.toLowerCase();
+
+            console.log(cat.includes( option ), cat, option);
+            console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+
+            return cat.includes( option )
+            || (filterText != '' && cat.includes( filterText ) )
+            || (filterText != '' && el.name.toLowerCase().includes( filterText ));
         }
-    }
+    }.bind(this)
 
     this.myFunction = function()
     {
         var value = this.refs.searchBox.value;
         var exploreCards = this.filterTag.exploreCards;
-        let filterArray = exploreCards.filter(categoriesFilter(value));
+
+        console.log(value);
+
+        let filterArray = exploreCards.filter(this.categoriesFilter(value));
+
+        console.log(filterArray);
 
         this.filterTag.setExploreCards(filterArray);
-        console.log(categoriesFilter());
+
     }.bind(this)
+    this.testing = function testing(){
+
+        let o = this.refs.options;
+        let option = o.options[o.selectedIndex].value;
+        console.log(option);
+        this.myFunction();
+    }
 
 });
 riot.tag2('krowdspace-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt explore-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i> </button> <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a> </div> <div class="collapse navbar-collapse text-center" id="explore-nav-collapse"> <ul class="nav navbar-nav navbar-left"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="explore-scroll" href="/#/explore">Explore</a> </li> <li> <a class="explore-scroll" href="/#/account/register">Submit Project</a> </li> </ul> <img class="logo-float" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a show="{logged_in}" class="explore-scroll" href="/#/account/dashboard">Dashboard</a> </li> <li> <a show="{!logged_in}" href="#modal-explore-login" class="modal-link" data-toggle="modal">Login</a> </li> <li> <a show="{!logged_in}" href="#modal-explore-register" class="modal-link" data-toggle="modal">Sign Up</a> </li> <li> <a show="{logged_in}" href="/#/account/profile">Profile</a> </li> </ul> </div> </div> </nav>', '', '', function(opts) {

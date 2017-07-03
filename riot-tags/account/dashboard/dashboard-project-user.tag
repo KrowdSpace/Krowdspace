@@ -38,7 +38,20 @@
             </div>
         </div>
 <script>
-krowdspace.users.user(this.opts.userkey).then((res)=>
+
+    this.on('update', ()=>
+    {
+        if(!opts.project) 
+            return;
+
+        let userRes = { data: opts.user },
+            projRes = { data: [opts.project] };
+
+        this.setUserDeets(userRes);
+        this.setProjectDeets(projRes);
+    });
+
+    setUserDeets(res)
     {
         this.firstname = res.data.user_data.fname;
         this.lastname = res.data.user_data.lname;
@@ -46,14 +59,9 @@ krowdspace.users.user(this.opts.userkey).then((res)=>
         this.kickstarter = res.data.user_data.ksuser;
         this.indiegogo = res.data.user_data.iguser;
         this.username = res.data.username;
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
     }
-);
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+
+    setProjectDeets(res)
     {
         this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
 
@@ -80,12 +88,6 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
         
         timer = setInterval(showRemaining, 1000);
         this.countdowntimer = showRemaining();
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
     }
-);
 </script>
 </dashboard-project-user>
