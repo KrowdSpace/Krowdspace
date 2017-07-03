@@ -35,56 +35,60 @@
     </div>
     <div class="background-modal-close" data-dismiss="modal"> </div>
 <script>
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
+        if(!opts.project)
+            return;
+
+        let res = {data: [opts.project]};
+
         this.rewardtext = res.data[0].project_data.info_data.reward;
         this.rewardvalue = res.data[0].project_data.info_data['reward_ammount'];
-        this.update();
-    },
-    (err)=> 
+    });
+    
+    submitFeatured(e) 
     {
-        console.log(err);
-    }
-);
-submitReward(e) 
-{
-    e.preventDefault();
+        e.preventDefault();
 
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user}
+            projRes = {data: [opts.project]};
+
+        setUserDeets(userRes, projRes);
+
+    }; 
+
+    setUserDeets(res, pRes)
     {
         let project = res.data.username,
-        projectData = 
-        {
-            project_data: 
+            projectData = 
             {
-                info_data: 
+                project_data: 
                 {
-                    reward: this.refs.rewardtext.value,
-                    reward_ammount: this.refs.rewardvalue.value,
-                    reward_value: this.refs.rewardoption.value,
-                },
-				meta_data: 
-                {
-					reward_check : false,
-				}
-            }
+                   info_data: 
+                    {
+                        reward: this.refs.rewardtext.value,
+                        reward_ammount: this.refs.rewardvalue.value,
+                        reward_value: this.refs.rewardoption.value,
+                    },
+                    meta_data: 
+                    {
+                        reward_check : false,
+                    }
+                }
         };
 
+        setProjDeets(pRes);
+    }
+    
+    setProjDeets(res)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
             window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
         });
-    },
-        (err)=> 
-        {
-            console.log(err);
-        }
-    );
-}; 
-
+    }
 </script>
 </dashboard-edit-reward>

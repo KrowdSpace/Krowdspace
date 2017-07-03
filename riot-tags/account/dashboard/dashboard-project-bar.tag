@@ -66,8 +66,13 @@
         </div>
     </div>
 <script>
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
+        if(!opts.project)
+            return;
+
+        let res = { data: [opts.project] };
+
         this.kickstarterShare = res.data[0].project_data.info_data.url; 
 
         this.krowdspacePage = res.data[0].unique_id;
@@ -83,14 +88,7 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
         this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
 
         this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
-
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
-    }
-);
+    });
 </script>
 </dashboard-project-bar>	
 	

@@ -32,9 +32,8 @@
     </div>
     <div class="background-modal-close" data-dismiss="modal"> </div>
 <script>
-krowdspace.users.user(this.opts.userkey).then((res)=>
+krowdspace.users.user().then((res)=>
     {
-    console.log(res);
     this.FIRSTNAME = res.data.user_data.fname;
     this.LASTNAME = res.data.user_data.lname;
     this.KICKSTARTER = res.data.user_data.ksuser;

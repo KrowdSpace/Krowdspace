@@ -9,7 +9,9 @@
         <div id="progressBar"></div>
     </div>
 <script>
-    this.on('mount', ()=> 
+    this.progBar = null;
+
+    this.on('update', ()=> 
     {
         if(!opts.project)
             return;
@@ -42,19 +44,23 @@
             this.dataBacked = raisedValue;
             this.dataGoal = goalValue;
 
-            let bar = new ProgressBar.Line(progressBar, 
-            {
-                strokeWidth: 4,
-                easing: 'easeInOut',
-                duration: 1400,
-                color: '#fed136',
-                trailColor: '#eee',
-                trailWidth: 4,
-                svgStyle: {width: '100%', height: '100%'}
-            });
+            let bar = null;
+
+            if(!this.progBar)
+                this.progBar = bar = new ProgressBar.Line(progressBar, 
+                {
+                    strokeWidth: 4,
+                    easing: 'easeInOut',
+                    duration: 1400,
+                    color: '#fed136',
+                    trailColor: '#eee',
+                    trailWidth: 4,
+                    svgStyle: {width: '100%', height: '100%'}
+                });
+            else
+                bar = this.progBar;
             
             bar.animate(numberMax);  // Number from 0.0 to 1.0
-            this.update();
     });
 </script>
 </dashboard-project-image>	
