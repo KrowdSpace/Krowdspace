@@ -38,7 +38,6 @@
             </div>
         </div>
 <script>
-
     this.on('update', ()=>
     {
         if(!opts.project) 

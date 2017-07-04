@@ -20,6 +20,7 @@
         console.log('Kickstarter Image');
         this.refs.kickstarterImage.src = res.data[0].project_data.web_data.mainImg.content;
     }else{
+        imagebox = false;
         console.log('Indiegogo Image');
         this.refs.indiegogoImage.src = res.data[0].project_data.web_data.mainImg.content;
     }; 
@@ -28,8 +29,7 @@
         goalNumber = parseFloat(goalValue.replace(/,/g, '')),
 
         percentValue = res.data[0].project_data.meta_data.raisedPercent,
-        numberMax = Math.min(Math.max(parseInt(percentValue), 0), 1),
-
+        numberMax = Math.min(Math.max(percentValue, 0), 1),
         raisedRawNumber = goalNumber * percentValue,
         raisedNumber = Math.round(raisedRawNumber),
         raisedValue = raisedNumber.toLocaleString(),
@@ -50,7 +50,6 @@
             trailWidth: 4,
             svgStyle: {width: '100%', height: '100%'}
         });
-
         bar.animate(numberMax);  // Number from 0.0 to 1.0
         this.update(); 
     },

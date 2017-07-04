@@ -36,14 +36,14 @@ riot.tag2('boosts', '<boosts-page show="{logged_in}"></boosts-page> <global-comi
                 window.location.replace("/#/account/login");
             });
 });
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"> </project-button> </div> <dashboard-project-image userkey="{userkey}" project="{project}"></dashboard-project-image> <dashboard-project-user userkey="{userkey}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours userkey="{userkey}"></dashboard-project-hours> <dashboard-project-reward userkey="{userkey}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title project="{project}" userkey="{userkey}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar userkey="{userkey}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase userkey="{userkey}"></dashboard-featured-purchase> <dashboard-explore-purchase userkey="{userkey}"></dashboard-explore-purchase> <dashboard-landing-purchase userkey="{userkey}"></dashboard-landing-purchase> <dashboard-edit-profile userkey="{userkey}"></dashboard-edit-profile> <dashboard-edit-reward userkey="{userkey}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <div class="shadow text-center project-add-container"> <p class="project-add-text">PROJECT</p> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"></project-button> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image project="{project}"></dashboard-project-image> <dashboard-project-user user="{user}" project="{project}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours show="{project}" project="{project}"></dashboard-project-hours> <dashboard-project-reward show="{project}" project="{project}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title show="{project}" project="{project}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase project="{project}"></dashboard-landing-purchase> <dashboard-edit-profile project="{project}"></dashboard-edit-profile> <dashboard-edit-reward show="{project}" project="{project}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
 	this.projectNum = 0;
 	this.projects = [];
+
 	this.project = null;
+	this.user = null;
 
 	this.userKey = "";
-
-	this.counterObj = [{}];
 
 	this.on('mount', ()=>
 	{
@@ -51,8 +51,9 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 		.catch(err=>err)
 		.then((res)=>
 		{
-			console.log(res);
+			this.user = res.data;
 			this.userkey = res.data.username;
+
 			return krowdspace.projects.project(this.userkey);
 		})
 		.then((res)=>
@@ -76,15 +77,15 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 			this.setProject(p);
 		};
 	}.bind(this);
-
-});
-
-riot.tag2('project-button', '<button>{project.name}</button>', '', '', function(opts) {
-		this.project = opts.project;
 });
 riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <div class="col-sm-3 text-center divider-inside-right"> <a href="{kickstarterShare}" target="_blank"> <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png"> </a> <a href="/#/explore/project/{krowdspacePage}"> <img class="icon-share filterdark" src="img/fav/krowdspace-share-icon.png"> </a> <p class="dashboard-text-bar dash-divider">Live Project Links</p> </div> <div class="col-sm-7 text-center divider-inside-right"> <div class="col-sm-8"> <a href="{facebookShare}" target="_blank"> <span class="fa-stack fa-lg facebook filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="{twitterShare}" target="_blank"> <span class="fa-stack fa-lg twitter filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="{linkedinShare}" target="_blank"> <span class="fa-stack fa-lg linkedin filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> <a href="{redditShare}" target="_blank"> <span class="fa-stack fa-lg reddit filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i> </span> </a> <a href="{diggShare}" target="_blank"> <span class="fa-stack fa-lg digg filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-digg fa-stack-1x fa-inverse"></i> </span> </a> <a href="{stumbleuponShare}" target="_blank"> <span class="fa-stack fa-lg stumbleupon filterdark"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text-bar dash-divider">Share Your Project on Social Media</p> </div> <div class="col-sm-4"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Social Media Boost</p> </div> </div> <div class="col-sm-2 text-center"> <span class="fa-stack fa-lg social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-refresh fa-stack-1x fa-inverse"></i> </span> <p class="dashboard-text-bar dash-divider">Refresh Content</p> </div> </div>', '', '', function(opts) {
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
+        if(!opts.project)
+            return;
+
+        let res = { data: [opts.project] };
+
         this.kickstarterShare = res.data[0].project_data.info_data.url;
 
         this.krowdspacePage = res.data[0].unique_id;
@@ -100,19 +101,19 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
         this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
 
         this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
-
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
+    });
 });	
 	
 riot.tag2('dashboard-project-hours', '<div class="col-sm-3 dashboard-hours-container no-gutter shadow"> <div id="circleChart"></div> <div class="col-sm-6 chart-data text-center"> <div class="divider-inside-right"> <p class="dashboard-text-alt">Days Left</p> <p class="social-metric">{countdownTimer}</p> </div> </div> <div class="col-sm-6 chart-data text-center"> <div> <p class="dashboard-text-alt">Total Days</p> <p class="social-metric">{projectLength}</p> </div> </div> </div>', '', '', function(opts) {
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.progBar = null;
+
+this.on('update', ()=>
     {
+        if(!opts.project)
+            return;
+
+        let res = {data: [opts.project]}
+
         let endTime = res.data[0].project_data.web_data.hours['data-end_time'],
             projectTime = res.data[0].project_data.web_data.hours['data-duration'],
             end = new Date(endTime),
@@ -136,41 +137,46 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 
         timer = setInterval(showRemaining, 1000);
 
-        let bar = new ProgressBar.Circle(circleChart,
-        {
-            color: '#3f434f',
-            strokeWidth: 16,
-            trailWidth: 16,
-            easing: 'easeInOut',
-            duration: 1400,
-            text:
+        let bar = null;
+
+        if(!this.progBar)
+            this.progBar = bar = new ProgressBar.Circle(circleChart,
             {
-                autoStyleContainer: false
-            },
-            from:
-            {
-                color: '#fed136',
-                width: 16
-            },
-            to:
-            {
-                color: '#fed136',
-                width: 16
-            },
-            step: function(state, circle)
-            {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-                var value = Math.round(circle.value() * 100);
-                if (value === 0)
+                color: '#3f434f',
+                strokeWidth: 16,
+                trailWidth: 16,
+                easing: 'easeInOut',
+                duration: 1400,
+                text:
                 {
-                    circle.setText('');
-                } else
+                    autoStyleContainer: false
+                },
+                from:
                 {
-                    circle.setText(value + '%');
+                    color: '#fed136',
+                    width: 16
+                },
+                to:
+                {
+                    color: '#fed136',
+                    width: 16
+                },
+                step: function(state, circle)
+                {
+                    circle.path.setAttribute('stroke', state.color);
+                    circle.path.setAttribute('stroke-width', state.width);
+                    var value = Math.round(circle.value() * 100);
+                    if (value === 0)
+                    {
+                        circle.setText('');
+                    } else
+                    {
+                        circle.setText(value + '%');
+                    }
                 }
-            }
-        });
+            });
+        else
+            bar = this.progBar;
 
     let projectDays = showRemaining(),
         negativeCircleProgress = projectDays/projectTime - 1,
@@ -183,19 +189,14 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 
         this.projectLength = res.data[0].project_data.web_data.hours['data-duration'];
         this.countdownTimer = showRemaining();
-
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
+});
 
 });	
 	
 riot.tag2('dashboard-project-image', '<div class="col-sm-6 image-container"> <div class="fixed-image-box"> <img show="{imagebox}" class="img-responsive kickstarter-image" ref="kickstarterImage" src=""> <img show="{!imagebox}" class="img-responsive indiegogo-image" ref="indiegogoImage" src=""> <p class="funding-text-left text-left">$ {dataBacked} RAISED</p> <p class="funding-text-right text-right">$ {dataGoal} GOAL</p> </div> <div id="progressBar"></div> </div>', '', '', function(opts) {
-    this.on('mount', ()=>
+    this.progBar = null;
+
+    this.on('update', ()=>
     {
         if(!opts.project)
             return;
@@ -208,6 +209,7 @@ riot.tag2('dashboard-project-image', '<div class="col-sm-6 image-container"> <di
             console.log('Kickstarter Image');
             this.refs.kickstarterImage.src = opts.project.project_data.web_data.mainImg.content;
         }else{
+            imagebox = false;
             console.log('Indiegogo Image');
             this.refs.indiegogoImage.src = opts.project.project_data.web_data.mainImg.content;
         };
@@ -228,34 +230,37 @@ riot.tag2('dashboard-project-image', '<div class="col-sm-6 image-container"> <di
             this.dataBacked = raisedValue;
             this.dataGoal = goalValue;
 
-            let bar = new ProgressBar.Line(progressBar,
-            {
-                strokeWidth: 4,
-                easing: 'easeInOut',
-                duration: 1400,
-                color: '#fed136',
-                trailColor: '#eee',
-                trailWidth: 4,
-                svgStyle: {width: '100%', height: '100%'}
-            });
+            let bar = null;
+
+            if(!this.progBar)
+                this.progBar = bar = new ProgressBar.Line(progressBar,
+                {
+                    strokeWidth: 4,
+                    easing: 'easeInOut',
+                    duration: 1400,
+                    color: '#fed136',
+                    trailColor: '#eee',
+                    trailWidth: 4,
+                    svgStyle: {width: '100%', height: '100%'}
+                });
+            else
+                bar = this.progBar;
 
             bar.animate(numberMax);
-            this.update();
     });
 });	
 	
 riot.tag2('dashboard-project-reward', '<div class="col-sm-9 dashboard-reward-container"> <div class="dashboard-reward-box shadow"> <a href="#edit-reward" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text-alt reward-text">Reward: {projectReward}</p> <p class="dashboard-text-alt disclaimer-text">Upon succesful completion of your crowdfunding project you have agreed to send out any additional rewards to the backers who have supported your campaign.</p> <div class="couponcode-box text-center"> <p class="couponcode">{couponCode}</p> </div> <p class="dashboard-text-alt">This is your project reward code. Backers from Krowdspace will send you this code through your crowdfunding platform website so that you can verify their discount.</p> </div> </div>', '', '', function(opts) {
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
-        this.projectReward = res.data[0].project_data.info_data.reward;
-    	this.couponCode = res.data[0].coupon_code;
-        this.update();
-    },
-    (err)=>
-    {
+        if(!opts.project)
+            return;
 
-    }
-);
+        let res = {data: [opts.project]};
+
+        this.projectReward = res.data[0].project_data.info_data.reward;
+        this.couponCode = res.data[0].coupon_code;
+    });
 });	
 	
 riot.tag2('dashboard-project-title', '<div class="col-sm-12 dashboard-title-container no-gutter"> <div class="col-sm-4 divider-inside-right dashboard-title-box"> <p class="dashboard-text-alt">{projectTitle}</p> <p class="dashboard-text-alt description-text">{projectDescription}</p> </div> <div class="col-sm-8 no-gutter text-center"> <div class="col-sm-4 feature-box"> <a href="#purchase-featured" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-project-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Project</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-explore" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-slider-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> </a> <p class="dashboard-text-alt">Featured Explore Banner</p> </div> <div class="col-sm-4 feature-box"> <a href="#purchase-landing" class="modal-link" data-toggle="modal"> <img class="img-responsive banner" src="/img/content/featured-landing-icon.jpg"> <span class="fa-stack fa-lg social-btn feature-hover-icon"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-usd fa-stack-1x fa-inverse"></i> </span> <div class="dashboard-text feature-hover"></div> <a></a> <p class="dashboard-text-alt">Landing Page Banner</p> </div> </div> </div>', '', '', function(opts) {
@@ -272,7 +277,19 @@ console.log(this.opts.project);
 });	
 	
 riot.tag2('dashboard-project-user', '<div class="col-sm-6 text-center no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Projects Launched</p> <p class="social-metric">1</p> </div> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Hours Remaining</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-sm-4 text-center user-stat-box"> <p class="dashboard-user">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> <div class="col-sm-8 text-left"> <div class="col-sm-4 user-box-left"> <p class="dashboard-user">Username:</p> <p class="dashboard-user">Email:</p> <p class="dashboard-user">Kickstarter:</p> <p class="dashboard-user">Indiegogo:</p> </div> <div class="col-sm-8 user-box-right"> <p class="dashboard-user">{username}</p> <p class="dashboard-user">{email}</p> <p class="dashboard-user">{kickstarter || \'N/A\'}</p> <p class="dashboard-user">{indiegogo || \'N/A\'}</p> </div> </div> <div class="col-sm-4"> </div> </div>', '', '', function(opts) {
-krowdspace.users.user(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
+    {
+        if(!opts.project)
+            return;
+
+        let userRes = { data: opts.user },
+            projRes = { data: [opts.project] };
+
+        this.setUserDeets(userRes);
+        this.setProjectDeets(projRes);
+    });
+
+    this.setUserDeets = function(res)
     {
         this.firstname = res.data.user_data.fname;
         this.lastname = res.data.user_data.lname;
@@ -280,14 +297,9 @@ krowdspace.users.user(this.opts.userkey).then((res)=>
         this.kickstarter = res.data.user_data.ksuser;
         this.indiegogo = res.data.user_data.iguser;
         this.username = res.data.username;
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    }.bind(this)
+
+    this.setProjectDeets = function(res)
     {
         this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
 
@@ -314,13 +326,7 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 
         timer = setInterval(showRemaining, 1000);
         this.countdowntimer = showRemaining();
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
+    }.bind(this)
 });
 riot.tag2('dashboard', '<dashboard-page show="{logged_in}"></dashboard-page>', 'dashboard,[data-is="dashboard"]{ background-color: #fff }', '', function(opts) {
 
@@ -336,9 +342,8 @@ riot.tag2('dashboard', '<dashboard-page show="{logged_in}"></dashboard-page>', '
 });
 
 riot.tag2('dashboard-edit-profile', '<div id="edit-profile" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div id="modal" class="modal-content"> <div class="modal-header modal-edit"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Edit Profile Information</p> </div> <div class="modal-body"> <form role="form" onsubmit="{submit101}"> <div class="form-group form-split-right edit-margin"> <p class="dashboard-text-alt text-left edit-text-title">First Name</p> <input ref="firstname" riot-value="{FIRSTNAME}" type="text" class="form-control placeholder-color" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left edit-margin"> <p class="dashboard-text-alt text-left edit-text-title">Last Name</p> <input type="text" ref="lastname" class="form-control placeholder-color" riot-value="{LASTNAME}" aria-required="true" aria-invalid="true"> </div> <div class="clearfix"></div> <div class="form-group"> <p class="dashboard-text-alt text-left edit-text-title">Kickstarter Username</p> <input ref="kickstarter" class="form-control placeholder-color" riot-value="{KICKSTARTER}" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <p class="dashboard-text-alt text-left edit-text-title">Indiegogo Username</p> <input ref="indiegogo" class="form-control placeholder-color" riot-value="{INDIEGOGO}" aria-required="true" aria-invalid="true"> </div> <div class="text-center" style="padding: 0px; margin-top: 35px;"><button type="submit" name="submit" class="btn-register btn-info-full next-step">Update</button></div> </form> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div>', '', '', function(opts) {
-krowdspace.users.user(this.opts.userkey).then((res)=>
+krowdspace.users.user().then((res)=>
     {
-    console.log(res);
     this.FIRSTNAME = res.data.user_data.fname;
     this.LASTNAME = res.data.user_data.lname;
     this.KICKSTARTER = res.data.user_data.ksuser;
@@ -382,162 +387,184 @@ this.submit101 = function(e)
 }.bind(this);
 });
 riot.tag2('dashboard-edit-reward', '<div id="edit-reward" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div id="modal" class="modal-content"> <div class="modal-header" style="padding-bottom: 0px;"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Edit Reward Information</p> <p class="registration-text text-left edit-text-title" style="margin-top: 15px;">Updating your project reward will reset your project and it can take up to 24 hours to verify and publish on our Explore Page. If you wish to not edit your reward please close the popup window. </p> </div> <div class="modal-body"> <form id="rewardUpgrade" role="form" onsubmit="{submitReward}"> <div class="form-group"> <p class="registration-text text-left edit-text-title">Please provide an exclusive reward for our Krowdspace users.</p> <input ref="rewardtext" class="form-control placeholder-color" riot-value="{rewardtext}" name="reward" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <p class="registration-text text-left edit-text-title">Does your reward have a value or is it a discount?</p> <select ref="rewardoption" class="form-control" name="rewardOption"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <div class="form-group"> <p class="registration-text text-left edit-text-title">Please estimate the value of your reward.</p> <input ref="rewardvalue" class="form-control placeholder-color" name="rewardAmount" riot-value="{rewardvalue}" aria-required="true" aria-invalid="true"> </div> <div class="text-center update-modal-btn"> <button id="submit" type="submit" name="submit" class="btn-register btn-info-full next-step">Update</button> </div> </form> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div>', '', '', function(opts) {
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
+        if(!opts.project)
+            return;
+
+        let res = {data: [opts.project]};
+
         this.rewardtext = res.data[0].project_data.info_data.reward;
         this.rewardvalue = res.data[0].project_data.info_data['reward_ammount'];
-        this.update();
-    },
-    (err)=>
-    {
-        console.log(err);
-    }
-);
-this.submitReward = function(e)
-{
-    e.preventDefault();
+    });
 
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+    this.submitFeatured = function(e)
+    {
+        e.preventDefault();
+
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user}
+            projRes = {data: [opts.project]};
+
+        setUserDeets(userRes, projRes);
+
+    }.bind(this);
+
+    this.setUserDeets = function(res, pRes)
     {
         let project = res.data.username,
-        projectData =
-        {
-            project_data:
+            projectData =
             {
-                info_data:
+                project_data:
                 {
-                    reward: this.refs.rewardtext.value,
-                    reward_ammount: this.refs.rewardvalue.value,
-                    reward_value: this.refs.rewardoption.value,
-                },
-				meta_data:
-                {
-					reward_check : false,
-				}
-            }
+                   info_data:
+                    {
+                        reward: this.refs.rewardtext.value,
+                        reward_ammount: this.refs.rewardvalue.value,
+                        reward_value: this.refs.rewardoption.value,
+                    },
+                    meta_data:
+                    {
+                        reward_check : false,
+                    }
+                }
         };
 
+        setProjDeets(pRes);
+    }.bind(this)
+
+    this.setProjDeets = function(res)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
             window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
         });
-    },
-        (err)=>
-        {
-            console.log(err);
-        }
-    );
-}.bind(this);
-
+    }.bind(this)
 });
 riot.tag2('dashboard-explore-purchase', '<div id="purchase-explore" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div id="modal" class="modal-content"> <div class="modal-header" style="padding-bottom: 0px;"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Explore Page Banner</p> <p class="registration-text text-left edit-text-title" style="margin-top: 15px;">Your project will be listed on our Explore Page rotating banner. Having your project on our rotating banner will increase viewership. For a limited time we are offering this as a free service while we work through our initial launch! Please click the Upgrade button below to add this feature.</p> </div> <div class="modal-body"> <form id="submitReward" role="form" onsubmit="{submitExplore}"> <div class="text-center update-modal-btn"> <button id="submit" type="submit" name="submit" class="btn-register btn-info-full next-step">Upgrade</button> </div> </form> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div>', '', '', function(opts) {
-this.submitExplore = function(e)
-{
-    e.preventDefault();
+   this.submitFeatured = function(e)
+    {
+        e.preventDefault();
 
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user}
+            projRes = {data: [opts.project]};
+
+        setUserDeets(userRes, projRes);
+
+    }.bind(this);
+
+    this.setUserDeets = function(res, pRes)
     {
         let project = res.data.username,
-        projectData =
-        {
-            project_data:
+            projectData =
             {
-				meta_data:
+                project_data:
                 {
-					explore : true,
-				}
-            }
+                    meta_data:
+                    {
+                        explore : true,
+                    }
+                }
         };
 
+        setProjDeets(pRes);
+    }.bind(this)
+
+    this.setProjDeets = function(res)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
-            window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
+                window.location.reload();
         });
-    },
-        (err)=>
-        {
-            console.log(err);
-        }
-    );
-}.bind(this);
+    }.bind(this)
 });
 riot.tag2('dashboard-featured-purchase', '<div id="purchase-featured" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div id="modal" class="modal-content"> <div class="modal-header" style="padding-bottom: 0px;"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Featured Project Listing</p> <p class="registration-text text-left edit-text-title" style="margin-top: 15px;">Your project will be listed on our Explore Page with a featured project icon. Having your project featured means it will get priority filtering and have increased viewership. For a limited time we are offering this as a free service while we work through our initial launch! Please click the Upgrade button below to add this feature.</p> </div> <div class="modal-body"> <form id="submitReward" role="form" onsubmit="{submitFeatured}"> <div class="text-center update-modal-btn"> <button id="submit" type="submit" name="submit" class="btn-register btn-info-full next-step">Upgrade</button> </div> </form> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div>', '', '', function(opts) {
-this.submitFeatured = function(e)
-{
-    e.preventDefault();
+    this.submitFeatured = function(e)
+    {
+        e.preventDefault();
 
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user}
+            projRes = {data: [opts.project]};
+
+        setUserDeets(userRes, projRes);
+
+    }.bind(this);
+
+    this.setUserDeets = function(res, pRes)
     {
         let project = res.data.username,
-        projectData =
-        {
-            project_data:
+            projectData =
             {
-				meta_data:
+                project_data:
                 {
-					featured : true,
-				}
-            }
+                    meta_data:
+                    {
+                        featured : true,
+                    }
+                }
         };
 
+        setProjDeets(pRes);
+    }.bind(this)
+
+    this.setProjDeets = function(res)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
-            window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
+                window.location.reload();
         });
-    },
-        (err)=>
-        {
-            console.log(err);
-        }
-    );
-}.bind(this);
+    }.bind(this)
 });
 riot.tag2('dashboard-landing-purchase', '<div id="purchase-landing" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div id="modal" class="modal-content"> <div class="modal-header" style="padding-bottom: 0px;"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Landing Page Banner</p> <p class="registration-text text-left edit-text-title" style="margin-top: 15px;">Your project will be listed on our Krowdspace Landing Page. Having your project on our rotating banner will increase viewership. For a limited time we are offering this as a free service while we work through our initial launch! Please click the Upgrade button below to add this feature.</p> </div> <div class="modal-body"> <form id="submitReward" role="form" onsubmit="{submitLanding}"> <div class="text-center update-modal-btn"> <button id="submit" type="submit" name="submit" class="btn-register btn-info-full next-step">Upgrade</button> </div> </form> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div>', '', '', function(opts) {
-this.submitLanding = function(e)
-{
-    e.preventDefault();
+   this.submitFeatured = function(e)
+    {
+        e.preventDefault();
 
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user},
+            projRes = {data: [opts.project]};
+
+        setUserDeets(userRes, projRes);
+
+    }.bind(this);
+
+    this.setUserDeets = function(res, pRes)
     {
         let project = res.data.username,
-        projectData =
-        {
-            project_data:
+            projectData =
             {
-				meta_data:
+                project_data:
                 {
-					landing : true,
-				}
-            }
+                    meta_data:
+                    {
+                        landing : true,
+                    }
+                }
         };
 
+        setProjDeets(pRes);
+    }.bind(this)
+
+    this.setProjDeets = function(res)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
-            window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
+                window.location.reload();
         });
-    },
-        (err)=>
-        {
-            console.log(err);
-        }
-    );
-}.bind(this);
+    }.bind(this)
+});
+riot.tag2('project-button', '<div class="filterdark" style="padding: 10px 5px; text-transform: uppercase; font-size: 13px; color: #3f434f; background: #fff;"> {project.unique_id} </div>', '', '', function(opts) {
+		this.project = opts.project;
 });
 riot.tag2('login-account', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-1 col-md-5 col-md-offset-0 col-sm-7 col-sm-offset-2"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Login</p> </div> <div class="modal-body"> <div id="errorLog" class="alert alert-danger alert-dismissable fade in" style="display:none;"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <form id="CustomerLoginForm" class="form-vertical no-gutter" onsubmit="{loginSubmit}"> <div> <input type="text" class="form-control placeholder-color" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> </div> <div class="col-xs-8 form-group"> <input type="password" class="form-control placeholder-color" placeholder="Password" value="" ref="passwordlogin"> </div> <div class="col-xs-4 form-group" style="padding-left:10px;"> <button class="button-login" type="submit">Login</button> </div> <div class="col-xs-6 check-terms checkbox text-left" style="margin:10px 0px 0px 0px;"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 check-terms checkbox text-right" style="margin:10px 0px 0px 0px;"> <p>Forgot Password?</p> </div> </form> <div class="clearfix"></div> </div> </div> </div> <div class="krowdspace-modal col-lg-5 col-md-6 hidden-sm hidden-xs"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input id="PASSWORD2" type="password" ref="password" placeholder="New Password" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-default"> <i class="glyphicon glyphicon-eye-open"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
 
@@ -625,7 +652,7 @@ riot.tag2('register-project-error', '<div id="modal-project-error" class="modal 
 });
 riot.tag2('register-content-reward', '<div class="register-reward-box project-row shadow"> <p class="text-left register-project-title project-reward">PROJECT REWARDS</p> <div class="text-left"> <p class="registration-text">For every project that is submitted to Krowdspace an exclusive reward will need to be provided for backers who support you through our platform. Krowdspace will look over each submission and the reward will need to be approved by our staff. This can take up to 24 hours. Make sure you can achieve these extra rewards when your project is successful. You will be obligated to fulfill any extra rewards listed on your Krowdspace project profile.</p> <p class="registration-text">One of the most common rewards is offering an extra 10%-20% off a backer’s tier pledge. You will need to make sure that it is clear for all backers to pledge a custom backing amount in the $1 "Thank You" area. They will need to put in the correct tier amount minus the 10%-20% you have chosen. Make sure to take into account your shipping costs. Another option would be to refund that 10%-20% on the tail end of your project after it has been completed. This is just an example amount and you can decide what reward amount or add-on you would like to offer. Here are some additional examples: </p> <ul class="registration-text project-list"> <li>All Krowdspace members will get a free upgrade to the next tier automatically.</li> <li>Krowdspace members who back this item will get to choose from additional colors that won’t be available to anyone else.</li> <li>If you back our 3-item tier we will send you an extra item.</li> <li>All Krowdspace members will be given protective cases with your pledge item.</li> <li>All Krowdspace members will receive free shipping. Pledge the custom amount for the tier you would like minus the shipping cost.</li> <li>All Krowdspace members who back over $50 will receive another item free.</li> <li>All Krowdspace members will have continued access to Early Bird Pricing. Pledge the Early Bird Price in the custom pledge area.</li> <li>All Krowdspace members will receive 15% off their pledges. Select the custom pledge amount and put in the tier you would like minus 15%.</li> <li>All Krowdspace members will be given a custom engraved frisbee.</li> </ul> <p class="registration-text">Keep it simple and make it creative. People love to see that their pledge is helping your project come to life and personal touches make all the difference. if you have any questions about rewards please <a class="home-links" href="mailto:Mason@Krowdspace.com">contact us</a>.</p> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('register-content-signup', '<div class="no-gutter register-background shadow"> <div class="col-sm-5 register"> <img class="img-responsive" src="/img/projects/krowdspace-register.png"> <p class="text-center register-cta">Register your crowdfunding campaign and accelerate your growth today!</p> </div> <form class="col-sm-7" id="registerProjectForm" onsubmit="{submit}"> <div class="registration-box shadow"> <fieldset id="project_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Do you own this crowdfunding project?</p> <select ref="pvalid" type="text" class="form-control" name="projectOwner"> <option disabled selected value>Select Yes or No</option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">What category best fits your project?</p> <select ref="category" type="text" class="form-control" name="projectCategory"> <option disabled selected value>Choose a Category</option> <option value="art">Art</option> <option value="design">Design</option> <option value="film">Film</option> <option value="food">Food</option> <option value="music">Music</option> <option value="photography">Photography</option> <option value="technology">Technology</option> <option value="videogames">Video Games</option> <option value="publishing">Publishing</option> </select> </div> <div class="form-group col-sm-12 no-gutter"> <p class="text-left registration-text">Please provide your live crowdfunding project url.</p> <div class="form-group col-sm-4 link-left"> <select ref="crowdportal" type="text" class="form-control" name="crowdSite"> <option disabled selected value>Choose Site</option> <option value="https://www.kickstarter.com/">Kickstarter.com</option> <option value="https://www.indiegogo.com/">Indiegogo.com</option> </select> </div> <div class="form-group col-sm-8 link-right"> <input ref="projecturl" type="text" class="form-control" name="projectLink" placeholder="/project/project-url"> </div> </div> <div class="register-controls text-center"> <p><a class="back-project next next-step">NEXT</a></p> </div> </fieldset> <fieldset id="reward_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p> <input ref="rewardtext" class="form-control" name="reward" maxlength="80" placeholder="See Sample Rewards Below ( Max Characters 80 )"> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Does your reward have a value or is it a discount?</p> <select ref="rewardoption" class="form-control" name="rewardValue"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please estimate the value of your reward.</p> <input ref="rewardvalue" class="form-control" name="rewardAmount"> </div> <div class="register-controls"> <div class="col-lg-offset-3 col-lg-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="project_verify"> <div class="col-sm-12"> <p class="text-left registration-text">To verify that you are the crowdfunding project owner please upload one of these images to your project page before submitting it to Krowdspace. We will check to see if the image is present to prevent false project submissions. Thank you for your understanding!</p> </div> <div class="row text-center"> <img src="img/press/featured-krowdspace-v1.png" style="width: 400px;"> </div> <div class="row text-center" style="margin-top: 13px;"> <img src="img/press/featured-krowdspace-v2.png" style="width: 70px;"> <img src="img/press/featured-krowdspace-v3.png" style="width: 90px; margin: 0px 50px;"> <img src="img/press/featured-krowdspace-v4.png" style="width: 70px;"> </div> <div class="register-controls"> <div class="col-lg-offset-3 col-lg-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="service_terms"> <div class="col-sm-12"> <p class="text-left registration-text">TERMS AND CONDITIONS</p> <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p> <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace user.</p> <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p> <p class="text-left registration-text">Project owners are obligated to respond promptly and truthfully to all questions posed to them by Krowdspace or Krowdspace users.</p> </div> <div class="register-controls"> <div class="col-lg-6 check-terms checkbox register-check"> <label> <input type="checkbox" value="checked" name="serviceTerms" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span> </label> </div> <div class="col-sm-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p> </div> </div> </fieldset> </div> </form> <div class="clearfix"></div> </div>', '', '', function(opts) {
+riot.tag2('register-content-signup', '<div class="no-gutter register-background shadow"> <div class="col-sm-5 register"> <img class="img-responsive" src="/img/projects/krowdspace-register.png"> <p class="text-center register-cta">Register your crowdfunding campaign and accelerate your growth today!</p> </div> <form class="col-sm-7" id="registerProjectForm" onsubmit="{submit}"> <div class="registration-box shadow"> <fieldset id="project_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Do you own this crowdfunding project?</p> <select ref="pvalid" type="text" class="form-control" name="projectOwner"> <option disabled selected value>Select Yes or No</option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">What category best fits your project?</p> <select ref="category" type="text" class="form-control" name="projectCategory"> <option disabled selected value>Choose a Category</option> <option value="Art">Art</option> <option value="Design">Design</option> <option value="Film">Film</option> <option value="Food">Food</option> <option value="Music">Music</option> <option value="Photography">Photography</option> <option value="Technology">Technology</option> <option value="Videogames">Video Games</option> <option value="Publishing">Publishing</option> </select> </div> <div class="form-group col-sm-12 no-gutter"> <p class="text-left registration-text">Please provide your live crowdfunding project url.</p> <div class="form-group col-sm-4 link-left"> <select ref="crowdportal" type="text" class="form-control" name="crowdSite"> <option disabled selected value>Choose Site</option> <option value="https://www.kickstarter.com/">Kickstarter.com</option> <option value="https://www.indiegogo.com/">Indiegogo.com</option> </select> </div> <div class="form-group col-sm-8 link-right"> <input ref="projecturl" type="text" class="form-control" name="projectLink" placeholder="/project/project-url"> </div> </div> <div class="register-controls text-center"> <p><a class="back-project next next-step">NEXT</a></p> </div> </fieldset> <fieldset id="reward_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p> <input ref="rewardtext" class="form-control" name="reward" maxlength="80" placeholder="See Sample Rewards Below ( Max Characters 80 )"> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Does your reward have a value or is it a discount?</p> <select ref="rewardoption" class="form-control" name="rewardValue"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please estimate the value of your reward.</p> <input ref="rewardvalue" class="form-control" name="rewardAmount"> </div> <div class="register-controls"> <div class="col-lg-offset-3 col-lg-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="project_verify"> <div class="col-sm-12"> <p class="text-left registration-text">To verify that you are the crowdfunding project owner please upload one of these images to your project page before submitting it to Krowdspace. We will check to see if the image is present to prevent false project submissions. Thank you for your understanding!</p> </div> <div class="row text-center"> <img src="img/press/featured-krowdspace-v1.png" style="width: 400px;"> </div> <div class="row text-center" style="margin-top: 13px;"> <img src="img/press/featured-krowdspace-v2.png" style="width: 70px;"> <img src="img/press/featured-krowdspace-v3.png" style="width: 90px; margin: 0px 50px;"> <img src="img/press/featured-krowdspace-v4.png" style="width: 70px;"> </div> <div class="register-controls"> <div class="col-lg-offset-3 col-lg-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="service_terms"> <div class="col-sm-12"> <p class="text-left registration-text">TERMS AND CONDITIONS</p> <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p> <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace user.</p> <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p> <p class="text-left registration-text">Project owners are obligated to respond promptly and truthfully to all questions posed to them by Krowdspace or Krowdspace users.</p> </div> <div class="register-controls"> <div class="col-lg-6 check-terms checkbox register-check"> <label> <input type="checkbox" value="checked" name="serviceTerms" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span> </label> </div> <div class="col-sm-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p> </div> </div> </fieldset> </div> </form> <div class="clearfix"></div> </div>', '', '', function(opts) {
         this.submit = function(e)
         {
             e.preventDefault();
@@ -1300,6 +1327,7 @@ riot.tag2('project-page-image', '<div class="col-sm-6 image-container"> <div cla
         console.log('Kickstarter Image');
         this.refs.kickstarterImage.src = res.data[0].project_data.web_data.mainImg.content;
     }else{
+        imagebox = false;
         console.log('Indiegogo Image');
         this.refs.indiegogoImage.src = res.data[0].project_data.web_data.mainImg.content;
     };
@@ -1308,8 +1336,7 @@ riot.tag2('project-page-image', '<div class="col-sm-6 image-container"> <div cla
         goalNumber = parseFloat(goalValue.replace(/,/g, '')),
 
         percentValue = res.data[0].project_data.meta_data.raisedPercent,
-        numberMax = Math.min(Math.max(parseInt(percentValue), 0), 1),
-
+        numberMax = Math.min(Math.max(percentValue, 0), 1),
         raisedRawNumber = goalNumber * percentValue,
         raisedNumber = Math.round(raisedRawNumber),
         raisedValue = raisedNumber.toLocaleString(),
@@ -1330,7 +1357,6 @@ riot.tag2('project-page-image', '<div class="col-sm-6 image-container"> <div cla
             trailWidth: 4,
             svgStyle: {width: '100%', height: '100%'}
         });
-
         bar.animate(numberMax);
         this.update();
     },

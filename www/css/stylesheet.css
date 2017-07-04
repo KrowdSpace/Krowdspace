@@ -2543,6 +2543,7 @@ div.explore-project figcaption {
     -webkit-filter: brightness(0.85);
     outline: none;
     border: none;
+    cursor: pointer;
     text-decoration: none;
 }
 .filterprimary:hover,
@@ -2758,4 +2759,23 @@ div.explore-project figcaption {
 #progressBar {
     height: 20px;
     border-top: 1px solid #3f434f;
+}
+.project-add-container {
+    position: fixed; 
+    left: 0; 
+    top: 113px;
+}
+.project-add-text { 
+    font-size: 13px; 
+    margin: 0px; 
+    padding: 4px 5px; 
+    background: #fed136;
+    color: #fff;
+}
+.project-add-btn {
+    background: #fed136;
+    color:white; 
+    font-size: 11px;
+    padding: 4px 0px; 
+    width: 100%;
 }
