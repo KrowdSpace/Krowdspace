@@ -7,8 +7,9 @@
     <home-content-hero></home-content-hero>
     <home-content-benefits></home-content-benefits>
     <home-slider-projects></home-slider-projects>
+    <home-content-directions></home-content-directions>
+    <home-content-users></home-content-users>
     <home-content-influence></home-content-influence>
-    <home-content-boosts></home-content-boosts>
     <home-slider-clients></home-slider-clients>
     <global-footer></global-footer>
     <home-modal-boosts></home-modal-boosts>

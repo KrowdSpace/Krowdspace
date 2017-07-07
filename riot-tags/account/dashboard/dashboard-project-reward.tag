@@ -16,17 +16,16 @@
 		</div>
 	</div>
 <script>
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
-        this.projectReward = res.data[0].project_data.info_data.reward;
-    	this.couponCode = res.data[0].coupon_code;
-        this.update();
-    },
-    (err)=> 
-    {
+        if(!opts.project)
+            return;
 
-    }
-);
+        let res = {data: [opts.project]};
+
+        this.projectReward = res.data[0].project_data.info_data.reward;
+        this.couponCode = res.data[0].coupon_code;
+    });
 </script>
 </dashboard-project-reward>	
 	

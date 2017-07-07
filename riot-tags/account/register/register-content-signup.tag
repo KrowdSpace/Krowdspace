@@ -19,15 +19,15 @@
                         <p class="text-left registration-text">What category best fits your project?</p>
                         <select ref="category" type="text" class="form-control" name="projectCategory">
                             <option disabled selected value>Choose a Category</option>
-                            <option value="art">Art</option>
-                            <option value="design">Design</option>
-                            <option value="film">Film</option>
-                            <option value="food">Food</option>
-                            <option value="music">Music</option>
-                            <option value="photography">Photography</option>
-                            <option value="technology">Technology</option>
-                            <option value="videogames">Video Games</option>
-                            <option value="publishing">Publishing</option>
+                            <option value="Art">Art</option>
+                            <option value="Design">Design</option>
+                            <option value="Film">Film</option>
+                            <option value="Food">Food</option>
+                            <option value="Music">Music</option>
+                            <option value="Photography">Photography</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Videogames">Video Games</option>
+                            <option value="Publishing">Publishing</option>
                         </select>
                     </div>
                     <div class="form-group col-sm-12 no-gutter">
@@ -125,6 +125,7 @@
                 URL =  this.refs.projecturl.value,
                 REWARD = this.refs.rewardtext.value,
                 REWARDVALUE = this.refs.rewardoption.value,
+                IGREWARD = 'test',
                 REWARDAMOUNT = this.refs.rewardvalue.value;
     
             let DATA = {
@@ -135,6 +136,7 @@
                         REWARD,
                         REWARDVALUE,
                         REWARDAMOUNT,
+                        IGREWARD,
                         };
         
             krowdspace.register.project(DATA).then

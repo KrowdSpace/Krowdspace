@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-3">
             <select class="form-control" ref="options" onchange={ testing } >
-                <option value="">All Categories</option>
+                <option value=" ">All Categories</option>
                 <option each={ cat in catArr }  value="{ cat }"> 
                     { cat }
                 </option>

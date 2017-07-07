@@ -1,101 +1,124 @@
 <home-slider-projects>
-		<div class="container hidden-md hidden-sm hidden-xs">
-			<div class="single-item slider" >
-				<div each= { indexProject } class="slick-image" style="display:flex;">
-					<div class="col-sm-7">
-						<a href="{ imageURL }"><img src="{ image }" alt="{ imageAlt }"></a>
-				    </div>
-				    <div class="col-sm-5">
-				        <p><strong>{ projectTitle}</strong></p>
-				        <p>{ projectDescription }</p>
-                        <br>
-				        <p><strong>Reward:</strong> { reward }</p>
-				        <div class="no-gutter funding-box">
-				            <div class="col-sm-6">
-								<p class="card-text">${ goal }</p>
-				            </div>
-				            <div class="col-sm-6 text-right">
-								<p class="card-text">{ category }</p>
-				            </div>
-				            <div class="col-sm-12">
-								<div class="progress-index">
-								    <div class="progress-bar" role="progressbar" style="width: { progressBar }%" aria-valuenow="{ progressBar }" aria-valuemin="0" aria-valuemax="100">
-                                    </div>
-								</div>
-				            </div>
-				            <div class="col-sm-2">
-								<p class="card-text">{ progressBar }%</p>
-								<p class="card-text">Funded</p>
-				            </div>
-				            <div class="col-sm-3 text-center">
-								<p class="card-text">${ pledged }</p>
-								<p class="card-text">Pledged</p>
-				            </div>
-				            <div class="col-sm-3 text-center">
-								<p class="card-text">{ backers }</p>
-								<p class="card-text">Backers</p>
-				            </div>
-				            <div class="col-sm-4 text-right">
-								<p class="card-text">{ days }</p>
-								<p class="card-text">Days Left</p>
-				            </div>
-				        </div>
-				    </div>
+<style type="text/css">
+    .slider {
+        width: 100%;
+        position: relative;
+        margin: 0px auto;
+    }
+
+    .slick-slide {
+      margin: 0px;
+    }
+    .slick-slide span,
+    .slick-slide .learn-more {
+      display: none;   
+    }
+    .slick-current span,
+    .slick-current .learn-more {
+      display: inline;       
+    }
+    .slick-slide img {
+      border-top: 1px solid #3f434f;
+      border-bottom: 1px solid #3f434f;
+      width: 550px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+    </style>
+    <div class="row" style="border-right: 1px solid #3f434f; border-left: 1px solid #3f434f;">
+     <div class="autoplay slider">
+        <div class="explore-banner-box" each= { ExploreBannerFilter }>
+            <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
+            <div class="explore-box">
+                <div class="col-sm-9">
+                    <div style="position: relative; height: 301px;">
+                        <div class="explore-feature-left">
+                            <div>
+                            <span class="explore-title">{ name }</span>
+                            </div>
+                            <div class="explore-box-text">
+                                <span class="explore-title">{ project_data.info_data.reward }</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-3 explore-feature-right text-center">
+                    <a href="{ '/#/explore/project/' + unique_id }"><p class="learn-more">Learn More</p></a>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     <script type="text/javascript">
-        this.indexProject = [
-        { image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/project.html",
-        imageAlt:"Bahari Beach bag on the beach",
-        projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
-        reward:"All pledges over $50 will receive a Bahari Sarong and Scarf.",
-        goal:"40,000",
-        category:"Design",
-        progressBar:'26',
-        pledged:'10,544',
-        backers:'50',
-        days:'19'},
-
-        { image:"/img/projects/computer.jpg",
-        imageURL:"/project.html",
-        imageAlt:"Computer and accessories sitting on a desk",
-        projectTitle:"Creating A Modular Computer App for All of Your Organizing Needs",
-        projectDescription:"We bring a way to organize your day and connect all of your devices through one app.",
-        reward:"All Krowdspace members will receive a free year subscription to our organizing app.",
-        goal:"100,000",
-        category:"Tech",
-        progressBar:'46',
-        pledged:'45,798',
-        backers:'132',
-        days:'14'},
-
-        { image:"/img/projects/pizza.jpg",
-        imageURL:"/project.html" ,
-        imageAlt:"Pizza slice sitting on a table with condiments",
-        projectTitle:"The Only Restaurant to use Recipes From our Guests",
-        projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
-        reward:"All Krowdspace members will receive our Cookbook.",
-        goal:"50,000",
-        category:"Food",
-        progressBar:'83',
-        pledged:'41,765',
-        backers:'78',
-        days:'2'},
-        ]
-    </script>
-    <script type="text/javascript">
-        this.on('mount', function() 
+        krowdspace.projects.explore().then((res) =>
         {
-          $('.single-item').slick({
-            dots: false,
-            arrows:false,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 8000,
-          });
+            let ExploreBannerData = res.data,
+                FilterExplore = ExploreBannerData.filter((element) => {
+                return (element.project_data.meta_data.landing === true);
+            });
+
+            let newObject={
+                        unique_id: 'project-feature-popup',
+                        name: '',
+                        project_data: 
+                        {
+                            web_data: 
+                            {
+                                mainImg: {
+                                    content: '/img/projects/krowdspace-banner-1.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data: 
+                            {
+                                reward: ''
+                            }
+                        },
+                    };
+            let newObject2={
+                        unique_id: 'project-feature-popup',
+                        name: 'Join Krowdspace Today!',
+                        project_data: 
+                        {
+                            web_data: 
+                            {
+                                mainImg: {
+                                    content: '/img/content/krowdspace-join.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data: 
+                            {
+                                reward: 'Discover Extra Rewards For Projects You Love!'
+                            }
+                        },
+                    };
+
+            FilterExplore.push(newObject, newObject2);
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 7000,
+                centerMode: true,
+                variableWidth: true,
+            });
+        },
+        (err)=>
+        {
+            console.log(err)
         });
     </script>
 </home-slider-projects>

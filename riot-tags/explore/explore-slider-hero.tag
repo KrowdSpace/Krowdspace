@@ -47,10 +47,30 @@
                             {
                                 reward: ''
                             }
-                        }
+                        },
+                    };
+            let newObject2={
+                        unique_id: 'project-feature-popup',
+                        name: 'Join Krowdspace Today!',
+                        project_data: 
+                        {
+                            web_data: 
+                            {
+                                mainImg: {
+                                    content: '/img/content/krowdspace-join.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data: 
+                            {
+                                reward: 'Discover Extra Rewards For Projects You Love!'
+                            }
+                        },
                     };
 
-            FilterExplore.push(newObject);
+            FilterExplore.push(newObject, newObject2);
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 

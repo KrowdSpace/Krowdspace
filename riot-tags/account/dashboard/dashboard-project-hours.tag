@@ -15,8 +15,15 @@
         </div>
     </div>
 <script>
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.progBar = null;
+
+this.on('update', ()=>
     {
+        if(!opts.project)
+            return;
+        
+        let res = {data: [opts.project]}
+
         let endTime = res.data[0].project_data.web_data.hours['data-end_time'],
             projectTime = res.data[0].project_data.web_data.hours['data-duration'],
             end = new Date(endTime),
@@ -40,41 +47,46 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
         
         timer = setInterval(showRemaining, 1000);
         
-        let bar = new ProgressBar.Circle(circleChart, 
-        {
-            color: '#3f434f',
-            strokeWidth: 16,
-            trailWidth: 16,
-            easing: 'easeInOut',
-            duration: 1400,
-            text: 
+        let bar = null;
+        
+        if(!this.progBar)
+            this.progBar = bar = new ProgressBar.Circle(circleChart, 
             {
-                autoStyleContainer: false
-            },
-            from: 
-            { 
-                color: '#fed136', 
-                width: 16 
-            },
-            to: 
-            { 
-                color: '#fed136', 
-                width: 16 
-            },
-            step: function(state, circle) 
-            {
-                circle.path.setAttribute('stroke', state.color);
-                circle.path.setAttribute('stroke-width', state.width);
-                var value = Math.round(circle.value() * 100);
-                if (value === 0) 
+                color: '#3f434f',
+                strokeWidth: 16,
+                trailWidth: 16,
+                easing: 'easeInOut',
+                duration: 1400,
+                text: 
                 {
-                    circle.setText('');
-                } else 
+                    autoStyleContainer: false
+                },
+                from: 
+                { 
+                    color: '#fed136', 
+                    width: 16 
+                },
+                to: 
+                { 
+                    color: '#fed136', 
+                    width: 16 
+                },
+                step: function(state, circle) 
                 {
-                    circle.setText(value + '%');
+                    circle.path.setAttribute('stroke', state.color);
+                    circle.path.setAttribute('stroke-width', state.width);
+                    var value = Math.round(circle.value() * 100);
+                    if (value === 0) 
+                    {
+                        circle.setText('');
+                    } else 
+                    {
+                        circle.setText(value + '%');
+                    }
                 }
-            }
-        });
+            });
+        else
+            bar = this.progBar;
 
     let projectDays = showRemaining(),
         negativeCircleProgress = projectDays/projectTime - 1,
@@ -87,14 +99,7 @@ krowdspace.projects.project(this.opts.userkey).then((res)=>
 
         this.projectLength = res.data[0].project_data.web_data.hours['data-duration'];
         this.countdownTimer = showRemaining();
-        
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
-    }
-);
+});
 
 </script>
 </dashboard-project-hours>	
