@@ -24,6 +24,7 @@
             console.log('Kickstarter Image');
             this.refs.kickstarterImage.src = opts.project.project_data.web_data.mainImg.content;
         }else{
+            imagebox = false;
             console.log('Indiegogo Image');
             this.refs.indiegogoImage.src = opts.project.project_data.web_data.mainImg.content;
         }; 

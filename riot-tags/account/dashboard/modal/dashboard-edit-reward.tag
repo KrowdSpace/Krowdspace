@@ -46,7 +46,7 @@
         this.rewardvalue = res.data[0].project_data.info_data['reward_ammount'];
     });
     
-    submitFeatured(e) 
+    submitReward(e) 
     {
         e.preventDefault();
 
@@ -56,13 +56,13 @@
         let userRes = {data: opts.user}
             projRes = {data: [opts.project]};
 
-        setUserDeets(userRes, projRes);
+        this.setUserDeets(userRes, projRes);
 
     }; 
 
     setUserDeets(res, pRes)
     {
-        let project = res.data.username,
+        let project = pRes.data[0].name,
             projectData = 
             {
                 project_data: 
@@ -80,10 +80,10 @@
                 }
         };
 
-        setProjDeets(pRes);
+        this.setProjDeets(project, projectData);
     }
     
-    setProjDeets(res)
+    setProjDeets(project, projectData)
     {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {

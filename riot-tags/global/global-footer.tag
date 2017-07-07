@@ -8,10 +8,9 @@
                         <strong>Quick Links</strong>
                     </p>
                     <ul class="text-left quicklinks">
+                        <li><a class="page-scroll neutral-footer-link" href="/#/account/dashboard">View Dashboard</a></li>
+                        <li><a class="page-scroll neutral-footer-link" href="/#/account/register">Submit A Project</a></li>
                         <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li>
-                        <li><a class="page-scroll neutral-footer-link" href="#project">Submit A Project</a></li>
-                        <li><a class="page-scroll neutral-footer-link" href="#benefits">Our Benefits</a></li>
-                        <li><a class="page-scroll neutral-footer-link" href="#boost">View Boosts</a></li>
                         <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li>
                         <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li>
                         <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li>
