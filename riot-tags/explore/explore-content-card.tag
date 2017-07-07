@@ -32,11 +32,13 @@
             </div>
         </div>
     </div>
+    <img show= { Cards } class="img-responsive" src="/img/content/krowdspace-coming-soon.png">
     <script type="text/javascript">
         this.displayCards = [];
         this.exploreCards = [];
         krowdspace.projects.explore().then((res) =>
         {
+            
             let projectArray = res.data;
             projectArray.forEach((element) =>
             {
@@ -80,7 +82,8 @@
         },
         (err)=>
         {
-            console.log(err)
+            this.Cards = true;
+            this.update();
         });
 
         this.setExploreCards = function setExploreCards(neA)

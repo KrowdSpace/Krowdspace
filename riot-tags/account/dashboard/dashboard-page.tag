@@ -16,7 +16,7 @@
 			<div class="col-sm-10 col-sm-offset-1" style="padding: 0px;">
 				<div class="row dash-row no-gutter shadow">
 					<dashboard-project-image project = { project }></dashboard-project-image>	
-					<dashboard-project-user user= { user } project = { project }></dashboard-project-user>
+					<dashboard-project-user user = { user } project = { project }></dashboard-project-user>
 				</div>
 				<div class="row dash-row no-gutter">
 					<dashboard-project-hours show={ project } project = { project }></dashboard-project-hours>
@@ -34,7 +34,7 @@
 	<dashboard-explore-purchase project = { project }></dashboard-explore-purchase>
 	<dashboard-landing-purchase project = { project }></dashboard-landing-purchase>
 	<dashboard-edit-profile project = { project }></dashboard-edit-profile>
-	<dashboard-edit-reward show={ project } project = { project }></dashboard-edit-reward>
+	<dashboard-edit-reward user = { user } project = { project }></dashboard-edit-reward>
     <global-footer></global-footer> 
 <script>
 	this.projectNum = 0;
@@ -43,7 +43,7 @@
 	this.project = null;
 	this.user = null;
 
-	this.userKey = "";
+	this.userkey = "";
 
 	this.on('mount', ()=>
 	{
@@ -56,13 +56,23 @@
 
 			return krowdspace.projects.project(this.userkey);
 		})
+		.catch((err)=>
+		{
+			if(this.user)
+			{
+				this.projects = [];
+				this.update();
+			}
+		})
 		.then((res)=>
 		{
-			this.projects = res.data;
-			this.setProject(res.data[0]);
+			if(res && res.data)
+			{
+				this.projects = res.data;
+				this.setProject(res.data[0]);
+			}
 		});
 	});
-
 	setProject(proj)
 	{
 		this.project = proj;

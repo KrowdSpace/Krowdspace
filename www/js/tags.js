@@ -36,14 +36,14 @@ riot.tag2('boosts', '<boosts-page show="{logged_in}"></boosts-page> <global-comi
                 window.location.replace("/#/account/login");
             });
 });
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <div class="shadow text-center project-add-container"> <p class="project-add-text">PROJECT</p> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"></project-button> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image project="{project}"></dashboard-project-image> <dashboard-project-user user="{user}" project="{project}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours show="{project}" project="{project}"></dashboard-project-hours> <dashboard-project-reward show="{project}" project="{project}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title show="{project}" project="{project}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase project="{project}"></dashboard-landing-purchase> <dashboard-edit-profile project="{project}"></dashboard-edit-profile> <dashboard-edit-reward show="{project}" project="{project}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <div class="shadow text-center project-add-container"> <p class="project-add-text">PROJECT</p> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"></project-button> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image project="{project}"></dashboard-project-image> <dashboard-project-user user="{user}" project="{project}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours show="{project}" project="{project}"></dashboard-project-hours> <dashboard-project-reward show="{project}" project="{project}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title show="{project}" project="{project}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase project="{project}"></dashboard-landing-purchase> <dashboard-edit-profile project="{project}"></dashboard-edit-profile> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
 	this.projectNum = 0;
 	this.projects = [];
 
 	this.project = null;
 	this.user = null;
 
-	this.userKey = "";
+	this.userkey = "";
 
 	this.on('mount', ()=>
 	{
@@ -56,13 +56,23 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 
 			return krowdspace.projects.project(this.userkey);
 		})
+		.catch((err)=>
+		{
+			if(this.user)
+			{
+				this.projects = [];
+				this.update();
+			}
+		})
 		.then((res)=>
 		{
-			this.projects = res.data;
-			this.setProject(res.data[0]);
+			if(res && res.data)
+			{
+				this.projects = res.data;
+				this.setProject(res.data[0]);
+			}
 		});
 	});
-
 	this.setProject = function(proj)
 	{
 		this.project = proj;
@@ -279,14 +289,15 @@ console.log(this.opts.project);
 riot.tag2('dashboard-project-user', '<div class="col-sm-6 text-center no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Projects Launched</p> <p class="social-metric">1</p> </div> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Hours Remaining</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-sm-4 text-center user-stat-box"> <p class="dashboard-user">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> <div class="col-sm-8 text-left"> <div class="col-sm-4 user-box-left"> <p class="dashboard-user">Username:</p> <p class="dashboard-user">Email:</p> <p class="dashboard-user">Kickstarter:</p> <p class="dashboard-user">Indiegogo:</p> </div> <div class="col-sm-8 user-box-right"> <p class="dashboard-user">{username}</p> <p class="dashboard-user">{email}</p> <p class="dashboard-user">{kickstarter || \'N/A\'}</p> <p class="dashboard-user">{indiegogo || \'N/A\'}</p> </div> </div> <div class="col-sm-4"> </div> </div>', '', '', function(opts) {
     this.on('update', ()=>
     {
-        if(!opts.project)
+        if(!opts.user)
             return;
 
         let userRes = { data: opts.user },
             projRes = { data: [opts.project] };
 
         this.setUserDeets(userRes);
-        this.setProjectDeets(projRes);
+        if(opts.project)
+            this.setProjectDeets(projRes);
     });
 
     this.setUserDeets = function(res)
@@ -301,31 +312,14 @@ riot.tag2('dashboard-project-user', '<div class="col-sm-6 text-center no-gutter 
 
     this.setProjectDeets = function(res)
     {
-        this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
-
         let endTime = res.data[0].project_data.web_data.hours['data-end_time'],
+            projectTime = res.data[0].project_data.web_data.hours['data-duration'],
             end = new Date(endTime),
-            _second = 1000,
-            _minute = _second * 60,
-            _hour = _minute * 60,
-            _day = _hour * 24,
-            timer;
+            remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
+            daysMax = Math.max(0, remaining);
 
-        function showRemaining()
-        {
-            let now = new Date();
-                distance = end - now,
-                days = Math.floor(distance / _day),
-                hours = Math.floor((distance % _day) / _hour),
-                minutes = Math.floor((distance % _hour) / _minute),
-                seconds = Math.floor((distance % _minute) / _second);
-                countdown = (days * 24) + hours;
-                hoursMax = Math.max(0, countdown);
-                return hoursMax;
-        }
-
-        timer = setInterval(showRemaining, 1000);
-        this.countdowntimer = showRemaining();
+        this.countdowntimer = Math.floor(daysMax);
+        this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
     }.bind(this)
 });
 riot.tag2('dashboard', '<dashboard-page show="{logged_in}"></dashboard-page>', 'dashboard,[data-is="dashboard"]{ background-color: #fff }', '', function(opts) {
@@ -398,7 +392,7 @@ riot.tag2('dashboard-edit-reward', '<div id="edit-reward" class="modal container
         this.rewardvalue = res.data[0].project_data.info_data['reward_ammount'];
     });
 
-    this.submitFeatured = function(e)
+    this.submitReward = function(e)
     {
         e.preventDefault();
 
@@ -408,13 +402,13 @@ riot.tag2('dashboard-edit-reward', '<div id="edit-reward" class="modal container
         let userRes = {data: opts.user}
             projRes = {data: [opts.project]};
 
-        setUserDeets(userRes, projRes);
+        this.setUserDeets(userRes, projRes);
 
     }.bind(this);
 
     this.setUserDeets = function(res, pRes)
     {
-        let project = res.data.username,
+        let project = pRes.data[0].name,
             projectData =
             {
                 project_data:
@@ -432,10 +426,10 @@ riot.tag2('dashboard-edit-reward', '<div id="edit-reward" class="modal container
                 }
         };
 
-        setProjDeets(pRes);
+        this.setProjDeets(project, projectData);
     }.bind(this)
 
-    this.setProjDeets = function(res)
+    this.setProjDeets = function(project, projectData)
     {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
@@ -830,11 +824,12 @@ riot.tag2('verify-content-confirm', '<div class="row row-verify"> <p class="text
 });
 riot.tag2('verify', '<success></success>', '', '', function(opts) {
 });
-riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.ExploreCard.data.category"> <div class="no-gutter explore-container shadow"> <a href="/#/explore/project/{exploreCard.ExploreCard.data.id}"> <img class="img-responsive" riot-src="{exploreCard.ExploreCard.data.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span show="{exploreCard.ExploreCard.data.featured}" class="fa-stack fa-lg explore-feature-icon"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 70px; "> <p class="card-text-alt">{exploreCard.ExploreCard.data.title}</p> <p class="card-text-alt explore-" reward style="padding-top: 5px;">Reward: {exploreCard.ExploreCard.data.reward}</p> </div> <div class="col-sm-5 text-left"> <p class="card-text-alt" style="margin-right: 0px;">${exploreCard.ExploreCard.data.backed} Raised</p> </div> <div class="col-sm-2 text-center"> <p class="card-text-alt" style="margin-left: 0px; margin-right: 0px;">{exploreCard.ExploreCard.data.days} Days</p> </div> <div class="col-sm-5 text-right"> <p class="card-text-alt" style="margin-left: 0px;">${exploreCard.ExploreCard.data.goal} Goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style=" width: {exploreCard.ExploreCard.data.percent}%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.ExploreCard.data.category"> <div class="no-gutter explore-container shadow"> <a href="/#/explore/project/{exploreCard.ExploreCard.data.id}"> <img class="img-responsive" riot-src="{exploreCard.ExploreCard.data.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span show="{exploreCard.ExploreCard.data.featured}" class="fa-stack fa-lg explore-feature-icon"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 70px; "> <p class="card-text-alt">{exploreCard.ExploreCard.data.title}</p> <p class="card-text-alt explore-" reward style="padding-top: 5px;">Reward: {exploreCard.ExploreCard.data.reward}</p> </div> <div class="col-sm-5 text-left"> <p class="card-text-alt" style="margin-right: 0px;">${exploreCard.ExploreCard.data.backed} Raised</p> </div> <div class="col-sm-2 text-center"> <p class="card-text-alt" style="margin-left: 0px; margin-right: 0px;">{exploreCard.ExploreCard.data.days} Days</p> </div> <div class="col-sm-5 text-right"> <p class="card-text-alt" style="margin-left: 0px;">${exploreCard.ExploreCard.data.goal} Goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style=" width: {exploreCard.ExploreCard.data.percent}%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div> <img show="{Cards}" class="img-responsive" src="/img/content/krowdspace-coming-soon.png">', '', '', function(opts) {
         this.displayCards = [];
         this.exploreCards = [];
         krowdspace.projects.explore().then((res) =>
         {
+
             let projectArray = res.data;
             projectArray.forEach((element) =>
             {
@@ -878,7 +873,8 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
         },
         (err)=>
         {
-            console.log(err)
+            this.Cards = true;
+            this.update();
         });
 
         this.setExploreCards = function setExploreCards(neA)
@@ -891,7 +887,7 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
 
 });
 
-riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control" ref="options" onchange="{testing}"> <option value="">All Categories</option> <option each="{cat in catArr}" riot-value="{cat}"> {cat} </option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{myFunction}"> <div class="input-group-btn"> <div class="btn btn-void"><i class="fa fa-search fa-lg"></i></div> </div> </div> </form> </div> </div>', '', '', function(opts) {
+riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control" ref="options" onchange="{testing}"> <option value=" ">All Categories</option> <option each="{cat in catArr}" riot-value="{cat}"> {cat} </option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{myFunction}"> <div class="input-group-btn"> <div class="btn btn-void"><i class="fa fa-search fa-lg"></i></div> </div> </div> </form> </div> </div>', '', '', function(opts) {
     this.on('mount', function(){
         this.update();
         this.exploreCardsCatergory();
@@ -980,42 +976,6 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <s
     }
 
 });
-riot.tag2('krowdspace-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt explore-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i> </button> <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a> </div> <div class="collapse navbar-collapse text-center" id="explore-nav-collapse"> <ul class="nav navbar-nav navbar-left"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a class="explore-scroll" href="/#/explore">Explore</a> </li> <li> <a class="explore-scroll" href="/#/account/register">Submit Project</a> </li> </ul> <img class="logo-float" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a show="{logged_in}" class="explore-scroll" href="/#/account/dashboard">Dashboard</a> </li> <li> <a show="{!logged_in}" href="#modal-explore-login" class="modal-link" data-toggle="modal">Login</a> </li> <li> <a show="{!logged_in}" href="#modal-explore-register" class="modal-link" data-toggle="modal">Sign Up</a> </li> <li> <a show="{logged_in}" href="/#/account/profile">Profile</a> </li> </ul> </div> </div> </nav>', '', '', function(opts) {
-
-krowdspace.v1.check().then((res)=>
-	{
-		logged_in = true;
-		this.update();
-		console.log('You are logged in');
-	},
-	(err)=>
-	{
-		console.log('You are not logged in');
-	});
-
-        this.on('mount', function()
-        {
-            $('a.page-scroll').bind('click', function(event) {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: ($($anchor.attr('href')).offset().top - 50)
-                }, 1250, 'easeInOutExpo');
-                event.preventDefault();
-            }),
-            $('body').scrollspy({
-                target: '.explore-fixed-top',
-                offset: 51
-            }),
-            $('.navbar-collapse ul li a').click(function(){
-                    $('.navbar-toggle:visible').click();
-            }),
-            $('#mainNav').affix({
-                offset: {
-                    top: 10
-                }
-            })
-        });
-});
 riot.tag2('explore-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> <explore-slider-hero></explore-slider-hero> </div> <div class="container" style="margin-bottom: 50px;"> <explore-content-filter filtersearch="{refs.filter}"></explore-content-filter> <explore-content-card ref="filter"></explore-content-card> </div> <div class="row"> <global-footer></global-footer> </div> <explore-modal-login></explore-modal-login> <explore-modal-register></explore-modal-register>', 'explore-page .slider,[data-is="explore-page"] .slider{ width: 100%; position: relative; margin: 0px auto; } explore-page .slick-slide,[data-is="explore-page"] .slick-slide{ margin: 0px; } explore-page .slick-slide p,[data-is="explore-page"] .slick-slide p,explore-page .slick-slide .learn-more,[data-is="explore-page"] .slick-slide .learn-more{ display: none; } explore-page .slick-current p,[data-is="explore-page"] .slick-current p,explore-page .slick-current .learn-more,[data-is="explore-page"] .slick-current .learn-more{ display: block; } explore-page .slick-slide img,[data-is="explore-page"] .slick-slide img{ border-top: 1px solid #dcdedd; border-bottom: 1px solid #dcdedd; width: 750px; } explore-page .slick-prev:before,[data-is="explore-page"] .slick-prev:before,explore-page .slick-next:before,[data-is="explore-page"] .slick-next:before{ color: black; }', '', function(opts) {
     this.on('mount',function(){
 
@@ -1050,10 +1010,30 @@ riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <
                             {
                                 reward: ''
                             }
-                        }
+                        },
+                    };
+            let newObject2={
+                        unique_id: 'project-feature-popup',
+                        name: 'Join Krowdspace Today!',
+                        project_data:
+                        {
+                            web_data:
+                            {
+                                mainImg: {
+                                    content: '/img/content/krowdspace-join.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data:
+                            {
+                                reward: 'Discover Extra Rewards For Projects You Love!'
+                            }
+                        },
                     };
 
-            FilterExplore.push(newObject);
+            FilterExplore.push(newObject, newObject2);
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
@@ -1481,7 +1461,7 @@ riot.tag2('global-coming-soon', '<div class="alternate-gradient-background img-r
     }
     timer = setInterval(showRemaining, 1000);
 });
-riot.tag2('global-footer', '<footer class="alternate-background"> <div class="custom-footer"> <div class="container"> <div class="row"> <div class="col-md-3 hidden-sm hidden-xs"> <p class="footer-text"> <strong>Quick Links</strong> </p> <ul class="text-left quicklinks"> <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li> <li><a class="page-scroll neutral-footer-link" href="#project">Submit A Project</a></li> <li><a class="page-scroll neutral-footer-link" href="#benefits">Our Benefits</a></li> <li><a class="page-scroll neutral-footer-link" href="#boost">View Boosts</a></li> <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li> <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li> <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li> <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li> </ul> </div> <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-1 col-xs-10"> <p class="footer-text"> <strong>Follow Us On Social Media</strong> </p> <p class="text-left social-footer">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways. </p> <div class="text-left social-icons"> <a href="https://www.facebook.com/Krowdspaced" target="_blank"> <i class="fa fa-facebook footer-social-icon filterprimary"></i> </a> <a href="https://www.pinterest.com/Krowdspace" target="_blank"> <i class="fa fa-pinterest footer-social-icon filterprimary"></i> </a> <a href="https://www.twitter.com/Krowdspaced" target="_blank"> <i class="fa fa-twitter footer-social-icon filterprimary"></i> </a> <a href="https://www.instagram.com/Krowdspace" target="_blank"> <i class="fa fa-instagram footer-social-icon filterprimary"></i> </a> </div> </div> <div class="col-lg-push-1 col-lg-4 text-center"> <p class="footer-text" style="margin-bottom: 26px;"><strong>Contact Krowdspace</strong></p> <form onsubmit="{contactMessage}" ref="commentForm"> <div class="form-group"> <input type="text" ref="fullname" class="form-control" placeholder="Full Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control" placeholder="Email Address" required="" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <textarea class="form-control" ref="comment" type="text" placeholder="Your Message" rows="3" required="required"></textarea> </div> <div> <input type="submit" class="contact-btn" name="submit" value="Send Message"> </div> </form> </div> </div> <div class="text-left"> <p class="copyright">&copy; Krowdspace {year}</p> </div> </div> </div> </footer>', '', '', function(opts) {
+riot.tag2('global-footer', '<footer class="alternate-background"> <div class="custom-footer"> <div class="container"> <div class="row"> <div class="col-md-3 hidden-sm hidden-xs"> <p class="footer-text"> <strong>Quick Links</strong> </p> <ul class="text-left quicklinks"> <li><a class="page-scroll neutral-footer-link" href="/#/account/dashboard">View Dashboard</a></li> <li><a class="page-scroll neutral-footer-link" href="/#/account/register">Submit A Project</a></li> <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li> <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li> <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li> <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li> <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li> </ul> </div> <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-1 col-xs-10"> <p class="footer-text"> <strong>Follow Us On Social Media</strong> </p> <p class="text-left social-footer">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways. </p> <div class="text-left social-icons"> <a href="https://www.facebook.com/Krowdspaced" target="_blank"> <i class="fa fa-facebook footer-social-icon filterprimary"></i> </a> <a href="https://www.pinterest.com/Krowdspace" target="_blank"> <i class="fa fa-pinterest footer-social-icon filterprimary"></i> </a> <a href="https://www.twitter.com/Krowdspaced" target="_blank"> <i class="fa fa-twitter footer-social-icon filterprimary"></i> </a> <a href="https://www.instagram.com/Krowdspace" target="_blank"> <i class="fa fa-instagram footer-social-icon filterprimary"></i> </a> </div> </div> <div class="col-lg-push-1 col-lg-4 text-center"> <p class="footer-text" style="margin-bottom: 26px;"><strong>Contact Krowdspace</strong></p> <form onsubmit="{contactMessage}" ref="commentForm"> <div class="form-group"> <input type="text" ref="fullname" class="form-control" placeholder="Full Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control" placeholder="Email Address" required="" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <textarea class="form-control" ref="comment" type="text" placeholder="Your Message" rows="3" required="required"></textarea> </div> <div> <input type="submit" class="contact-btn" name="submit" value="Send Message"> </div> </form> </div> </div> <div class="text-left"> <p class="copyright">&copy; Krowdspace {year}</p> </div> </div> </div> </footer>', '', '', function(opts) {
         this.on('mount', function()
         {
             $('a.page-scroll').bind('click', function(event)
@@ -1623,71 +1603,94 @@ riot.tag2('global-modal-service', '<div id="modal-service-terms" class="modal co
 });
 riot.tag2('global-modal-submission', '<div id="modal-submission" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3"> <div id="modal" class="modal-content"> <div class="modal-header"> <p class="modal-heading">Thank You From Krowdspace</p> </div> <div class="modal-body"> <p>Thank you for registering with Krowdspace. If you are joining as a member we look forward to launching our unique crowdfunding dashboard with you! We are currently building our site content and should be live in the coming months.</p> <p>We will be sending updates on the latest news, promotions and exclusive giveaways leading up to our official launch. Until then, make sure to stay connected with our social media channels:</p> <div class="text-left boost-warning"> <a href="https://www.facebook.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.pinterest.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.twitter.com/Krowdspaced" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="https://www.instagram.com/Krowdspace" target="_blank"> <span class="fa-stack fa fa-2x social-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-instagram fa-stack-1x fa-inverse"></i> </span> </a> </div> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('home-content-benefits', '<section id="project"> <div class="container"> <div class="row"> <div class="col-sm-12 text-center"> <h2 class="landing-header">How it works</h2> </div> <div class="col-lg-offset-2 col-lg-8 col-md-12 landing-description text-left"> <p>At Krowdspace, we feature projects gathered from the top crowdfunding sites and bring them together into one unified platform. Why is this beneficial? Projects are detached from their original platform branding, which removes backer bias and exposes them to a broader audience. As a project’s audience grows, the probability of reaching funding goals is increased. Pair that with Krowdspace’s effective and measurable <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">project boosts</a> and campaigns gain momentum faster. Join the Krowdspace community today by discovering <a href="#modal-login" data-toggle="modal" class="modal-link home-links">new projects</a> or <a href="#modal-login" data-toggle="modal" class="modal-link home-links">submit your own project</a>.</p> </div> <div class="col-md-4 text-center"> <img src="/img/content/submit-icon.png" class="img-responsive img-icon" alt="Submit a Project Icon"> <p><strong>Submit a Project</strong></p> <br> <p class="text-left text-left">Krowdspace is currently accepting live crowdfunding projects from Kickstarter and Indiegogo. The process to submit a project is simple: once your project is live on either platform, submit your project for approval to Krowdspace by filling out our easy to use submission form. Please <a href="#modal-login" data-toggle="modal" class="home-links">register with Krowdspace</a> before submitting a crowdfunding project. All projects are reviewed by our staff and can take up to 24 hours to post. It’s that easy… and free!</p> </div> <div class="col-md-4 text-center"> <img src="/img/content/reward-icon.png" class="img-responsive img-icon" alt="Rewards Icon"> <p><strong>Offer an Extra Reward</strong></p> <br> <p class="text-left text-left">In order to have your project published on Krowdspace, you must offer an exclusive reward for backers who support you through our community. You can view examples and more information about <a href="#modal-reward" data-toggle="modal" class="home-links">project rewards here</a>. Krowdspace tracks each backer that accesses your project through our platform and notes their Kickstarter or Indiegogo pledge on your Krowdspace dashboard. After your project is funded, you have a convenient list of Krowdspace backers to send your exclusive rewards to.</p> </div> <div class="col-md-4 text-center"> <img src="/img/content/backer-icon.png" class="img-responsive img-icon" alt="Gain Backers Icon"> <p><strong>Gather More Backers</strong></p> <br> <p class="text-left text-left">We have combined projects from the top crowdfunding sites so that you can obtain a larger audience for your campaign. Supporters that might not usually use the funding platform you’ve chosen can now discover your project and get on board. When it comes to fundraising, every advantage counts. <a href="#modal-login" data-toggle="modal" class="home-links">Submit your project</a> today and gain access to our <a href="#modal-boost" data-toggle="modal" class="home-links">project boosts</a> which include detailed metrics and easy to follow tips for running a successful campaign. </p> </div> </div> </div> </section>', '', '', function(opts) {
+riot.tag2('home-content-benefits', '<div id="project" style="padding: 75px 0px;"> <div class="container"> <div class="row"> <div class="col-sm-12 text-center"> <h2 class="landing-header">How it works</h2> </div> <div class="col-lg-offset-2 col-lg-8 col-md-12 text-left"> <p style="margin: 0px;">At Krowdspace, we feature projects gathered from the top crowdfunding sites and bring them together into one unified platform. Why is this beneficial? Projects are detached from their original platform branding, which removes backer bias and exposes them to a broader audience. As a project’s audience grows, the probability of reaching funding goals is increased. Pair that with Krowdspace’s effective <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">project boosts</a> and campaigns gain momentum faster. Join the Krowdspace community today by discovering <a href="#modal-login" data-toggle="modal" class="modal-link home-links">new projects</a> or <a href="#modal-login" data-toggle="modal" class="modal-link home-links">submit your own project</a>.</p> </div> </div> </div> </div>', '', '', function(opts) {
 });
 riot.tag2('home-content-boosts', '<img src="img/content/page-break.jpg" alt="Krowdspace Page Break" class="img-responsive auto-width hidden-sm hidden-xs"> <section id="boost"> <div class="container"> <div class="row"> <div class="col-lg-offset-2 col-lg-8 col-md-12"> <h2 class="landing-header text-center">Project Boosts</h2> <p class="text-left landing-description text-left">Our boost plans offer some much-needed exposure to really get your project going. Don’t want to purchase a full plan? We also offer <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">individual boosts</a>. Each plan will last for 30 days or the duration of your project, whichever is less. </p> </div> </div> <div class="row hidden-sm hidden-xs"> <div class="col-sm-offset-8 col-sm-4 text-center"> <p class="popular-boost">Most Popular</p> </div> </div> <div class="row hidden-sm hidden-xs"> <div class="col-sm-4"> <div class="boost-tier-box shadow"> <div class="text-center price-box"> <p class="price-title"> <strong>&#160;Classic</strong> </p> <p class="price-lg"> <sup class="super-money">$</sup>29 </p> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Social Media Posts Are Within 24 Hours</i> </p> </div> <div class="table-responsive"> <table class="table"> <tbody class="boost-table-row"> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Social Media Posts </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Weekly Newsletter </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Project Listing </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Access to Dashboard Metrics </td> </tr> </tbody> </table> </div> <div class="boost-button boost-left-btn"> <a href="#modal-login" data-toggle="modal" class="btn btn-xl modal-link plan-submit">Purchase Classic</a> </div> </div> </div> <div class="col-sm-4"> <div class="boost-tier-box shadow"> <div class="text-center price-box"> <p class="price-title"> <strong>&#160;Premium</strong> </p> <p class="price-lg"> <sup class="super-money">$</sup>49 </p> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Social Media Posts Every 7 Days</i> </p> </div> <div class="table-responsive" style="background-color:white;"> <table class="table"> <tbody class="boost-table-row"> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Social Media Posts (x2) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Weekly Newsletter (x2) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Project Listing </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Access to Dashboard Metrics </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Image Banner (7 Days) </td> </tr> </tbody> </table> </div> <div class="boost-button boost-middle-btn"> <a href="#modal-login" data-toggle="modal" class="btn btn-xl modal-link plan-submit">Purchase Premium</a> </div> </div> </div> <div class="col-sm-4"> <div class="boost-tier-box shadow"> <div class="text-center price-box"> <p class="price-title"> <strong>&#160;Elite</strong> </p> <p class="price-lg"> <sup class="super-money">$</sup>69 </p> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Social Media Posts Every 7 Days (Custom Available)</i> </p> </div> <div class="table-responsive"> <table class="table"> <tbody class="boost-table-row"> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Social Media Posts (x4) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Weekly Newsletter (x4) </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Project Listing </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Access to Dashboard Metrics </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Featured Image Banner </td> </tr> <tr class="table-bottom"> <td class=" "> <i class=" fa fa-check-circle text-primary boost-table"></i> Landing Page Featured Project </td> </tr> <tr class="table-bottom"> <td> <i class=" fa fa-check-circle text-primary boost-table"></i> Media List (500+ Contacts) </td> </tr> </tbody> </table> </div> <div class="boost-button"> <a href="#modal-login" data-toggle="modal" class="btn btn-xl modal-link plan-submit">Purchase Elite</a> </div> </div> </div> </div> <div class="row"> <h2 class="landing-header text-center" style="margin-top:50px;">Social Media Marketing</h2> <div class="col-lg-offset-2 col-lg-8 col-md-12 text-left"> <p class="landing-description">Figuring out how to advertise through social media can be a full-time job. We want to simplify the process and do the work for you. To help you gain exposure for your project we will run your social media advertisement campaign based on a quick survey from you for FREE. We will not take a cut and 100% of your money will go back to your project. We will provide you with detailed metrics on every social media post. Please <a class="page-scroll home-links" href="#contact">contact us</a> with any concerns or questions. We know your money was earned through hard work and we want to make every dollar count. Start with a small amount and let us prove it’s worth. Our minimum Social Media Marketing purchase is $25.</p> </div> </div> <div class="row hidden-md hidden-sm hidden-xs"> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Start Small</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>25 </p> <p class="boost-small"> <i>This is Our Minimum Amount</i> </p> </div> </a> </div> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Gain Momentum</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>50 </p> <p class="boost-small"> <i>Middle of the Road Price</i> </p> </div> </a> </div> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Social Media Pro</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>75 </p> <p class="boost-small"> <i>Most Popular Package</i> </p> </div> </a> </div> <div class="col-sm-3"> <a href="#modal-login" data-toggle="modal" class="modal-link"> <div class="text-center social-marketing"> <p class="social-text"> <strong>&#160;Backing Frenzy</strong> </p> <p class="social-price"> <sup class="super-money-social">$</sup>100 </p> <p class="boost-small"> <i>Custom Amounts Are Avail.</i> </p> </div> </a> </div> </div> <div class="col-sm-12 text-center boost-warning hidden-md hidden-sm hidden-xs"> <p class="boost-small"> <i>*There is a 2.9% + 30&#162; transaction fee applied by our payment gateway that will be taken off your advertising budget.</i> </p> </div> </div> </section>', '', '', function(opts) {
 });
-riot.tag2('home-content-hero', '<header alt="Back the project, not the platform. Launch your project with Krowdspace today!"> <div class="container-header"> <div class="row"> <div class="col-lg-8 col-md-12 header-left text-left"> <h1 class="header-title hidden-xs">Back the Project, not the Platform</h1> <div class="container-top-header"> <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p> <p>Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p> <a href="#modal-login" data-toggle="modal" class="btn btn-landing">Submit a Project</a> </div> </div> <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px;"> <div class="col-sm-12 text-left containter-right-box"> <p class="text-left landing-text">Get extra rewards for backing the same crowdfunding projects you already have been or sign up and submit your own!</p> <form class="form-vertical" id="commentForm" ref="registerform" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye" class="btn btn-default"> <i class="fa fa-eye fa-lg"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a> </label> </div> <div> <input type="submit" class="landing-submit" name="submit" value="Join Krowdspace"> </div> </form> </div> </div> </div> </div> </header>', '', '', function(opts) {
-
-
-this.submit = function(e)
-{
-	e.preventDefault();
-
-	var FNAME = this.refs.firstname.value,
-		LNAME = this.refs.lastname.value,
-		EMAIL = this.refs.email.value,
-	    USERNAME = this.refs.username.value,
-	    PASSWORD = this.refs.password.value,
-		KSUSER = this.refs.kickstarter_user.value,
-	    IGUSER = this.refs.indiegogo_user.value;
-
-	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
-	((res) =>
-	{
-
-        $('#modal-submission').modal('show');
-        this.refs.registerform.reset();
-	},
-	(err) =>
-	{
-		console.log(err);
-	});
-}.bind(this)
-
-this.on('mount', function()
-{
-	function show()
-	{
-		var pass = document.getElementById('PASSWORD');
-		pass.setAttribute('type', 'text');
-	}
-	function hide()
-	{
-		var pass = document.getElementById('PASSWORD');
-		pass.setAttribute('type', 'password');
-	}
-
-	var pwShown = 0;
-
-	document.getElementById("eye").addEventListener("click", function ()
-	{
-		if (pwShown == 0)
-		{
-			pwShown = 1;
-			show();
-		}
-		else
-		{
-			pwShown = 0;
-			hide();
-		}
-	}, false);
+riot.tag2('home-content-directions', '<div id="project" style="padding-top: 75px;"> <div class="container"> <div class="row"> <div class="col-sm-12 text-center"> <h2 class="landing-header">How to submit a project</h2> </div> <div class="col-lg-offset-2 col-lg-8 col-md-12 text-left" style="padding-bottom: 75px;"> <p style="margin: 0px;">Krowdspace is currently accepting live crowdfunding projects from Kickstarter and Indiegogo. The process to submit a project is simple: once your project is live on either platform, submit your project for approval to Krowdspace by filling out our easy to use submission form. In order to have your project published on Krowdspace, you must offer an exclusive reward for backers who support you through our community. Supporters that might not usually use the funding platform you’ve chosen can now discover your project and get on board. When it comes to fundraising, every advantage counts.</p> </div> <div class="col-md-4"> <div class="text-center price-box shadow" style="margin: 0px 20px;"> <img src="/img/content/submit-icon.png" class="img-responsive" alt="Submit a Project Icon"> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Register Project</i> </p> </div> </div> <div class="col-md-4"> <div class="text-center price-box shadow" style="margin: 0px 20px;"> <img src="/img/content/reward-icon.png" class="img-responsive" alt="Rewards Icon"> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Offer an Extra Reward</i> </p> </div> </div> <div class="col-md-4"> <div class="text-center price-box shadow" style="margin: 0px 20px;"> <img src="/img/content/backer-icon.png" class="img-responsive" alt="Gain Backers Icon"> <p class="boost-small hidden-md hidden-sm hidden-xs"> <i>Gather More Backers</i> </p> </div> </div> </div> </div> </div>', '', '', function(opts) {
 });
+riot.tag2('home-content-hero', '<header alt="Back the project, not the platform. Launch your project with Krowdspace today!"> <div class="container-header"> <div class="row"> <div class="col-lg-8 col-md-12 header-left text-left"> <h1 class="header-title hidden-xs">Back the Project, not the Platform</h1> <div class="container-top-header"> <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p> <p style="margin-bottom: 40px;">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p> <a href="#modal-login" data-toggle="modal" class="btn-landing shadow">Submit a Project</a> </div> </div> <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs"> <div class="shadow"> <form ref="registerform" onsubmit="{submit}"> <div class="col-sm-12 register-container text-left"> <p class="text-left landing-text">Discover extra rewards for projects you love or submit your own crowdfunding project!</p> <div class="form-group form-split-right" style="margin-top: 0px"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left" style="margin-top: 0px"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye" class="btn btn-default"> <i class="fa fa-eye fa-lg"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a> </label> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit" name="submit" value="Join Krowdspace"> </div> </form> </div> </div> </div> </div> </header>', '', '', function(opts) {
+
+
+        this.submit = function(e)
+        {
+        	e.preventDefault();
+
+        	var FNAME = this.refs.firstname.value,
+        		LNAME = this.refs.lastname.value,
+        		EMAIL = this.refs.email.value,
+        	    USERNAME = this.refs.username.value,
+        	    PASSWORD = this.refs.password.value,
+        		KSUSER = this.refs.kickstarter.value,
+        	    IGUSER = this.refs.indiegogo.value;
+
+        	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
+        	((res) =>
+        	{
+
+                $('#modal-submission').modal('show');
+                this.refs.registerform.reset();
+        	},
+        	(err) =>
+        	{
+        		console.log(err);
+        	});
+        }.bind(this)
+
+        this.on('mount', function()
+        {
+        	function show()
+        	{
+        		var pass = document.getElementById('PASSWORD');
+        		pass.setAttribute('type', 'text');
+        	}
+        	function hide()
+        	{
+        		var pass = document.getElementById('PASSWORD');
+        		pass.setAttribute('type', 'password');
+        	}
+
+        	var pwShown = 0;
+
+        	document.getElementById("eye").addEventListener("click", function ()
+        	{
+        		if (pwShown == 0)
+        		{
+        			pwShown = 1;
+        			show();
+        		}
+        		else
+        		{
+        			pwShown = 0;
+        			hide();
+        		}
+        	}, false);
+        });
 });
-riot.tag2('home-content-influence', '<section id="benefits"> <div class="container"> <div class="row"> <div class="col-md-6 text-left"> <p style="margin-top: 20px"><strong>How is Krowdspace different?</strong></p> <p>Krowdspace was created on the idea of providing open and honest crowdfunding support. While promoting our own projects, we’ve experienced the broken promises of paid content and “guaranteed” success that didn’t show a return on investment. There was no proof that work had been done. Where had our money gone? Was our promotional investment helping our project gain momentum? We felt scammed. At Krowdspace, we provide transparent, detailed metrics on every purchased project boost. We are committed to the success of our community and providing easy to use and affordable tools to take your hard work to the next level. </p> <p style="margin-top: 20px"><strong>What are some benefits of submitting a project to Krowdspace?</strong></p> <p>It is well known that Kickstarter and Indiegogo make up the majority of the crowdfunding marketplace. If you choose to host your project on one of these platforms you potentially miss out on accessing the large number of backers from the other’s site. At Krowdspace we pull projects from both sites into a unified platform. That means backers can make unbiased decisions about what projects they want to support without being swayed by where the project is being hosted. A larger audience will translate into more backers!</p> <p style="margin-top: 20px"><strong>How important is Social Media advertising?</strong></p> <p>As of today, there are over 1.65 billion active social media accounts. 71% of people who have had a good social media experience with a given product are likely to recommend that brand. 20% of people who have recommended a brand are likely to make a product purchase. Navigating through advertising software and providing the right content to a targeted user base can be a challenge. At Krowdspace we do the heavy lifting for you. We can take your marketing budget and create a targeted campaign for you at a cost much lower than that offered by our competitors. 100% of your money will be used to advertise your project and not line our pocketbooks. We offer full transparency and will show you exactly where your money is being spent.</p> </div> <div class="col-md-6 text-left faq-sm"> <p style="margin-top: 20px"><strong>How much does it cost to submit a project on Krowdspace?</strong></p> <p>Submitting a project to Krowdspace is free. As a Krowdspace project owner you receive access to our innovative dashboard which includes detailed metrics on your projects performance. All you need to get started is a live crowdfunding project on either Kickstarter or Indiegogo and a commitment to offer an exclusive reward to backers who fund your project through Krowdspace. Find out more about <a href="#modal-reward" data-toggle="modal" class="home-links">backer rewards</a> or <a href="#modal-login" data-toggle="modal" class="home-links">submit a project here</a>.</p> <p style="margin-top: 20px"><strong>What can I expect as a project backer when becoming a member at Krowdspace?</strong></p> <p>As a project backer on Krowdspace, rewards are instant. All you need to do is sign up and discover projects with our easy to use platform. Keep backing projects as you normally would, but now as a Krowdspace member, you earn exclusive extra rewards! It is as easy as that and there is no extra work on your end.</p> <p style="margin-top: 20px"><strong>How can Krowdspace help my project become successful?</strong></p> <p>In addition to combining the two major crowdfunding communities into one unified platform, we also offer additional <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">project boosts</a> for campaigns. For a small fee, project boosts will provide promotional benefits such as being featured on our social media channels or becoming a highlighted project listing within high traffic areas of our site. Krowdspace will also give you free access to our Press Release template and combined with our detailed media list with over 500 contacts you can get the media exposure that is essential for every crowdfunding campaign.</p> </div> </div> </div> </section>', '', '', function(opts) {
+riot.tag2('home-content-influence', '<div id="benefits"> <div class="container"> <div class="row"> <div class="col-sm-12 text-center"> <h2 class="landing-header">General Questions</h2> </div> <div class="col-lg-offset-2 col-lg-8 col-md-12 text-left" style="padding-bottom: 75px;"> <p style="margin: 0px;">If you have any doubts about how Krowdspace can help your project please read through these general questions. Check out our <a class="home-links" href="/#/explore">Explore Page</a> and see first hand what submitted projects look like to our users. Feel free to contact us if you are still unsure about jumping onboard with our services.</p> </div> <div class="col-md-6 text-left" style="padding-right: 40px;"> <div class="faq-container"> <p class="question-text">How is Krowdspace different?</p> <i data-toggle="collapse" data-target="#question1" class="fa fa-plus plus-icon"></i> <div id="question1" class="collapse answer-container"> <p class="answer-text">Krowdspace was built on the idea of providing open and honest crowdfunding support. While launching our own crowdfunding project, we experienced a lack of online resources to showcase our campaign. The massive marketing companies would spam us with emails and promised “guaranteed” success. We caved in and our initial investment produced zero results, we felt scammed. At Krowdspace, we want to provide a low cost alternative by combining multiple crowdfunding communities into one simple location. We are committed to the success of our community and providing easy and affordable tools to take your hard work to the next level.</p> </div> </div> <div class="faq-container"> <p class="question-text">How do I submit a project on Krowdspace?</p> <i data-toggle="collapse" data-target="#question2" class="fa fa-plus plus-icon"></i> <div id="question2" class="collapse answer-container"> <p class="answer-text">You must have a live crowdfunding project on Indiegogo or Kickstarter and offer our Krowdspace users a unique and exclusive reward. You can submit you project after signing up as a member to Krowdspace.</p> </div> </div> <div class="faq-container"> <p class="question-text">What kind of a reward should I offer?</p> <i data-toggle="collapse" data-target="#question3" class="fa fa-plus plus-icon"></i> <div id="question3" class="collapse answer-container"> <p class="answer-text">You can submit any kind of reward ranging from free swag to a discount off a pledge. Keep in mind that all rewards need to be approved by our staff before projects are displayed on our Explore Page. To see more example please check out our reward page. </p> </div> </div> <div class="faq-container"> <p class="question-text">What are some reasons my reward would not be approved?</p> <i data-toggle="collapse" data-target="#question4" class="fa fa-plus plus-icon"></i> <div id="question4" class="collapse answer-container"> <p class="answer-text">Rewards might be sent back because they do not offer our community members enough incentive to support a project. We recommend staying away from very small discounts under 3% and incentives that dont hold a value. An example would be a thank you email or shout out on social media.</p> </div> </div> <div class="faq-container"> <p class="question-text">How long does it take before my reward is approved?</p> <i data-toggle="collapse" data-target="#question5" class="fa fa-plus plus-icon"></i> <div id="question5" class="collapse answer-container"> <p class="answer-text">Our turn around time is usually 8 - 12 hours but can take up to 24 hours.</p> </div> </div> <div class="faq-container"> <p class="question-text">What are some benefits of submitting a project to Krowdspace?</p> <i data-toggle="collapse" data-target="#question6" class="fa fa-plus plus-icon"></i> <div id="question6" class="collapse answer-container"> <p class="answer-text">It is well known that Kickstarter and Indiegogo make up the majority of the crowdfunding marketplace. If you choose to host your project on one of these platforms you potentially miss out on accessing the large number of backers from the other’s site. At Krowdspace we pull projects from both sites into a unified platform. That means backers can make unbiased decisions about what projects they want to support without being swayed by where the project is being hosted. A larger audience will translate into more backers!</p> </div> </div> <div class="faq-container"> <p class="question-text">How much does it cost to submit a project on Krowdspace?</p> <i data-toggle="collapse" data-target="#question7" class="fa fa-plus plus-icon"></i> <div id="question7" class="collapse answer-container"> <p class="answer-text">Submitting a project to Krowdspace is free. As a Krowdspace project owner you receive access to our innovative dashboard which includes detailed metrics on your projects performance. All you need to get started is a live crowdfunding project on either Kickstarter or Indiegogo and a commitment to offer an exclusive reward to backers who fund your project through Krowdspace. Find out more about <a href="#modal-reward" data-toggle="modal" class="home-links">backer rewards</a> or <a href="#modal-login" data-toggle="modal" class="home-links">submit a project here</a>. </p> </div> </div> </div> <div class="col-md-6 text-left" style="padding-left: 40px;"> <div class="faq-container"> <p class="question-text">How can my project be featured on a Krowdspace giveaway?</p> <i data-toggle="collapse" data-target="#question8" class="fa fa-plus plus-icon"></i> <div id="question8" class="collapse answer-container"> <p class="answer-text">eru ndksfg akdjfgsdajk fagksd fkasj. </p> </div> </div> <div class="faq-container"> <p class="question-text">When becoming a member at Krowdspace?</p> <i data-toggle="collapse" data-target="#question9" class="fa fa-plus plus-icon"></i> <div id="question9" class="collapse answer-container"> <p class="answer-text">As a project backer on Krowdspace, rewards are instant. All you need to do is sign up and discover projects with our easy to use platform. Keep backing projects as you normally would, but now as a Krowdspace member, you earn exclusive extra rewards! It is as easy as that and there is no extra work on your end. </p> </div> </div> <div class="faq-container"> <p class="question-text">How can Krowdspace help my project become successful?</p> <i data-toggle="collapse" data-target="#question10" class="fa fa-plus plus-icon"></i> <div id="question10" class="collapse answer-container"> <p class="answer-text">In addition to combining the two major crowdfunding communities into one unified platform, we also offer additional <a href="#modal-boost" data-toggle="modal" class="modal-link home-links">project boosts</a> for campaigns. For a small fee, project boosts will provide promotional benefits such as being featured on our social media channels or becoming a highlighted project listing within high traffic areas of our site. Krowdspace will also give you free access to our Press Release template and combined with our detailed media list with over 500 contacts you can get the media exposure that is essential for every crowdfunding campaign.</p> </div> </div> <div class="faq-container"> <p class="question-text">What kind of resources do you provide for project owners?</p> <i data-toggle="collapse" data-target="#question11" class="fa fa-plus plus-icon"></i> <div id="question11" class="collapse answer-container"> <p class="answer-text">eru ndksfg akdjfgsdajk fagksd fkasj. </p> </div> </div> <div class="faq-container"> <p class="question-text">How important is Social Media advertising?</p> <i data-toggle="collapse" data-target="#question12" class="fa fa-plus plus-icon"></i> <div id="question12" class="collapse answer-container"> <p class="answer-text">As of today, there are over 1.65 billion active social media accounts. 71% of people who have had a good social media experience with a given product are likely to recommend that brand. 20% of people who have recommended a brand are likely to make a product purchase. Navigating through advertising software and providing the right content to a targeted user base can be a challenge. At Krowdspace we do the heavy lifting for you. We can take your marketing budget and create a targeted campaign for you at a cost much lower than that offered by our competitors. 100% of your money will be used to advertise your project and not line our pocketbooks. We offer full transparency and will show you exactly where your money is being spent.</p> </div> </div> <div class="faq-container"> <p class="question-text">How do I contact Krowdspace?</p> <i data-toggle="collapse" data-target="#question13" class="fa fa-plus plus-icon"></i> <div id="question13" class="collapse answer-container"> <p class="answer-text">Please contact us through our contact box located in the footer of our website.</p> </div> </div> </div> </div> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('home-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i> </button> <a class="page-scroll" href="#page-top"><img class="navbar-logo" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a> </div> <div class="collapse navbar-collapse" id="navigation-collapse"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a href="/#/explore">Explore</a> </li> <li> <a show="{!logged_in}" href="#modal-login" class="modal-link" data-toggle="modal">Submit Project</a> </li> <li> <a show="{logged_in}" href="/#/account/boosts" class="modal-link">Boost Project</a> </li> <li> <a show="{logged_in}" href="/#/account/dashboard">Dashboard</a> </li> <li> <a show="{!logged_in}" class="page-scroll" href="#benefits">Benefits</a> </li> <li> <a show="{!logged_in}" class="page-scroll" href="#boost">Boosts</a> </li> <li> <a show="{!logged_in}" href="#modal-login" class="modal-link" data-toggle="modal">Login</a> </li> <li> <a show="{logged_in}" href="/#/account/profile">Profile</a> </li> </ul> </div> </div> </nav>', '', '', function(opts) {
+riot.tag2('home-content-users', '<div id="project" style="padding-top: 75px;"> <div class="container"> <div class="row"> <div class="col-sm-12 text-center"> <h2 class="landing-header">Become a Krowdspace User</h2> </div> <div class="col-lg-offset-2 col-lg-8 col-md-12 text-left" style="padding-bottom: 75px;"> <p style="margin: 0px 0px 50px 0px;">Krowdspace is currently accepting live crowdfunding projects from Kickstarter and Indiegogo. The process to submit a project is simple: once your project is live on either platform, submit your project for approval to Krowdspace by filling out our easy to use submission form. In order to have your project published on Krowdspace, you must offer an exclusive reward for backers who support you through our community. Supporters that might not usually use the funding platform you’ve chosen can now discover your project and get on board. When it comes to fundraising, every advantage counts.</p> <div class="col-sm-4 text-center divider-inside-right"> <p>Projects Submitted</p> <p class="social-metric">15</p> </div> <div class="col-sm-4 text-center divider-inside-right"> <p>Reward Value</p> <p class="social-metric">300</p> </div> <div class="col-sm-4 text-center"> <p>Social Following</p> <p class="social-metric">5,400</p> </div> </div> </div> </div> </div>', '', '', function(opts) {
+krowdspace.projects.explore().then((res) =>
+        {
+            let UserMetrics = res.data,
+                FilterMetrics = UserMetrics.filter((element) => {
+                return (typeof element.project_data.info_data.reward_ammount === 'string');
+            });
+            FilterMetrics.forEach((element) =>
+            {
+                let rewardValue = Number(element.project_data.info_data.reward_ammount);
+            });
+
+            this.UserMetrics = FilterMetrics;
+            this.update();
+
+        },
+        (err)=>
+        {
+            console.log(err)
+        });
+});
+riot.tag2('home-navigation', '<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top"> <div class="container"> <div class="navbar-header page-scroll"> <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse"> <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i> </button> <a class="page-scroll" href="#page-top"><img class="navbar-logo" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a> </div> <div class="collapse navbar-collapse" id="navigation-collapse"> <ul class="nav navbar-nav navbar-right"> <li class="hidden"> <a href="#page-top"></a> </li> <li> <a href="/#/explore">Explore</a> </li> <li> <a show="{!logged_in}" href="#modal-login" class="modal-link" data-toggle="modal">Submit Project</a> </li> <li> <a show="{logged_in}" href="/#/account/dashboard">Dashboard</a> </li> <li> <a show="{logged_in}" href="/#/account/register">Submit Project</a> </li> <li> <a show="{!logged_in}" class="page-scroll" href="#benefits">Benefits</a> </li> <li> <a show="{!logged_in}" href="#modal-login" class="modal-link" data-toggle="modal">Login</a> </li> <li> <a show="{logged_in}" href="/#/account/resource">Resource</a> </li> </ul> </div> </div> </nav>', '', '', function(opts) {
 this.on('mount', function()
 {
     $('a.page-scroll').bind('click', function(event)
@@ -1723,7 +1726,7 @@ krowdspace.v1.check().then((res)=>
     });
 });
 
-riot.tag2('home-slider-clients', '<img src="img/content/page-break.jpg" alt="Krowdspace Page Break" class="hidden-sm hidden-xs auto-width"> <aside class="hidden-sm hidden-xs"> <div class="container text-center"> <section class="center slider"> <div each="{indexClients}"> <a href="{imageURL}" target="_blank"><img riot-src="{image}" alt="{imageAlt}"></a> </div> </section> </div> </aside>', '', '', function(opts) {
+riot.tag2('home-slider-clients', '<aside class="hidden-sm hidden-xs"> <div class="container text-center"> <section class="center slider"> <div each="{indexClients}"> <a href="{imageURL}" target="_blank"><img riot-src="{image}" alt="{imageAlt}"></a> </div> </section> </div> </aside>', '', '', function(opts) {
         this.indexClients = [
         { image:"img/clients/digital-ocean-logo.png", imageURL:"https://m.do.co/c/0d0a3c0340d3", imageAlt:"Digital Ocean"},
         { image:"img/clients/ryanv-logo.png", imageURL:"http://ryanvillasanti.com", imageAlt:"Ryan Villasanti"},
@@ -1746,61 +1749,77 @@ riot.tag2('home-slider-clients', '<img src="img/content/page-break.jpg" alt="Kro
     });
 });
 
-riot.tag2('home-slider-projects', '<div class="container hidden-md hidden-sm hidden-xs"> <div class="single-item slider"> <div each="{indexProject}" class="slick-image" style="display:flex;"> <div class="col-sm-7"> <a href="{imageURL}"><img riot-src="{image}" alt="{imageAlt}"></a> </div> <div class="col-sm-5"> <p><strong>{projectTitle}</strong></p> <p>{projectDescription}</p> <br> <p><strong>Reward:</strong> {reward}</p> <div class="no-gutter funding-box"> <div class="col-sm-6"> <p class="card-text">${goal}</p> </div> <div class="col-sm-6 text-right"> <p class="card-text">{category}</p> </div> <div class="col-sm-12"> <div class="progress-index"> <div class="progress-bar" role="progressbar" riot-style="width: {progressBar}%" aria-valuenow="{progressBar}" aria-valuemin="0" aria-valuemax="100"> </div> </div> </div> <div class="col-sm-2"> <p class="card-text">{progressBar}%</p> <p class="card-text">Funded</p> </div> <div class="col-sm-3 text-center"> <p class="card-text">${pledged}</p> <p class="card-text">Pledged</p> </div> <div class="col-sm-3 text-center"> <p class="card-text">{backers}</p> <p class="card-text">Backers</p> </div> <div class="col-sm-4 text-right"> <p class="card-text">{days}</p> <p class="card-text">Days Left</p> </div> </div> </div> </div> </div> </div>', '', '', function(opts) {
-        this.indexProject = [
-        { image:"/img/projects/bahari-bag.jpg",
-        imageURL:"/project.html",
-        imageAlt:"Bahari Beach bag on the beach",
-        projectTitle:"Lala Bahari: The First Convertible Tote Bag of its Kind",
-        projectDescription:"Made in Africa to support the local communities. Our bag converts from a towel or wrap into a tote through an innovative rope mechanism",
-        reward:"All pledges over $50 will receive a Bahari Sarong and Scarf.",
-        goal:"40,000",
-        category:"Design",
-        progressBar:'26',
-        pledged:'10,544',
-        backers:'50',
-        days:'19'},
-
-        { image:"/img/projects/computer.jpg",
-        imageURL:"/project.html",
-        imageAlt:"Computer and accessories sitting on a desk",
-        projectTitle:"Creating A Modular Computer App for All of Your Organizing Needs",
-        projectDescription:"We bring a way to organize your day and connect all of your devices through one app.",
-        reward:"All Krowdspace members will receive a free year subscription to our organizing app.",
-        goal:"100,000",
-        category:"Tech",
-        progressBar:'46',
-        pledged:'45,798',
-        backers:'132',
-        days:'14'},
-
-        { image:"/img/projects/pizza.jpg",
-        imageURL:"/project.html" ,
-        imageAlt:"Pizza slice sitting on a table with condiments",
-        projectTitle:"The Only Restaurant to use Recipes From our Guests",
-        projectDescription:"Dining guests can submit their own recipes and our community will vote and if selected will be featured at our restaurant.",
-        reward:"All Krowdspace members will receive our Cookbook.",
-        goal:"50,000",
-        category:"Food",
-        progressBar:'83',
-        pledged:'41,765',
-        backers:'78',
-        days:'2'},
-        ]
-
-        this.on('mount', function()
+riot.tag2('home-slider-projects', '<div class="row" style="border-right: 1px solid #3f434f; border-left: 1px solid #3f434f;"> <div class="autoplay slider"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img riot-src="{project_data.web_data.mainImg.content}" alt="{project_data.web_data.description.content}"> <div class="explore-box"> <div class="col-sm-9"> <div style="position: relative; height: 301px;"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-sm-3 explore-feature-right text-center"> <a href="{\'/#/explore/project/\' + unique_id}"><p class="learn-more">Learn More</p></a> </div> </div> </div> </div> </div>', 'home-slider-projects .slider,[data-is="home-slider-projects"] .slider{ width: 100%; position: relative; margin: 0px auto; } home-slider-projects .slick-slide,[data-is="home-slider-projects"] .slick-slide{ margin: 0px; } home-slider-projects .slick-slide span,[data-is="home-slider-projects"] .slick-slide span,home-slider-projects .slick-slide .learn-more,[data-is="home-slider-projects"] .slick-slide .learn-more{ display: none; } home-slider-projects .slick-current span,[data-is="home-slider-projects"] .slick-current span,home-slider-projects .slick-current .learn-more,[data-is="home-slider-projects"] .slick-current .learn-more{ display: inline; } home-slider-projects .slick-slide img,[data-is="home-slider-projects"] .slick-slide img{ border-top: 1px solid #3f434f; border-bottom: 1px solid #3f434f; width: 550px; } home-slider-projects .slick-prev:before,[data-is="home-slider-projects"] .slick-prev:before,home-slider-projects .slick-next:before,[data-is="home-slider-projects"] .slick-next:before{ color: black; }', '', function(opts) {
+        krowdspace.projects.explore().then((res) =>
         {
-          $('.single-item').slick({
-            dots: false,
-            arrows:false,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 8000,
-          });
+            let ExploreBannerData = res.data,
+                FilterExplore = ExploreBannerData.filter((element) => {
+                return (element.project_data.meta_data.landing === true);
+            });
+
+            let newObject={
+                        unique_id: 'project-feature-popup',
+                        name: '',
+                        project_data:
+                        {
+                            web_data:
+                            {
+                                mainImg: {
+                                    content: '/img/projects/krowdspace-banner-1.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data:
+                            {
+                                reward: ''
+                            }
+                        },
+                    };
+            let newObject2={
+                        unique_id: 'project-feature-popup',
+                        name: 'Join Krowdspace Today!',
+                        project_data:
+                        {
+                            web_data:
+                            {
+                                mainImg: {
+                                    content: '/img/content/krowdspace-join.jpg'
+                                },
+                                description: {
+                                    content: '',
+                                },
+                            },
+                            info_data:
+                            {
+                                reward: 'Discover Extra Rewards For Projects You Love!'
+                            }
+                        },
+                    };
+
+            FilterExplore.push(newObject, newObject2);
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 7000,
+                centerMode: true,
+                variableWidth: true,
+            });
+        },
+        (err)=>
+        {
+            console.log(err)
         });
 });
 
-riot.tag2('home', '<home-navigation></home-navigation> <home-content-hero></home-content-hero> <home-content-benefits></home-content-benefits> <home-slider-projects></home-slider-projects> <home-content-influence></home-content-influence> <home-content-boosts></home-content-boosts> <home-slider-clients></home-slider-clients> <global-footer></global-footer> <home-modal-boosts></home-modal-boosts> <home-modal-login></home-modal-login> <home-modal-rewards></home-modal-rewards> <home-modal-verification></home-modal-verification> <home-modal-submission></home-modal-submission>', 'home,[data-is="home"]{ background-color: #fff }', '', function(opts) {
+riot.tag2('home', '<home-navigation></home-navigation> <home-content-hero></home-content-hero> <home-content-benefits></home-content-benefits> <home-slider-projects></home-slider-projects> <home-content-directions></home-content-directions> <home-content-users></home-content-users> <home-content-influence></home-content-influence> <home-slider-clients></home-slider-clients> <global-footer></global-footer> <home-modal-boosts></home-modal-boosts> <home-modal-login></home-modal-login> <home-modal-rewards></home-modal-rewards> <home-modal-verification></home-modal-verification> <home-modal-submission></home-modal-submission>', 'home,[data-is="home"]{ background-color: #fff }', '', function(opts) {
 });
 riot.tag2('home-modal-boosts', '<div id="modal-boost" class="modal container fade"> <div class="krowdspace-modal col-sm-10 col-sm-offset-1"> <div id="modal" class="modal-content"> <div class="modal-header"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button> <p class="modal-heading">Single Boosts And Descriptions</p> </div> <div class="modal-body"> <p>Welcome to our single boost options for your live crowdfunding project. At Krowdspace we have experienced first-hand how difficult it can be to launch a crowdfunding campaign. We want to make the marketing of your project as easy as possible. If you are still on the fence about making a purchase, we recommend signing up and exploring our member’s area to see the true value of what we are offering. For a limited time, we are offering free social media posts and featured project packages on our landing page! For details and to see if you qualify please <a class="home-links" href="mailto:Mason@Krowdspace.com">contact us</a> directly. If you would like to purchase one of these single boost items please follow the "Make A Purchase" button and choose from the options.</p> <div class="row text-left no-gutter"> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Social Media Posts</strong></p> <p class="text-center">$10</p> <p class="boost-description">We will post your project on our 4 social media channels. By purchasing this boost, you will see your project on our Facebook, Twitter, Pinterest and Instagram. All you need to provide is an image that represents your project. Our default message will be your project description unless stated otherwise.</p> </div> </div> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Newsletter Feature</strong></p> <p class="text-center">$10</p> <p class="boost-description">Your project will be sent to our highly targeted Krowdspace audience. It will be featured on our weekly newsletter and we will have a brief description and other URL\'s that will benefit your project. To assure valid emails and reduce our bounce rate, we use a double opt-in process for our newsletter subscribers.</p> </div> </div> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Featured Project Listing</strong></p> <p class="text-center">$15/30 Days</p> <p class="boost-description">Your crowdfunding project will be listed on the main search page of our explore area for 30 days or the duration of your project, whichever is less. It will have priority filtering and a "Featured" banner in the corner.</p> </div> </div> </div> <div class="row text-left no-gutter"> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Explore Page Banner</strong></p> <p class="text-center">$15/30 Days</p> <p class="boost-description">Your crowdfunding project will be listed on our explore page rotating banner. This large format will attract new backers to your project. We will rotate the order of banner features randomly so your project will have the opportunity to show up first upon opening the page. We will feature your project for 30 days or the duration of your project, whichever is less.</p> </div> </div> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Landing Page Banner</strong></p> <p class="text-center">$10/1 Week</p> <p class="boost-description">Your crowdfunding project will be listed on our landing page which receives the most traffic. This large format will attract new backers to your project. We will rotate the order randomly so your project will have the opportunity to show up first upon opening the page. We will feature your project for 1 week.</p> </div> </div> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Metrics Dashboard</strong></p> <p class="text-center">Free</p> <p class="boost-description">We have created a Metrics Dashboard to edit and view your project on Krowdspace. We provide project metrics such as page views, page clicks and project backers. In addition, you can also unlock social media post metrics and our targeted media contact list.</p> </div> </div> </div> <div class="row text-left no-gutter"> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Social Media Marketing</strong></p> <p class="text-center">$25+</p> <p class="boost-description">Krowdspace will use your marketing budget and help apply it to a social media marketing campaign. We will make a targeted campaign based on a short form and launch it on our social channels. We will not take any additional fees other than our payment gateway fee.</p> </div> </div> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Media List (500+ Contacts)</strong></p> <p class="text-center">$20</p> <p class="boost-description">Most companies that provide media lists give you thousands of names and no direction. At Krowdspace our media list consists of verified contacts from the largest companies out there. We provide up to 10 contacts from every company and a list of places to submit your crowdfunding video.</p> </div> </div> <div class="col-md-4"> <div class="boost-pricing"> <p class="text-center"><strong>Press Release Guide</strong></p> <p class="text-center">Free</p> <p class="boost-description">Check out our Press Release Guide and use our format to write a winning Press Release you can send out to our media list. Take our free example and turn it into your own. Get the publicity you need for your project.</p> </div> </div> </div> <div class="row text-center"> <button type="button" class="text-center modal-close" data-dismiss="modal">Close</button> </div> </div> </div> </div> <div class="background-modal-close" data-dismiss="modal"></div> </div>', '', '', function(opts) {
         this.on('mount', function()

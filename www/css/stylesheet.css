@@ -159,6 +159,7 @@ header {
     -o-background-size: cover;
     text-align: center;
     color: white;
+    border-bottom: 1px solid #3f434f;
 }
 section {
     padding: 50px 0;
@@ -344,7 +345,7 @@ footer ul.quicklinks,
     border: 0px;
     text-transform: uppercase;
     font-weight: 700;
-    padding: 6px 18px;
+    padding: 8px 18px;
     border-radius: 3px;
 }
 .modal-close:hover,
@@ -425,7 +426,7 @@ footer ul.quicklinks,
 }
 ::selection {
     text-shadow: none;
-    background: #fed136;
+    background: rgba(200, 200, 200, 0.5);
 }
 img::selection {
     background: transparent;
@@ -504,9 +505,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     border: 1px solid #dcdedd;
 }
 .price-box {
-    padding-top: 40px;
-    padding-bottom: 20px;
     background-color: #323031;
+    padding: 20px 0px 30px 0px;
 }
 .price-title {
     line-height: 1;
@@ -532,8 +532,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 }
 .boost-small {
     line-height: 1;
-    color: #777;
-    font-size: 13px;
+    color: #fff;
+    font-size: 14px;
     margin-bottom: 0px;
 }
 .table-bottom {
@@ -592,7 +592,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     padding: 0px 30px;
 }
 .header-left {
-    padding-top: 200px;
+    padding-top: 160px;
     padding-bottom: 100px;
 }
 .container-top-header {
@@ -629,17 +629,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     background-color: #fec503;
 }
 .btn-landing {
-    color: white;
-    background-color: #fed136;
-    font-size: 16px;
-    border: 0px;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 8px 10px;
     border-radius: 3px;
-    margin-top: 28px;
-    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    background: #fed136;
+    color: white;
 }
 .btn-landing:focus,
 .btn-landing:active,
@@ -647,11 +644,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .btn-landing:active:focus {
     outline: none;
     color: white;
-    background-color: #fec503;
 }
 .btn-landing:hover {
+    background: #fec503;
     color: white;
-    background-color: #fec503;
 }
 .backer-button {
     color: white;
@@ -678,46 +674,54 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 }
 .header-right {
     padding-top: 150px;
-    padding-bottom: 125px;
+    padding-bottom: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.register-container {
+    padding: 5px 20px 10px 20px;
+    background: white;
+    border: 1px solid #3f434f;
+    border-bottom: none;
 }
 .containter-right-box {
-    padding: 5px 20px;
+    padding: 5px 20px 10px 20px;
     background: white;
-    border: 1px solid #888888;
-    -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-right: 1px solid #3f434f;
+    border-left: 1px solid #3f434f;
+    border-top: 1px solid #3f434f;
+    
+
 }
 .landing-text {
-    margin-top: 15px;
-    color: #333;
+    margin-top: 10px;
+    color: #3f434f;
 }
 .check-terms {
     font-size: 14px;
-    color: #333;
+    color: #3f434f;
 }
 .landing-submit {
-    margin: 10px 0px 15px 0px;
-    padding: 6px 10px;
+    padding: 11px 0px;
     width: 100%;
-    color: white;
-    background-color: #fed136;
-    font-size: 16px;
-    border: 0px;
     text-transform: uppercase;
-    font-weight: 700;
-    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    border-top: none;
+    border: 1px solid #3f434f;
+    border-top: none;
+    background: #fed136;
+    color: #fff;
 }
 .landing-submit:focus,
 .landing-submit:active,
 .landing-submit.active,
 .landing-submit:active:focus {
     outline: none;
-    color: white;
-    background-color: #fec503;
 }
 .landing-submit:hover {
-    color: white;
-    background-color: #fec503;
+    background: #fec503;
 }
 .boost-purchase {
     letter-spacing: 1px;
@@ -964,11 +968,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     color: #fff;
 }
 .register-background {
-background: #0075be;
-background: -moz-linear-gradient(top, #0075be 0%, #005b97 100%);
-background: -webkit-linear-gradient(top, #0075be 0%,#005b97 100%);
-background: linear-gradient(to bottom, #0075be 0%,#005b97 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0075be', endColorstr='#005b97',GradientType=0 );
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#68ade2+0,7eb8e5+100 */
+background: #68ade2; /* Old browsers */
+background: -moz-linear-gradient(top, #68ade2 0%, #7eb8e5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #68ade2 0%,#7eb8e5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #68ade2 0%,#7eb8e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#68ade2', endColorstr='#7eb8e5',GradientType=0 ); /* IE6-9 */
 border: 1px solid #3f434f; 
 display: flex;
 }
@@ -1223,7 +1228,7 @@ padding: 15px;
     font-size: 12px;
     line-height: 1;
     border: 2px solid #fff;
-    background-color: rgba(50, 48, 49, .5);
+    background-color: rgba(0, 0, 0, .5);
     color: white;
 }
 .learn-more:hover {
@@ -1288,6 +1293,9 @@ padding: 15px;
 .explore-header {
     padding-top: 57px; 
     margin-bottom: 40px !important;
+}
+.landing-slider {
+    padding-top: 0px;
 }
 .explore-box {
     position:absolute;
@@ -1966,7 +1974,7 @@ padding: 15px;
 }
 .featured-price-box {
     height: 63px;
-    margin-left: 75px;
+
     margin-bottom: 33px;
     width: 75px;
 }
@@ -2778,4 +2786,30 @@ div.explore-project figcaption {
     font-size: 11px;
     padding: 4px 0px; 
     width: 100%;
+}
+.faq-container {
+    border: 1px solid #ccc; 
+    position: relative; 
+    border-radius: 3px; 
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+.answer-container { 
+    border-top:1px solid #ccc;
+}
+.question-text {
+    margin: 0px; 
+    padding: 6px 20px;
+}
+.answer-text {
+    margin: 25px 20px 15px 20px;
+}
+.plus-icon {
+    float:right; 
+    background: #fed136; 
+    color: #fff;
+    padding: 9px 11px; 
+    position: absolute; 
+    top: 0; 
+    right: 0;
 }
