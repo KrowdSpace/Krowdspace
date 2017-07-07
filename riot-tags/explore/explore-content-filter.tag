@@ -94,10 +94,15 @@
             console.log(cat.includes( option ), cat, option);
             console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
 
-            return option === '*'
-            || cat.includes( option )
-            || (filterText != '' && cat.includes( filterText ) )
-            || (filterText != '' && el.name.toLowerCase().includes( filterText ));
+            if(option === "*")
+            {
+                return ( filterText == '' || el.name.toLowerCase().includes( filterText ) );
+            }
+            else
+            {
+                return cat.includes( option ) 
+                    && (filterText == '' || el.name.toLowerCase().includes( filterText ));    
+            }
         }
     }
     
