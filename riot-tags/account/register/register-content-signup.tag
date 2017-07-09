@@ -73,15 +73,15 @@
                 </fieldset>
                 <fieldset id="project_verify">
                     <div class="col-sm-12">
+                        <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p>
                         <p class="text-left registration-text">To verify that you are the crowdfunding project owner please upload one of these images to your project page before submitting it to Krowdspace. We will check to see if the image is present to prevent false project submissions. Thank you for your understanding!</p>
                     </div>
                     <div class="row text-center">
-                        <img src="img/press/featured-krowdspace-v1.png" style="width: 400px;">
-                    </div>
-                    <div class="row text-center" style="margin-top: 13px;">
-                        <img src="img/press/featured-krowdspace-v2.png" style="width: 70px;">
-                        <img src="img/press/featured-krowdspace-v3.png" style="width: 90px; margin: 0px 50px;">
-                        <img src="img/press/featured-krowdspace-v4.png" style="width: 70px;">
+                            <img src="img/press/featured-krowdspace-v1.svg" alt="Featured on Krowdspace">
+                         
+                       
+                                <img src="img/press/featured-krowdspace-v3.svg" alt="Featured on Krowdspace" style="margin-top: 10px; width: 320px;">
+
                     </div>
                     <div class="register-controls">
                         <div class="col-lg-offset-3 col-lg-6">
@@ -92,19 +92,20 @@
                 </fieldset>
                 <fieldset id="service_terms">
                     <div class="col-sm-12">
-                        <p class="text-left registration-text">TERMS AND CONDITIONS</p>
+                        <p class="text-left registration-text" style="margin-top: 10px;">TERMS AND CONDITIONS</p>
                         <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p>
-                        <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace user.</p>
+                        <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
                         <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
-                        <p class="text-left registration-text">Project owners are obligated to respond promptly and truthfully to all questions posed to them by Krowdspace or Krowdspace users.</p>
-                    </div>
-                    <div class="register-controls" >
-                        <div class="col-lg-6 check-terms checkbox register-check">
+                        <p class="text-left registration-text">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
+                        <div class="check-terms checkbox">
                             <label>
                             <input type="checkbox" value="checked" name="serviceTerms" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span>
                             </label>
                         </div>
-                        <div class="col-sm-6">
+                    </div>
+                    <div class="register-controls" >
+                        
+                        <div class="col-lg-offset-3 col-lg-6">
                             <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p>
                             <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p>
                         </div>

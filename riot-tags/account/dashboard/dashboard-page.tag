@@ -30,10 +30,10 @@
 				</div>
 			</div>
         </div>
-	<dashboard-featured-purchase project = { project }></dashboard-featured-purchase>
-	<dashboard-explore-purchase project = { project }></dashboard-explore-purchase>
-	<dashboard-landing-purchase project = { project }></dashboard-landing-purchase>
-	<dashboard-edit-profile project = { project }></dashboard-edit-profile>
+	<dashboard-featured-purchase user = { user } project = { project }></dashboard-featured-purchase>
+	<dashboard-explore-purchase user = { user } project = { project }></dashboard-explore-purchase>
+	<dashboard-landing-purchase user = { user } project = { project }></dashboard-landing-purchase>
+	<dashboard-edit-profile user = { user } project = { project }></dashboard-edit-profile>
 	<dashboard-edit-reward user = { user } project = { project }></dashboard-edit-reward>
     <global-footer></global-footer> 
 <script>
@@ -69,6 +69,7 @@
 			if(res && res.data)
 			{
 				this.projects = res.data;
+				console.log(this.projects);
 				this.setProject(res.data[0]);
 			}
 		});

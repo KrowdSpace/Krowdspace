@@ -7,7 +7,7 @@
                     <div class="container-top-header">
                         <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p>
                         <p style="margin-bottom: 40px;">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p>
-                        <a href="#modal-login" data-toggle="modal" class="btn-landing shadow">Submit a Project</a>
+                        <a href="#modal-global-login" data-toggle="modal" class="btn-landing shadow">Submit a Project</a>
                     </div>
                 </div>
                 <div class="col-lg-4 header-right hidden-md hidden-sm hidden-xs">

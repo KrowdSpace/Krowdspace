@@ -1,5 +1,5 @@
 <home-content-influence>
-    <div id="benefits">
+    <div>
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">

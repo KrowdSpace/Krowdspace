@@ -1,6 +1,6 @@
-<project-modal-login>
-    <div class="container login-check-container">
-        <div class="krowdspace-modal col-lg-offset-3 col-md-6">
+<global-modal-login>
+   <div id="modal-global-login" class="modal container fade">
+      <div class="krowdspace-modal col-lg-offset-3 col-md-6">
          <div id="modal">
             <div class="modal-body modal-custom">
                 <form onsubmit={ loginSubmit }>
@@ -34,30 +34,44 @@
                 </div>
                </form>
                <div class="text-center">
-                <p class="login-float-text">Dont have an account? <a href="#modal-global-register" data-toggle="modal">Register today!</a></p>
+                    <p class="login-float-text">Dont have an account? <a class="function-link" onclick= { registerModal }>Register today!</a></p>
                </div>
             </div>
          </div>
       </div>
-    </div>
-    <script>            	   
-        loginSubmit(e) 
-        {
-            e.preventDefault();
-    
-            let USERNAME = this.refs.usernamelogin.value,
-                PASSWORD = this.refs.passwordlogin.value,
-                STAYLOGGED = true;
-    
-            krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
-            {
-                this.logged_in = true;
-                this.update();
-                window.location.reload();
-            },(err) => 
-            {
-                $("#errorLog").show();
-            });
-        }
-    </script>
-</project-modal-login>
+   </div>
+<script>
+loginSubmit(e) 
+{
+	
+	e.preventDefault();
+
+	var USERNAME = this.refs.usernamelogin.value,
+	    PASSWORD = this.refs.passwordlogin.value;
+
+	STAYLOGGED = true;
+
+	console.log(USERNAME);
+	console.log(PASSWORD);
+
+	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
+	((res) => 
+	{
+		this.logged_in = true;
+		this.update();
+        $('#modal-global-login').modal('hide');
+        window.location.replace("/#/account/dashboard");
+	},
+	(err) => 
+	{
+		console.log(err);
+        $('#errorLog').show();
+	});
+}
+registerModal() 
+{
+	$('#modal-global-login').modal('hide');
+    $('#modal-global-register').modal('show');
+}
+</script>
+</global-modal-login>
