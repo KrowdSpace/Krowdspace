@@ -41,17 +41,16 @@
         </div>
     </div>
 <script>
-krowdspace.projects.project(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
     {
-        this.projectTitle = res.data[0].project_data.web_data.title.content;
-        this.projectDescription = res.data[0].project_data.web_data.description.content;
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
-    }
-);
+        if(!opts.project)
+            return;
+            
+        this.projectTitle = opts.project.project_data.web_data.title.content;
+        this.projectDescription = opts.project.project_data.web_data.description.content;
+    });
+
+console.log(this.opts.project);
 </script>
 </dashboard-project-title>	
 	

@@ -16,25 +16,22 @@
                         <a href="/#/explore">Explore</a>
                     </li>
                     <li>
-                        <a show={ !logged_in } href="#modal-login" class="modal-link" data-toggle="modal">Submit Project</a>
-                    </li>
-                    <li>
-                        <a show={ logged_in } href="/#/account/boosts" class="modal-link">Boost Project</a>
+                        <a show={ !logged_in } href="#modal-global-register" class="modal-link" data-toggle="modal">Submit Project</a>
                     </li>
                     <li>
                         <a show={ logged_in } href="/#/account/dashboard">Dashboard</a>
                     </li>
                     <li>
+                        <a show={ logged_in } href="/#/account/register">Submit Project</a>
+                    </li>
+                    <li>
                         <a show={ !logged_in } class="page-scroll" href="#benefits">Benefits</a>
                     </li>
                     <li>
-                        <a show={ !logged_in } class="page-scroll" href="#boost">Boosts</a>
+                        <a show={ !logged_in } href="#modal-global-login" class="modal-link" data-toggle="modal">Login</a>
                     </li>
                     <li>
-                        <a show={ !logged_in } href="#modal-login" class="modal-link" data-toggle="modal">Login</a>
-                    </li>
-                    <li>
-                        <a show={ logged_in } href="/#/account/profile">Profile</a>
+                        <a show={ logged_in } href="/#/account/resource">Resource</a>
                     </li>
                 </ul>
             </div>

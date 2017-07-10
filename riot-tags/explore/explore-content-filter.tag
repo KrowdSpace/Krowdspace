@@ -9,7 +9,7 @@
         </div>
         <div class="col-sm-3">
             <select class="form-control" ref="options" onchange={ testing } >
-                <option value="">All Categories</option>
+                <option value="*">All Categories</option>
                 <option each={ cat in catArr }  value="{ cat }"> 
                     { cat }
                 </option>
@@ -94,7 +94,8 @@
             console.log(cat.includes( option ), cat, option);
             console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
 
-            return cat.includes( option )
+            return option === '*'
+            || cat.includes( option )
             || (filterText != '' && cat.includes( filterText ) )
             || (filterText != '' && el.name.toLowerCase().includes( filterText ));
         }

@@ -38,7 +38,20 @@
             </div>
         </div>
 <script>
-krowdspace.users.user(this.opts.userkey).then((res)=>
+    this.on('update', ()=>
+    {
+        if(!opts.user) 
+            return;
+
+        let userRes = { data: opts.user },
+            projRes = { data: [opts.project] };
+
+        this.setUserDeets(userRes);
+        if(opts.project)
+            this.setProjectDeets(projRes);
+    });
+
+    setUserDeets(res)
     {
         this.firstname = res.data.user_data.fname;
         this.lastname = res.data.user_data.lname;
@@ -46,46 +59,18 @@ krowdspace.users.user(this.opts.userkey).then((res)=>
         this.kickstarter = res.data.user_data.ksuser;
         this.indiegogo = res.data.user_data.iguser;
         this.username = res.data.username;
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
     }
-);
-krowdspace.projects.project(this.opts.userkey).then((res)=>
-    {
-        this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
 
+    setProjectDeets(res)
+    {
         let endTime = res.data[0].project_data.web_data.hours['data-end_time'],
+            projectTime = res.data[0].project_data.web_data.hours['data-duration'],
             end = new Date(endTime),
-            _second = 1000,
-            _minute = _second * 60,
-            _hour = _minute * 60,
-            _day = _hour * 24,
-            timer;
+            remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
+            daysMax = Math.max(0, remaining);
 
-        function showRemaining() 
-        {
-            let now = new Date();
-                distance = end - now,
-                days = Math.floor(distance / _day),
-                hours = Math.floor((distance % _day) / _hour),
-                minutes = Math.floor((distance % _hour) / _minute),
-                seconds = Math.floor((distance % _minute) / _second);
-                countdown = (days * 24) + hours;
-                hoursMax = Math.max(0, countdown);
-                return hoursMax;
-        }
-        
-        timer = setInterval(showRemaining, 1000);
-        this.countdowntimer = showRemaining();
-        this.update();
-    },
-    (err)=> 
-    {
-        console.log(err);
+        this.countdowntimer = Math.floor(daysMax);
+        this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
     }
-);
 </script>
 </dashboard-project-user>
