@@ -1,5 +1,5 @@
 <global-footer>
-    <footer class="alternate-background">
+    <footer id="contact" class="alternate-background">
         <div class="custom-footer">
 			<div class="container">
             <div class="row">

@@ -7,23 +7,23 @@
                 <p class="modal-heading">Edit Profile Information</p>
             </div>
             <div class="modal-body">
-                <form role="form" onsubmit={ submit101 }>
+                <form role="form" onsubmit={ submitUser }>
                     <div class="form-group form-split-right edit-margin">
                     <p class="dashboard-text-alt text-left edit-text-title">First Name</p>
-                     <input ref="firstname" value="{ FIRSTNAME }" type="text" class="form-control placeholder-color" aria-required="true" aria-invalid="true">
+                     <input ref="firstname" value="{ firstname }" type="text" class="form-control placeholder-color" aria-required="true" aria-invalid="true">
                   </div>
                   <div class="form-group form-split-left edit-margin">
                       <p class="dashboard-text-alt text-left edit-text-title">Last Name</p>
-                     <input type="text" ref="lastname" class="form-control placeholder-color" value="{ LASTNAME }" aria-required="true" aria-invalid="true">
+                     <input type="text" ref="lastname" class="form-control placeholder-color" value="{ lastname }" aria-required="true" aria-invalid="true">
                   </div>
                   <div class="clearfix"></div>
                     <div class="form-group">
                         <p class="dashboard-text-alt text-left edit-text-title">Kickstarter Username</p>
-                        <input ref="kickstarter" class="form-control placeholder-color" value="{ KICKSTARTER }" aria-required="true" aria-invalid="true">
+                        <input ref="kickstarter" class="form-control placeholder-color" value="{ kickstarter }" aria-required="true" aria-invalid="true">
                     </div>
                     <div class="form-group">
                         <p class="dashboard-text-alt text-left edit-text-title">Indiegogo Username</p>
-                        <input ref="indiegogo" class="form-control placeholder-color" value="{ INDIEGOGO }" aria-required="true" aria-invalid="true">
+                        <input ref="indiegogo" class="form-control placeholder-color" value="{ indiegogo }" aria-required="true" aria-invalid="true">
                     </div>
                 <div class="text-center" style="padding: 0px; margin-top: 35px;"><button type="submit" name="submit"  class="btn-register btn-info-full next-step">Update</button></div>
                 </form>
@@ -34,10 +34,10 @@
 <script>
 krowdspace.users.user().then((res)=>
     {
-    this.FIRSTNAME = res.data.user_data.fname;
-    this.LASTNAME = res.data.user_data.lname;
-    this.KICKSTARTER = res.data.user_data.ksuser;
-    this.INDIEGOGO = res.data.user_data.iguser;
+    this.firstname = res.data.user_data.fname;
+    this.lastname = res.data.user_data.lname;
+    this.kickstarter = res.data.user_data.ksuser;
+    this.indiegogo = res.data.user_data.iguser;
     this.update();
     },
     (err)=> 
@@ -46,10 +46,10 @@ krowdspace.users.user().then((res)=>
     }
 );
 
-submit101(e)
+submitUser(e)
 {
     e.preventDefault();
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+    krowdspace.users.user().then((res)=>
     {
     let project = res.data.username,
         projectData = {

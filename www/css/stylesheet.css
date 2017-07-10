@@ -1,7 +1,7 @@
 body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
-    font-family: "Montserrat", "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 p {
     font-size: 14px;
@@ -29,9 +29,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.2;
 }
 h1 {
@@ -44,7 +43,6 @@ h1 {
 .navbar-custom .navbar-toggle {
     background-color: #fed136;
     border-color: #fed136;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     color: white;
     font-size: 20px;
@@ -54,9 +52,8 @@ h1 {
     background-color: #fed136;
 }
 .navbar-custom .nav li a {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 28px;
     letter-spacing: 1px;
     color: white;
@@ -66,9 +63,8 @@ h1 {
     text-align: left;
 }
 .navbar-alt.affix .nav li a {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     color: #fff;
     text-align: left;
@@ -234,10 +230,9 @@ section {
     height: 80px;
     position: absolute;
     z-index: 100;
-    background-color: #f1f1f1;
     color: white;
     border-radius: 100%;
-    border: 4px solid #f1f1f1;
+    border: 4px solid #fff;
     text-align: center;
 }
 .timeline > li.timeline-inverted > .timeline-panel {
@@ -333,7 +328,6 @@ footer ul.quicklinks,
     text-decoration: none;
     list-style-type: none;
     margin-bottom: 0;
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     text-transform: none;
 }
@@ -534,6 +528,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     line-height: 1;
     color: #fff;
     font-size: 14px;
+    font-weight: 700;
     margin-bottom: 0px;
 }
 .table-bottom {
@@ -564,7 +559,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .footer-text {
     text-align: left;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 700;
     color: #fff;
     font-size: 17px;
     letter-spacing: 1px;
@@ -633,7 +628,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     padding: 8px 14px;
     text-transform: uppercase;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
     background: #fed136;
     color: white;
@@ -684,6 +679,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     border: 1px solid #3f434f;
     border-bottom: none;
 }
+.register-container-modal {
+    padding: 5px 20px 10px 20px;
+    background: white;
+    border: 3px solid #fed136;
+    border-bottom: none;
+}
 .containter-right-box {
     padding: 5px 20px 10px 20px;
     background: white;
@@ -706,7 +707,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     width: 100%;
     text-transform: uppercase;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
     border-top: none;
     border: 1px solid #3f434f;
@@ -722,6 +723,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 }
 .landing-submit:hover {
     background: #fec503;
+}
+.alt-border {
+    border-left: 3px solid #fed136;
+    border-right: 3px solid #fed136;
+}
+.alt-border:hover {
+    border-left: 3px solid #fec503;
+    border-right: 3px solid #fec503;
 }
 .boost-purchase {
     letter-spacing: 1px;
@@ -782,7 +791,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     padding: inherit;
 }
 .card-text {
-    font-family: "Montserrat", "Helvetica Neue";
     margin: 5px 0px;
     line-height: 1.1;
 }
@@ -812,6 +820,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+.modal-heading-alt {
+    padding-top: 10px;
+}
 .modal-edit {
     padding-bottom: 0px;
 }
@@ -830,8 +841,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .modal-text {
     line-height: 1;
     color: #323031;
-    font-size: 15px;
-    letter-spacing: 2px;
+    font-size: 14px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 .giveaway-winner {
@@ -902,7 +913,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     margin: 0px;
     background-color: #fed136;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
@@ -927,7 +938,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     border-radius: 3px;
     background-color: #fed136;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
@@ -1042,7 +1053,6 @@ padding: 15px;
 }
 .register-button-box {
     padding-top: 15px;
-    width: 132px;
 }
 .share-container {
     position: fixed; 
@@ -1098,10 +1108,11 @@ padding: 15px;
     border: 1px solid #cccccc;
 }
 .privacy-title {
-    padding: 25px 0px;
+    padding: 10px 0px;
     line-height: 1;
     color: #323031;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -1305,7 +1316,6 @@ padding: 15px;
     bottom: 0;
 }
 .card-text-alt {
-    font-family: "Montserrat", "Helvetica Neue";
     font-size: 13px;
     margin: 5px 10px;
     line-height: 1;
@@ -1630,13 +1640,13 @@ padding: 15px;
     font-size: 20px;
     margin: 0px;
     height: 30px;
-    font-weight: 600;
+    font-weight: 700;
     color: #3f434f;
 }
 .growth-metric {
     font-size: 30px;
     margin: 10px 0px;
-    font-weight: 600;
+    font-weight: 700;
     color: #3f434f;
 }
 .divider-inside-right {
@@ -1810,7 +1820,7 @@ padding: 15px;
     float: left;
     width: 60px;
     color: #3f434f;
-    font-weight: 600;
+    font-weight: 700;
     background-color: #fff;
     padding: 4px 5px;
     text-align: center;
@@ -1844,7 +1854,7 @@ padding: 15px;
     background-color: #fed136;
     color: #fff;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     width: 150px;
     float: right;
@@ -1861,7 +1871,7 @@ padding: 15px;
     border-radius: 3px;
     background-color: #fed136;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     display: inline-block;
     cursor: pointer;
 }
@@ -1881,23 +1891,23 @@ padding: 15px;
 }
 .resource-price-text {
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 700;
     color: #3f434f;
     margin-top: 65px;
 }
 .resource-download {
     margin: 0px;
     line-height: 1;
-    font-weight: 600;
+    font-weight: 700;
 }
 .bar-metrics-title {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 25px;
 }
 .boost-purchase-header {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 15px 20px 6px 35px;
     margin: 0px;
 }
@@ -1907,13 +1917,13 @@ padding: 15px;
 }
 .dash-boost-price {
     font-size: 30px;
-    font-weight: 600;
+    font-weight: 700;
     color: #3f434f;
     margin-top: 10px;
 }
 .boost-purchase-header-right {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 0px 0px 6px 0px;
 }
 .dash-boost-row {
@@ -1932,7 +1942,7 @@ padding: 15px;
     background-color: #fed136;
     color: #fff;
     border-bottom: 1px solid #3f434f;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0px;
     padding: 3px 15px;
 }
@@ -1943,7 +1953,7 @@ padding: 15px;
     color: #fff;
     border-top: 1px solid #3f434f;
     border-bottom: 1px solid #3f434f;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0px 0px 15px 0px;
     padding: 3px 15px;
 }
@@ -1958,7 +1968,7 @@ padding: 15px;
     margin: 5px 0px 25px 0px;
 }
 .choose-price {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 14px;
     margin-bottom: 10px;
     margin-top: 7px;
@@ -1982,7 +1992,7 @@ padding: 15px;
     float: right;
     font-size: 30px;
     margin: 0px;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 55px;
     color: #3f434f;
 }
@@ -1997,14 +2007,14 @@ padding: 15px;
 }
 .package-title {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 3px;
     margin: 5px 0px;
     color: #3f434f;
 }
 .package-price {
     font-size: 50px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 3px;
     margin: 5px 0px;
     color: #3f434f;
@@ -2034,7 +2044,7 @@ padding: 15px;
     margin: 0px;
     background-color: #fed136;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     width: 100%;
 }
@@ -2052,7 +2062,7 @@ padding: 15px;
     margin: 0px;
     background-color: #fed136;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
@@ -2102,12 +2112,12 @@ padding: 15px;
     text-transform: uppercase;
     margin-top: 20px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
 }
 .dash-project-title {
     text-transform: uppercase;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     margin: 0px;
 }
 .dash-project-content {
@@ -2360,6 +2370,7 @@ span.round-tab:hover {
 .login-check-container {
     background: rgba(50, 48, 49, 1);
     position: fixed;
+    padding: 0px 60px;
     top: 0;
     left: 0;
     width: 100%;
@@ -2391,7 +2402,7 @@ span.round-tab:hover {
 .coupon-code {
     font-size: 26px;
     margin: 0px;
-    font-weight: 600;
+    font-weight: 700;
     color: #fed136;
 }
 .back-project {
@@ -2402,7 +2413,7 @@ span.round-tab:hover {
     background-color: #fed136;
     border-radius: 3px;
     color: #fff;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
 }
 .back-project:hover,
@@ -2638,7 +2649,7 @@ div.explore-project figcaption {
 }
 .profile-name {
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     height: 22px;
     margin: 0px 0px 15px 0px;
 }
@@ -2704,7 +2715,7 @@ div.explore-project figcaption {
 .couponcode {
     font-size: 30px; 
     margin: 0px; 
-    font-weight: 600; 
+    font-weight: 700; 
     color: #fed136; 
     text-transform: uppercase;
 }
@@ -2812,4 +2823,27 @@ div.explore-project figcaption {
     position: absolute; 
     top: 0; 
     right: 0;
+}
+.forgot-pass {
+    color: #333;
+    display: inline-block;  
+}
+.forgot-pass:hover {
+    color: #fed136;;
+}
+.forgot-box {
+    margin-top: 10px !important; 
+    margin-bottom: 0px !important;
+    padding-right: 0px !important;
+}
+.modal-custom {
+    padding: 0px 50px;
+}
+.login-float-text {
+    color: #fff; 
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.function-link {
+    cursor: pointer;
 }

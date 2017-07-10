@@ -20,7 +20,15 @@
     </div>
     <div class="background-modal-close" data-dismiss="modal"> </div>
 <script>
-   submitFeatured(e) 
+   this.on('update', ()=>
+    {
+        if(!opts.project)
+            return;
+
+        let res = {data: [opts.project]};
+    });
+    
+    submitExplore(e) 
     {
         e.preventDefault();
 
@@ -30,13 +38,13 @@
         let userRes = {data: opts.user}
             projRes = {data: [opts.project]};
 
-        setUserDeets(userRes, projRes);
+        this.setUserDeets(userRes, projRes);
 
     }; 
 
     setUserDeets(res, pRes)
     {
-        let project = res.data.username,
+        let project = pRes.data[0].name,
             projectData = 
             {
                 project_data: 
@@ -48,14 +56,14 @@
                 }
         };
 
-        setProjDeets(pRes);
+        this.setProjDeets(project, projectData);
     }
     
-    setProjDeets(res)
+    setProjDeets(project, projectData)
     {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
-                window.location.reload();
+            window.location.reload();
         });
     }
 </script>

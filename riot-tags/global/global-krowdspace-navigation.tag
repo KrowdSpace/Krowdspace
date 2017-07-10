@@ -28,10 +28,10 @@
                         <a show={ logged_in } class="explore-scroll" href="/#/account/dashboard">Dashboard</a>
                     </li>
                     <li>
-                        <a show={ !logged_in } href="#modal-explore-login" class="modal-link" data-toggle="modal">Login</a>
+                        <a show={ !logged_in } href="#modal-global-login" class="modal-link" data-toggle="modal">Login</a>
                     </li>
                     <li>
-                        <a show={ !logged_in } href="#modal-explore-register" class="modal-link" data-toggle="modal">Sign Up</a>
+                        <a show={ !logged_in } href="#modal-global-register" class="modal-link" data-toggle="modal">Register</a>
                     </li>
                     <li>
                         <a show={ logged_in } href="/#/account/resource">Resource</a>

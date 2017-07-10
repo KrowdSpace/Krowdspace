@@ -28,6 +28,7 @@
         color: black;
     }
     </style>
+
     <div class="row">
         <global-krowdspace-navigation></global-krowdspace-navigation>
         <explore-slider-hero></explore-slider-hero>
@@ -41,7 +42,6 @@
     </div>
     <explore-modal-login></explore-modal-login>
     <explore-modal-register></explore-modal-register>
-
     <script>
         this.on('mount', ()=>
         {
