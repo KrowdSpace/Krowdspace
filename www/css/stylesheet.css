@@ -979,12 +979,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     color: #fff;
 }
 .register-background {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#68ade2+0,7eb8e5+100 */
-background: #68ade2; /* Old browsers */
-background: -moz-linear-gradient(top, #68ade2 0%, #7eb8e5 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, #68ade2 0%,#7eb8e5 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, #68ade2 0%,#7eb8e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#68ade2', endColorstr='#7eb8e5',GradientType=0 ); /* IE6-9 */
+background: #5ea0cc; /* Old browsers */
+background: -moz-linear-gradient(top, #5ea0cc 0%, #408abc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #5ea0cc 0%,#408abc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #5ea0cc 0%,#408abc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea0cc', endColorstr='#408abc',GradientType=0 ); /* IE6-9 */
 border: 1px solid #3f434f; 
 display: flex;
 }
@@ -1012,7 +1011,8 @@ padding: 15px;
     color: #333;
 }
 .registration-box {
-    margin: 50px 40px 50px 20px; 
+    margin: 50px 40px 50px 20px;
+    border: 1px solid #3f434f; 
     padding: 15px; 
     background: white; 
     height: 375px;
@@ -1217,6 +1217,15 @@ padding: 15px;
 :-ms-input-placeholder {
     color: #555;
 }
+.dash-user-title {
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.3;
+    background:rgba(0, 0, 0, .5);
+    box-shadow:0.3em 0 0 rgba(0, 0, 0, .5),-0.3em 0 0 rgba(0, 0, 0, .5);
+    -moz-box-shadow:0.3em 0 0 rgba(0, 0, 0, .5),-0.3em 0 0 rgba(0, 0, 0, .5);
+    -webkit-box-shadow:0.3em 0 0 rgba(0, 0, 0, .5),-0.3em 0 0 rgba(0, 0, 0, .5);
+}
 .explore-title {
     color: #fff;
     font-size: 14px;
@@ -1252,6 +1261,19 @@ padding: 15px;
     border: 2px solid #fff;
     color: #fff;
     background-color: rgba(50, 48, 49, .5);
+}
+.dash-banner-box {
+    position:relative; 
+    height: 290px;
+}
+.dash-box-text {
+    margin-top: 5px;
+    margin-left: 7px;
+}
+.dash-feature-right {
+    margin-top: 255px;
+    padding: 0px;
+    padding-right: 10px;
 }
 .backed-box {
     padding-right: 20px; 
@@ -2712,6 +2734,12 @@ div.explore-project figcaption {
     margin: 18px auto; 
     width: 300px;
 }
+.reward-box {
+    border: 3px dashed #fed136; 
+    margin: 18px auto; 
+    padding: 15px 25px;
+    display: inline-block;
+}
 .couponcode {
     font-size: 30px; 
     margin: 0px; 
@@ -2736,6 +2764,11 @@ div.explore-project figcaption {
     position: relative; 
     border: 1px solid #3f434f; 
     height: 240px;
+}
+.dashboard-user-box {
+    padding: 15px; 
+    position: relative; 
+    border: 1px solid #3f434f; 
 }
 .reward-text {
     height: 20px;

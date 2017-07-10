@@ -3,8 +3,8 @@
         <div class="fixed-image-box"> 
             <img show={ imagebox } class="img-responsive kickstarter-image" ref="kickstarterImage" src=""/>
             <img show={ !imagebox } class="img-responsive indiegogo-image" ref="indiegogoImage" src=""/>
-            <p class="funding-text-left text-left">$ { dataBacked } RAISED</p>
-            <p class="funding-text-right text-right">$ { dataGoal } GOAL</p>
+            <p class="funding-text-left text-left">$ { dataBacked } Raised</p>
+            <p class="funding-text-right text-right">$ { dataGoal } Goal</p>
         </div>
         <div id="progressBar"></div>
     </div>
