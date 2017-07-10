@@ -8,8 +8,8 @@
             </select>
         </div>
         <div class="col-sm-3">
-            <select class="form-control" ref="options" onchange={ testing } >
-                <option value="">All Categories</option>
+            <select class="form-control" ref="options" onchange={ catOptions } >
+                <option value=" ">All Categories</option>
                 <option each={ cat in catArr }  value="{ cat }"> 
                     { cat }
                 </option>
@@ -45,7 +45,7 @@
 
         krowdspace.projects.explore().then((res) =>
         {
-           // console.log(res.data);
+            console.log(res);
             this.exploreCards = res.data;
             this.setExploreCards(res.data);
 
@@ -85,18 +85,17 @@
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value.toLowerCase();
         filterText = filterText.toLowerCase();
-      
 
         return function(el)
         {
             let cat = el.project_data.info_data.category.toLowerCase();
 
-            console.log(cat.includes( option ), cat, option);
-            console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+           // console.log(cat.includes( option ), cat, option);
+           // console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
 
             return cat.includes( option )
-            || (filterText != '' && cat.includes( filterText ) )
-            || (filterText != '' && el.name.toLowerCase().includes( filterText ));
+            || (filterText != '' && cat.includes( filterText ) && el.project_data.meta_data == true)
+            || (filterText != '' && el.name.toLowerCase().includes( filterText ) && el.project_data.meta_data == true);
         }
     }
     
@@ -105,18 +104,12 @@
         var value = this.refs.searchBox.value;
         var exploreCards = this.filterTag.exploreCards;
 
-        console.log(value);
-       
         let filterArray = exploreCards.filter(this.categoriesFilter(value));
 
-        console.log(filterArray);
-
         this.filterTag.setExploreCards(filterArray);
-       
-       // console.log(categoriesFilter());
-    
+           
     }
-    this.testing = function testing(){
+    this.catOptions = function catOptions(){
         
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value;
