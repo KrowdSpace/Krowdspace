@@ -1,7 +1,9 @@
 <explore-content-card>
     <div class="row">
         <div each= { exploreCard in displayCards } class="col-sm-4">
+
             <div ref="exploreCard.ExploreCard.data.category">
+
             <div class="no-gutter explore-container shadow">
                 <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
                 <img class="img-responsive" src="{ exploreCard.ExploreCard.data.image }" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a>
@@ -33,13 +35,17 @@
         </div>
     </div>
     <img show= { Cards } class="img-responsive" src="/img/content/krowdspace-coming-soon.png">
-    <script type="text/javascript">
+
+    <script>
+
         this.displayCards = [];
-        this.exploreCards = [];
-        krowdspace.projects.explore().then((res) =>
+
+        this.fixMetaCrap = function fixMetaCrap(pa)
         {
-            
+            let res = {data: pa};
+
             let projectArray = res.data;
+
             projectArray.forEach((element) =>
             {
                 let platform = element.platform,
@@ -51,10 +57,9 @@
                     raisedRawNumber = goalNumber * percentRaised,
                     raisedNumber = Math.round(raisedRawNumber),
                     raisedValue = raisedNumber.toLocaleString(),
-
                     endTime = element.project_data.web_data.hours['data-end_time'],
                     end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
+                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
 
@@ -75,24 +80,19 @@
                             'reward': element.project_data.info_data.reward,
                         }
                     }
-                ); 
+                );
             });
-            this.exploreCards = res.data;
-            this.setExploreCards(res.data);
-        },
-        (err)=>
-        {
-            this.Cards = true;
-            this.update();
-        });
+
+            return projectArray;
+        }
 
         this.setExploreCards = function setExploreCards(neA)
         {
             this.displayCards = neA;
+            this.fixMetaCrap(this.displayCards);
+
             this.update();
         };
-
-        this.setExploreCards(this.exploreCards);
        
     </script>
 </explore-content-card>

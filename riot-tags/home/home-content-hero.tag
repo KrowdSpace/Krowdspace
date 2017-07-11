@@ -30,7 +30,7 @@
                                 <div class="input-group">
                                     <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control" required="required">
                                     <div class="input-group-btn">
-                                        <button type="button" id="eye" class="btn btn-default">
+                                        <button type="button" id="eye" class="btn btn-eye">
                                         <i class="fa fa-eye fa-lg"></i>
                                         </button>
                                     </div>
