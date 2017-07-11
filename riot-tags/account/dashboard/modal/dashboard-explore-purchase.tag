@@ -20,38 +20,51 @@
     </div>
     <div class="background-modal-close" data-dismiss="modal"> </div>
 <script>
-submitExplore(e) 
-{
-    e.preventDefault();
-
-    krowdspace.users.user(this.opts.userkey).then((res)=>
+   this.on('update', ()=>
     {
-        let project = res.data.username,
-        projectData = 
-        {
-            project_data: 
+        if(!opts.project)
+            return;
+
+        let res = {data: [opts.project]};
+    });
+    
+    submitExplore(e) 
+    {
+        e.preventDefault();
+
+        if(!opts.project)
+            return;
+
+        let userRes = {data: opts.user}
+            projRes = {data: [opts.project]};
+
+        this.setUserDeets(userRes, projRes);
+
+    }; 
+
+    setUserDeets(res, pRes)
+    {
+        let project = pRes.data[0].name,
+            projectData = 
             {
-				meta_data: 
+                project_data: 
                 {
-					explore : true,
-				}
-            }
+                    meta_data: 
+                    {
+                        explore : true,
+                    }
+                }
         };
 
+        this.setProjDeets(project, projectData);
+    }
+    
+    setProjDeets(project, projectData)
+    {
         krowdspace.projects.set_project(project, projectData).then((res)=>
         {
             window.location.reload();
-        },
-        (err)=>
-        {
-            console.log(err);
         });
-    },
-        (err)=> 
-        {
-            console.log(err);
-        }
-    );
-}; 
+    }
 </script>
 </dashboard-explore-purchase>
