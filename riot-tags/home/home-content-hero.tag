@@ -14,34 +14,34 @@
                     <div class="shadow">
                         <form ref="registerform" onsubmit={ submit }>
                             <div class="col-sm-12 register-container text-left">
-                                <p class="text-left landing-text">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
+                                <p class="text-left landing-text" style="margin-bottom: 15px;">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
                                 <div class="form-group form-split-right" style="margin-top: 0px">
-                                    <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="text" ref="firstname" class="form-control" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="form-group form-split-left" style="margin-top: 0px">
-                                    <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="text" ref="lastname" class="form-control" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="email" ref="email" class="form-control" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="form-group">
-                                    <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="username" ref="username" class="form-control" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control placeholder-color" required="required">
+                                    <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control" required="required">
                                     <div class="input-group-btn">
-                                        <button type="button" id="eye" class="btn btn-default">
+                                        <button type="button" id="eye" class="btn btn-eye">
                                         <i class="fa fa-eye fa-lg"></i>
                                         </button>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" ref="kickstarter" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)">
+                                    <input type="text" ref="kickstarter" class="form-control" placeholder="Kickstarter Username (Optional)">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" ref="indiegogo" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)">
+                                    <input type="text" ref="indiegogo" class="form-control" placeholder="Indiegogo Username (Optional)">
                                 </div>
-                                <div class="check-terms checkbox">
+                                <div class="check-terms checkbox" style="margin-top: 15px;">
                                     <label>
                                     <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a>
                                     </label>

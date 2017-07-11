@@ -10,7 +10,8 @@
     "express": "^4.15.2"
   },
   "devDependencies": {
-    "concurrently": "^3.4.0"
+    "concurrently": "^3.4.0",
+    "purify-css": "^1.2.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -15,18 +15,21 @@
 			<global-logout show={ logged_in }></global-logout>
 			<div class="col-sm-10 col-sm-offset-1" style="padding: 0px;">
 				<div class="row dash-row no-gutter shadow">
-					<dashboard-project-image project = { project }></dashboard-project-image>	
+					<dashboard-project-image show={ project } project = { project }></dashboard-project-image>
+					<dashboard-user-image show={ !project } ></dashboard-user-image>
 					<dashboard-project-user user = { user } project = { project }></dashboard-project-user>
+
 				</div>
-				<div class="row dash-row no-gutter">
-					<dashboard-project-hours show={ project } project = { project }></dashboard-project-hours>
-					<dashboard-project-reward show={ project } project = { project }></dashboard-project-reward>
+				<div show={ project } class="row dash-row no-gutter">
+					<dashboard-project-hours project = { project }></dashboard-project-hours>
+					<dashboard-project-reward  project = { project }></dashboard-project-reward>
 				</div>	
-				<div class="row dash-row no-gutter shadow">
-					<dashboard-project-title show={ project } project={ project }> </dashboard-project-title>
+				<div show={ project } class="row dash-row no-gutter shadow">
+					<dashboard-project-title project={ project }> </dashboard-project-title>
 				</div>
 				<div class="row dash-row no-gutter shadow">
 					<dashboard-project-bar show={ project } project = { project }></dashboard-project-bar>
+					<dashboard-user-bar show={ !project }></dashboard-user-bar>
 				</div>
 			</div>
         </div>

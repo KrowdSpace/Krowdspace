@@ -41,7 +41,7 @@
 						</div>
 						<div class="col-md-4">
 							<div class="boost-pricing">
-								<p class="text-center"><strong>Media List (500+ Contacts)</strong></p>
+								<p class="text-center"><strong>Media Contact List</strong></p>
 								<p class="text-center">Free</p>
 								<p class="boost-description">Most companies that provide media lists give you thousands of names and no direction. At Krowdspace our media list consists of verified contacts from the largest companies out there. We provide up to 10 contacts from every company and a list of places to submit your crowdfunding video.</p>
 							</div>

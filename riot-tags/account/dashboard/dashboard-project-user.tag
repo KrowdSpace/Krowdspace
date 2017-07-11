@@ -7,18 +7,33 @@
             </span>
         </a>
             <p class="dashboard-text profile-name">{ firstname } { lastname }</p>
-            <div class="col-sm-4 text-center divider-inside-right user-stat-box">
-                    <p class="dashboard-user">Projects Launched</p>
-                    <p class="social-metric">1</p>
+            <div show={ project }>
+                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                        <p class="dashboard-user">Projects Launched</p>
+                        <p class="social-metric">0</p>
+                </div>
+                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                        <p class="dashboard-user">Hours Remaining</p>
+                        <p class="social-metric">{ countdowntimer || 0 }</p>
+                </div>
+                <div class="col-sm-4 text-center user-stat-box">
+                    <p class="dashboard-user">Reward Value</p>
+                    <p class="social-metric">{ rewardAmount || 0 }</p>
+                </div>
             </div>
-            <div class="col-sm-4 text-center divider-inside-right user-stat-box">
-                    <p class="dashboard-user">Hours Remaining</p>
-                    <p class="social-metric">{ countdowntimer || 0 }</p>
-
-            </div>
-            <div class="col-sm-4 text-center user-stat-box">
-                <p class="dashboard-user">Reward Value</p>
-                <p class="social-metric">{ rewardAmount || 0 }</p>
+            <div show={ !project }>
+                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                        <p class="dashboard-user">Projects Launched</p>
+                        <p class="social-metric">13</p>
+                </div>
+                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                        <p class="dashboard-user">Value of Rewards</p>
+                        <p class="social-metric">{ '$1,329' }</p>
+                </div>
+                <div class="col-sm-4 text-center user-stat-box">
+                    <p class="dashboard-user">Project Pledges</p>
+                    <p class="social-metric">{ '$84,322' }</p>
+                </div>
             </div>
             <div class="col-sm-8 text-left">
                 <div class="col-sm-4 user-box-left">

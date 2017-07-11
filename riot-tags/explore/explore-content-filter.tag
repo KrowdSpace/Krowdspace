@@ -3,7 +3,6 @@
 
         <div class="col-sm-3">
             <select class="form-control">
-                <option value="">Featured Projects</option>
                 <option value="">Just Launched</option>
                 <option value="">Closing Soon</option>
             </select>
@@ -11,7 +10,8 @@
 
         <div class="col-sm-3">
             <select class="form-control" ref="options" onchange={ onCatChange } >
-                <option value="*">All Categories</option>
+            
+                <option value="*">Featured Projects</option>
 
                 <option each={ cat in catArr }  value="{ cat }"> 
                     { cat }
@@ -41,7 +41,6 @@
 
         </div>
     </div>   
-
     <script>
 
     this.exploreCards = [];
@@ -106,7 +105,6 @@
     {    
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value;
-
         this.onSearch();
     };
 

@@ -22,8 +22,8 @@
                   <div class="input-group">
                      <input id="PASSWORD2" type="password" ref="password" placeholder="New Password"  class="masked form-control placeholder-color"  required="required">
                      <div class="input-group-btn">
-                        <button type="button" id="eye2" class="btn btn-default">
-                        <i class="glyphicon glyphicon-eye-open"></i>
+                        <button type="button" id="eye2" class="btn btn-eye">
+                        <i class="fa fa-eye fa-lg"></i>
                         </button>
                      </div>
                   </div>

@@ -46,8 +46,8 @@
             
             e.preventDefault();
 
-            var USERNAME = this.refs.usernamelogin3.value,
-                PASSWORD = this.refs.passwordlogin3.value;
+            var USERNAME = this.refs.usernamelogin.value,
+                PASSWORD = this.refs.passwordlogin.value;
                 STAYLOGGED = true;
 
             console.log(USERNAME);
