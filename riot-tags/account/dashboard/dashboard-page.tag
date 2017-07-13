@@ -5,8 +5,9 @@
         <div class="container dashboard">
 			<div class="shadow text-center project-add-container">
 				<p class="project-add-text">PROJECT</p>
-				<div each = { p in projects }>
+				<div each = {p, index in projects }>
 					<project-button onclick={ makeButtF(p) } project = { p }></project-button>
+					<h1>{ index }</h1>
 				</div>
 				<a href="/#/account/register">
                 	<i class="fa fa-plus project-add-btn filterdark"></i>
@@ -17,6 +18,7 @@
 				<div class="row dash-row no-gutter shadow">
 					<dashboard-project-image project = { project }></dashboard-project-image>	
 					<dashboard-project-user user = { user } project = { project }></dashboard-project-user>
+					
 				</div>
 				<div class="row dash-row no-gutter">
 					<dashboard-project-hours show={ project } project = { project }></dashboard-project-hours>
@@ -73,6 +75,7 @@
 				this.setProject(res.data[0]);
 			}
 		});
+	
 	});
 	setProject(proj)
 	{

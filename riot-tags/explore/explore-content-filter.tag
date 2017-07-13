@@ -137,8 +137,8 @@
         {
             let cat = el.project_data.info_data.category.toLowerCase();
 
-            console.log(cat.includes( option ), cat, option);
-            console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+           // console.log(cat.includes( option ), cat, option);
+           // console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
 
             if(option === "*")
             {

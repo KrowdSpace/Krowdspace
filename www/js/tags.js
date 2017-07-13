@@ -36,7 +36,7 @@ riot.tag2('boosts', '<boosts-page show="{logged_in}"></boosts-page> <global-comi
                 window.location.replace("/#/account/login");
             });
 });
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <div class="shadow text-center project-add-container"> <p class="project-add-text">PROJECT</p> <div each="{p in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"></project-button> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image project="{project}"></dashboard-project-image> <dashboard-project-user user="{user}" project="{project}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours show="{project}" project="{project}"></dashboard-project-hours> <dashboard-project-reward show="{project}" project="{project}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title show="{project}" project="{project}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase user="{user}" project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase user="{user}" project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase user="{user}" project="{project}"></dashboard-landing-purchase> <dashboard-edit-profile user="{user}" project="{project}"></dashboard-edit-profile> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <div class="shadow text-center project-add-container"> <p class="project-add-text">PROJECT</p> <div each="{p, index in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}"></project-button> <h1>{index}</h1> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1" style="padding: 0px;"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image project="{project}"></dashboard-project-image> <dashboard-project-user user="{user}" project="{project}"></dashboard-project-user> </div> <div class="row dash-row no-gutter"> <dashboard-project-hours show="{project}" project="{project}"></dashboard-project-hours> <dashboard-project-reward show="{project}" project="{project}"></dashboard-project-reward> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-title show="{project}" project="{project}"> </dashboard-project-title> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> </div> </div> </div> <dashboard-featured-purchase user="{user}" project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase user="{user}" project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase user="{user}" project="{project}"></dashboard-landing-purchase> <dashboard-edit-profile user="{user}" project="{project}"></dashboard-edit-profile> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <global-footer></global-footer>', '', '', function(opts) {
 	this.projectNum = 0;
 	this.projects = [];
 
@@ -73,6 +73,7 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 				this.setProject(res.data[0]);
 			}
 		});
+
 	});
 	this.setProject = function(proj)
 	{
@@ -287,7 +288,7 @@ riot.tag2('dashboard-project-title', '<div class="col-sm-12 dashboard-title-cont
 console.log(this.opts.project);
 });	
 	
-riot.tag2('dashboard-project-user', '<div class="col-sm-6 text-center no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Projects Launched</p> <p class="social-metric">1</p> </div> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Hours Remaining</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-sm-4 text-center user-stat-box"> <p class="dashboard-user">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> <div class="col-sm-8 text-left"> <div class="col-sm-4 user-box-left"> <p class="dashboard-user">Username:</p> <p class="dashboard-user">Email:</p> <p class="dashboard-user">Kickstarter:</p> <p class="dashboard-user">Indiegogo:</p> </div> <div class="col-sm-8 user-box-right"> <p class="dashboard-user">{username}</p> <p class="dashboard-user">{email}</p> <p class="dashboard-user">{kickstarter || \'N/A\'}</p> <p class="dashboard-user">{indiegogo || \'N/A\'}</p> </div> </div> <div class="col-sm-4"> </div> </div>', '', '', function(opts) {
+riot.tag2('dashboard-project-user', '<div class="col-sm-6 text-center no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Projects Launched</p> <p class="social-metric">{index}</p> </div> <div class="col-sm-4 text-center divider-inside-right user-stat-box"> <p class="dashboard-user">Hours Remaining</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-sm-4 text-center user-stat-box"> <p class="dashboard-user">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> <div class="col-sm-8 text-left"> <div class="col-sm-4 user-box-left"> <p class="dashboard-user">Username:</p> <p class="dashboard-user">Email:</p> <p class="dashboard-user">Kickstarter:</p> <p class="dashboard-user">Indiegogo:</p> </div> <div class="col-sm-8 user-box-right"> <p class="dashboard-user">{username}</p> <p class="dashboard-user">{email}</p> <p class="dashboard-user">{kickstarter || \'N/A\'}</p> <p class="dashboard-user">{indiegogo || \'N/A\'}</p> </div> </div> <div class="col-sm-4"> </div> </div>', '', '', function(opts) {
     this.on('update', ()=>
     {
         if(!opts.user)
@@ -796,12 +797,15 @@ riot.tag2('verify-content-confirm', '<div class="row row-verify"> <p class="text
 riot.tag2('verify', '<success></success>', '', '', function(opts) {
 });
 riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-sm-4"> <div ref="exploreCard.ExploreCard.data.category"> <div class="no-gutter explore-container shadow"> <a href="/#/explore/project/{exploreCard.ExploreCard.data.id}"> <img class="img-responsive" riot-src="{exploreCard.ExploreCard.data.image}" style="margin-bottom: 10px; border-bottom: 1px solid #3f434f;"></a> <span show="{exploreCard.ExploreCard.data.featured}" class="fa-stack fa-lg explore-feature-icon"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div style="height: 70px; "> <p class="card-text-alt">{exploreCard.ExploreCard.data.title}</p> <p class="card-text-alt explore-" reward style="padding-top: 5px;">Reward: {exploreCard.ExploreCard.data.reward}</p> </div> <div class="col-sm-5 text-left"> <p class="card-text-alt" style="margin-right: 0px;">${exploreCard.ExploreCard.data.backed} Raised</p> </div> <div class="col-sm-2 text-center"> <p class="card-text-alt" style="margin-left: 0px; margin-right: 0px;">{exploreCard.ExploreCard.data.days} Days</p> </div> <div class="col-sm-5 text-right"> <p class="card-text-alt" style="margin-left: 0px;">${exploreCard.ExploreCard.data.goal} Goal</p> </div> <div class="col-sm-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style=" width: {exploreCard.ExploreCard.data.percent}%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div> <img show="{Cards}" class="img-responsive" src="/img/content/krowdspace-coming-soon.png">', '', '', function(opts) {
+
         this.displayCards = [];
-        this.exploreCards = [];
-        krowdspace.projects.explore().then((res) =>
+
+        this.fixMetaCrap = function fixMetaCrap(pa)
         {
+            let res = {data: pa};
 
             let projectArray = res.data;
+
             projectArray.forEach((element) =>
             {
                 let platform = element.platform,
@@ -813,10 +817,9 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
                     raisedRawNumber = goalNumber * percentRaised,
                     raisedNumber = Math.round(raisedRawNumber),
                     raisedValue = raisedNumber.toLocaleString(),
-
                     endTime = element.project_data.web_data.hours['data-end_time'],
                     end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
+                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
 
@@ -839,43 +842,35 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
                     }
                 );
             });
-            this.exploreCards = res.data;
-            this.setExploreCards(res.data);
-        },
-        (err)=>
-        {
-            this.Cards = true;
-            this.update();
-        });
+
+            return projectArray;
+        }
 
         this.setExploreCards = function setExploreCards(neA)
         {
             this.displayCards = neA;
+            this.fixMetaCrap(this.displayCards);
+
             this.update();
         };
 
-        this.setExploreCards(this.exploreCards);
-
 });
 
-riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control" ref="options" onchange="{testing}"> <option value="*">All Categories</option> <option each="{cat in catArr}" riot-value="{cat}"> {cat} </option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{myFunction}"> <div class="input-group-btn"> <div class="btn btn-void"><i class="fa fa-search fa-lg"></i></div> </div> </div> </form> </div> </div>', '', '', function(opts) {
-    this.on('mount', function(){
-        this.update();
-        this.exploreCardsCatergory();
-        this.filterTag = this.opts.filtersearch;
-    });
+riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <select class="form-control"> <option value="">Featured Projects</option> <option value="">Just Launched</option> <option value="">Closing Soon</option> </select> </div> <div class="col-sm-3"> <select class="form-control" ref="options" onchange="{onCatChange}"> <option value="*">All Categories</option> <option each="{cat in catArr}" riot-value="{cat}"> {cat} </option> </select> </div> <div class="col-sm-2"> </div> <div class="col-sm-4"> <form role="search"> <div class="input-group"> <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup="{onSearch}"> <div class="input-group-btn"> <div class="btn btn-void"> <i class="fa fa-search fa-lg"></i> </div> </div> </div> </form> </div> </div>', '', '', function(opts) {
 
-    this.exploreCardsCatergory = function(){
-        this.displayCards = [];
-        this.exploreCards = [];
+    this.exploreCards = [];
 
-        this.catArr = [];
+    this.displayCards = [];
 
-        krowdspace.projects.explore().then((res) =>
+    this.catArr = [];
+
+    this.on('mount', function()
+    {
+        this.filterTag = opts.filtersearch;
+
+        krowdspace.projects.explore().catch(err=>console.log('error: ', err)).then((res) =>
         {
-
             this.exploreCards = res.data;
-            this.setExploreCards(res.data);
 
             let catSet = new Set();
 
@@ -889,23 +884,64 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <s
                 this.catArr.push(el);
             });
 
+            let pa = this.exploreCards,
+                ca = this.projectSorter(this.exploreCards);
+
+            console.log(pa, ca);
+
+            this.setExploreCards(ca);
             this.update();
-        },
-        (err)=>
-        {
-            console.log(err)
         });
+    });
 
-        this.setExploreCards = function setExploreCards(neA)
+    this.setExploreCards = function(neA)
+    {
+        this.displayCards = neA;
+        if(this.filterTag)
         {
-            this.displayCards = neA;
-            this.update();
-        };
-
-        this.setExploreCards(this.exploreCards);
+            this.filterTag.setExploreCards(this.displayCards);
+        }
     }.bind(this);
 
-    this.categoriesFilter = function(filterText)
+    this.onSearch = function onSearch()
+    {
+        var value = this.refs.searchBox.value;
+        var exploreCards = this.filterTag.exploreCards;
+
+        let filterArray = this.projectSorter( this.exploreCards.filter( this.categoriesFilter(value) ) );
+
+        console.log("ST: ", value);
+        console.log('FA: ', filterArray);
+
+        this.setExploreCards(filterArray);
+    };
+
+    this.onCatChange = function onCatChange()
+    {
+        let o = this.refs.options;
+        let option = o.options[o.selectedIndex].value;
+
+        this.onSearch();
+    };
+
+    this.projectSorter = function projectsSorter(pa)
+    {
+        let fpA = pa.filter((el, i, arr)=>
+        {
+            return el.project_data.meta_data.featured;
+        });
+
+        let spA = pa.filter((el, i, arr)=>
+        {
+            return !el.project_data.meta_data.featured;
+        });
+
+        spA.splice(0, 0, ...fpA);
+
+        return spA;
+    };
+
+    this.categoriesFilter = function categoriesFilter(filterText)
     {
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value.toLowerCase();
@@ -915,46 +951,24 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <s
         {
             let cat = el.project_data.info_data.category.toLowerCase();
 
-            console.log(cat.includes( option ), cat, option);
-            console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
-
-            return option === '*'
-            || cat.includes( option )
-            || (filterText != '' && cat.includes( filterText ) )
-            || (filterText != '' && el.name.toLowerCase().includes( filterText ));
+            if(option === "*")
+            {
+                return ( filterText == '' || el.name.toLowerCase().includes( filterText ) );
+            }
+            else
+            {
+                return cat.includes( option )
+                    && (filterText == '' || el.name.toLowerCase().includes( filterText ));
+            }
         }
-    }.bind(this)
-
-    this.myFunction = function()
-    {
-        var value = this.refs.searchBox.value;
-        var exploreCards = this.filterTag.exploreCards;
-
-        console.log(value);
-
-        let filterArray = exploreCards.filter(this.categoriesFilter(value));
-
-        console.log(filterArray);
-
-        this.filterTag.setExploreCards(filterArray);
-
-    }.bind(this)
-    this.testing = function testing(){
-
-        let o = this.refs.options;
-        let option = o.options[o.selectedIndex].value;
-        console.log(option);
-        this.myFunction();
-    }
-
+    };
 });
-riot.tag2('explore-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> <explore-slider-hero></explore-slider-hero> </div> <div class="container" style="margin-bottom: 50px;"> <explore-content-filter filtersearch="{refs.filter}"></explore-content-filter> <explore-content-card ref="filter"></explore-content-card> </div> <div class="row"> <global-footer></global-footer> </div>', 'explore-page .slider,[data-is="explore-page"] .slider{ width: 100%; position: relative; margin: 0px auto; } explore-page .slick-slide,[data-is="explore-page"] .slick-slide{ margin: 0px; } explore-page .slick-slide p,[data-is="explore-page"] .slick-slide p,explore-page .slick-slide .learn-more,[data-is="explore-page"] .slick-slide .learn-more{ display: none; } explore-page .slick-current p,[data-is="explore-page"] .slick-current p,explore-page .slick-current .learn-more,[data-is="explore-page"] .slick-current .learn-more{ display: block; } explore-page .slick-slide img,[data-is="explore-page"] .slick-slide img{ border-top: 1px solid #dcdedd; border-bottom: 1px solid #dcdedd; width: 750px; } explore-page .slick-prev:before,[data-is="explore-page"] .slick-prev:before,explore-page .slick-next:before,[data-is="explore-page"] .slick-next:before{ color: black; }', '', function(opts) {
-    this.on('mount',function(){
-
-        this.filter = this.refs.filter;
-
-    });
-
+riot.tag2('explore-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> <explore-slider-hero></explore-slider-hero> </div> <div class="container" style="margin-bottom: 50px;"> <explore-content-filter filtersearch="{filter}"></explore-content-filter> <explore-content-card ref="filter"></explore-content-card> </div> <div class="row"> <global-footer></global-footer> </div> <explore-modal-login></explore-modal-login> <explore-modal-register></explore-modal-register>', 'explore-page .slider,[data-is="explore-page"] .slider{ width: 100%; position: relative; margin: 0px auto; } explore-page .slick-slide,[data-is="explore-page"] .slick-slide{ margin: 0px; } explore-page .slick-slide p,[data-is="explore-page"] .slick-slide p,explore-page .slick-slide .learn-more,[data-is="explore-page"] .slick-slide .learn-more{ display: none; } explore-page .slick-current p,[data-is="explore-page"] .slick-current p,explore-page .slick-current .learn-more,[data-is="explore-page"] .slick-current .learn-more{ display: block; } explore-page .slick-slide img,[data-is="explore-page"] .slick-slide img{ border-top: 1px solid #dcdedd; border-bottom: 1px solid #dcdedd; width: 750px; } explore-page .slick-prev:before,[data-is="explore-page"] .slick-prev:before,explore-page .slick-next:before,[data-is="explore-page"] .slick-next:before{ color: black; }', '', function(opts) {
+        this.on('mount', ()=>
+        {
+            this.filter = this.refs.filter;
+            this.update();
+        });
 });
 riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img riot-src="{project_data.web_data.mainImg.content}" alt="{project_data.web_data.description.content}"> <div class="explore-box"> <div class="col-sm-9"> <div style="position: relative; height: 301px;"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-sm-3 explore-feature-right text-center"> <a href="{\'/#/explore/project/\' + unique_id}"><p class="learn-more">Learn More</p></a> </div> </div> </div> </div>', '', '', function(opts) {
         krowdspace.projects.explore().then((res) =>
