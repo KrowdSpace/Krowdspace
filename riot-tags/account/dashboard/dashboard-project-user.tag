@@ -9,7 +9,7 @@
             <p class="dashboard-text profile-name">{ firstname } { lastname }</p>
             <div class="col-sm-4 text-center divider-inside-right user-stat-box">
                     <p class="dashboard-user">Projects Launched</p>
-                    <p class="social-metric">1</p>
+                    <p class="social-metric">{ index }</p>
             </div>
             <div class="col-sm-4 text-center divider-inside-right user-stat-box">
                     <p class="dashboard-user">Hours Remaining</p>
