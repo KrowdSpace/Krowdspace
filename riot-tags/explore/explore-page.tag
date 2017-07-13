@@ -1,4 +1,4 @@
-<explore-page>   
+<explore-page>
     <div class="row">
         <global-krowdspace-navigation></global-krowdspace-navigation>
         <explore-slider-hero></explore-slider-hero>

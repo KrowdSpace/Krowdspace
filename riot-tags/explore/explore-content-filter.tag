@@ -10,6 +10,7 @@
 
         <div class="col-sm-3">
             <select class="form-control" ref="options" onchange={ onCatChange } >
+            
                 <option value="*">Featured Projects</option>
 
                 <option each={ cat in catArr }  value="{ cat }"> 
@@ -104,7 +105,6 @@
     {    
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value;
-
         this.onSearch();
     };
 
