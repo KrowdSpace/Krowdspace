@@ -396,9 +396,6 @@ img::selection {
 img::-moz-selection {
     background: transparent;
 }
-body {
-    webkit-tap-highlight-color: #fed136;
-}
 .alternate-background {
     background-image: url('../img/content/background-white.jpg');
 }
@@ -535,6 +532,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     padding-left: 0px;
     padding-right: 0px;
 }
+.edit-user-box {
+    background: #fff; 
+    padding: 20px; 
+    border:3px solid #fed136;
+}
 .register-container {
     padding: 5px 20px 10px 20px;
     background: white;
@@ -546,6 +548,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     background: white;
     border: 3px solid #fed136;
     border-bottom: none;
+}
+.purchase-container-left {
+    background: white;
+    padding: 20px !important;
+    border-right: 1px solid #ccc;
+}
+.purchase-container-right {
+    background: white;
 }
 .landing-text {
     margin-top: 10px;
@@ -752,6 +762,11 @@ padding: 15px;
 .registration-text {
     color: #3f434f;
     font-size: 14px;
+}
+.modal-purchase-text {
+    margin-top: 20px;
+    color: #3f434f;
+    font-size: 13px;
 }
 .register-button-box {
     padding-top: 15px;
@@ -1043,9 +1058,6 @@ padding: 15px;
     float: left;
     padding: 0px 10px 0px 0px;
 }
-.fa-stack:hover {
-    color: #fec503;
-}
 .background-modal-close {
     width: 100%;
     height: 100%;
@@ -1103,8 +1115,6 @@ div.explore-project a {
 }
 div.explore-project a:hover {
     color: #333;
-    background-color: #fed136;
-
 }
 div.explore-project .video-player {
     display: none;
@@ -1258,6 +1268,18 @@ div.explore-project figcaption {
     margin-top: 10px;
     height: 18px;
 }
+.purchase-text {
+    color: #3f434f;
+    font-size: 12px; 
+    margin: 15px 0px;
+    height: 18px;
+}
+.purchase-text-right {
+    color: #3f434f;
+    height: 18px;
+    font-size: 20px; 
+    margin: 10px 0px;
+}
 .dashboard-text-alt {
     font-size: 13px;
     margin: 0px;
@@ -1402,31 +1424,29 @@ div.explore-project figcaption {
     padding: 15px 30px 10px 30px;
 }
 .feature-box {
-    position: relative;
+    padding: 15px 30px !important;
 }
-.feature-hover {
-    display: none;
-    cursor: pointer;
+.feature-buy {
+    border: 2px solid #fed136;
+}
+.filter-background {
     position: absolute; 
-    background: #000;
-    opacity: .7; 
-    width: 115px;
-    height: 57px; 
-    top: 20px; right: 50px;
+    top:2px; 
+    left:2px; 
+    right: 2px; 
+    bottom: 2px; 
+    background-color: rgba(0, 0, 0, .3);
 }
-.feature-box:hover .feature-hover {
-    display: block;
+.featured-text-buy {
+    position: absolute; 
+    top: 35px; 
+    font-size: 13px;
+    left: 0; 
+    right: 0; 
+    color: #fff; 
 }
-.feature-hover-icon {
-    display: none !important;
-    cursor: pointer;
-    position: absolute !important;
-    top: 29px; 
-    right: 86px; 
-    z-index: 2;
-}
-.feature-box:hover .feature-hover-icon {
-    display: block !important;
+.filter-background:hover > .featured-text-buy {
+    color: #fed136;
 }
 #progressBar {
     height: 20px;
@@ -1492,6 +1512,10 @@ div.explore-project figcaption {
 .modal-custom {
     padding: 0px 50px;
 }
+.modal-purchase {
+    display: flex;
+}
+
 .login-float-text {
     color: #fff; 
     margin-top: 25px;
@@ -1516,4 +1540,11 @@ div.explore-project figcaption {
 .btn-eye:hover {
     color: #fff;
     background-color: #fed136;
+}
+.img-purchase-box {
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+.submit-purchase {
+    margin-top: 20px;
 }

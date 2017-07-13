@@ -120,6 +120,10 @@
             return !el.project_data.meta_data.featured;
         });
 
+        fpA.reverse(); 
+        
+        spA.reverse(); 
+
         spA.splice(0, 0, ...fpA);
 
         return spA;

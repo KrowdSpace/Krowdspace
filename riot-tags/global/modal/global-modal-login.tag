@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;">
                         <label>
-                            <input type="checkbox" id="checkbox">Remember Me
+                            <input type="checkbox" id="checkbox" name="remember" onchange={ remember }>Remember Me
                         </label>
                     </div>
                     <div class="col-xs-6 checkbox text-right forgot-box">
@@ -46,13 +46,9 @@ loginSubmit(e)
 	
 	e.preventDefault();
 
-	var USERNAME = this.refs.usernamelogin.value,
-	    PASSWORD = this.refs.passwordlogin.value;
-
-	STAYLOGGED = true;
-
-	console.log(USERNAME);
-	console.log(PASSWORD);
+	let USERNAME = this.refs.usernamelogin.value,
+	    PASSWORD = this.refs.passwordlogin.value,
+        STAYLOGGED = false;
 
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) => 
@@ -77,6 +73,14 @@ registerPassword()
 {
 	$('#modal-global-login').modal('hide');
     $('#modal-password').modal('show');
+}
+
+let STAYLOGGED = false;
+
+remember() 
+{
+  STAYLOGGED = !STAYLOGGED;
+  console.log(STAYLOGGED);
 }
 </script>
 </global-modal-login>

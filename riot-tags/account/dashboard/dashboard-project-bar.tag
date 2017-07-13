@@ -50,18 +50,22 @@
             <p class="dashboard-text-bar dash-divider">Share Your Project on Social Media</p>
             </div>
             <div class="col-sm-4">
-            <span class="fa-stack fa-lg social-btn">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-            </span>
-            <p class="dashboard-text-bar dash-divider">Social Media Boost</p>
+                <a href="#purchase-social" class="modal-link" data-toggle="modal">
+                    <span class="fa-stack fa-lg social-btn">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-wifi fa-stack-1x fa-inverse" style="padding-top: 2px;"></i>
+                    </span>
+                </a>
+                <p class="dashboard-text-bar dash-divider">Social Media Boost</p>
             </div>
         </div>
         <div class="col-sm-2 text-center">
+            <a href="#refresh-content" class="modal-link" data-toggle="modal">
             <span class="fa-stack fa-lg social-btn">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
             </span>
+            <a href="#purchase-social" class="modal-link" data-toggle="modal">
             <p class="dashboard-text-bar dash-divider">Refresh Content</p>
         </div>
     </div>

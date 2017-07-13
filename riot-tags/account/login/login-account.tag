@@ -12,12 +12,12 @@
                     </div>
                     <div class="has-feedback">
                         <label class="control-label" for="username"></label>
-                        <input type="text" class="form-control" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-user form-control-feedback"></span>
                     </div>
                     <div class="has-feedback">
                         <label class="control-label" for="password"></label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-lock form-control-feedback"></span>
                     </div>
                     <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;">
@@ -26,7 +26,7 @@
                         </label>
                     </div>
                     <div class="col-xs-6 checkbox text-right forgot-box">
-                        <a href="#"><p class="forgot-pass">Forgot Password?</p></a>
+                        <a style="cursor: pointer;" onclick= { registerPassword }><p class="forgot-pass">Forgot Password?</p></a>
                     </div>
                   </div>
                   <div class="text-center">
@@ -34,7 +34,7 @@
                 </div>
                </form>
                <div class="text-center">
-                <p class="login-float-text">Dont have an account? <a href="#modal-global-register" data-toggle="modal">Register today!</a></p>
+                    <p class="login-float-text">Dont have an account? <a class="function-link" onclick= { registerModal }>Register today!</a></p>
                </div>
             </div>
          </div>
@@ -66,6 +66,15 @@
         $("#errorLog").show();
 	});
 }
-
+registerModal() 
+{
+	$('#modal-global-login').modal('hide');
+    $('#modal-global-register').modal('show');
+}
+registerPassword() 
+{
+	$('#modal-global-login').modal('hide');
+    $('#modal-password').modal('show');
+}
 </script>
 </login-account>

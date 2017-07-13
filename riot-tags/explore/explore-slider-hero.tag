@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3 explore-feature-right text-center">
-                    <a href="{ '/#/explore/project/' + unique_id }"><p class="learn-more">Learn More</p></a>
+                    <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
             });
 
             let newObject={
-                        unique_id: 'project-feature-popup',
+                        unique_url: '#modal-feature-info',
                         name: '',
                         project_data: 
                         {
@@ -79,7 +79,7 @@
                         },
                     };
             let newObject2={
-                        unique_id: 'project-feature-popup',
+                        unique_url: '#modal-global-register',
                         name: 'Join Krowdspace Today!',
                         project_data: 
                         {

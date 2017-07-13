@@ -10,7 +10,7 @@
             <div show={ project }>
                 <div class="col-sm-4 text-center divider-inside-right user-stat-box">
                         <p class="dashboard-user">Projects Launched</p>
-                        <p class="social-metric">0</p>
+                        <p class="social-metric">{ projectcount || 0 }</p>
                 </div>
                 <div class="col-sm-4 text-center divider-inside-right user-stat-box">
                         <p class="dashboard-user">Hours Remaining</p>
@@ -74,6 +74,8 @@
         this.kickstarter = res.data.user_data.ksuser;
         this.indiegogo = res.data.user_data.iguser;
         this.username = res.data.username;
+        this.projectcount = '22';
+        console.log(res);
     }
 
     setProjectDeets(res)

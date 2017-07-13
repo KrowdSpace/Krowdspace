@@ -17,7 +17,7 @@
 				<div class="row dash-row no-gutter shadow">
 					<dashboard-project-image show={ project } project = { project }></dashboard-project-image>
 					<dashboard-user-image show={ !project } ></dashboard-user-image>
-					<dashboard-project-user user = { user } project = { project }></dashboard-project-user>
+					<dashboard-project-user user = { user } project = { project } ></dashboard-project-user>
 
 				</div>
 				<div show={ project } class="row dash-row no-gutter">
@@ -36,8 +36,10 @@
 	<dashboard-featured-purchase user = { user } project = { project }></dashboard-featured-purchase>
 	<dashboard-explore-purchase user = { user } project = { project }></dashboard-explore-purchase>
 	<dashboard-landing-purchase user = { user } project = { project }></dashboard-landing-purchase>
+	<dashboard-social-purchase user = { user } project = { project }></dashboard-social-purchase>
 	<dashboard-edit-profile user = { user } project = { project }></dashboard-edit-profile>
 	<dashboard-edit-reward user = { user } project = { project }></dashboard-edit-reward>
+	<dashboard-refresh-content user = { user } project = { project }></dashboard-refresh-content>
     <global-footer></global-footer> 
 <script>
 	this.projectNum = 0;
@@ -72,7 +74,6 @@
 			if(res && res.data)
 			{
 				this.projects = res.data;
-				console.log(this.projects);
 				this.setProject(res.data[0]);
 			}
 		});

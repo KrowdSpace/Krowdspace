@@ -5,38 +5,33 @@
             <p class="dashboard-text-alt description-text">{ projectDescription }</p>
         </div>
         <div class="col-sm-8 no-gutter text-center">
-            <div class="col-sm-4 feature-box">
-            <a href="#purchase-featured" class="modal-link" data-toggle="modal">
-            <img class="img-responsive banner" src="/img/content/featured-project-icon.jpg"/>
-            <span class="fa-stack fa-lg social-btn feature-hover-icon">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-            </span>
-            <div class="dashboard-text feature-hover"></div>
-            </a>
-            <p class="dashboard-text-alt">Featured Project</p>
+            <div class="col-sm-4 text-center feature-box">
+                <div style="position: relative;">
+                <a href="#purchase-featured" class="modal-link" data-toggle="modal">
+                    <img class="img-responsive feature-buy" src="/img/content/featured-purchase.jpg"/>
+                    <div class="filter-background">
+                        <p class="featured-text-buy">FEATURED ICON</p>
+                    </div>
+                </a>
+                </div>
             </div>
             <div class="col-sm-4 feature-box">
+                <div style="position: relative;">
             <a href="#purchase-explore" class="modal-link" data-toggle="modal">
-            <img class="img-responsive banner" src="/img/content/featured-slider-icon.jpg"/>
-            <span class="fa-stack fa-lg social-btn feature-hover-icon">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-            </span>
-            <div class="dashboard-text feature-hover"></div>
-            </a>
-            <p class="dashboard-text-alt">Featured Explore Banner</p>
+            <img class="img-responsive feature-buy" src="/img/content/explore-purchase.jpg"/>
+            <div class="filter-background">
+                <p class="featured-text-buy">EXPLORE BANNER</p>
+            </div>
+            </div><a/>
             </div>
             <div class="col-sm-4 feature-box">
+                <div style="position: relative;">
                 <a href="#purchase-landing" class="modal-link" data-toggle="modal">
-            <img class="img-responsive banner" src="/img/content/featured-landing-icon.jpg"/>
-            <span class="fa-stack fa-lg social-btn feature-hover-icon">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
-            </span>
-            <div class="dashboard-text feature-hover"></div>
-            <a/>
-            <p class="dashboard-text-alt">Landing Page Banner</p>
+            <img class="img-responsive feature-buy" src="/img/content/landing-purchase.jpg"/>
+            <div class="filter-background">
+                <p class="featured-text-buy">LANDING BANNER</p>
+            </div>
+            </div><a/>
             </div>
         </div>
     </div>
