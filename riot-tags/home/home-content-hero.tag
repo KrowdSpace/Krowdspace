@@ -6,7 +6,7 @@
                     <h1 class="header-title hidden-xs">Back the Project, not the Platform</h1>
                     <div class="container-top-header">
                         <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p>
-                        <p style="margin-bottom: 40px;">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p>
+                        <p class="hero-text">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p>
                         <a href="#modal-global-login" data-toggle="modal" class="btn-landing shadow">Submit a Project</a>
                     </div>
                 </div>
@@ -14,11 +14,11 @@
                     <div class="shadow">
                         <form ref="registerform" onsubmit={ submit }>
                             <div class="col-sm-12 register-container text-left">
-                                <p class="text-left landing-text" style="margin-bottom: 15px;">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
-                                <div class="form-group form-split-right" style="margin-top: 0px">
+                                <p class="text-left landing-text cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
+                                <div class="form-group form-split-right">
                                     <input type="text" ref="firstname" class="form-control" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
-                                <div class="form-group form-split-left" style="margin-top: 0px">
+                                <div class="form-group form-split-left">
                                     <input type="text" ref="lastname" class="form-control" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="form-group">
@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     <input type="text" ref="indiegogo" class="form-control" placeholder="Indiegogo Username (Optional)">
                                 </div>
-                                <div class="check-terms checkbox" style="margin-top: 15px;">
+                                <div class="check-terms checkbox">
                                     <label>
                                     <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a>
                                     </label>
@@ -57,13 +57,11 @@
         </div>
     </header>
     <script>
-        // --- Register Submit --- //
-        		
         submit(e)
         {
         	e.preventDefault();
         	
-        	var FNAME = this.refs.firstname.value,
+        	let FNAME = this.refs.firstname.value,
         		LNAME = this.refs.lastname.value,
         		EMAIL = this.refs.email.value,
         	    USERNAME = this.refs.username.value,
@@ -80,12 +78,9 @@
         	},
         	(err) => 
         	{
-        		console.log(err);
+        		
         	});
         }    
-        		
-        // --- Show and Hide Password --- //		
-        
         this.on('mount', function() 
         {
         	function show() 

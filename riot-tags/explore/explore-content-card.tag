@@ -13,7 +13,7 @@
                 </span>
                 <div style="height: 70px; ">
                     <p class="card-text-alt">{ exploreCard.ExploreCard.data.title }</p>
-                <p class="card-text-alt explore-"reward"" style="padding-top: 5px;">Reward: { exploreCard.ExploreCard.data.reward }</p>
+                <p class="card-text-alt">Reward: { exploreCard.ExploreCard.data.reward }</p>
                 </div>
                 <div class="col-sm-5 text-left">
                     <p class="card-text-alt" style="margin-right: 0px;">${ exploreCard.ExploreCard.data.backed } Raised</p>

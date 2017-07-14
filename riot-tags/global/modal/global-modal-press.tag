@@ -1,39 +1,113 @@
 <global-modal-press>
     <div id="modal-press-kit" class="modal container fade">
-        <div class="krowdspace-modal col-sm-10 col-sm-offset-1">
-            <div id="modal" class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"><i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i></button>
-                    <p class="modal-heading">Press Kit</p>
-                </div>
-                <div class="modal-body">
-                    <p>If you would like to use one of our branded logo images and have not submitted a project to Krowdspace please contact us. If you have a project submitted on Krowdspace we ask that you put the "Featured on Krowdspace" banner with a link to our website somewhere on your crowdfunding project content page. If you need help adding the image and the hyperlink please follow the instructions below.</p>
-                    <p>To put the "Featured on Krowdspace" banner into your project save the image to your desktop and then import it onto your project page. Click on the image and you can then add the hyperlink "www.krowdspace.com". We have saved our images as .svg files so you will need to set the width of the images using CSS. The top image is full width with a white background and the bottom picture has a transparent background.</p>
-                    <div class="row text-center" style="margin-top: 30px; margin-bottom: 30px;">
-                            <img src="img/press/featured-krowdspace-v1.png" alt="Featured on Krowdspace" style="width: 675px;">
-                            <div>
-                                <img src="img/press/featured-krowdspace-v3.png" alt="Featured on Krowdspace" style="margin-top: 10px; margin-right: 48px; width: 68px;">
-                                <img src="img/press/featured-krowdspace-v2.png" alt="Featured on Krowdspace" style="margin-top: 10px; width: 410px;">
-                            </div>
+        <div class="krowdspace-modal col-lg-offset-1 col-md-10">
+            <div id="modal">
+                <div class="modal-body modal-purchase no-gutter">
+                    <div class="col-sm-5 press-left">
+                        <p class="modal-heading">KROWDSPACE PRESS KIT</p>
+                        <p class="press-text">Our logo is our identity so please treat it with respect. Please do not alter the Krowdspace logo in any form unless given permission by our staff.</p> 
+                        <p class="press-text">If you are a project owner please download one of our logos, icons or banners and place it on your crowdfunding project. We verify every project that is submitted to Krowdspace by checking for a hyperlink back to our site. Make sure the image is visible and uses the below url. </p>
+                        <p class="press-text">https://www.Krowdspace.com</p>
+                         <p class="press-text">We appreciate your understanding and look forward to seeing your project on Krowdspace.</p>
                     </div>
-                    <p class="text-center">If you have any questions please feel free to to reach out to us directly!</p>
-                    <div class="text-center">
-                        <button type="button" class="text-center modal-close" data-dismiss="modal">Close</button>
+                    <div class="col-sm-7 press-right">
+                        <p class="modal-heading logo-push">KROWDSPACE LOGO</p>
+                        <div class="col-sm-3 text-center no-gutter press-box">
+                            <img class="press-img" src="img/press/krowdspace-icon-v1.svg">
+                            <div class="col-sm-6 press-download-left">
+                                <a href="img/press/krowdspace-icon-v1.png" download>
+                                <p class="download-font">PNG</p>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="img/press/krowdspace-icon-v1.svg" download>
+                                    <p class="download-font">SVG</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center no-gutter press-box">
+                            <div class="checker press-img no-gutter">
+                                <img src="img/press/krowdspace-icon-v2.svg">
+                            </div>
+                                <div class="col-sm-6 press-download-left">
+                                    <a href="img/press/krowdspace-icon-v2.png" download>
+                                    <p class="download-font">PNG</p>
+                                    </a>
+                                </div>
+                            <div class="col-sm-6">
+                                <a href="img/press/krowdspace-icon-v2.svg" download>
+                                    <p class="download-font">SVG</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center no-gutter press-box">
+                            <img class="press-img" src="img/press/krowdspace-icon-v3.svg">
+                            <div class="col-sm-6 press-download-left">
+                                <a href="img/press/krowdspace-icon-v3.png" download>
+                                <p class="download-font">PNG</p>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="img/press/krowdspace-icon-v3.svg" download>
+                                    <p class="download-font">SVG</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-center no-gutter press-box">
+                            <img class="press-img" src="img/press/krowdspace-icon-v4.svg">
+                            <div class="col-sm-6 press-download-left">
+                                <a href="img/press/krowdspace-icon-v4.png" download>
+                                <p class="download-font">PNG</p>
+                                </a>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="img/press/krowdspace-icon-v4.svg" download>
+                                    <p class="download-font">SVG</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 no-gutter press-box">
+                            <img class="press-img" src="img/press/krowdspace-icon-v6.svg">
+                            <div class="col-sm-6 text-right press-download-left">
+                                <a href="img/press/krowdspace-icon-v6.png" download>
+                                <p class="download-font" style="padding-right: 5px; display: inline-block;">PNG</p>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <a href="img/press/krowdspace-icon-v6.svg" download>
+                                    <p class="download-font" style="padding-left: 4px; display: inline-block;">SVG</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 no-gutter press-box">
+                            <img class="press-img" src="img/press/krowdspace-icon-v7.svg">
+                            <div class="col-sm-6 text-right press-download-left">
+                                <a href="img/press/krowdspace-icon-v7.png" download>
+                                <p class="download-font" style="padding-right: 5px; display: inline-block;">PNG</p>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <a href="img/press/krowdspace-icon-v7.svg" download>
+                                    <p class="download-font" style="padding-left: 4px; display: inline-block;">SVG</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 no-gutter press-box">
+                            <img class="press-img" src="img/press/krowdspace-icon-v5.svg">
+                            <div class="col-sm-6 text-right press-download-left">
+                                <a href="img/press/krowdspace-icon-v5.png" download>
+                                <p class="download-font" style="padding-right: 5px; display: inline-block;">PNG</p>
+                                </a>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <a href="img/press/krowdspace-icon-v5.svg" download>
+                                    <p class="download-font" style="padding-left: 4px; display: inline-block;">SVG</p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="background-modal-close" data-dismiss="modal"> </div>
     </div>
-    <script>
-        this.on('mount', function() 
-        {
-			var url = window.location.href;
-			if (url.indexOf('?press-kit=1') != -1) 
-            {
-				$("#modal-press-kit").modal('show');
-				$('#modal-press-kit').fadeIn(100);
-			};
-        });
-    </script>
 </global-modal-press>

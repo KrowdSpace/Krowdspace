@@ -21,6 +21,9 @@ p {
     font-size: 14px;
     line-height: 1.5;
 }
+.text-reset {
+    margin: 0px;
+}
 a,
 a:hover,
 a:focus,
@@ -50,6 +53,18 @@ h6 {
 }
 h1 {
     font-size: 30px;
+}
+.home-section {
+    padding: 75px 0px;
+}
+.home-top {
+    padding-top: 75px
+}
+.home-bottom {
+    padding-bottom: 75px
+}
+.time-bottom {
+    padding-bottom:50px;
 }
 .navbar-custom {
     background-color: rgba(0, 0, 0, .9);
@@ -447,6 +462,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .price-box {
     background-color: #323031;
     padding: 20px 0px 30px 0px;
+    margin: 0px 20px;
 }
 .footer-text {
     font-family: "Montserrat-Bold", sans-serif;
@@ -507,7 +523,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .btn-landing {
     font-family: "Montserrat-Bold", sans-serif;
     border-radius: 3px;
-    padding: 8px 14px;
+    padding: 9px;
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 700;
@@ -535,7 +551,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .edit-user-box {
     background: #fff; 
     padding: 20px; 
-    border:3px solid #fed136;
+    border:2px solid #fed136;
 }
 .register-container {
     padding: 5px 20px 10px 20px;
@@ -546,22 +562,48 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .register-container-modal {
     padding: 5px 20px 10px 20px;
     background: white;
-    border: 3px solid #fed136;
+    border: 2px solid #fed136;
     border-bottom: none;
 }
 .purchase-container-left {
     background: white;
     padding: 20px !important;
+    border: 2px solid #fed136;
     border-right: 1px solid #ccc;
+}
+.press-left {
+    background: white;
+    padding: 20px !important;
+    border: 2px solid #fed136;
+    border-right: 1px solid #ccc;
+}
+.reward-examples {
+    padding-left: 20px;
+}
+.purchase-price-box {
+    padding-top: 25px; 
+    padding-bottom: 20px;
 }
 .purchase-container-right {
     background: white;
+    border: 2px solid #fed136;
+    border-left: none;
+}
+.press-right {
+    background: white;
+    padding: 20px !important;
+    border: 2px solid #fed136;
+    border-left: none;
 }
 .landing-text {
     margin-top: 10px;
     color: #3f434f;
 }
+.loginbox {
+    padding-left: 0px;
+}
 .check-terms {
+    margin-top: 15px;
     font-size: 14px;
     color: #3f434f;
 }
@@ -589,12 +631,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     background: #fec503;
 }
 .alt-border {
-    border-left: 3px solid #fed136;
-    border-right: 3px solid #fed136;
+    border-left: 2px solid #fed136;
+    border-right: 2px solid #fed136;
 }
 .alt-border:hover {
-    border-left: 3px solid #fec503;
-    border-right: 3px solid #fec503;
+    border-left: 2px solid #fec503;
+    border-right: 2px solid #fec503;
 }
 .shadow {
     -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
@@ -650,14 +692,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .about-heading,
 .modal-text {
     line-height: 1;
-    color: #323031;
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 .giveaway-winner {
     line-height: 1;
-    color: #323031;
     padding: 20px 0px 0px 0px;
     width: 50%;
     float: left;
@@ -812,15 +852,17 @@ padding: 15px;
     outline: none;
     color: #fed136;
 }
-.privacy-title {
-    font-family: "Montserrat-Bold", sans-serif;
-    padding: 10px 0px;
-    line-height: 1;
-    color: #323031;
+.featured-title {
     font-size: 15px;
-    font-weight: 700;
+}
+.privacy-title {
+    font-size: 15px;
+    margin-top: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+.legal-text {
+    margin-top: 20px;
 }
 .social-btn {
     color: #fed136;
@@ -857,6 +899,7 @@ padding: 15px;
     color: #333;
     background-color: #ffe58f;
     padding: 0px 3px;
+    cursor: pointer;
 }
 .home-links:hover {
     color: #333;
@@ -954,7 +997,7 @@ padding: 15px;
     padding-right: 0px;
 }
 .explore-feature-right {
-    margin-top: 265px;
+    margin-top: 275px;
     padding: 0px;
 }
 .explore-box-text {
@@ -1129,6 +1172,12 @@ div.explore-project h1 {
 div.explore-project figcaption {
     font-size: 13px;
     text-align: center;
+}
+.center-icon {
+    padding-left: 3px;
+}
+.social-padding {
+    padding: 0px;
 }
 .indiegogo-image {
     height: 290px; 
@@ -1371,7 +1420,7 @@ div.explore-project figcaption {
     padding-top: 10px;
 }
 .couponcode-box {
-    border: 3px solid #fed136; 
+    border: 2px solid #fed136; 
     margin: 18px auto; 
     width: 300px;
 }
@@ -1413,7 +1462,7 @@ div.explore-project figcaption {
     border: 1px solid #3f434f; 
 }
 .reward-text {
-    height: 20px;
+    height: 35px;
 }
 .float-btn {
     position: absolute !important; 
@@ -1436,6 +1485,12 @@ div.explore-project figcaption {
     right: 2px; 
     bottom: 2px; 
     background-color: rgba(0, 0, 0, .3);
+}
+.featured-text-box {
+    padding-top: 15px;
+}
+.featured-image-box {
+    padding: 30px 40px 20px 20px;
 }
 .featured-text-buy {
     position: absolute; 
@@ -1471,6 +1526,12 @@ div.explore-project figcaption {
     padding: 4px 0px; 
     width: 100%;
 }
+.faq-box-left {
+    padding-right: 40px;
+}
+.faq-box-right {
+    padding-left: 40px;
+}
 .faq-container {
     border: 1px solid #ccc; 
     position: relative; 
@@ -1486,16 +1547,20 @@ div.explore-project figcaption {
     padding: 6px 20px;
 }
 .answer-text {
-    margin: 25px 20px 15px 20px;
+    margin: 15px;
 }
 .plus-icon {
     float:right; 
     background: #fed136; 
     color: #fff;
     padding: 9px 11px; 
+    cursor: pointer;
     position: absolute; 
     top: 0; 
     right: 0;
+}
+.plus-icon:hover {
+    background: #fec503; 
 }
 .forgot-pass {
     color: #333;
@@ -1547,4 +1612,69 @@ div.explore-project figcaption {
 }
 .submit-purchase {
     margin-top: 20px;
+}
+.modal {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+.checker {
+  background-color: #8C8C8C;
+  background-image: -webkit-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB), -webkit-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB);
+  background-image: -moz-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB), -moz-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB);
+  background-image: -o-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB), -o-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB);
+  background-image: -ms-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB), -ms-linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB);
+  background-image: linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB), linear-gradient(45deg, #CBCBCB 25%, transparent 25%, transparent 75%, #CBCBCB 75%, #CBCBCB);
+  -webkit-background-size:10px 10px;
+  -moz-background-size:10px 10px;
+  background-size:10px 10px;
+  background-position:0 0, 25px 25px;
+}
+.press-box {
+    padding: 0px 20px;
+}
+.press-img {
+    margin: 10px 0px;
+}
+.press-text {
+    margin-top: 20px;
+}
+.press-download-left {
+    border-right: 1px solid #ccc;
+}
+.download-font {
+    font-size: 13px; 
+    margin: 0px;
+    color: #3f434f;
+}
+.download-font:hover {
+    font-size: 13px; 
+    margin: 0px;
+    color: #fed136;
+}
+.logo-size {
+    width:55px;
+}
+.logo-push {
+    margin-bottom: 15px;
+}
+.home-slider-box {
+    border-right: 1px solid #3f434f; 
+    border-left: 1px solid #3f434f;
+}
+.slider-left-box {
+    position: relative; 
+    height: 301px;
+}
+.user-home-box {
+    margin: 0px 0px 50px 0px;
+}
+.cta-header {
+    margin-bottom: 15px;
+}
+.hero-text {
+    margin-bottom: 40px;
 }

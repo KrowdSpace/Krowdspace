@@ -20,7 +20,7 @@
                         <input type="password" class="form-control" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-lock form-control-feedback"></span>
                     </div>
-                    <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;">
+                    <div class="col-xs-6 loginbox checkbox text-left">
                         <label>
                             <input type="checkbox" id="checkbox" name="remember" onchange={ remember }>Remember Me
                         </label>
