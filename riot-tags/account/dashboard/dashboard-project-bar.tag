@@ -2,10 +2,10 @@
     <div class="dash-bar col-sm-12 no-gutter" >
         <div class="col-sm-3 text-center divider-inside-right">
             <a href="{ kickstarterShare }" target="_blank">
-                <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png" style="width:36px; margin-top: 2px;"/>
+                <img class="icon-share-bar filterdark" src="img/fav/kickstarter-icon.png"/>
             </a>
             <a href="/#/explore/project/{ krowdspacePage }"> 
-                <img class="icon-share filterdark" src="img/fav/krowdspace-share-icon.png" style="width:36px; margin-top: 2px;"/>
+                <img class="icon-share-bar filterdark" src="img/fav/krowdspace-share-icon.png"/>
             </a>
             <p class="dashboard-text-bar dash-divider">Live Project Links</p>
         </div>

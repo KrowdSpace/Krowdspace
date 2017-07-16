@@ -106,7 +106,7 @@
                         </li>
                     </ul>
                     <div class="text-center">
-                        <button type="button" class="text-center modal-close " data-dismiss="modal">Close</button>
+                        <button type="button" class="text-center modal-close" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

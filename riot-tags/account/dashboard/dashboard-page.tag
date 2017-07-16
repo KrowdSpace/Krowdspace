@@ -13,7 +13,7 @@
 				</a>
 			</div>
 			<global-logout show={ logged_in }></global-logout>
-			<div class="col-sm-10 col-sm-offset-1" style="padding: 0px;">
+			<div class="col-sm-10 col-sm-offset-1 project-container">
 				<div class="row dash-row no-gutter shadow">
 					<dashboard-project-image show={ project } project = { project }></dashboard-project-image>
 					<dashboard-user-image show={ !project } ></dashboard-user-image>

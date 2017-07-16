@@ -6,13 +6,13 @@
                <form id="rewardUpgrade" role="form" onsubmit={ submitReward }>
                   <div class="col-sm-12 edit-user-box">
                      <p class="modal-heading">Edit Reward Information</p>
-                     <p class="registration-text text-left edit-text-title" style="margin-top: 15px;">Updating your project reward will reset your project and it can take up to 24 hours to verify and publish on our Explore Page. If you wish to not edit your reward please close the popup window. </p>
+                     <p class="text-left edit-text-title" style="margin-top: 15px;">Updating your project reward will reset your project and it can take up to 24 hours to verify and publish on our Explore Page. If you wish to not edit your reward please close the popup window. </p>
                      <div class="form-group">
-                        <p class="registration-text text-left edit-text-title">Please provide an exclusive reward for our Krowdspace users.</p>
+                        <p class="text-left edit-text-title">Please provide an exclusive reward for our Krowdspace users.</p>
                         <input ref="rewardtext" class="form-control placeholder-color" value="{ rewardtext }" name="reward" aria-required="true" aria-invalid="true">
                      </div>
                      <div class="form-group">
-                        <p class="registration-text text-left edit-text-title">Does your reward have a value or is it a discount?</p>
+                        <p class="text-left edit-text-title">Does your reward have a value or is it a discount?</p>
                         <select ref="rewardoption" class="form-control" name="rewardOption">
                            <option disabled selected value>Choose an Option</option>
                            <option value="Yes">Reward has a Value</option>
@@ -20,7 +20,7 @@
                         </select>
                      </div>
                      <div class="form-group">
-                        <p class="registration-text text-left edit-text-title">Please estimate the value of your reward.</p>
+                        <p class="text-left edit-text-title">Please estimate the value of your reward.</p>
                         <input ref="rewardvalue" class="form-control placeholder-color" name="rewardAmount" value="{ rewardvalue }" aria-required="true" aria-invalid="true">
                      </div>
                   </div>

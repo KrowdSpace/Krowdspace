@@ -7,7 +7,7 @@
                     <div class="col-sm-12 text-left register-container-modal">
                     <p class="modal-heading modal-heading-alt">Forgot your Password?</p>
                     <p class="text-left landing-text" >Please enter your email address and we will send you instructions on how to reset your password.</p>
-                    <div class="has-feedback" style="margin-bottom: 10px; margin-top: 30px;">
+                    <div class="has-feedback email-box">
                         <label class="control-label" for="username"></label>
                         <input type="text" class="form-control" id="email" placeholder="Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-envelope form-control-feedback"></span>

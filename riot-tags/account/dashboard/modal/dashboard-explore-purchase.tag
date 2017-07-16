@@ -50,7 +50,6 @@
 
         let userRes = {data: opts.user}
             projRes = {data: [opts.project]};
-
         this.setUserDeets(userRes, projRes);
 
     }; 
@@ -67,7 +66,7 @@
                         explore : true,
                     }
                 }
-        };
+            };
 
         this.setProjDeets(project, projectData);
     }

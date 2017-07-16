@@ -1,29 +1,9 @@
 <home-slider-projects>
     <style type="text/css">
-        .slider {
-        width: 100%;
-        position: relative;
-        margin: 0px auto;
-        }
-        .slick-slide {
-        margin: 0px;
-        }
-        .slick-slide span,
-        .slick-slide .learn-more {
-        display: none;   
-        }
-        .slick-current span,
-        .slick-current .learn-more {
-        display: inline;       
-        }
         .slick-slide img {
         border-top: 1px solid #3f434f;
         border-bottom: 1px solid #3f434f;
         width: 550px;
-        }
-        .slick-prev:before,
-        .slick-next:before {
-        color: black;
         }
     </style>
     <div class="row home-slider-box">
@@ -102,7 +82,8 @@
                     },
                 };
         
-            FilterExplore.push(newObject, newObject2);
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse(); 
             this.ExploreBannerFilter = FilterExplore;
             this.update();
         

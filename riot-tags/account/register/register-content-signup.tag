@@ -50,7 +50,7 @@
                 <fieldset id="reward_information">
                     <div class="form-group col-sm-12">
                         <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p>
-                        <input ref="rewardtext" class="form-control" name="reward" maxlength="100" placeholder="See Sample Rewards Below ( Max Character 100 )">
+                        <input ref="rewardtext" class="form-control" name="reward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
                     </div>
                     <div class="form-group col-sm-12">
                         <p class="text-left registration-text">Does your reward have a value or is it a discount?</p>
@@ -100,7 +100,6 @@
                         </div>
                     </div>
                     <div class="register-controls" >
-                        
                         <div class="col-lg-offset-3 col-lg-6">
                             <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p>
                             <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p>
@@ -127,7 +126,7 @@
                 REWARDVALUE = this.refs.rewardoption.value,
                 IGREWARD = 'test',
                 REWARDAMOUNT = this.refs.rewardvalue.value;
-    
+        
             let DATA = {
                         PVALID,
                         CATEGORY,
@@ -151,8 +150,8 @@
                 console.log(err);
                 });
         }
-
-    this.on('mount', function() 
+        
+        this.on('mount', function() 
         {
         	$(".next").click(function(){
         		var form = $("#registerProjectForm");

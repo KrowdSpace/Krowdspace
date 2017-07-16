@@ -12,12 +12,12 @@
                     </div>
                     <div class="has-feedback">
                         <label class="control-label" for="username"></label>
-                        <input type="text" class="form-control" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off">
                         <span class="fa fa-user form-control-feedback"></span>
                     </div>
                     <div class="has-feedback">
                         <label class="control-label" for="password"></label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off">
                         <span class="fa fa-lock form-control-feedback"></span>
                     </div>
                     <div class="col-xs-6 loginbox checkbox text-left">
@@ -41,9 +41,17 @@
       </div>
    </div>
 <script>
+
+let test = false;
+remember() 
+{
+    test = !test;
+    console.log(test);
+}
+
 loginSubmit(e) 
 {
-	
+
 	e.preventDefault();
 
 	let USERNAME = this.refs.usernamelogin.value,
@@ -73,14 +81,6 @@ registerPassword()
 {
 	$('#modal-global-login').modal('hide');
     $('#modal-password').modal('show');
-}
-
-let STAYLOGGED = false;
-
-remember() 
-{
-  STAYLOGGED = !STAYLOGGED;
-  console.log(STAYLOGGED);
 }
 </script>
 </global-modal-login>

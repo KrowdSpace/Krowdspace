@@ -9,7 +9,7 @@
             <p class="dashboard-text profile-name">{ firstname } { lastname }</p>
             <div show={ project }>
                 <div class="col-sm-4 text-center divider-inside-right user-stat-box">
-                        <p class="dashboard-user">Projects Launched</p>
+                        <p class="dashboard-user">Current Project</p>
                         <p class="social-metric">{ opts.index }</p>
                 </div>
                 <div class="col-sm-4 text-center divider-inside-right user-stat-box">
@@ -74,7 +74,6 @@
         this.kickstarter = res.data.user_data.ksuser;
         this.indiegogo = res.data.user_data.iguser;
         this.username = res.data.username;
-        this.projectcount = '22';
         console.log(res);
     }
 

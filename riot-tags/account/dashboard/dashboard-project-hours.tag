@@ -45,8 +45,6 @@ this.on('update', ()=>
                 return daysMax;
         }
         
-        timer = setInterval(showRemaining, 1000);
-        
         let bar = null;
         
         if(!this.progBar)

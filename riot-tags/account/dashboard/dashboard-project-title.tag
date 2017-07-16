@@ -6,7 +6,7 @@
         </div>
         <div class="col-sm-8 no-gutter text-center">
             <div class="col-sm-4 text-center feature-box">
-                <div style="position: relative;">
+                <div class="purchase-view">
                 <a href="#purchase-featured" class="modal-link" data-toggle="modal">
                     <img class="img-responsive feature-buy" src="/img/content/featured-purchase.jpg"/>
                     <div class="filter-background">
@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="col-sm-4 feature-box">
-                <div style="position: relative;">
+                <div class="purchase-view">
             <a href="#purchase-explore" class="modal-link" data-toggle="modal">
             <img class="img-responsive feature-buy" src="/img/content/explore-purchase.jpg"/>
             <div class="filter-background">
@@ -25,7 +25,7 @@
             </div><a/>
             </div>
             <div class="col-sm-4 feature-box">
-                <div style="position: relative;">
+                <div class="purchase-view">
                 <a href="#purchase-landing" class="modal-link" data-toggle="modal">
             <img class="img-responsive feature-buy" src="/img/content/landing-purchase.jpg"/>
             <div class="filter-background">

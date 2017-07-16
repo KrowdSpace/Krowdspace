@@ -8,7 +8,7 @@
 				<div class="modal-body">
 					<p>Thank you for submitting your comment to Krowdspace. We will respond as quickly as possible. Please register with Krowdspace and get to know our new site!</p>
 					<p>We will be sending updates on the latest news, promotions and exclusive giveaways to all of our Krowdspace members. Until then, make sure to stay connected on our social media channels:</p>
-					<div class="col-sm-9 text-left boost-warning" style="padding: 0px;">
+					<div class="col-sm-9 text-left boost-warning">
 						<a href="https://www.facebook.com/Krowdspaced" target="_blank">
 						<span class="fa-stack fa fa-2x social-btn">
 						<i class="fa fa-circle fa-stack-2x" ></i>

@@ -1,22 +1,5 @@
 <dashboard-user-image>
 <style type="text/css">
-    .slider {
-        width: 100%;
-        position: relative;
-        margin: 0px auto;
-    }
-
-    .slick-slide {
-      margin: 0px;
-    }
-    .slick-slide span,
-    .slick-slide .learn-more {
-      display: none;   
-    }
-    .slick-current span,
-    .slick-current .learn-more {
-      display: inline;       
-    }
     .slick-slide img {
       width: 515px;
       overflow: hidden;
@@ -28,7 +11,7 @@
                 <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
                 <div class="explore-box">
                     <div class="col-sm-9">
-                        <div style="position: relative; height: 280px;">
+                        <div class="reward-slider-push">
                             <div class="explore-feature-left">
                                 <div class="dash-box-text">
                                     <span class="dash-user-title">{ name }</span>
@@ -74,7 +57,8 @@
                             }
                         },
                     };
-            FilterExplore.push(newObject);
+            FilterExplore.unshift(newObject);
+            FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 

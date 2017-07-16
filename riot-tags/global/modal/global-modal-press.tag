@@ -70,12 +70,12 @@
                             <img class="press-img" src="img/press/krowdspace-icon-v6.svg">
                             <div class="col-sm-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v6.png" download>
-                                <p class="download-font" style="padding-right: 5px; display: inline-block;">PNG</p>
+                                <p class="download-font png-left">PNG</p>
                                 </a>
                             </div>
                             <div class="col-sm-6 text-left">
                                 <a href="img/press/krowdspace-icon-v6.svg" download>
-                                    <p class="download-font" style="padding-left: 4px; display: inline-block;">SVG</p>
+                                    <p class="download-font svg-right">SVG</p>
                                 </a>
                             </div>
                         </div>
@@ -83,12 +83,12 @@
                             <img class="press-img" src="img/press/krowdspace-icon-v7.svg">
                             <div class="col-sm-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v7.png" download>
-                                <p class="download-font" style="padding-right: 5px; display: inline-block;">PNG</p>
+                                <p class="download-font png-left">PNG</p>
                                 </a>
                             </div>
                             <div class="col-sm-6 text-left">
                                 <a href="img/press/krowdspace-icon-v7.svg" download>
-                                    <p class="download-font" style="padding-left: 4px; display: inline-block;">SVG</p>
+                                    <p class="download-font svg-right">SVG</p>
                                 </a>
                             </div>
                         </div>
@@ -96,12 +96,12 @@
                             <img class="press-img" src="img/press/krowdspace-icon-v5.svg">
                             <div class="col-sm-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v5.png" download>
-                                <p class="download-font" style="padding-right: 5px; display: inline-block;">PNG</p>
+                                <p class="download-font png-left">PNG</p>
                                 </a>
                             </div>
                             <div class="col-sm-6 text-left">
                                 <a href="img/press/krowdspace-icon-v5.svg" download>
-                                    <p class="download-font" style="padding-left: 4px; display: inline-block;">SVG</p>
+                                    <p class="download-font svg-right">SVG</p>
                                 </a>
                             </div>
                         </div>
