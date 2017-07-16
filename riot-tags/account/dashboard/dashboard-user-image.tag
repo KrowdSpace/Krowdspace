@@ -37,19 +37,10 @@
             return (element.project_data.meta_data.landing === true);
         });
 
-<<<<<<< Updated upstream
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
                         project_data: 
-=======
-        let newObject={
-                    unique_id: 'project-feature-popup',
-                    name: '',
-                    project_data: 
-                    {
-                        web_data: 
->>>>>>> Stashed changes
                         {
                             mainImg: {
                                 content: '/img/projects/krowdspace-banner-1.jpg'
@@ -58,23 +49,11 @@
                                 content: '',
                             },
                         },
-<<<<<<< Updated upstream
                     };
             FilterExplore.unshift(newObject);
             FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
-=======
-                        info_data: 
-                        {
-                            reward: ''
-                        }
-                    },
-                };
-        FilterExplore.push(newObject);
-        this.ExploreBannerFilter = FilterExplore;
-        this.update();
->>>>>>> Stashed changes
 
         $('.single-item').slick
         ({

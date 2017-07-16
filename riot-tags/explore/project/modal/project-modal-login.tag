@@ -26,11 +26,7 @@
                         </label>
                     </div>
                     <div class="col-xs-6 checkbox text-right forgot-box">
-<<<<<<< Updated upstream
                         <a onclick= { registerPassword }><p class="forgot-pass">Forgot Password?</p></a>
-=======
-                        <a style="cursor: pointer;" onclick= { registerPassword }><p class="forgot-pass">Forgot Password?</p></a>
->>>>>>> Stashed changes
                     </div>
                   </div>
                   <div class="text-center">
@@ -44,7 +40,6 @@
          </div>
       </div>
     </div>
-<<<<<<< Updated upstream
 <script>            	   
 loginSubmit(e) 
 {
@@ -75,36 +70,4 @@ $('#modal-global-login').modal('hide');
 $('#modal-password').modal('show');
 }
 </script>
-=======
-    <script>            	   
-loginSubmit(e) 
-    {
-        e.preventDefault();
-
-        let USERNAME = this.refs.usernamelogin.value,
-            PASSWORD = this.refs.passwordlogin.value,
-            STAYLOGGED = true;
-
-        krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
-        {
-            this.logged_in = true;
-            this.update();
-            window.location.reload();
-        },(err) => 
-        {
-            $("#errorLog").show();
-        });
-    }
-registerModal() 
-{
-	$('#modal-global-login').modal('hide');
-    $('#modal-global-register').modal('show');
-}
-registerPassword() 
-{
-	$('#modal-global-login').modal('hide');
-    $('#modal-password').modal('show');
-}
-    </script>
->>>>>>> Stashed changes
 </project-modal-login>
