@@ -125,6 +125,7 @@
             // console.log(cat.includes( option ), cat, option);
             // console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
 
+
             if(option === "*")
             {
                 return ( filterText == '' || el.name.toLowerCase().includes( filterText ) );

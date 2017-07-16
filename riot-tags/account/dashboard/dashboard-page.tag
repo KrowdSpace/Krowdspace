@@ -6,8 +6,10 @@
 			<div class="shadow text-center project-add-container">
 				<p class="project-add-text">PROJECT</p>
 				<div each = {p, index in projects }>
+
 					<project-button onclick={ makeButtF(p) } project = { p }>{ project.unique_id }</project-button>
  				</div>
+
 				<a href="/#/account/register">
                 	<i class="fa fa-plus project-add-btn filterdark"></i>
 				</a>
@@ -15,6 +17,7 @@
 			<global-logout show={ logged_in }></global-logout>
 			<div class="col-sm-10 col-sm-offset-1 project-container">
 				<div class="row dash-row no-gutter shadow">
+        
 					<dashboard-project-image show={ project } project = { project }></dashboard-project-image>
 					<dashboard-user-image show={ !project } ></dashboard-user-image>
 					<dashboard-project-user index = { projectIndex + 1 } user = { user } project = { project }></dashboard-project-user>
@@ -47,6 +50,7 @@
 	this.projects = [];
 
 	this.project = null;
+	this.projectIndex = 0;
 	this.user = null;
 
 	this.userkey = "";
@@ -78,6 +82,7 @@
 				this.setProject(res.data[0]);
 			}
 		});
+	
 	});
 	setProject(proj)
 	{
