@@ -29,54 +29,68 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        krowdspace.projects.explore().then((res) =>
-        {
-            let ExploreBannerData = res.data,
-                FilterExplore = ExploreBannerData.filter((element) => {
-                return (element.project_data.meta_data.landing === true);
-            });
+<script type="text/javascript">
+    krowdspace.projects.explore().then((res) =>
+    {
+        let ExploreBannerData = res.data,
+            FilterExplore = ExploreBannerData.filter((element) => {
+            return (element.project_data.meta_data.landing === true);
+        });
 
+<<<<<<< Updated upstream
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
                         project_data: 
+=======
+        let newObject={
+                    unique_id: 'project-feature-popup',
+                    name: '',
+                    project_data: 
+                    {
+                        web_data: 
+>>>>>>> Stashed changes
                         {
-                            web_data: 
-                            {
-                                mainImg: {
-                                    content: '/img/projects/krowdspace-banner-1.jpg'
-                                },
-                                description: {
-                                    content: '',
-                                },
+                            mainImg: {
+                                content: '/img/projects/krowdspace-banner-1.jpg'
                             },
-                            info_data: 
-                            {
-                                reward: ''
-                            }
+                            description: {
+                                content: '',
+                            },
                         },
+<<<<<<< Updated upstream
                     };
             FilterExplore.unshift(newObject);
             FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
+=======
+                        info_data: 
+                        {
+                            reward: ''
+                        }
+                    },
+                };
+        FilterExplore.push(newObject);
+        this.ExploreBannerFilter = FilterExplore;
+        this.update();
+>>>>>>> Stashed changes
 
-            $('.single-item').slick
-            ({
-                arrows: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 8000,
-                centerMode: true,
-                variableWidth: true,
-            });
-        },
-        (err)=>
-        {
-            console.log(err)
+        $('.single-item').slick
+        ({
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 8000,
+            centerMode: true,
+            variableWidth: true,
         });
-    </script>
+    },
+    (err)=>
+    {
+        console.log(err)
+    });
+</script>
 </dashboard-user-image>	
 	

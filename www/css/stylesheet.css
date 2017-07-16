@@ -1636,6 +1636,9 @@ div.explore-project figcaption {
 .function-link {
     cursor: pointer;
 }
+.function-link:hover {
+    color: #fec503;
+}
 .btn-eye {
     background: #fff;
     border: 1px solid #ccc;
@@ -1646,8 +1649,6 @@ div.explore-project figcaption {
 .btn-eye.active,
 .btn-eye:active:focus {
     outline: none;
-    color: #fff;
-    background-color: #fed136;
 }
 .btn-eye:hover {
     color: #fff;

@@ -90,7 +90,7 @@ this.on('update', ()=>
         negativeCircleProgress = projectDays/projectTime - 1,
         circleProgress = Math.abs(negativeCircleProgress);
 
-        bar.text.style.fontFamily = '"Montserrat"';
+        bar.text.style.fontFamily = '"Montserrat-Bold"';
         bar.text.style.fontSize = '30px';
         bar.text.style.fontWeight = '600';
         bar.animate(circleProgress);  // Number from 0.0 to 1.0
