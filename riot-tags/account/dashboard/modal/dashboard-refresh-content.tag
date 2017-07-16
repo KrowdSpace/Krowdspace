@@ -10,7 +10,7 @@
                      <p class="modal-purchase-text">If you would like to set this feature to auto update every 24 hours please check the box below and then press the update button</p>
                      <div class="check-terms checkbox">
                         <label>
-                        <input type="checkbox" id="terms" ref="refresh" value="{ refreshContent}"/><span class="modal-purchase-text">Refresh Automatically Every 24 Hours</span>
+                        <input type="checkbox" id="terms" ref="checkbox"/><span class="modal-purchase-text">Refresh Automatically Every 24 Hours</span>
                         </label>
                      </div>
                   </div>
@@ -56,7 +56,7 @@
                    {
                        meta_data: 
                        {
-                           refresh : this.refs.refresh.value,
+                           refresh : this.refs.checkbox.checked,
                        }
                    }
            };

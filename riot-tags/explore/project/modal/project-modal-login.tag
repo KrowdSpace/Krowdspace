@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-xs-6 checkbox loginbox text-left">
                         <label>
-                            <input type="checkbox" id="checkbox">Remember Me
+                            <input type="checkbox" ref="checkbox" id="checkbox">Remember Me
                         </label>
                     </div>
                     <div class="col-xs-6 checkbox text-right forgot-box">
@@ -47,7 +47,7 @@ loginSubmit(e)
 
     let USERNAME = this.refs.usernamelogin.value,
         PASSWORD = this.refs.passwordlogin.value,
-        STAYLOGGED = true;
+        STAYLOGGED = this.refs.checkbox.checked;
 
     krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) => 
     {

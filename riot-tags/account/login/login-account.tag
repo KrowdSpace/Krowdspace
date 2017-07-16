@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;">
                         <label>
-                            <input type="checkbox" id="checkbox">Remember Me
+                            <input type="checkbox" ref="checkbox" id="checkbox">Remember Me
                         </label>
                     </div>
                     <div class="col-xs-6 checkbox text-right forgot-box">
@@ -48,11 +48,8 @@
 
             var USERNAME = this.refs.usernamelogin.value,
                 PASSWORD = this.refs.passwordlogin.value;
-                STAYLOGGED = true;
+                STAYLOGGED = this.refs.checkbox.checked;
 
-            console.log(USERNAME);
-            console.log(PASSWORD);
-    
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res)=>
 	{
 		this.logged_in = true;

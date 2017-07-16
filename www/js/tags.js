@@ -107,23 +107,8 @@ this.on('update', ()=>
         let endTime = res.data[0].project_data.web_data.hours['data-end_time'],
             projectTime = res.data[0].project_data.web_data.hours['data-duration'],
             end = new Date(endTime),
-            _second = 1000,
-            _minute = _second * 60,
-            _hour = _minute * 60,
-            _day = _hour * 24,
-            timer;
-
-        function showRemaining()
-        {
-            let now = new Date(),
-                distance = end - now,
-                days = Math.floor(distance / _day),
-                hours = Math.floor((distance % _day) / _hour),
-                minutes = Math.floor((distance % _hour) / _minute),
-                seconds = Math.floor((distance % _minute) / _second);
-                daysMax = Math.max(0, days);
-                return daysMax;
-        }
+            remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
+            daysMax = Math.max(0, remaining);
 
         let bar = null;
 
@@ -166,7 +151,7 @@ this.on('update', ()=>
         else
             bar = this.progBar;
 
-    let projectDays = showRemaining(),
+    let projectDays = daysMax,
         negativeCircleProgress = projectDays/projectTime - 1,
         circleProgress = Math.abs(negativeCircleProgress);
 
@@ -175,8 +160,8 @@ this.on('update', ()=>
         bar.text.style.fontWeight = '600';
         bar.animate(circleProgress);
 
+        this.countdownTimer = Math.floor(daysMax) ;
         this.projectLength = res.data[0].project_data.web_data.hours['data-duration'];
-        this.countdownTimer = showRemaining();
 });
 
 });	
@@ -333,11 +318,18 @@ riot.tag2('dashboard-user-image', '<div class="col-sm-6 image-container"> <div c
                         name: '',
                         project_data:
                         {
-                            mainImg: {
+                            web_data:
+                            {
+                                mainImg: {
                                 content: '/img/projects/krowdspace-banner-1.jpg'
-                            },
+                                },
                             description: {
                                 content: '',
+                                },
+                            },
+                            info_data:
+                            {
+                                reward: '',
                             },
                         },
                     };
@@ -352,7 +344,7 @@ riot.tag2('dashboard-user-image', '<div class="col-sm-6 image-container"> <div c
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 8000,
+            autoplaySpeed: 5000,
             centerMode: true,
             variableWidth: true,
         });
@@ -621,7 +613,7 @@ riot.tag2('dashboard-landing-purchase', '<div id="purchase-landing" class="modal
         });
     }.bind(this)
 });
-riot.tag2('dashboard-refresh-content', '<div id="refresh-content" class="modal container fade"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body no-gutter"> <form id="submitRefresh" role="form" onsubmit="{submitRefresh}"> <div class="col-sm-12 edit-user-box"> <p class="modal-heading">Refresh Project Content</p> <p class="modal-purchase-text text-left edit-text-title" style="margin-top: 15px;">To refresh your project content please click the update button below. This will refresh any content changes as well as your project metric data.</p> <p class="modal-purchase-text">If you would like to set this feature to auto update every 24 hours please check the box below and then press the update button</p> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" ref="refresh" riot-value="{refreshContent}"><span class="modal-purchase-text">Refresh Automatically Every 24 Hours</span> </label> </div> </div> <div class="text-center"> <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit" value="Update" class="btn-register"> </div> </form> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('dashboard-refresh-content', '<div id="refresh-content" class="modal container fade"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body no-gutter"> <form id="submitRefresh" role="form" onsubmit="{submitRefresh}"> <div class="col-sm-12 edit-user-box"> <p class="modal-heading">Refresh Project Content</p> <p class="modal-purchase-text text-left edit-text-title" style="margin-top: 15px;">To refresh your project content please click the update button below. This will refresh any content changes as well as your project metric data.</p> <p class="modal-purchase-text">If you would like to set this feature to auto update every 24 hours please check the box below and then press the update button</p> <div class="check-terms checkbox"> <label> <input type="checkbox" id="terms" ref="checkbox"><span class="modal-purchase-text">Refresh Automatically Every 24 Hours</span> </label> </div> </div> <div class="text-center"> <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit" value="Update" class="btn-register"> </div> </form> </div> </div> </div> </div>', '', '', function(opts) {
       this.on('update', ()=>
        {
            if(!opts.project)
@@ -655,7 +647,7 @@ riot.tag2('dashboard-refresh-content', '<div id="refresh-content" class="modal c
                    {
                        meta_data:
                        {
-                           refresh : this.refs.refresh.value,
+                           refresh : this.refs.checkbox.checked,
                        }
                    }
            };
@@ -722,7 +714,7 @@ riot.tag2('dashboard-social-purchase', '<div id="purchase-social" class="modal c
 riot.tag2('project-button', '<div class="project-btn filterdark"> <yield></yield> </div>', '', '', function(opts) {
 		this.project = opts.project;
 });
-riot.tag2('login-account', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control" id="username" name="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control" id="password" name="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a style="cursor: pointer;" onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('login-account', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control" id="username" name="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control" id="password" name="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;"> <label> <input type="checkbox" ref="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a style="cursor: pointer;" onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
         this.loginSubmit = function(e)
         {
 
@@ -730,10 +722,7 @@ riot.tag2('login-account', '<div class="container login-check-container"> <div c
 
             var USERNAME = this.refs.usernamelogin.value,
                 PASSWORD = this.refs.passwordlogin.value;
-                STAYLOGGED = true;
-
-            console.log(USERNAME);
-            console.log(PASSWORD);
+                STAYLOGGED = this.refs.checkbox.checked;
 
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res)=>
 	{
@@ -920,7 +909,7 @@ riot.tag2('register', '<register-page show="{logged_in}"></register-page>', 'reg
 			window.location.replace("/#/account/login");
 		});
 });
-riot.tag2('resource-content', '<div class="col-sm-12 text-center resource-background shadow"> <h2>Submit Your Project for Media Coverage</h2> <div class="col-sm-4"> <p><a href="https://techcrunch.com/got-a-tip/" target="_blank">Tech Crunch</a></p> <p><a href="https://arstechnica.com/contact-us/" target="_blank">Ars Technica</a></p> <p><a href="http://www.vox.com/contact" target="_blank">Vox</a></p> <p><a href="http://www.theverge.com/tip-us" target="_blank">The Verge</a></p> <p><a href="https://www.cnet.com/contact/" target="_blank">CNET</a></p> </div> <div class="col-sm-4"> <p><a href="https://www.engadget.com/about/tips/" target="_blank">Engadget</a></p> <p><a href="http://mashable.com/submit/" target="_blank">Mashable</a></p> <p><a href="https://fstoppers.com/contact" target="_blank">Fstopper</a></p> <p><a href="http://www.coolhunting.com/contact.php" target="_blank">Cool Hunting</a></p> </div> <div class="col-sm-4"> <p><a href="http://www.purch.com/about/#contact-press" target="_blank">Toms Guide</a></p> <p><a href="http://help.wsj.com/contact-us/?mod=WSJ_footer" target="_blank">The Wall Street Journal</a></p> <p><a href="http://feedbackforms.usatoday.com/marketing/feedback/feedback-online.aspx?type=12" target="_blank">USA Today</a></p> <p><a href="http://www.latimes.com/about/mediagroup/la-mediagroup-contactus,0,7698150.htmlstory" target="_blank">Los Angeles Times</a></p> </div> <h2>Example Press Release</h2> </div>', '', '', function(opts) {
+riot.tag2('resource-content', '<div class="col-sm-12 text-left resource-background shadow"> <p class="modal-heading">Crowdfunding Resources</p> <p class="legal-text">Submitting a project to Krowdspace is just the first step to having a successful campaign. We have provided some extra tools that are completly free for all Krowdspace members and will guide you in the right direction. an example Press Release to send to media contacts and also a list of websites to submit your campaign.</p> <p class="privacy-title">Submit Your Project for Media Coverage</p> <div class="row"> <div class="col-sm-3"> <p style="position: relative; padding-left: 15px;"><span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-check fa-stack-1x fa-inverse"></i> </span> <a href="https://techcrunch.com/got-a-tip/" target="_blank">Tech Crunch</a></p> <p><a href="https://arstechnica.com/contact-us/" target="_blank">Ars Technica</a></p> <p><a href="http://www.vox.com/contact" target="_blank">Vox</a></p> <p><a href="http://www.theverge.com/tip-us" target="_blank">The Verge</a></p> <p><a href="https://www.cnet.com/contact/" target="_blank">CNET</a></p> </div> <div class="col-sm-3"> <p><a href="https://www.engadget.com/about/tips/" target="_blank">Engadget</a></p> <p><a href="http://mashable.com/submit/" target="_blank">Mashable</a></p> <p><a href="https://fstoppers.com/contact" target="_blank">Fstopper</a></p> <p><a href="http://www.coolhunting.com/contact.php" target="_blank">Cool Hunting</a></p> </div> <div class="col-sm-3"> <p><a href="http://www.purch.com/about/#contact-press" target="_blank">Toms Guide</a></p> <p><a href="http://help.wsj.com/contact-us/?mod=WSJ_footer" target="_blank">The Wall Street Journal</a></p> <p><a href="http://feedbackforms.usatoday.com/marketing/feedback/feedback-online.aspx?type=12" target="_blank">USA Today</a></p> <p><a href="http://www.latimes.com/about/mediagroup/la-mediagroup-contactus,0,7698150.htmlstory" target="_blank">Los Angeles Times</a></p> </div> </div> <p class="privacy-title">Example Press Release</p> </div>', '', '', function(opts) {
 });
 riot.tag2('resource-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{opts.uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1 project-container"> <div class="row dash-row no-gutter"> <resource-content></resource-content> </div> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
 });
@@ -1189,7 +1178,7 @@ riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <
 
 riot.tag2('explore', '<explore-page></explore-page>', 'explore,[data-is="explore"]{ background-color: #fff }', '', function(opts) {
 });
-riot.tag2('project-modal-login', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox loginbox text-left"> <label> <input type="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('project-modal-login', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox loginbox text-left"> <label> <input type="checkbox" ref="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
 
 this.loginSubmit = function(e)
 {
@@ -1197,7 +1186,7 @@ this.loginSubmit = function(e)
 
     let USERNAME = this.refs.usernamelogin.value,
         PASSWORD = this.refs.passwordlogin.value,
-        STAYLOGGED = true;
+        STAYLOGGED = this.refs.checkbox.checked;
 
     krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) =>
     {
@@ -1482,15 +1471,7 @@ riot.tag2('global-modal-feature', '<div id="modal-feature-info" class="modal con
 });
 riot.tag2('global-modal-giveaway', '<div id="modal-giveaway" class="modal container fade"> <div class="krowdspace-modal col-sm-6 col-sm-offset-3" style="margin-bottom: 0px;"> <div id="modal" class="modal-content text-center"> <div> <iframe style="width: 100%; height: 1150px; overflow: hidden;" src="https://gleam.io/XsDXo/krowdspace-party-pack-giveaway" frameborder="0" allowfullscreen></iframe> <p class="modal-heading">Previous Giveaways</p> <div class="giveaway-box text-left"> <p class="privacy-title">$50 Amazon Card - 04/01/17</p> <p class="privacy-title">$75 K POP Prize Package - 05/25/17</p> <p class="privacy-title">$60 Krowdspace Party Pack - 08/22/17</p> </div> </div> </div> </div> </div>', '', '', function(opts) {
 });
-riot.tag2('global-modal-login', '<div id="modal-global-login" class="modal container fade"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 loginbox checkbox text-left"> <label> <input type="checkbox" id="checkbox" name="remember" onchange="{remember}">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a style="cursor: pointer;" onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
-
-let test = false;
-this.remember = function()
-{
-    test = !test;
-    console.log(test);
-}.bind(this)
-
+riot.tag2('global-modal-login', '<div id="modal-global-login" class="modal container fade"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 loginbox checkbox text-left"> <label> <input type="checkbox" ref="checkbox" id="checkbox" name="remember">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a style="cursor: pointer;" onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
 this.loginSubmit = function(e)
 {
 
@@ -1498,7 +1479,7 @@ this.loginSubmit = function(e)
 
 	let USERNAME = this.refs.usernamelogin.value,
 	    PASSWORD = this.refs.passwordlogin.value,
-        STAYLOGGED = false;
+        STAYLOGGED = this.refs.checkbox.checked;
 
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then
 	((res) =>
@@ -1697,7 +1678,7 @@ krowdspace.v1.check().then((res)=>
     });
 });
 
-riot.tag2('home-slider-clients', '<aside class="hidden-sm hidden-xs"> <div class="container text-center"> <section class="center slider"> <div each="{indexClients}"> <a href="{imageURL}" target="_blank"><img riot-src="{image}" alt="{imageAlt}"></a> </div> </section> </div> </aside>', '', '', function(opts) {
+riot.tag2('home-slider-clients', '<aside class="hidden-sm hidden-xs"> <div class="container text-center"> <section class="center slider"> <div each="{indexClients}"> <a href="{imageURL}" target="_blank"><img riot-src="{image}" alt="{imageAlt}"></a> </div> </section> </div> </aside>', 'home-slider-clients .slick-slide img,[data-is="home-slider-clients"] .slick-slide img{ width: 100%; width: 150px; }', '', function(opts) {
         this.indexClients = [
         { image:"img/clients/digital-ocean-logo.png", imageURL:"https://m.do.co/c/0d0a3c0340d3", imageAlt:"Digital Ocean"},
         { image:"img/clients/ryanv-logo.png", imageURL:"http://ryanvillasanti.com", imageAlt:"Ryan Villasanti"},

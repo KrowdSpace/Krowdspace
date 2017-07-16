@@ -1,4 +1,10 @@
 <home-slider-clients>
+<style type="text/css">
+    .slick-slide img {
+    width: 100%;
+    width: 150px;
+}
+</style>
 	<aside class="hidden-sm hidden-xs">
 		<div class="container text-center">
 			<section class="center slider">

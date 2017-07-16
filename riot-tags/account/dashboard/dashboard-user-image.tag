@@ -42,11 +42,18 @@
                         name: '',
                         project_data: 
                         {
-                            mainImg: {
+                            web_data:
+                            {
+                                mainImg: {
                                 content: '/img/projects/krowdspace-banner-1.jpg'
-                            },
+                                },
                             description: {
                                 content: '',
+                                },
+                            },
+                            info_data: 
+                            {
+                                reward: '',
                             },
                         },
                     };
@@ -61,7 +68,7 @@
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 8000,
+            autoplaySpeed: 5000,
             centerMode: true,
             variableWidth: true,
         });
