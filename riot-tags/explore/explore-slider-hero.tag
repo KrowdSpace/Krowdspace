@@ -1,10 +1,17 @@
 <explore-slider-hero>
+    <style type="text/css">
+    .slick-slide img {
+      border-top: 1px solid #dcdedd;
+      border-bottom: 1px solid #dcdedd;
+      width: 550px;
+    }
+    </style>
     <div class="autoplay slider explore-header">
         <div class="explore-banner-box" each= { ExploreBannerFilter }>
             <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
             <div class="explore-box">
                 <div class="col-sm-9">
-                    <div style="position: relative; height: 301px;">
+                    <div class="slider-left-box">
                         <div class="explore-feature-left">
                             <div>
                             <span class="explore-title">{ name }</span>
@@ -16,7 +23,7 @@
                     </div>
                 </div>
                 <div class="col-sm-3 explore-feature-right text-center">
-                    <a href="{ '/#/explore/project/' + unique_id }"><p class="learn-more">Learn More</p></a>
+                    <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
                 </div>
             </div>
         </div>
@@ -30,7 +37,7 @@
             });
 
             let newObject={
-                        unique_id: 'project-feature-popup',
+                        unique_url: '#modal-feature-info',
                         name: '',
                         project_data: 
                         {
@@ -50,7 +57,7 @@
                         },
                     };
             let newObject2={
-                        unique_id: 'project-feature-popup',
+                        unique_url: '#modal-global-register',
                         name: 'Join Krowdspace Today!',
                         project_data: 
                         {
@@ -70,7 +77,8 @@
                         },
                     };
 
-            FilterExplore.push(newObject, newObject2);
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse(); 
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 

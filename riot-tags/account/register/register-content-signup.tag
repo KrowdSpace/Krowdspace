@@ -50,7 +50,7 @@
                 <fieldset id="reward_information">
                     <div class="form-group col-sm-12">
                         <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p>
-                        <input ref="rewardtext" class="form-control" name="reward" maxlength="80" placeholder="See Sample Rewards Below ( Max Characters 80 )">
+                        <input ref="rewardtext" class="form-control" name="reward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
                     </div>
                     <div class="form-group col-sm-12">
                         <p class="text-left registration-text">Does your reward have a value or is it a discount?</p>
@@ -74,14 +74,10 @@
                 <fieldset id="project_verify">
                     <div class="col-sm-12">
                         <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p>
-                        <p class="text-left registration-text">To verify that you are the crowdfunding project owner please upload one of these images to your project page before submitting it to Krowdspace. We will check to see if the image is present to prevent false project submissions. Thank you for your understanding!</p>
-                    </div>
-                    <div class="row text-center">
-                            <img src="img/press/featured-krowdspace-v1.svg" alt="Featured on Krowdspace">
-                         
-                       
-                                <img src="img/press/featured-krowdspace-v3.svg" alt="Featured on Krowdspace" style="margin-top: 10px; width: 320px;">
-
+                        <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p>
+                        <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying that actual hyperlink and not just the image being present. Please use the link below:</p>
+                        <p class="text-left registration-text">https://www.Krowdspace.com</p>
+                        <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p>
                     </div>
                     <div class="register-controls">
                         <div class="col-lg-offset-3 col-lg-6">
@@ -104,7 +100,6 @@
                         </div>
                     </div>
                     <div class="register-controls" >
-                        
                         <div class="col-lg-offset-3 col-lg-6">
                             <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p>
                             <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p>
@@ -114,6 +109,9 @@
             </div>
         </form>
         <div class="clearfix"></div>
+    </div>
+    <div class="col-sm-12 text-center">
+        <p style="font-size: 13px; padding-top: 25px;">For more information about Krowdspace Rewards please view our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Reward Page</a>.</p>
     </div>
     <script>
         submit(e)
@@ -128,7 +126,7 @@
                 REWARDVALUE = this.refs.rewardoption.value,
                 IGREWARD = 'test',
                 REWARDAMOUNT = this.refs.rewardvalue.value;
-    
+        
             let DATA = {
                         PVALID,
                         CATEGORY,
@@ -152,8 +150,8 @@
                 console.log(err);
                 });
         }
-
-    this.on('mount', function() 
+        
+        this.on('mount', function() 
         {
         	$(".next").click(function(){
         		var form = $("#registerProjectForm");

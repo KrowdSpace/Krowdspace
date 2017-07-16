@@ -6,7 +6,7 @@
                     <h1 class="header-title hidden-xs">Back the Project, not the Platform</h1>
                     <div class="container-top-header">
                         <p>At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p>
-                        <p style="margin-bottom: 40px;">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p>
+                        <p class="hero-text">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p>
                         <a href="#modal-global-login" data-toggle="modal" class="btn-landing shadow">Submit a Project</a>
                     </div>
                 </div>
@@ -14,32 +14,32 @@
                     <div class="shadow">
                         <form ref="registerform" onsubmit={ submit }>
                             <div class="col-sm-12 register-container text-left">
-                                <p class="text-left landing-text">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
-                                <div class="form-group form-split-right" style="margin-top: 0px">
-                                    <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
+                                <p class="text-left landing-text cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
+                                <div class="form-group form-split-right">
+                                    <input type="text" ref="firstname" class="form-control" placeholder="First Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
-                                <div class="form-group form-split-left" style="margin-top: 0px">
-                                    <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
+                                <div class="form-group form-split-left">
+                                    <input type="text" ref="lastname" class="form-control" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="form-group">
-                                    <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="email" ref="email" class="form-control" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
+                                </div>
+                                <div class="form-group">
+                                    <input type="username" ref="username" class="form-control" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control placeholder-color" required="required">
+                                    <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control" required="required">
                                     <div class="input-group-btn">
-                                        <button type="button" id="eye" class="btn btn-default">
+                                        <button type="button" id="eye" class="btn btn-eye">
                                         <i class="fa fa-eye fa-lg"></i>
                                         </button>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" ref="kickstarter" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)">
+                                    <input type="text" ref="kickstarter" class="form-control" placeholder="Kickstarter Username (Optional)">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" ref="indiegogo" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)">
+                                    <input type="text" ref="indiegogo" class="form-control" placeholder="Indiegogo Username (Optional)">
                                 </div>
                                 <div class="check-terms checkbox">
                                     <label>
@@ -57,13 +57,11 @@
         </div>
     </header>
     <script>
-        // --- Register Submit --- //
-        		
         submit(e)
         {
         	e.preventDefault();
         	
-        	var FNAME = this.refs.firstname.value,
+        	let FNAME = this.refs.firstname.value,
         		LNAME = this.refs.lastname.value,
         		EMAIL = this.refs.email.value,
         	    USERNAME = this.refs.username.value,
@@ -80,12 +78,9 @@
         	},
         	(err) => 
         	{
-        		console.log(err);
+        		
         	});
         }    
-        		
-        // --- Show and Hide Password --- //		
-        
         this.on('mount', function() 
         {
         	function show() 

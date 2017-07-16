@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
                 </button>
-                <a class="page-scroll" href="#page-top"><img class="navbar-logo" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a>
+                <a class="page-scroll" href="#page-top"><img class="navbar-logo logo-size" src="img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small"></a>
             </div>
             <div class="collapse navbar-collapse" id="navigation-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -62,13 +62,13 @@ this.on('mount', function()
     })
 });
 krowdspace.v1.check().then((res)=>
-		{
-			logged_in = true;
-			this.update();
-			console.log('You are logged in');
-		},
-		(err)=>
-		{
+    {
+        logged_in = true;
+        this.update();
+        console.log('You are logged in');
+    },
+    (err)=>
+    {
 		console.log('You are not logged in');
     });
 </script>

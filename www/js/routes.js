@@ -17,10 +17,6 @@ route('/account/register', function()
 {
 	riot.mount("#main","register");
 });
-route('/account/boosts', function()
-{
-	riot.mount("#main","boosts");
-});
 route('/account/admin', function()
 {
 	riot.mount("#main","admin");

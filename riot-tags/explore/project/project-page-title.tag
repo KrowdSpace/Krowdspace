@@ -1,9 +1,9 @@
 <project-page-title>
     <div class="col-sm-6 text-left no-gutter user-container-project">
-        <p class="dashboard-text-alt" style="height: 38px;">{ projectTitle }</p>
-            <p class="dashboard-text-alt"style="height: 60px;">{ projectDescription }</p>
-            <p class="dashboard-text-alt" style="height: 38px;">Reward: { projectReward }</p>
-            <p class="dashboard-text-alt" style="height: 50px;">To view the coupon code or directly link to the rewards page please follow the "Support Project button below</p>
+        <p class="dashboard-text-alt project-title">{ projectTitle }</p>
+            <p class="dashboard-text-alt project-description">{ projectDescription }</p>
+            <p class="dashboard-text-alt project-reward-text">Reward: { projectReward }</p>
+            <p class="dashboard-text-alt project-coupon">To view the coupon code or directly link to the rewards page please follow the "Support Project button below</p>
             <div class="col-sm-6 text-center divider-inside-right backed-box">
 				<a show={ projectbtn } href="#kickstarter-reward" class="modal-link" data-toggle="modal"><p class="back-project">BACK PROJECT</p></a>
                 <a show={ !projectbtn } href="{ projectLink }" target="_blank" ><p class="back-project">BACK PROJECT</p></a>

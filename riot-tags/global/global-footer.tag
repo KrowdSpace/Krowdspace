@@ -1,5 +1,5 @@
 <global-footer>
-    <footer id="contact" class="alternate-background">
+    <footer id="contacts" class="alternate-background">
         <div class="custom-footer">
 			<div class="container">
             <div class="row">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
                 <div class="col-lg-push-1 col-lg-4 text-center">
-                    <p class="footer-text" style="margin-bottom: 26px;"><strong>Contact Krowdspace</strong></p>
+                    <p class="footer-text contact-box"><strong>Contact Krowdspace</strong></p>
                     <form onsubmit={ contactMessage } ref="commentForm">
                         <div class="form-group">
                             <input type="text" ref="fullname" class="form-control" placeholder="Full Name" required="required" aria-required="true" aria-invalid="true">

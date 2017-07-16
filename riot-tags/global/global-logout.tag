@@ -1,7 +1,7 @@
 <global-logout>
     <div class="col-sm-1 text-right no-gutter share-container-right">
-        <div class="shadow share-box" style="display:inline-block;">
-            <a onclick={ krowdspaceLogout } style="cursor: pointer;">
+        <div class="shadow share-box logout-box">
+            <a onclick={ krowdspaceLogout }>
             <span class="fa-stack fa-lg icon-reset krowdspace-back filterdark">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-sign-out fa-stack-1x fa-inverse share-icon-push"></i>
