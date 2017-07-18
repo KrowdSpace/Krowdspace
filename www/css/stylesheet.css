@@ -1781,3 +1781,25 @@ display: inline;
 .purchase-view {
     position: relative;
 }
+.mediaLink,
+.mediaLink:hover,
+.mediaLink:focus,
+.mediaLink:active {
+    color: #3f434f; 
+}
+.mediaLink:hover {
+    color: #fed136;
+}
+.mediaLink > .media-icons {
+    color: #fff;
+}
+.media-box {
+    padding-top: 25px;
+}
+.media-refresh {
+    font-size: 13px; 
+    padding-top: 25px;
+}
+.media-padding {
+    padding: 15px;
+}

@@ -40,7 +40,11 @@
 
         krowdspace.projects.explore().catch(err=>console.log('error: ', err)).then((res) =>
         {
-            this.exploreCards = res.data;
+            let rewardFilter = res.data;
+            this.exploreCards = rewardFilter.filter((element) => {
+                return (element.project_data.meta_data.social === false);
+            });
+            
 
             let catSet = new Set();
 

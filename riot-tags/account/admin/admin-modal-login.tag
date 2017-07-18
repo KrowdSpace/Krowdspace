@@ -1,4 +1,4 @@
-<project-modal-login>
+<admin-modal-login>
     <div class="container login-check-container">
         <div class="krowdspace-modal col-lg-offset-3 col-md-6">
          <div id="modal">
@@ -34,7 +34,7 @@
                 </div>
                </form>
                <div class="text-center">
-                    <p class="login-float-text">Dont have an account? <a class="function-link" onclick= { registerModal }>Register today!</a></p>
+                    <p class="login-float-text">Are you in the right place? <a class="function-link" href="/#/explore">Explore Page!</a></p>
                </div>
             </div>
          </div>
@@ -59,15 +59,10 @@ loginSubmit(e)
         $("#errorLog").show();
     });
 }
-registerModal() 
-{
-$('#modal-global-login').modal('hide');
-$('#modal-global-register').modal('show');
-}
 registerPassword() 
 {
 $('#modal-global-login').modal('hide');
 $('#modal-password').modal('show');
 }
 </script>
-</project-modal-login>
+</admin-modal-login>

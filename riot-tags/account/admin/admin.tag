@@ -1,6 +1,9 @@
 <admin>
-	<admin-page show={ logged_in }></admin-page>
-	<global-coming-soon show={ remove }></global-coming-soon>
+	<style scoped>
+			:scope { background-color: #fff }
+	</style>
+	<admin-modal-login show={ !logged_in }></admin-modal-login>
+	<admin-page show={ logged_in } uri={ opts.uri }></admin-page>
 	<script>	
 		krowdspace.v1.check().then((res)=>
 			{

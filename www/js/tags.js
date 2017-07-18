@@ -1,6 +1,48 @@
-riot.tag2('admin-page', '<div class="krowdspace-modal col-lg-offset-3 col-lg-6 col-md-6 hidden-sm hidden-xs"> <div class="modal-content"> <div class="modal-header"> <p class="modal-heading">Krowdspace Register</p> </div> <div class="modal-body" style="padding-top: 0px;"> <p class="register-text text-left">If you have not signed up with Krowdspace please fill out the below form. You will need to sign up with Krowdspace before you can submit or view any projects.</p> <form class="form-vertical" id="commentForm" onsubmit="{submit}"> <div class="form-group form-split-right"> <input type="text" ref="firstname" class="form-control placeholder-color" placeholder="First Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group form-split-left"> <input type="text" ref="lastname" class="form-control placeholder-color" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true"> </div> <div class="form-group"> <input ref="email" class="form-control placeholder-color" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true" type="email"> </div> <div class="form-group"> <input type="username" ref="username" class="form-control placeholder-color" placeholder="Username" required="required" aria-required="true" aria-invalid="true"> </div> <div class="input-group"> <input id="PASSWORD2" type="password" ref="password" placeholder="New Password" class="masked form-control placeholder-color" required="required"> <div class="input-group-btn"> <button type="button" id="eye2" class="btn btn-eye"> <i class="fa fa-eye fa-lg"></i> </button> </div> </div> <div class="form-group"> <input type="text" ref="kickstarter_user" class="form-control placeholder-color" placeholder="Kickstarter Username (Optional)"> </div> <div class="form-group"> <input type="text" ref="indiegogo_user" class="form-control placeholder-color" placeholder="Indiegogo Username (Optional)"> </div> <div class="check-terms checkbox text-left"> <label> <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true">I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link">Krowdspace terms</a> </label> </div> <div class="register-button-box"> <input type="submit" class="button-login" name="submit" value="Register"> </div> </form> <div class="clearfix"></div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('admin-modal-login', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox loginbox text-left"> <label> <input type="checkbox" ref="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Are you in the right place? <a class="function-link" href="/#/explore">Explore Page!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
+
+this.loginSubmit = function(e)
+{
+    e.preventDefault();
+
+    let USERNAME = this.refs.usernamelogin.value,
+        PASSWORD = this.refs.passwordlogin.value,
+        STAYLOGGED = this.refs.checkbox.checked;
+
+    krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) =>
+    {
+        this.logged_in = true;
+        this.update();
+        window.location.reload();
+    },(err) =>
+    {
+        $("#errorLog").show();
+    });
+}.bind(this)
+this.registerPassword = function()
+{
+$('#modal-global-login').modal('hide');
+$('#modal-password').modal('show');
+}.bind(this)
 });
-riot.tag2('admin', '<admin-page show="{logged_in}"></admin-page> <global-coming-soon show="{remove}"></global-coming-soon>', '', '', function(opts) {
+riot.tag2('admin-page-panel', '<div class="col-sm-12 text-left resource-background shadow"> <div class="col-sm-12 no-gutter" style="padding: 10px 0px;"> <div class="col-sm-1"> <p style="font-size: 13px;">NAME</p> </div> <div class="col-sm-6"> <p style="font-size: 13px;">REWARD</p> </div> <div class="col-sm-1 text-center"> <p style="font-size: 13px;">FEATURE</p> </div> <div class="col-sm-1 text-center"> <p style="font-size: 13px;">EXPLORE</p> </div> <div class="col-sm-1 text-center"> <p style="font-size: 13px;">LANDING</p> </div> <div class="col-sm-1 text-center"> <p style="font-size: 13px;">SOCIAL</p> </div> </div> <div class="col-sm-12 no-gutter" style="border-bottom: 1px solid pink; padding: 3px 0px;" each="{adminData}"> <div class="col-sm-1"> <p style="font-size: 13px; margin: 0px;">{unique_id}</p> </div> <div class="col-sm-6"> <p style="font-size: 13px; margin: 0px;">{project_data.info_data.reward}</p> </div> <div class="col-sm-1 text-center"> <input show="{!project_data.meta_data.featured}" input type="checkbox"> <input show="{project_data.meta_data.featured}" input type="checkbox" checked> </div> <div class="col-sm-1 text-center"> <input show="{!project_data.meta_data.explore}" input type="checkbox"> <input show="{project_data.meta_data.explore}" input type="checkbox" checked> </div> <div class="col-sm-1 text-center"> <input show="{!project_data.meta_data.landing}" input type="checkbox"> <input show="{project_data.meta_data.landing}" input type="checkbox" checked> </div> <div class="col-sm-1 text-center"> <input show="{!project_data.meta_data.social}" input type="checkbox"> <input show="{project_data.meta_data.social}" input type="checkbox" checked> </div> </div> </div>', '', '', function(opts) {
+        krowdspace.projects.explore().then((res) =>
+        {
+            this.adminData = res.data;
+            this.adminData.reverse();
+            this.update();
+
+        },
+        (err)=>
+        {
+            console.log(err)
+        });
+
+});
+
+
+riot.tag2('admin-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{opts.uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1 project-container"> <div class="row dash-row no-gutter shadow"> <admin-page-panel></admin-page-panel> </div> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
+});     
+riot.tag2('admin', '<admin-modal-login show="{!logged_in}"></admin-modal-login> <admin-page show="{logged_in}" uri="{opts.uri}"></admin-page>', 'admin,[data-is="admin"]{ background-color: #fff }', '', function(opts) {
 
 		krowdspace.v1.check().then((res)=>
 			{
@@ -313,7 +355,6 @@ riot.tag2('dashboard-user-image', '<div class="col-sm-6 image-container"> <div c
             return (element.project_data.meta_data.landing === true);
         });
 
-<<<<<<< Updated upstream
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
@@ -338,31 +379,6 @@ riot.tag2('dashboard-user-image', '<div class="col-sm-6 image-container"> <div c
             FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
-=======
-        let newObject={
-                    unique_id: 'project-feature-popup',
-                    name: '',
-                    project_data:
-                    {
-                        web_data:
-                        {
-                            mainImg: {
-                                content: '/img/projects/krowdspace-banner-1.jpg'
-                            },
-                            description: {
-                                content: '',
-                            },
-                        },
-                        info_data:
-                        {
-                            reward: ''
-                        }
-                    },
-                };
-        FilterExplore.push(newObject);
-        this.ExploreBannerFilter = FilterExplore;
-        this.update();
->>>>>>> Stashed changes
 
         $('.single-item').slick
         ({
@@ -370,11 +386,7 @@ riot.tag2('dashboard-user-image', '<div class="col-sm-6 image-container"> <div c
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-<<<<<<< Updated upstream
             autoplaySpeed: 5000,
-=======
-            autoplaySpeed: 8000,
->>>>>>> Stashed changes
             centerMode: true,
             variableWidth: true,
         });
@@ -939,7 +951,71 @@ riot.tag2('register', '<register-page show="{logged_in}"></register-page>', 'reg
 			window.location.replace("/#/account/login");
 		});
 });
-riot.tag2('resource-content', '<div class="col-sm-12 text-left resource-background shadow"> <p class="modal-heading">Crowdfunding Resources</p> <p class="legal-text">Submitting a project to Krowdspace is just the first step to having a successful campaign. We have provided some extra tools that are completly free for all Krowdspace members and will guide you in the right direction. an example Press Release to send to media contacts and also a list of websites to submit your campaign.</p> <p class="privacy-title">Submit Your Project for Media Coverage</p> <div class="row"> <div class="col-sm-3"> <p style="position: relative; padding-left: 15px;"><span class="fa-stack fa-lg"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-check fa-stack-1x fa-inverse"></i> </span> <a href="https://techcrunch.com/got-a-tip/" target="_blank">Tech Crunch</a></p> <p><a href="https://arstechnica.com/contact-us/" target="_blank">Ars Technica</a></p> <p><a href="http://www.vox.com/contact" target="_blank">Vox</a></p> <p><a href="http://www.theverge.com/tip-us" target="_blank">The Verge</a></p> <p><a href="https://www.cnet.com/contact/" target="_blank">CNET</a></p> </div> <div class="col-sm-3"> <p><a href="https://www.engadget.com/about/tips/" target="_blank">Engadget</a></p> <p><a href="http://mashable.com/submit/" target="_blank">Mashable</a></p> <p><a href="https://fstoppers.com/contact" target="_blank">Fstopper</a></p> <p><a href="http://www.coolhunting.com/contact.php" target="_blank">Cool Hunting</a></p> </div> <div class="col-sm-3"> <p><a href="http://www.purch.com/about/#contact-press" target="_blank">Toms Guide</a></p> <p><a href="http://help.wsj.com/contact-us/?mod=WSJ_footer" target="_blank">The Wall Street Journal</a></p> <p><a href="http://feedbackforms.usatoday.com/marketing/feedback/feedback-online.aspx?type=12" target="_blank">USA Today</a></p> <p><a href="http://www.latimes.com/about/mediagroup/la-mediagroup-contactus,0,7698150.htmlstory" target="_blank">Los Angeles Times</a></p> </div> </div> <p class="privacy-title">Example Press Release</p> </div>', '', '', function(opts) {
+riot.tag2('resource-content', '<div class="col-sm-12 text-left resource-background shadow"> <p class="modal-heading">Crowdfunding Resources</p> <p class="legal-text">Submitting a project to Krowdspace is just the first step to having a successful campaign. We have provided some extra tools that are completly free for all Krowdspace members and will guide you in the right direction. Make sure to have a compelling email subject header and headline. Editors and Publishers receive 100\'s of emails per day and decide wether or not to open an email based on the subject alone.</p> <p class="privacy-title">Submit Your Press Release for Media Coverage</p> <div class="row media-box"> <div class="col-sm-3"> <p each="{media1}"> <a class="mediaLink" onclick="$(\':first-child\', this).css(\'color\', \'#5cb85c\');" href="{mediaLink}" target="{target}"> <i class="fa fa-check media-icons"></i> {mediaTitle} </a> </p> </div> <div class="col-sm-3"> <p each="{media2}"> <a class="mediaLink" onclick="$(\':first-child\', this).css(\'color\', \'#5cb85c\');" href="{mediaLink}" href="{mediaLink}" target="{target}"> <i class="fa fa-check media-icons"></i> {mediaTitle} </a> </p> </div> <div class="col-sm-3"> <p each="{media3}"> <a class="mediaLink" onclick="$(\':first-child\', this).css(\'color\', \'#5cb85c\');" href="{mediaLink}" href="{mediaLink}" target="{target}"> <i class="fa fa-check media-icons"></i> {mediaTitle} </a> </p> </div> <div class="col-sm-3"> <p each="{media4}"> <a class="mediaLink" onclick="$(\':first-child\', this).css(\'color\', \'#5cb85c\');" href="{mediaLink}" href="{mediaLink}" target="{target}"> <i class="fa fa-check media-icons"></i> {mediaTitle} </a> </p> </div> <div class="col-sm-12 text-center"> <p class="media-refresh">*Refresh Browser to Reset Checkmarks</p> </div> </div> <div class="row"> <div class="col-sm-12"> <p class="privacy-title">Example Press Release</p> <p class="legal-text">Creating a Press Release is imperative to running a successful crowdfunding campaign. While launching our own crowdfunding project we spent over $1000 to have it professionally written and marketed to media outlets. You can find a copy of that Press Release below along with some others. We highly recommend taking the time to research and write your own Press Release. Please take a look at our format and built off of it with your own content.</p> <div class="col-sm-6 text-center media-padding"> <p><a class="mediaLink" href="pdf/Lala-Bahari-PR.pdf"><i class="fa fa-file-pdf-o fa-2x" download></i> Krowdspace Press Release</a></p> <p><a class="mediaLink" href="http://www.prnewswire.com/news-releases/first-truly-consumer-3d-printer-the-micro-launches-on-kickstarter-254179611.html" target="_blank">Micro 3D Printer Press Release</a></p> </div> <div class="col-sm-6 text-center media-padding"> <p><a class="mediaLink" href="pdf/Pebble-Time-PR.pdf"><i class="fa fa-file-pdf-o fa-2x" download></i> Pebble Time Press Release</a></p> <p><a class="mediaLink" href="http://www.prnewswire.com/news-releases/travel-light-announces-breakthrough-g-ro-luggage-system-300161006.html" target="_blank">G-RO Luggage System</a></p> </div> <p class="privacy-title">Format Press Release</p> <p class="legal-text">There are a few key elements that every press release should have so that media outlets can quickly identify the story. Here are a few links we a found that can help you structure your Press Release in an appealing way.</p> <div class="col-sm-6 text-center media-padding"> <p><a class="mediaLink" href="http://fundbeam.com/kickstarter-press-release/" target="_blank">Fundbeam Press Release Guide</a></p> </div> <div class="col-sm-6 text-center media-padding"> <p><a class="mediaLink" href="https://crowdfundingheadlines.com/press-release-tips/" target="_blank">Crowdfunding Headlines Press Release Guide</a></p> </div> </div> </div> </div>', '', '', function(opts) {
+        this.media1 = [
+            { mediaLink:"mailto:review.monkey@148apps.com", mediaTitle:"148Apps", target:""},
+            { mediaLink:"mailto:contact@fivethirtyeight.com", mediaTitle:"538", target:""},
+            { mediaLink:"mailto:tips@9to5mac.com", mediaTitle:"9to5Mac", target:""},
+            { mediaLink:"mailto:news@appleinsider.com", mediaTitle:"Apple Insider", target:""},
+            { mediaLink:"mailto:news@appspy.com", mediaTitle:"AppSpy", target:""},
+            { mediaLink:"https://arstechnica.com/contact-us/", mediaTitle:"Ars Technica", target:"_blank"},
+            { mediaLink:"mailto:haveyoursay@bbc.co.uk", mediaTitle:"BBC", target:""},
+            { mediaLink:"mailto:PR@bleacherreport.com", mediaTitle:"Bleacher Report", target:""},
+            { mediaLink:"mailto:oped@bloomberg.net", mediaTitle:"Bloomberg", target:""},
+            { mediaLink:"mailto:reader.pitches@buzzfeed.com", mediaTitle:"BuzzFeed", target:""},
+            { mediaLink:"http://www.suntimes.com/aboutus/contactus/index.html", mediaTitle:"Chicago Sun Times", target:"_blank"},
+            { mediaLink:"http://www.chicagotribune.com/about/chi-newspaperemail,0,3525235.htmlstory", mediaTitle:"Chicago Tribune", target:"_blank"},
+            { mediaLink:"mailto:powerpitch@cnbc.com", mediaTitle:"CNBC", target:""},
+            { mediaLink:"https://www.cnet.com/contact/", mediaTitle:"CNET", target:"_blank"},
+        ],
+        this.media2 = [
+            { mediaLink:"mailto:news@industryreview.com", mediaTitle:"Computer Business", target:""},
+            { mediaLink:"mailto:pitches@computerworld.com", mediaTitle:"Computer World", target:""},
+            { mediaLink:"mailto:tips@consumerist.com", mediaTitle:"Consumerist", target:""},
+            { mediaLink:"http://www.coolhunting.com/contact.php", mediaTitle:"Cool Hunting", target:"_blank"},
+            { mediaLink:"mailto:editor@craveonline.com", mediaTitle:"Crave", target:""},
+            { mediaLink:"https://www.crowdfundinsider.com/submit-a-tip/", mediaTitle:"Crowdfund Insider", target:"_blank"},
+            { mediaLink:"mailto:news@cultofmac.com", mediaTitle:"Cult of Mac", target:""},
+            { mediaLink:"mailto:tips@dailydot.com", mediaTitle:"Daily Dot", target:""},
+            { mediaLink:"http://www.dailynews.com/contactus", mediaTitle:"Daily News", target:"_blank"},
+            { mediaLink:"mailto:contact@designboom.com", mediaTitle:"Design Bloom", target:""},
+            { mediaLink:"https://www.digitaltrends.com/news-tips/", mediaTitle:"Digital Trends", target:"_blank"},
+            { mediaLink:"https://www.engadget.com/about/tips/", mediaTitle:"Engadget", target:"_blank"},
+            { mediaLink:"mailto:ideas@forbes.com", mediaTitle:"Forbes", target:""},
+            { mediaLink:"https://fstoppers.com/contact", mediaTitle:"Fstoppers", target:"_blank"},
+        ],
+        this.media3 = [
+            { mediaLink:"mailto:website.services@fusion.net", mediaTitle:"Fusion", target:""},
+            { mediaLink:"mailto:editors@indiegames.com", mediaTitle:"Gamasutra", target:""},
+            { mediaLink:"mailto:info@gamerant.com", mediaTitle:"Gamerant", target:""},
+            { mediaLink:"mailto:gamesindustry@gaminginsiders.net", mediaTitle:"Gaming Insider", target:""},
+            { mediaLink:"https://www.geekwire.com/tips/", mediaTitle:"GeekWire", target:"_blank"},
+            { mediaLink:"http://www.huffingtonpost.com/contact//", mediaTitle:"Huffington Post", target:"_blank"},
+            { mediaLink:"mailto:pr@theladbiblegroup.com", mediaTitle:"LAD Bible", target:""},
+            { mediaLink:"http://www.latimes.com/about/mediagroup/la-mediagroup-contactus,0,7698150.htmlstory", mediaTitle:"Los Angeles Times", target:"_blank"},
+            { mediaLink:"http://mashable.com/submit/", mediaTitle:"Mashable", target:"_blank"},
+            { mediaLink:"http://www.nypost.com/contact/contactus.htm", mediaTitle:"New York Post", target:"_blank"},
+            { mediaLink:"http://www.newsday.com/services/contact-newsday-1.1303755", mediaTitle:"Newsday", target:"_blank"},
+            { mediaLink:"mailto:tips@redmondpie.com", mediaTitle:"Redmond Pie", target:""},
+            { mediaLink:"http://www.sfgate.com/chronicle/info/e-mail/", mediaTitle:"San Francisco Chronicle", target:"_blank"},
+            { mediaLink:"http://www.mercurynews.com/contact-us/", mediaTitle:"San Jose Mercury",
+            target:"_blank"},
+        ],
+        this.media4 = [
+            { mediaLink:"http://seattletimes.nwsource.com/flatpages/services/contactus.html", mediaTitle:"Seattle Times", target:"_blank"},
+            { mediaLink:"mailto:pitchslate@slate.com", mediaTitle:"Slate", target:""},
+            { mediaLink:"https://techcrunch.com/got-a-tip/", mediaTitle:"Tech Crunch", target:"_blank"},
+            { mediaLink:"mailto:news@techradar.com", mediaTitle:"Tech Radar", target:""},
+            { mediaLink:"https://witness.theguardian.com/assignment/submitastory#contribute", mediaTitle:"The Guardian", target:"_blank"},
+            { mediaLink:"http://biz.oregonian.com/newsroom/", mediaTitle:"The Oregonian", target:"_blank"},
+            { mediaLink:"http://www.purch.com/about/#contact-press", mediaTitle:"Tom's Guide", target:"_blank"},
+            { mediaLink:"http://feedbackforms.usatoday.com/marketing/feedback/feedback-online.aspx?type=12", mediaTitle:"USA Today", target:"_blank"},
+            { mediaLink:"http://www.vox.com/contact", mediaTitle:"Vox", target:"_blank"},
+            { mediaLink:"https://www.voxmedia.com/contact", mediaTitle:"Vox Media", target:"_blank"},
+            { mediaLink:"http://www.theverge.com/tip-us", mediaTitle:"Verge", target:"_blank"},
+            { mediaLink:"http://help.wsj.com/contact-us/?mod=WSJ_footer", mediaTitle:"Wall Street Journal", target:"_blank"},{mediaLink:"http://www.washingtonpost.com/blogs/ask-the-post/post/how-to-contact-the-post-newsroom/2011/11/17/gIQAd0WJlN_blog.html", mediaTitle:"Washington Post", target:"_blank"},
+            { mediaLink:"mailto:press@WIRED.com", mediaTitle:"WIRED", target:""},
+        ];
 });
 riot.tag2('resource-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container dashboard"> <global-logout show="{logged_in}" uri="{opts.uri}"></global-logout> <div class="col-sm-10 col-sm-offset-1 project-container"> <div class="row dash-row no-gutter"> <resource-content></resource-content> </div> </div> </div> <global-footer></global-footer>', '', '', function(opts) {
 });
@@ -1037,7 +1113,10 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-sm-3"> <s
 
         krowdspace.projects.explore().catch(err=>console.log('error: ', err)).then((res) =>
         {
-            this.exploreCards = res.data;
+            let rewardFilter = res.data;
+            this.exploreCards = rewardFilter.filter((element) => {
+                return (element.project_data.meta_data.social === false);
+            });
 
             let catSet = new Set();
 
@@ -1208,7 +1287,7 @@ riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <
 
 riot.tag2('explore', '<explore-page></explore-page>', 'explore,[data-is="explore"]{ background-color: #fff }', '', function(opts) {
 });
-riot.tag2('project-modal-login', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox loginbox text-left"> <label> <input type="checkbox" ref="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <<<<<<< Updated upstream <a onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> ======= <a style="cursor: pointer;" onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> >>>>>>> Stashed changes </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('project-modal-login', '<div class="container login-check-container"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{loginSubmit}"> <div class="col-sm-12 text-left register-container-modal"> <p class="modal-heading modal-heading-alt">Krowdspace Login</p> <div id="errorLog" class="alert alert-danger alert-dismissable fade in"> <a class="close" onclick="$(\'.alert\').hide()"><i class="fa fa-close"></i></a> <strong>Error:</strong> Invalid username or password. </div> <div class="has-feedback"> <label class="control-label" for="username"></label> <input type="text" class="form-control box-radius" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-user form-control-feedback"></span> </div> <div class="has-feedback"> <label class="control-label" for="password"></label> <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off"> <span class="fa fa-lock form-control-feedback"></span> </div> <div class="col-xs-6 checkbox loginbox text-left"> <label> <input type="checkbox" ref="checkbox" id="checkbox">Remember Me </label> </div> <div class="col-xs-6 checkbox text-right forgot-box"> <a onclick="{registerPassword}"><p class="forgot-pass">Forgot Password?</p></a> </div> </div> <div class="text-center"> <input type="submit" class="landing-submit alt-border" name="submit" value="Login"> </div> </form> <div class="text-center"> <p class="login-float-text">Dont have an account? <a class="function-link" onclick="{registerModal}">Register today!</a></p> </div> </div> </div> </div> </div>', '', '', function(opts) {
 
 this.loginSubmit = function(e)
 {
@@ -1238,41 +1317,6 @@ this.registerPassword = function()
 $('#modal-global-login').modal('hide');
 $('#modal-password').modal('show');
 }.bind(this)
-
-this.loginSubmit = function(e)
-    {
-        e.preventDefault();
-
-        let USERNAME = this.refs.usernamelogin.value,
-            PASSWORD = this.refs.passwordlogin.value,
-            STAYLOGGED = true;
-
-        krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res) =>
-        {
-            this.logged_in = true;
-            this.update();
-            window.location.reload();
-        },(err) =>
-        {
-            $("#errorLog").show();
-        });
-    }.bind(this)
-this.registerModal = function()
-{
-	$('#modal-global-login').modal('hide');
-    $('#modal-global-register').modal('show');
-}.bind(this)
-this.registerPassword = function()
-{
-	$('#modal-global-login').modal('hide');
-    $('#modal-password').modal('show');
-}.bind(this)
-
-<<<<<<< Updated upstream
-
-=======
-
->>>>>>> Stashed changes
 });
 riot.tag2('project-modal-reward', '<div id="kickstarter-reward" class="modal container fade"> <div class="krowdspace-modal col-lg-offset-3 col-md-6"> <div id="modal"> <div class="modal-body"> <div class="col-sm-12 edit-user-box"> <p class="modal-heading">Support Project</p> <p class="registration-text text-left coupon-code-box">To support this project and receive the posted reward make sure to send the below COUPON CODE after completing your pledge. All project owners have agreed to fulfill any and all rewards posted on their project page.</p> <div class="couponcode-box text-center"> <p class="couponcode">{couponCode}</p> </div> </div> <div class="clearfix"></div> <div class="text-center"> <a href="{projectLink}" target="_blank"> <p class="landing-submit alt-border">SUPPORT PROJECT</p> </a> </div> </div> </div> </div> </div>', '', '', function(opts) {
 krowdspace.projects.project(this.opts.uri).then((res)=>
