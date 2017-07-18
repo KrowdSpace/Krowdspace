@@ -7,6 +7,7 @@
             </span>
         </a>
             <p class="dashboard-text profile-name">{ firstname } { lastname }</p>
+
             <div show={ project }>
                 <div class="col-sm-4 text-center divider-inside-right user-stat-box">
                         <p class="dashboard-user">Current Project</p>
@@ -20,6 +21,7 @@
                     <p class="dashboard-user">Reward Value</p>
                     <p class="social-metric">{ rewardAmount || 0 }</p>
                 </div>
+
             </div>
             <div show={ !project }>
                 <div class="col-sm-4 text-center divider-inside-right user-stat-box">

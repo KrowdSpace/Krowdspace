@@ -62,6 +62,7 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 	this.projects = [];
 
 	this.project = null;
+	this.projectIndex = 0;
 	this.user = null;
 
 	this.userkey = "";
@@ -93,6 +94,7 @@ riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></g
 				this.setProject(res.data[0]);
 			}
 		});
+
 	});
 	this.setProject = function(proj)
 	{

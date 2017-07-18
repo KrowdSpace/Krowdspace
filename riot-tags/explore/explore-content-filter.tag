@@ -107,9 +107,11 @@
             return !el.project_data.meta_data.featured;
         });
 
+
         fpA.reverse(); 
         
         spA.reverse(); 
+
 
         spA.splice(0, 0, ...fpA);
 
@@ -128,6 +130,7 @@
 
             // console.log(cat.includes( option ), cat, option);
             // console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+
 
             if(option === "*")
             {
