@@ -5,7 +5,7 @@
     width: 150px;
 }
 </style>
-	<aside class="hidden-sm hidden-xs">
+	<aside class="hidden-xs">
 		<div class="container text-center">
 			<section class="center slider">
    				<div each= { indexClients }>
@@ -31,7 +31,7 @@
         centerMode: true,
         arrows: false,
         centerPadding: '60px',
-        slidesToShow: 5,
+        slidesToShow: 4,
         autoplay: true,
         autoplaySpeed: 3000,
         });

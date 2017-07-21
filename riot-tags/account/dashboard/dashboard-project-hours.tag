@@ -1,5 +1,5 @@
 <dashboard-project-hours>
-    <div class="col-sm-3 dashboard-hours-container no-gutter shadow">
+    <div class="col-lg-3 hidden-md hidden-sm hidden-xs dashboard-hours-container no-gutter shadow">
         <div id="circleChart"></div>
         <div class="col-sm-6 chart-data text-center">
             <div class="divider-inside-right">
@@ -23,13 +23,12 @@ this.on('update', ()=>
             return;
         
         let res = {data: [opts.project]}
-
         let endTime = res.data[0].project_data.web_data.hours['data-end_time'],
             projectTime = res.data[0].project_data.web_data.hours['data-duration'],
             end = new Date(endTime),
             remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
             daysMax = Math.max(0, remaining);
-            
+        console.log(res);
         let bar = null;
         
         if(!this.progBar)

@@ -4,33 +4,42 @@
         <p class="legal-text">Submitting a project to Krowdspace is just the first step to having a successful campaign. We have provided some extra tools that are completly free for all Krowdspace members and will guide you in the right direction. Make sure to have a compelling email subject header and headline. Editors and Publishers receive 100's of emails per day and decide wether or not to open an email based on the subject alone.</p>
         <p class="privacy-title">Submit Your Press Release for Media Coverage</p>
         <div class="row media-box">
-            <div class="col-sm-3">
+            <div class="col-lg-12 col-lg-offset-0 col-md-8 col-md-offset-2">
+            <div class="col-lg-3 col-md-6 col-sm-6">
                 <p each= { media1 }>
                     <a class="mediaLink" onclick="$(':first-child', this).css('color', '#5cb85c');" href="{ mediaLink }" target="{ target }">
                     <i class="fa fa-check media-icons"></i> { mediaTitle }
                     </a>
                 </p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg-3 hidden-md hidden-sm">
                 <p each= { media2 }>
                     <a class="mediaLink" onclick="$(':first-child', this).css('color', '#5cb85c');" href="{ mediaLink }" href="{ mediaLink }" target="{ target }">
                     <i class="fa fa-check media-icons"></i> { mediaTitle }
                     </a>
                 </p>
             </div>
-            <div class="col-sm-3">
+            <div class="col-lg-3 col-md-6 col-sm-6">
                 <p each= { media3 }>
                     <a class="mediaLink" onclick="$(':first-child', this).css('color', '#5cb85c');" href="{ mediaLink }" href="{ mediaLink }" target="{ target }">
                     <i class="fa fa-check media-icons"></i> { mediaTitle }
                     </a>
                 </p>
             </div>
-            <div class="col-sm-3">
+            <div class="hidden-lg col-md-6 col-sm-6">
+                <p each= { media2 }>
+                    <a class="mediaLink" onclick="$(':first-child', this).css('color', '#5cb85c');" href="{ mediaLink }" href="{ mediaLink }" target="{ target }">
+                    <i class="fa fa-check media-icons"></i> { mediaTitle }
+                    </a>
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
                 <p each= { media4 }>
                     <a class="mediaLink" onclick="$(':first-child', this).css('color', '#5cb85c');" href="{ mediaLink }" href="{ mediaLink }" target="{ target }">
                     <i class="fa fa-check media-icons"></i> { mediaTitle }
                     </a>
                 </p>
+            </div>
             </div>
             <div class="col-sm-12 text-center">
                 <p class="media-refresh">*Refresh Browser to Reset Checkmarks</p>

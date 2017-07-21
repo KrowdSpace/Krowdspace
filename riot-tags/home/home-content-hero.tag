@@ -22,13 +22,13 @@
                                     <input type="text" ref="lastname" class="form-control" placeholder="Last Name" required="required" aria-required="true" aria-invalid="true">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" ref="email" class="form-control" placeholder="Email Address" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="email" name="email" ref="email" class="form-control" placeholder="Email Address" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="username" ref="username" class="form-control" placeholder="Username" required="required" aria-required="true" aria-invalid="true">
+                                    <input type="text" ref="username" class="form-control" placeholder="Username" required="required" aria-required="true" aria-invalid="true" minlength=5>
                                 </div>
                                 <div class="input-group">
-                                    <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control" required="required">
+                                    <input type="password" ref="password" placeholder="New Password" id="PASSWORD" class="masked form-control" required="required" minlength=5>
                                     <div class="input-group-btn">
                                         <button type="button" id="eye" class="btn btn-eye">
                                         <i class="fa fa-eye fa-lg"></i>

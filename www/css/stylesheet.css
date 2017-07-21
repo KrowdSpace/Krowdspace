@@ -68,7 +68,7 @@ h1 {
     padding-bottom:50px;
 }
 .navbar-custom {
-    background-color: rgba(0, 0, 0, .9);
+    background-color: #000;
     border-color: transparent;
 }
 .navbar-custom .navbar-toggle {
@@ -138,7 +138,7 @@ h1 {
 }
 @media (min-width: 992px) {
     .navbar-custom.affix {
-        background-color: rgba(0, 0, 0, .9);
+        background-color: #000;
         -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
         -moz-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
     }
@@ -395,6 +395,13 @@ footer ul.quicklinks,
     margin-top: 50px;
     margin-bottom: 100px;
 }
+.krowdspace-modal-custom {
+    margin-top: 65px;
+    margin-bottom: 100px;
+}
+.modal-custom {
+    padding: 0px 50px;
+}
 .modal-link {
     color: #333;
 }
@@ -437,6 +444,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .img-icon {
     padding-bottom: 10px;
 }
+.press-img {
+    margin: 15px;
+}
+.press-img-alt {
+    margin: 10px;
+}
 @media screen and (max-width: 991px) {
     .img-icon {
         width: 75%;
@@ -454,16 +467,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
         margin: 0px;
         padding: 0px;
     }
+    .modal-custom {
+        margin: 20px 0px;
+        padding: 0px;
+    }
     .landing-header {
         margin-top: 0px !important;
     }
     section {
         padding: 20px;
     }
+    .press-img {
+        margin: 10px 35px;
+    }
 }
 @media screen and (max-width: 530px) {
     .timeline > li .timeline-panel {
-        width: 75%;
+        width: 74%;
     }
 }
 .price-box {
@@ -566,11 +586,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     border: 1px solid #3f434f;
     border-bottom: none;
 }
+.market-container-modal {
+    padding: 0px 20px 10px 20px;
+    background: white;
+}
 .register-container-modal {
     padding: 5px 20px 10px 20px;
     background: white;
     border: 2px solid #fed136;
     border-bottom: none;
+}
+.modal-max-login {
+    max-width: 435px;
+    width: 100%; 
+    margin: 0 auto;
+}
+.modal-max-register {
+    max-width: 465px;
+    width: 100%; 
+    margin: 0 auto;
 }
 .purchase-container-left {
     background: white;
@@ -600,6 +634,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     background: white;
     padding: 20px !important;
     border: 2px solid #fed136;
+    width: 100%;
     border-left: none;
 }
 .landing-text {
@@ -761,7 +796,6 @@ background: -webkit-linear-gradient(top, #5ea0cc 0%,#408abc 100%); /* Chrome10-2
 background: linear-gradient(to bottom, #5ea0cc 0%,#408abc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ea0cc', endColorstr='#408abc',GradientType=0 ); /* IE6-9 */
 border: 1px solid #3f434f; 
-display: flex;
 }
 .dashboard-launch {
     background: #0075be;
@@ -1029,9 +1063,20 @@ padding: 15px;
     left: 0px;
     padding-right: 0px;
 }
+.learn-responsive {
+    display: none;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    margin-bottom: 5px;
+}
 .explore-feature-right {
-    margin-top: 275px;
+    position: absolute;
+    bottom: 15px;
+    right: 0px;
     padding: 0px;
+    margin-bottom: 5px;
 }
 .explore-box-text {
     margin-top: 5px;
@@ -1042,8 +1087,9 @@ padding: 15px;
 }
 .explore-container {
     position: relative;
+    width: 368px;
     border: 1px solid #3f434f;
-    margin: 40px 0px 0px 0px;
+    margin: 40px auto 0px auto;
 }
 .explore-feature-icon {
     position: absolute !important;
@@ -1053,7 +1099,7 @@ padding: 15px;
 }
 .explore-header {
     padding-top: 57px; 
-    margin-bottom: 40px !important;
+    margin-bottom: 25px !important;
 }
 .explore-box {
     position:absolute;
@@ -1143,7 +1189,7 @@ padding: 15px;
 .login-check-container {
     background: rgba(50, 48, 49, 1);
     position: fixed;
-    padding: 0px 60px;
+    padding: 0px;
     top: 0;
     left: 0;
     width: 100%;
@@ -1182,7 +1228,9 @@ div.explore-project ul li {
 }
 div.explore-project img {
     display: block;
-    margin: 10px auto;
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
 }
 div.explore-project a {
     color: #333;
@@ -1463,7 +1511,7 @@ div.explore-project figcaption {
 .couponcode-box {
     border: 2px solid #fed136; 
     margin: 18px auto; 
-    width: 300px;
+    padding: 0px 30px;
 }
 .reward-box {
     border: 3px dashed #fed136; 
@@ -1572,12 +1620,21 @@ div.explore-project figcaption {
     font-size: 11px;
     padding: 4px 0px; 
     width: 100%;
+    text-align: center;
 }
 .faq-box-left {
     padding-right: 40px;
 }
 .faq-box-right {
     padding-left: 40px;
+}
+@media screen and (max-width: 1200px) {
+    .faq-box-left {
+    padding-right: 15px;
+    }
+    .faq-box-right {
+        padding-left: 15px;
+    }
 }
 .faq-container {
     border: 1px solid #ccc; 
@@ -1591,7 +1648,7 @@ div.explore-project figcaption {
 }
 .question-text {
     margin: 0px; 
-    padding: 6px 20px;
+    padding: 6px 20px 6px 10px;
 }
 .answer-text {
     margin: 15px;
@@ -1620,9 +1677,6 @@ div.explore-project figcaption {
     margin-top: 10px !important; 
     margin-bottom: 0px !important;
     padding-right: 0px !important;
-}
-.modal-custom {
-    padding: 0px 50px;
 }
 .modal-purchase {
     display: flex;
@@ -1683,9 +1737,6 @@ div.explore-project figcaption {
 }
 .press-box {
     padding: 0px 20px;
-}
-.press-img {
-    margin: 10px;
 }
 .press-text {
     margin-top: 20px;
@@ -1758,16 +1809,16 @@ display: inline;
     margin-right: 0px;
 }
 .project-title {
-    height: 38px;
+    margin-bottom: 15px;
 }
 .project-description {
-    height: 60px;
+    margin-bottom: 15px;
 }
 .project-reward-text {
-    height: 38px;
+    margin-bottom: 15px;
 }
 .project-coupon {
-    height: 50px;
+    margin-bottom: 15px;
 }
 .project-container {
     padding: 0px;
@@ -1802,4 +1853,10 @@ display: inline;
 }
 .media-padding {
     padding: 15px;
+}
+.modal-padding {
+    padding: 15px !important;
+}
+.modal-padding-none {
+    padding: 0px !important;
 }

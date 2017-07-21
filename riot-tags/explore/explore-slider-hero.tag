@@ -1,9 +1,36 @@
 <explore-slider-hero>
     <style type="text/css">
-    .slick-slide img {
-      border-top: 1px solid #dcdedd;
-      border-bottom: 1px solid #dcdedd;
-      width: 550px;
+        .slick-slide img {
+        border-top: 1px solid #3f434f;
+        border-bottom: 1px solid #3f434f;
+        width: 550px;
+        }
+    @media screen and (max-width: 991px) {
+        .explore-feature-right {
+            padding-right: 10px;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .explore-feature-left {
+        margin-top: 100px;
+        }
+        .explore-feature-right {
+            padding-right: 10px;
+        }
+    }
+    @media screen and (max-width: 550px) {
+        .slick-slide img {
+        width: 400px;
+        }
+        .explore-banner-box {
+            height: 227px;
+        }
+        .explore-box {
+            display: none;
+        }
+        .learn-responsive {
+            display: inline-block;
+        }
     }
     </style>
     <div class="autoplay slider explore-header">
@@ -26,6 +53,11 @@
                     <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
                 </div>
             </div>
+            <div class="col-md-12 learn-responsive text-right">
+                        <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal">
+                            <p class="learn-more">Learn More</p>
+                        </a>
+                    </div>
         </div>
     </div>
     <script type="text/javascript">

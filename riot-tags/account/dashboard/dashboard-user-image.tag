@@ -1,28 +1,41 @@
 <dashboard-user-image>
-<style type="text/css">
+<style>
     .slick-slide img {
       width: 515px;
       overflow: hidden;
     }
-    </style>
+@media screen and (max-width: 1200px) {
+        .slick-slide img {
+            width: 395px;
+            overflow: hidden;
+        }
+        .dash-banner-box {
+            height: 222px;
+        }
+        .reward-slider-push {
+            height: 212px;
+        }
+        .dash-feature-right {
+            margin-top: 187px;
+            padding-right: 0px;
+        }
+    }
+</style>
     <div class="col-sm-6 image-container">
         <div class="single-item slider">
             <div class="dash-banner-box" each= { ExploreBannerFilter }>
                 <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
                 <div class="explore-box">
-                    <div class="col-sm-9">
+                    <div class="col-sm-8">
                         <div class="reward-slider-push">
                             <div class="explore-feature-left">
-                                <div class="dash-box-text">
-                                    <span class="dash-user-title">{ name }</span>
-                                </div>
                                 <div class="dash-box-text">
                                     <span class="dash-user-title">{ project_data.info_data.reward }</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-3 dash-feature-right text-center">
+                    <div class="col-sm-4 dash-feature-right text-center">
                         <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
                     </div>
                 </div>

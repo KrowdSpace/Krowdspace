@@ -1,13 +1,32 @@
 <dashboard-featured-purchase>
+    <style>
+        @media screen and (max-width: 767px) {
+        .purchase-container-left {
+        border-right:2px solid #fed136;
+        }
+        }
+    </style>
     <div id="purchase-featured" class="modal container fade">
-        <div class="krowdspace-modal col-lg-offset-2 col-md-8">
+        <div class="krowdspace-modal-custom col-lg-offset-2 col-lg-8 col-md-offset-0 col-md-12">
             <div id="modal">
-                <div class="modal-body modal-purchase no-gutter">
+                <div class="modal-purchase no-gutter" style="max-width: 695px; margin: 0 auto;">
                     <div class="col-sm-7 purchase-container-left">
+                        <button type="button" class="close btn-modal hidden-lg hidden-md hidden-sm" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                        </button>
                         <p class="modal-heading">FEATURED PROJECT LISTING</p>
                         <p class="modal-purchase-text text-left">Your project will be listed on our Explore Page with a featured project icon. Having your project featured means it will get priority filtering and have increased viewership. For a limited time we are offering this as a free service while we work through our initial launch! Please click the Upgrade button below to add this feature.</p>
+                        <div class="col-xs-6 hidden-lg hidden-md hidden-sm text-center divider-inside-right">
+                            <p class="purchase-text">FEATURED ICON</p>
+                        </div>
+                        <div class="col-xs-6 hidden-lg hidden-md hidden-sm text-center">
+                            <p class="purchase-text-right">FREE</p>
+                        </div>
                     </div>
-                    <div class="col-sm-5 purchase-container-right">
+                    <div class="col-sm-5 hidden-xs purchase-container-right">
+                        <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                        </button>
                         <img class="img-responsive" src="/img/content/featured-purchase.jpg"/>
                         <div class="purchase-price-box no-gutter">
                             <div class="col-sm-6 text-center divider-inside-right">
@@ -26,6 +45,13 @@
                             </form>
                         </div>
                     </div>
+                </div>
+                <div class="hidden-lg hidden-md hidden-sm" style="max-width: 695px; margin: 0 auto;">
+                    <form id="purchaseFeature" role="form" onsubmit={ submitFeatured }>
+                        <div class="text-center">
+                            <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit"  value="Upgrade" class="btn-register">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

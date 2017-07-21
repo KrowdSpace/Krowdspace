@@ -1870,7 +1870,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
+  min-height: 58px;
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
@@ -2001,8 +2001,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-toggle {
   position: relative;
   float: right;
-  padding: 8px 11px;
-  margin-top: 9px;
+  padding: 6px 8px;
+  margin-top: 12px;
   margin-right: 15px;
   background-image: none;
   border: 1px solid transparent;

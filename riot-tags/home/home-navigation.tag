@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
                 </button>
-                <a class="page-scroll" href="#page-top"><img class="navbar-logo logo-size" src="img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small"></a>
+                <a href="/#/explore"><img class="navbar-logo logo-size" src="img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small"></a>
             </div>
             <div class="collapse navbar-collapse" id="navigation-collapse">
                 <ul class="nav navbar-nav navbar-right">

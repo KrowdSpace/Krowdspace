@@ -1,18 +1,21 @@
 <dashboard-edit-profile>
    <div id="edit-profile" class="modal container fade">
-      <div class="krowdspace-modal col-lg-offset-3 col-md-6">
+      <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8" style="padding: 0px;">
          <div id="modal">
-            <div class="modal-body no-gutter">
+            <div class="no-gutter">
                <form role="form" onsubmit={ submitUser }>
-                  <div class="col-sm-12 edit-user-box">
+                  <div class="edit-user-box modal-max-login" style="position: relative;">
+                    <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                    </button>
                      <p class="modal-heading">Edit Profile Information</p>
                      <div class="form-group form-split-right edit-margin">
                         <p class="dashboard-text-alt text-left edit-text-title">First Name</p>
-                        <input ref="firstname" value="{ firstname }" type="text" class="form-control placeholder-color" aria-required="true" aria-invalid="true">
+                        <input ref="firstname" value="{ firstname }" type="text" class="form-control placeholder-color" required minlength=1>
                      </div>
                      <div class="form-group form-split-left edit-margin">
                         <p class="dashboard-text-alt text-left edit-text-title">Last Name</p>
-                        <input type="text" ref="lastname" class="form-control placeholder-color" value="{ lastname }" aria-required="true" aria-invalid="true">
+                        <input type="text" ref="lastname" class="form-control placeholder-color" value="{ lastname }" required minlength=1>
                      </div>
                      <div class="clearfix"></div>
                      <div class="form-group">
@@ -24,7 +27,7 @@
                         <input ref="indiegogo" class="form-control placeholder-color" value="{ indiegogo }" aria-required="true" aria-invalid="true">
                      </div>
                   </div>
-                  <div class="text-center">
+                  <div class="text-center modal-max-login">
                      <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit"  value="Update" class="btn-register">
                   </div>
                </form>
