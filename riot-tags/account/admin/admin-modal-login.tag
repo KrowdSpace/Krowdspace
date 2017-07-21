@@ -1,10 +1,10 @@
-<project-modal-login>
+<admin-modal-login>
     <div class="container login-check-container">
-        <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+        <div class="krowdspace-modal col-lg-offset-3 col-md-6">
          <div id="modal">
             <div class="modal-body modal-custom">
                 <form onsubmit={ loginSubmit }>
-                    <div class="text-left register-container-modal modal-max-login">
+                    <div class="col-sm-12 text-left register-container-modal">
                     <p class="modal-heading modal-heading-alt">Krowdspace Login</p>
                     <div id="errorLog" class="alert alert-danger alert-dismissable fade in">
                         <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
@@ -28,14 +28,13 @@
                     <div class="col-xs-6 checkbox text-right forgot-box">
                         <a onclick= { registerPassword }><p class="forgot-pass">Forgot Password?</p></a>
                     </div>
-                    <div class="clearfix"></div>
                   </div>
-                  <div class="text-center modal-max-login">
+                  <div class="text-center">
                     <input type="submit" class="landing-submit alt-border" name="submit" value="Login">
                 </div>
                </form>
                <div class="text-center">
-                    <p class="login-float-text">Dont have an account? <a class="function-link" onclick= { registerModal }>Register today!</a></p>
+                    <p class="login-float-text">Are you in the right place? <a class="function-link" href="/#/explore">Explore Page!</a></p>
                </div>
             </div>
          </div>
@@ -60,15 +59,10 @@ loginSubmit(e)
         $("#errorLog").show();
     });
 }
-registerModal() 
-{
-$('#modal-global-login').modal('hide');
-$('#modal-global-register').modal('show');
-}
 registerPassword() 
 {
 $('#modal-global-login').modal('hide');
 $('#modal-password').modal('show');
 }
 </script>
-</project-modal-login>
+</admin-modal-login>

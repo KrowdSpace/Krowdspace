@@ -1,16 +1,35 @@
 <dashboard-project-bar>
+<style>
+@media screen and (max-width: 991px) {
+        .icon-share-bar {
+            margin: 2px 5px 0px 5px;
+        }
+        .fixed-image-box {
+            height: 340px;
+        }
+    }
+@media screen and (max-width: 767px) {
+        .dash-bar {
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+    }
+</style>
     <div class="dash-bar col-sm-12 no-gutter" >
-        <div class="col-sm-3 text-center divider-inside-right">
-            <a href="{ kickstarterShare }" target="_blank">
+        <div class="col-xs-3 text-center divider-inside-right">
+            <a class="hidden-xs" href="{ kickstarterShare }" target="_blank">
                 <img class="icon-share-bar filterdark" src="img/fav/kickstarter-icon.png"/>
             </a>
             <a href="/#/explore/project/{ krowdspacePage }"> 
                 <img class="icon-share-bar filterdark" src="img/fav/krowdspace-share-icon.png"/>
             </a>
-            <p class="dashboard-text-bar dash-divider">Live Project Links</p>
+            <p class="dashboard-text-bar dash-divider hidden-xs">Live Project Links</p>
+            <p class="dashboard-text-bar dash-divider hidden-lg hidden-md hidden-sm">Project Link</p>
         </div>
-        <div class="col-sm-7 text-center divider-inside-right">
-            <div class="col-sm-8">
+        <div class="col-xs-7 text-center divider-inside-right">
+            <div class="col-md-8">
             <a href="{ facebookShare }" target="_blank">
             <span class="fa-stack fa-lg facebook filterdark">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -23,7 +42,7 @@
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <a href="{ linkedinShare }" target="_blank">
+            <a class="hidden-md hidden-sm hidden-xs" href="{ linkedinShare }" target="_blank">
             <span class="fa-stack fa-lg linkedin filterdark">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
@@ -35,13 +54,13 @@
                 <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <a href="{ diggShare }" target="_blank">
+            <a class="hidden-xs" href="{ diggShare }" target="_blank">
             <span class="fa-stack fa-lg digg filterdark">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-digg fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <a href="{ stumbleuponShare }" target="_blank">
+            <a class="hidden-xs" href="{ stumbleuponShare }" target="_blank">
             <span class="fa-stack fa-lg stumbleupon filterdark">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
@@ -49,7 +68,7 @@
             </a>
             <p class="dashboard-text-bar dash-divider">Share Your Project on Social Media</p>
             </div>
-            <div class="col-sm-4">
+            <div class="col-md-4 hidden-sm hidden-xs">
                 <a href="#purchase-social" class="modal-link" data-toggle="modal">
                     <span class="fa-stack fa-lg social-btn">
                         <i class="fa fa-circle fa-stack-2x"></i>

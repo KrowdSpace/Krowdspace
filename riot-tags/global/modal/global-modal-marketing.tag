@@ -1,10 +1,17 @@
-<global-modal-register>
-   <div id="modal-global-register" class="modal container fade">
-      <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+<global-modal-marketing>
+   <div id="modal-global-marketing" class="modal container modal-padding-none">
+      <div class="krowdspace-modal col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal">
-            <div class="modal-body modal-custom">
+            <div class="modal-body modal-custom" style="margin: 0px;">
+                <img class="img-responsive" src="img/social-content/krowdspace-marketing.jpg"/>
+                <div class="col-sm-12 text-left market-container-modal">
+                    <p class="modal-heading modal-heading-alt">Who Doesnt like Free stuff?</p>
+                    <p class="text-left landing-text cta-header">If you have ever backed a crowdfunding project on Kickstarter or Indiegogo then you have to check out Krowdspace.com! If you dont, you will be missing out on free secret perks and extra rewards associated with every campaign.</p>
+                    <p class="text-left landing-text cta-header">Project owners from Indeigogo and Kickstarter submit their projects to Krowdspace with exclusive rewards to gain a larger community. Members on Krowdspace will then have access to these secret rewards and perks and receive them upon backing the campaign. Check to see if the project you want to support has already submitted to Krowdspace. It is that simple and 100% free.</p> 
+                    <p class="text-left landing-text cta-header">You can register by using the form below!</p>
+                </div>
                 <form onsubmit={ submitRegister }>
-                <div class="text-left register-container-modal modal-max-register">
+                <div class="col-sm-12 text-left market-container-modal">
                    <p class="modal-heading modal-heading-alt">Krowdspace Register</p>
                     <p class="text-left landing-text cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
                     <div class="form-group form-split-right">
@@ -39,7 +46,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="text-center modal-max-register">
+                <div class="text-center">
                     <input type="submit" class="landing-submit alt-border" name="submit" value="Join Krowdspace">
                 </div>
             </form>
@@ -94,7 +101,7 @@ submitRegister(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
-                $('#modal-global-register').modal('hide');
+                $('#modal-global-marketing').modal('hide');
                 $('#modal-submission').modal('show');
 	},
 	(err) => 
@@ -103,4 +110,14 @@ submitRegister(e)
 	});
 }    
 </script>
-</global-modal-register>
+    <script>
+        this.on('mount', function() 
+        {
+            var url = window.location.href;
+            if (url.indexOf('?facebook=1') != -1) 
+            {
+                $("#modal-global-marketing").modal('show');
+            };
+        });
+    </script>
+</global-modal-marketing>

@@ -1,5 +1,39 @@
 <project-page-image>
-    <div class="col-sm-6 image-container">
+<style>
+@media screen and (max-width: 1200px) {
+        .image-container {
+            height: 242px;
+        }
+        .fixed-image-box {
+            height: 220px;
+        }
+    }
+@media screen and (max-width: 991px) {
+        .image-container {
+            height: 360px;
+            border-right: 1px solid #3f434f;
+        }
+        .fixed-image-box {
+            height: 340px;
+        }
+    }
+@media screen and (max-width: 767px) {
+        .image-container {
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+        .fixed-image-box {
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 100px;
+            width: 398px;
+        }
+    }
+</style>
+    <div class="col-md-6 image-container">
         <div class="fixed-image-box"> 
             <img show={ imagebox } class="img-responsive kickstarter-image" ref="kickstarterImage" src=""/>
             <img show={ !imagebox } class="img-responsive indiegogo-image" ref="indiegogoImage" src=""/>

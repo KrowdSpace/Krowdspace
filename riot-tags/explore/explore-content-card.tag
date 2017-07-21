@@ -1,6 +1,18 @@
 <explore-content-card>
+<style>
+@media screen and (max-width: 991px) {
+        .explore-container {
+            width: 348px;
+        }
+    }
+@media screen and (max-width: 767px) {
+        .explore-container {
+            width: 368px;
+        }
+    }
+</style>
     <div class="row">
-        <div each= { exploreCard in displayCards } class="col-sm-4">
+        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6" style="padding-left: 0px; padding-right: 0px;">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">
                     <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
@@ -13,16 +25,16 @@
                         <p class="card-text-alt">{ exploreCard.ExploreCard.data.title }</p>
                         <p class="card-text-alt">Reward: { exploreCard.ExploreCard.data.reward }</p>
                     </div>
-                    <div class="col-sm-5 text-left">
+                    <div class="col-xs-5 text-left" style="max-height: 23px;">
                         <p class="card-text-alt">${ exploreCard.ExploreCard.data.backed } Raised</p>
                     </div>
-                    <div class="col-sm-2 text-center">
+                    <div class="col-xs-2 text-center" style="max-height: 23px;">
                         <p class="card-text-alt days-center">{ exploreCard.ExploreCard.data.days } Days</p>
                     </div>
-                    <div class="col-sm-5 text-right">
+                    <div class="col-xs-5 text-right" style="max-height: 23px;">
                         <p class="card-text-alt">${ exploreCard.ExploreCard.data.goal } Goal</p>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-xs-12">
                         <div class="progress">
                             <div class="progress-bar" role="progressBar" style="width: { exploreCard.ExploreCard.data.percent + '%' };" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>

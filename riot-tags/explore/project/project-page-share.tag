@@ -1,5 +1,5 @@
 <project-page-share>
-    <div class="col-sm-1 no-gutter share-container">
+    <div class="col-sm-1 hidden-xs no-gutter share-container">
         <div class="text-left shadow share-box">
             <a href="{ facebookShare }" target="_blank">
             <span class="fa-stack fa-lg facebook icon-reset facebook-back filterdark">

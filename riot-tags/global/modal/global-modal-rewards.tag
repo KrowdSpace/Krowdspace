@@ -1,8 +1,11 @@
 <global-modal-rewards>
-    <div id="modal-global-rewards" class="modal container fade">
+    <div id="modal-global-rewards" class="modal container fade modal-padding">
         <div class="krowdspace-modal col-sm-8 col-sm-offset-2">
             <div id="modal" class="modal-content">
                 <div class="modal-header">
+                    <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                    </button>
                     <p class="modal-heading">KROWDSPACE REWARDS</p>
                 </div>
                 <div class="modal-body">

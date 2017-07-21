@@ -1,10 +1,12 @@
 <dashboard-refresh-content>
    <div id="refresh-content" class="modal container fade">
-      <div class="krowdspace-modal col-lg-offset-3 col-md-6">
+      <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8" style="padding: 0px;">
          <div id="modal">
-            <div class="modal-body no-gutter">
                <form id="submitRefresh" role="form" onsubmit={ submitRefresh }>
-                  <div class="col-sm-12 edit-user-box">
+                  <div class="edit-user-box modal-max-login" style="position: relative;">
+                     <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                     </button>
                      <p class="modal-heading">Refresh Project Content</p>
                      <p class="modal-purchase-text text-left edit-text-title" style="margin-top: 15px;">To refresh your project content please click the update button below. This will refresh any content changes as well as your project metric data.</p>
                      <p class="modal-purchase-text">If you would like to set this feature to auto update every 24 hours please check the box below and then press the update button</p>
@@ -14,11 +16,11 @@
                         </label>
                      </div>
                   </div>
-                  <div class="text-center">
+                  <div class="text-center modal-max-login">
                      <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit"  value="Update" class="btn-register">
                   </div>
                </form>
-            </div>
+           
          </div>
       </div>
    </div>
@@ -66,7 +68,7 @@
        
        setProjDeets(project, projectData)
        {
-           krowdspace.projects.set_project(project, projectData).then((res)=>
+           krowdspace.projects.update_project(project).then((res)=>
            {
                window.location.reload();
            });
