@@ -1,4 +1,5 @@
 <global-analytics-google>
+<script>
   if(!opts.id) {
     console.log('Google analytics ID is undefined')
   }
@@ -8,4 +9,5 @@
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga')
   ga('create', opts.id)
   ga('send', 'pageview')
+</script>
 </global-analytics-google>

@@ -1,5 +1,5 @@
 <project-page-share>
-    <div class="col-sm-1 no-gutter share-container">
+    <div class="col-sm-1 hidden-xs no-gutter share-container">
         <div class="text-left shadow share-box">
             <a href="{ facebookShare }" target="_blank">
             <span class="fa-stack fa-lg facebook icon-reset facebook-back filterdark">
@@ -53,7 +53,7 @@
     {
         this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
     
-        this.twitterShare = 'https://twitter.com/intent/tweet?text=Just found this project at Krowdspace.com! &via=krowdspaced&hashtags=krowdspace, crowdfunding, rewards, kickstarter, indiegogo';
+        this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.web_data.title.content + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
         
         this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
 

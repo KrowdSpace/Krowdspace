@@ -8,7 +8,7 @@
 				<div class="modal-body">
 					<p>Thank you for registering with Krowdspace. To activate your account please check your email and click on the verification link provided. We hope you enjoy our services and happy crowdfunding!</p>
 					<p>Being a Krowdspace member will give you access to the latest news, promotions and exclusive giveaways! Until then, make sure to stay connected with our social media channels:</p>
-					<div class="col-sm-9 text-left boost-warning" style="padding: 0px;">
+					<div class="col-sm-9 text-left boost-warning">
 						<a href="https://www.facebook.com/Krowdspaced" target="_blank">
 						<span class="fa-stack fa fa-2x social-btn">
 						<i class="fa fa-circle fa-stack-2x" ></i>
@@ -34,11 +34,11 @@
 						</span>
 						</a>
 					</div>
-					<div class="col-sm-3 text-right boost-warning" style="padding: 0px;">
+					<div class="col-sm-3 text-right boost-warning">
 						<a onclick={ submission }>
 						<span class="fa-stack fa fa-2x social-btn">
 						<i class="fa fa-circle fa-stack-2x" ></i>
-						<i class="fa fa-sign-out fa-stack-1x fa-inverse" style="padding-left: 3px;"></i>
+						<i class="fa fa-sign-out fa-stack-1x fa-inverse center-icon"></i>
 						</span>
 						</a>
 					</div>

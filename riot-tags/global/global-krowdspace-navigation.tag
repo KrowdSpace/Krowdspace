@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i>
                 </button>
-                <a class="navbar-logo-alt page-scroll" href="#page-top"><img src="/../img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;"></a>
+                <a class="navbar-logo-alt" href="/#/explore"><img class="logo-size" src="/../img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small"></a>
             </div>
             <div class="collapse navbar-collapse text-center" id="explore-nav-collapse">
                 <ul class="nav navbar-nav navbar-left">
@@ -19,7 +19,9 @@
                         <a class="explore-scroll" href="/#/account/register">Submit Project</a>
                     </li>
                 </ul>
-                <img class="logo-float" src="img/krowdspace-explore.png" alt="Krowdspace Logo Small" style="width:55px;">
+                <a href="/#/explore">
+                    <img class="logo-float logo-size" src="img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small">
+                </a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
@@ -40,40 +42,38 @@
             </div>
         </div>
     </nav>
-    <script>	
-krowdspace.v1.check().then((res)=>
+<script>	
+    krowdspace.v1.check().then((res)=>
 	{
 		logged_in = true;
 		this.update();
 	},
 	(err)=>
 	{
-		console.log(err);
+		
 	});
 
-</script>
-    <script>
-        this.on('mount', function() 
-        {
-            $('a.page-scroll').bind('click', function(event) {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: ($($anchor.attr('href')).offset().top - 50)
-                }, 1250, 'easeInOutExpo');
-                event.preventDefault();
-            }),
-            $('body').scrollspy({
-                target: '.explore-fixed-top',
-                offset: 51
-            }),
-            $('.navbar-collapse ul li a').click(function(){ 
-                    $('.navbar-toggle:visible').click();
-            }),
-            $('#mainNav').affix({
-                offset: {
-                    top: 10
-                }
-            })
-        });
+    this.on('mount', function() 
+    {
+        $('a.page-scroll').bind('click', function(event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: ($($anchor.attr('href')).offset().top - 50)
+            }, 1250, 'easeInOutExpo');
+            event.preventDefault();
+        }),
+        $('body').scrollspy({
+            target: '.explore-fixed-top',
+            offset: 51
+        }),
+        $('.navbar-collapse ul li a').click(function(){ 
+                $('.navbar-toggle:visible').click();
+        }),
+        $('#mainNav').affix({
+            offset: {
+                top: 10
+            }
+        })
+    });
     </script>
 </global-krowdspace-navigation>

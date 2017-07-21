@@ -2,10 +2,10 @@
     <div class="dash-bar col-sm-12 no-gutter" >
         <div class="col-sm-3 text-center divider-inside-right">
             <a href="{ kickstarterPage }" target="_blank">
-                <img class="icon-share filterdark" src="img/fav/kickstarter-icon.png" style="width:36px; margin-top: 2px;"/>
+                <img class="icon-share-bar filterdark" src="img/fav/kickstarter-icon.png"/>
             </a>
             <a href="{ indiegogoPage }" target="_blank"> 
-                <img class="icon-share filterdark" src="img/fav/indiegogo-icon.png" style="width:36px; margin-top: 2px;"/>
+                <img class="icon-share-bar filterdark" src="img/fav/indiegogo-icon.png"/>
             </a>
             <p class="dashboard-text-bar dash-divider">Crowdfunding Links</p>
         </div>

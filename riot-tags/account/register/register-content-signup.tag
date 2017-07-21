@@ -1,10 +1,30 @@
 <register-content-signup>
+<style>
+@media screen and (max-width: 1200px) {
+        .registration-box {
+            margin: 20px;
+        }
+    }
+@media screen and (max-width: 560px) {
+        .registration-box {
+           margin: 0px;
+           border: none;
+           height: 430px;
+        }
+        .register-controls {
+           position: relative;
+        }
+        .link-left {
+            padding-right: 0px !important;
+        }
+    }
+</style>
     <div class="no-gutter register-background shadow">
-        <div class="col-sm-5 register">
+        <div class="col-lg-5 hidden-md hidden-sm hidden-xs register">
             <img class="img-responsive" src="/img/projects/krowdspace-register.png">
             <p class="text-center register-cta">Register your crowdfunding campaign and accelerate your growth today!</p>
         </div>
-        <form class="col-sm-7" id="registerProjectForm" onsubmit={ submit }>
+        <form class="col-lg-7 col-md-12" id="registerProjectForm" onsubmit={ submit }>
             <div class="registration-box shadow">
                 <fieldset id="project_information">
                     <div class="form-group col-sm-12">
@@ -32,7 +52,7 @@
                     </div>
                     <div class="form-group col-sm-12 no-gutter">
                         <p class="text-left registration-text">Please provide your live crowdfunding project url.</p>
-                        <div class="form-group col-sm-4 link-left">
+                        <div class="col-sm-4 form-group link-left">
                             <select ref="crowdportal" type="text" class="form-control" name="crowdSite">
                                 <option disabled selected value>Choose Site</option>
                                 <option value="https://www.kickstarter.com/">Kickstarter.com</option>
@@ -50,7 +70,7 @@
                 <fieldset id="reward_information">
                     <div class="form-group col-sm-12">
                         <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p>
-                        <input ref="rewardtext" class="form-control" name="reward" maxlength="80" placeholder="See Sample Rewards Below ( Max Characters 80 )">
+                        <input ref="rewardtext" class="form-control" name="reward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
                     </div>
                     <div class="form-group col-sm-12">
                         <p class="text-left registration-text">Does your reward have a value or is it a discount?</p>
@@ -64,8 +84,9 @@
                         <p class="text-left registration-text">Please estimate the value of your reward.</p>
                         <input ref="rewardvalue" class="form-control" name="rewardAmount">
                     </div>
+                
                     <div class="register-controls">
-                        <div class="col-lg-offset-3 col-lg-6">
+                        <div class="col-xs-offset-3 col-xs-6">
                             <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p>
                             <p class="pull-right"><a class="back-project next next-step">NEXT</a></p>
                         </div>
@@ -74,20 +95,17 @@
                 <fieldset id="project_verify">
                     <div class="col-sm-12">
                         <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p>
-                        <p class="text-left registration-text">To verify that you are the crowdfunding project owner please upload one of these images to your project page before submitting it to Krowdspace. We will check to see if the image is present to prevent false project submissions. Thank you for your understanding!</p>
-                    </div>
-                    <div class="row text-center">
-                            <img src="img/press/featured-krowdspace-v1.svg" alt="Featured on Krowdspace">
-                         
-                       
-                                <img src="img/press/featured-krowdspace-v3.svg" alt="Featured on Krowdspace" style="margin-top: 10px; width: 320px;">
-
+                        <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p>
+                        <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p>
+                        <p class="text-left registration-text">https://www.Krowdspace.com</p>
+                        <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p>
                     </div>
                     <div class="register-controls">
-                        <div class="col-lg-offset-3 col-lg-6">
+                        <div class="col-xs-offset-3 col-xs-6">
                             <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p>
                             <p class="pull-right"><a class="back-project next next-step">NEXT</a></p>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </fieldset>
                 <fieldset id="service_terms">
@@ -102,10 +120,10 @@
                             <input type="checkbox" value="checked" name="serviceTerms" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span>
                             </label>
                         </div>
+                    <div class="clearfix"></div>
                     </div>
                     <div class="register-controls" >
-                        
-                        <div class="col-lg-offset-3 col-lg-6">
+                        <div class="col-xs-offset-3 col-xs-6">
                             <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p>
                             <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p>
                         </div>
@@ -114,6 +132,9 @@
             </div>
         </form>
         <div class="clearfix"></div>
+    </div>
+    <div class="col-sm-12 text-center">
+        <p style="font-size: 13px; padding-top: 25px;">For more information about Krowdspace Rewards please view our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Reward Page</a>.</p>
     </div>
     <script>
         submit(e)
@@ -128,7 +149,7 @@
                 REWARDVALUE = this.refs.rewardoption.value,
                 IGREWARD = 'test',
                 REWARDAMOUNT = this.refs.rewardvalue.value;
-    
+        
             let DATA = {
                         PVALID,
                         CATEGORY,
@@ -152,8 +173,8 @@
                 console.log(err);
                 });
         }
-
-    this.on('mount', function() 
+        
+        this.on('mount', function() 
         {
         	$(".next").click(function(){
         		var form = $("#registerProjectForm");

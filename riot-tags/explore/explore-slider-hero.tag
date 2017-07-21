@@ -1,31 +1,36 @@
 <explore-slider-hero>
     <style type="text/css">
-    .slider {
-        width: 100%;
-        position: relative;
-        margin: 0px auto;
+        .slick-slide img {
+        border-top: 1px solid #3f434f;
+        border-bottom: 1px solid #3f434f;
+        width: 550px;
+        }
+    @media screen and (max-width: 991px) {
+        .explore-feature-right {
+            padding-right: 10px;
+        }
     }
-
-    .slick-slide {
-      margin: 0px;
+    @media screen and (max-width: 768px) {
+        .explore-feature-left {
+        margin-top: 100px;
+        }
+        .explore-feature-right {
+            padding-right: 10px;
+        }
     }
-    .slick-slide span,
-    .slick-slide .learn-more {
-      display: none;   
-    }
-    .slick-current span,
-    .slick-current .learn-more {
-      display: inline;       
-    }
-    .slick-slide img {
-      border-top: 1px solid #dcdedd;
-      border-bottom: 1px solid #dcdedd;
-      width: 550px;
-    }
-
-    .slick-prev:before,
-    .slick-next:before {
-        color: black;
+    @media screen and (max-width: 550px) {
+        .slick-slide img {
+        width: 400px;
+        }
+        .explore-banner-box {
+            height: 227px;
+        }
+        .explore-box {
+            display: none;
+        }
+        .learn-responsive {
+            display: inline-block;
+        }
     }
     </style>
     <div class="autoplay slider explore-header">
@@ -33,7 +38,7 @@
             <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
             <div class="explore-box">
                 <div class="col-sm-9">
-                    <div style="position: relative; height: 301px;">
+                    <div class="slider-left-box">
                         <div class="explore-feature-left">
                             <div>
                             <span class="explore-title">{ name }</span>
@@ -45,9 +50,14 @@
                     </div>
                 </div>
                 <div class="col-sm-3 explore-feature-right text-center">
-                    <a href="{ '/#/explore/project/' + unique_id }"><p class="learn-more">Learn More</p></a>
+                    <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
                 </div>
             </div>
+            <div class="col-md-12 learn-responsive text-right">
+                        <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal">
+                            <p class="learn-more">Learn More</p>
+                        </a>
+                    </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -59,7 +69,7 @@
             });
 
             let newObject={
-                        unique_id: 'project-feature-popup',
+                        unique_url: '#modal-feature-info',
                         name: '',
                         project_data: 
                         {
@@ -79,7 +89,7 @@
                         },
                     };
             let newObject2={
-                        unique_id: 'project-feature-popup',
+                        unique_url: '#modal-global-register',
                         name: 'Join Krowdspace Today!',
                         project_data: 
                         {
@@ -99,7 +109,8 @@
                         },
                     };
 
-            FilterExplore.push(newObject, newObject2);
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse(); 
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 

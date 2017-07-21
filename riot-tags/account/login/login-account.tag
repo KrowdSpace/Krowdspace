@@ -1,10 +1,10 @@
 <login-account>
     <div class="container login-check-container">
-        <div class="krowdspace-modal col-lg-offset-3 col-md-6">
-         <div id="modal">
+        <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+         <div id="modal"> 
             <div class="modal-body modal-custom">
                 <form onsubmit={ loginSubmit }>
-                    <div class="col-sm-12 text-left register-container-modal">
+                    <div class="text-left register-container-modal modal-max-login">
                     <p class="modal-heading modal-heading-alt">Krowdspace Login</p>
                     <div id="errorLog" class="alert alert-danger alert-dismissable fade in">
                         <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
@@ -12,29 +12,30 @@
                     </div>
                     <div class="has-feedback">
                         <label class="control-label" for="username"></label>
-                        <input type="text" class="form-control" id="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username or Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-user form-control-feedback"></span>
                     </div>
                     <div class="has-feedback">
                         <label class="control-label" for="password"></label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-lock form-control-feedback"></span>
                     </div>
                     <div class="col-xs-6 checkbox text-left" style="padding-left: 0px;">
                         <label>
-                            <input type="checkbox" id="checkbox">Remember Me
+                            <input type="checkbox" ref="checkbox" id="checkbox">Remember Me
                         </label>
                     </div>
                     <div class="col-xs-6 checkbox text-right forgot-box">
-                        <a href="#"><p class="forgot-pass">Forgot Password?</p></a>
+                        <a style="cursor: pointer;" onclick= { registerPassword }><p class="forgot-pass">Forgot Password?</p></a>
                     </div>
+                    <div class="clearfix"></div>
                   </div>
-                  <div class="text-center">
+                  <div class="text-center modal-max-login">
                     <input type="submit" class="landing-submit alt-border" name="submit" value="Login">
                 </div>
                </form>
                <div class="text-center">
-                <p class="login-float-text">Dont have an account? <a href="#modal-global-register" data-toggle="modal">Register today!</a></p>
+                    <p class="login-float-text">Dont have an account? <a class="function-link" onclick= { registerModal }>Register today!</a></p>
                </div>
             </div>
          </div>
@@ -48,11 +49,8 @@
 
             var USERNAME = this.refs.usernamelogin.value,
                 PASSWORD = this.refs.passwordlogin.value;
-                STAYLOGGED = true;
+                STAYLOGGED = this.refs.checkbox.checked;
 
-            console.log(USERNAME);
-            console.log(PASSWORD);
-    
 	krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res)=>
 	{
 		this.logged_in = true;
@@ -66,6 +64,15 @@
         $("#errorLog").show();
 	});
 }
-
+registerModal() 
+{
+	$('#modal-global-login').modal('hide');
+    $('#modal-global-register').modal('show');
+}
+registerPassword() 
+{
+	$('#modal-global-login').modal('hide');
+    $('#modal-password').modal('show');
+}
 </script>
 </login-account>

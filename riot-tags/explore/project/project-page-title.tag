@@ -1,16 +1,37 @@
 <project-page-title>
-    <div class="col-sm-6 text-left no-gutter user-container-project">
-        <p class="dashboard-text-alt" style="height: 38px;">{ projectTitle }</p>
-            <p class="dashboard-text-alt"style="height: 60px;">{ projectDescription }</p>
-            <p class="dashboard-text-alt" style="height: 38px;">Reward: { projectReward }</p>
-            <p class="dashboard-text-alt" style="height: 50px;">To view the coupon code or directly link to the rewards page please follow the "Support Project button below</p>
-            <div class="col-sm-6 text-center divider-inside-right backed-box">
+<style>
+@media screen and (max-width: 1200px) {
+        .user-container-project {
+            height: 242px;
+        }
+    }
+@media screen and (max-width: 767px) {
+        .user-container-project {
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            border-top: none;
+        }
+        .project-coupon {
+            margin-bottom: 50px;
+        }
+    }
+</style>
+    <div class="col-md-6 text-left no-gutter user-container-project">
+        <p class="dashboard-text-alt project-title">{ projectTitle }</p>
+            <p class="dashboard-text-alt hidden-md project-description">{ projectDescription }</p>
+            <p class="dashboard-text-alt project-reward-text">Reward: { projectReward }</p>
+            <p class="dashboard-text-alt hidden-md hidden-sm project-coupon">To view the coupon code or directly link to the rewards page please follow the "Support Project button below</p>
+            <div style="position: absolute; bottom: 10px; left: 0; right: 0;">
+            <div class="col-xs-6 text-center divider-inside-right backed-box">
 				<a show={ projectbtn } href="#kickstarter-reward" class="modal-link" data-toggle="modal"><p class="back-project">BACK PROJECT</p></a>
                 <a show={ !projectbtn } href="{ projectLink }" target="_blank" ><p class="back-project">BACK PROJECT</p></a>
 			</div>
-            <div class="col-sm-6 text-center backed-box-right">
+            <div class="col-xs-6 text-center backed-box-right" >
                 <p class="social-metric">{ countdown || 0 } DAYS LEFT</p>
-			</div>
+            </div>
+            </div>
 	</div>
 <script>
     krowdspace.projects.project(this.opts.uri).then((res)=>

@@ -1,5 +1,26 @@
 <dashboard-project-user>
-    <div class="col-sm-6 text-center no-gutter user-container">
+<style>
+@media screen and (max-width: 1200px) {
+        .user-container {
+            height: 242px;
+        }
+    }
+@media screen and (max-width: 991px) {
+        .user-container {
+            height: 282px;
+        }
+    }
+@media screen and (max-width: 767px) {
+        .user-container {
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            border-top: none;
+        }
+    }
+</style>
+    <div class="col-md-6 text-center no-gutter user-container">
         <a href="#edit-profile" class="modal-link" data-toggle="modal">
             <span class="fa-stack fa-lg social-btn float-btn">
                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -7,49 +28,52 @@
             </span>
         </a>
             <p class="dashboard-text profile-name">{ firstname } { lastname }</p>
+
             <div show={ project }>
-                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
-                        <p class="dashboard-user">Projects Launched</p>
-                        <p class="social-metric">0</p>
+                <div class="col-xs-4 text-center divider-inside-right user-stat-box">
+                        <p class="dashboard-user">Current Project</p>
+                        <p class="social-metric">{ opts.index }</p>
                 </div>
-                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                <div class="col-xs-4 text-center divider-inside-right user-stat-box">
                         <p class="dashboard-user">Hours Remaining</p>
                         <p class="social-metric">{ countdowntimer || 0 }</p>
                 </div>
-                <div class="col-sm-4 text-center user-stat-box">
+                <div class="col-xs-4 text-center user-stat-box">
                     <p class="dashboard-user">Reward Value</p>
                     <p class="social-metric">{ rewardAmount || 0 }</p>
                 </div>
+
             </div>
             <div show={ !project }>
-                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                <div class="col-xs-4 text-center divider-inside-right user-stat-box">
                         <p class="dashboard-user">Projects Launched</p>
                         <p class="social-metric">13</p>
                 </div>
-                <div class="col-sm-4 text-center divider-inside-right user-stat-box">
+                <div class="col-xs-4 text-center divider-inside-right user-stat-box">
                         <p class="dashboard-user">Value of Rewards</p>
                         <p class="social-metric">{ '$1,329' }</p>
                 </div>
-                <div class="col-sm-4 text-center user-stat-box">
+                <div class="col-xs-4 text-center user-stat-box">
                     <p class="dashboard-user">Project Pledges</p>
                     <p class="social-metric">{ '$84,322' }</p>
                 </div>
             </div>
-            <div class="col-sm-8 text-left">
-                <div class="col-sm-4 user-box-left">
+            <div class="col-lg-8 col-md-12 text-left">
+                <div class="col-md-4 col-sm-4 col-xs-4 user-box-left">
                     <p class="dashboard-user">Username:</p>
                 <p class="dashboard-user">Email:</p>
-                <p class="dashboard-user">Kickstarter:</p>
-                <p class="dashboard-user">Indiegogo:</p>
+                <p class="dashboard-user hidden-md">Kickstarter:</p>
+                <p class="dashboard-user hidden-md">Indiegogo:</p>
                 </div>
-                <div class="col-sm-8 user-box-right">
+                <div class="col-md-8 col-sm-8 col-xs-8 user-box-right">
                     <p class="dashboard-user">{ username }</p>
                 <p class="dashboard-user">{ email }</p>
-                <p class="dashboard-user">{ kickstarter || 'N/A' }</p>
-                <p class="dashboard-user">{ indiegogo || 'N/A' }</p>
+                <p class="dashboard-user hidden-md">{ kickstarter || 'N/A' }</p>
+                <p class="dashboard-user hidden-md">{ indiegogo || 'N/A' }</p>
                 </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="col-sm-4">
+            <div class="col-lg-4 hidden-md hidden-sm hidden-xs">
             </div>
         </div>
 <script>
@@ -74,6 +98,7 @@
         this.kickstarter = res.data.user_data.ksuser;
         this.indiegogo = res.data.user_data.iguser;
         this.username = res.data.username;
+        console.log(res);
     }
 
     setProjectDeets(res)

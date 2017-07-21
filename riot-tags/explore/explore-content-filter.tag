@@ -1,44 +1,29 @@
 <explore-content-filter>
     <div class="row">
-
-        <div class="col-sm-3">
+        <div class="col-md-3 hidden-sm hidden-xs" style="margin-top: 15px;">
             <select class="form-control">
                 <option value="">Just Launched</option>
                 <option value="">Closing Soon</option>
             </select>
         </div>
-
-        <div class="col-sm-3">
+        <div class="col-md-3 col-sm-5 col-sm-offset-0 col-xs-12" style="margin-top: 15px;">
             <select class="form-control" ref="options" onchange={ onCatChange } >
-            
                 <option value="*">Featured Projects</option>
-
-                <option each={ cat in catArr }  value="{ cat }"> 
-                    { cat }
-                </option>
-
+                <option each={ cat in catArr }  value="{ cat }">{ cat }</option>
             </select>
         </div>
-
-        <div class="col-sm-2">
-        </div>
-
-        <div class="col-sm-4">
-
+        <div class="col-lg-2 hidden-md"></div>
+        <div class="col-lg-4 col-md-6 col-sm-7 col-sm-offset-0 col-xs-12" style="margin-top: 15px;">
             <form role="search">
                 <div class="input-group">
-
                     <input type="text" ref= "searchBox" class="form-control" placeholder="Search Projects" onkeyup={ onSearch }>
-
                     <div class="input-group-btn">
                         <div class="btn btn-void">
                             <i class="fa fa-search fa-lg"></i>
                         </div>
                     </div>
-
                 </div>
             </form>
-
         </div>
     </div>   
     <script>
@@ -55,7 +40,11 @@
 
         krowdspace.projects.explore().catch(err=>console.log('error: ', err)).then((res) =>
         {
-            this.exploreCards = res.data;
+            let rewardFilter = res.data;
+            this.exploreCards = rewardFilter.filter((element) => {
+                return (element.project_data.meta_data.reward === false);
+            });
+            
 
             let catSet = new Set();
 
@@ -71,8 +60,6 @@
 
             let pa = this.exploreCards,
                 ca = this.projectSorter(this.exploreCards);
-
-            console.log(pa, ca);
 
             this.setExploreCards(ca);
             this.update();
@@ -95,8 +82,8 @@
        
         let filterArray = this.projectSorter( this.exploreCards.filter( this.categoriesFilter(value) ) );
 
-        console.log("ST: ", value);
-        console.log('FA: ', filterArray);
+        // console.log("ST: ", value);
+        // console.log('FA: ', filterArray);
 
         this.setExploreCards(filterArray);
     };
@@ -120,8 +107,11 @@
             return !el.project_data.meta_data.featured;
         });
 
-        spA.reverse();
-        fpA.reverse();
+
+        fpA.reverse(); 
+        
+        spA.reverse(); 
+
 
         spA.splice(0, 0, ...fpA);
 
@@ -138,8 +128,9 @@
         {
             let cat = el.project_data.info_data.category.toLowerCase();
 
-            console.log(cat.includes( option ), cat, option);
-            console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+            // console.log(cat.includes( option ), cat, option);
+            // console.log(filterText != '' && cat.includes( filterText ), cat, filterText);
+
 
             if(option === "*")
             {

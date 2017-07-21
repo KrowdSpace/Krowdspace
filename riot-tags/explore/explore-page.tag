@@ -3,7 +3,7 @@
         <global-krowdspace-navigation></global-krowdspace-navigation>
         <explore-slider-hero></explore-slider-hero>
     </div>
-    <div class="container" style="margin-bottom: 50px;">
+    <div class="container explore-bottom">
         <explore-content-filter filtersearch={ filter } ></explore-content-filter>
         <explore-content-card ref="filter"></explore-content-card>
     </div>

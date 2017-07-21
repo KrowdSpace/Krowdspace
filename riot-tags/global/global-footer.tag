@@ -17,7 +17,7 @@
                         <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-1 col-xs-10">
+                <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12" style="padding-bottom: 20px;">
                     <p class="footer-text">
                         <strong>Follow Us On Social Media</strong>
                     </p>
@@ -38,8 +38,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-push-1 col-lg-4 text-center">
-                    <p class="footer-text" style="margin-bottom: 26px;"><strong>Contact Krowdspace</strong></p>
+                <div class="col-lg-push-1 col-lg-4 col-md-5 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12 text-center">
+                    <p class="footer-text contact-box"><strong>Contact Krowdspace</strong></p>
                     <form onsubmit={ contactMessage } ref="commentForm">
                         <div class="form-group">
                             <input type="text" ref="fullname" class="form-control" placeholder="Full Name" required="required" aria-required="true" aria-invalid="true">
