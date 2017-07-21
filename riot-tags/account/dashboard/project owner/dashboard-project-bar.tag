@@ -4,9 +4,6 @@
         .icon-share-bar {
             margin: 2px 5px 0px 5px;
         }
-        .fixed-image-box {
-            height: 340px;
-        }
     }
 @media screen and (max-width: 767px) {
         .dash-bar {
@@ -15,7 +12,7 @@
             margin-right: auto;
             width: 400px;
         }
-    }
+    } 
 </style>
     <div class="dash-bar col-sm-12 no-gutter" >
         <div class="col-xs-3 text-center divider-inside-right">

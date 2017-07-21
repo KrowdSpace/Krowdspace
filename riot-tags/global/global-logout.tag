@@ -18,7 +18,7 @@
         },
         (err) => 
         {
-            console.log(err);
+    
         });
     };
 </script>

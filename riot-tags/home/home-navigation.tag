@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
                 </button>
-                <a href="/#/explore"><img class="navbar-logo logo-size" src="img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small"></a>
+                <a href="/#/explore"><img class="navbar-logo logo-size" src="img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small"></a>
             </div>
             <div class="collapse navbar-collapse" id="navigation-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -32,6 +32,9 @@
                     </li>
                     <li>
                         <a show={ logged_in } href="/#/account/resource">Resource</a>
+                    </li>
+                    <li>
+                        <a class="hidden-lg hidden-md" show={ logged_in } onclick={ krowdspaceLogout }>Logout</a>
                     </li>
                 </ul>
             </div>
@@ -71,5 +74,16 @@ krowdspace.v1.check().then((res)=>
     {
 		console.log('You are not logged in');
     });
+krowdspaceLogout() 
+    {
+        krowdspace.v1.logout().then((res) => 
+        {
+            window.location.replace("/");
+        },
+        (err) => 
+        {
+    
+        });
+    };
 </script>
 </home-navigation>

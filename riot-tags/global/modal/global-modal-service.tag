@@ -1,5 +1,5 @@
 <global-modal-service>
-    <div id="modal-service-terms" class="modal container fade modal-padding">
+    <div id="modal-service-terms" class="modal container fade modal-padding-none">
         <div class="krowdspace-modal col-sm-10 col-sm-offset-1">
             <div id="modal" class="modal-content">
                 <div class="modal-header">

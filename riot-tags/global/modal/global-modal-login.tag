@@ -26,7 +26,7 @@
                                 </label>
                             </div>
                             <div class="col-xs-6 checkbox text-right forgot-box">
-                                <a style="cursor: pointer;" onclick= { registerPassword }>
+                                <a onclick= { registerPassword }>
                                     <p class="forgot-pass">Forgot Password?</p>
                                 </a>
                             </div>

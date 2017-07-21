@@ -1,5 +1,5 @@
 <global-modal-about>
-    <div id="modal-about" class="modal container fade modal-padding">
+    <div id="modal-about" class="modal container fade modal-padding-none">
         <div class="krowdspace-modal col-sm-10 col-sm-offset-1">
             <div id="modal" class="modal-content">
                 <div class="modal-header">
@@ -12,7 +12,7 @@
                     <ul class="timeline">
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="Creating a crowdfunding project on a computer.">
+                                <img class="img-circle img-responsive" src="img/about/home-header.jpg" alt="Creating a crowdfunding project on a computer.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">
@@ -26,7 +26,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="Open nature themed background.">
+                                <img class="img-circle img-responsive" src="img/about/mountain.jpg" alt="Open nature themed background.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">
@@ -40,7 +40,7 @@
                         </li>
                         <li>
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="Social media on ipad.">
+                                <img class="img-circle img-responsive" src="img/about/social.jpg" alt="Social media on ipad.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">
@@ -54,7 +54,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="Business meeting at a desk.">
+                                <img class="img-circle img-responsive" src="img/about/conference-desk.jpg" alt="Business meeting at a desk.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">
@@ -68,7 +68,7 @@
                         </li>
                         <li class="timeline">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/5.jpg" alt="old Krowdspace Logo with background.">
+                                <img class="img-circle img-responsive" src="img/about/krowdspace-old.jpg" alt="old Krowdspace Logo with background.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">
@@ -82,7 +82,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/7.jpg" alt="Updated Krowdspace Logo.">
+                                <img class="img-circle img-responsive" src="img/about/krowdspace-new.jpg" alt="Updated Krowdspace Logo.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">
@@ -96,7 +96,7 @@
                         </li>
                         <li class="timeline time-bottom">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/about/6.jpg" alt="Background image of Seattle.">
+                                <img class="img-circle img-responsive" src="img/about/seattle-skyline.jpg" alt="Background image of Seattle.">
                             </div>
                             <div class="timeline-panel">
                                 <div class="text-left">

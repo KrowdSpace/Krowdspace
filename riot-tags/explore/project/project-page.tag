@@ -1,11 +1,11 @@
 <project-page>
 <style>
 @media screen and (max-width: 767px) {
-        .shadow {
-            -webkit-box-shadow: none;
-    		-moz-box-shadow: none;
-        }
-    }
+	.shadow {
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+	}
+}
 </style>
     <div class="row">
         <global-krowdspace-navigation></global-krowdspace-navigation>

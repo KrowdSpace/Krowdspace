@@ -1,5 +1,5 @@
 <global-modal-rewards>
-    <div id="modal-global-rewards" class="modal container fade modal-padding">
+    <div id="modal-global-rewards" class="modal container fade modal-padding-none">
         <div class="krowdspace-modal col-sm-8 col-sm-offset-2">
             <div id="modal" class="modal-content">
                 <div class="modal-header">

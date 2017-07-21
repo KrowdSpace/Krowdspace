@@ -3,6 +3,9 @@
         <div class="krowdspace-modal col-sm-6 col-sm-offset-3">
             <div id="modal" class="modal-content text-center">
                 <div class="modal-header">
+                    <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                    </button>
                 </div>
                 <div class="modal-body">
                     <p class="modal-heading verify-heading">Confirm Your Email Address</p>

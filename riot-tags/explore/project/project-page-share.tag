@@ -1,5 +1,37 @@
 <project-page-share>
-    <div class="col-sm-1 hidden-xs no-gutter share-container">
+<style>
+@media screen and (max-width: 767px) {
+        .shadow {
+            -webkit-box-shadow: none;
+    		-moz-box-shadow: none;
+		}
+		.share-container {
+			top: 79px;
+			left:0;
+			right: 0;
+			position: absolute;
+			display: inline-block;
+			font-size: 0px;
+			width: 400px;
+			margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .share-box {
+            width: 400px;
+            border-right: 1px solid #eb4924;;
+        }
+		.icon-reset {
+            font-size: 19px;
+            width: 57px;
+        }
+        .icon-reset:hover {
+            font-size: 19px;
+            width: 57px;
+		}
+    }
+</style>
+    <div class="col-sm-1 no-gutter share-container">
         <div class="text-left shadow share-box">
             <a href="{ facebookShare }" target="_blank">
             <span class="fa-stack fa-lg facebook icon-reset facebook-back filterdark">
@@ -7,43 +39,47 @@
                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <br/>
+           
             <a href="{ twitterShare }" target="_blank">
             <span class="fa-stack fa-lg twitter icon-reset twitter-back filterdark">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <br/>
+            <a href="{ googleShare }" target="_blank">
+            <span class="fa-stack fa-lg google icon-reset google-back filterdark">
+                <i class="fa fa-square fa-stack-2x"></i>
+                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
             <a href="{ linkedinShare }" target="_blank">
             <span class="fa-stack fa-lg linkedin icon-reset linked-back filterdark">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <br/>
+          
             <a href="{ redditShare }" target="_blank">
             <span class="fa-stack fa-lg reddit icon-reset reddit-back filterdark">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <br/>
+          
             <a href="{ diggShare }" target="_blank">
             <span class="fa-stack fa-lg digg icon-reset digg-back filterdark">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-digg fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <br/>
+         
             <a href="{ stumbleuponShare }" target="_blank">
             <span class="fa-stack fa-lg stumbleupon icon-reset stumble-back filterdark">
                 <i class="fa fa-square fa-stack-2x"></i>
                 <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i>
             </span>
             </a>
-            <br/>
-            <a href="https://www.facebook.com/Krowdspaced" target="_blank"> 
+            <a class="hidden-xs" href="https://www.facebook.com/Krowdspaced" target="_blank"> 
                 <img class="icon-share icon-reset krowdspace-back filterdark" src="img/fav/krowdspace-share-icon.png"/>
             </a>
         </div>
@@ -62,6 +98,8 @@
         this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
 
         this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+
+        this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.info_data.url;
 
         this.update();
 

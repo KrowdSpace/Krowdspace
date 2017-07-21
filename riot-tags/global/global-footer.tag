@@ -3,7 +3,7 @@
         <div class="custom-footer">
 			<div class="container">
             <div class="row">
-                <div class="col-md-3 hidden-sm hidden-xs">
+                <div class="col-md-3 hidden-sm hidden-xs static">
                     <p class="footer-text">
                         <strong>Quick Links</strong>
                     </p>
@@ -13,11 +13,11 @@
                         <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li>
                         <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li>
                         <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li>
-                        <li><a href="#modal-giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li>
+                        <li><a href="/#/account/giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li>
                         <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12" style="padding-bottom: 20px;">
+                <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12 footer-social">
                     <p class="footer-text">
                         <strong>Follow Us On Social Media</strong>
                     </p>
@@ -38,7 +38,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-push-1 col-lg-4 col-md-5 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12 text-center">
+                <div class="col-lg-push-1 col-lg-4 col-md-5 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12 text-center contact-container">
                     <p class="footer-text contact-box"><strong>Contact Krowdspace</strong></p>
                     <form onsubmit={ contactMessage } ref="commentForm">
                         <div class="form-group">

@@ -1,43 +1,19 @@
 <explore-slider-hero>
     <style type="text/css">
-        .slick-slide img {
-        border-top: 1px solid #3f434f;
-        border-bottom: 1px solid #3f434f;
-        width: 550px;
+        @media screen and (max-width: 550px) {
+            .col-xs-9 {
+                width: 90%;
+            }
+            .col-xs-3 {
+                width: 10%;
+            }
         }
-    @media screen and (max-width: 991px) {
-        .explore-feature-right {
-            padding-right: 10px;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        .explore-feature-left {
-        margin-top: 100px;
-        }
-        .explore-feature-right {
-            padding-right: 10px;
-        }
-    }
-    @media screen and (max-width: 550px) {
-        .slick-slide img {
-        width: 400px;
-        }
-        .explore-banner-box {
-            height: 227px;
-        }
-        .explore-box {
-            display: none;
-        }
-        .learn-responsive {
-            display: inline-block;
-        }
-    }
     </style>
     <div class="autoplay slider explore-header">
         <div class="explore-banner-box" each= { ExploreBannerFilter }>
             <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
             <div class="explore-box">
-                <div class="col-sm-9">
+                <div class="col-xs-9">
                     <div class="slider-left-box">
                         <div class="explore-feature-left">
                             <div>
@@ -49,15 +25,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-3 explore-feature-right text-center">
-                    <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
+                <div class="col-xs-3 explore-feature-right text-center">
+                    <a class="plus-switch-one" href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
+                    <a class="plus-switch" href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a>
                 </div>
             </div>
-            <div class="col-md-12 learn-responsive text-right">
-                        <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal">
-                            <p class="learn-more">Learn More</p>
-                        </a>
-                    </div>
         </div>
     </div>
     <script type="text/javascript">
@@ -127,7 +99,7 @@
         },
         (err)=>
         {
-            console.log(err)
+
         });
     </script>
 </explore-slider-hero>

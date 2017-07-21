@@ -1,18 +1,6 @@
 <explore-content-card>
-<style>
-@media screen and (max-width: 991px) {
-        .explore-container {
-            width: 348px;
-        }
-    }
-@media screen and (max-width: 767px) {
-        .explore-container {
-            width: 368px;
-        }
-    }
-</style>
     <div class="row">
-        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6" style="padding-left: 0px; padding-right: 0px;">
+        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 explore-card-content">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">
                     <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
@@ -25,14 +13,14 @@
                         <p class="card-text-alt">{ exploreCard.ExploreCard.data.title }</p>
                         <p class="card-text-alt">Reward: { exploreCard.ExploreCard.data.reward }</p>
                     </div>
-                    <div class="col-xs-5 text-left" style="max-height: 23px;">
-                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.backed } Raised</p>
+                    <div class="col-xs-5 text-left card-return">
+                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.backed || 0 } Raised</p>
                     </div>
-                    <div class="col-xs-2 text-center" style="max-height: 23px;">
-                        <p class="card-text-alt days-center">{ exploreCard.ExploreCard.data.days } Days</p>
+                    <div class="col-xs-2 text-center card-return">
+                        <p class="card-text-alt days-center">{ exploreCard.ExploreCard.data.days || 0 } Days</p>
                     </div>
-                    <div class="col-xs-5 text-right" style="max-height: 23px;">
-                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.goal } Goal</p>
+                    <div class="col-xs-5 text-right card-return">
+                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.goal || 0 } Goal</p>
                     </div>
                     <div class="col-xs-12">
                         <div class="progress">

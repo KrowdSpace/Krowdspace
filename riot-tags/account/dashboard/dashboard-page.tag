@@ -64,7 +64,8 @@
         
 					<dashboard-project-image show={ project } project = { project }></dashboard-project-image>
 					<dashboard-user-image show={ !project } ></dashboard-user-image>
-					<dashboard-project-user index = { projectIndex + 1 } user = { user } project = { project }></dashboard-project-user>
+					<dashboard-project-user show={ project } index = { projectIndex + 1 } user = { user } project = { project }></dashboard-project-user>
+					<dashboard-user-user show={ !project } user = { user }></dashboard-user-user>
 
 				</div>
 				<div show={ project } class="row dash-row no-gutter">
