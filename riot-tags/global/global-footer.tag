@@ -11,10 +11,11 @@
                         <li><a class="page-scroll neutral-footer-link" href="/#/account/dashboard">View Dashboard</a></li>
                         <li><a class="page-scroll neutral-footer-link" href="/#/account/register">Submit A Project</a></li>
                         <li><a href="#modal-about" data-toggle="modal" class="modal-link neutral-footer-link">About Krowdspace</a></li>
-                        <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li>
-                        <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li>
                         <li><a href="/#/account/giveaway" data-toggle="modal" class="modal-link neutral-footer-link">Giveaways</a></li>
                         <li><a href="#modal-press-kit" data-toggle="modal" class="modal-link neutral-footer-link">Press Kit</a></li>
+                        <li><a href="#modal-privacy-policy" data-toggle="modal" class="modal-link neutral-footer-link">Privacy Policy</a></li>
+                        <li><a href="#modal-service-terms" data-toggle="modal" class="modal-link neutral-footer-link">Terms of Service</a></li>
+                        <li><a href="#modal-disclaimer" data-toggle="modal" class="modal-link neutral-footer-link">Disclaimer</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-sm-offset-0 col-sm-6 col-xs-offset-0 col-xs-12 footer-social">
@@ -90,7 +91,7 @@
             },
             (err) => 
             {
-                console.log(err);
+    
             });
         }  
         this.year = new Date().getFullYear();

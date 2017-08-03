@@ -11,7 +11,7 @@
         <global-krowdspace-navigation></global-krowdspace-navigation>
     </div>
         <div class="container dashboard">
-			<project-page-share uri={ opts.uri }></project-page-share>
+			 <project-page-share uri={ opts.uri }></project-page-share> 
 			<global-logout class="hidden-xs" show={ logged_in } uri={ opts.uri }></global-logout>
 			<div class="col-sm-10 col-sm-offset-1 project-container">
 				<div class="row dash-row no-gutter shadow">

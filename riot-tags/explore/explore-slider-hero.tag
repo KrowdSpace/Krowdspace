@@ -11,13 +11,13 @@
     </style>
     <div class="autoplay slider explore-header">
         <div class="explore-banner-box" each= { ExploreBannerFilter }>
-            <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
+            <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url }">
             <div class="explore-box">
                 <div class="col-xs-9">
                     <div class="slider-left-box">
-                        <div class="explore-feature-left">
+                        <div class="explore-feature-left"> 
                             <div>
-                            <span class="explore-title">{ name }</span>
+                                <span class="explore-title">{ name }</span>
                             </div>
                             <div class="explore-box-text">
                                 <span class="explore-title">{ project_data.info_data.reward }</span>
@@ -35,7 +35,8 @@
     <script type="text/javascript">
         krowdspace.projects.explore().then((res) =>
         {
-            let ExploreBannerData = res.data,
+            let ExploreBannerData = res.data;
+            
                 FilterExplore = ExploreBannerData.filter((element) => {
                 return (element.project_data.meta_data.explore === true);
             });
@@ -45,19 +46,14 @@
                         name: '',
                         project_data: 
                         {
-                            web_data: 
-                            {
-                                mainImg: {
-                                    content: '/img/projects/krowdspace-banner-1.jpg'
-                                },
-                                description: {
-                                    content: '',
-                                },
-                            },
                             info_data: 
                             {
                                 reward: ''
-                            }
+                            },
+                            meta_data: 
+                            {
+                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                            },
                         },
                     };
             let newObject2={
@@ -65,19 +61,14 @@
                         name: 'Join Krowdspace Today!',
                         project_data: 
                         {
-                            web_data: 
-                            {
-                                mainImg: {
-                                    content: '/img/content/krowdspace-join.jpg'
-                                },
-                                description: {
-                                    content: '',
-                                },
-                            },
                             info_data: 
                             {
                                 reward: 'Discover Extra Rewards For Projects You Love!'
-                            }
+                            },
+                            meta_data: 
+                            {
+                                mainImg: '/img/content/krowdspace-join.jpg',
+                            },
                         },
                     };
 

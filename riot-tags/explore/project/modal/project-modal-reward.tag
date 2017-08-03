@@ -26,7 +26,6 @@ krowdspace.projects.project(this.opts.uri).then((res)=>
         this.couponCode = res.data[0].coupon_code;
         this.projectLink = res.data[0].project_data.info_data.url;
         this.update();
-
     },
     (err)=> 
     {

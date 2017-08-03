@@ -9,7 +9,7 @@
                     <p class="modal-heading">FEATURED PROJECTS AND BOOSTS</p>
                     <p class="legal-text">Welcome to our featured project options for your live crowdfunding project. At Krowdspace we have experienced first-hand how difficult it can be to launch a crowdfunding campaign. For a limited time, we are offering free featured project packages and social media posts! If you would like to take advantage of this special offer please <a onclick={ registerFeatured } href="/#/account/register" class="modal-link home-links">submit your project</a> to Krowdspace and activate these packages on your <a onclick={ dashboardFeatured } href="/#/account/dashboard" class="modal-link home-links">Krowdspace Dashboard</a>.</p>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body"> 
                     <div class="row">
                         <div class="col-md-8 featured-text-box">
                             <p class="featured-title">FEATURED PROJECT LISTING</p>

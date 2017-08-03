@@ -47,7 +47,7 @@
           },
           (err)=> 
           {
-              console.log(err);
+
           }
       );
       
@@ -55,30 +55,29 @@
       {
           e.preventDefault();
           krowdspace.users.user().then((res)=>
-          {
-          let project = res.data.username,
-              projectData = {
-                      
-                          fname: this.refs.firstname.value,
-                          lname: this.refs.lastname.value,
-                          iguser: this.refs.kickstarter.value,
-                          ksuser: this.refs.indiegogo.value,
-              
-              };
-              krowdspace.users.set_user(projectData).then((res)=>
-              {
-                  window.location.reload();
-              },
-              (err)=>
-              {
-                  console.log(err);
-              });
-          },
-              (err)=> 
-              {
-                  console.log(err);
-              }
-          );
+            {
+            let project = res.data.username,
+                projectData = {  
+                    fname: this.refs.firstname.value,
+                    lname: this.refs.lastname.value,
+                    iguser: this.refs.kickstarter.value,
+                    ksuser: this.refs.indiegogo.value,
+                
+                };
+                krowdspace.users.set_user(projectData).then((res)=>
+                {
+                    window.location.reload();
+                },
+                (err)=>
+                {
+            
+                });
+            },
+            (err)=> 
+            {
+        
+            }
+        );
       };  
    </script>
 </dashboard-edit-profile>

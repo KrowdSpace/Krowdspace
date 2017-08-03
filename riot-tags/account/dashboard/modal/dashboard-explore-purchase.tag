@@ -1,21 +1,18 @@
 <dashboard-explore-purchase>
-    <style>
-        @media screen and (max-width: 767px) {
-        .purchase-container-left {
-        border-right:2px solid #fed136;
-        }
-        }
-    </style>
     <div id="purchase-explore" class="modal container fade">
         <div class="krowdspace-modal-custom col-lg-offset-2 col-lg-8 col-md-offset-0 col-md-12">
             <div id="modal">
                 <div class="modal-purchase no-gutter" style="max-width: 695px; margin: 0 auto;">
-                    <div class="col-sm-7 purchase-container-left">
+                    <div class="col-sm-7 no-gutter purchase-container-left">
                         <button type="button" class="close btn-modal hidden-lg hidden-md hidden-sm" data-dismiss="modal" aria-hidden="true">
                         <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
                         </button>
                         <p class="modal-heading">EXPLORE PAGE BANNER</p>
-                        <p class="modal-purchase-text text-left">Your project will be listed on our Explore Page with a featured project icon. Having your project featured means it will get priority filtering and have increased viewership. For a limited time we are offering this as a free service while we work through our initial launch! Please click the Upgrade button below to add this feature.</p>
+                        <p class="modal-purchase-text text-left">Every project that is featured on our Explore Page Rotating Banner will have increased viewership and a higher click through rate compared to only having the featured icon. Your project will be displayed on our rotating banner located on the Explore Page as a hero image. This explore featured banner will last 7 days and then expire.</p>
+                       <div show={ activated } class="active-box hidden-xs">
+                        <i class="fa fa-check media-icons" style="color: #5cb85c"></i>
+                        <span class="active-text">This upgrade is active on your project.</span>
+                        </div>
                         <div class="col-xs-6 hidden-lg hidden-md hidden-sm text-center divider-inside-right">
                             <p class="purchase-text">EXPLORE BANNER</p>
                         </div>
@@ -63,6 +60,13 @@
                  return;
         
              let res = {data: [opts.project]};
+
+             if (res.data[0].project_data.meta_data.explore) 
+            {
+                activated = true;
+            }else{
+                activated = false;
+            }; 
          });
          
          submitExplore(e) 
@@ -80,7 +84,7 @@
         
          setUserDeets(res, pRes)
          {
-             let project = pRes.data[0].name,
+             let project = pRes.data[0].unique_id,
                  projectData = 
                  {
                      project_data: 

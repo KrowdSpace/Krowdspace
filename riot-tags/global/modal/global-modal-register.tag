@@ -99,7 +99,7 @@ submitRegister(e)
 	},
 	(err) => 
 	{
-		console.log(err);
+	
 	});
 }    
 </script>

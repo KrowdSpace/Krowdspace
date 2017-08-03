@@ -3,8 +3,10 @@
         <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 explore-card-content">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">
-                    <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
-                    <img class="img-responsive image-card" src="{ exploreCard.ExploreCard.data.image }"></a>
+                    <div class="platform-card-box" style="">
+                        <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
+                        <img class="img-responsive image-card-{ exploreCard.ExploreCard.data.platform }" src="{ exploreCard.ExploreCard.data.image }"></a>
+                    </div>
                     <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">
                     <i class="fa fa-circle fa-stack-xx text-primary"></i>
                     <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
@@ -44,20 +46,48 @@
         
             projectArray.forEach((element) =>
             {
-                let platform = element.platform,
+
+                let platform = element.platform;
+
+                if(platform =='kickstarter'){
+                    image = element.project_data.meta_data.mainImg,
+                    title = element.project_data.web_data.title.content,
+                    category = element.project_data.info_data.category,
                     goalValue = element.project_data.meta_data.funding,
                     goalNumber = parseFloat(goalValue.replace(/,/g, '')),
                     percentRaised = element.project_data.meta_data.raisedPercent,
                     percentMax = Math.min(Math.max(percentRaised, 0), 1),
-                    percentWhole = percentMax * 100;
+                    percentWhole = percentMax * 100,
                     raisedRawNumber = goalNumber * percentRaised,
                     raisedNumber = Math.round(raisedRawNumber),
                     raisedValue = raisedNumber.toLocaleString(),
-                    endTime = element.project_data.web_data.hours['data-end_time'],
+                    endTime = element.project_data.meta_data.endTime,
                     end = new Date(endTime),
                     remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
+                }else{
+                    image = element.project_data.meta_data.jsonReply.response.video_overlay_url,
+                    title = element.project_data.meta_data.jsonReply.response.title,
+                    category = element.project_data.info_data.category,
+
+                    goalNumber = element.project_data.meta_data.jsonReply.response.goal,
+                    goalValue = goalNumber.toLocaleString(),
+
+                    raisedNumber = element.project_data.meta_data.jsonReply.response.collected_funds,
+                    raisedValue = raisedNumber.toLocaleString(),
+
+                    percentValue = raisedNumber/goalNumber,
+                    percentMax = Math.min(Math.max(percentValue, 0), 1),
+                    percentWhole = percentMax * 100,
+                    
+                    endTime = element.project_data.meta_data.jsonReply.response.funding_ends_at,
+                    end = new Date(endTime),
+                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
+                    countdown = Math.floor(remaining),
+                    daysMax = Math.max(0, countdown);
+
+                }
         
                 element.ExploreCard = (
                     {
@@ -67,18 +97,17 @@
                             'id': element.unique_id,
                             'category': element.project_data.info_data.category,
                             'featured': element.project_data.meta_data.featured,
-                            'image': element.project_data.web_data.mainImg.content,
+                            'image': image,
                             'backed': raisedValue,
                             'goal': goalValue,
                             'percent': percentWhole,
                             'days': daysMax, 
-                            'title': element.project_data.web_data.title.content,
+                            'title': title,
                             'reward': element.project_data.info_data.reward,
                         }
                     }
                 );
             });
-        
             return projectArray;
         }
         

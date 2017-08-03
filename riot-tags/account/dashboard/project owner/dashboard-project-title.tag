@@ -1,89 +1,31 @@
 <dashboard-project-title>
-<style>
-@media screen and (max-width: 1200px) {
-        .feature-box {
-            padding: 10px 10px 10px 20px !important;
-            margin-top: 10px;
-        }
-        .featured-text-buy {
-             top: 30px;
-         }
-    }
-@media screen and (max-width: 991px) {
-        .feature-box {
-            padding: 0px 10px 0px 20px !important;
-            margin-top: 0px;
-        }
-        .featured-text-buy {
-             top: 37px;
-         }
-        .dashboard-title-container {
-            height: auto;
-        }
-    }
-@media screen and (max-width: 767px) {
-        .dashboard-title-container {
-            height: auto;
-            margin-left: auto;
-            margin-right: auto;
-            width: 400px;
-        }
-        .feature-box {
-            padding: 10px 50px !important;
-        }
-        .featured-text-buy {
-             top: 60px;
-             font-size: 18px;
-         }
-    }
-</style>
-   <div class="col-sm-12 dashboard-title-container no-gutter">
-        <div class="col-md-4 hidden-sm hidden-xs divider-inside-right dashboard-title-box">
-            <p class="dashboard-text-alt">{ projectTitle }</p>
-            <p class="dashboard-text-alt description-text">{ projectDescription }</p>
-        </div>
-        <div class="col-md-8 col-sm-12 no-gutter text-center">
-            <div class="col-sm-4 text-center feature-box">
-                <div class="purchase-view">
-                <a href="#purchase-featured" class="modal-link" data-toggle="modal">
-                    <img class="img-responsive feature-buy" src="/img/content/featured-purchase.jpg"/>
-                    <div class="filter-background">
-                        <p class="featured-text-buy">FEATURED ICON</p>
-                    </div>
-                </a>
-                </div>
-            </div>
-            <div class="col-sm-4 feature-box">
-                <div class="purchase-view">
-            <a href="#purchase-explore" class="modal-link" data-toggle="modal">
-            <img class="img-responsive feature-buy" src="/img/content/explore-purchase.jpg"/>
-            <div class="filter-background">
-                <p class="featured-text-buy">EXPLORE BANNER</p>
-            </div>
-            </div><a/>
-            </div>
-            <div class="col-sm-4 feature-box">
-                <div class="purchase-view">
-                <a href="#purchase-landing" class="modal-link" data-toggle="modal">
-            <img class="img-responsive feature-buy" src="/img/content/landing-purchase.jpg"/>
-            <div class="filter-background">
-                <p class="featured-text-buy">LANDING BANNER</p>
-            </div>
-            </div><a/>
-            </div>
-        </div>
+    <div class="col-lg-3 col-md-12 dashboard-title-box shadow" style="margin-left: 0px;">
+        <a href="#refresh-content" class="modal-link" data-toggle="modal">
+            <span class="fa-stack fa-lg social-btn filterdark float-btn">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+            </span>
+        </a>
+        <p class="dashboard-text-alt" style="padding-right: 35px; height: 57px;">{ projectTitle || '' }</p>
+        <p class="dashboard-text-alt" style="padding-top: 15px; height: 110px;">{ projectDescription || '' }</p>
+        <p class="dashboard-text-alt" style="padding-top: 15px">Please click on the refresh icon to update project.</p>
     </div>
 <script>
     this.on('update', ()=>
     {
         if(!opts.project)
-            return;
-            
-        this.projectTitle = opts.project.project_data.web_data.title.content;
-        this.projectDescription = opts.project.project_data.web_data.description.content;
-    });
+        return;
 
-console.log(this.opts.project);
+        let platform = opts.project.platform;
+
+        if(platform == 'kickstarter')
+        {
+            this.projectTitle = opts.project.project_data.web_data.title.content;
+            this.projectDescription = opts.project.project_data.web_data.description.content;
+        }else{
+            this.projectTitle = opts.project.project_data.meta_data.jsonReply.response.title;
+            this.projectDescription = opts.project.project_data.meta_data.jsonReply.response.tagline;
+        }
+    });
 </script>
-</dashboard-project-title>	
-	
+</dashboard-project-title>

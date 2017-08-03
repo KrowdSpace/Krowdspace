@@ -12,7 +12,7 @@
      <div class="row home-slider-box">
         <div class="autoplay slider">
             <div class="explore-banner-box" each= { ExploreBannerFilter }>
-                <img src="{ project_data.web_data.mainImg.content }" alt="{ project_data.web_data.description.content }">
+                <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url }" alt="{ project_data.web_data.description.content }">
                 <div class="explore-box">
                     <div class="col-xs-9">
                         <div class="slider-left-box">
@@ -49,17 +49,19 @@
                     {
                         web_data: 
                         {
-                            mainImg: {
-                                content: '/img/projects/krowdspace-banner-1.jpg'
-                            },
-                            description: {
+                            description: 
+                            {
                                 content: '',
                             },
                         },
                         info_data: 
                         {
                             reward: ''
-                        }
+                        },
+                        meta_data: 
+                        {
+                            mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                        },
                     },
                 };
 
@@ -70,17 +72,19 @@
                     {
                         web_data: 
                         {
-                            mainImg: {
-                                content: '/img/content/krowdspace-join.jpg'
-                            },
-                            description: {
+                            description: 
+                            {
                                 content: '',
                             },
                         },
                         info_data: 
                         {
                             reward: 'Discover Extra Rewards For Projects You Love!'
-                        }
+                        },
+                        meta_data: 
+                        {
+                            mainImg: '/img/content/krowdspace-join.jpg',
+                        },
                     },
                 };
         

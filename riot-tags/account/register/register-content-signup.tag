@@ -1,21 +1,15 @@
 <register-content-signup>
 <style>
-@media screen and (max-width: 1200px) {
-        .registration-box {
-            margin: 20px;
-        }
-    }
 @media screen and (max-width: 560px) {
-        .registration-box {
-           margin: 0px;
-           border: none;
-           height: 430px;
-        }
-        .register-controls {
-           position: relative;
+        .shadow {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
         }
         .link-left {
             padding-right: 0px !important;
+        }
+        .register-background {
+            border: none;
         }
     }
 </style>
