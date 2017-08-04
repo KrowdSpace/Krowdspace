@@ -56,7 +56,7 @@ riot.tag2('admin', '<admin-modal-login show="{!logged_in}"></admin-modal-login> 
 });
 
 
-riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <div class="container dashboard"> <div class="shadow text-left project-add-container"> <p class="project-add-text">PROJECTS</p> <div class="project-yield text-center" each="{p, index in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}">{project.unique_id}</project-button> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout class="hidden-xs" show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1 project-container"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image show="{project}" project="{project}"></dashboard-project-image> <dashboard-user-image show="{!project}"></dashboard-user-image> <dashboard-project-user show="{project}" index="{projectIndex + 1}" user="{user}" project="{project}"></dashboard-project-user> <dashboard-user-user show="{!project}" user="{user}"></dashboard-user-user> </div> <div show="{project}" class="row dash-row no-gutter"> <dashboard-project-title project="{project}"> </dashboard-project-title> <dashboard-project-reward project="{project}"></dashboard-project-reward> <dashboard-project-hours project="{project}"></dashboard-project-hours> </div> <div show="{project}" class="row dash-row no-gutter"> <dashboard-project-featured project="{project}"> </dashboard-project-featured> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-wysiwyg project="{project}"></dashboard-project-wysiwyg> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> <dashboard-user-bar show="{!project}"></dashboard-user-bar> </div> </div> </div> <dashboard-featured-purchase user="{user}" project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase user="{user}" project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase user="{user}" project="{project}"></dashboard-landing-purchase> <dashboard-social-purchase user="{user}" project="{project}"></dashboard-social-purchase> <dashboard-edit-profile user="{user}" project="{project}"></dashboard-edit-profile> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <dashboard-refresh-content user="{user}" project="{project}"></dashboard-refresh-content> <dashboard-project-status></dashboard-project-status> <global-footer></global-footer>', '@media screen and (max-width: 767px) { dashboard-page .shadow,[data-is="dashboard-page"] .shadow{ -webkit-box-shadow: none; -moz-box-shadow: none; } dashboard-page .project-add-btn,[data-is="dashboard-page"] .project-add-btn{ width: 35px; padding: 7px 5px 9px 5px; display: inline-block; font-size: 15px; border: 1px solid #3f434f; border-left: none; } dashboard-page .project-add-btn:hover,[data-is="dashboard-page"] .project-add-btn:hover{ border: 1px solid #3f434f; border-left: none; } }', '', function(opts) {
+riot.tag2('dashboard-page', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <div class="container dashboard"> <div class="shadow text-left project-add-container"> <p class="project-add-text">PROJECTS</p> <div class="project-yield text-center" each="{p, index in projects}"> <project-button onclick="{makeButtF(p)}" project="{p}">{project.unique_id}</project-button> </div> <a href="/#/account/register"> <i class="fa fa-plus project-add-btn filterdark"></i> </a> </div> <global-logout class="hidden-xs" show="{logged_in}"></global-logout> <div class="col-sm-10 col-sm-offset-1 project-container"> <div class="row dash-row no-gutter shadow"> <dashboard-project-image show="{project}" project="{project}"></dashboard-project-image> <dashboard-user-image show="{!project}"></dashboard-user-image> <dashboard-project-user show="{project}" index="{projectIndex + 1}" user="{user}" project="{project}"></dashboard-project-user> <dashboard-user-user show="{!project}" user="{user}"></dashboard-user-user> </div> <div show="{project}" class="row dash-row no-gutter"> <dashboard-project-title project="{project}"> </dashboard-project-title> <dashboard-project-reward project="{project}"></dashboard-project-reward> <dashboard-project-hours project="{project}"></dashboard-project-hours> </div> <div show="{project}" class="row dash-row no-gutter"> <dashboard-project-featured project="{project}"> </dashboard-project-featured> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-wysiwyg show="{project}" project="{project}"></dashboard-project-wysiwyg> </div> <div class="row dash-row no-gutter shadow"> <dashboard-project-bar show="{project}" project="{project}"></dashboard-project-bar> <dashboard-user-bar show="{!project}"></dashboard-user-bar> </div> </div> </div> <dashboard-featured-purchase user="{user}" project="{project}"></dashboard-featured-purchase> <dashboard-explore-purchase user="{user}" project="{project}"></dashboard-explore-purchase> <dashboard-landing-purchase user="{user}" project="{project}"></dashboard-landing-purchase> <dashboard-social-purchase user="{user}" project="{project}"></dashboard-social-purchase> <dashboard-edit-profile user="{user}" project="{project}"></dashboard-edit-profile> <dashboard-edit-reward user="{user}" project="{project}"></dashboard-edit-reward> <dashboard-refresh-content user="{user}" project="{project}"></dashboard-refresh-content> <dashboard-project-status></dashboard-project-status> <global-footer></global-footer>', '@media screen and (max-width: 767px) { dashboard-page .shadow,[data-is="dashboard-page"] .shadow{ -webkit-box-shadow: none; -moz-box-shadow: none; } dashboard-page .project-add-btn,[data-is="dashboard-page"] .project-add-btn{ width: 35px; padding: 7px 5px 9px 5px; display: inline-block; font-size: 15px; border: 1px solid #3f434f; border-left: none; } dashboard-page .project-add-btn:hover,[data-is="dashboard-page"] .project-add-btn:hover{ border: 1px solid #3f434f; border-left: none; } }', '', function(opts) {
         this.projectNum = 0;
         this.projectIndex = 0;
         this.projects = [];
@@ -926,7 +926,7 @@ riot.tag2('dashboard-project-user', '<div class="col-md-6 text-left no-gutter us
         console.log("returned");
 
 });
-riot.tag2('dashboard-project-wysiwyg', '<div class="col-sm-12 no-gutter wysiwyg-editor"> <form id="rewardUpgrade" role="form" onsubmit="{submitContent}"> <button class="wysiwyg-save filterdark" type="submit" name="submit">Save</button> <textarea class="wysiwyg" ref="crowdContent"></textarea> </form> </div>', '', '', function(opts) {
+riot.tag2('dashboard-project-wysiwyg', '<link href="css/froala_editor.css" rel="stylesheet" type="text/css"> <link href="css/froala_style.css" rel="stylesheet" type="text/css"> <div class="col-sm-12 no-gutter wysiwyg-editor"> <form id="rewardUpgrade" role="form" onsubmit="{submitContent}"> <button class="wysiwyg-save filterdark" type="submit" name="submit">Save</button> <textarea class="wysiwyg" ref="crowdContent"></textarea> </form> </div>', '', '', function(opts) {
     this.on('update', ()=>
     {
         if(!opts.project)
@@ -1009,14 +1009,16 @@ riot.tag2('dashboard-user-bar', '<div class="dash-bar col-sm-12 no-gutter"> <div
 riot.tag2('dashboard-user-image', '<div class="col-md-6 image-container-alt"> <div class="single-item slider"> <div class="dash-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url}"> <div class="explore-box"> <div class="col-lg-9 col-md-10 col-sm-8 col-xs-11"> <div class="reward-slider-push"> <div class="explore-feature-left"> <div class="dash-box-text"> <span class="dash-user-title">{name}</span> </div> <div class="dash-box-text"> <span class="dash-user-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-lg-3 hidden-md col-sm-4 hidden-xs dash-feature-right text-center"> <a href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> </div> <div class="hidden-lg col-md-2 hidden-sm col-xs-1 dash-feature-right text-center"> <a href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', 'dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 515px; overflow: hidden; border: none; } @media screen and (max-width: 1200px) { dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 395px; overflow: hidden; } } @media screen and (max-width: 991px) { dashboard-user-image .dash-banner-box,[data-is="dashboard-user-image"] .dash-banner-box{ width: 615px; height: 345px; overflow: hidden; } dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 100%; } } @media screen and (max-width: 767px) { dashboard-user-image .dash-banner-box,[data-is="dashboard-user-image"] .dash-banner-box{ width: 398px; height: 223px; } }', '', function(opts) {
     krowdspace.projects.explore().then((res) =>
     {
-        let ExploreBannerData = res.data,
+        let ExploreBannerData = res.data;
+
             FilterExplore = ExploreBannerData.filter((element) => {
-            return (element.project_data.meta_data.landing === true);
+            return (element.project_data.meta_data.landing);
+
         });
 
             let newObject={
                         unique_url: '#modal-feature-info',
-                        name: '',
+                        name: 'test',
                         project_data:
                         {
                             web_data:
@@ -1054,8 +1056,9 @@ riot.tag2('dashboard-user-image', '<div class="col-md-6 image-container-alt"> <d
     },
     (err)=>
     {
-
+console.log(err);
     });
+
 });	
 	
 riot.tag2('dashboard-user-user', '<div class="col-md-6 text-left no-gutter user-container-2"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn filterdark float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text">Username:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text">{username}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt">Email:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt">{email}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-break hidden-md">Kickstarter Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-break hidden-md">{kickstarter || \'N/A\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt hidden-md">Indiegogo Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt hidden-md">{indiegogo || \'N/A\'}</p> </div> <div class="user-position-box"> <p class="dashboard-text profile-name">Krowdspace Stats</p> <div class="col-xs-4 no-gutters text-center user-stat-box-2"> <p class="dashboard-user user-text-alt">Campaigns</p> <p class="social-metric">13</p> </div> <div class="col-xs-4 no-gutters text-center user-stat-box-2"> <p class="dashboard-user user-text-alt">Rewards</p> <p class="social-metric">{\'$1,329\'}</p> </div> <div class="col-xs-4 no-gutters text-center user-stat-box-2"> <p class="dashboard-user user-text-alt">Pledges</p> <p class="social-metric">{\'$84,322\'}</p> </div> </div> <div class="clearfix"></div> </div>', '', '', function(opts) {
@@ -1151,19 +1154,79 @@ this.pressKit = function()
     $('#modal-press-kit').modal('show');
 }.bind(this)
 });
-riot.tag2('register-content-signup', '<div class="no-gutter register-background shadow"> <div class="col-lg-5 hidden-md hidden-sm hidden-xs register"> <img class="img-responsive" src="/img/projects/krowdspace-register.png"> <p class="text-center register-cta">Register your crowdfunding campaign and accelerate your growth today!</p> </div> <form class="col-lg-7 col-md-12" id="registerProjectForm" onsubmit="{submit}"> <div class="registration-box shadow"> <fieldset id="project_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Do you own this crowdfunding project?</p> <select ref="pvalid" type="text" class="form-control" name="projectOwner"> <option disabled selected value>Select Yes or No</option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">What category best fits your project?</p> <select ref="category" type="text" class="form-control" name="projectCategory"> <option disabled selected value>Choose a Category</option> <option value="Art">Art</option> <option value="Design">Design</option> <option value="Film">Film</option> <option value="Food">Food</option> <option value="Music">Music</option> <option value="Photography">Photography</option> <option value="Technology">Technology</option> <option value="Videogames">Video Games</option> <option value="Publishing">Publishing</option> </select> </div> <div class="form-group col-sm-12 no-gutter"> <p class="text-left registration-text">Please provide your live crowdfunding project url.</p> <div class="col-sm-4 form-group link-left"> <select ref="crowdportal" type="text" class="form-control" name="crowdSite"> <option disabled selected value>Choose Site</option> <option value="https://www.kickstarter.com/">Kickstarter.com</option> <option value="https://www.indiegogo.com/">Indiegogo.com</option> </select> </div> <div class="form-group col-sm-8 link-right"> <input ref="projecturl" type="text" class="form-control" name="projectLink" placeholder="/project/project-url"> </div> </div> <div class="register-controls text-center"> <p><a class="back-project next next-step">NEXT</a></p> </div> </fieldset> <fieldset id="reward_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p> <input ref="rewardtext" class="form-control" name="reward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )"> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Does your reward have a value or is it a discount?</p> <select ref="rewardoption" class="form-control" name="rewardValue"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please estimate the value of your reward.</p> <input ref="rewardvalue" class="form-control" name="rewardAmount"> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="project_verify"> <div class="col-sm-12"> <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p> <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p> <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p> <p class="text-left registration-text">https://www.Krowdspace.com</p> <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> <div class="clearfix"></div> </div> </fieldset> <fieldset id="service_terms"> <div class="col-sm-12"> <p class="text-left registration-text" style="margin-top: 10px;">TERMS AND CONDITIONS</p> <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p> <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p> <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p> <p class="text-left registration-text">I have read through and understand the Terms of Service in relation to Krowdspace.</p> <div class="check-terms checkbox"> <label> <input type="checkbox" value="checked" name="serviceTerms" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span> </label> </div> <div class="clearfix"></div> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p> </div> </div> </fieldset> </div> </form> <div class="clearfix"></div> </div> <div class="col-sm-12 text-center"> <p style="font-size: 13px; padding-top: 25px;">For more information about Krowdspace Rewards please view our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Reward Page</a>.</p> </div>', '@media screen and (max-width: 560px) { register-content-signup .shadow,[data-is="register-content-signup"] .shadow{ -webkit-box-shadow: none; -moz-box-shadow: none; } register-content-signup .link-left,[data-is="register-content-signup"] .link-left{ padding-right: 0px !important; } register-content-signup .register-background,[data-is="register-content-signup"] .register-background{ border: none; } }', '', function(opts) {
-        this.submit = function(e)
+riot.tag2('register-content-signup', '<div class="no-gutter register-background shadow"> <div class="col-lg-5 hidden-md hidden-sm hidden-xs register"> <img class="img-responsive" src="/img/projects/krowdspace-register.png"> <p class="text-center register-cta">Register your crowdfunding campaign and accelerate your growth today!</p> </div> <div class="col-lg-7 col-md-12"> <div class="registration-box shadow"> <div class="project-select-page"> <p style="margin: 40px auto 70px auto; text-align: center; font-size: 22px;">Start by choosing your platform</p> <div class="col-xs-push-1 col-xs-6 indiegogo-register text-center"> <a class="indiegogo-register" type="button" onclick="{indiegogoForm}"><img class="img-responsive" src="img/fav/indiegogo-icon.svg" style="width: 100px; margin-left: auto; margin-right: auto;"></a> <p style="padding-top: 10px;">Indiegogo</p> </div> <div class="col-xs-pull-1 col-xs-6 kickstarter-register text-center"> <a class="kickstarter-register" type="button" onclick="{kickstarterForm}"><img class="img-responsive" src="img/fav/kickstarter-icon.svg" style="width: 100px; margin-left: auto; margin-right: auto;"></a> <p style="padding-top: 10px;">Kickstarter</p> </div> </div> <form class="kickstarter-registration registerProjectForm" id="registerProjectForm" onsubmit="{kickstarter}" style="display:none;"> <fieldset id="project_information" class="project_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Do you own this crowdfunding project?</p> <select ref="kickstarterValid" type="text" class="form-control" name="projectOwner"> <option disabled selected value>Select Yes or No</option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">What category best fits your project?</p> <select ref="kickstarterCategory" type="text" class="form-control" name="projectCategory"> <option disabled selected value>Choose a Category</option> <option value="Art">Art</option> <option value="Design">Design</option> <option value="Film">Film</option> <option value="Food">Food</option> <option value="Music">Music</option> <option value="Photography">Photography</option> <option value="Technology">Technology</option> <option value="Videogames">Video Games</option> <option value="Publishing">Publishing</option> </select> </div> <div class="form-group col-sm-12 no-gutter"> <p class="text-left registration-text">Please provide your live crowdfunding project url.</p> <div class="col-xs-4 form-group link-left"> <input type="text" class="form-control" name="crowdSite" value="Kickstarter.com" readonly> </input> </div> <div class="form-group col-xs-8 link-right"> <input ref="kickstarterLink" type="text" class="form-control" name="projectLink" placeholder="/project/project-url"> </div> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p onclick="{projectPrevious}" class="pull-left"><a id="project-previous" class="back-project">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="reward_information" class="reward_information"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p> <input ref="kickstarterReward" class="form-control" name="reward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )"> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Does your reward have a value or is it a discount?</p> <select ref="kickstarterOption" class="form-control" name="rewardValue"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please estimate the value of your reward.</p> <input ref="kickstarterValue" class="form-control" name="rewardAmount"> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="project_verify" class="project_verify"> <div class="col-sm-12"> <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p> <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p> <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p> <p class="text-left registration-text">https://www.Krowdspace.com</p> <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next next-step">NEXT</a></p> </div> <div class="clearfix"></div> </div> </fieldset> <fieldset id="service_terms" class="service_terms"> <div class="col-sm-12"> <p class="text-left registration-text" style="margin-top: 10px;">TERMS AND CONDITIONS</p> <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p> <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p> <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p> <p class="text-left registration-text">I have read through and understand the Terms of Service in relation to Krowdspace.</p> <div class="check-terms checkbox"> <label> <input type="checkbox" value="checked" name="serviceTerms" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span> </label> </div> <div class="clearfix"></div> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous">PREVIOUS</a></p> <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p> </div> </div> </fieldset> </form> <form class="indiegogo-registration registerProjectForm" id="registerProjectForm2" onsubmit="{indiegogo}" style="display:none;"> <fieldset id="project_information" class="project_information2"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Do you own this crowdfunding project?</p> <select ref="indiegogoValid" type="text" class="form-control" name="projectOwner2"> <option disabled selected value>Select Yes or No</option> <option value="Yes">Yes</option> <option value="No">No</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">What category best fits your project?</p> <select ref="indiegogoCategory" type="text" class="form-control" name="projectCategory2"> <option disabled selected value>Choose a Category</option> <option value="Art">Art</option> <option value="Design">Design</option> <option value="Film">Film</option> <option value="Food">Food</option> <option value="Music">Music</option> <option value="Photography">Photography</option> <option value="Technology">Technology</option> <option value="Videogames">Video Games</option> <option value="Publishing">Publishing</option> </select> </div> <div class="form-group col-sm-12 indiegogo-registration" style="display: none;"> <p class="text-left registration-text">What is your Indiegogo secret perk url? Need Help?</p> <input ref="indiegogoPerk" type="text" class="form-control" name="projectLink2" placeholder="www.indiegogo.com/secret-perk-url"> </div> <div class="form-group col-sm-12 no-gutter indiegogo-registration" style="display: none;"> <p class="text-left registration-text">Please provide your project ID. Need Help?</p> <div class="col-sm-6 form-group link-left"> <input type="text" class="form-control" name="crowdSite2" value="Indiegogo.com/projects/" readonly> </input> </div> <div class="form-group col-sm-6 link-right"> <input ref="indiegogoID" class="form-control" placeholder="2152186" type="number"> </div> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p onclick="{projectPrevious}" class="pull-left"><a id="project-previous" class="back-project">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next2 next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="reward_information" class="reward_information2"> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p> <input ref="indiegogoReward" class="form-control" name="reward2" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )"> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Does your reward have a value or is it a discount?</p> <select ref="indiegogoOption" class="form-control" name="rewardValue2"> <option disabled selected value>Choose an Option</option> <option value="Yes">Reward has a Value</option> <option value="No">Reward is a Discount</option> </select> </div> <div class="form-group col-sm-12"> <p class="text-left registration-text">Please estimate the value of your reward.</p> <input ref="indiegogoValue" class="form-control" name="rewardAmount2"> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous2">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next2 next-step">NEXT</a></p> </div> </div> </fieldset> <fieldset id="project_verify" class="project_verify2"> <div class="col-sm-12"> <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p> <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p> <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p> <p class="text-left registration-text">https://www.Krowdspace.com</p> <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous2">PREVIOUS</a></p> <p class="pull-right"><a class="back-project next2 next-step">NEXT</a></p> </div> <div class="clearfix"></div> </div> </fieldset> <fieldset id="service_terms" class="service_terms2"> <div class="col-sm-12"> <p class="text-left registration-text" style="margin-top: 10px;">TERMS AND CONDITIONS</p> <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p> <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p> <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p> <p class="text-left registration-text">I have read through and understand the Terms of Service in relation to Krowdspace.</p> <div class="check-terms checkbox"> <label> <input type="checkbox" value="checked" name="serviceTerms2" required minlength="1" aria-required="true"><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span> </label> </div> <div class="clearfix"></div> </div> <div class="register-controls"> <div class="col-xs-offset-3 col-xs-6"> <p class="pull-left"><a class="back-project previous2">PREVIOUS</a></p> <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p> </div> </div> </fieldset> </form> </div> </div> <div class="clearfix"></div> </div> <div class="col-sm-12 text-center"> <p style="font-size: 13px; padding-top: 25px;">For more information about Krowdspace Rewards please view our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Reward Page</a>.</p> </div>', '@media screen and (max-width: 560px) { register-content-signup .shadow,[data-is="register-content-signup"] .shadow{ -webkit-box-shadow: none; -moz-box-shadow: none; } register-content-signup .link-left,[data-is="register-content-signup"] .link-left{ padding-right: 0px !important; } register-content-signup .register-background,[data-is="register-content-signup"] .register-background{ border: none; } }', '', function(opts) {
+
+    this.indiegogoForm = function()
+      {
+          $( ".indiegogo-registration" ).show();
+          $( ".indiegogo-register" ).hide();
+          $( ".kickstarter-register" ).hide();
+          $( ".project-select-page" ).hide();
+      }.bind(this);
+      this.kickstarterForm = function()
+      {
+          $( ".kickstarter-registration" ).show();
+          $( ".kickstarter-register" ).hide();
+          $( ".indiegogo-register" ).hide();
+          $( ".project-select-page" ).hide();
+      }.bind(this);
+      this.projectPrevious = function()
+      {
+          $( ".kickstarter-registration" ).hide();
+          $( ".indiegogo-registration" ).hide();
+          $( ".kickstarter-register" ).show();
+          $( ".indiegogo-register" ).show();
+          $( ".project-select-page" ).show();
+      }.bind(this);
+        this.kickstarter = function(e)
         {
             e.preventDefault();
 
-            let PVALID = this.refs.pvalid.value,
-                CATEGORY = this.refs.category.value,
-                DOMAINURL = this.refs.crowdportal.options[this.refs.crowdportal.selectedIndex].value,
-                URL =  this.refs.projecturl.value,
-                REWARD = this.refs.rewardtext.value,
-                REWARDVALUE = this.refs.rewardoption.value,
-                IGREWARD = 'test',
-                REWARDAMOUNT = this.refs.rewardvalue.value;
+            let PVALID = this.refs.kickstarterValid.value,
+                CATEGORY = this.refs.kickstarterCategory.value,
+                DOMAINURL = 'https://www.kickstarter.com/',
+                URL =  this.refs.kickstarterLink.value,
+                REWARD = this.refs.kickstarterReward.value,
+                REWARDVALUE = this.refs.kickstarterOption.value,
+                IGREWARD = 'Not Valid',
+                REWARDAMOUNT = this.refs.kickstarterValue.value;
+
+            let DATA = {
+                        PVALID,
+                        CATEGORY,
+                        DOMAINURL,
+                        URL,
+                        REWARD,
+                        REWARDVALUE,
+                        REWARDAMOUNT,
+                        IGREWARD,
+                        };
+
+            krowdspace.register.project(DATA).then
+            ((res) =>
+                {
+                console.log('Project Submission Successful');
+                window.location.replace("/#/account/dashboard");
+                },
+            (err) =>
+                {
+                $('#modal-project-error').modal('show');
+                console.log(err);
+                });
+        }.bind(this)
+
+        this.indiegogo = function(e)
+        {
+            e.preventDefault();
+
+            let PVALID = this.refs.indiegogoValid.value,
+                CATEGORY = this.refs.indiegogoCategory.value,
+                DOMAINURL = 'https://www.indiegogo.com/projects/',
+                URL =  this.refs.indiegogoID.value,
+                REWARD = this.refs.indiegogoReward.value,
+                REWARDVALUE = this.refs.indiegogoOption.value,
+                IGREWARD = this.refs.indiegogoPerk.value,
+                REWARDAMOUNT = this.refs.indiegogoValue.value;
 
             let DATA = {
                         PVALID,
@@ -1259,15 +1322,15 @@ riot.tag2('register-content-signup', '<div class="no-gutter register-background 
         			}
         		});
         		if (form.valid() === true){
-        			if ($('#project_information').is(":visible")){
-        				current_fs = $('#project_information');
-        				next_fs = $('#reward_information');
-        			}else if($('#reward_information').is(":visible")){
-        				current_fs = $('#reward_information');
-        				next_fs = $('#project_verify');
-        			}else if($('#project_verify').is(":visible")){
-        				current_fs = $('#project_verify');
-        				next_fs = $('#service_terms');
+        			if ($('.project_information').is(":visible")){
+        				current_fs = $('.project_information');
+        				next_fs = $('.reward_information');
+        			}else if($('.reward_information').is(":visible")){
+        				current_fs = $('.reward_information');
+        				next_fs = $('.project_verify');
+        			}else if($('.project_verify').is(":visible")){
+        				current_fs = $('.project_verify');
+        				next_fs = $('.service_terms');
         			}
 
         			next_fs.show();
@@ -1276,15 +1339,116 @@ riot.tag2('register-content-signup', '<div class="no-gutter register-background 
         	});
 
         	$('.previous').click(function(){
-        		if($('#reward_information').is(":visible")){
-        			current_fs = $('#reward_information');
-        			next_fs = $('#project_information');
-        		}else if ($('#project_verify').is(":visible")){
-        			current_fs = $('#project_verify');
-        			next_fs = $('#reward_information');
-        		}else if ($('#service_terms').is(":visible")){
-        			current_fs = $('#service_terms');
-        			next_fs = $('#project_verify');
+        		if($('.reward_information').is(":visible")){
+        			current_fs = $('.reward_information');
+        			next_fs = $('.project_information');
+        		}else if ($('.project_verify').is(":visible")){
+        			current_fs = $('.project_verify');
+        			next_fs = $('.reward_information');
+        		}else if ($('.service_terms').is(":visible")){
+        			current_fs = $('.service_terms');
+        			next_fs = $('.project_verify');
+        		}
+        		next_fs.show();
+        		current_fs.hide();
+        	});
+        });
+    this.on('mount', function()
+        {
+        	$(".next2").click(function(){
+        		var form = $("#registerProjectForm2");
+        		form.validate({
+        			errorElement: 'span',
+        			errorClass: 'help-block',
+        			highlight: function(element, errorClass, validClass) {
+        				$(element).closest('.form-group').addClass("has-error");
+        			},
+        			unhighlight: function(element, errorClass, validClass) {
+        				$(element).closest('.form-group').removeClass("has-error");
+        			},
+        			rules: {
+        				projectOwner2: {
+        					required: true,
+        				},
+        				projectCategory2 : {
+        					required: true,
+        				},
+        				crowdSite2 : {
+        					required: true,
+        				},
+        				projectLink2:{
+        					required: true,
+        				},
+        				reward2:{
+        					required: true,
+        				},
+        				rewardValue2: {
+        					required: true,
+
+        				},
+        				rewardAmount2: {
+        					required: true,
+                          number: true,
+        				},
+                      serviceTerms2: {
+        					required: true,
+        				},
+
+        			},
+        			messages: {
+        				projectOwner2: {
+        					required: "",
+        				},
+        				projectCategory2 : {
+        					required: "",
+        				},
+        				crowdSite2 : {
+        					required: "",
+        				},
+        				projectLink2: {
+        					required: "",
+        				},
+        				reward2: {
+        					required: "",
+        				},
+                      rewardValue2: {
+        					required: "",
+        				},
+                      rewardAmount2: {
+        					required: "",
+        				},
+                      serviceTerms2: {
+        					required: "",
+        				},
+        			}
+        		});
+        		if (form.valid() === true){
+        			if ($('.project_information2').is(":visible")){
+        				current_fs = $('.project_information2');
+        				next_fs = $('.reward_information2');
+        			}else if($('.reward_information2').is(":visible")){
+        				current_fs = $('.reward_information2');
+        				next_fs = $('.project_verify2');
+        			}else if($('.project_verify2').is(":visible")){
+        				current_fs = $('.project_verify2');
+        				next_fs = $('.service_terms2');
+        			}
+
+        			next_fs.show();
+        			current_fs.hide();
+        		}
+        	});
+
+        	$('.previous2').click(function(){
+        		if($('.reward_information').is(":visible")){
+        			current_fs = $('.reward_information2');
+        			next_fs = $('.project_information2');
+        		}else if ($('.project_verify2').is(":visible")){
+        			current_fs = $('.project_verify2');
+        			next_fs = $('.reward_information2');
+        		}else if ($('.service_terms2').is(":visible")){
+        			current_fs = $('.service_terms2');
+        			next_fs = $('.project_verify2');
         		}
         		next_fs.show();
         		current_fs.hide();

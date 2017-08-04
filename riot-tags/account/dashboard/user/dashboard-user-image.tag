@@ -58,14 +58,16 @@
 <script type="text/javascript">
     krowdspace.projects.explore().then((res) =>
     {
-        let ExploreBannerData = res.data,
+        let ExploreBannerData = res.data;
+
             FilterExplore = ExploreBannerData.filter((element) => {
-            return (element.project_data.meta_data.landing === true);
+            return (element.project_data.meta_data.landing);
+            
         });
 
             let newObject={
                         unique_url: '#modal-feature-info',
-                        name: '',
+                        name: 'test',
                         project_data: 
                         {
                             web_data:
@@ -103,8 +105,9 @@
     },
     (err)=>
     {
-
+console.log(err);
     });
+    
 </script>
 </dashboard-user-image>	
 	

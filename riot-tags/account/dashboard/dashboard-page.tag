@@ -50,7 +50,7 @@
                 <dashboard-project-featured project={ project }> </dashboard-project-featured>
             </div>
             <div class="row dash-row no-gutter shadow">
-                <dashboard-project-wysiwyg project={ project }></dashboard-project-wysiwyg>
+                <dashboard-project-wysiwyg show={ project } project={ project }></dashboard-project-wysiwyg>
             </div>
             <div class="row dash-row no-gutter shadow">
                 <dashboard-project-bar show={ project } project = { project }></dashboard-project-bar>
