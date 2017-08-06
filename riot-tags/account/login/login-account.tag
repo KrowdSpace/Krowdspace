@@ -60,7 +60,6 @@
 	},
 	(err) => 
 	{
-		console.log(err);
         $("#errorLog").show();
 	});
 }

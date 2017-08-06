@@ -2,7 +2,7 @@
    <div id="modal-global-marketing" class="modal container modal-padding-none">
       <div class="krowdspace-modal col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal">
-            <div class="modal-body modal-custom" style="margin: 0px;">
+            <div class="modal-custom marketing-modal">
                 <img class="img-responsive" src="img/social-content/krowdspace-marketing.jpg"/>
                 <div class="col-sm-12 text-left market-container-modal">
                     <p class="modal-heading modal-heading-alt">Who Doesnt like Free stuff?</p>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="check-terms checkbox">
                         <label>
-                        <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="modal-link home-links">Krowdspace terms</a>
+                        <input type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a onclick={ krowdspaceTerms } class="modal-link home-links"><span>Krowdspace terms</span></a>
                         </label>
                     </div>
                 </div>
@@ -83,7 +83,11 @@ this.on('mount', function()
 		}
 	}, false);
 });
-	   
+krowdspaceTerms()
+{
+    $("#modal-global-marketing").modal('hide');
+    $("#modal-service-terms").modal('show');
+}   
 // --- Register Submit --- //   
 	   
 submitRegister(e)

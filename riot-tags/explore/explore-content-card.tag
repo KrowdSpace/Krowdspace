@@ -1,22 +1,12 @@
 <explore-content-card>
-<style>
-@media screen and (max-width: 991px) {
-        .explore-container {
-            width: 348px;
-        }
-    }
-@media screen and (max-width: 767px) {
-        .explore-container {
-            width: 368px;
-        }
-    }
-</style>
     <div class="row">
-        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6" style="padding-left: 0px; padding-right: 0px;">
+        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 explore-card-content">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">
-                    <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
-                    <img class="img-responsive image-card" src="{ exploreCard.ExploreCard.data.image }"></a>
+                    <div class="platform-card-box">
+                        <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
+                        <img class="img-responsive image-card-{ exploreCard.ExploreCard.data.platform }" src="{ exploreCard.ExploreCard.data.image }"></a>
+                    </div>
                     <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">
                     <i class="fa fa-circle fa-stack-xx text-primary"></i>
                     <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
@@ -25,14 +15,14 @@
                         <p class="card-text-alt">{ exploreCard.ExploreCard.data.title }</p>
                         <p class="card-text-alt">Reward: { exploreCard.ExploreCard.data.reward }</p>
                     </div>
-                    <div class="col-xs-5 text-left" style="max-height: 23px;">
-                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.backed } Raised</p>
+                    <div class="col-xs-5 text-left card-return">
+                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.backed || 0 } Raised</p>
                     </div>
-                    <div class="col-xs-2 text-center" style="max-height: 23px;">
-                        <p class="card-text-alt days-center">{ exploreCard.ExploreCard.data.days } Days</p>
+                    <div class="col-xs-2 text-center card-return">
+                        <p class="card-text-alt days-center">{ exploreCard.ExploreCard.data.days || 0 } Days</p>
                     </div>
-                    <div class="col-xs-5 text-right" style="max-height: 23px;">
-                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.goal } Goal</p>
+                    <div class="col-xs-5 text-right card-return">
+                        <p class="card-text-alt">${ exploreCard.ExploreCard.data.goal || 0 } Goal</p>
                     </div>
                     <div class="col-xs-12">
                         <div class="progress">
@@ -56,21 +46,27 @@
         
             projectArray.forEach((element) =>
             {
-                let platform = element.platform,
+
+                let platform = element.platform;
+
+                    image = element.project_data.meta_data.mainImg,
+                    title = element.project_data.meta_data.title,
+                    category = element.project_data.info_data.category,
+
                     goalValue = element.project_data.meta_data.funding,
-                    goalNumber = parseFloat(goalValue.replace(/,/g, '')),
-                    percentRaised = element.project_data.meta_data.raisedPercent,
-                    percentMax = Math.min(Math.max(percentRaised, 0), 1),
-                    percentWhole = percentMax * 100;
-                    raisedRawNumber = goalNumber * percentRaised,
-                    raisedNumber = Math.round(raisedRawNumber),
-                    raisedValue = raisedNumber.toLocaleString(),
-                    endTime = element.project_data.web_data.hours['data-end_time'],
+                    goalLocale = goalValue.toLocaleString(),
+
+                    raisedValue = element.project_data.meta_data.raised,
+                    raisedLocale = raisedValue.toLocaleString(),
+
+                    percentWhole = element.project_data.meta_data.raisedPercent * 100,
+
+                    endTime = element.project_data.meta_data.endTime,
                     end = new Date(endTime),
                     remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
-        
+                
                 element.ExploreCard = (
                     {
                         data: 
@@ -78,19 +74,18 @@
                             'platform': platform,
                             'id': element.unique_id,
                             'category': element.project_data.info_data.category,
-                            'featured': element.project_data.meta_data.featured,
-                            'image': element.project_data.web_data.mainImg.content,
-                            'backed': raisedValue,
-                            'goal': goalValue,
+                            'featured': element.project_data.info_data.featured,
+                            'image': image,
+                            'backed': raisedLocale,
+                            'goal': goalLocale,
                             'percent': percentWhole,
                             'days': daysMax, 
-                            'title': element.project_data.web_data.title.content,
+                            'title': title,
                             'reward': element.project_data.info_data.reward,
                         }
                     }
                 );
             });
-        
             return projectArray;
         }
         

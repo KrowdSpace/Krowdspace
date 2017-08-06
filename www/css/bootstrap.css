@@ -1219,7 +1219,6 @@ output {
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #eee;
   opacity: 1;
 }
 .form-control[disabled],
@@ -2026,7 +2025,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-nav {
-  margin: 7.5px -15px;
+  margin: none;
 }
 .navbar-nav > li > a {
   padding-top: 10px;

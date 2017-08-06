@@ -19,6 +19,9 @@
             <div class="col-sm-1 text-center">
                 <p style="font-size: 13px;">SOCIAL</p>
             </div>
+            <div class="col-sm-1 text-center">
+                <p style="font-size: 13px;">REWARD</p>
+            </div>
         </div>
         <div class="col-sm-12 no-gutter" style="border-bottom: 1px solid pink; padding: 3px 0px;" each={ adminData }>
             <div class="col-sm-1">
@@ -28,20 +31,19 @@
                 <p style="font-size: 13px; margin: 0px;">{ project_data.info_data.reward }</p>
             </div>
             <div class="col-sm-1 text-center">
-                <input show={ !project_data.meta_data.featured } input type="checkbox">
-                <input show={ project_data.meta_data.featured } input type="checkbox" checked>
+                <input checked={ project_data.meta_data.featured } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input show={ !project_data.meta_data.explore } input type="checkbox">
-                <input show={ project_data.meta_data.explore } input type="checkbox" checked>
+                <input checked={ project_data.meta_data.explore } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input show={ !project_data.meta_data.landing } input type="checkbox">
-                <input show={ project_data.meta_data.landing } input type="checkbox" checked>
+                <input checked={ project_data.meta_data.landing } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input show={ !project_data.meta_data.social } input type="checkbox">
-                <input show={ project_data.meta_data.social } input type="checkbox" checked>
+                <input checked={ project_data.meta_data.social } input type="checkbox">
+            </div>
+            <div class="col-sm-1 text-center">
+                <input checked={ project_data.meta_data.reward } input type="checkbox">
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <global-modal-press>
-    <div id="modal-press-kit" class="modal container fade modal-padding">
+    <div id="modal-press-kit" class="modal container fade modal-padding-none">
         <div class="krowdspace-modal col-lg-offset-1 col-lg-10">
             <div id="modal">
                 <div class="modal-purchase no-gutter">
@@ -16,7 +16,7 @@
                         </button>
                         <p class="modal-heading logo-push">KROWDSPACE LOGO</p>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <img class="press-img" src="img/press/krowdspace-icon-v1.svg">
+                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v1.png">
                             <div class="col-xs-6 press-download-left">
                                 <a href="img/press/krowdspace-icon-v1.png" download>
                                 <p class="download-font">PNG</p>
@@ -29,8 +29,10 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <div class="checker press-img no-gutter">
-                                <img src="img/press/krowdspace-icon-v2.svg">
+                            <div class="press-img">
+                                <div class="checker no-gutter">
+                                    <img class="img-responsive" src="img/press/krowdspace-icon-v2.png">
+                                </div>
                             </div>
                                 <div class="col-xs-6 press-download-left">
                                     <a href="img/press/krowdspace-icon-v2.png" download>
@@ -44,7 +46,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <img class="press-img" src="img/press/krowdspace-icon-v3.svg">
+                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v3.png">
                             <div class="col-xs-6 press-download-left">
                                 <a href="img/press/krowdspace-icon-v3.png" download>
                                 <p class="download-font">PNG</p>
@@ -57,7 +59,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <img class="press-img" src="img/press/krowdspace-icon-v4.svg">
+                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v4.png">
                             <div class="col-xs-6 press-download-left">
                                 <a href="img/press/krowdspace-icon-v4.png" download>
                                 <p class="download-font">PNG</p>
@@ -70,7 +72,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 no-gutter press-box">
-                            <img class="press-img-alt" src="img/press/krowdspace-icon-v6.svg">
+                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v6.png">
                             <div class="col-xs-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v6.png" download>
                                 <p class="download-font png-left">PNG</p>
@@ -83,7 +85,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 no-gutter press-box">
-                            <img class="press-img-alt" src="img/press/krowdspace-icon-v7.svg">
+                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v7.png">
                             <div class="col-xs-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v7.png" download>
                                 <p class="download-font png-left">PNG</p>
@@ -96,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 no-gutter press-box">
-                            <img class="press-img-alt" src="img/press/krowdspace-icon-v5.svg">
+                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v5.png">
                             <div class="col-xs-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v5.png" download>
                                 <p class="download-font png-left">PNG</p>

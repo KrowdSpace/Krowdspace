@@ -1,11 +1,4 @@
 <dashboard-featured-purchase>
-    <style>
-        @media screen and (max-width: 767px) {
-        .purchase-container-left {
-        border-right:2px solid #fed136;
-        }
-        }
-    </style>
     <div id="purchase-featured" class="modal container fade">
         <div class="krowdspace-modal-custom col-lg-offset-2 col-lg-8 col-md-offset-0 col-md-12">
             <div id="modal">
@@ -15,7 +8,11 @@
                         <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
                         </button>
                         <p class="modal-heading">FEATURED PROJECT LISTING</p>
-                        <p class="modal-purchase-text text-left">Your project will be listed on our Explore Page with a featured project icon. Having your project featured means it will get priority filtering and have increased viewership. For a limited time we are offering this as a free service while we work through our initial launch! Please click the Upgrade button below to add this feature.</p>
+                        <p class="modal-purchase-text text-left">Every featured project will have a yellow heart icon located in the corner of your project image. These icons will be displayed on our Explore Page filtering system. Having the icon will allow your project to have priority filtering and will always show ahead of other projects without the icon. Our featured project listing will last the entire length of your campaign.</p>
+                        <div show={ activated } class="active-box hidden-xs">
+                        <i class="fa fa-check media-icons" style="color: #5cb85c"></i>
+                        <span class="active-text">This upgrade is active on your project.</span>
+                        </div>
                         <div class="col-xs-6 hidden-lg hidden-md hidden-sm text-center divider-inside-right">
                             <p class="purchase-text">FEATURED ICON</p>
                         </div>
@@ -63,6 +60,13 @@
                  return;
         
              let res = {data: [opts.project]};
+
+              if (res.data[0].project_data.info_data.featured) 
+            {
+                activated = true;
+            }else{
+                activated = false;
+            }; 
          });
          
          submitFeatured(e) 
@@ -81,12 +85,12 @@
         
          setUserDeets(res, pRes)
          {
-             let project = pRes.data[0].name,
+             let project = pRes.data[0].unique_id,
                  projectData = 
                  {
                      project_data: 
                      {
-                         meta_data: 
+                         info_data: 
                          {
                              featured : true,
                          }

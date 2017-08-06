@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i>
                 </button>
-                <a class="navbar-logo-alt" href="/#/explore"><img class="logo-size" src="/../img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small"></a>
+                <a class="navbar-logo-alt" href="/#/explore"><img class="logo-size" src="/../img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small"></a>
             </div>
             <div class="collapse navbar-collapse text-center" id="explore-nav-collapse">
                 <ul class="nav navbar-nav navbar-left">
@@ -20,7 +20,7 @@
                     </li>
                 </ul>
                 <a href="/#/explore">
-                    <img class="logo-float logo-size" src="img/press/krowdspace-icon-v1.svg" alt="Krowdspace Logo Small">
+                    <img class="logo-float logo-size" src="img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
@@ -38,6 +38,9 @@
                     <li>
                         <a show={ logged_in } href="/#/account/resource">Resource</a>
                     </li>
+                    <li>
+                        <a class="hidden-lg hidden-md" show={ logged_in } onclick={ krowdspaceLogout }>Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,7 +54,19 @@
 	(err)=>
 	{
 		
-	});
+    });
+    
+    krowdspaceLogout() 
+    {
+        krowdspace.v1.logout().then((res) => 
+        {
+            window.location.replace("/");
+        },
+        (err) => 
+        {
+    
+        });
+    };
 
     this.on('mount', function() 
     {
