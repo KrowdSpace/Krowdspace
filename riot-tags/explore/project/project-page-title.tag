@@ -22,39 +22,25 @@
         krowdspace.projects.project(this.opts.uri).then((res)=>
         {
             let platform = res.data[0].platform;
-            this.projectReward = res.data[0].project_data.info_data.reward;
-        
             if (platform == 'kickstarter') 
             {
-                projectbtn = true;
-                this.projectTitle = res.data[0].project_data.web_data.title.content;
-                this.projectDescription = res.data[0].project_data.web_data.description.content;
+                projectbtn = true;    
+            }else{
+                projectbtn = false;
+                this.projectLink = res.data[0].project_data.info_data.ig_reward;
+            }; 
+            
+            this.projectReward = res.data[0].project_data.info_data.reward;
+            this.projectTitle = res.data[0].project_data.meta_data.title;
+            this.projectDescription = res.data[0].project_data.meta_data.description;
 
-                let endTime = res.data[0].project_data.meta_data.endTime,
+            let endTime = res.data[0].project_data.meta_data.endTime,
                 projectTime = res.data[0].project_data.meta_data.duration,
                 end = new Date(endTime),
                 remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
                 daysMax = Math.max(0, remaining);
         
             this.countdown = Math.floor(daysMax);
-                
-                console.log('Kickstarter Reward');
-            }else{
-                projectbtn = false;
-                this.projectTitle = res.data[0].project_data.meta_data.jsonReply.response.title;
-                this.projectDescription = res.data[0].project_data.meta_data.jsonReply.response.tagline;
-                this.projectLink = res.data[0].project_data.meta_data.jsonReply.response.web_url;
-
-                let endTime = res.data[0].project_data.meta_data.jsonReply.response.funding_ends_at,
-                projectTime = res.data[0].project_data.meta_data.jsonReply.response.funding_days,
-                end = new Date(endTime),
-                remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
-                daysMax = Math.max(0, remaining);
-        
-                this.countdown = Math.floor(daysMax);
-                console.log('Indiegogo Reward');
-            }; 
-        
             this.update();
         },
         (err)=> 

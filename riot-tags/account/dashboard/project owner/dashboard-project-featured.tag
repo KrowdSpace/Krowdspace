@@ -82,33 +82,33 @@
         {
             if(!opts.project)
                 return;
-    
-            let res = {data: [opts.project]};
-            let platform = res.data[0].platform;
 
-            if(platform == 'kickstarter')this.projectDays = res.data[0].project_data.meta_data.duration;
-            else this.projectDays = res.data[0].project_data.meta_data.jsonReply.response.funding_days;
+            let res = {data: [opts.project]};
             
-        
-            if(res.data[0].project_data.meta_data.featured) 
+            this.projectDays = res.data[0].project_data.meta_data.duration;
+            
+            if(res.data[0].project_data.info_data.featured) 
             {
                 activeFeature = true;
             }else{
                 activeFeature = false;
             }; 
-            if(res.data[0].project_data.meta_data.explore) 
+
+            if(res.data[0].project_data.info_data.explore) 
             {
                 activeExplore = true;
             }else{
                 activeExplore = false;
             }; 
-            if(res.data[0].project_data.meta_data.landing) 
+
+            if(res.data[0].project_data.info_data.landing) 
             {
                 activeLanding = true;
             }else{
                 activeLanding = false;
             }; 
-            if(res.data[0].project_data.meta_data.social) 
+            
+            if(res.data[0].project_data.info_data.social) 
             {
                 activeSocial = true;
             }else{

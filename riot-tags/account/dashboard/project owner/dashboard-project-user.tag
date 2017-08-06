@@ -53,14 +53,11 @@
                 <p class="social-metric">{ opts.index }</p>
             </div> 
         -->
-        <div show={ !approved } class="col-lg-12 text-left approval-container">
+        <div class="col-lg-12 text-left approval-container">
             <a href="#project-status" class="modal-link" data-toggle="modal">
-                <img class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly.">
-            </a>
-        </div>
-        <div show={ approved } class="col-lg-12 text-left approval-container">
-            <a href="#project-status" class="modal-link" data-toggle="modal">
-                <img class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">
+                <img show={ warning } class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly.">
+                <img show={ approved } class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">
+                <img show={ pending } class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">
             </a>
         </div>
     </div>
@@ -90,64 +87,40 @@
         
         setProjectDeets(res)
         {
-            let platform = opts.project.platform;
-
-            if(platform == 'kickstarter')
-            {
-
-                let endTime = res.data[0].project_data.meta_data.endTime,
-                    percentRaised = res.data[0].project_data.meta_data.raisedPercent,
-                    projectTime = res.data[0].project_data.meta_data.duration,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
-                    daysMax = Math.max(0, remaining);
             
-                this.countdowntimer = Math.floor(daysMax);
-                this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
-                let percent = res.data[0].project_data.meta_data.raisedPercent,
-                    whole = percent * 100,
-                    wholeRound = Math.round(whole);
-                this.percentRaised = wholeRound + '%';
+            let percentRaised = res.data[0].project_data.meta_data.raisedPercent,
+                endTime = res.data[0].project_data.meta_data.endTime,
+                end = new Date(endTime),
+                remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
+                daysMax = Math.max(0, remaining);
+            this.countdowntimer = Math.floor(daysMax);
 
-            }else{
+            this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
 
-                let endTime = res.data[0].project_data.meta_data.jsonReply.response.funding_ends_at,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
-                    daysMax = Math.max(0, remaining);
-                
-                let raisedRaw = opts.project.project_data.meta_data.jsonReply.response.collected_funds,
-                    goalRaw = opts.project.project_data.meta_data.jsonReply.response.goal,
-                    percentValue = raisedRaw/goalRaw,
-                    percentWhole = percentValue * 100,
-                    percentRound = Math.round(percentWhole);
+            let percent = res.data[0].project_data.meta_data.raisedPercent,
+                whole = percent * 100,
+                wholeRound = Math.round(whole);
+            this.percentRaised = wholeRound + '%';
 
-                this.countdowntimer = Math.floor(daysMax);
-                this.percentRaised = percentRound + '%';
-                this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
-                
-            }
 
-            if (res.data[0].project_data.meta_data.reward_check) 
+            if (res.data[0].project_data.info_data.rewardValid == 0) 
+            {
+                approved = false;
+                pending = true;
+                warning = false;
+
+            }else if(res.data[0].project_data.info_data.rewardValid == 1)
             {
                 approved = true;
-            }else{
+                pending = false;
+                warning = false;
+
+            }else if(res.data[0].project_data.info_data.rewardValid == 2)
+            {
                 approved = false;
+                pending = false;
+                warning = true;
             }; 
         }
-
-    let flag = 1;
-    let ProjectStatusType =
-        {
-            "returned": 1,
-            "pending": 2,
-            "approved": 3
-        };
-
-    let flags = ProjectStatusType.returned | ProjectStatusType.pending | ProjectStatusType.approved;
-
-    if (flags & ProjectStatusType.returned)
-        console.log("returned");
-
     </script>
 </dashboard-project-user>

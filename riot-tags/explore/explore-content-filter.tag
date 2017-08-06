@@ -42,7 +42,7 @@
         {
             let rewardFilter = res.data;
             this.exploreCards = rewardFilter.filter((element) => {
-                return (element.project_data.meta_data.reward === false);
+                return (element.project_data.info_data.rewardValid == 0);
             });
             
 
@@ -96,12 +96,12 @@
     {
         let fpA = pa.filter((el, i, arr)=>
         {
-            return el.project_data.meta_data.featured;
+            return el.project_data.info_data.featured;
         });
 
         let spA = pa.filter((el, i, arr)=>
         {
-            return !el.project_data.meta_data.featured;
+            return !el.project_data.info_data.featured;
         });
 
 

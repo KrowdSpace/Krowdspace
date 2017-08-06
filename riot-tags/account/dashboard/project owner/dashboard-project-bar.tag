@@ -96,15 +96,15 @@
 
             this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.info_data.url;
             
-            this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+            this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
+            this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title; 
 
-            this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
+            this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title; 
 
-            this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+            this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content + '&caption=' + res.data[0].project_data.web_data.description.content;
+            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title + '&caption=' + res.data[0].project_data.web_data.description.content;
         }else{ 
 
             this.platformSwitch = false;

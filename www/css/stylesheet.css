@@ -1079,6 +1079,8 @@ padding: 15px;
     left: 0; 
     right: 0; 
     bottom: 0;
+    border-top:1px solid #3f434f;
+    border-bottom:1px solid #3f434f;
 }
 .card-text-alt {
     font-size: 13px;

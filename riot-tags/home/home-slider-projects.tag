@@ -12,7 +12,7 @@
      <div class="row home-slider-box">
         <div class="autoplay slider">
             <div class="explore-banner-box" each= { ExploreBannerFilter }>
-                <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url }" alt="{ project_data.web_data.description.content }">
+                <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg }">
                 <div class="explore-box">
                     <div class="col-xs-9">
                         <div class="slider-left-box">
@@ -39,7 +39,7 @@
         {
             let ExploreBannerData = res.data,
                 FilterExplore = ExploreBannerData.filter((element) => {
-                return (element.project_data.meta_data.landing === true);
+                return (element.project_data.info_data.landing);
         });
         
         let newObject= {

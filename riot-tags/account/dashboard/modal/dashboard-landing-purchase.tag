@@ -61,7 +61,7 @@
         
              let res = {data: [opts.project]};
 
-              if (res.data[0].project_data.meta_data.landing) 
+              if (res.data[0].project_data.info_data.landing) 
             {
                 activated = true;
             }else{
@@ -90,7 +90,7 @@
                  {
                      project_data: 
                      {
-                         meta_data: 
+                         info_data: 
                          {
                              landing : true,
                          }

@@ -3,7 +3,13 @@
     <script>
         krowdspace.projects.project(this.opts.uri).then((res)=>
         {
-            this.refs.projectcontent.innerHTML = res.data[0].project_data.meta_data.content;
+            if(res.data[0].project_data.meta_data.content)
+            {
+                this.refs.projectcontent.innerHTML = res.data[0].project_data.meta_data.content;
+            }else{
+                this.refs.projectcontent.innerHTML = 'need to add content here still if they decide not to put their own';
+            }
+            
             this.update();
         },
         (err)=> 

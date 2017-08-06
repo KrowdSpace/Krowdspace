@@ -31,7 +31,7 @@
     <div class="col-md-6 image-container-alt">
         <div class="single-item slider"> 
             <div class="dash-banner-box" each= { ExploreBannerFilter }>
-                <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url }">
+                <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg }">
                 <div class="explore-box">
                     <div class="col-lg-9 col-md-10 col-sm-8 col-xs-11">
                         <div class="reward-slider-push">
@@ -58,16 +58,14 @@
 <script type="text/javascript">
     krowdspace.projects.explore().then((res) =>
     {
-        let ExploreBannerData = res.data;
-
+        let ExploreBannerData = res.data,
             FilterExplore = ExploreBannerData.filter((element) => {
-            return (element.project_data.meta_data.landing);
-            
+            return (element.project_data.info_data.landing);
         });
 
             let newObject={
                         unique_url: '#modal-feature-info',
-                        name: 'test',
+                        name: '',
                         project_data: 
                         {
                             web_data:
@@ -104,10 +102,31 @@
         });
     },
     (err)=>
-    {
-console.log(err);
+    {   
+        let KrowdspaceAd = [{
+                        unique_url: '#modal-feature-info',
+                        project_data: 
+                        {
+                            meta_data:
+                            {
+                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                            },
+                        },
+                    }];
+            this.ExploreBannerFilter = KrowdspaceAd;
+            this.update();
+
+        $('.single-item').slick
+        ({
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            centerMode: true,
+            variableWidth: true,
+        });
     });
-    
 </script>
 </dashboard-user-image>	
 	

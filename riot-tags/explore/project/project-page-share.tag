@@ -86,15 +86,15 @@
             if(platform == 'kickstarter'){
                 this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
         
-                this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.web_data.title.content + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
+                this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.meta_data.title + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
                 
-                this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+                this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
             
-                this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
+                this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title; 
             
-                this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content; 
+                this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title; 
             
-                this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+                this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
             
                 this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.info_data.url;
             

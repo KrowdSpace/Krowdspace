@@ -235,7 +235,7 @@ riot.tag2('dashboard-explore-purchase', '<div id="purchase-explore" class="modal
 
              let res = {data: [opts.project]};
 
-             if (res.data[0].project_data.meta_data.explore)
+             if (res.data[0].project_data.info_data.explore)
             {
                 activated = true;
             }else{
@@ -263,7 +263,7 @@ riot.tag2('dashboard-explore-purchase', '<div id="purchase-explore" class="modal
                  {
                      project_data:
                      {
-                         meta_data:
+                         info_data:
                          {
                              explore : true,
                          }
@@ -289,7 +289,7 @@ riot.tag2('dashboard-featured-purchase', '<div id="purchase-featured" class="mod
 
              let res = {data: [opts.project]};
 
-              if (res.data[0].project_data.meta_data.featured)
+              if (res.data[0].project_data.info_data.featured)
             {
                 activated = true;
             }else{
@@ -318,7 +318,7 @@ riot.tag2('dashboard-featured-purchase', '<div id="purchase-featured" class="mod
                  {
                      project_data:
                      {
-                         meta_data:
+                         info_data:
                          {
                              featured : true,
                          }
@@ -344,7 +344,7 @@ riot.tag2('dashboard-landing-purchase', '<div id="purchase-landing" class="modal
 
              let res = {data: [opts.project]};
 
-              if (res.data[0].project_data.meta_data.landing)
+              if (res.data[0].project_data.info_data.landing)
             {
                 activated = true;
             }else{
@@ -373,7 +373,7 @@ riot.tag2('dashboard-landing-purchase', '<div id="purchase-landing" class="modal
                  {
                      project_data:
                      {
-                         meta_data:
+                         info_data:
                          {
                              landing : true,
                          }
@@ -401,7 +401,7 @@ riot.tag2('dashboard-refresh-content', '<div id="refresh-content" class="modal c
 
            let res = {data: [opts.project]};
 
-           this.refreshContent = res.data[0].project_data.meta_data.refresh;
+           this.refreshContent = res.data[0].project_data.info_data.refresh;
        });
 
        this.submitRefresh = function(e)
@@ -425,7 +425,7 @@ riot.tag2('dashboard-refresh-content', '<div id="refresh-content" class="modal c
                {
                    project_data:
                    {
-                       meta_data:
+                       info_data:
                        {
                            refresh : true,
                        }
@@ -451,7 +451,7 @@ riot.tag2('dashboard-social-purchase', '<div id="purchase-social" class="modal c
 
              let res = {data: [opts.project]};
 
-              if (res.data[0].project_data.meta_data.social)
+              if (res.data[0].project_data.info_data.social)
             {
                 activated = true;
             }else{
@@ -480,7 +480,7 @@ riot.tag2('dashboard-social-purchase', '<div id="purchase-social" class="modal c
                  {
                      project_data:
                      {
-                         meta_data:
+                         info_data:
                          {
                              social : true,
                          }
@@ -520,15 +520,15 @@ riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <
 
             this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.info_data.url;
 
-            this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+            this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+            this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+            this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+            this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content + '&caption=' + res.data[0].project_data.web_data.description.content;
+            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title + '&caption=' + res.data[0].project_data.web_data.description.content;
         }else{
 
             this.platformSwitch = false;
@@ -563,30 +563,31 @@ riot.tag2('dashboard-project-featured', '<div class="col-md-4 feature-container-
                 return;
 
             let res = {data: [opts.project]};
-            let platform = res.data[0].platform;
 
-            if(platform == 'kickstarter')this.projectDays = res.data[0].project_data.meta_data.duration;
-            else this.projectDays = res.data[0].project_data.meta_data.jsonReply.response.funding_days;
+            this.projectDays = res.data[0].project_data.meta_data.duration;
 
-            if(res.data[0].project_data.meta_data.featured)
+            if(res.data[0].project_data.info_data.featured)
             {
                 activeFeature = true;
             }else{
                 activeFeature = false;
             };
-            if(res.data[0].project_data.meta_data.explore)
+
+            if(res.data[0].project_data.info_data.explore)
             {
                 activeExplore = true;
             }else{
                 activeExplore = false;
             };
-            if(res.data[0].project_data.meta_data.landing)
+
+            if(res.data[0].project_data.info_data.landing)
             {
                 activeLanding = true;
             }else{
                 activeLanding = false;
             };
-            if(res.data[0].project_data.meta_data.social)
+
+            if(res.data[0].project_data.info_data.social)
             {
                 activeSocial = true;
             }else{
@@ -602,74 +603,16 @@ riot.tag2('dashboard-project-hours', '<div class="col-lg-3 hidden-md hidden-sm h
         {
             if(!opts.project)
                 return;
+
             let res = {data: [opts.project]}
-            let platform = opts.project.platform;
 
-            if(platform == 'kickstarter')
-            {
-                let endTime = res.data[0].project_data.meta_data.endTime,
-                    projectTime = res.data[0].project_data.meta_data.duration,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
-                    daysMax = Math.max(0, remaining);
-                let bar = null;
+            let endTime = res.data[0].project_data.meta_data.endTime,
+                projectTime = res.data[0].project_data.meta_data.duration,
+                end = new Date(endTime),
+                remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
+                daysMax = Math.max(0, remaining);
 
-                if(!this.progBar)this.progBar = bar = new ProgressBar.Circle(circleChart,
-                {
-                    color: '#3f434f',
-                    strokeWidth: 16,
-                    trailWidth: 16,
-                    easing: 'easeInOut',
-                    duration: 1400,
-                    text:
-                    {
-                        autoStyleContainer: false
-                    },
-                    from:
-                    {
-                        color: '#fed136',
-                        width: 16
-                    },
-                    to:
-                    {
-                        color: '#fed136',
-                        width: 16
-                    },
-                    step: function(state, circle)
-                    {
-                        circle.path.setAttribute('stroke', state.color);
-                        circle.path.setAttribute('stroke-width', state.width);
-                        var value = Math.round(circle.value() * 100);
-                        if (value === 0)
-                        {
-                            circle.setText('');
-                        }else {
-                            circle.setText(value + '%');
-                        }
-                    }
-                });
-
-                bar = this.progBar;
-
-                let projectDays = daysMax,
-                    negativeCircleProgress = projectDays/projectTime - 1,
-                    circleProgress = Math.abs(negativeCircleProgress);
-                    bar.text.style.fontFamily = '"Montserrat-Bold"';
-                    bar.text.style.fontSize = '30px';
-                    bar.text.style.fontWeight = '600';
-                    bar.animate(circleProgress || 1);
-
-                this.countdownTimer = Math.floor(daysMax) ;
-                this.projectLength = res.data[0].project_data.meta_data.duration;
-            }else{
-
-                let endTime = res.data[0].project_data.meta_data.jsonReply.response.funding_ends_at,
-                    projectTime = res.data[0].project_data.meta_data.jsonReply.response.funding_days,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
-                    daysMax = Math.max(0, remaining);
-
-                let bar = null;
+            let bar = null;
 
             if(!this.progBar)this.progBar = bar = new ProgressBar.Circle(circleChart,
             {
@@ -700,113 +643,73 @@ riot.tag2('dashboard-project-hours', '<div class="col-lg-3 hidden-md hidden-sm h
                     if (value === 0)
                     {
                         circle.setText('');
-                    }else{
+                    }else {
                         circle.setText(value + '%');
                     }
                 }
             });
-            else
 
-                bar = this.progBar;
+            bar = this.progBar;
 
-                let projectDays = daysMax,
-                    negativeCircleProgress = projectDays/projectTime - 1,
-                    circleProgress = Math.abs(negativeCircleProgress);
+            let projectDays = daysMax,
+                negativeCircleProgress = projectDays/projectTime - 1,
+                circleProgress = Math.abs(negativeCircleProgress);
+                bar.text.style.fontFamily = '"Montserrat-Bold"';
+                bar.text.style.fontSize = '30px';
+                bar.text.style.fontWeight = '600';
+                bar.animate(circleProgress || 1);
 
-                    bar.text.style.fontFamily = '"Montserrat-Bold"';
-                    bar.text.style.fontSize = '30px';
-                    bar.text.style.fontWeight = '600';
-                    bar.animate(circleProgress || 1);
-
-                this.countdownTimer = Math.floor(daysMax) ;
-                this.projectLength = res.data[0].project_data.meta_data.jsonReply.response.funding_days;
-            }
+            this.countdownTimer = Math.floor(daysMax) ;
+            this.projectLength = res.data[0].project_data.meta_data.duration;
         });
 });	
 	
-riot.tag2('dashboard-project-image', '<div class="col-md-6 image-container"> <div class="fixed-image-box"> <img show="{imagebox}" class="img-responsive kickstarter-image" ref="kickstarterImage" src=""> <img show="{!imagebox}" class="img-responsive indiegogo-image" ref="indiegogoImage" src=""> <p class="funding-text-left text-left">$ {dataBacked || 0} RAISED</p> <p class="funding-text-right text-right">$ {dataGoal || 0} GOAL</p> </div> <div id="progressBar"></div> </div>', '', '', function(opts) {
+riot.tag2('dashboard-project-image', '<div class="col-md-6 image-container"> <div class="fixed-image-box"> <img show="{imagebox}" class="img-responsive kickstarter-image" ref="kickstarterImage" src=""> <img show="{!imagebox}" class="img-responsive indiegogo-image" ref="indiegogoImage" src=""> <p class="funding-text-left text-left">$ {raisedLocale || 0} RAISED</p> <p class="funding-text-right text-right">$ {goalLocale || 0} GOAL</p> </div> <div id="progressBar"></div> </div>', '', '', function(opts) {
     this.progBar = null;
 
     this.on('update', ()=>
     {
         if(!opts.project)
             return;
+
         let platform = opts.project.platform;
 
         if (platform == 'kickstarter')
         {
             imagebox = true;
-            console.log('Kickstarter Image');
-
             this.refs.kickstarterImage.src = opts.project.project_data.meta_data.mainImg;
-            let goalValue = opts.project.project_data.meta_data.funding,
-            goalNumber = parseFloat(goalValue.replace(/,/g, '')),
-
-            percentValue = opts.project.project_data.meta_data.raisedPercent,
-            numberMax = Math.min(Math.max(percentValue, 0), 1),
-
-            raisedRawNumber = goalNumber * percentValue,
-            raisedNumber = Math.round(raisedRawNumber),
-            raisedValue = raisedNumber.toLocaleString(),
-            rawdecimal = Number.parseFloat(percentValue);
-
-            this.dataBacked = raisedValue || 0;
-            this.dataGoal = goalValue;
-
-            let bar = null;
-
-            if(!this.progBar)
-                this.progBar = bar = new ProgressBar.Line(progressBar,
-                {
-                    strokeWidth: 4,
-                    easing: 'easeInOut',
-                    duration: 1400,
-                    color: '#fed136',
-                    trailColor: '#eee',
-                    trailWidth: 4,
-                    svgStyle: {width: '100%', height: '100%'}
-                });
-            else
-                bar = this.progBar;
-
-            bar.animate(numberMax || 1);
         }else{
-
             imagebox = false;
-            console.log('Indiegogo Image');
-
             this.refs.indiegogoImage.src = opts.project.project_data.meta_data.jsonReply.response.video_overlay_url;
+        };
 
-            let raisedRaw = opts.project.project_data.meta_data.jsonReply.response.collected_funds,
-                raisedNumber = raisedRaw.toLocaleString(),
+        let raisedValue = opts.project.project_data.meta_data.raised;
+            this.raisedLocale = raisedValue.toLocaleString();
 
-                goalRaw = opts.project.project_data.meta_data.jsonReply.response.goal,
-                goalNumber = goalRaw.toLocaleString(),
+            let goalValue = opts.project.project_data.meta_data.funding;
+            this.goalLocale = goalValue.toLocaleString();
 
-                percentValue = raisedRaw/goalRaw,
-                percentMax = Math.min(Math.max(percentValue, 0), 1);
-
-            this.dataBacked = raisedNumber;
-            this.dataGoal = goalNumber;
+            let percentValue = opts.project.project_data.meta_data.raisedPercent,
+            numberMax = Math.min(Math.max(percentValue, 0), 1);
 
             let bar = null;
 
-            if(!this.progBar)
-                this.progBar = bar = new ProgressBar.Line(progressBar,
-                {
-                    strokeWidth: 4,
-                    easing: 'easeInOut',
-                    duration: 1400,
-                    color: '#fed136',
-                    trailColor: '#eee',
-                    trailWidth: 4,
-                    svgStyle: {width: '100%', height: '100%'}
-                });
-            else
-                bar = this.progBar;
+        if(!this.progBar)
+            this.progBar = bar = new ProgressBar.Line(progressBar,
+            {
+                strokeWidth: 4,
+                easing: 'easeInOut',
+                duration: 1400,
+                color: '#fed136',
+                trailColor: '#eee',
+                trailWidth: 4,
+                svgStyle: {width: '100%', height: '100%'}
+            });
+        else
 
-            bar.animate(percentMax || 1);
-        };
+        bar = this.progBar;
+
+        bar.animate(numberMax || 1);
     });
 });	
 	
@@ -828,19 +731,12 @@ riot.tag2('dashboard-project-title', '<div class="col-lg-3 col-md-12 dashboard-t
         if(!opts.project)
         return;
 
-        let platform = opts.project.platform;
-
-        if(platform == 'kickstarter')
-        {
-            this.projectTitle = opts.project.project_data.web_data.title.content;
-            this.projectDescription = opts.project.project_data.web_data.description.content;
-        }else{
-            this.projectTitle = opts.project.project_data.meta_data.jsonReply.response.title;
-            this.projectDescription = opts.project.project_data.meta_data.jsonReply.response.tagline;
-        }
+        this.projectTitle = opts.project.project_data.meta_data.title;
+        this.projectDescription = opts.project.project_data.meta_data.description;
     });
 });
-riot.tag2('dashboard-project-user', '<div class="col-md-6 text-left no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn filterdark float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname || \'\'} {lastname || \'\'}</p> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text">Username:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text">{username || \'\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt">Email:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt">{email || \'\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-break hidden-md">Kickstarter Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-break hidden-md">{kickstarter || \'N/A\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt hidden-md">Indiegogo Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt hidden-md">{indiegogo || \'N/A\'}</p> </div> <div class="user-position-box"> <p class="dashboard-text profile-name">Project Status</p> <div class="col-xs-4 no-gutters text-center user-stat-box"> <p class="dashboard-user user-text-alt">Raised Percent</p> <p class="social-metric">{percentRaised || 0}</p> </div> <div class="col-xs-3 no-gutters text-center user-stat-box"> <p class="dashboard-user user-text-alt">Hours Left</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-xs-4 no-gutters text-center user-stat-box"> <p class="dashboard-user user-text-alt">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> </div> <div show="{!approved}" class="col-lg-12 text-left approval-container"> <a href="#project-status" class="modal-link" data-toggle="modal"> <img class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly."> </a> </div> <div show="{approved}" class="col-lg-12 text-left approval-container"> <a href="#project-status" class="modal-link" data-toggle="modal"> <img class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page."> </a> </div> </div>', '', '', function(opts) {
+
+riot.tag2('dashboard-project-user', '<div class="col-md-6 text-left no-gutter user-container"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn filterdark float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname || \'\'} {lastname || \'\'}</p> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text">Username:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text">{username || \'\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt">Email:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt">{email || \'\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-break hidden-md">Kickstarter Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-break hidden-md">{kickstarter || \'N/A\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt hidden-md">Indiegogo Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt hidden-md">{indiegogo || \'N/A\'}</p> </div> <div class="user-position-box"> <p class="dashboard-text profile-name">Project Status</p> <div class="col-xs-4 no-gutters text-center user-stat-box"> <p class="dashboard-user user-text-alt">Raised Percent</p> <p class="social-metric">{percentRaised || 0}</p> </div> <div class="col-xs-3 no-gutters text-center user-stat-box"> <p class="dashboard-user user-text-alt">Hours Left</p> <p class="social-metric">{countdowntimer || 0}</p> </div> <div class="col-xs-4 no-gutters text-center user-stat-box"> <p class="dashboard-user user-text-alt">Reward Value</p> <p class="social-metric">{rewardAmount || 0}</p> </div> </div> <div class="col-lg-12 text-left approval-container"> <a href="#project-status" class="modal-link" data-toggle="modal"> <img show="{warning}" class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly."> <img show="{approved}" class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page."> <img show="{pending}" class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page."> </a> </div> </div>', '', '', function(opts) {
         this.on('update', ()=>
         {
             if(!opts.user)
@@ -866,65 +762,40 @@ riot.tag2('dashboard-project-user', '<div class="col-md-6 text-left no-gutter us
 
         this.setProjectDeets = function(res)
         {
-            let platform = opts.project.platform;
 
-            if(platform == 'kickstarter')
+            let percentRaised = res.data[0].project_data.meta_data.raisedPercent,
+                endTime = res.data[0].project_data.meta_data.endTime,
+                end = new Date(endTime),
+                remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
+                daysMax = Math.max(0, remaining);
+            this.countdowntimer = Math.floor(daysMax);
+
+            this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
+
+            let percent = res.data[0].project_data.meta_data.raisedPercent,
+                whole = percent * 100,
+                wholeRound = Math.round(whole);
+            this.percentRaised = wholeRound + '%';
+
+            if (res.data[0].project_data.info_data.rewardValid == 0)
             {
+                approved = false;
+                pending = true;
+                warning = false;
 
-                let endTime = res.data[0].project_data.meta_data.endTime,
-                    percentRaised = res.data[0].project_data.meta_data.raisedPercent,
-                    projectTime = res.data[0].project_data.meta_data.duration,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
-                    daysMax = Math.max(0, remaining);
-
-                this.countdowntimer = Math.floor(daysMax);
-                this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
-                let percent = res.data[0].project_data.meta_data.raisedPercent,
-                    whole = percent * 100,
-                    wholeRound = Math.round(whole);
-                this.percentRaised = wholeRound + '%';
-
-            }else{
-
-                let endTime = res.data[0].project_data.meta_data.jsonReply.response.funding_ends_at,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 3600000,
-                    daysMax = Math.max(0, remaining);
-
-                let raisedRaw = opts.project.project_data.meta_data.jsonReply.response.collected_funds,
-                    goalRaw = opts.project.project_data.meta_data.jsonReply.response.goal,
-                    percentValue = raisedRaw/goalRaw,
-                    percentWhole = percentValue * 100,
-                    percentRound = Math.round(percentWhole);
-
-                this.countdowntimer = Math.floor(daysMax);
-                this.percentRaised = percentRound + '%';
-                this.rewardAmount = '$' + res.data[0].project_data.info_data.reward_ammount;
-
-            }
-
-            if (res.data[0].project_data.meta_data.reward_check)
+            }else if(res.data[0].project_data.info_data.rewardValid == 1)
             {
                 approved = true;
-            }else{
+                pending = false;
+                warning = false;
+
+            }else if(res.data[0].project_data.info_data.rewardValid == 2)
+            {
                 approved = false;
+                pending = false;
+                warning = true;
             };
         }.bind(this)
-
-    let flag = 1;
-    let ProjectStatusType =
-        {
-            "returned": 1,
-            "pending": 2,
-            "approved": 3
-        };
-
-    let flags = ProjectStatusType.returned | ProjectStatusType.pending | ProjectStatusType.approved;
-
-    if (flags & ProjectStatusType.returned)
-        console.log("returned");
-
 });
 riot.tag2('dashboard-project-wysiwyg', '<link href="css/froala_editor.css" rel="stylesheet" type="text/css"> <link href="css/froala_style.css" rel="stylesheet" type="text/css"> <div class="col-sm-12 no-gutter wysiwyg-editor"> <form id="rewardUpgrade" role="form" onsubmit="{submitContent}"> <button class="wysiwyg-save filterdark" type="submit" name="submit">Save</button> <textarea class="wysiwyg" ref="crowdContent"></textarea> </form> </div>', '', '', function(opts) {
     this.on('update', ()=>
@@ -1006,19 +877,17 @@ riot.tag2('dashboard-user-bar', '<div class="dash-bar col-sm-12 no-gutter"> <div
     this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=https://www.krowdspace.com&title=Get extra rewards and support awesome crowdfunding project at Krowdspace.com&caption=Submit a project today!';
 });	
 	
-riot.tag2('dashboard-user-image', '<div class="col-md-6 image-container-alt"> <div class="single-item slider"> <div class="dash-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url}"> <div class="explore-box"> <div class="col-lg-9 col-md-10 col-sm-8 col-xs-11"> <div class="reward-slider-push"> <div class="explore-feature-left"> <div class="dash-box-text"> <span class="dash-user-title">{name}</span> </div> <div class="dash-box-text"> <span class="dash-user-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-lg-3 hidden-md col-sm-4 hidden-xs dash-feature-right text-center"> <a href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> </div> <div class="hidden-lg col-md-2 hidden-sm col-xs-1 dash-feature-right text-center"> <a href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', 'dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 515px; overflow: hidden; border: none; } @media screen and (max-width: 1200px) { dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 395px; overflow: hidden; } } @media screen and (max-width: 991px) { dashboard-user-image .dash-banner-box,[data-is="dashboard-user-image"] .dash-banner-box{ width: 615px; height: 345px; overflow: hidden; } dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 100%; } } @media screen and (max-width: 767px) { dashboard-user-image .dash-banner-box,[data-is="dashboard-user-image"] .dash-banner-box{ width: 398px; height: 223px; } }', '', function(opts) {
+riot.tag2('dashboard-user-image', '<div class="col-md-6 image-container-alt"> <div class="single-item slider"> <div class="dash-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg}"> <div class="explore-box"> <div class="col-lg-9 col-md-10 col-sm-8 col-xs-11"> <div class="reward-slider-push"> <div class="explore-feature-left"> <div class="dash-box-text"> <span class="dash-user-title">{name}</span> </div> <div class="dash-box-text"> <span class="dash-user-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-lg-3 hidden-md col-sm-4 hidden-xs dash-feature-right text-center"> <a href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> </div> <div class="hidden-lg col-md-2 hidden-sm col-xs-1 dash-feature-right text-center"> <a href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', 'dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 515px; overflow: hidden; border: none; } @media screen and (max-width: 1200px) { dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 395px; overflow: hidden; } } @media screen and (max-width: 991px) { dashboard-user-image .dash-banner-box,[data-is="dashboard-user-image"] .dash-banner-box{ width: 615px; height: 345px; overflow: hidden; } dashboard-user-image .slick-slide img,[data-is="dashboard-user-image"] .slick-slide img{ width: 100%; } } @media screen and (max-width: 767px) { dashboard-user-image .dash-banner-box,[data-is="dashboard-user-image"] .dash-banner-box{ width: 398px; height: 223px; } }', '', function(opts) {
     krowdspace.projects.explore().then((res) =>
     {
-        let ExploreBannerData = res.data;
-
+        let ExploreBannerData = res.data,
             FilterExplore = ExploreBannerData.filter((element) => {
-            return (element.project_data.meta_data.landing);
-
+            return (element.project_data.info_data.landing);
         });
 
             let newObject={
                         unique_url: '#modal-feature-info',
-                        name: 'test',
+                        name: '',
                         project_data:
                         {
                             web_data:
@@ -1056,9 +925,30 @@ riot.tag2('dashboard-user-image', '<div class="col-md-6 image-container-alt"> <d
     },
     (err)=>
     {
-console.log(err);
-    });
+        let KrowdspaceAd = [{
+                        unique_url: '#modal-feature-info',
+                        project_data:
+                        {
+                            meta_data:
+                            {
+                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                            },
+                        },
+                    }];
+            this.ExploreBannerFilter = KrowdspaceAd;
+            this.update();
 
+        $('.single-item').slick
+        ({
+            arrows: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 6000,
+            centerMode: true,
+            variableWidth: true,
+        });
+    });
 });	
 	
 riot.tag2('dashboard-user-user', '<div class="col-md-6 text-left no-gutter user-container-2"> <a href="#edit-profile" class="modal-link" data-toggle="modal"> <span class="fa-stack fa-lg social-btn filterdark float-btn"> <i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-pencil fa-stack-1x fa-inverse"></i> </span> </a> <p class="dashboard-text profile-name">{firstname} {lastname}</p> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text">Username:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text">{username}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt">Email:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt">{email}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-break hidden-md">Kickstarter Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-break hidden-md">{kickstarter || \'N/A\'}</p> </div> <div class="col-sm-4 col-xs-5 user-profile-push"> <p class="dashboard-user user-text-alt hidden-md">Indiegogo Name:</p> </div> <div class="col-sm-8 col-xs-7"> <p class="dashboard-user user-text-alt hidden-md">{indiegogo || \'N/A\'}</p> </div> <div class="user-position-box"> <p class="dashboard-text profile-name">Krowdspace Stats</p> <div class="col-xs-4 no-gutters text-center user-stat-box-2"> <p class="dashboard-user user-text-alt">Campaigns</p> <p class="social-metric">13</p> </div> <div class="col-xs-4 no-gutters text-center user-stat-box-2"> <p class="dashboard-user user-text-alt">Rewards</p> <p class="social-metric">{\'$1,329\'}</p> </div> <div class="col-xs-4 no-gutters text-center user-stat-box-2"> <p class="dashboard-user user-text-alt">Pledges</p> <p class="social-metric">{\'$84,322\'}</p> </div> </div> <div class="clearfix"></div> </div>', '', '', function(opts) {
@@ -1559,7 +1449,7 @@ riot.tag2('verify-content-confirm', '<div class="row row-verify"> <p class="text
 });
 riot.tag2('verify', '<success></success>', '', '', function(opts) {
 });
-riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-lg-4 col-md-6 col-sm-6 explore-card-content"> <div ref="exploreCard.ExploreCard.data.category"> <div class="no-gutter explore-container shadow"> <div class="platform-card-box" style=""> <a href="/#/explore/project/{exploreCard.ExploreCard.data.id}"> <img class="img-responsive image-card-{exploreCard.ExploreCard.data.platform}" riot-src="{exploreCard.ExploreCard.data.image}"></a> </div> <span show="{exploreCard.ExploreCard.data.featured}" class="fa-stack fa-lg explore-feature-icon"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div class="card-title-height"> <p class="card-text-alt">{exploreCard.ExploreCard.data.title}</p> <p class="card-text-alt">Reward: {exploreCard.ExploreCard.data.reward}</p> </div> <div class="col-xs-5 text-left card-return"> <p class="card-text-alt">${exploreCard.ExploreCard.data.backed || 0} Raised</p> </div> <div class="col-xs-2 text-center card-return"> <p class="card-text-alt days-center">{exploreCard.ExploreCard.data.days || 0} Days</p> </div> <div class="col-xs-5 text-right card-return"> <p class="card-text-alt">${exploreCard.ExploreCard.data.goal || 0} Goal</p> </div> <div class="col-xs-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style="width: {exploreCard.ExploreCard.data.percent + \'%\'};" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div> <img show="{Cards}" class="img-responsive" src="/img/content/krowdspace-coming-soon.png">', '', '', function(opts) {
+riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in displayCards}" class="col-lg-4 col-md-6 col-sm-6 explore-card-content"> <div ref="exploreCard.ExploreCard.data.category"> <div class="no-gutter explore-container shadow"> <div class="platform-card-box"> <a href="/#/explore/project/{exploreCard.ExploreCard.data.id}"> <img class="img-responsive image-card-{exploreCard.ExploreCard.data.platform}" riot-src="{exploreCard.ExploreCard.data.image}"></a> </div> <span show="{exploreCard.ExploreCard.data.featured}" class="fa-stack fa-lg explore-feature-icon"> <i class="fa fa-circle fa-stack-xx text-primary"></i> <i class="fa fa-heart fa-stack-1x fa-inverse"></i> </span> <div class="card-title-height"> <p class="card-text-alt">{exploreCard.ExploreCard.data.title}</p> <p class="card-text-alt">Reward: {exploreCard.ExploreCard.data.reward}</p> </div> <div class="col-xs-5 text-left card-return"> <p class="card-text-alt">${exploreCard.ExploreCard.data.backed || 0} Raised</p> </div> <div class="col-xs-2 text-center card-return"> <p class="card-text-alt days-center">{exploreCard.ExploreCard.data.days || 0} Days</p> </div> <div class="col-xs-5 text-right card-return"> <p class="card-text-alt">${exploreCard.ExploreCard.data.goal || 0} Goal</p> </div> <div class="col-xs-12"> <div class="progress"> <div class="progress-bar" role="progressBar" riot-style="width: {exploreCard.ExploreCard.data.percent + \'%\'};" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div> </div> </div> <div class="clearfix"></div> </div> </div> </div> </div> <img show="{Cards}" class="img-responsive" src="/img/content/krowdspace-coming-soon.png">', '', '', function(opts) {
         this.displayCards = [];
 
         this.fixMetaCrap = function fixMetaCrap(pa)
@@ -1573,45 +1463,23 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
 
                 let platform = element.platform;
 
-                if(platform =='kickstarter'){
                     image = element.project_data.meta_data.mainImg,
-                    title = element.project_data.web_data.title.content,
+                    title = element.project_data.meta_data.title,
                     category = element.project_data.info_data.category,
+
                     goalValue = element.project_data.meta_data.funding,
-                    goalNumber = parseFloat(goalValue.replace(/,/g, '')),
-                    percentRaised = element.project_data.meta_data.raisedPercent,
-                    percentMax = Math.min(Math.max(percentRaised, 0), 1),
-                    percentWhole = percentMax * 100,
-                    raisedRawNumber = goalNumber * percentRaised,
-                    raisedNumber = Math.round(raisedRawNumber),
-                    raisedValue = raisedNumber.toLocaleString(),
+                    goalLocale = goalValue.toLocaleString(),
+
+                    raisedValue = element.project_data.meta_data.raised,
+                    raisedLocale = raisedValue.toLocaleString(),
+
+                    percentWhole = element.project_data.meta_data.raisedPercent * 100,
+
                     endTime = element.project_data.meta_data.endTime,
                     end = new Date(endTime),
                     remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
-                }else{
-                    image = element.project_data.meta_data.jsonReply.response.video_overlay_url,
-                    title = element.project_data.meta_data.jsonReply.response.title,
-                    category = element.project_data.info_data.category,
-
-                    goalNumber = element.project_data.meta_data.jsonReply.response.goal,
-                    goalValue = goalNumber.toLocaleString(),
-
-                    raisedNumber = element.project_data.meta_data.jsonReply.response.collected_funds,
-                    raisedValue = raisedNumber.toLocaleString(),
-
-                    percentValue = raisedNumber/goalNumber,
-                    percentMax = Math.min(Math.max(percentValue, 0), 1),
-                    percentWhole = percentMax * 100,
-
-                    endTime = element.project_data.meta_data.jsonReply.response.funding_ends_at,
-                    end = new Date(endTime),
-                    remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
-                    countdown = Math.floor(remaining),
-                    daysMax = Math.max(0, countdown);
-
-                }
 
                 element.ExploreCard = (
                     {
@@ -1620,10 +1488,10 @@ riot.tag2('explore-content-card', '<div class="row"> <div each="{exploreCard in 
                             'platform': platform,
                             'id': element.unique_id,
                             'category': element.project_data.info_data.category,
-                            'featured': element.project_data.meta_data.featured,
+                            'featured': element.project_data.info_data.featured,
                             'image': image,
-                            'backed': raisedValue,
-                            'goal': goalValue,
+                            'backed': raisedLocale,
+                            'goal': goalLocale,
                             'percent': percentWhole,
                             'days': daysMax,
                             'title': title,
@@ -1660,7 +1528,7 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-md-3 hidd
         {
             let rewardFilter = res.data;
             this.exploreCards = rewardFilter.filter((element) => {
-                return (element.project_data.meta_data.reward === false);
+                return (element.project_data.info_data.rewardValid == 0);
             });
 
             let catSet = new Set();
@@ -1713,12 +1581,12 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-md-3 hidd
     {
         let fpA = pa.filter((el, i, arr)=>
         {
-            return el.project_data.meta_data.featured;
+            return el.project_data.info_data.featured;
         });
 
         let spA = pa.filter((el, i, arr)=>
         {
-            return !el.project_data.meta_data.featured;
+            return !el.project_data.info_data.featured;
         });
 
         fpA.reverse();
@@ -1759,13 +1627,13 @@ riot.tag2('explore-page', '<div class="row"> <global-krowdspace-navigation></glo
             this.update();
         });
 });
-riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url}"> <div class="explore-box"> <div class="col-xs-9"> <div class="slider-left-box"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-xs-3 explore-feature-right text-center"> <a class="plus-switch-one" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> <a class="plus-switch" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div>', '@media screen and (max-width: 550px) { explore-slider-hero .col-xs-9,[data-is="explore-slider-hero"] .col-xs-9{ width: 90%; } explore-slider-hero .col-xs-3,[data-is="explore-slider-hero"] .col-xs-3{ width: 10%; } }', '', function(opts) {
+riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg}"> <div class="explore-box"> <div class="col-xs-9"> <div class="slider-left-box"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-xs-3 explore-feature-right text-center"> <a class="plus-switch-one" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> <a class="plus-switch" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div>', '@media screen and (max-width: 550px) { explore-slider-hero .col-xs-9,[data-is="explore-slider-hero"] .col-xs-9{ width: 90%; } explore-slider-hero .col-xs-3,[data-is="explore-slider-hero"] .col-xs-3{ width: 10%; } }', '', function(opts) {
         krowdspace.projects.explore().then((res) =>
         {
             let ExploreBannerData = res.data;
 
                 FilterExplore = ExploreBannerData.filter((element) => {
-                return (element.project_data.meta_data.explore === true);
+                return (element.project_data.meta_data.explore);
             });
 
             let newObject={
@@ -1871,7 +1739,13 @@ krowdspace.projects.project(this.opts.uri).then((res)=>
 riot.tag2('project-page-content', '<div class="col-sm-12 explore-project" ref="projectcontent"></div>', '', '', function(opts) {
         krowdspace.projects.project(this.opts.uri).then((res)=>
         {
-            this.refs.projectcontent.innerHTML = res.data[0].project_data.meta_data.content;
+            if(res.data[0].project_data.meta_data.content)
+            {
+                this.refs.projectcontent.innerHTML = res.data[0].project_data.meta_data.content;
+            }else{
+                this.refs.projectcontent.innerHTML = 'need to add content here still if they decide not to put their own';
+            }
+
             this.update();
         },
         (err)=>
@@ -1879,32 +1753,27 @@ riot.tag2('project-page-content', '<div class="col-sm-12 explore-project" ref="p
 
         });
 });
-riot.tag2('project-page-image', '<div class="col-md-6 image-container"> <div class="fixed-image-box"> <img show="{imagebox}" class="img-responsive kickstarter-image" ref="kickstarterImage" src=""> <img show="{!imagebox}" class="img-responsive indiegogo-image" ref="indiegogoImage" src=""> <p class="funding-text-left text-left">$ {dataBacked || 0} Raised</p> <p class="funding-text-right text-right">$ {dataGoal || 0} Goal</p> </div> <div id="progressBar"></div> </div>', '', '', function(opts) {
+riot.tag2('project-page-image', '<div class="col-md-6 image-container"> <div class="fixed-image-box"> <img show="{imagebox}" class="img-responsive kickstarter-image" ref="kickstarterImage" src=""> <img show="{!imagebox}" class="img-responsive indiegogo-image" ref="indiegogoImage" src=""> <p class="funding-text-left text-left">$ {raisedLocale || 0} Raised</p> <p class="funding-text-right text-right">$ {goalLocale || 0} Goal</p> </div> <div id="progressBar"></div> </div>', '', '', function(opts) {
     krowdspace.projects.project(this.opts.uri).then((res)=>
     {
-
         let platform = res.data[0].platform;
-
         if (platform == 'kickstarter')
         {
             imagebox = true;
-            console.log('Kickstarter Image');
             this.refs.kickstarterImage.src = res.data[0].project_data.meta_data.mainImg;
+        }else{
+            imagebox = false;
+            this.refs.indiegogoImage.src = res.data[0].project_data.meta_data.mainImg;
+        };
 
-            let goalValue = res.data[0].project_data.meta_data.funding,
-            goalNumber = parseFloat(goalValue.replace(/,/g, '')),
+        let raisedValue = res.data[0].project_data.meta_data.raised;
+        this.raisedLocale = raisedValue.toLocaleString();
 
-            percentValue = res.data[0].project_data.meta_data.raisedPercent,
-            numberMax = Math.min(Math.max(percentValue, 0), 1),
-            raisedRawNumber = goalNumber * percentValue,
-            raisedNumber = Math.round(raisedRawNumber),
-            raisedValue = raisedNumber.toLocaleString(),
+        let goalValue = res.data[0].project_data.meta_data.funding;
+        this.goalLocale = goalValue.toLocaleString();
 
-            raisedvalue = res.data[0].project_data.meta_data.raisedPercent,
-            rawdecimal = Number.parseFloat(raisedvalue);
-
-            this.dataBacked = raisedValue;
-            this.dataGoal = goalValue;
+        let percentValue = res.data[0].project_data.meta_data.raisedPercent,
+            numberMax = Math.min(Math.max(percentValue, 0), 1);
 
         let bar = new ProgressBar.Line(progressBar,
             {
@@ -1920,38 +1789,6 @@ riot.tag2('project-page-image', '<div class="col-md-6 image-container"> <div cla
         bar.animate(numberMax);
         this.update();
 
-        }else{
-            imagebox = false;
-            console.log('Indiegogo Image');
-            this.refs.indiegogoImage.src = res.data[0].project_data.meta_data.jsonReply.response.video_overlay_url;
-
-            let raisedRaw = res.data[0].project_data.meta_data.jsonReply.response.collected_funds,
-                raisedNumber = raisedRaw.toLocaleString(),
-
-                goalRaw = res.data[0].project_data.meta_data.jsonReply.response.goal,
-                goalNumber = goalRaw.toLocaleString(),
-
-                percentValue = raisedRaw/goalRaw,
-                percentMax = Math.min(Math.max(percentValue, 0), 1);
-
-            this.dataBacked = raisedNumber;
-            this.dataGoal = goalNumber;
-
-             let bar = new ProgressBar.Line(progressBar,
-            {
-                strokeWidth: 4,
-                easing: 'easeInOut',
-                duration: 1400,
-                color: '#fed136',
-                trailColor: '#eee',
-                trailWidth: 4,
-                svgStyle: {width: '100%', height: '100%'}
-            });
-
-        bar.animate(percentMax);
-        this.update();
-        };
-
     },
     (err)=>
     {
@@ -1966,15 +1803,15 @@ riot.tag2('project-page-share', '<div class="col-sm-1 no-gutter share-container"
             if(platform == 'kickstarter'){
                 this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
 
-                this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.web_data.title.content + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
+                this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.meta_data.title + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
 
-                this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+                this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-                this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+                this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-                this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+                this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-                this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.web_data.title.content;
+                this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
                 this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.info_data.url;
 
@@ -2006,39 +1843,25 @@ riot.tag2('project-page-title', '<div class="col-md-6 text-left no-gutter user-c
         krowdspace.projects.project(this.opts.uri).then((res)=>
         {
             let platform = res.data[0].platform;
-            this.projectReward = res.data[0].project_data.info_data.reward;
-
             if (platform == 'kickstarter')
             {
                 projectbtn = true;
-                this.projectTitle = res.data[0].project_data.web_data.title.content;
-                this.projectDescription = res.data[0].project_data.web_data.description.content;
+            }else{
+                projectbtn = false;
+                this.projectLink = res.data[0].project_data.info_data.ig_reward;
+            };
 
-                let endTime = res.data[0].project_data.meta_data.endTime,
+            this.projectReward = res.data[0].project_data.info_data.reward;
+            this.projectTitle = res.data[0].project_data.meta_data.title;
+            this.projectDescription = res.data[0].project_data.meta_data.description;
+
+            let endTime = res.data[0].project_data.meta_data.endTime,
                 projectTime = res.data[0].project_data.meta_data.duration,
                 end = new Date(endTime),
                 remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
                 daysMax = Math.max(0, remaining);
 
             this.countdown = Math.floor(daysMax);
-
-                console.log('Kickstarter Reward');
-            }else{
-                projectbtn = false;
-                this.projectTitle = res.data[0].project_data.meta_data.jsonReply.response.title;
-                this.projectDescription = res.data[0].project_data.meta_data.jsonReply.response.tagline;
-                this.projectLink = res.data[0].project_data.meta_data.jsonReply.response.web_url;
-
-                let endTime = res.data[0].project_data.meta_data.jsonReply.response.funding_ends_at,
-                projectTime = res.data[0].project_data.meta_data.jsonReply.response.funding_days,
-                end = new Date(endTime),
-                remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
-                daysMax = Math.max(0, remaining);
-
-                this.countdown = Math.floor(daysMax);
-                console.log('Indiegogo Reward');
-            };
-
             this.update();
         },
         (err)=>
@@ -2517,12 +2340,12 @@ riot.tag2('home-slider-clients', '<aside class="hidden-xs"> <div class="containe
     });
 });
 
-riot.tag2('home-slider-projects', '<div class="row home-slider-box"> <div class="autoplay slider"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg || project_data.meta_data.jsonReply.response.video_overlay_url}" alt="{project_data.web_data.description.content}"> <div class="explore-box"> <div class="col-xs-9"> <div class="slider-left-box"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-xs-3 explore-feature-right text-center"> <a class="plus-switch-one" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> <a class="plus-switch" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', '@media screen and (max-width: 550px) { home-slider-projects .col-xs-9,[data-is="home-slider-projects"] .col-xs-9{ width: 90%; } home-slider-projects .col-xs-3,[data-is="home-slider-projects"] .col-xs-3{ width: 10%; } }', '', function(opts) {
+riot.tag2('home-slider-projects', '<div class="row home-slider-box"> <div class="autoplay slider"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg}"> <div class="explore-box"> <div class="col-xs-9"> <div class="slider-left-box"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-xs-3 explore-feature-right text-center"> <a class="plus-switch-one" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> <a class="plus-switch" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', '@media screen and (max-width: 550px) { home-slider-projects .col-xs-9,[data-is="home-slider-projects"] .col-xs-9{ width: 90%; } home-slider-projects .col-xs-3,[data-is="home-slider-projects"] .col-xs-3{ width: 10%; } }', '', function(opts) {
         krowdspace.projects.explore().then((res) =>
         {
             let ExploreBannerData = res.data,
                 FilterExplore = ExploreBannerData.filter((element) => {
-                return (element.project_data.meta_data.landing === true);
+                return (element.project_data.info_data.landing);
         });
 
         let newObject= {

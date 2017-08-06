@@ -16,16 +16,8 @@
         if(!opts.project)
         return;
 
-        let platform = opts.project.platform;
-
-        if(platform == 'kickstarter')
-        {
-            this.projectTitle = opts.project.project_data.web_data.title.content;
-            this.projectDescription = opts.project.project_data.web_data.description.content;
-        }else{
-            this.projectTitle = opts.project.project_data.meta_data.jsonReply.response.title;
-            this.projectDescription = opts.project.project_data.meta_data.jsonReply.response.tagline;
-        }
+        this.projectTitle = opts.project.project_data.meta_data.title;
+        this.projectDescription = opts.project.project_data.meta_data.description;
     });
 </script>
 </dashboard-project-title>

@@ -33,7 +33,7 @@
       
            let res = {data: [opts.project]};
       
-           this.refreshContent = res.data[0].project_data.meta_data.refresh;
+           this.refreshContent = res.data[0].project_data.info_data.refresh;
        });
        
        submitRefresh(e) 
@@ -57,7 +57,7 @@
                {
                    project_data: 
                    {
-                       meta_data: 
+                       info_data: 
                        {
                            refresh : true,
                        }
