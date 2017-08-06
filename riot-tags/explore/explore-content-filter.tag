@@ -56,6 +56,7 @@
             catSet.forEach((el)=>
             {
                 this.catArr.push(el);
+                this.catArr = this.catArr.sort();
             });
 
             let pa = this.exploreCards,

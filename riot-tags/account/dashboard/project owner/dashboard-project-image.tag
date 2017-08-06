@@ -24,7 +24,7 @@
             this.refs.kickstarterImage.src = opts.project.project_data.meta_data.mainImg;
         }else{
             imagebox = false;
-            this.refs.indiegogoImage.src = opts.project.project_data.meta_data.jsonReply.response.video_overlay_url;
+            this.refs.indiegogoImage.src = opts.project.project_data.meta_data.mainImg;
         }; 
 
         let raisedValue = opts.project.project_data.meta_data.raised;

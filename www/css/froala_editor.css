@@ -27,6 +27,43 @@
     overflow-x: auto;
     min-height: 300px
 }
+.fr-box.fr-basic p {
+    font-size: 13px;
+}
+.fr-box.fr-basic iframe {
+    width: 100%;
+}
+.fr-box.fr-basic ul li {
+    font-size: 13px;
+}
+.fr-box.fr-basic img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+}
+.fr-box.fr-basic a {
+    color: #333;
+    padding: 0px 3px; 
+}
+.fr-box.fr-basic a:hover {
+    color: #333;
+    background-color: #ffe58f;
+}
+.fr-box.fr-basic .video-player {
+    display: none;
+}
+.fr-box.fr-basic iframe {
+    display: block;
+    margin: 0 auto;
+}
+.fr-box.fr-basic h1 {
+    font-size: 15px;
+}
+.fr-box.fr-basic figcaption {
+    font-size: 13px;
+    text-align: center;
+}
 .fr-element {
     background: 0 0;
     position: relative;

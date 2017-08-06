@@ -25,11 +25,14 @@ route('/account/admin', function()
 {
 	riot.mount("#main","admin");
 });
-route('/account/verify/*', function(uri)
+
+route('/account/reset', function()
 {
-	riot.mount("#main","verify");
-	
+	riot.mount("#main","reset");
 });
+route('/account/verify/..', function()
+
+
 route('/account/login', function()
 {
 	riot.mount("#main","login-account");

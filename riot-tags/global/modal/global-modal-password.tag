@@ -3,13 +3,13 @@
       <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal">
             <div class="modal-body modal-custom">
-                <form>
+                <form onSubmit={ forgotPassword }>
                     <div class="text-left register-container-modal modal-max-login">
                     <p class="modal-heading modal-heading-alt">Forgot your Password?</p>
                     <p class="text-left landing-text" >Please enter your email address and we will send you instructions on how to reset your password.</p>
                     <div class="has-feedback email-box">
                         <label class="control-label" for="username"></label>
-                        <input type="text" class="form-control" id="email" placeholder="Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
+                        <input type="text" ref="krowdspaceEmail" class="form-control" id="email" placeholder="Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;">
                         <span class="fa fa-envelope form-control-feedback"></span>
                     </div>
                     </div>
@@ -21,4 +21,23 @@
          </div>
       </div>
    </div>
+<script>
+    forgotPassword(e) 
+        {
+        
+        	e.preventDefault();
+        
+        	let EMAIL = this.refs.krowdspaceEmail.value;
+        
+        	krowdspace.register.request_reset_password(EMAIL).then
+        	((res) => 
+        	{
+                $('#modal-password').modal('hide');
+        	},
+        	(err) => 
+        	{
+        		console.log(err);
+        	});
+        }
+</script>
 </global-modal-password>

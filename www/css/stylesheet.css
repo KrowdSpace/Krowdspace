@@ -1052,7 +1052,7 @@ padding: 15px;
 }
 .explore-banner-box {
     position:relative; 
-    height: 311px;
+    height: 309px;
 }
 .explore-indiegogo {
     margin: -25px auto;
@@ -1069,7 +1069,7 @@ padding: 15px;
     top: 5px;
     left: 5px;
 }
-.explore-header {
+.explore-header { 
     padding-top: 57px; 
     margin-bottom: 25px !important;
 }
@@ -1079,8 +1079,6 @@ padding: 15px;
     left: 0; 
     right: 0; 
     bottom: 0;
-    border-top:1px solid #3f434f;
-    border-bottom:1px solid #3f434f;
 }
 .card-text-alt {
     font-size: 13px;
@@ -1796,8 +1794,9 @@ div.explore-project figcaption {
     margin-bottom: 15px;
 }
 .home-slider-box {
-    border-right: 1px solid #3f434f; 
-    border-left: 1px solid #3f434f;
+    border-top: 1px solid #3f434f; 
+    border-bottom: 1px solid #3f434f;
+    
 }
 .slider-left-box {
     position: relative; 
@@ -1931,8 +1930,6 @@ display: inline;
 }
 .slick-slide img {
     width: 100%;
-    border-top: 1px solid #3f434f;
-    border-bottom: 1px solid #3f434f;
     width: 550px;
     overflow: hidden;
 }
@@ -2351,7 +2348,7 @@ display: inline;
     width: 400px;
     }
     .explore-banner-box {
-        height: 227px;
+        height: 225px;
     }
     .slider-left-box {
         height: 222px;
