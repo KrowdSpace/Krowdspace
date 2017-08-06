@@ -20,7 +20,7 @@
         <div class="col-sm-4 text-center">
             <a href="/#/account/register"><span class="verify-submit"><strong>YES</strong>
             </span></a>
-            <a href="/#/explore.html"><span class="verify-submit"><strong>NO</strong>
+            <a href="/#/explore"><span class="verify-submit"><strong>NO</strong>
             </span></a>
         </div>
     </div>
