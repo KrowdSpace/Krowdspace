@@ -9,8 +9,8 @@
         }
     }
     </style>
-     <div class="row home-slider-box">
-        <div class="autoplay slider">
+     <div class="row">
+        <div class="autoplay slider home-slider-box">
             <div class="explore-banner-box" each= { ExploreBannerFilter }>
                 <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg }">
                 <div class="explore-box">
@@ -106,7 +106,68 @@
         },
         (err)=>
         {
+            let FilterExplore = [];
+            let newObject= {
+                    unique_id: '#modal-feature-info',
+                    name: '',
+                    project_data: 
+                    {
+                        web_data: 
+                        {
+                            description: 
+                            {
+                                content: '',
+                            },
+                        },
+                        info_data: 
+                        {
+                            reward: ''
+                        },
+                        meta_data: 
+                        {
+                            mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                        },
+                    },
+                };
 
+        let newObject2= {
+                    unique_url: '#modal-global-register',
+                    name: 'Join Krowdspace Today!',
+                    project_data: 
+                    {
+                        web_data: 
+                        {
+                            description: 
+                            {
+                                content: '',
+                            },
+                        },
+                        info_data: 
+                        {
+                            reward: 'Discover Extra Rewards For Projects You Love!'
+                        },
+                        meta_data: 
+                        {
+                            mainImg: '/img/content/krowdspace-join.jpg',
+                        },
+                    },
+                };
+        
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse(); 
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+        
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                centerMode: true,
+                variableWidth: true,
+            });
         });
     </script>
 </home-slider-projects>

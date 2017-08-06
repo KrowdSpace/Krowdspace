@@ -88,6 +88,13 @@
             this.platformSwitch = true;
             this.kickstarterShare = res.data[0].project_data.info_data.url; 
 
+        }else{ 
+
+            this.platformSwitch = false;
+            this.indiegogoShare = res.data[0].project_data.info_data.url; 
+
+        }
+
             this.krowdspacePage = res.data[0].unique_id;
 
             this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
@@ -104,31 +111,7 @@
 
             this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title + '&caption=' + res.data[0].project_data.web_data.description.content;
-        }else{ 
-
-            this.platformSwitch = false;
-            this.indiegogoShare = res.data[0].project_data.meta_data.jsonReply.response.web_url; 
-
-            this.krowdspacePage = res.data[0].unique_id;
-
-            this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.meta_data.jsonReply.response.web_url;
-            
-            this.twitterShare = 'https://twitter.com/intent/tweet?text=Get extra rewards and support my crowdfunding project at Krowdspace.com &via=krowdspaced&hashtags=krowdspace, crowdfunding, rewards';
-
-            this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url;
-            
-            this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-            this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title; 
-
-            this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title; 
-
-            this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title + '&caption=' + res.data[0].project_data.meta_data.jsonReply.response.tagline;
-
-        }
+            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title + '&caption=' + res.data[0].project_data.meta_data.description;
     });
 </script>
 </dashboard-project-bar>	

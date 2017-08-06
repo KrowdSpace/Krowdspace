@@ -512,6 +512,13 @@ riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <
             this.platformSwitch = true;
             this.kickstarterShare = res.data[0].project_data.info_data.url;
 
+        }else{
+
+            this.platformSwitch = false;
+            this.indiegogoShare = res.data[0].project_data.info_data.url;
+
+        }
+
             this.krowdspacePage = res.data[0].unique_id;
 
             this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
@@ -528,31 +535,7 @@ riot.tag2('dashboard-project-bar', '<div class="dash-bar col-sm-12 no-gutter"> <
 
             this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title;
 
-            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title + '&caption=' + res.data[0].project_data.web_data.description.content;
-        }else{
-
-            this.platformSwitch = false;
-            this.indiegogoShare = res.data[0].project_data.meta_data.jsonReply.response.web_url;
-
-            this.krowdspacePage = res.data[0].unique_id;
-
-            this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.meta_data.jsonReply.response.web_url;
-
-            this.twitterShare = 'https://twitter.com/intent/tweet?text=Get extra rewards and support my crowdfunding project at Krowdspace.com &via=krowdspaced&hashtags=krowdspace, crowdfunding, rewards';
-
-            this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url;
-
-            this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-            this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-            this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-            this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title + '&caption=' + res.data[0].project_data.meta_data.jsonReply.response.tagline;
-
-        }
+            this.tumblrShare = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' + res.data[0].project_data.info_data.url + '&title=' + res.data[0].project_data.meta_data.title + '&caption=' + res.data[0].project_data.meta_data.description;
     });
 });	
 	
@@ -680,7 +663,7 @@ riot.tag2('dashboard-project-image', '<div class="col-md-6 image-container"> <di
             this.refs.kickstarterImage.src = opts.project.project_data.meta_data.mainImg;
         }else{
             imagebox = false;
-            this.refs.indiegogoImage.src = opts.project.project_data.meta_data.jsonReply.response.video_overlay_url;
+            this.refs.indiegogoImage.src = opts.project.project_data.meta_data.mainImg;
         };
 
         let raisedValue = opts.project.project_data.meta_data.raised;
@@ -797,7 +780,7 @@ riot.tag2('dashboard-project-user', '<div class="col-md-6 text-left no-gutter us
             };
         }.bind(this)
 });
-riot.tag2('dashboard-project-wysiwyg', '<link href="css/froala_editor.css" rel="stylesheet" type="text/css"> <link href="css/froala_style.css" rel="stylesheet" type="text/css"> <div class="col-sm-12 no-gutter wysiwyg-editor"> <form id="rewardUpgrade" role="form" onsubmit="{submitContent}"> <button class="wysiwyg-save filterdark" type="submit" name="submit">Save</button> <textarea class="wysiwyg" ref="crowdContent"></textarea> </form> </div>', '', '', function(opts) {
+riot.tag2('dashboard-project-wysiwyg', '<link href="css/froala_editor.css" rel="stylesheet" type="text/css"> <link href="css/froala_style.css" rel="stylesheet" type="text/css"> <div class="col-sm-12 no-gutter wysiwyg-editor"> <form id="rewardUpgrade" role="form" onsubmit="{submitContent}"> <button class="wysiwyg-save filterdark" type="submit" name="submit">SAVE</button> <textarea class="wysiwyg" ref="crowdContent"></textarea> </form> </div>', '', '', function(opts) {
     this.on('update', ()=>
     {
         if(!opts.project)
@@ -1541,6 +1524,7 @@ riot.tag2('explore-content-filter', '<div class="row"> <div class="col-md-3 hidd
             catSet.forEach((el)=>
             {
                 this.catArr.push(el);
+                this.catArr = this.catArr.sort();
             });
 
             let pa = this.exploreCards,
@@ -1685,7 +1669,53 @@ riot.tag2('explore-slider-hero', '<div class="autoplay slider explore-header"> <
         },
         (err)=>
         {
+            let FilterExplore = [];
+            let newObject={
+                        unique_url: '#modal-feature-info',
+                        name: '',
+                        project_data:
+                        {
+                            info_data:
+                            {
+                                reward: ''
+                            },
+                            meta_data:
+                            {
+                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                            },
+                        },
+                    };
+            let newObject2={
+                        unique_url: '#modal-global-register',
+                        name: 'Join Krowdspace Today!',
+                        project_data:
+                        {
+                            info_data:
+                            {
+                                reward: 'Discover Extra Rewards For Projects You Love!'
+                            },
+                            meta_data:
+                            {
+                                mainImg: '/img/content/krowdspace-join.jpg',
+                            },
+                        },
+                    };
 
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse();
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                centerMode: true,
+                variableWidth: true,
+            });
         });
 });
 
@@ -1799,8 +1829,6 @@ riot.tag2('project-page-image', '<div class="col-md-6 image-container"> <div cla
 riot.tag2('project-page-share', '<div class="col-sm-1 no-gutter share-container"> <div class="text-left shadow share-box"> <a href="{facebookShare}" target="_blank"> <span class="fa-stack fa-lg facebook icon-reset facebook-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-facebook fa-stack-1x fa-inverse"></i> </span> </a> <a href="{twitterShare}" target="_blank"> <span class="fa-stack fa-lg twitter icon-reset twitter-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x fa-inverse"></i> </span> </a> <a href="{googleShare}" target="_blank"> <span class="fa-stack fa-lg google icon-reset google-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i> </span> </a> <a href="{linkedinShare}" target="_blank"> <span class="fa-stack fa-lg linkedin icon-reset linked-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> </span> </a> <a href="{redditShare}" target="_blank"> <span class="fa-stack fa-lg reddit icon-reset reddit-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-reddit-alien fa-stack-1x fa-inverse"></i> </span> </a> <a href="{diggShare}" target="_blank"> <span class="fa-stack fa-lg digg icon-reset digg-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-digg fa-stack-1x fa-inverse"></i> </span> </a> <a href="{stumbleuponShare}" target="_blank"> <span class="fa-stack fa-lg stumbleupon icon-reset stumble-back filterdark"> <i class="fa fa-square fa-stack-2x"></i> <i class="fa fa-stumbleupon fa-stack-1x fa-inverse"></i> </span> </a> <a class="hidden-xs" href="https://www.facebook.com/Krowdspaced" target="_blank"> <img class="icon-share icon-reset krowdspace-back filterdark" src="img/fav/krowdspace-share-icon.png"> </a> </div> </div>', '@media screen and (max-width: 767px) { project-page-share .shadow,[data-is="project-page-share"] .shadow{ -webkit-box-shadow: none; -moz-box-shadow: none; } project-page-share .share-container,[data-is="project-page-share"] .share-container{ top: 79px; left:0; right: 0; position: absolute; display: inline-block; font-size: 0px; width: 400px; margin-left: auto; margin-right: auto; } project-page-share .share-box,[data-is="project-page-share"] .share-box{ width: 400px; border-right: 1px solid #eb4924;; } project-page-share .icon-reset,[data-is="project-page-share"] .icon-reset{ font-size: 19px; width: 57px; } project-page-share .icon-reset:hover,[data-is="project-page-share"] .icon-reset:hover{ font-size: 19px; width: 57px; } }', '', function(opts) {
         krowdspace.projects.project(this.opts.uri).then((res)=>
         {
-            let platform = res.data[0].platform;
-            if(platform == 'kickstarter'){
                 this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.info_data.url;
 
                 this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.meta_data.title + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
@@ -1816,23 +1844,7 @@ riot.tag2('project-page-share', '<div class="col-sm-1 no-gutter share-container"
                 this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.info_data.url;
 
                 this.update();
-            }else{
-                this.facebookShare = 'https://www.facebook.com/sharer.php?u=' + res.data[0].project_data.meta_data.jsonReply.response.web_url;
 
-                this.twitterShare = 'https://twitter.com/intent/tweet?text=Check out ' + res.data[0].project_data.meta_data.jsonReply.response.title + ' at Krowdspace.com!&hashtags=krowdspace, kickstarter, indiegogo';
-
-                this.linkedinShare = 'https://www.linkedin.com/shareArticle?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-                this.redditShare = 'https://reddit.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-                this.diggShare = 'http://digg.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-                this.stumbleuponShare = 'http://www.stumbleupon.com/submit?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url + '&title=' + res.data[0].project_data.meta_data.jsonReply.response.title;
-
-                this.googleShare = 'https://plus.google.com/share?url=' + res.data[0].project_data.meta_data.jsonReply.response.web_url;
-
-                this.update();
-            }
         },
         (err)=>
         {
@@ -2122,7 +2134,24 @@ this.submitRegister = function(e)
             };
         });
 });
-riot.tag2('global-modal-password', '<div id="modal-password" class="modal container fade"> <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8"> <div id="modal"> <div class="modal-body modal-custom"> <form> <div class="text-left register-container-modal modal-max-login"> <p class="modal-heading modal-heading-alt">Forgot your Password?</p> <p class="text-left landing-text">Please enter your email address and we will send you instructions on how to reset your password.</p> <div class="has-feedback email-box"> <label class="control-label" for="username"></label> <input type="text" class="form-control" id="email" placeholder="Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;"> <span class="fa fa-envelope form-control-feedback"></span> </div> </div> <div class="text-center modal-max-login"> <input type="submit" class="landing-submit alt-border" name="submit" value="Send Email"> </div> </form> </div> </div> </div> </div>', '', '', function(opts) {
+riot.tag2('global-modal-password', '<div id="modal-password" class="modal container fade"> <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8"> <div id="modal"> <div class="modal-body modal-custom"> <form onsubmit="{forgotPassword}"> <div class="text-left register-container-modal modal-max-login"> <p class="modal-heading modal-heading-alt">Forgot your Password?</p> <p class="text-left landing-text">Please enter your email address and we will send you instructions on how to reset your password.</p> <div class="has-feedback email-box"> <label class="control-label" for="username"></label> <input type="text" ref="krowdspaceEmail" class="form-control" id="email" placeholder="Email Address" ref="usernamelogin" autocorrect="off" autocapitalize="off" style="border-radius: 0px;"> <span class="fa fa-envelope form-control-feedback"></span> </div> </div> <div class="text-center modal-max-login"> <input type="submit" class="landing-submit alt-border" name="submit" value="Send Email"> </div> </form> </div> </div> </div> </div>', '', '', function(opts) {
+    this.forgotPassword = function(e)
+        {
+
+        	e.preventDefault();
+
+        	let EMAIL = this.refs.krowdspaceEmail.value;
+
+        	krowdspace.register.request_reset_password(EMAIL).then
+        	((res) =>
+        	{
+                $('#modal-password').modal('hide');
+        	},
+        	(err) =>
+        	{
+        		console.log(err);
+        	});
+        }.bind(this)
 });
 riot.tag2('global-modal-press', '<div id="modal-press-kit" class="modal container fade modal-padding-none"> <div class="krowdspace-modal col-lg-offset-1 col-lg-10"> <div id="modal"> <div class="modal-purchase no-gutter"> <div class="col-lg-6 hidden-md hidden-sm hidden-xs press-left"> <p class="modal-heading">KROWDSPACE PRESS KIT</p> <p class="press-text">Our logo is our identity so please treat it with respect. Please do not alter the Krowdspace logo in any form unless given permission by our staff.</p> <p class="press-text">If you are a project owner please download one of our logos, icons or banners and place it on your crowdfunding project. We verify every project that is submitted to Krowdspace by checking for a hyperlink back to our site. Make sure the image is visible and uses the below url. </p> <p class="press-text">https://www.Krowdspace.com</p> <p class="press-text">We appreciate your understanding and look forward to seeing your project on Krowdspace.</p> </div> <div class="col-lg-6 press-right"> <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true"> <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i> </button> <p class="modal-heading logo-push">KROWDSPACE LOGO</p> <div class="col-sm-3 col-xs-6 text-center no-gutter press-box"> <img class="img-responsive press-img" src="img/press/krowdspace-icon-v1.png"> <div class="col-xs-6 press-download-left"> <a href="img/press/krowdspace-icon-v1.png" download> <p class="download-font">PNG</p> </a> </div> <div class="col-xs-6"> <a href="img/press/krowdspace-icon-v1.svg" download> <p class="download-font">SVG</p> </a> </div> </div> <div class="col-sm-3 col-xs-6 text-center no-gutter press-box"> <div class="press-img"> <div class="checker no-gutter"> <img class="img-responsive" src="img/press/krowdspace-icon-v2.png"> </div> </div> <div class="col-xs-6 press-download-left"> <a href="img/press/krowdspace-icon-v2.png" download> <p class="download-font">PNG</p> </a> </div> <div class="col-xs-6"> <a href="img/press/krowdspace-icon-v2.svg" download> <p class="download-font">SVG</p> </a> </div> </div> <div class="col-sm-3 col-xs-6 text-center no-gutter press-box"> <img class="img-responsive press-img" src="img/press/krowdspace-icon-v3.png"> <div class="col-xs-6 press-download-left"> <a href="img/press/krowdspace-icon-v3.png" download> <p class="download-font">PNG</p> </a> </div> <div class="col-xs-6"> <a href="img/press/krowdspace-icon-v3.svg" download> <p class="download-font">SVG</p> </a> </div> </div> <div class="col-sm-3 col-xs-6 text-center no-gutter press-box"> <img class="img-responsive press-img" src="img/press/krowdspace-icon-v4.png"> <div class="col-xs-6 press-download-left"> <a href="img/press/krowdspace-icon-v4.png" download> <p class="download-font">PNG</p> </a> </div> <div class="col-xs-6"> <a href="img/press/krowdspace-icon-v4.svg" download> <p class="download-font">SVG</p> </a> </div> </div> <div class="col-xs-12 no-gutter press-box"> <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v6.png"> <div class="col-xs-6 text-right press-download-left"> <a href="img/press/krowdspace-icon-v6.png" download> <p class="download-font png-left">PNG</p> </a> </div> <div class="col-xs-6 text-left"> <a href="img/press/krowdspace-icon-v6.svg" download> <p class="download-font svg-right">SVG</p> </a> </div> </div> <div class="col-xs-12 no-gutter press-box"> <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v7.png"> <div class="col-xs-6 text-right press-download-left"> <a href="img/press/krowdspace-icon-v7.png" download> <p class="download-font png-left">PNG</p> </a> </div> <div class="col-xs-6 text-left"> <a href="img/press/krowdspace-icon-v7.svg" download> <p class="download-font svg-right">SVG</p> </a> </div> </div> <div class="col-xs-12 no-gutter press-box"> <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v5.png"> <div class="col-xs-6 text-right press-download-left"> <a href="img/press/krowdspace-icon-v5.png" download> <p class="download-font png-left">PNG</p> </a> </div> <div class="col-xs-6 text-left"> <a href="img/press/krowdspace-icon-v5.svg" download> <p class="download-font svg-right">SVG</p> </a> </div> </div> </div> </div> </div> </div> </div>', '', '', function(opts) {
 });
@@ -2340,7 +2369,7 @@ riot.tag2('home-slider-clients', '<aside class="hidden-xs"> <div class="containe
     });
 });
 
-riot.tag2('home-slider-projects', '<div class="row home-slider-box"> <div class="autoplay slider"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg}"> <div class="explore-box"> <div class="col-xs-9"> <div class="slider-left-box"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-xs-3 explore-feature-right text-center"> <a class="plus-switch-one" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> <a class="plus-switch" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', '@media screen and (max-width: 550px) { home-slider-projects .col-xs-9,[data-is="home-slider-projects"] .col-xs-9{ width: 90%; } home-slider-projects .col-xs-3,[data-is="home-slider-projects"] .col-xs-3{ width: 10%; } }', '', function(opts) {
+riot.tag2('home-slider-projects', '<div class="row"> <div class="autoplay slider home-slider-box"> <div class="explore-banner-box" each="{ExploreBannerFilter}"> <img class="explore-{platform}" riot-src="{project_data.meta_data.mainImg}"> <div class="explore-box"> <div class="col-xs-9"> <div class="slider-left-box"> <div class="explore-feature-left"> <div> <span class="explore-title">{name}</span> </div> <div class="explore-box-text"> <span class="explore-title">{project_data.info_data.reward}</span> </div> </div> </div> </div> <div class="col-xs-3 explore-feature-right text-center"> <a class="plus-switch-one" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><p class="learn-more">Learn More</p></a> <a class="plus-switch" href="{unique_url || \'/#/explore/project/\' + unique_id}" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a> </div> </div> </div> </div> </div>', '@media screen and (max-width: 550px) { home-slider-projects .col-xs-9,[data-is="home-slider-projects"] .col-xs-9{ width: 90%; } home-slider-projects .col-xs-3,[data-is="home-slider-projects"] .col-xs-3{ width: 10%; } }', '', function(opts) {
         krowdspace.projects.explore().then((res) =>
         {
             let ExploreBannerData = res.data,
@@ -2412,7 +2441,68 @@ riot.tag2('home-slider-projects', '<div class="row home-slider-box"> <div class=
         },
         (err)=>
         {
+            let FilterExplore = [];
+            let newObject= {
+                    unique_id: '#modal-feature-info',
+                    name: '',
+                    project_data:
+                    {
+                        web_data:
+                        {
+                            description:
+                            {
+                                content: '',
+                            },
+                        },
+                        info_data:
+                        {
+                            reward: ''
+                        },
+                        meta_data:
+                        {
+                            mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                        },
+                    },
+                };
 
+        let newObject2= {
+                    unique_url: '#modal-global-register',
+                    name: 'Join Krowdspace Today!',
+                    project_data:
+                    {
+                        web_data:
+                        {
+                            description:
+                            {
+                                content: '',
+                            },
+                        },
+                        info_data:
+                        {
+                            reward: 'Discover Extra Rewards For Projects You Love!'
+                        },
+                        meta_data:
+                        {
+                            mainImg: '/img/content/krowdspace-join.jpg',
+                        },
+                    },
+                };
+
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse();
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                centerMode: true,
+                variableWidth: true,
+            });
         });
 });
 riot.tag2('home', '<home-navigation></home-navigation> <home-content-hero></home-content-hero> <home-content-benefits></home-content-benefits> <home-slider-projects></home-slider-projects> <home-content-directions></home-content-directions> <home-content-users></home-content-users> <home-content-influence></home-content-influence> <home-slider-clients></home-slider-clients> <global-footer></global-footer>', 'home,[data-is="home"]{ background-color: #fff }', '', function(opts) {

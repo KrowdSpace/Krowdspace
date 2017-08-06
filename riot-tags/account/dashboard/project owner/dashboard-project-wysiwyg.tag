@@ -3,7 +3,7 @@
 <link href="css/froala_style.css" rel="stylesheet" type="text/css" />
     <div class="col-sm-12 no-gutter wysiwyg-editor">
         <form id="rewardUpgrade" role="form" onsubmit={ submitContent }>
-            <button class="wysiwyg-save filterdark" type="submit" name="submit">Save</button>
+            <button class="wysiwyg-save filterdark" type="submit" name="submit">SAVE</button>
             <textarea class="wysiwyg" ref="crowdContent"></textarea>
         </form>
     </div>

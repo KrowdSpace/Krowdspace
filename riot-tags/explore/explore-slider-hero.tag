@@ -90,7 +90,53 @@
         },
         (err)=>
         {
+            let FilterExplore = [];
+            let newObject={
+                        unique_url: '#modal-feature-info',
+                        name: '',
+                        project_data: 
+                        {
+                            info_data: 
+                            {
+                                reward: ''
+                            },
+                            meta_data: 
+                            {
+                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                            },
+                        },
+                    };
+            let newObject2={
+                        unique_url: '#modal-global-register',
+                        name: 'Join Krowdspace Today!',
+                        project_data: 
+                        {
+                            info_data: 
+                            {
+                                reward: 'Discover Extra Rewards For Projects You Love!'
+                            },
+                            meta_data: 
+                            {
+                                mainImg: '/img/content/krowdspace-join.jpg',
+                            },
+                        },
+                    };
 
+            FilterExplore.unshift(newObject, newObject2);
+            FilterExplore.reverse(); 
+            this.ExploreBannerFilter = FilterExplore;
+            this.update();
+
+            $('.autoplay').slick
+            ({
+                arrows: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                centerMode: true,
+                variableWidth: true,
+            });
         });
     </script>
 </explore-slider-hero>
