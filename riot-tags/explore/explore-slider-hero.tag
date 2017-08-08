@@ -9,8 +9,8 @@
             }
         }
     </style>
-    <div class="autoplay slider explore-header">
-        <div class="explore-banner-box" each= { ExploreBannerFilter }>
+    <div class="autoplay slider explore-header" style="border-bottom:1px solid #3f434f;">
+        <div class="explore-banner-box " each= { ExploreBannerFilter }>
             <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg }">
             <div class="explore-box">
                 <div class="col-xs-9">
@@ -38,7 +38,7 @@
             let ExploreBannerData = res.data;
             
                 FilterExplore = ExploreBannerData.filter((element) => {
-                return (element.project_data.meta_data.explore);
+                return (element.project_data.info_data.explore);
             });
 
             let newObject={

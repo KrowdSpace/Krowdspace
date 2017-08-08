@@ -16,6 +16,7 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     font-family: "Montserrat", sans-serif;
+    background-color: #fff;
 }
 p {
     font-size: 14px;
@@ -150,6 +151,7 @@ header {
     text-align: center;
     color: white;
     border-bottom: 1px solid #3f434f;
+    min-width: 400px;
 }
 section {
     padding: 50px 0;
@@ -326,6 +328,7 @@ img::-moz-selection {
 }
 .alternate-background {
     background-image: url('../img/content/background-white.jpg');
+    min-width: 400px;
 }
 .alternate-gradient-background {
 background: #1c81a5;
@@ -584,9 +587,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
 .alt-border {
     border-left: 2px solid #fed136;
     border-right: 2px solid #fed136;
+    border-radius: none;
     border-bottom: none;
 }
 .alt-border:hover {
+    border-radius: none;
     border-left: 2px solid #fec503;
     border-right: 2px solid #fec503;
 }
@@ -805,6 +810,7 @@ padding: 15px;
     right: 0; 
     top: 113px; 
     padding: 0px;
+    z-index: 1;
 }
 .share-box {
     width: 40px;
@@ -832,7 +838,7 @@ padding: 15px;
     position: absolute;  
     width: 30px;
     left: 20px;
-    bottom: 10px;
+    bottom: 15px;
 }
 .png-left {
     padding-right: 5px; 
@@ -1008,6 +1014,8 @@ padding: 15px;
 .dash-banner-box {
     position:relative; 
     height: 290px;
+    width: 515px;
+    background-color: #000;
 }
 .dash-box-text {
     margin-top: 5px;
@@ -1052,10 +1060,21 @@ padding: 15px;
 }
 .explore-banner-box {
     position:relative; 
-    height: 309px;
+    height: 280px;
+    width: 550px;
+    background-color: #000;
 }
 .explore-indiegogo {
     margin: -25px auto;
+    width: 340px !important;
+}
+.explore-kickstarter {
+    margin: -25px auto;
+    width: 100% !important;
+}
+.explore-indiegogo-user {
+    margin: -25px auto;
+    width: 350px !important;
 }
 .explore-container {
     position: relative;
@@ -1079,6 +1098,7 @@ padding: 15px;
     left: 0; 
     right: 0; 
     bottom: 0;
+    border: none;
 }
 .card-text-alt {
     font-size: 13px;
@@ -1086,9 +1106,8 @@ padding: 15px;
     line-height: 1;
 }
 .verify-confirmation {
-    padding-top: 50px;
     padding-bottom: 30px;
-    font-size: 24px;
+    font-size: 22px;
 }
 .register-cta {
     color: #fff;
@@ -1105,15 +1124,14 @@ padding: 15px;
     font-size: 15px;
 }
 .verify-block {
-    padding-left: 24px;
-    font-size: 15px;
+    padding-left: 22px;
 }
 .verify-text-bottom {
     margin-bottom: 150px;
     font-size: 16px;
 }
 .row-verify {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 .register-project-title {
     margin-bottom: 25px;
@@ -1237,6 +1255,7 @@ div.explore-project figcaption {
 }
 .indiegogo-image {
     margin: -20px auto;
+    width: 320px;
 }
 .kickstarter-image {
     margin: 0 auto;
@@ -1369,6 +1388,7 @@ div.explore-project figcaption {
     margin-top: 0px; 
     overflow: hidden; 
     height: 270px;
+    background-color:#000;
 }
 .image-container {
     border-left: 1px solid #3f434f; 
@@ -1379,7 +1399,6 @@ div.explore-project figcaption {
 }
 .image-container-alt {
     border:1px solid #3f434f;
-    border-right: none;
     position: relative; 
     padding: 0px;
 }
@@ -1480,6 +1499,7 @@ div.explore-project figcaption {
     border: 1px solid #3f434f; 
     height: 292px; 
     padding: 10px 0px;
+    border-left: none;
 }
 .user-container-project {
     position: relative; 
@@ -1800,7 +1820,7 @@ div.explore-project figcaption {
 }
 .slider-left-box {
     position: relative; 
-    height: 301px;
+    height: 270px;
 }
 .user-home-box {
     margin: 0px 0px 50px 0px;
@@ -1834,16 +1854,14 @@ display: inline;
     height: 280px;
 }
 .platform-card-box {
-    height: 207px; 
+    height: 196px; 
     overflow: hidden;
-}
-.image-card-kickstarter {
-    margin-bottom: 10px; 
     border-bottom: 1px solid #3f434f;
+    background-color: #000;
 }
 .image-card-indiegogo {
-    margin: -20px auto; 
-    border-bottom: 1px solid #3f434f;
+    margin: -20px auto;
+    width: 240px;
 }
 .card-title-height {
     height: 80px;
@@ -1968,6 +1986,8 @@ display: inline;
     }
     .user-container-2 {
         height: 224px;
+        border-left: 1px solid #3f434f;
+
     }
     .feature-box {
         padding: 10px 10px 10px 20px !important;
@@ -1978,6 +1998,7 @@ display: inline;
     }
     .dash-banner-box {
         height: 222px;
+        width: 515px;
     }
     .dashboard-title-box {
         margin-left: 0px;
@@ -2005,6 +2026,16 @@ display: inline;
     }
     .dashboard-purchase-box {
         height: 240px;
+    }
+    .indiegogo-image {
+    width: 260px;
+    }
+ .dash-banner-box {
+
+        width: 395px;
+    }
+    .explore-indiegogo-user {
+        width: 260px !important;
     }
 }
 @media (min-width: 992px) {
@@ -2111,6 +2142,7 @@ display: inline;
         height: 282px;
         width: 617px;
         border-top: none;
+        border-left:1px solid #3f434f;
     }
     .feature-box {
     padding: 0px 10px 0px 20px !important;
@@ -2125,10 +2157,6 @@ display: inline;
     .icon-share-bar {
         margin: 2px 5px 0px 5px;
     }
-    .dash-banner-box {
-        height: auto;
-        border-right: 1px solid #3f434f;
-    }
     .reward-slider-push {
         height: 335px;
     }
@@ -2139,6 +2167,12 @@ display: inline;
     .feature-container-left, .feature-container, .feature-container-right {
         padding: 0px;
         margin-bottom: 20px;
+    }
+    .indiegogo-image {
+    width: 400px;
+    }
+.explore-indiegogo-user {
+    width: 420px !important;
     }
 }
 @media screen and (max-width: 767px) {
@@ -2257,7 +2291,7 @@ display: inline;
         margin-right: auto;
         width: 400px;
         height: 290px;
-        border-top: none;
+        border-top: 1px solid #3f434f;
     }
     .dashboard-title-container {
         height: auto;
@@ -2304,7 +2338,7 @@ display: inline;
     }
     .dash-banner-box {
         height: auto;
-        border-bottom: 1px solid #3f434f;
+        width: 399px;
     }
     .reward-slider-push {
         height: 220px;
@@ -2323,6 +2357,9 @@ display: inline;
         max-width: 400px;
         margin-left:auto;
         margin-right: auto;
+    }
+    .explore-indiegogo-user {
+    width: 270px !important;
     }
 }
 @media screen and (max-width: 560px) {
@@ -2347,11 +2384,12 @@ display: inline;
     .slick-slide img {
     width: 400px;
     }
-    .explore-banner-box {
-        height: 225px;
-    }
+.explore-banner-box {
+    width: 400px;
+    height: 200px;
+}
     .slider-left-box {
-        height: 222px;
+        height: 195px;
     }
     .plus-switch-one {
         display: none;
@@ -2373,7 +2411,7 @@ display: inline;
     .dashboard-title-container {
         border: none;
     }
-    .dash-bar {
+    .dash-bar, .user-container-2 {
         border-top:1px solid #3f434f;
     }
     .dashboard-purchase-box {

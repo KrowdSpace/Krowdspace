@@ -8,7 +8,7 @@
                         <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
                         </button>
                         <p class="modal-heading">LANDING PAGE BANNER</p>
-                        <p class="modal-purchase-text text-left">Our Landing Page package will bring the most traffic to your campaign. Every project owner that purchases this package will be featured on the Krowdspace Landing Page rotating banner as well as every Krowdspace users dashboard via a rotating banner. Your campaign will be seen by everyone! The landing page package will last for 7 days and then expire.</p>
+                        <p class="modal-purchase-text text-left">Our Landing Page package will bring the most traffic to your campaign. Every project owner that purchases this package will be featured on the Krowdspace Landing Page rotating banner as well as every Krowdspace users dashboard via a rotating banner. Your campaign will be seen by everyone! The landing page package will last for 10 days and then expire.</p>
                         <div show={ activated } class="active-box hidden-xs">
                         <i class="fa fa-check media-icons" style="color: #5cb85c"></i>
                         <span class="active-text">This upgrade is active on your project.</span>

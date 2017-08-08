@@ -45,6 +45,7 @@
         let newObject= {
                     unique_id: '#modal-feature-info',
                     name: '',
+                    platform: 'kickstarter',
                     project_data: 
                     {
                         web_data: 
@@ -68,6 +69,7 @@
         let newObject2= {
                     unique_url: '#modal-global-register',
                     name: 'Join Krowdspace Today!',
+                    platform: 'kickstarter',
                     project_data: 
                     {
                         web_data: 
@@ -110,6 +112,7 @@
             let newObject= {
                     unique_id: '#modal-feature-info',
                     name: '',
+                    platform: 'kickstarter',
                     project_data: 
                     {
                         web_data: 
@@ -133,6 +136,7 @@
         let newObject2= {
                     unique_url: '#modal-global-register',
                     name: 'Join Krowdspace Today!',
+                    platform: 'kickstarter',
                     project_data: 
                     {
                         web_data: 

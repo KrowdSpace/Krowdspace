@@ -55,9 +55,9 @@
         -->
         <div class="col-lg-12 text-left approval-container">
             <a href="#project-status" class="modal-link" data-toggle="modal">
-                <img show={ warning } class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly.">
+                <img show={ warning } class="project-approval" src="/img/content/returned-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly.">
+                <img show={ pending } class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">
                 <img show={ approved } class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">
-                <img show={ pending } class="project-approval" src="/img/content/approved-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">
             </a>
         </div>
     </div>

@@ -31,7 +31,7 @@
     <div class="col-md-6 image-container-alt">
         <div class="single-item slider"> 
             <div class="dash-banner-box" each= { ExploreBannerFilter }>
-                <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg }">
+                <img class="explore-{ platform }-user" src="{ project_data.meta_data.mainImg }">
                 <div class="explore-box">
                     <div class="col-lg-9 col-md-10 col-sm-8 col-xs-11">
                         <div class="reward-slider-push">

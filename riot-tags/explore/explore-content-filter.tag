@@ -1,19 +1,13 @@
 <explore-content-filter>
     <div class="row">
-        <div class="col-md-3 hidden-sm hidden-xs filter-rows">
-            <select class="form-control">
-                <option value="">Just Launched</option>
-                <option value="">Closing Soon</option>
-            </select>
-        </div>
-        <div class="col-md-3 col-sm-5 col-sm-offset-0 col-xs-12 filter-rows">
+        <div class="col-sm-5 filter-rows">
             <select class="form-control" ref="options" onchange={ onCatChange } >
                 <option value="*">Featured Projects</option>
                 <option each={ cat in catArr }  value="{ cat }">{ cat }</option>
             </select>
         </div>
-        <div class="col-lg-2 hidden-md"></div>
-        <div class="col-lg-4 col-md-6 col-sm-7 col-sm-offset-0 col-xs-12 filter-rows">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6 filter-rows">
             <form role="search">
                 <div class="input-group">
                     <input type="text" ref= "searchBox" class="form-control" placeholder="Search Projects" onkeyup={ onSearch }>

@@ -7,10 +7,12 @@
                         <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
                         <img class="img-responsive image-card-{ exploreCard.ExploreCard.data.platform }" src="{ exploreCard.ExploreCard.data.image }"></a>
                     </div>
-                    <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">
-                    <i class="fa fa-circle fa-stack-xx text-primary"></i>
-                    <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
-                    </span>
+                    <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
+                        <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">
+                        <i class="fa fa-circle fa-stack-xx text-primary"></i>
+                        <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
                     <div class="card-title-height">
                         <p class="card-text-alt">{ exploreCard.ExploreCard.data.title }</p>
                         <p class="card-text-alt">Reward: { exploreCard.ExploreCard.data.reward }</p>

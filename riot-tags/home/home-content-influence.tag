@@ -13,7 +13,7 @@
                         <p class="question-text">How is Krowdspace different?</p>
                         <i data-toggle="collapse" data-target="#question1" class="fa fa-plus plus-icon"></i>
                         <div id="question1" class="collapse answer-container">
-                        <p class="answer-text" >Krowdspace was built on the idea to provide open and honest crowdfunding support. While launching our own crowdfunding project, we experienced a lack of online resources to showcase our campaign. The massive marketing companies would spam us with emails and promised “guaranteed” success. We caved in and our initial investment produced zero results, we felt scammed. At Krowdspace, we want to provide a low cost alternative by combining multiple crowdfunding communities into one simple location. We are committed to the success of our community and to provide easy and affordable tools to take your hard work to the next level.</p>
+                        <p class="answer-text" >Krowdspace was built on the idea to provide open and honest crowdfunding support. While launching our own crowdfunding project, we experienced a lack of online resources to showcase our campaign. The massive marketing companies would spam us with emails and promised “guaranteed” success. We caved in and our initial investment produced zero results. At Krowdspace, we want to provide a low cost alternative by combining multiple crowdfunding communities into one simple location. We are committed to the success of our community and to provide easy and affordable tools to take your hard work to the next level.</p>
                         </div>
                     </div>
                     <div class="faq-container">
@@ -71,7 +71,7 @@
                         <p class="question-text">What kind of resources do you provide for project owners?</p>
                         <i data-toggle="collapse" data-target="#question11" class="fa fa-plus plus-icon"></i>
                         <div id="question11" class="collapse answer-container">
-                        <p class="answer-text" >We are currently building a <a class="home-links" href="/#/account/resource">Resource Page</a> and we hope to fill it with awesome crowdfunding material. </p>
+                        <p class="answer-text" >At Krowdspace we have gathered popular media outlet contacts and put them into an easy to use directory. We also have example Press Release templates from successful campaigns to give you an easy format to follow. All of this information is free and is exclusive to Krowdspace members.</p>
                         </div>
                     </div>
                     <div class="faq-container hidden-xs">

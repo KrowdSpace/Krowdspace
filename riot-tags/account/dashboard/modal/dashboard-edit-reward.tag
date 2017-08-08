@@ -13,6 +13,10 @@
                         <p class="text-left edit-text-title">Please provide an exclusive reward for our Krowdspace users.</p>
                         <input ref="rewardtext" class="form-control placeholder-color" value="{ rewardtext || '' }" name="reward" required maxlength=110>
                      </div>
+                    <div class="form-group">
+                        <p class="text-left edit-text-title">Modify you Indiegogo Secret Perk url.</p>
+                        <input ref="indiegogoPerk" class="form-control placeholder-color" value="{ indiegogoPerk || '' }" name="perk" required>
+                     </div>
                      <div class="form-group">
                         <p class="text-left edit-text-title">Does your reward have a value or is it a discount?</p>
                         <select ref="rewardoption" class="form-control" name="rewardOption">
@@ -44,6 +48,7 @@
       
           this.rewardtext = res.data[0].project_data.info_data.reward;
           this.rewardvalue = res.data[0].project_data.info_data['reward_ammount'];
+          this.indiegogoPerk = res.data[0].project_data.info_data.ig_reward;
       });
       
       submitReward(e) 
@@ -72,11 +77,9 @@
                           reward: this.refs.rewardtext.value,
                           reward_ammount: this.refs.rewardvalue.value,
                           reward_value: this.refs.rewardoption.value,
+                          ig_reward: this.refs.indiegogoPerk.value,
+                          rewardValid : 0,
                       },
-                      meta_data: 
-                      {
-                          reward_check : false,
-                      }
                   }
           };
       
