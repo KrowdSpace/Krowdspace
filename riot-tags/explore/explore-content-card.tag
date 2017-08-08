@@ -51,12 +51,13 @@
 
                 let platform = element.platform;
 
-                    image = element.project_data.meta_data.mainImg,
+                let image = element.project_data.meta_data.mainImg,
                     title = element.project_data.meta_data.title,
                     category = element.project_data.info_data.category,
 
                     goalValue = element.project_data.meta_data.funding,
-                    goalLocale = goalValue.toLocaleString(),
+                    goalRounded = Math.round(goalValue),
+                    goalLocale = goalRounded.toLocaleString(),
 
                     raisedValue = element.project_data.meta_data.raised,
                     raisedLocale = raisedValue.toLocaleString(),

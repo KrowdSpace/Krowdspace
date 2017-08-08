@@ -501,6 +501,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c81a5', end
     width: 100%;
     border-left: none;
 }
+.verify-tag {
+    padding-bottom: 10px;
+}
+.verify-col-block {
+    padding-top: 15px;
+}
 .landing-text {
     margin-top: 10px;
     color: #3f434f;

@@ -27,11 +27,13 @@
             this.refs.indiegogoImage.src = opts.project.project_data.meta_data.mainImg;
         }; 
 
-        let raisedValue = opts.project.project_data.meta_data.raised;
-            this.raisedLocale = raisedValue.toLocaleString();
+            let raisedValue = opts.project.project_data.meta_data.raised,
+                raisedRounded = Math.round(raisedValue);
+            this.raisedLocale = raisedRounded.toLocaleString();
 
             let goalValue = opts.project.project_data.meta_data.funding;
             this.goalLocale = goalValue.toLocaleString();
+            
 
             let percentValue = opts.project.project_data.meta_data.raisedPercent,
             numberMax = Math.min(Math.max(percentValue, 0), 1);

@@ -21,8 +21,9 @@
             this.refs.indiegogoImage.src = res.data[0].project_data.meta_data.mainImg;
         }; 
 
-        let raisedValue = res.data[0].project_data.meta_data.raised;
-        this.raisedLocale = raisedValue.toLocaleString();
+        let raisedValue = res.data[0].project_data.meta_data.raised,
+            raisedRounded = Math.round(raisedValue);
+        this.raisedLocale = raisedRounded.toLocaleString();
 
         let goalValue = res.data[0].project_data.meta_data.funding;
         this.goalLocale = goalValue.toLocaleString();
