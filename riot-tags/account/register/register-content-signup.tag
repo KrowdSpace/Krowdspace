@@ -164,11 +164,11 @@
                         </select>
                     </div>
                 <div class="form-group col-sm-12 indiegogo-registration" style="display: none;">
-                  <p class="text-left registration-text">What is your Indiegogo secret perk url? Need Help?</p>
+                  <p class="text-left registration-text">What is your Indiegogo secret perk url? <a href="#modal-register-perk" data-toggle="modal" class="modal-link home-links">Need Help?</a></p>
                   <input ref="indiegogoPerk" type="text" class="form-control" name="projectLink2" placeholder="www.indiegogo.com/secret-perk-url">
                </div>
                <div class="form-group col-sm-12 no-gutter indiegogo-registration" style="display: none;">
-                  <p class="text-left registration-text">Please provide your project ID. Need Help?</p>
+                  <p class="text-left registration-text">Please provide your project ID. <a href="#modal-register-id" data-toggle="modal" class="modal-link home-links">Need Help?</a></p>
                   <div class="col-sm-6 form-group link-left">
                      <input type="text" class="form-control" name="crowdSite2" value="Indiegogo.com/projects/" readonly>
                      </input>

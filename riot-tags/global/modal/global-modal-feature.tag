@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-md-8 featured-text-box">
                             <p class="featured-title">LANDING PAGE BANNER</p>
-                            <p class="legal-text">Our Landing Page package will bring the most traffic to your campaign. Every project owner that purchases this package will be featured on the Krowdspace Landing Page rotating banner as well as every Krowdspace users dashboard rotating banner. Your campaign will be seen by everyone! The landing page package will last for 7 days and then expire.</p>
+                            <p class="legal-text">Our Landing Page package will bring the most traffic to your campaign. Every project owner that purchases this package will be featured on the Krowdspace Landing Page rotating banner as well as every Krowdspace users dashboard rotating banner. Your campaign will be seen by everyone! The landing page package will last for 10 days and then expire.</p>
                         </div>
                         <div class="col-sm-4 hidden-sm hidden-xs featured-image-box">
                             <img class="img-responsive featured-img" src="/img/content/landing-purchase.jpg"/>

@@ -11,7 +11,7 @@
                 <p class="modal-purchase-text text-left edit-text-title" style="margin-top: 15px; margin-bottom: 30px;">After submitting your project to Krowdspace you will have one of three status icons displaying on you dashboard.</p>
                 <p class="modal-purchase-text text-left edit-text-title" style="margin-left: 40px; margin-top: 15px;">Your project reward needs to be modified.</p>
                 <p class="modal-purchase-text" style="margin-left: 40px; margin-top: 20px;">Your project is pending reward approval.  </p>
-                <p class="modal-purchase-text" style="margin-left: 40px; margin-top: 20px; margin-bottom: 0px;">Your project has been approved.  </p>
+                <p class="modal-purchase-text" style="margin-left: 40px; margin-top: 20px; margin-bottom: 5px;">Your project has been approved.  </p>
             </div>
          </div>
       </div>

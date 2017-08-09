@@ -2,5 +2,5 @@
     <style scoped>
 		:scope { background-color: #fff }
 	</style>
-    <success></success>
+    <verify-page></verify-page>
 </verify>

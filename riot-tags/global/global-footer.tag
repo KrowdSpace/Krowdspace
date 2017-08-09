@@ -22,7 +22,7 @@
                     <p class="footer-text">
                         <strong>Follow Us On Social Media</strong>
                     </p>
-                    <p class="text-left social-footer">We are constantly building our social media community. Connect with us for updates on the latest news, promotion and exclusive giveaways.
+                    <p class="text-left social-footer">We are constantly building our social media community. Connect with us for updates on the latest news, promotions and exclusive giveaways.
                     </p>
                     <div class="text-left social-icons">
                         <a href="https://www.facebook.com/Krowdspaced" target="_blank">

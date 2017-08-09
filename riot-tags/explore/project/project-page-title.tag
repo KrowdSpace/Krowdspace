@@ -3,7 +3,7 @@
         <p class="dashboard-text-alt project-title">{ projectTitle }</p>
         <p class="dashboard-text-alt project-description">{ projectDescription }</p>
         <p class="dashboard-text-alt project-reward-text">Reward: { projectReward }</p>
-        <p class="dashboard-text-alt hidden-md hidden-sm project-coupon">To view the coupon code or directly link to the rewards page please follow the "Back Project" button below.</p>
+        <p class="dashboard-text-alt hidden-md hidden-sm project-coupon">To view the coupon code or directly link to the rewards page please click on the "Back Project" button below.</p>
         <div class="reward-position-box">
             <div class="col-xs-6 text-center divider-inside-right backed-box">
                 <a show={ projectbtn } href="#kickstarter-reward" class="modal-link" data-toggle="modal">

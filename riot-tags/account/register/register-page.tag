@@ -10,6 +10,8 @@
 				</div>
 			</div>
         </div>
+    <register-project-perk></register-project-perk>
+    <register-project-id></register-project-id>
     <register-project-error></register-project-error>
     <global-footer></global-footer>
 </register-page>
