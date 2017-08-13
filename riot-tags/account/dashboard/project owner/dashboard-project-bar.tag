@@ -66,7 +66,7 @@
             </div>
         <div class="col-sm-2 text-center">
             <a href="#purchase-social" class="modal-link" title="Social Media Purchase" data-toggle="modal">
-                    <span class="fa-stack fa-lg social-btn">
+                    <span class="fa-stack fa-lg social-btn filterdark">
                         <i class="fa fa-circle fa-stack-2x"></i>
                         <i class="fa fa-wifi fa-stack-1x fa-inverse" style="padding-top: 2px;"></i>
                     </span>

@@ -1,7 +1,4 @@
 <register>
-	<style scoped>
-		:scope { background-color: #fff }
-	</style>
  	<register-page show={ logged_in }></register-page>
 <script>	
 	krowdspace.v1.check().then((res)=>

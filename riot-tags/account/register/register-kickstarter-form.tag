@@ -3,7 +3,7 @@
         <!-- KICKSTARTER PAGE 1 QUESTION 1 -->
         <fieldset id="project_information" class="project_information">
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Do you own this crowdfunding project?</p>
+                <p class="text-left">Do you own this crowdfunding project?</p>
                 <select ref="kickstarterValid" type="text" class="form-control" name="kickstarterOwner">
                     <option disabled selected value>Select Yes or No</option>
                     <option value="Yes">Yes</option>
@@ -12,7 +12,7 @@
             </div>
             <!-- KICKSTARTER PAGE 1 QUESTION 2 -->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">What category best fits your project?</p>
+                <p class="text-left">What category best fits your project?</p>
                 <select ref="kickstarterCategory" type="text" class="form-control" name="kickstarterCategory">
                     <option disabled selected value>Choose a Category</option>
                     <option value="Art">Art</option>
@@ -28,7 +28,7 @@
             </div>
             <!-- KICKSTARTER PAGE 1 QUESTION 3 -->
             <div class="form-group col-sm-12 no-gutter">
-                <p class="text-left registration-text">Please provide your live crowdfunding project url.</p>
+                <p class="text-left">Please provide your live crowdfunding project url.</p>
                 <div class="col-xs-4 form-group link-left">
                     <input type="text" class="form-control" value="Kickstarter.com" readonly>
                 </div>
@@ -38,7 +38,7 @@
             </div>
             <div class="register-controls">
                 <div class="col-xs-offset-3 col-xs-6">
-                    <p onClick={ projectPrevious } class="pull-left"><a id="project-previous" class="back-project">PREVIOUS</a></p>
+                    <p onClick={ projectPrevious2 } class="pull-left"><a id="project-previous" class="back-project">PREVIOUS</a></p>
                     <p class="pull-right"><a class="back-project next-ks next-step">NEXT</a></p>
                 </div>
             </div>
@@ -47,12 +47,12 @@
         <fieldset id="reward_information" class="reward_information">
             <!-- KICKSTARTER PAGE 2 QUESTION 1-->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p>
+                <p class="text-left">Please provide an exclusive reward for our Krowdspace users.</p>
                 <input ref="kickstarterReward" class="form-control" name="kickstarterReward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
             </div>
             <!-- KICKSTARTER PAGE 2 QUESTION 2-->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Does your reward have a value or is it a discount?</p>
+                <p class="text-left">Does your reward have a value or is it a discount?</p>
                 <select ref="kickstarterOption" class="form-control" name="kickstarterValue">
                     <option disabled selected value>Choose an Option</option>
                     <option value="Yes">Reward has a Value</option>
@@ -61,7 +61,7 @@
             </div>
             <!-- KICKSTARTER PAGE 2 QUESTION 3-->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Please estimate the value of your reward.</p>
+                <p class="text-left">Please estimate the value of your reward.</p>
                 <input ref="kickstarterValue" class="form-control" name="kickstarterAmount">
             </div>
             <div class="register-controls">
@@ -75,11 +75,11 @@
         <fieldset id="project_verify" class="project_verify">
             <!-- KICKSTARTER PAGE 3 QUESTION 1 -->
             <div class="col-sm-12">
-                <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p>
-                <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p>
-                <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p>
-                <p class="text-left registration-text">https://www.Krowdspace.com</p>
-                <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p>
+                <p class="text-left landing-text">PROJECT VERIFICATION</p>
+                <p class="text-left">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p>
+                <p class="text-left">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p>
+                <p class="text-left">https://www.Krowdspace.com</p>
+                <p class="text-left">If you have any questions or concerns please contact us and thank you for your understanding!</p>
             </div>
             <div class="register-controls">
                 <div class="col-xs-offset-3 col-xs-6">
@@ -91,14 +91,14 @@
         <!-- KICKSTARTER PAGE 4 -->
         <fieldset id="service_terms" class="service_terms">
             <div class="col-sm-12">
-                <p class="text-left registration-text" style="margin-top: 10px;">TERMS AND CONDITIONS</p>
-                <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p>
-                <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
-                <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
-                <p class="text-left registration-text">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
-                <div class="check-terms checkbox">
+                <p class="text-left landing-text">TERMS AND CONDITIONS</p>
+                <p class="text-left">Krowdspace is not liable for any damages or losses related to using our services.</p>
+                <p class="text-left">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
+                <p class="text-left">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
+                <p class="text-left">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
+                <div class="login-box">
                     <label>
-                    <input type="checkbox" id="krowdspaceTerms1" name="krowdspaceTerms1" /><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span>
+                    <input class="check-box" type="checkbox" id="krowdspaceTerms1" name="krowdspaceTerms1" /><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
                     </label>
                 </div>
             </div>
@@ -111,7 +111,7 @@
         </fieldset>
     </form>
     <script>
-        projectPrevious()
+        projectPrevious2()
         {
             $( ".kickstarter-registration" ).hide();
             $( ".indiegogo-registration" ).hide();

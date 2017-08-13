@@ -21,14 +21,14 @@
         <div class="col-lg-7 col-md-12">
             <div class="registration-box shadow">
                 <div class="project-select-page">
-                    <p style="margin: 40px auto 70px auto; text-align: center; font-size: 22px;">Start by choosing your platform</p>
+                    <p class="register-title" >Start by choosing your platform</p>
                     <div class="col-xs-push-1 col-xs-6 indiegogo-register text-center">
-                        <a class="indiegogo-register" type="button" onClick={ indiegogoForm }><img class="img-responsive" src="img/fav/indiegogo-icon.svg" style="width: 100px; margin-left: auto; margin-right: auto;"></a>
-                        <p style="padding-top: 10px;">Indiegogo</p>
+                        <a class="indiegogo-register" type="button" onClick={ indiegogoForm }><img class="img-responsive register-icons" src="img/fav/indiegogo-icon.svg"></a>
+                        <p class="landing-text">Indiegogo</p>
                     </div>
                     <div class="col-xs-pull-1 col-xs-6 kickstarter-register text-center">
-                        <a class="kickstarter-register" type="button" onClick={ kickstarterForm }><img class="img-responsive" src="img/fav/kickstarter-icon.svg" style="width: 100px; margin-left: auto; margin-right: auto;"></a>
-                        <p style="padding-top: 10px;">Kickstarter</p>
+                        <a class="kickstarter-register" type="button" onClick={ kickstarterForm }><img class="img-responsive register-icons" src="img/fav/kickstarter-icon.svg"></a>
+                        <p class="landing-text">Kickstarter</p>
                     </div>
                 </div>
                 <register-kickstarter-form></register-kickstarter-form>
@@ -38,7 +38,7 @@
         <div class="clearfix"></div>
     </div>
     <div class="col-sm-12 text-center">
-        <p style="font-size: 13px; padding-top: 25px;">For more information about Krowdspace Rewards please view our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Reward Page</a>.</p>
+        <p class="register-rewards" >For more information about Krowdspace Rewards please view our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Reward Page</a>.</p>
     </div>
 <script>
     indiegogoForm()

@@ -5,7 +5,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i>
                 </button>
-                <a class="navbar-logo-alt" href="/"><img class="logo-size" src="/../img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small"></a>
+                <a class="navbar-logo-alt" href="/"><img class="nav-logo-size" src="/../img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small"></a>
             </div>
             <div class="collapse navbar-collapse text-center" id="explore-nav-collapse">
                 <ul class="nav navbar-nav navbar-left">
@@ -20,7 +20,7 @@
                     </li>
                 </ul>
                 <a href="/">
-                    <img class="logo-float logo-size" src="img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small">
+                    <img class="nav-logo-float nav-logo-size hidden-sm hidden-xs" src="img/press/krowdspace-icon-v1.png" alt="Krowdspace Logo Small">
                 </a>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">

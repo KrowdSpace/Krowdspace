@@ -1,5 +1,5 @@
 <resource-content>
-    <div class="col-sm-12 text-left resource-background shadow">
+    <div class="col-sm-12 text-left container-page shadow">
         <p class="modal-heading">Crowdfunding Resources</p>
         <p class="legal-text">Submitting a project to Krowdspace is just the first step to having a successful campaign. We have provided some extra tools that are completly free for all Krowdspace members and will guide you in the right direction. Make sure to have a compelling email subject header and headline. Editors and Publishers receive 100's of emails per day and decide wether or not to open an email based on the subject alone.</p>
         <p class="privacy-title">Submit Your Press Release for Media Coverage</p>

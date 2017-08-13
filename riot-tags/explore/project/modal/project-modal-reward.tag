@@ -1,18 +1,18 @@
 <project-modal-reward>
-   <div id="kickstarter-reward" class="modal container fade modal-padding-none">
+   <div id="kickstarter-reward" class="modal container fade padding-reset">
       <div class="krowdspace-modal col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal">
-            <div class="edit-user-box modal-max-login" style="position: relative;">
+            <div class="modal-box modal-max-box">
                 <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
-                    <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                    <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                 </button>
                     <p class="modal-heading">Support Project</p>
-                    <p class="registration-text text-left coupon-code-box">To support this project and receive the posted reward make sure to send the below COUPON CODE after completing your pledge. All project owners have agreed to fulfill any and all rewards posted on their project page.</p>
-                <div class="couponcode-box text-center">
-                    <p class="couponcode">{ couponCode }</p>
+                    <p class="text-left legal-text">To support this project and receive the posted reward make sure to send the below COUPON CODE after completing your pledge. All project owners have agreed to fulfill any and all rewards posted on their project page.</p>
+                <div class="coupon-code-box text-center">
+                    <p class="coupon-code">{ couponCode }</p>
                 </div> 
             </div>
-            <div class="text-center modal-max-login">
+            <div class="text-center modal-max-box">
                 <a href="{ projectLink }" target="_blank">
                 <p class="landing-submit alt-border">SUPPORT PROJECT</p>
                 </a>

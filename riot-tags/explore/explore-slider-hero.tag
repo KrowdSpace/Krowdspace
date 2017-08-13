@@ -1,33 +1,50 @@
 <explore-slider-hero>
     <style type="text/css">
-        @media screen and (max-width: 550px) {
-            .col-xs-9 {
-                width: 90%;
-            }
-            .col-xs-3 {
-                width: 10%;
-            }
+        .landing-banner {
+            width: 550px; 
+            background-color: #000; 
+            position: relative;
+            border-top:1px solid #000;
+            border-bottom:1px solid #000;
         }
-    </style>
-    <div class="autoplay slider explore-header" style="border-bottom:1px solid #3f434f;">
-        <div class="explore-banner-box " each= { ExploreBannerFilter }>
-            <img class="explore-{ platform }" src="{ project_data.meta_data.mainImg }">
-            <div class="explore-box">
-                <div class="col-xs-9">
-                    <div class="slider-left-box">
-                        <div class="explore-feature-left"> 
-                            <div>
-                                <span class="explore-title">{ name }</span>
-                            </div>
-                            <div class="explore-box-text">
-                                <span class="explore-title">{ project_data.info_data.reward }</span>
-                            </div>
+        .landing-slider {
+            height:310px;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    @media screen and (max-width: 550px) {
+        .col-xs-9 {
+            width: 90%;
+        }
+        .col-xs-3 {
+            width: 10%;
+        }
+        .landing-slider {
+            height:225px;
+        }
+        .landing-banner {
+            width: 400px; 
+            background-color: #000; 
+            position: relative;
+        }
+    }
+</style>
+    <div class="row">
+        <div class="autoplay slider explore-header">
+            <div class="landing-banner" each= { ExploreBannerFilter }>
+                <img class="landing-slider" src="{ project_data.meta_data.mainImg }">
+                <div class="landing-banner-box">
+                    <div class="col-xs-9 padding-reset">
+                        <span class="explore-title">{ name }</span>
+                        <div class="explore-box-text">
+                            <span class="explore-title">{ project_data.info_data.reward }</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-xs-3 explore-feature-right text-center">
-                    <a class="plus-switch-one" href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
-                    <a class="plus-switch" href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a>
+                    <div class="col-xs-3 learn-more-box text-right">
+                        <a class="plus-switch-one" href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
+                        <a class="plus-switch" href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

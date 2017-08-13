@@ -1,10 +1,10 @@
 <admin-modal-login>
-    <div class="container login-check-container">
+    <div class="container dark-modal">
         <div class="krowdspace-modal col-lg-offset-3 col-md-6">
          <div id="modal">
             <div class="modal-body modal-custom">
                 <form onsubmit={ loginSubmit }>
-                    <div class="col-sm-12 text-left register-container-modal">
+                    <div class="col-sm-12 text-left modal-box-alt">
                     <p class="modal-heading modal-heading-alt">Krowdspace Login</p>
                     <div id="errorLog" class="alert alert-danger alert-dismissable fade in">
                         <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
@@ -20,12 +20,12 @@
                         <input type="password" class="form-control box-radius" id="password" placeholder="Password" ref="passwordlogin" autocorrect="off" autocapitalize="off">
                         <span class="fa fa-lock form-control-feedback"></span>
                     </div>
-                    <div class="col-xs-6 checkbox loginbox text-left">
+                    <div class="col-xs-6 login-box text-left">
                         <label>
-                            <input type="checkbox" ref="checkbox" id="checkbox">Remember Me
+                            <input class="check-box" type="checkbox" ref="checkbox" id="checkbox">Remember Me
                         </label>
                     </div>
-                    <div class="col-xs-6 checkbox text-right forgot-box">
+                    <div class="col-xs-6 login-box text-right">
                         <a onclick= { registerPassword }><p class="forgot-pass">Forgot Password?</p></a>
                     </div>
                   </div>

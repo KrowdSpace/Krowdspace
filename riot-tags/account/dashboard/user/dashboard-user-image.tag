@@ -1,60 +1,69 @@
 <dashboard-user-image>
-<style>
-    .slick-slide img {
-      width: 515px;
-      overflow: hidden;
-      border: none;
-    }
-@media screen and (max-width: 1200px) {
-        .slick-slide img {
-            width: 395px;
-            overflow: hidden;
+    <style type="text/css">
+        .landing-banner {
+            width: 500px;
+            height: 282px; 
+            background-color: #000; 
+            position: relative;
+        }
+        .landing-slider {
+            height: 282px;
+            border: 1px solid #000;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    @media screen and (max-width: 1200px) {
+        .landing-banner {
+            height: 225px;
+            width: 396px;
+        }
+        .landing-slider {
+            height: 225px;
         }
     }
-@media screen and (max-width: 991px) {
-        .dash-banner-box {
-            width: 615px;
-            height: 345px;
-            overflow: hidden;
+    @media screen and (max-width: 991px) {
+        .landing-banner {
+            height: 350px;
+            width: 616.66px;
         }
-        .slick-slide img {
-            width: 100%;
+        .landing-slider {
+            height: 351px;
         }
     }
-@media screen and (max-width: 767px) {
-        .dash-banner-box {
-            width: 398px;
-            height: 223px;
+    @media screen and (max-width: 767px) {
+        .project-image-responsive {
+            width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .landing-banner {
+            height: 227px;
+            width: 400px;
+        }
+        .landing-slider {
+            height: 228px;
         }
     }
 </style>
-    <div class="col-md-6 image-container-alt">
-        <div class="single-item slider"> 
-            <div class="dash-banner-box" each= { ExploreBannerFilter }>
-                <img class="explore-{ platform }-user" src="{ project_data.meta_data.mainImg }">
-                <div class="explore-box">
-                    <div class="col-lg-9 col-md-10 col-sm-8 col-xs-11">
-                        <div class="reward-slider-push">
-                            <div class="explore-feature-left">
-                                <div class="dash-box-text">
-                                    <span class="dash-user-title">{ name }</span>
-                                </div>
-                                <div class="dash-box-text">
-                                    <span class="dash-user-title">{ project_data.info_data.reward }</span>
-                                </div>
-                            </div>
-                        </div>
+<div class="col-md-6 project-image-responsive padding-reset">
+    <div class="single-item slider"> 
+        <div class="landing-banner" each= { ExploreBannerFilter }>
+            <img class="img-responsive landing-slider" src="{ project_data.meta_data.mainImg }">
+            <div class="landing-banner-box">
+                <div class="col-xs-10 padding-reset">
+                    <span class="explore-title">{ name }</span>
+                    <div class="explore-box-text">
+                        <span class="explore-title">{ project_data.info_data.reward }</span>
                     </div>
-                    <div class="col-lg-3 hidden-md col-sm-4 hidden-xs dash-feature-right text-center">
-                        <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><p class="learn-more">Learn More</p></a>
-                    </div>
-                    <div class="hidden-lg col-md-2 hidden-sm col-xs-1 dash-feature-right text-center">
-                        <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a>
-                    </div>
+                </div>
+                <div class="col-xs-2 learn-more-box text-right">
+                    <a href="{ unique_url || '/#/explore/project/' + unique_id }" data-toggle="modal"><i class="fa fa-plus learn-more-plus"></i></a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <script type="text/javascript">
     krowdspace.projects.explore().then((res) =>
     {

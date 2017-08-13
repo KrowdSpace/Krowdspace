@@ -5,15 +5,15 @@
             <p class="verify-tag">Enjoy our...</p>
         </div>
         <div class="col-sm-4 text-left verify-col-block">
-            <p> <i class="fa fa-check fa-2x text-primary"></i><strong> Extra Rewards</strong></p>
+            <p> <i class="fa fa-check fa-2x krowdspace"></i><strong> Extra Rewards</strong></p>
             <p class="verify-block"> Being a member allows you to support projects and get extra rewards from projects on major platforms such as Kickstarter and Indiegogo.</p>
         </div>
         <div class="col-sm-4 text-left verify-col-block">
-            <p> <i class="fa fa-check fa-2x text-primary"></i><strong> Exclusive Giveaways</strong></p>
+            <p> <i class="fa fa-check fa-2x krowdspace"></i><strong> Exclusive Giveaways</strong></p>
             <p class="verify-block"> Enter for a chance to win amazing prizes from successful crowdfunding campaigns sponsored by Krowdspace.</p>
         </div>
         <div class="col-sm-4 text-left verify-col-block">
-            <p><i class="fa fa-check fa-2x text-primary"></i><strong> Project Dashboard</strong></p>
+            <p><i class="fa fa-check fa-2x krowdspace"></i><strong> Project Dashboard</strong></p>
             <p class="verify-block"> If you have a crowdfunding campaign that is currently live you can submit it to Krowdspace and gain access to our free project dashboard.</p>
         </div>
     </div>

@@ -13,14 +13,14 @@
         <div class="container dashboard">
 			 <project-page-share uri={ opts.uri }></project-page-share> 
 			<global-logout class="hidden-xs" show={ logged_in } uri={ opts.uri }></global-logout>
-			<div class="col-sm-10 col-sm-offset-1 project-container">
+			<div class="col-sm-10 col-sm-offset-1 padding-reset">
 				<div class="row dash-row no-gutter shadow">
 					<project-page-image uri={ opts.uri }></project-page-image>	
 					<project-page-title uri={ opts.uri }></project-page-title>
 				</div>
 			</div>
-            <div class="col-sm-10 col-sm-offset-1 project-container">
-				<div class="row project-row no-gutter dash">
+            <div class="col-sm-10 col-sm-offset-1 padding-reset">
+				<div class="row project-row no-gutter">
 					<project-page-content uri={ opts.uri }></project-page-content>	
 				</div>
 			</div>

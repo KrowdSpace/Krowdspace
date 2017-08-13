@@ -64,7 +64,7 @@
                         <p class="question-text">How can Krowdspace help my project become successful?</p>
                         <i data-toggle="collapse" data-target="#question10" class="fa fa-plus plus-icon"></i>
                         <div id="question10" class="collapse answer-container">
-                        <p class="answer-text" >In addition to combining the two major crowdfunding communities into one unified platform, we also offer additional <a href="#modal-feature-info" data-toggle="modal" class="modal-link home-links">Featured Project Listings</a> for campaigns. For a small fee, project boosts will provide promotional benefits such as being featured on our social media channels or becoming a highlighted campaign within high traffic areas of our site.</p>
+                        <p class="answer-text" >In addition to combining the two major crowdfunding communities into one unified platform, we also offer additional <a href="#modal-feature-info" data-toggle="modal" class="home-links">Featured Project Listings</a> for campaigns. For a small fee, project boosts will provide promotional benefits such as being featured on our social media channels or becoming a highlighted campaign within high traffic areas of our site.</p>
                         </div>
                     </div>
                     <div class="faq-container hidden-xs">

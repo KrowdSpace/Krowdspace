@@ -3,7 +3,7 @@
         <!-- INDIEGOGO PAGE 1 QUESTION 1 -->
         <fieldset id="project_information" class="project_information2">
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Do you own this crowdfunding project?</p>
+                <p class="text-left">Do you own this crowdfunding project?</p>
                 <select ref="indiegogoValid" type="text" class="form-control" name="indiegogoOwner">
                     <option disabled selected value>Select Yes or No</option>
                     <option value="Yes">Yes</option>
@@ -12,7 +12,7 @@
             </div>
             <!-- INDIEGOGO PAGE 1 QUESTION 2 -->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">What category best fits your project?</p>
+                <p class="text-left">What category best fits your project?</p>
                 <select ref="indiegogoCategory" type="text" class="form-control" name="indiegogoCategory">
                     <option disabled selected value>Choose a Category</option>
                     <option value="Art">Art</option>
@@ -28,12 +28,12 @@
             </div>
             <!-- INDIEGOGO PAGE 1 QUESTION 3 -->
             <div class="form-group col-sm-12 indiegogo-registration" style="display: none;">
-                <p class="text-left registration-text">What is your Indiegogo secret perk url? <a href="#modal-register-perk" data-toggle="modal" class="modal-link home-links">Need Help?</a></p>
+                <p class="text-left">What is your Indiegogo secret perk url? <a href="#modal-register-perk" data-toggle="modal" class="home-links">Need Help?</a></p>
                 <input ref="indiegogoPerk" type="text" class="form-control" name="indiegogoPerk" placeholder="www.indiegogo.com/secret-perk-url">
             </div>
             <!-- INDIEGOGO PAGE 1 QUESTION 4 -->
             <div class="form-group col-sm-12 no-gutter indiegogo-registration" style="display: none;">
-                <p class="text-left registration-text">Please provide your project ID. <a href="#modal-register-id" data-toggle="modal" class="modal-link home-links">Need Help?</a></p>
+                <p class="text-left">Please provide your project ID. <a href="#modal-register-id" data-toggle="modal" class="home-links">Need Help?</a></p>
                 <div class="col-sm-6 form-group link-left">
                     <input type="text" class="form-control" value="Indiegogo.com/projects/" readonly>
                 </div>
@@ -52,12 +52,12 @@
         <fieldset id="reward_information" class="reward_information2">
             <!-- INDIEGOGO PAGE 2 QUESTION 1 -->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Please provide an exclusive reward for our Krowdspace users.</p>
+                <p class="text-left">Please provide an exclusive reward for our Krowdspace users.</p>
                 <input ref="indiegogoReward" class="form-control" name="indiegogoReward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
             </div>
             <!-- INDIEGOGO PAGE 2 QUESTION 2 -->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Does your reward have a value or is it a discount?</p>
+                <p class="text-left">Does your reward have a value or is it a discount?</p>
                 <select ref="indiegogoOption" class="form-control" name="indiegogoValue">
                     <option disabled selected value>Choose an Option</option>
                     <option value="Yes">Reward has a Value</option>
@@ -66,7 +66,7 @@
             </div>
             <!-- INDIEGOGO PAGE 2 QUESTION 3 -->
             <div class="form-group col-sm-12">
-                <p class="text-left registration-text">Please estimate the value of your reward.</p>
+                <p class="text-left">Please estimate the value of your reward.</p>
                 <input ref="indiegogoValue" class="form-control" name="indiegogoAmount">
             </div>
             <div class="register-controls">
@@ -80,11 +80,11 @@
         <fieldset id="project_verify" class="project_verify2">
             <!-- INDIEGOGO PAGE 3 QUESTION 1 -->
             <div class="col-sm-12">
-                <p class="text-left registration-text" style="margin-top: 10px;">PROJECT VERIFICATION</p>
-                <p class="text-left registration-text">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="modal-link home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p>
-                <p class="text-left registration-text">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p>
-                <p class="text-left registration-text">https://www.Krowdspace.com</p>
-                <p class="text-left registration-text">If you have any questions or concerns please contact us and thank you for your understanding!</p>
+                <p class="text-left landing-text">PROJECT VERIFICATION</p>
+                <p class="text-left">To verify that you are the project owner please upload one of the images from our <a href="#modal-press-kit" data-toggle="modal" class="home-links">Press Kit</a> area onto your crowdfunding project. This will prevent any false submissions and let us know you are indeed the owner.</p>
+                <p class="text-left">The image that you select will need to be hyperlinked back to Krowdspace. We are verifying the actual hyperlink and not just the image being present. Please use the link below:</p>
+                <p class="text-left">https://www.Krowdspace.com</p>
+                <p class="text-left">If you have any questions or concerns please contact us and thank you for your understanding!</p>
             </div>
             <div class="register-controls">
                 <div class="col-xs-offset-3 col-xs-6">
@@ -98,14 +98,14 @@
         <fieldset id="service_terms" class="service_terms2">
             <!-- INDIEGOGO PAGE 3 QUESTION 1 -->
             <div class="col-sm-12">
-                <p class="text-left registration-text" style="margin-top: 10px;">TERMS AND CONDITIONS</p>
-                <p class="text-left registration-text">Krowdspace is not liable for any damages or losses related to using our services.</p>
-                <p class="text-left registration-text">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
-                <p class="text-left registration-text">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
-                <p class="text-left registration-text">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
-                <div class="check-terms checkbox">
+                <p class="text-left landing-text">TERMS AND CONDITIONS</p>
+                <p class="text-left">Krowdspace is not liable for any damages or losses related to using our services.</p>
+                <p class="text-left">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
+                <p class="text-left">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
+                <p class="text-left">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
+                <div class="login-box">
                     <label>
-                    <input type="checkbox" value="krowdspaceTerms2" name="krowdspaceTerms2" /><span class="registration-text">I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links registration-text">Krowdspace terms</a></span>
+                    <input class="check-box" type="checkbox" value="krowdspaceTerms2" name="krowdspaceTerms2" /><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
                     </label>
                 </div>
             </div>

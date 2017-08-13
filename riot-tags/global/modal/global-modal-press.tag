@@ -1,18 +1,18 @@
 <global-modal-press>
-    <div id="modal-press-kit" class="modal container fade modal-padding-none">
+    <div id="modal-press-kit" class="modal container padding-reset fade ">
         <div class="krowdspace-modal col-lg-offset-1 col-lg-10">
             <div id="modal">
                 <div class="modal-purchase no-gutter">
                     <div class="col-lg-6 hidden-md hidden-sm hidden-xs press-left">
                         <p class="modal-heading">KROWDSPACE PRESS KIT</p>
-                        <p class="press-text">Our logo is our identity so please treat it with respect. Please do not alter the Krowdspace logo in any form unless given permission by our staff.</p> 
-                        <p class="press-text">If you are a project owner please download one of our logos, icons or banners and place it on your crowdfunding project. We verify every project that is submitted to Krowdspace by checking for a hyperlink back to our site. Make sure the image is visible and uses the below url. </p>
-                        <p class="press-text">https://www.Krowdspace.com</p>
-                         <p class="press-text">We appreciate your understanding and look forward to seeing your project on Krowdspace.</p>
+                        <p class="legal-text">Our logo is our identity so please treat it with respect. Please do not alter the Krowdspace logo in any form unless given permission by our staff.</p> 
+                        <p class="legal-text">If you are a project owner please download one of our logos, icons or banners and place it on your crowdfunding project. We verify every project that is submitted to Krowdspace by checking for a hyperlink back to our site. Make sure the image is visible and uses the below url. </p>
+                        <p class="legal-text">https://www.Krowdspace.com</p>
+                         <p class="legal-text">We appreciate your understanding and look forward to seeing your project on Krowdspace.</p>
                     </div>
                     <div class="col-lg-6 press-right">
                         <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
-                            <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                            <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                         </button>
                         <p class="modal-heading logo-push">KROWDSPACE LOGO</p>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">

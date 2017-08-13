@@ -1,5 +1,5 @@
 <admin-page-panel>
-    <div class="col-sm-12 text-left resource-background shadow">
+    <div class="col-sm-12 text-left container-page shadow">
         <div class="col-sm-12 no-gutter" style="padding: 10px 0px;">
             <div class="col-sm-1">
                 <p style="font-size: 13px;">NAME</p>
