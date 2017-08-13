@@ -17,7 +17,7 @@
                     </div>
                     </div>
                   <div class="text-center modal-max-box">
-                    <input type="submit" class="landing-submit alt-border" name="submit" value="Send Email">
+                    <input type="submit" class="landing-submit" name="submit" value="Send Email">
                 </div>
                </form>
             </div>

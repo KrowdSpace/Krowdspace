@@ -14,7 +14,7 @@
             </div>
             <div class="text-center modal-max-box">
                 <a href="{ projectLink }" target="_blank">
-                <p class="landing-submit alt-border">SUPPORT PROJECT</p>
+                <p class="landing-submit">SUPPORT PROJECT</p>
                 </a>
             </div>
          </div>

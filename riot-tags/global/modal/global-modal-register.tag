@@ -5,6 +5,9 @@
             <div class="modal-body modal-custom">
                 <form ref="registerform2" onsubmit={ submitRegister }>
                 <div class="text-left modal-box-alt modal-max-box-alt">
+                    <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                        <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
+                    </button>
                    <p class="modal-heading modal-heading-alt">Krowdspace Register</p>
                     <p class="text-left cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
                     <div class="form-group form-split-right">

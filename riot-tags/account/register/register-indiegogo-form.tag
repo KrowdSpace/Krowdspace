@@ -25,6 +25,7 @@
                     <option value="Videogames">Video Games</option>
                     <option value="Publishing">Publishing</option>
                 </select>
+                
             </div>
             <!-- INDIEGOGO PAGE 1 QUESTION 3 -->
             <div class="form-group col-sm-12 indiegogo-registration" style="display: none;">

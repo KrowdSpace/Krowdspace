@@ -31,7 +31,7 @@
                     <div class="clearfix"></div>
                 </div>
                 <div class="text-center modal-max-box">
-                    <input type="submit" class="landing-submit alt-border" name="submit" value="Login">
+                    <input type="submit" class="landing-submit" name="submit" value="Login">
                 </div>
             </form>
             <div class="text-center">

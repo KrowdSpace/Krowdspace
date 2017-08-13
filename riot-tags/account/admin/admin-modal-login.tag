@@ -30,7 +30,7 @@
                     </div>
                   </div>
                   <div class="text-center">
-                    <input type="submit" class="landing-submit alt-border" name="submit" value="Login">
+                    <input type="submit" class="landing-submit" name="submit" value="Login">
                 </div>
                </form>
                <div class="text-center">

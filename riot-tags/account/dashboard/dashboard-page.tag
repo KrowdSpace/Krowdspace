@@ -33,7 +33,7 @@
             <i class="fa fa-plus project-add-btn filterdark"></i>
             </a>
         </div>
-        <dashboard-project-delete class="hidden-xs"></dashboard-project-delete>
+        <dashboard-project-buttons class="hidden-xs"></dashboard-project-buttons>
         <div class="col-sm-10 col-sm-offset-1 padding-reset">
             <div class="row dash-row no-gutter shadow">
                 <dashboard-project-image show={ project } project = { project }></dashboard-project-image>
@@ -66,6 +66,7 @@
     <dashboard-edit-reward user = { user } project = { project }></dashboard-edit-reward>
     <dashboard-delete-project user = { user } project = { project }></dashboard-delete-project>
     <dashboard-refresh-content user = { user } project = { project }></dashboard-refresh-content>
+    <dashboard-image-project user = { user } project = { project }></dashboard-image-project>
     <dashboard-project-status></dashboard-project-status>
     <global-footer></global-footer>
     <script>

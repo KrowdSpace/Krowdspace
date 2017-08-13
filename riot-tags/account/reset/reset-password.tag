@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" class="landing-submit alt-border" name="submit" value="Password Reset">
+                        <input type="submit" class="landing-submit" name="submit" value="Password Reset">
                     </div>
                 </div>
             </form>
