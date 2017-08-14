@@ -40,7 +40,7 @@
                     <input type="text" class="form-control" value="Indiegogo.com/projects/" readonly>
                 </div>
                 <div class="form-group col-sm-6 link-right">
-                    <input ref="indiegogoID" name="indiegogoProject" type="number" class="form-control" placeholder="2152186">
+                    <input ref="indiegogoID" name="indiegogoProject" type="number" class="form-control" placeholder="2152186" minlength="7" maxlength="7">
                 </div>
             </div>
             <div class="register-controls">
@@ -69,7 +69,7 @@
             <!-- INDIEGOGO PAGE 2 QUESTION 3 -->
             <div class="form-group col-sm-12">
                 <p class="text-left">Please estimate the value of your reward.</p>
-                <input ref="indiegogoValue" class="form-control" name="indiegogoAmount">
+                <input ref="indiegogoValue" class="form-control" name="indiegogoAmount" maxlength="6">
             </div>
             <div class="register-controls">
                 <div class="col-xs-offset-3 col-xs-6">
@@ -104,10 +104,11 @@
                 <p class="text-left">Krowdspace is not liable for any damages or losses related to using our services.</p>
                 <p class="text-left">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
                 <p class="text-left">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
+                <p class="text-left">You agree to be in compliance with Indiegogo's Terms of Use and are using Krowdspace at your own risk.</p>
                 <p class="text-left">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
                 <div class="login-box">
                     <label>
-                    <input class="check-box" type="checkbox" value="krowdspaceTerms2" name="krowdspaceTerms2" /><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
+                    <input class="check-box" ref="indiegogoCheck" type="checkbox" value="checked" name="terms[]" required minlength="1" aria-required="true"/><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
                     </label>
                 </div>
             </div>
@@ -151,7 +152,10 @@
                         REWARDAMOUNT,
                         IGREWARD,
                         };
-        
+
+            if(!this.refs.indiegogoCheck.checked)
+            return;
+
             krowdspace.register.project(DATA).then((res) =>
             {
             console.log('Project Submission Successful');
@@ -168,71 +172,64 @@
             {
             	$(".next-ig").click(function(){
             		var form = $("#registerIndiegogo");
-            		form.validate({
-            			errorElement: 'span',
-            			errorClass: 'help-block',
-            			highlight: function(element, errorClass, validClass) {
-            				$(element).closest('.form-group').addClass("has-error");
-            			},
-            			unhighlight: function(element, errorClass, validClass) {
-            				$(element).closest('.form-group').removeClass("has-error");
-            			},
-            			rules: {
-            				indiegogoOwner: {
-            					required: true,
-            				},
-            				indiegogoCategory : {
-            					required: true,
-            				},
-            				indiegogoPerk: {
-            					required: true,
-            				},
-            				indiegogoProject:{
-            					required: true,
-            				},
-            				indiegogoReward:{
-            					required: true,
-            				},
-            				indiegogoValue: {
-            					required: true,
-                                
-            				},
-            				indiegogoAmount: {
-            					required: true,
-                              number: true,
-            				},
-                            krowdspaceTerms2: {
-            					required: true,
-            				},
-            				
-            			},
-            			messages: {
-            				indiegogoOwner: {
-            					required: "",
-            				},
-            				indiegogoCategory: {
-            					required: "",
-            				},
-            				indiegogoPerk: {
-            					required: "",
-            				},
-            				indiegogoProject: {
-            					required: "",
-            				},
-            				indiegogoReward: {
-            					required: "",
-            				},
-                            indiegogoValue: {
-            					required: "",
-            				},
-                            indiegogoAmount: {
-            					required: "",
-            				},
-                          krowdspaceTerms2: {
-            					required: "",
-            				},
-            			}
-            		});
+                        form.validate({
+                            errorElement: 'span',
+                            errorClass: 'help-block',
+                            highlight: function(element, errorClass, validClass) {
+                                $(element).closest('.form-group').addClass("has-error");
+                            },
+                            unhighlight: function(element, errorClass, validClass) {
+                                $(element).closest('.form-group').removeClass("has-error");
+                            },
+                            rules: {
+                                indiegogoOwner: {
+                                    required: true,
+                                },
+                                indiegogoCategory : {
+                                    required: true,
+                                },
+                                indiegogoPerk: {
+                                    required: true,
+                                },
+                                indiegogoProject:{
+                                    required: true,
+                                },
+                                indiegogoReward:{
+                                    required: true,
+                                },
+                                indiegogoValue: {
+                                    required: true,
+                                    
+                                },
+                                indiegogoAmount: {
+                                    required: true,
+                                number: true,
+                                },
+                            },
+                            messages: {
+                                indiegogoOwner: {
+                                    required: "",
+                                },
+                                indiegogoCategory: {
+                                    required: "",
+                                },
+                                indiegogoPerk: {
+                                    required: "",
+                                },
+                                indiegogoProject: {
+                                    required: "",
+                                },
+                                indiegogoReward: {
+                                    required: "",
+                                },
+                                indiegogoValue: {
+                                    required: "",
+                                },
+                                indiegogoAmount: {
+                                    required: "",
+                                },
+                            }
+                        });
             		if (form.valid() === true){
             			if ($('.project_information2').is(":visible")){
             				current_fs = $('.project_information2');
