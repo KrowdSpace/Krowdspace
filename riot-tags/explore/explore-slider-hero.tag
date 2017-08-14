@@ -1,6 +1,8 @@
 <explore-slider-hero>
     <style type="text/css">
         .landing-banner {
+            height:310px;
+            overflow: hidden;
             width: 550px; 
             background-color: #000; 
             position: relative;
@@ -8,10 +10,13 @@
             border-bottom:1px solid #000;
         }
         .landing-slider {
-            height:310px;
-            width: auto;
+            height: auto;
             margin-left: auto;
             margin-right: auto;
+        }
+        .indiegogo-image-small {
+            height:310px;
+            width: auto;
         }
     @media screen and (max-width: 550px) {
         .col-xs-9 {
@@ -20,8 +25,12 @@
         .col-xs-3 {
             width: 10%;
         }
-        .landing-slider {
+        .landing-banner {
             height:225px;
+        }
+        .indiegogo-image-small {
+            height:225px;
+            width: auto;
         }
         .landing-banner {
             width: 400px; 
@@ -33,7 +42,7 @@
     <div class="row">
         <div class="autoplay slider explore-header">
             <div class="landing-banner" each= { ExploreBannerFilter }>
-                <img class="landing-slider" src="{ project_data.meta_data.mainImg }">
+                <img class="landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }">
                 <div class="landing-banner-box">
                     <div class="col-xs-9 padding-reset">
                         <span class="explore-title">{ name }</span>
@@ -69,7 +78,7 @@
                             },
                             meta_data: 
                             {
-                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                                mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
                     };
@@ -119,7 +128,7 @@
                             },
                             meta_data: 
                             {
-                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                                mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
                     };

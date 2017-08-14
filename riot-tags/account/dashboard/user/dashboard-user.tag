@@ -53,22 +53,43 @@
         </div>
 
         <div class="user-position-box">
-        <p class="dashboard-text profile-name">Krowdspace Stats</p>
+        <p class="dashboard-text profile-name">Krowdspace Campaigns</p>
             <div class="col-xs-4 no-gutters text-center user-stat-box">
-            <p class="dashboard-user user-text-alt">Campaigns</p>
-                <p class="social-metric">13</p>
+            <p class="dashboard-user user-text-alt">Kickstarter</p>
+                <p class="social-metric">{ projectTotal }</p>
+            </div> 
+            <div class="col-xs-4 no-gutters text-center user-stat-box">
+                <p class="dashboard-user user-text-alt">Indiegogo</p>
+                    <p class="social-metric">{ projectTotal }</p>
             </div> 
             <div class="col-xs-4 no-gutters text-center user-stat-box">
                 <p class="dashboard-user user-text-alt">Rewards</p>
-                    <p class="social-metric">{ '$1,329' }</p>
-            </div> 
-            <div class="col-xs-4 no-gutters text-center user-stat-box">
-                <p class="dashboard-user user-text-alt">Pledges</p>
-                    <p class="social-metric">{ '$84,322' }</p>
+                    <p class="social-metric">${ krowdspaceTotalReward}</p>
             </div> 
         </div>
         <div class="clearfix"></div>
     </div>
+<script>
+this.on('mount', () => {
+    krowdspace.v1.stats().then((res)=>
+    {
+
+        this.projectTotal = res.data.totalProjects;
+
+        let kickstarterTotalReward = res.data.platforms[0].rewardAmmount,
+            indiegogoTotalReward = res.data.platforms[1].rewardAmmount,
+            rewardValue = kickstarterTotalReward + indiegogoTotalReward;
+        this.krowdspaceTotalReward = rewardValue.toLocaleString();
+
+        this.update();
+
+    },
+    (err)=> 
+    {
+        console.log(err);
+    })
+});
+</script> 
 <script>
     this.on('update', ()=>
     {

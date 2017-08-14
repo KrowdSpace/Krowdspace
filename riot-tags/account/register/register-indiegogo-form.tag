@@ -19,17 +19,18 @@
                     <option value="Design">Design</option>
                     <option value="Film">Film</option>
                     <option value="Food">Food</option>
+                    <option value="Health">Health</option>
                     <option value="Music">Music</option>
                     <option value="Photography">Photography</option>
                     <option value="Technology">Technology</option>
-                    <option value="Videogames">Video Games</option>
+                    <option value="Videogames">Videogames</option>
                     <option value="Publishing">Publishing</option>
                 </select>
                 
             </div>
             <!-- INDIEGOGO PAGE 1 QUESTION 3 -->
             <div class="form-group col-sm-12 indiegogo-registration" style="display: none;">
-                <p class="text-left">What is your Indiegogo secret perk url? <a href="#modal-register-perk" data-toggle="modal" class="home-links">Need Help?</a></p>
+                <p class="text-left">What is your Indiegogo secret perk URL? <a href="#modal-register-perk" data-toggle="modal" class="home-links">Need Help?</a></p>
                 <input ref="indiegogoPerk" type="text" class="form-control" name="indiegogoPerk" placeholder="www.indiegogo.com/secret-perk-url">
             </div>
             <!-- INDIEGOGO PAGE 1 QUESTION 4 -->

@@ -6,7 +6,7 @@
 					<p class="modal-heading">Project Submission Error</p>
 				</div>
 				<div class="modal-body">
-					<p>It looks like something went wrong! Please make sure that you have one of our <a onclick={ pressKit } class="modal-link home-links">Press Kit</a> images with the correct hyperlink located on your project page. If the problem persists please reach out to us on social media or through our contact form in the footer.</p>
+					<p>It looks like something went wrong! Please make sure that you have one of our <a onclick={ pressKit } class="home-links">Press Kit</a> images with the correct hyperlink located on your project page. If the problem persists please reach out to us on social media or through our <a href="#modal-global-contact" data-toggle="modal" class="home-links">contact form</a>.</p>
 				<div class="col-sm-9 text-left social-icons">
 						<a href="https://www.facebook.com/Krowdspaced" target="_blank">
 						<span class="fa-stack fa fa-2x social-btn filterdark">

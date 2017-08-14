@@ -36,13 +36,12 @@
             	krowdspace.register.reset_password(RESET_CODE, NEW_PASSWORD).then
             	((res) => 
             	{
-                    window.location.replace("/#/account/dashboard");
+                    window.location.replace("/");
                     this.refs.passwordreset.reset();
             	},
             	(err) => 
             	{
                     console.log(err);
-                    this.refs.passwordreset.reset();
             	});
             }
     </script>

@@ -8,7 +8,7 @@
             </span>
             </a>
             <p class="dashboard-text-alt">Featured Icon</p>
-            <p class="dashboard-text-alt feature-space">Have your campaign dislayed with priority filtering on our Explore Page.</p>
+            <p class="dashboard-text-alt feature-space">Have your campaign displayed with priority filtering on our Explore Page.</p>
             <div class="no-gutter feature-space">
                 <div class="col-xs-6 text-center divider-inside-right">
                     <p class="dashboard-text-alt">Days Active</p>

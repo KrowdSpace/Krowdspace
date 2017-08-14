@@ -8,13 +8,13 @@
                         <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                     </button>
                      <p class="modal-heading">Edit Reward Information</p>
-                     <p class="text-left edit-text-title">Updating your project reward will reset your project and it can take up to 24 hours to verify and publish on our Explore Page. If you wish to not edit your reward please close the popup window. </p>
+                     <p class="text-left edit-text-title">Updating your project reward information will remove your project from our Explore Page and it can take up to 24 hours to be verified and republished.</p>
                      <div class="form-group">
                         <p class="text-left edit-text-title">Please provide an exclusive reward for our Krowdspace users.</p>
                         <input ref="rewardtext" class="form-control placeholder-color" value="{ rewardtext || '' }" name="reward" required maxlength=110>
                      </div>
                     <div show={ indiegogoReward } class="form-group">
-                        <p class="text-left edit-text-title">Modify you Indiegogo Secret Perk url.</p>
+                        <p class="text-left edit-text-title">Modify your Indiegogo Secret Perk URL.</p>
                         <input ref="indiegogoPerk" class="form-control placeholder-color" value="{ indiegogoPerk || '' }" name="perk" required>
                      </div>
                      <div class="form-group">

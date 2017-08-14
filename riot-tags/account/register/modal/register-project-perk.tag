@@ -7,8 +7,8 @@
                 <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                 </button>
                 <p class="modal-heading">Indiegogo Secret Perk</p>
-                <p class="modal-purchase-text text-left" >You must have a secret perk link on your Indiegogo account page to submit a project to Krowdspace. Once the secret perk has been made please copy that url and paste it into the form. If you need more help setting up the secret perk please refer to this <a class="home-links" href="https://support.indiegogo.com/hc/en-us/articles/209674868-Perks-How-to-Create-Edit-and-Remove-Perks" target="_blank">Indiegogo Help Page.</a></p>
-                <p class="modal-purchase-text text-left" >An example Indiegogo Perk url will look like:</p>
+                <p class="modal-purchase-text text-left" >You must have a secret perk URL attached to your Indiegogo campaign to submit a project on Krowdspace. Once the secret perk has been made please copy that URL and paste it into the form. If you need more help setting up the secret perk please refer to this <a class="home-links" href="https://support.indiegogo.com/hc/en-us/articles/209674868-Perks-How-to-Create-Edit-and-Remove-Perks" target="_blank">Indiegogo Help Page.</a></p>
+                <p class="modal-purchase-text text-left" >An example Indiegogo Perk URL will look like:</p>
                 <p class="modal-purchase-text text-left" >Indiegogo.com:443/projects/7193341/x/4337182?secret_perk_token=dc7f6b6e</p>
             </div>
          </div>

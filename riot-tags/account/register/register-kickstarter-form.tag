@@ -19,10 +19,11 @@
                     <option value="Design">Design</option>
                     <option value="Film">Film</option>
                     <option value="Food">Food</option>
+                    <option value="Health">Health</option>
                     <option value="Music">Music</option>
                     <option value="Photography">Photography</option>
                     <option value="Technology">Technology</option>
-                    <option value="Videogames">Video Games</option>
+                    <option value="Videogames">Videogames</option>
                     <option value="Publishing">Publishing</option>
                 </select>
             </div>

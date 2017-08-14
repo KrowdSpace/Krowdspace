@@ -15,7 +15,7 @@
     </style>
     <div class="no-gutter register-background shadow">
         <div class="col-lg-5 hidden-md hidden-sm hidden-xs register">
-            <img class="img-responsive" src="/img/projects/krowdspace-register.png">
+            <img class="img-responsive" src="/img/content/krowdspace-register.png">
             <p class="text-center register-cta">Register your crowdfunding campaign and accelerate your growth today!</p>
         </div>
         <div class="col-lg-7 col-md-12">

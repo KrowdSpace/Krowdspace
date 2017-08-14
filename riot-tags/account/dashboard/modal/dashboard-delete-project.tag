@@ -2,7 +2,7 @@
    <div id="delete-project" class="modal container fade">
       <div class="krowdspace-modal-custom padding-reset col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal" class="no-gutter">
-            <form role="form" onsubmit={ submitReward }>
+            <form role="form" onsubmit={ deleteProject }>
                 <div class="modal-box modal-max-box-alt">
                     <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
                     <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
@@ -29,49 +29,24 @@
           this.projectTitle = res.data[0].project_data.meta_data.title;
           this.projectDescription = res.data[0].project_data.meta_data.description;
 
+          deleteProject(e) 
+            {
+            
+                e.preventDefault();
+            
+                krowdspace.projects.delete(this.projectID).then
+                ((res) => 
+                {
+                    $('#delete-project').modal('hide');
+                    window.location.reload();
+                },
+                (err) => 
+                {
+                    console.log(err);
+                });
+            }
+
       });
       
-      submitReward(e) 
-      {
-          e.preventDefault();
-      
-          if(!opts.project)
-              return;
-      
-          let userRes = {data: opts.user}
-              projRes = {data: [opts.project]};
-      
-          this.setUserDeets(userRes, projRes);
-      
-      }; 
-      
-      setUserDeets(res, pRes)
-      {
-          let project = pRes.data[0].unique_id,
-              projectData = 
-              {
-                  project_data: 
-                  {
-                     info_data: 
-                      {
-                          reward: this.refs.rewardtext.value,
-                          reward_ammount: this.refs.rewardvalue.value,
-                          reward_value: this.refs.rewardoption.value,
-                          ig_reward: this.refs.indiegogoPerk.value,
-                          rewardValid : 0,
-                      },
-                  }
-          };
-      
-          this.setProjDeets(project, projectData);
-      }
-      
-      setProjDeets(project, projectData)
-      {
-          krowdspace.projects.set_project(project, projectData).then((res)=>
-          {
-              window.location.reload();
-          });
-      }
    </script>
 </dashboard-delete-project>

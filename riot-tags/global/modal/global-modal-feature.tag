@@ -7,7 +7,7 @@
                         <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                     </button>
                     <p class="modal-heading">FEATURED PROJECTS AND BOOSTS</p>
-                    <p class="legal-text">Welcome to our featured project options for your live crowdfunding project. At Krowdspace we have experienced first-hand how difficult it can be to launch a crowdfunding campaign. For a limited time, we are offering free featured project packages and social media posts! If you would like to take advantage of this special offer please <a onclick={ registerFeatured } href="/#/account/register" class="home-links">submit your project</a> to Krowdspace and activate these packages on your <a onclick={ dashboardFeatured } href="/#/account/dashboard" class="home-links">Krowdspace Dashboard</a>.</p>
+                    <p class="legal-text">Welcome to our featured project options for your live crowdfunding project. For a limited time, we are offering free featured project packages and social media posts! If you would like to take advantage of this special offer please <a onclick={ registerFeatured } href="/#/account/register" class="home-links">submit your project</a> to Krowdspace and activate these packages on your <a onclick={ dashboardFeatured } href="/#/account/dashboard" class="home-links">Krowdspace Dashboard</a>.</p>
                 </div>
                 <div class="modal-body"> 
                     <div class="row">
@@ -41,11 +41,14 @@
                         <div class="col-md-8 featured-text-box">
                             <p class="featured-title">SOCIAL MEDIA POSTS</p>
                             <p class="legal-text">We will post your project on our 4 social media channels. By purchasing this package, you will see your project on our Facebook, Twitter, Pinterest and Instagram accounts with a link to your crowdfunding site when applicable. We currently have over 6,000 combined followers!</p>
-                        </div>
+                        </div> 
                         <div class="col-sm-4 hidden-sm hidden-xs featured-image-box">
                             <img class="img-responsive featured-img" src="/img/content/social-purchase.jpg"/>
                         </div>
                     </div>
+                </div>
+                <div class="modal-close-box text-right">
+                        <button type="button" class="modal-close" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

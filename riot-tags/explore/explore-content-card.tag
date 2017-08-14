@@ -5,7 +5,7 @@
                 <div class="no-gutter explore-container shadow">
                     <div class="platform-card-box">
                         <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
-                        <img class="img-responsive image-card" src="{ exploreCard.ExploreCard.data.image }"></a>
+                        <img class="img-responsive image-card { exploreCard.ExploreCard.data.imageSize }" src="{ exploreCard.ExploreCard.data.image }"></a>
                     </div>
                     <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
                         <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">
@@ -36,7 +36,6 @@
             </div>
         </div>
     </div>
-    <img show= { Cards } class="img-responsive" src="/img/content/krowdspace-coming-soon.png">
     <script>
         this.displayCards = [];
         
@@ -70,7 +69,8 @@
                             'id': element.unique_id,
                             'category': element.project_data.info_data.category,
                             'featured': element.project_data.info_data.featured,
-                            'image': element.project_data.meta_data.mainImg,
+                            'image': element.project_data.meta_data.mainImg || element.project_data.meta_data.altImg,
+                            'imageSize': element.project_data.meta_data.mainImg || "indiegogo-small-image",
                             'backed': raisedLocale,
                             'goal': goalLocale,
                             'percent': percentWhole,
