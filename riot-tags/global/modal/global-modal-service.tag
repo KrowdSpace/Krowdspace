@@ -169,6 +169,7 @@
         termsContact() 
     {
         $('#modal-service-terms').modal('hide');
+        $('#modal-global-register').modal('hide');
         $('#modal-global-contact').modal('show');
     }
     </script>

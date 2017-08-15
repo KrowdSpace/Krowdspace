@@ -2404,6 +2404,7 @@ riot.tag2('global-modal-service', '<div id="modal-service-terms" class="modal co
         this.termsContact = function()
     {
         $('#modal-service-terms').modal('hide');
+        $('#modal-global-register').modal('hide');
         $('#modal-global-contact').modal('show');
     }.bind(this)
 });
