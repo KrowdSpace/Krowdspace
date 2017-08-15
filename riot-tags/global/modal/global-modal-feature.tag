@@ -1,13 +1,13 @@
 <global-modal-feature>
-    <div id="modal-feature-info" class="modal container fade modal-padding-none">
+    <div id="modal-feature-info" class="modal container padding-reset fade">
         <div class="krowdspace-modal col-lg-10 col-lg-offset-1 col-md-12 col-md-offset-0">
             <div id="modal" class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
-                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                     </button>
                     <p class="modal-heading">FEATURED PROJECTS AND BOOSTS</p>
-                    <p class="legal-text">Welcome to our featured project options for your live crowdfunding project. At Krowdspace we have experienced first-hand how difficult it can be to launch a crowdfunding campaign. For a limited time, we are offering free featured project packages and social media posts! If you would like to take advantage of this special offer please <a onclick={ registerFeatured } href="/#/account/register" class="modal-link home-links">submit your project</a> to Krowdspace and activate these packages on your <a onclick={ dashboardFeatured } href="/#/account/dashboard" class="modal-link home-links">Krowdspace Dashboard</a>.</p>
+                    <p class="legal-text">Welcome to our featured project options for your live crowdfunding project. At Krowdspace we have experienced first-hand how difficult it can be to launch a crowdfunding campaign. For a limited time, we are offering free featured project packages and social media posts! If you would like to take advantage of this special offer please <a onclick={ registerFeatured } href="/#/account/register" class="home-links">submit your project</a> to Krowdspace and activate these packages on your <a onclick={ dashboardFeatured } href="/#/account/dashboard" class="home-links">Krowdspace Dashboard</a>.</p>
                 </div>
                 <div class="modal-body"> 
                     <div class="row">

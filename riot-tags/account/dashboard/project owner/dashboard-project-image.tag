@@ -1,11 +1,8 @@
 <dashboard-project-image>
-    <div class="col-md-6 image-container">
-        <div class="fixed-image-box"> 
-            <img show={ imagebox } class="img-responsive kickstarter-image" ref="kickstarterImage" src=""/>
-            <img show={ !imagebox } class="img-responsive indiegogo-image" ref="indiegogoImage" src=""/>
-            <p class="funding-text-left text-left">$ { raisedLocale || 0 } RAISED</p>
-            <p class="funding-text-right text-right">$ { goalLocale || 0 } GOAL</p>
-        </div>
+    <div class="col-md-6 project-image-box padding-reset">
+        <img class="img-responsive project-image"  ref="krowdspaceImage" src=""/>
+        <p class="funding-text funded-left">$ { raisedLocale || 0 } RAISED</p>
+        <p class="funding-text funded-right">$ { goalLocale || 0 } GOAL</p>
         <div id="progressBar"></div>
     </div> 
 <script>
@@ -16,27 +13,20 @@
         if(!opts.project)
             return;
 
-        let platform = opts.project.platform;
+        this.refs.krowdspaceImage.src = opts.project.project_data.meta_data.mainImg;
 
-        if (platform == 'kickstarter') 
-        {
-            imagebox = true;
-            this.refs.kickstarterImage.src = opts.project.project_data.meta_data.mainImg;
-        }else{
-            imagebox = false;
-            this.refs.indiegogoImage.src = opts.project.project_data.meta_data.mainImg;
-        }; 
+        let raisedValue = opts.project.project_data.meta_data.raised,
+            raisedRounded = Math.round(raisedValue);
+        this.raisedLocale = raisedRounded.toLocaleString();
 
-        let raisedValue = opts.project.project_data.meta_data.raised;
-            this.raisedLocale = raisedValue.toLocaleString();
+        let goalValue = opts.project.project_data.meta_data.funding;
+        this.goalLocale = goalValue.toLocaleString();
+        
 
-            let goalValue = opts.project.project_data.meta_data.funding;
-            this.goalLocale = goalValue.toLocaleString();
+        let percentValue = opts.project.project_data.meta_data.raisedPercent,
+        numberMax = Math.min(Math.max(percentValue, 0), 1);
 
-            let percentValue = opts.project.project_data.meta_data.raisedPercent,
-            numberMax = Math.min(Math.max(percentValue, 0), 1);
-
-            let bar = null;
+        let bar = null;
 
         if(!this.progBar)
             this.progBar = bar = new ProgressBar.Line(progressBar, 

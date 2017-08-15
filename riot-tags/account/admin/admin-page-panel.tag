@@ -1,5 +1,5 @@
 <admin-page-panel>
-    <div class="col-sm-12 text-left resource-background shadow">
+    <div class="col-sm-12 text-left container-page shadow">
         <div class="col-sm-12 no-gutter" style="padding: 10px 0px;">
             <div class="col-sm-1">
                 <p style="font-size: 13px;">NAME</p>
@@ -31,19 +31,19 @@
                 <p style="font-size: 13px; margin: 0px;">{ project_data.info_data.reward }</p>
             </div>
             <div class="col-sm-1 text-center">
-                <input checked={ project_data.meta_data.featured } input type="checkbox">
+                <input checked={ project_data.info_data.featured } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input checked={ project_data.meta_data.explore } input type="checkbox">
+                <input checked={ project_data.info_data.explore } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input checked={ project_data.meta_data.landing } input type="checkbox">
+                <input checked={ project_data.info_data.landing } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input checked={ project_data.meta_data.social } input type="checkbox">
+                <input checked={ project_data.info_data.social } input type="checkbox">
             </div>
             <div class="col-sm-1 text-center">
-                <input checked={ project_data.meta_data.reward } input type="checkbox">
+                <input checked={ project_data.info_data.reward } input type="checkbox">
             </div>
         </div>
     </div>

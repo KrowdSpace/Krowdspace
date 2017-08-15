@@ -1,7 +1,4 @@
 <resource>
-    <style scoped>
-		:scope { background-color: #fff }
-	</style>
     <resource-page show={ logged_in }></resource-page>
     <script>	
         krowdspace.v1.check().then((res)=>

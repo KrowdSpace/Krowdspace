@@ -1,10 +1,10 @@
 <global-modal-service>
-    <div id="modal-service-terms" class="modal container fade modal-padding-none">
+    <div id="modal-service-terms" class="modal container padding-reset fade">
         <div class="krowdspace-modal col-sm-10 col-sm-offset-1">
             <div id="modal" class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
-                    <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                    <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                     </button>
                     <p class="modal-heading">Terms of Service</p>
                 </div>
@@ -152,9 +152,9 @@
                     <p class="text-reset">8397 158th Ave NE #406</p>
                     <p class="text-reset">Redmond, WA 98052</p>
                     <p class="text-reset">Email @ Footer Contact Form</p>
-                    <div class="text-center">
+                </div>
+                <div class="modal-close-box text-right">
                         <button type="button" class="modal-close" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
             </div>
         </div>

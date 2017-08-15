@@ -1,7 +1,4 @@
 <home>
-	<style scoped>
-		:scope { background-color: #fff }
-	</style>
     <home-navigation></home-navigation>
     <home-content-hero></home-content-hero>
     <home-content-benefits></home-content-benefits>

@@ -1,35 +1,35 @@
 <dashboard-project-user>
-    <div class="col-md-6 text-left no-gutter user-container">
+    <div class="col-md-6 text-left no-gutter project-page-container" style="padding-left: 0px; padding-right: 0px;">
         <a href="#edit-profile" class="modal-link" data-toggle="modal">
             <span class="fa-stack fa-lg social-btn filterdark float-btn">
             <i class="fa fa-circle fa-stack-2x"></i>
             <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
             </span>
         </a>
-        <p class="dashboard-text profile-name">{ firstname || '' } { lastname || '' }</p>
+        <p class="profile-name capital">{ firstname || 'Firstname' } { lastname || 'Lastname' }</p>
         <div class="col-sm-4 col-xs-5 user-profile-push">
-                <p class="dashboard-user user-text">Username:</p>
+                <p class="dashboard-user user-break">Username:</p>
         </div>
         <div class="col-sm-8 col-xs-7">
-            <p class="dashboard-user user-text">{ username || '' }</p>
+            <p class="dashboard-user user-break capital">{ username || 'Username' }</p>
         </div>
         <div class="col-sm-4 col-xs-5 user-profile-push">
-                <p class="dashboard-user user-text-alt">Email:</p>
+                <p class="dashboard-user">Email:</p>
         </div>
         <div class="col-sm-8 col-xs-7">
-            <p class="dashboard-user user-text-alt">{ email || '' }</p>
+            <p class="dashboard-user capital">{ email || 'Email Address' }</p>
         </div>
         <div class="col-sm-4 col-xs-5 user-profile-push">
                 <p class="dashboard-user user-break hidden-md">Kickstarter Name:</p>
         </div>
         <div class="col-sm-8 col-xs-7">
-            <p class="dashboard-user user-break hidden-md">{ kickstarter || 'N/A' }</p>
+            <p class="dashboard-user user-break hidden-md capital">{ kickstarter || 'N/A' }</p>
         </div>
         <div class="col-sm-4 col-xs-5 user-profile-push">
-                <p class="dashboard-user user-text-alt hidden-md">Indiegogo Name:</p>
+                <p class="dashboard-user hidden-md">Indiegogo Name:</p>
         </div>
         <div class="col-sm-8 col-xs-7">
-            <p class="dashboard-user user-text-alt hidden-md">{ indiegogo || 'N/A' }</p>
+            <p class="dashboard-user hidden-md capital">{ indiegogo || 'N/A' }</p>
         </div>
 
         <div class="user-position-box">
@@ -53,7 +53,7 @@
                 <p class="social-metric">{ opts.index }</p>
             </div> 
         -->
-        <div class="col-lg-12 text-left approval-container">
+        <div class="col-lg-12 approval-container">
             <a href="#project-status" class="modal-link" data-toggle="modal">
                 <img show={ warning } class="project-approval" src="/img/content/returned-icon-vertical.svg" title="Project is pending approval and should be reviewed shortly.">
                 <img show={ pending } class="project-approval" src="/img/content/warning-icon-vertical.svg" title="Project has been approved and is live on the Explore page.">

@@ -33,13 +33,13 @@
             <i class="fa fa-plus project-add-btn filterdark"></i>
             </a>
         </div>
-        <global-logout class="hidden-xs" show={ logged_in }></global-logout>
-        <div class="col-sm-10 col-sm-offset-1 project-container">
+        <dashboard-project-buttons class="hidden-xs"></dashboard-project-buttons>
+        <div class="col-sm-10 col-sm-offset-1 padding-reset">
             <div class="row dash-row no-gutter shadow">
                 <dashboard-project-image show={ project } project = { project }></dashboard-project-image>
                 <dashboard-user-image show={ !project } ></dashboard-user-image>
                 <dashboard-project-user show={ project } index = { projectIndex + 1 } user = { user } project = { project }></dashboard-project-user>
-                <dashboard-user-user show={ !project } user = { user }></dashboard-user-user>
+                <dashboard-user show={ !project } user = { user }></dashboard-user>
             </div>
             <div show={ project } class="row dash-row no-gutter">
                 <dashboard-project-title project= { project }> </dashboard-project-title>
@@ -64,7 +64,9 @@
     <dashboard-social-purchase user = { user } project = { project }></dashboard-social-purchase>
     <dashboard-edit-profile user = { user } project = { project }></dashboard-edit-profile>
     <dashboard-edit-reward user = { user } project = { project }></dashboard-edit-reward>
+    <dashboard-delete-project user = { user } project = { project }></dashboard-delete-project>
     <dashboard-refresh-content user = { user } project = { project }></dashboard-refresh-content>
+    <dashboard-image-project user = { user } project = { project }></dashboard-image-project>
     <dashboard-project-status></dashboard-project-status>
     <global-footer></global-footer>
     <script>

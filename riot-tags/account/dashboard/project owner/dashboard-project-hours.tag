@@ -1,13 +1,13 @@
 <dashboard-project-hours>
     <div class="col-lg-3 hidden-md hidden-sm hidden-xs dashboard-hours-container no-gutter shadow">
         <div id="circleChart"></div>
-        <div class="col-sm-6 chart-data text-center">
+        <div class="col-sm-6 text-center">
             <div class="divider-inside-right">
                 <p class="dashboard-text-alt">Days Left</p>
                 <p class="social-metric">{ countdownTimer || 0 }</p>
             </div>
         </div>
-        <div class="col-sm-6 chart-data text-center">
+        <div class="col-sm-6 text-center">
             <div>
                 <p class="dashboard-text-alt">Total Days</p>
                 <p class="social-metric">{ projectLength || 0 }</p>

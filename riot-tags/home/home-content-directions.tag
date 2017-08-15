@@ -11,7 +11,7 @@
                 <div class="col-md-4 home-bottom hidden-sm hidden-xs">
                     <div class="text-center price-box shadow">
                        <img src="/img/content/submit-icon.png" class="img-responsive" alt="Submit a Project Icon">
-                        <p class="boost-small">
+                        <p class="home-text">
                             <i>Register Project</i>
                         </p>
                     </div>
@@ -19,7 +19,7 @@
                 <div class="col-md-4 home-bottom hidden-sm hidden-xs">
                     <div class="text-center price-box shadow">
                        <img src="/img/content/reward-icon.png" class="img-responsive" alt="Rewards Icon">
-                        <p class="boost-small">
+                        <p class="home-text">
                             <i>Offer an Extra Reward</i>
                         </p>
                     </div>
@@ -27,7 +27,7 @@
                 <div class="col-md-4 home-bottom hidden-sm hidden-xs">
                     <div class="text-center price-box shadow">
                      <img src="/img/content/backer-icon.png" class="img-responsive" alt="Gain Backers Icon">
-                        <p class="boost-small">
+                        <p class="home-text">
                             <i>Gather More Backers</i>
                         </p>
                     </div>

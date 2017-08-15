@@ -1,28 +1,18 @@
 <project-page-image>
-    <div class="col-md-6 image-container">
-        <div class="fixed-image-box"> 
-            <img show={ imagebox } class="img-responsive kickstarter-image" ref="kickstarterImage" src=""/>
-            <img show={ !imagebox } class="img-responsive indiegogo-image" ref="indiegogoImage" src=""/>
-            <p class="funding-text-left text-left">$ { raisedLocale || 0} Raised</p>
-            <p class="funding-text-right text-right">$ { goalLocale || 0} Goal</p>
-        </div>
+    <div class="col-md-6 project-image-box padding-reset">
+            <img class="img-responsive project-image"  ref="krowdspaceImage" src=""/>
+            <p class="funding-text funded-left">$ { raisedLocale || 0 } RAISED</p>
+            <p class="funding-text funded-right">$ { goalLocale || 0 } GOAL</p>
         <div id="progressBar"></div>
-    </div>
+    </div> 
 <script>
     krowdspace.projects.project(this.opts.uri).then((res)=>
     {
-        let platform = res.data[0].platform;
-        if (platform == 'kickstarter') 
-        {
-            imagebox = true;
-            this.refs.kickstarterImage.src = res.data[0].project_data.meta_data.mainImg;
-        }else{
-            imagebox = false;
-            this.refs.indiegogoImage.src = res.data[0].project_data.meta_data.mainImg;
-        }; 
-
-        let raisedValue = res.data[0].project_data.meta_data.raised;
-        this.raisedLocale = raisedValue.toLocaleString();
+        this.refs.krowdspaceImage.src = res.data[0].project_data.meta_data.mainImg;
+        
+        let raisedValue = res.data[0].project_data.meta_data.raised,
+            raisedRounded = Math.round(raisedValue);
+        this.raisedLocale = raisedRounded.toLocaleString();
 
         let goalValue = res.data[0].project_data.meta_data.funding;
         this.goalLocale = goalValue.toLocaleString();

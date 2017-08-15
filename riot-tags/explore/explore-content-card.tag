@@ -1,15 +1,15 @@
 <explore-content-card>
     <div class="row">
-        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 explore-card-content">
+        <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 padding-reset">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">
                     <div class="platform-card-box">
                         <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
-                        <img class="img-responsive image-card-{ exploreCard.ExploreCard.data.platform }" src="{ exploreCard.ExploreCard.data.image }"></a>
+                        <img class="img-responsive image-card" src="{ exploreCard.ExploreCard.data.image }"></a>
                     </div>
                     <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
                         <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">
-                        <i class="fa fa-circle fa-stack-xx text-primary"></i>
+                        <i class="fa fa-circle fa-stack-xx krowdspace"></i>
                         <i class="fa fa-heart fa-stack-1x fa-inverse"></i>
                         </span>
                     </a>
@@ -48,14 +48,7 @@
         
             projectArray.forEach((element) =>
             {
-
-                let platform = element.platform;
-
-                    image = element.project_data.meta_data.mainImg,
-                    title = element.project_data.meta_data.title,
-                    category = element.project_data.info_data.category,
-
-                    goalValue = element.project_data.meta_data.funding,
+                let goalValue = element.project_data.meta_data.funding,
                     goalLocale = goalValue.toLocaleString(),
 
                     raisedValue = element.project_data.meta_data.raised,
@@ -73,16 +66,16 @@
                     {
                         data: 
                         {
-                            'platform': platform,
+                            'platform': element.platform,
                             'id': element.unique_id,
                             'category': element.project_data.info_data.category,
                             'featured': element.project_data.info_data.featured,
-                            'image': image,
+                            'image': element.project_data.meta_data.mainImg,
                             'backed': raisedLocale,
                             'goal': goalLocale,
                             'percent': percentWhole,
                             'days': daysMax, 
-                            'title': title,
+                            'title': element.project_data.meta_data.title,
                             'reward': element.project_data.info_data.reward,
                         }
                     }

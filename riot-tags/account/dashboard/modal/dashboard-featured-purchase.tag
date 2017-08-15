@@ -2,15 +2,15 @@
     <div id="purchase-featured" class="modal container fade">
         <div class="krowdspace-modal-custom col-lg-offset-2 col-lg-8 col-md-offset-0 col-md-12">
             <div id="modal">
-                <div class="modal-purchase no-gutter" style="max-width: 695px; margin: 0 auto;">
+                <div class="modal-purchase-max no-gutter">
                     <div class="col-sm-7 purchase-container-left">
                         <button type="button" class="close btn-modal hidden-lg hidden-md hidden-sm" data-dismiss="modal" aria-hidden="true">
-                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                         </button>
                         <p class="modal-heading">FEATURED PROJECT LISTING</p>
                         <p class="modal-purchase-text text-left">Every featured project will have a yellow heart icon located in the corner of your project image. These icons will be displayed on our Explore Page filtering system. Having the icon will allow your project to have priority filtering and will always show ahead of other projects without the icon. Our featured project listing will last the entire length of your campaign.</p>
                         <div show={ activated } class="active-box hidden-xs">
-                        <i class="fa fa-check media-icons" style="color: #5cb85c"></i>
+                        <i class="fa fa-check check-mark"></i>
                         <span class="active-text">This upgrade is active on your project.</span>
                         </div>
                         <div class="col-xs-6 hidden-lg hidden-md hidden-sm text-center divider-inside-right">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-sm-5 hidden-xs purchase-container-right">
                         <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
-                        <i class="fa fa-2x fa-times text-primary" aria-hidden="true"></i>
+                        <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                         </button>
                         <img class="img-responsive" src="/img/content/featured-purchase.jpg"/>
                         <div class="purchase-price-box no-gutter">
@@ -37,16 +37,16 @@
                         <div>
                             <form id="purchaseFeature" role="form" onsubmit={ submitFeatured }>
                                 <div class="text-center">
-                                    <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit"  value="Upgrade" class="btn-register">
+                                    <input class="landing-submit" type="submit" name="submit"  value="Upgrade">
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="hidden-lg hidden-md hidden-sm" style="max-width: 695px; margin: 0 auto;">
+                <div class="hidden-lg hidden-md hidden-sm">
                     <form id="purchaseFeature" role="form" onsubmit={ submitFeatured }>
                         <div class="text-center">
-                            <input class="landing-submit alt-border" style="border-bottom: none;" type="submit" name="submit"  value="Upgrade" class="btn-register">
+                            <input class="landing-submit modal-purchase-max" type="submit" name="submit"  value="Upgrade">
                         </div>
                     </form>
                 </div>
