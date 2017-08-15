@@ -29,7 +29,7 @@ route('/account/reset..', function()
 {
 	riot.mount("#main","reset");
 });
-route('/account/verify..', function()
+route('/account/verify/..', function()
 {
 	riot.mount("#main","verify");
 });
