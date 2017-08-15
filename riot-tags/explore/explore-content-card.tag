@@ -5,7 +5,7 @@
                 <div class="no-gutter explore-container shadow">
                     <div class="platform-card-box">
                         <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
-                        <img class="img-responsive image-card { exploreCard.ExploreCard.data.imageSize }" src="{ exploreCard.ExploreCard.data.image }"></a>
+                        <img class="img-responsive image-card { exploreCard.ExploreCard.data.imageSize }" src="{ exploreCard.ExploreCard.data.image }" alt="{ exploreCard.ExploreCard.data.title }"></a>
                     </div>
                     <a href="/#/explore/project/{ exploreCard.ExploreCard.data.id }">
                         <span show={ exploreCard.ExploreCard.data.featured } class="fa-stack fa-lg explore-feature-icon">

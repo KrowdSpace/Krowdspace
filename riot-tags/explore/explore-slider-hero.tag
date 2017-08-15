@@ -42,7 +42,7 @@
     <div class="row">
         <div class="autoplay slider explore-header">
             <div class="landing-banner" each= { ExploreBannerFilter }>
-                <img class="landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }">
+                <img class="landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">
                 <div class="landing-banner-box">
                     <div class="col-xs-9 padding-reset">
                         <span class="explore-title">{ name }</span>

@@ -3,7 +3,7 @@
 
 </style>
     <div class="col-md-6 project-image-box padding-reset">
-            <img class="img-responsive project-image { indiegogoSmall || 'project-image-indiegogo' }"  ref="krowdspaceImage" src=""/>
+            <img class="img-responsive project-image { indiegogoSmall || 'project-image-indiegogo' }"  ref="krowdspaceImage" src="" alt="{ krowdspaceAlt }"/>
             <p class="funding-text funded-left">$ { raisedLocale || 0 } RAISED</p>
             <p class="funding-text funded-right">$ { goalLocale || 0 } GOAL</p>
         <div id="progressBar"></div>
@@ -12,6 +12,8 @@
     krowdspace.projects.project(this.opts.uri).then((res)=>
     {
         this.refs.krowdspaceImage.src = res.data[0].project_data.meta_data.mainImg || res.data[0].project_data.meta_data.altImg;
+
+        this.krowdspaceAlt = res.data[0].project_data.meta_data.description;
         this.indiegogoSmall = res.data[0].project_data.meta_data.mainImg;
 
         let raisedValue = res.data[0].project_data.meta_data.raised,

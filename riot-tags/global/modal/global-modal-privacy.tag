@@ -77,7 +77,7 @@
                     <p class="text-reset">Krowdspace LLC</p>
                     <p class="text-reset">8397 158th Ave NE #406</p>
                     <p class="text-reset">Redmond, WA 98052</p>
-                    <p class="text-reset">Email @ Footer Contact Form</p>
+                    <p class="text-reset"><a onclick={ privacyContact } class="home-links">Contact Krowdspace</a></p>
                 </div>
                 <div class="modal-close-box text-right">
                         <button type="button" class="modal-close" data-dismiss="modal">Close</button>
@@ -92,5 +92,10 @@
                 $("#modal-privacy-policy").modal('show');
             }
         });
+    privacyContact() 
+    {
+        $('#modal-privacy-policy').modal('hide');
+        $('#modal-global-contact').modal('show');
+    }
     </script>
 </global-modal-privacy>
