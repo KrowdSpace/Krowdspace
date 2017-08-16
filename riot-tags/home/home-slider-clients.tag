@@ -22,7 +22,7 @@
     { image:"img/clients/lb-logo.png", imageAlt:"Lala Bahari"},
     { image:"img/clients/collective-logo.png", imageAlt:"Collective Expression"},
     { image:"img/clients/pepo-logo.png", imageAlt:"Pepo Brand"},
-    { image:"img/clients/krowdspace-logo.png", imageURL:"/?giveaway=1", imageAlt:"Krowdspace"},
+    { image:"img/clients/krowdspace-logo.png", imageAlt:"Krowdspace"},
     ]
 
     this.on('mount', function() 

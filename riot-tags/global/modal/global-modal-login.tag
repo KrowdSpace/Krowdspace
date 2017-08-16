@@ -5,6 +5,9 @@
                 <div class="modal-body modal-custom"> 
                     <form ref="loginform" onsubmit={ loginSubmit }>
                         <div class="text-left modal-box-alt modal-max-box">
+                            <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                                <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
+                            </button>
                             <p class="modal-heading modal-heading-alt">Krowdspace Login</p>
                             <div id="errorLog" class="alert alert-danger alert-dismissable fade in">
                                 <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>

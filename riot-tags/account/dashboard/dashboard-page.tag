@@ -7,7 +7,7 @@
             }
             .project-add-btn {
                 width: 35px;
-                padding: 7px 5px 9px 5px;
+                padding: 7px 5px 9px 5px !important;
                 display: inline-block;
                 font-size: 15px;
                 border: 1px solid #3f434f;

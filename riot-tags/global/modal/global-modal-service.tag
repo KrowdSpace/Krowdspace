@@ -40,10 +40,11 @@
                     <p class="legal-text">All sales are final and no refund will be issued.</p>
                     <p class="privacy-title"><strong>PROHIBITED ACTIVITIES</strong></p>
                     <p class="legal-text">You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.</p>
-                    <p class="legal-text"><strong>As a project owner of the Site, you agree to:</strong></p>
+                    <p class="legal-text"><strong>As a project owner on the Site, you agree to:</strong></p>
                      <ol class="terms-list legal-text">
                          <li>Owning all content that is being posted on Krowdspace and you have followed all copyright regulations.</li>
-                         <li>Use Krowdspace at your own risk.
+                         <li>Be in compliance with Indiegogo's Terms of Use and are using Krowdspace at your own risk.</li>
+                         <li>Be in compliance with Kickstarter's Terms of Use and are using Krowdspace at your own risk.</li>
                         <li> Not hold Krowdspace liable for any damages related to our site.</li>
                          <li>Choose a feasible reward or discount that is within your means to fulfill upon successful funding of your campaign.</li>
                          <li>Fullfill any rewards or discounts promised to Krowdspace users who have backed your crowdfunding campaign.</li>

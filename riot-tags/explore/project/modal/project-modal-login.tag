@@ -1,5 +1,5 @@
 <project-modal-login>
-    <div class="container dark-modal">
+    <div class="dark-modal">
         <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
             <form ref="projectlogin" onsubmit={ loginSubmit }>
                 <div class="text-left modal-box-alt modal-max-box">

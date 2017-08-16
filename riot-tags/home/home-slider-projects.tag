@@ -6,8 +6,8 @@
             width: 550px; 
             background-color: #000; 
             position: relative;
-            border-top:1px solid #000;
-            border-bottom:1px solid #000;
+            border-top:1px solid #3f434f;
+            border-bottom:1px solid #3f434f;
         }
         .landing-slider {
             height: auto;
@@ -37,9 +37,15 @@
             background-color: #000; 
             position: relative;
         }
+        .home-banner {
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+            min-width: 400px;
+        }
     }
 </style>
-    <div class="row">
+    <div class="row home-banner">
         <div class="autoplay slider">
             <div class="landing-banner" each= { ExploreBannerFilter }>
                 <img class="landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">

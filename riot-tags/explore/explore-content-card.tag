@@ -1,5 +1,5 @@
 <explore-content-card>
-    <div class="row">
+    <div>
         <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 padding-reset">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">

@@ -1,5 +1,5 @@
 <explore-page>
-    <div class="row">
+    <div>
         <global-krowdspace-navigation></global-krowdspace-navigation>
         <explore-slider-hero></explore-slider-hero>
     </div>

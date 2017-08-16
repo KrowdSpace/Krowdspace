@@ -38,7 +38,7 @@
                     </div>
                     <div class="login-box">
                         <label>
-                        <input class="check-box" type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a>
+                        <input class="check-box" type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace Terms</a>
                         </label>
                     </div>
                 </div>
