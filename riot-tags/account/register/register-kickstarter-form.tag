@@ -19,10 +19,11 @@
                     <option value="Design">Design</option>
                     <option value="Film">Film</option>
                     <option value="Food">Food</option>
+                    <option value="Health">Health</option>
                     <option value="Music">Music</option>
                     <option value="Photography">Photography</option>
                     <option value="Technology">Technology</option>
-                    <option value="Videogames">Video Games</option>
+                    <option value="Videogames">Videogames</option>
                     <option value="Publishing">Publishing</option>
                 </select>
             </div>
@@ -62,7 +63,7 @@
             <!-- KICKSTARTER PAGE 2 QUESTION 3-->
             <div class="form-group col-sm-12">
                 <p class="text-left">Please estimate the value of your reward.</p>
-                <input ref="kickstarterValue" class="form-control" name="kickstarterAmount">
+                <input ref="kickstarterValue" class="form-control" name="kickstarterAmount" maxlength="6">
             </div>
             <div class="register-controls">
                 <div class="col-xs-offset-3 col-xs-6">
@@ -95,10 +96,11 @@
                 <p class="text-left">Krowdspace is not liable for any damages or losses related to using our services.</p>
                 <p class="text-left">Project owners are legally bound to fullfill any rewards promised to the Krowdspace users.</p>
                 <p class="text-left">Krowdspace is not responsible for the puncuality and delivery of the rewards and will not become involved between user disputes.</p>
+                <p class="text-left">You agree to be in compliance with Kickstarter's Terms of Use and are using Krowdspace at your own risk.</p>
                 <p class="text-left">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
                 <div class="login-box">
                     <label>
-                    <input class="check-box" type="checkbox" id="krowdspaceTerms1" name="krowdspaceTerms1" /><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
+                    <input class="check-box" ref="kickstarterCheck" type="checkbox" value="checked" name="terms[]" required minlength="1" aria-required="true"/><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
                     </label>
                 </div>
             </div>
@@ -141,7 +143,10 @@
                         REWARDAMOUNT,
                         IGREWARD,
                         };
-        
+            
+            if(!this.refs.kickstarterCheck.checked)
+            return;
+
             krowdspace.register.project(DATA).then((res) =>
             {
             console.log('Project Submission Successful');

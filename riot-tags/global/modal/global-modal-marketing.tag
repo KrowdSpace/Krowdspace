@@ -8,7 +8,6 @@
                 </button>
                 <img class="img-responsive" src="img/social-content/krowdspace-marketing.jpg"/>
                 <div class="col-sm-12 text-left market-container-modal">
-                    <p class="modal-heading modal-heading-alt">Who Doesnt like Free stuff?</p>
                     <p class="cta-header">If you have ever backed a crowdfunding project on Kickstarter or Indiegogo then you have to check out Krowdspace.com! If you dont, you will be missing out on free secret perks and extra rewards associated with every campaign.</p>
                     <p class="cta-header">Project owners from Indeigogo and Kickstarter submit their projects to Krowdspace with exclusive rewards to gain a larger community. Members on Krowdspace will then have access to these secret rewards and perks and receive them upon backing the campaign. Check to see if the project you want to support has already submitted to Krowdspace. It is that simple and 100% free.</p> 
                     <p class="cta-header">You can register by using the form below!</p>

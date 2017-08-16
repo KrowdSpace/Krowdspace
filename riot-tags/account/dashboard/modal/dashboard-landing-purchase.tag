@@ -60,7 +60,6 @@
                  return;
         
              let res = {data: [opts.project]};
-
               if (res.data[0].project_data.info_data.landing) 
             {
                 activated = true;
@@ -93,6 +92,7 @@
                          info_data: 
                          {
                              landing : true,
+                             landing_date: Date(),
                          }
                      }
              };

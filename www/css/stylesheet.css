@@ -95,6 +95,11 @@ header {
 section {
     padding: 50px 0;
 }
+sup {
+    line-height: 1;
+    vertical-align: super;
+
+}
 ::-moz-selection {
     text-shadow: none;
     background: #fed136;
@@ -181,7 +186,6 @@ img::-moz-selection {
 }
 .navbar-logo-alt {
     display: none;
-    margin-left: 15px;
 }
 .nav-logo-size {
     padding-top: 2px;
@@ -1309,6 +1313,11 @@ background-color: #fed136;
 }
 .project-image {
     height: 280px; 
+    width: 100%;
+}
+.project-image-indiegogo {
+    height: 280px; 
+    width: auto;
     margin-left: auto; 
     margin-right: auto;
 }
@@ -1398,6 +1407,9 @@ background-color: #fed136;
 .dashboard-project-description {
     padding-top: 15px; 
     height: 110px;
+}
+.dashboard-project-title {
+    padding-right: 30px;
 }
 .wysiwyg-editor {
     padding: 0px; 
@@ -1683,9 +1695,11 @@ border: 1px solid #3f434f;
     background-color: #000;
 }
 .image-card {
-    height: 208px; 
     margin-left: auto;
     margin-right: auto;
+}
+.indiegogo-small-image {
+    height: 208px; 
 }
 .explore-feature-icon {
     position: absolute !important;
@@ -2029,7 +2043,7 @@ border: 1px solid #3f434f;
     }
 }
 @media screen and (max-width: 401px) {
-    .dashboard-reward-box, .dashboard-title-box, .dash-bar {
+    .project-page-container, .dashboard-reward-box, .dashboard-title-box, .dash-bar {
         border: none;
         border-bottom:1px solid #3f434f;
     }
@@ -2042,10 +2056,6 @@ border: 1px solid #3f434f;
         border-right: none;
     }
     .container {
-        padding: 0px 10px;
-    }
-    [class*='col-'] {
-        padding-left: 0px ;
-        padding-right: 0px;
+        padding: 0px;
     }
 }

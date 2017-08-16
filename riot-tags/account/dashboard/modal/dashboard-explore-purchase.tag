@@ -60,7 +60,7 @@
                  return;
         
              let res = {data: [opts.project]};
-
+            
              if (res.data[0].project_data.info_data.explore) 
             {
                 activated = true;
@@ -92,6 +92,7 @@
                          info_data: 
                          {
                              explore : true,
+                             explore_date: Date(),
                          }
                      }
                  };

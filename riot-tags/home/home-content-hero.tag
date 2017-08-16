@@ -5,8 +5,8 @@
                 <div class="col-lg-8 col-md-12 header-left text-left">
                     <h1 class="home-padding home-text hidden-xs">Back the Project, not the Platform</h1>
                     <div class="container-top-header">
-                        <p class="home-text">At Krowdspace, our goal is to unify the crowdfunding community. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace offers a platform to discover the latest projects from top crowdfunding sites all in one place.</p>
-                        <p class="home-padding home-text">Krowdspace members will receive exclusive rewards for backing projects and project owners gain access to our easy to use promotional tools to take their campaigns to the next level.</p>
+                        <p class="home-text">At Krowdspace, our goal is to unify the crowdfunding community by expanding exposure for your project. Whether you’re a project owner building momentum for your campaign, or a backer looking to support the next big idea, Krowdspace connects the latest projects from the top crowdfunding sites in a single location.</p>
+                        <p class="home-padding home-text">Krowdspace members receive exclusive rewards for backing projects and project owners gain access to our promotional platform to accelerate their potential for a successful campaign.</p>
                         <a href="/#/account/register" data-toggle="modal">
                             <p class="btn-landing shadow">Submit a Project</p>
                         </a>

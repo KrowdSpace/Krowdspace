@@ -73,7 +73,7 @@
                             <div class="timeline-panel">
                                 <div class="text-left">
                                     <p class="timeline-heading">March 2017</p>
-                                    <p class="timeline-heading">Krowdspace Launch</p>
+                                    <p class="timeline-heading">Krowdspace Landing Page</p>
                                     <div class="text-left">
                                         <p>The Krowdspace Landing page is launched! With the hard work and dedication of our team we were able to launch a month ahead of schedule. Next step is bringing to life the unified dashboard to pull in crowdfunding projects from the top sites. We have also launched limited crowdfunding tools to help your project be successful.</p>
                                     </div>
@@ -94,7 +94,21 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="timeline time-bottom">
+                        <li class="timeline">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/krowdspace-alt.jpg" alt="Alt Krowdspace Logo with background.">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="text-left">
+                                    <p class="timeline-heading">August 2017</p>
+                                    <p class="timeline-heading">Krowdspace Launch</p>
+                                    <div class="text-left">
+                                        <p>Krowdspace has officially launched and we are seeking projects to test our new services. Congratulations to the whole team for sticking it out and launching on time. We hope to make a positive impact on the crowdfunding community and grow with the industry.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted time-bottom">
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" src="img/about/seattle-skyline.jpg" alt="Background image of Seattle.">
                             </div>

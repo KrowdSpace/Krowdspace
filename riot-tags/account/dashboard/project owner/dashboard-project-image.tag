@@ -1,6 +1,6 @@
 <dashboard-project-image>
     <div class="col-md-6 project-image-box padding-reset">
-        <img class="img-responsive project-image"  ref="krowdspaceImage" src=""/>
+        <img class="img-responsive project-image { indiegogoSmall }"  ref="krowdspaceImage" src=""/>
         <p class="funding-text funded-left">$ { raisedLocale || 0 } RAISED</p>
         <p class="funding-text funded-right">$ { goalLocale || 0 } GOAL</p>
         <div id="progressBar"></div>
@@ -13,7 +13,8 @@
         if(!opts.project)
             return;
 
-        this.refs.krowdspaceImage.src = opts.project.project_data.meta_data.mainImg;
+        this.refs.krowdspaceImage.src = opts.project.project_data.meta_data.mainImg || opts.project.project_data.meta_data.altImg;
+        this.indiegogoSmall = opts.project.project_data.meta_data.mainImg || 'project-image-indiegogo';
 
         let raisedValue = opts.project.project_data.meta_data.raised,
             raisedRounded = Math.round(raisedValue);

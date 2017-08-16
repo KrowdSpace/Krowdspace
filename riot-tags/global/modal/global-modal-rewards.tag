@@ -9,7 +9,7 @@
                     <p class="modal-heading">KROWDSPACE REWARDS</p>
                 </div>
                 <div class="modal-body">
-                    <p>For your project to be eligible on Krowdspace you must provide an exclusive reward for backers who support you through our platform. Krowdspace will look over each reward submission before approving it for our site. This process can take up to 24 hours. You will be obligated to fulfill any extra rewards listed on your Krowdspace project profile.</p>
+                    <p>For your project to be eligible on Krowdspace you must provide an exclusive reward for Krowdspace members. Krowdspace will look over each reward submission before approving it for the site. This process can take up to 24 hours. You will be obligated to fulfill any extra rewards listed on your Krowdspace project profile.</p>
                     <p class="privacy-title">KICKSTARTER CAMPAIGNS</p>
                     <p class="legal-text">Currently Kickstarter does not have a "Loyalty Program" to reward loyal customers and provide discount to friends and family. This is one of the many benefits of using Krowdspace. Once you decide on a reward or discount we will generate a coupon code so that your loyal customers can visit Krowdspace, retrieve that coupon code, and provide it back to you upon supporting your campaign on Kickstarter.</p>
                     <p class="privacy-title">INDIEGOGO CAMPAIGNS</p>
@@ -25,9 +25,19 @@
                     <p class="text-reset">- All Krowdspace members will receive 15% off their pledges.</p>
                     <p class="text-reset">- All Krowdspace members will be given a custom engraved wallet with their watch.</p>
                     </div>
-                    <p class="legal-text">Keep it simple and make it creative. People love to see that their pledge is helping your project come to life and personal touches make all the difference. if you have any questions about rewards please contact us through our footer form.</p>
+                    <p class="legal-text">Keep it simple and make it creative. People love to see that their pledge is helping your project come to life and personal touches make all the difference. if you have any questions about rewards please contact us using our <a onclick={ rewardContact } class="home-links">contact form</a>.</p>
+                </div>
+                <div class="modal-close-box text-right">
+                        <button type="button" class="modal-close" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    rewardContact() 
+    {
+        $('#modal-global-rewards').modal('hide');
+        $('#modal-global-contact').modal('show');
+    }
+    </script>
 </global-modal-rewards>

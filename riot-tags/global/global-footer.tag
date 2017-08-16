@@ -64,22 +64,11 @@
 		</div>
     </footer>
     <script>
-        this.on('mount', function() 
-        {
-            $('a.page-scroll').bind('click', function(event) 
-            {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: ($($anchor.attr('href')).offset().top - 50)
-                }, 1250, 'easeInOutExpo');
-                event.preventDefault();
-            })
-        });
       contactMessage(e)
         {
             e.preventDefault();
             
-            var FULLNAME = this.refs.fullname.value,
+            let FULLNAME = this.refs.fullname.value,
                 EMAIL = this.refs.email.value,
                 COMMENT = this.refs.commentForm.value;
         

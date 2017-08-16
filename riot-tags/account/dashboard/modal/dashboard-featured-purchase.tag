@@ -93,6 +93,7 @@
                          info_data: 
                          {
                              featured : true,
+                             featured_date: Date(),
                          }
                      }
              };

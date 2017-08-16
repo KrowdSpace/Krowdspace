@@ -7,8 +7,11 @@
             position: relative;
         }
         .landing-slider {
-            height: 282px;
             border: 1px solid #000;
+            width: 100%;
+        }
+        .indiegogo-image-small {
+            height: 282px;
             width: auto;
             margin-left: auto;
             margin-right: auto;
@@ -18,7 +21,7 @@
             height: 225px;
             width: 396px;
         }
-        .landing-slider {
+        .indiegogo-image-small {
             height: 225px;
         }
     }
@@ -27,7 +30,7 @@
             height: 350px;
             width: 616.66px;
         }
-        .landing-slider {
+        .indiegogo-image-small {
             height: 351px;
         }
     }
@@ -41,7 +44,7 @@
             height: 227px;
             width: 400px;
         }
-        .landing-slider {
+        .indiegogo-image-small {
             height: 228px;
         }
     }
@@ -49,7 +52,7 @@
 <div class="col-md-6 project-image-responsive padding-reset">
     <div class="single-item slider"> 
         <div class="landing-banner" each= { ExploreBannerFilter }>
-            <img class="img-responsive landing-slider" src="{ project_data.meta_data.mainImg }">
+            <img class="img-responsive landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }">
             <div class="landing-banner-box">
                 <div class="col-xs-10 padding-reset">
                     <span class="explore-title">{ name }</span>
@@ -90,7 +93,7 @@
                             },
                             meta_data:
                             {
-                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                                mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
                     };
@@ -118,7 +121,7 @@
                         {
                             meta_data:
                             {
-                                mainImg: '/img/projects/krowdspace-banner-1.jpg',
+                                mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
                     }];

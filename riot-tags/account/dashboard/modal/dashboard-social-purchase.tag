@@ -93,6 +93,7 @@
                          info_data: 
                          {
                              social : true,
+                             social_date: Date(),
                          }
                      }
              };

@@ -65,6 +65,11 @@ var ProjectsAPI = function (_RestURL) {
 
             return this.post('explore', DATA);
         }
+    }, {
+        key: 'delete',
+        value: function _delete(UNIQUE_ID) {
+            return this.post('delete', { UNIQUE_ID: UNIQUE_ID });
+        }
     }]);
 
     return ProjectsAPI;
@@ -252,6 +257,11 @@ var V1API = function (_RestURL) {
         key: 'check',
         value: function check() {
             return this.post('login', { CHECK: true });
+        }
+    }, {
+        key: 'stats',
+        value: function stats() {
+            return this.post('stats');
         }
     }]);
 

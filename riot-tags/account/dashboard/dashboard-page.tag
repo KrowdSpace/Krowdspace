@@ -33,7 +33,7 @@
             <i class="fa fa-plus project-add-btn filterdark"></i>
             </a>
         </div>
-        <dashboard-project-buttons class="hidden-xs"></dashboard-project-buttons>
+        <dashboard-project-buttons class="hidden-xs" user = { user } project = { project }></dashboard-project-buttons>
         <div class="col-sm-10 col-sm-offset-1 padding-reset">
             <div class="row dash-row no-gutter shadow">
                 <dashboard-project-image show={ project } project = { project }></dashboard-project-image>
@@ -104,7 +104,6 @@
         		if(res && res.data)
         		{
                     this.projects = res.data;
-                    console.log(res);
         			this.setProject(res.data[0]);
         		}
         	});
