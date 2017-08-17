@@ -64,7 +64,7 @@
             <a href="/#/account/giveaway" title="Krowdspace Giveaways" class="modal-link" data-toggle="modal">
                 <span class="fa-stack fa-lg social-btn filterdark">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-money fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-hashtag fa-stack-1x fa-inverse"></i>
                 </span>
             </a>
                 <p class="dashboard-text-bar dash-divider hidden-xs">Giveaways</p>

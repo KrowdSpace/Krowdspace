@@ -18,7 +18,7 @@
         }
     @media screen and (max-width: 1200px) {
         .landing-banner {
-            height: 225px;
+            height: 224px;
             width: 396px;
         }
         .indiegogo-image-small {
@@ -27,11 +27,11 @@
     }
     @media screen and (max-width: 991px) {
         .landing-banner {
-            height: 350px;
+            height: 347px;
             width: 616.66px;
         }
         .indiegogo-image-small {
-            height: 351px;
+            height: 347px;
         }
     }
     @media screen and (max-width: 767px) {
@@ -41,11 +41,11 @@
             margin-right: auto;
         }
         .landing-banner {
-            height: 227px;
+            height: 225px;
             width: 400px;
         }
         .indiegogo-image-small {
-            height: 228px;
+            height: 225px;
         }
     }
 </style>

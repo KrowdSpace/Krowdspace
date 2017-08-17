@@ -2,7 +2,7 @@
 <style>
     @media screen and (max-width: 1200px) {
         .project-user-container {
-            height: 225px;
+            height: 224px;
         }
     }
     @media screen and (max-width: 991px) {
