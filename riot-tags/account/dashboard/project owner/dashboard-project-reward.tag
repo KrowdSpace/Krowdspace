@@ -21,7 +21,7 @@
                 return;
         
             let res = {data: [opts.project]};
-        
+            console.log(res);
             this.projectReward = res.data[0].project_data.info_data.reward;
             this.couponCode = res.data[0].coupon_code;
         });

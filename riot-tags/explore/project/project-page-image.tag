@@ -16,11 +16,11 @@
         this.krowdspaceAlt = res.data[0].project_data.meta_data.description;
         this.indiegogoSmall = res.data[0].project_data.meta_data.mainImg;
 
-        let raisedValue = res.data[0].project_data.meta_data.raised,
+        let raisedValue = res.data[0].project_data.meta_data.raised || 0,
             raisedRounded = Math.round(raisedValue);
         this.raisedLocale = raisedRounded.toLocaleString();
 
-        let goalValue = res.data[0].project_data.meta_data.funding;
+        let goalValue = res.data[0].project_data.meta_data.funding || 0;
         this.goalLocale = goalValue.toLocaleString();
 
         let percentValue = res.data[0].project_data.meta_data.raisedPercent,

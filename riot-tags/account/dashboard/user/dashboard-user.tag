@@ -2,7 +2,7 @@
 <style>
     @media screen and (max-width: 1200px) {
         .project-user-container {
-            height: 225px;
+            height: 224px;
         }
     }
     @media screen and (max-width: 991px) {
@@ -56,11 +56,11 @@
         <p class="dashboard-text profile-name">Krowdspace Campaigns</p>
             <div class="col-xs-4 no-gutters text-center user-stat-box">
             <p class="dashboard-user user-text-alt">Kickstarter</p>
-                <p class="social-metric">{ projectTotal }</p>
+                <p class="social-metric">{ kickstarterTotal }</p>
             </div> 
             <div class="col-xs-4 no-gutters text-center user-stat-box">
                 <p class="dashboard-user user-text-alt">Indiegogo</p>
-                    <p class="social-metric">{ projectTotal }</p>
+                    <p class="social-metric">{ indiegogoTotal }</p>
             </div> 
             <div class="col-xs-4 no-gutters text-center user-stat-box">
                 <p class="dashboard-user user-text-alt">Rewards</p>
@@ -73,8 +73,9 @@
 this.on('mount', () => {
     krowdspace.v1.stats().then((res)=>
     {
-
-        this.projectTotal = res.data.totalProjects;
+        console.log(res);
+        this.kickstarterTotal = res.data.ksTotal;
+        this.indiegogoTotal = res.data.igTotal;
 
         let kickstarterTotalReward = res.data.platforms[0].rewardAmmount,
             indiegogoTotalReward = res.data.platforms[1].rewardAmmount,

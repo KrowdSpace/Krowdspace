@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="register-controls">
-                <div class="col-xs-offset-3 col-xs-6">
+                <div class="col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
                     <p onClick={ projectPrevious2 } class="pull-left"><a id="project-previous" class="back-project">PREVIOUS</a></p>
                     <p class="pull-right"><a class="back-project next-ks next-step">NEXT</a></p>
                 </div>
@@ -66,7 +66,7 @@
                 <input ref="kickstarterValue" class="form-control" name="kickstarterAmount" maxlength="6">
             </div>
             <div class="register-controls">
-                <div class="col-xs-offset-3 col-xs-6">
+                <div class="col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
                     <p class="pull-left"><a class="back-project previous-ks">PREVIOUS</a></p>
                     <p class="pull-right"><a class="back-project next-ks next-step">NEXT</a></p>
                 </div>
@@ -83,7 +83,7 @@
                 <p class="text-left">If you have any questions or concerns please contact us and thank you for your understanding!</p>
             </div>
             <div class="register-controls">
-                <div class="col-xs-offset-3 col-xs-6">
+                <div class="col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
                     <p class="pull-left"><a class="back-project previous-ks">PREVIOUS</a></p>
                     <p class="pull-right"><a class="back-project next-ks next-step">NEXT</a></p>
                 </div>
@@ -100,7 +100,7 @@
                 <p class="text-left">I have read through and understand the Terms of Service in relation to Krowdspace.</p>
                 <div class="login-box">
                     <label>
-                    <input class="check-box" ref="kickstarterCheck" type="checkbox" value="checked" name="terms[]" required minlength="1" aria-required="true"/><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a></span>
+                    <input class="check-box" ref="kickstarterCheck" type="checkbox" value="checked" name="terms[]" required minlength="1" aria-required="true"/><span>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace Terms</a></span>
                     </label>
                 </div>
             </div>

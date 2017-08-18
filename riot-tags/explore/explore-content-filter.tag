@@ -1,5 +1,5 @@
 <explore-content-filter>
-    <div class="row">
+    <div>
         <div class="col-sm-5 filter-rows">
             <select class="form-control" ref="options" onchange={ onCatChange } >
                 <option value="*">Featured Projects</option>

@@ -6,8 +6,8 @@
             width: 550px; 
             background-color: #000; 
             position: relative;
-            border-top:1px solid #000;
-            border-bottom:1px solid #000;
+            border-top:1px solid #3f434f;
+            border-bottom:1px solid #3f434f;
         }
         .landing-slider {
             height: auto;
@@ -37,12 +37,18 @@
             background-color: #000; 
             position: relative;
         }
+        .home-banner {
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+            min-width: 400px;
+        }
     }
 </style>
-    <div class="row">
-        <div class="autoplay slider">
+    <div class="row home-banner">
+        <div class="autoplay-landing slider">
             <div class="landing-banner" each= { ExploreBannerFilter }>
-                <img class="landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">
+                <img class="landing-slider img-responsive { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">
                 <div class="landing-banner-box">
                     <div class="col-xs-9 padding-reset">
                         <span class="explore-title">{ name }</span>
@@ -119,7 +125,7 @@
             this.ExploreBannerFilter = FilterExplore;
             this.update();
         
-            $('.autoplay').slick
+            $('.autoplay-landing').slick
             ({
                 arrows: false,
                 slidesToShow: 1,
@@ -186,7 +192,7 @@
             this.ExploreBannerFilter = FilterExplore;
             this.update();
         
-            $('.autoplay').slick
+            $('.autoplay-landing').slick
             ({
                 arrows: false,
                 slidesToShow: 1,

@@ -3,7 +3,7 @@
       <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal">
             <div class="modal-body modal-custom">
-                <form ref="registerform2" onsubmit={ submitRegister }>
+                <form ref="registerform2" onsubmit={ submitRegister } autocomplete="on">
                 <div class="text-left modal-box-alt modal-max-box-alt">
                     <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
                         <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="login-box">
                         <label>
-                        <input class="check-box" type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a>
+                        <input class="check-box" type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace Terms</a>
                         </label>
                     </div>
                 </div>

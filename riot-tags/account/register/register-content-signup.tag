@@ -5,9 +5,6 @@
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
         }
-        .link-left {
-        padding-right: 0px !important;
-        }
         .register-background {
         border: none;
         }

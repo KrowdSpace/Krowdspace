@@ -18,7 +18,7 @@
         }
     @media screen and (max-width: 1200px) {
         .landing-banner {
-            height: 225px;
+            height: 224px;
             width: 396px;
         }
         .indiegogo-image-small {
@@ -27,11 +27,11 @@
     }
     @media screen and (max-width: 991px) {
         .landing-banner {
-            height: 350px;
+            height: 347px;
             width: 616.66px;
         }
         .indiegogo-image-small {
-            height: 351px;
+            height: 347px;
         }
     }
     @media screen and (max-width: 767px) {
@@ -41,16 +41,16 @@
             margin-right: auto;
         }
         .landing-banner {
-            height: 227px;
+            height: 225px;
             width: 400px;
         }
         .indiegogo-image-small {
-            height: 228px;
+            height: 225px;
         }
     }
 </style>
 <div class="col-md-6 project-image-responsive padding-reset">
-    <div class="single-item slider"> 
+    <div class="single-item-dashboard slider"> 
         <div class="landing-banner" each= { ExploreBannerFilter }>
             <img class="img-responsive landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }">
             <div class="landing-banner-box">
@@ -102,7 +102,7 @@
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
-        $('.single-item').slick
+        $('.single-item-dashboard').slick
         ({
             arrows: false,
             slidesToShow: 1,
@@ -128,7 +128,7 @@
             this.ExploreBannerFilter = KrowdspaceAd;
             this.update();
 
-        $('.single-item').slick
+        $('.single-item-dashboard').slick
         ({
             arrows: false,
             slidesToShow: 1,

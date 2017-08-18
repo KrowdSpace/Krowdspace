@@ -13,9 +13,16 @@
                 <img class="img-responsive register-img" src="/img/content/indiegogo-help-1.jpg">
                 <p class="modal-purchase-text text-left" >Inside the share message there is a project url with the project ID. Take the project ID number and put it into the Krowdspace register form. An example of the project ID number location is below.</p>
                 <img class="img-responsive register-img" src="/img/content/indiegogo-help-2.jpg">
-                <p class="modal-purchase-text text-left" >If you have any questions please contact Krowdspace on social media or through our <a href="#modal-global-contact" data-toggle="modal" class="home-links">contact form</a>.</p>
+                <p class="modal-purchase-text text-left" >If you have any questions please contact Krowdspace on social media or through our <a onclick= { projectComment } class="home-links">contact form</a>.</p>
             </div>
          </div>
       </div>
    </div>
+<script>
+    projectComment() 
+    {
+        $('#modal-register-id').modal('hide');
+        $('#modal-global-contact').modal('show');
+    }
+</script>
 </register-project-id>

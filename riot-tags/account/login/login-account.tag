@@ -1,7 +1,7 @@
 <login-account>
-    <div class="row row-verify">
+    <div class="row row-verify"> 
         <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-            <form ref="accountlogin" onSubmit={ loginSubmit }>
+            <form ref="accountlogin" onSubmit={ loginSubmit } autocomplete="on">
                 <div class="text-left modal-box-alt modal-max-box">
                     <p class="modal-heading modal-heading-alt">Krowdspace Login</p>
                     <div id="errorLog" class="alert alert-danger alert-dismissable fade in">

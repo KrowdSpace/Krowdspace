@@ -37,12 +37,18 @@
             background-color: #000; 
             position: relative;
         }
+        .home-banner {
+            width: 100%;
+            margin-right: 0px;
+            margin-left: 0px;
+            min-width: 400px;
+        }
     }
 </style>
-    <div class="row">
-        <div class="autoplay slider explore-header">
+    <div class="home-banner">
+        <div class="autoplay-explore slider explore-header">
             <div class="landing-banner" each= { ExploreBannerFilter }>
-                <img class="landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">
+                <img class="landing-slider img-responsive { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">
                 <div class="landing-banner-box">
                     <div class="col-xs-9 padding-reset">
                         <span class="explore-title">{ name }</span>
@@ -103,7 +109,7 @@
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
-            $('.autoplay').slick
+            $('.autoplay-explore').slick
             ({
                 arrows: false,
                 slidesToShow: 1,
@@ -153,7 +159,7 @@
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
-            $('.autoplay').slick
+            $('.autoplay-explore').slick
             ({
                 arrows: false,
                 slidesToShow: 1,

@@ -44,7 +44,7 @@
                     </div>
                     <div class="login-box">
                         <label>
-                            <input class="check-box" type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a onclick={ krowdspaceTerms } class="modal-link home-links"><span>Krowdspace terms</span></a>
+                            <input class="check-box" type="checkbox" id="terms" value="checked" name="terms[]" required minlength="1" aria-required="true"/>I agree to <a onclick={ krowdspaceTerms } class="modal-link home-links"><span>Krowdspace Terms</span></a>
                         </label>
                     </div>
                 </div>

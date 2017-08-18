@@ -2,28 +2,24 @@
     <div class="col-sm-12 text-left container-page shadow">
         <p class="modal-heading">Crowdfunding Resources</p>
         <p class="legal-text">Submitting a project to Krowdspace is just the first step to having a successful campaign. We have provided some extra tools that are completely free for all Krowdspace members including example press release's and format guides as well as major media outlet contacts.</p>
-        <div class="row">
-            <div class="col-sm-12">
-                <p class="privacy-title">Example Press Release</p>
-                <p class="legal-text">Creating a Press Release is imperative to running a successful crowdfunding campaign. Make sure to have a compelling email subject, header and headline. Editors and Publishers receive 100's of emails per day and decide wether or not to open an email based on the subject alone. Please take a look at our format and built off of it with your own content.</p>
-                <div class="col-sm-6 text-center media-padding">
-                    <p><a class="mediaLink" href="pdf/Lala-Bahari-PR.pdf"><i class="fa fa-file-pdf-o fa-2x" download></i> Krowdspace Press Release</a></p>
-                    <p><a class="mediaLink" href="http://www.prnewswire.com/news-releases/first-truly-consumer-3d-printer-the-micro-launches-on-kickstarter-254179611.html" target="_blank">Micro 3D Printer Press Release</a></p>
-                </div>
-                <div class="col-sm-6 text-center media-padding">
-                    <p><a class="mediaLink" href="pdf/Pebble-Time-PR.pdf"><i class="fa fa-file-pdf-o fa-2x" download></i> Pebble Time Press Release</a></p>
-                    <p><a class="mediaLink" href="http://www.prnewswire.com/news-releases/travel-light-announces-breakthrough-g-ro-luggage-system-300161006.html" target="_blank">G-RO Luggage System</a></p>
-                </div>
-                <p class="privacy-title">Format Press Release</p>
-                <p class="legal-text">There are a few key elements that every press release should have so that media outlets can quickly identify the story. Here are a few links we found that can help you structure a Press Release in an appealing way.</p>
-                <div class="col-sm-6 text-center media-padding">
-                    <p><a class="mediaLink" href="http://fundbeam.com/kickstarter-press-release/" target="_blank">Fundbeam Press Release Guide</a></p>
-                </div>
-                <div class="col-sm-6 text-center media-padding">
-                    <p><a class="mediaLink" href="https://crowdfundingheadlines.com/press-release-tips/" target="_blank">Crowdfunding Headlines Press Release Guide</a></p>
-                </div>
+            <p class="privacy-title">Example Press Release</p>
+            <p class="legal-text">Creating a Press Release is imperative to running a successful crowdfunding campaign. Make sure to have a compelling email subject, header and headline. Editors and Publishers receive 100's of emails per day and decide wether or not to open an email based on the subject alone. Please take a look at our format and built off of it with your own content.</p>
+            <div class="col-sm-6 text-center media-padding">
+                <p><a class="mediaLink" href="pdf/Lala-Bahari-PR.pdf"><i class="fa fa-file-pdf-o fa-2x" download></i> Krowdspace Press Release</a></p>
+                <p><a class="mediaLink" href="http://www.prnewswire.com/news-releases/first-truly-consumer-3d-printer-the-micro-launches-on-kickstarter-254179611.html" target="_blank">Micro 3D Printer Press Release</a></p>
             </div>
-        </div>
+            <div class="col-sm-6 text-center media-padding">
+                <p><a class="mediaLink" href="pdf/Pebble-Time-PR.pdf"><i class="fa fa-file-pdf-o fa-2x" download></i> Pebble Time Press Release</a></p>
+                <p><a class="mediaLink" href="http://www.prnewswire.com/news-releases/travel-light-announces-breakthrough-g-ro-luggage-system-300161006.html" target="_blank">G-RO Luggage System</a></p>
+            </div>
+            <p class="privacy-title">Format Press Release</p>
+            <p class="legal-text">There are a few key elements that every press release should have so that media outlets can quickly identify the story. Here are a few links we found that can help you structure a Press Release in an appealing way.</p>
+            <div class="col-sm-6 text-center media-padding">
+                <p><a class="mediaLink" href="http://fundbeam.com/kickstarter-press-release/" target="_blank">Fundbeam Press Release Guide</a></p>
+            </div>
+            <div class="col-sm-6 text-center media-padding">
+                <p><a class="mediaLink" href="https://crowdfundingheadlines.com/press-release-tips/" target="_blank">Crowdfunding Headlines Press Release Guide</a></p>
+            </div>
         <p class="privacy-title">Submit Your Press Release for Media Coverage</p>
         <p class="legal-text">We have compiled a media contact list with some of the biggest names in the industry. Click on a company and you will be directed to their submission form or email contact. We will be adding and updating this list on a regular basis to keep our contacts up to date.</p>
         <div class="row media-box">

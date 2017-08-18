@@ -1,5 +1,5 @@
 <explore-content-card>
-    <div class="row">
+    <div>
         <div each= { exploreCard in displayCards } class="col-lg-4 col-md-6 col-sm-6 padding-reset">
             <div ref="exploreCard.ExploreCard.data.category">
                 <div class="no-gutter explore-container shadow">
@@ -47,10 +47,10 @@
         
             projectArray.forEach((element) =>
             {
-                let goalValue = element.project_data.meta_data.funding,
+                let goalValue = element.project_data.meta_data.funding || 0,
                     goalLocale = goalValue.toLocaleString(),
 
-                    raisedValue = element.project_data.meta_data.raised,
+                    raisedValue = element.project_data.meta_data.raised || 0,
                     raisedLocale = raisedValue.toLocaleString(),
 
                     percentWhole = element.project_data.meta_data.raisedPercent * 100,

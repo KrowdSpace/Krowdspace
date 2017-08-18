@@ -1,4 +1,7 @@
 <project>
+	<div class="row">
+		<global-krowdspace-navigation></global-krowdspace-navigation>
+	</div>
 	<project-modal-login show={ !logged_in }></project-modal-login>
 	<project-page show={ logged_in } uri={ opts.uri }></project-page>
 	<script>

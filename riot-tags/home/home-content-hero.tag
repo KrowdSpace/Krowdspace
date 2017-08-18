@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="login-box">
                                     <label>
-                                        <input class="check-box" type="checkbox" required minlength="1"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace terms</a>
+                                        <input class="check-box" type="checkbox" required minlength="1"/>I agree to <a href="#modal-service-terms" data-toggle="modal" class="home-links">Krowdspace Terms</a>
                                     </label>
                                 </div>
                             </div>
@@ -80,7 +80,7 @@
         	},
         	(err) => 
         	{
-        		
+                console.log(err);
         	});
         }    
         this.on('mount', function() 

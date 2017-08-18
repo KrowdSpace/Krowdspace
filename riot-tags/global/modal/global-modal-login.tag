@@ -3,8 +3,11 @@
         <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
             <div id="modal">
                 <div class="modal-body modal-custom"> 
-                    <form ref="loginform" onsubmit={ loginSubmit }>
+                    <form ref="loginform" onsubmit={ loginSubmit } autocomplete="on">
                         <div class="text-left modal-box-alt modal-max-box">
+                            <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
+                                <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
+                            </button>
                             <p class="modal-heading modal-heading-alt">Krowdspace Login</p>
                             <div id="errorLog" class="alert alert-danger alert-dismissable fade in">
                                 <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
