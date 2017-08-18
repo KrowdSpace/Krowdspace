@@ -44,7 +44,7 @@
                     <p class="question-text">What kind of a reward should I offer?</p>
                     <i data-toggle="collapse" data-target="#question3" class="fa fa-plus plus-icon"></i>
                     <div id="question3" class="collapse answer-container">
-                    <p class="answer-text" >You can submit any kind of reward ranging from free swag to a discount off a pledged amount. Keep in mind that all rewards need to be approved by our staff before being displayed on our Explore Page. To see more example please check out our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Rewards Page</a>.</p>
+                    <p class="answer-text" >You can submit any kind of reward ranging from free swag to a discount off a pledged amount. Keep in mind that all rewards need to be approved by our staff before being displayed on our <a class="home-links" href="/#/explore">Explore Page</a>. To see more examples please check out our <a href="#modal-global-rewards" data-toggle="modal" class="home-links">Rewards Page</a>.</p>
                     </div>
                 </div>
                 <div class="faq-container hidden-xs">

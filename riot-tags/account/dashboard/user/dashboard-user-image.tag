@@ -50,7 +50,7 @@
     }
 </style>
 <div class="col-md-6 project-image-responsive padding-reset">
-    <div class="single-item slider"> 
+    <div class="single-item-dashboard slider"> 
         <div class="landing-banner" each= { ExploreBannerFilter }>
             <img class="img-responsive landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }">
             <div class="landing-banner-box">
@@ -102,7 +102,7 @@
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
-        $('.single-item').slick
+        $('.single-item-dashboard').slick
         ({
             arrows: false,
             slidesToShow: 1,
@@ -128,7 +128,7 @@
             this.ExploreBannerFilter = KrowdspaceAd;
             this.update();
 
-        $('.single-item').slick
+        $('.single-item-dashboard').slick
         ({
             arrows: false,
             slidesToShow: 1,

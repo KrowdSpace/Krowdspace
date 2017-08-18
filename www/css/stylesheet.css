@@ -382,7 +382,7 @@ footer ul.quicklinks,
     color: #3f434f;
 }
 .padding-reset {
-    padding: 0px;
+    padding: 0px !important;
 }
 .social-metric {
     font-family: "Montserrat-Bold", sans-serif;
@@ -1783,16 +1783,20 @@ border: 1px solid #3f434f;
     overflow: scroll;
 }
 .admin-box {
-    padding: 10px 0px;
+    padding: 8px 0px;
 }
 .admin-data-box {
     border-top: 1px solid #3f434f; 
     padding: 3px 0px;
 }
 .admin-text {
-    font-size: 13px;
+    font-size: 12px;
     margin: 0px;
     padding: 0px 5px;
+}
+.admin-options {
+    font-size: 12px; 
+    padding: 0px 5px
 }
 .admin-radio {
     margin: 3px 2px 0px 2px !important;
