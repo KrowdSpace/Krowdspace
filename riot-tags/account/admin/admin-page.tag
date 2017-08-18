@@ -1,15 +1,12 @@
 <admin-page>
     <style>
     input[type="radio"] {
-        /* remove standard background appearance */
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        /* create custom radiobutton appearance */
         display: inline-block;
         width: 13px;
         height: 13px;
-        /* background-color only for content */
         background-clip: content-box;
         border: 2px solid #bbbbbb;
         background-color: #e7e6e7;
@@ -18,7 +15,6 @@
     input[type="radio"]:focus {
         outline: none;
     }
-    /* appearance for checked radiobutton */
     input[type="radio"]:checked:nth-of-type(1) {
         background-color: #d9534f;
     }
@@ -75,42 +71,43 @@
                 <p class="admin-text">VALID</p>
             </div>
         </div>
-        <form>
-            <div class="col-sm-12 admin-data-box no-gutter" each={ adminData }>
+
+<div ref="formHolder">
+        <form class="projF" each={ adminData }>
+            <div class="col-sm-12 admin-data-box no-gutter">
                 <div class="col-sm-1">
-                    <p class="admin-text">{ unique_id }</p>
+                    <input class="admin-text" name="projectId" type="hidden" value="{ unique_id }"><p class="admin-text">{ unique_id }</p>
                 </div>
                 <div class="col-sm-7">
                     <p class="admin-text">{ project_data.info_data.reward }</p>
                 </div>
                 <div class="col-sm-3 padding-reset">
                     <div class="col-sm-3 text-center">
-                        <input checked={ project_data.info_data.featured } type="checkbox">
+                        <input name="featuredCheck" checked={ project_data.info_data.featured } type="checkbox">
                     </div>
                     <div class="col-sm-3 text-center">
-                        <input checked={ project_data.info_data.explore } type="checkbox">
+                        <input name="exploreCheck" checked={ project_data.info_data.explore } type="checkbox">
                     </div>
                     <div class="col-sm-3 text-center">
-                        <input checked={ project_data.info_data.landing } type="checkbox">
+                        <input name="landingCheck" checked={ project_data.info_data.landing } type="checkbox">
                     </div>
                     <div class="col-sm-3 text-center">
-                        
-                        <input checked={ project_data.info_data.social } type="checkbox">
+                        <input name="socialCheck" checked={ project_data.info_data.social } type="checkbox">
                     </div>
                 </div>
                 <div class="col-sm-1 text-center">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '1'} name="{ unique_id }" type="radio" value="1">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '0'} name="{ unique_id }" type="radio" value="0">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '2'} name="{ unique_id }" type="radio" value="2">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '3'} name="{ unique_id }" type="radio" value="3">
+                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '1'} name="projectValid" type="radio" value="1">
+                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '0'} name="projectValid" type="radio" value="0">
+                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '2'} name="projectValid" type="radio" value="2">
+                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '3'} name="projectValid" type="radio" value="3">
                 </div>
             </div>
-            <div class="col-sm-12 padding-reset">
-                <input type="submit" class="admin-comment-submit" name="submit" value="Update Project Database"/>
-            </div>
         </form>
+        <div class="col-sm-12 padding-reset">
+                <button type="button" onclick={ checker } class="admin-comment-submit" name="submit" value="Update Project Database">Update Project Database</button>
+        </div>
     </div>
-    
+    </div>
     <div class="col-sm-12 text-left admin-container padding-reset shadow">
         <div class="col-sm-12 admin-box no-gutter">
             <div class="col-sm-2">
@@ -126,7 +123,6 @@
                 <p class="admin-text">READ</p>
             </div>
         </div>
-        <form>
             <div class="col-sm-12 admin-data-box no-gutter">
                 <div class="col-sm-2">
                     <p class="admin-text">Mason Halstead</p>
@@ -142,22 +138,39 @@
                     <input class="admin-radio-alt" name="uniqueID" type="radio" value="1">
                 </div>
             </div>
-            <div class="col-sm-12 padding-reset">
-                    <input type="submit" class="admin-comment-submit" name="submit" value="Remove Read Comments"/>
-            </div>
-        </form>
     </div>
     <script type="text/javascript">
         krowdspace.projects.explore().then((res) =>
         {
             this.adminData = res.data;
             this.adminData.reverse();
-            this.update();
-        
+            this.update();            
         },
         (err)=>
         {
             console.log(err)
         });
+
+
+        this.checker = function checker()
+        {
+            let forms = this.refs.formHolder.getElementsByClassName('projF');
+            let sendO = [];
+
+            for(let form of forms)
+            {
+                let lO = {};
+                let fd = new FormData(form);
+                for(let prop of fd)
+                {
+                    lO[prop[0]] = prop[1];
+                }
+                sendO.push(lO);
+            }
+
+            console.log(sendO);
+        }
+    
+        
     </script>
 </admin-page>
