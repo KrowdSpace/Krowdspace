@@ -73,7 +73,6 @@
 this.on('mount', () => {
     krowdspace.v1.stats().then((res)=>
     {
-        console.log(res);
         this.kickstarterTotal = res.data.ksTotal;
         this.indiegogoTotal = res.data.igTotal;
 

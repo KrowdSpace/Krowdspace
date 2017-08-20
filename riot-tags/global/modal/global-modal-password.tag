@@ -37,7 +37,6 @@
         	{
                 $('#modal-password').modal('hide');
                 this.refs.passwordform.reset();
-                console.log(res);
         	},
         	(err) => 
         	{

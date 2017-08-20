@@ -33,8 +33,8 @@
                         </div>
                     </form>
                     <div class="text-center">
-                            <p class="login-float-text">Are you in the right place? <a href="/#/explore" class="function-link">Explore Page!</a></p>
-                       </div>
+                        <p class="login-float-text">Are you in the right place? <a href="/#/explore" class="function-link">Explore Page!</a></p>
+                    </div>
                 </div>
             </div>
             
@@ -50,7 +50,7 @@
         
             krowdspace.v1.login(USERNAME, PASSWORD, STAYLOGGED).then((res)=>
             {
-                this.logged_in = true;
+                
                 this.update();
                 this.refs.accountlogin.reset();
                 window.location.reload();

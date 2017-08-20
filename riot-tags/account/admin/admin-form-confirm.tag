@@ -4,12 +4,18 @@
          <div id="modal">
             <div class="modal-box modal-max-box text-left " style="padding-bottom: 50px;">
                 <p class="modal-heading">Krowdspace Projects Updated</p>
-                <p class="edit-text-title">Projects have been updated and are instantly reflecting the changes on Krowdspace.</p>
+                <p class="edit-text-title">Projects have been updated and will instantly reflect the changes to Krowdspace after hitting the close button.</p>
             </div>
             <div class="text-center modal-max-box">
-                <input class="landing-submit" type="button" data-dismiss="modal" aria-hidden="true" value="Close Modal">
+                <input class="landing-submit" onclick={ refreshPage } value="Close Modal" style="cursor: pointer;">
             </div>
          </div>
       </div>
    </div>
+<script>
+refreshPage() 
+    {
+        window.location.reload();
+    }
+</script>
 </admin-form-confirm>

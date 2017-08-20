@@ -12,7 +12,7 @@
                     <p class="text-left cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
                     <div id="errorRegisterModal" class="alert alert-danger alert-dismissable fade in">
                         <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
-                        <strong>Error:</strong> Username is already in use.
+                        <strong>Error:</strong> Username or email is already in use.
                     </div>
                     <div class="form-group form-split-right">
                         <input type="text" ref="firstname" class="form-control" placeholder="First Name" required="required">

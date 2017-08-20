@@ -36,10 +36,10 @@
             <!-- INDIEGOGO PAGE 1 QUESTION 4 -->
             <div class="form-group col-sm-12 no-gutter indiegogo-registration" style="display: none;">
                 <p class="text-left">Please provide your project ID. <a href="#modal-register-id" data-toggle="modal" class="home-links">Need Help?</a></p>
-                <div class="col-sm-6 form-group link-left">
+                <div class="col-sm-6 col-xs-8 form-group link-left">
                     <input type="text" class="form-control" value="Indiegogo.com/projects/" readonly>
                 </div>
-                <div class="form-group col-sm-6 link-right">
+                <div class="form-group col-sm-6 col-xs-4 link-right">
                     <input ref="indiegogoID" name="indiegogoProject" type="number" class="form-control" placeholder="2152186" minlength="7" maxlength="7">
                 </div>
             </div>
@@ -113,7 +113,7 @@
                 </div>
             </div>
             <div class="register-controls" >
-                <div class="col-xs-offset-3 col-xs-6">
+                <div class="col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
                     <p class="pull-left"><a class="back-project previous-ig">PREVIOUS</a></p>
                     <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit"></p>
                 </div>
