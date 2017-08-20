@@ -64,7 +64,7 @@
             </div> 
             <div class="col-xs-4 no-gutters text-center user-stat-box">
                 <p class="dashboard-user user-text-alt">Rewards</p>
-                    <p class="social-metric">${ krowdspaceTotalReward}</p>
+                    <p class="social-metric">${ krowdspaceTotalReward || 0}</p>
             </div> 
         </div>
         <div class="clearfix"></div>
