@@ -1,6 +1,6 @@
 <admin-page>
     <style>
-    input[type="radio"] {
+        input[type="radio"] {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
@@ -11,22 +11,22 @@
         border: 2px solid #bbbbbb;
         background-color: #e7e6e7;
         border-radius: 50%;
-    }
-    input[type="radio"]:focus {
+        }
+        input[type="radio"]:focus {
         outline: none;
-    }
-    input[type="radio"]:checked:nth-of-type(1) {
+        }
+        input[type="radio"]:checked:nth-of-type(1) {
         background-color: #d9534f;
-    }
-    input[type="radio"]:checked:nth-of-type(2) {
+        }
+        input[type="radio"]:checked:nth-of-type(2) {
         background-color: #fdb540;
-    }
-    input[type="radio"]:checked:nth-of-type(3) {
+        }
+        input[type="radio"]:checked:nth-of-type(3) {
         background-color: #93e026;
-    }
-    input[type="radio"]:checked:nth-of-type(4) {
+        }
+        input[type="radio"]:checked:nth-of-type(4) {
         background-color: #000;
-    }
+        }
     </style>
     <global-logout class="hidden-xs" show={ logged_in } uri={ opts.uri }></global-logout>
     <div class="col-sm-12 text-center">
@@ -71,44 +71,44 @@
                 <p class="admin-text">VALID</p>
             </div>
         </div>
-
-<div ref="formHolder">
-        <form class="projF" each={ adminData }>
-            <div class="col-sm-12 admin-data-box no-gutter">
-                <div class="col-sm-1">
-                    <input class="admin-text" name="projectId" type="hidden" value="{ unique_id }"><p class="admin-text">{ unique_id }</p>
-                </div>
-                <div class="col-sm-7">
-                    <p class="admin-text">{ project_data.info_data.reward }</p>
-                </div>
-                <div class="col-sm-3 padding-reset">
-                    <div class="col-sm-3 text-center">
-                        <input name="featuredCheck" checked={ project_data.info_data.featured } type="checkbox">
+        <div ref="adminForm">
+            <form class="adminPanel" each={ adminData }>
+                <div class="col-sm-12 admin-data-box no-gutter">
+                    <div class="col-sm-1">
+                        <input class="admin-text" name="projectId" type="hidden" value="{ unique_id }">
+                        <p class="admin-text">{ unique_id }</p>
                     </div>
-                    <div class="col-sm-3 text-center">
-                        <input name="exploreCheck" checked={ project_data.info_data.explore } type="checkbox">
+                    <div class="col-sm-7">
+                        <p class="admin-text">{ project_data.info_data.reward }</p>
                     </div>
-                    <div class="col-sm-3 text-center">
-                        <input name="landingCheck" checked={ project_data.info_data.landing } type="checkbox">
+                    <div class="col-sm-3 padding-reset">
+                        <div class="col-sm-3 text-center">
+                            <input name="featuredCheck" checked={ project_data.info_data.featured } type="checkbox">
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <input name="exploreCheck" checked={ project_data.info_data.explore } type="checkbox">
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <input name="landingCheck" checked={ project_data.info_data.landing } type="checkbox">
+                        </div>
+                        <div class="col-sm-3 text-center">
+                            <input name="socialCheck" checked={ project_data.info_data.social } type="checkbox">
+                        </div>
                     </div>
-                    <div class="col-sm-3 text-center">
-                        <input name="socialCheck" checked={ project_data.info_data.social } type="checkbox">
+                    <div class="col-sm-1 text-center">
+                        <input class="admin-radio" checked={ project_data.info_data.rewardValid == '2'} name="rewardStatus" type="radio" value="2">
+                        <input class="admin-radio" checked={ project_data.info_data.rewardValid == '0'} name="rewardStatus" type="radio" value="0">
+                        <input class="admin-radio" checked={ project_data.info_data.rewardValid == '1'} name="rewardStatus" type="radio" value="1">
+                        <input class="admin-radio" checked={ project_data.info_data.rewardValid == '3'} name="rewardStatus" type="radio" value="3">
                     </div>
                 </div>
-                <div class="col-sm-1 text-center">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '1'} name="projectValid" type="radio" value="1">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '0'} name="projectValid" type="radio" value="0">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '2'} name="projectValid" type="radio" value="2">
-                    <input class="admin-radio" checked={ project_data.info_data.rewardValid == '3'} name="projectValid" type="radio" value="3">
-                </div>
+            </form>
+            <div class="col-sm-12 padding-reset">
+                <button type="button" onclick={ adminPanel } class="admin-comment-submit" name="submit" value="Update Project Database">Update Project Database</button>
             </div>
-        </form>
-        <div class="col-sm-12 padding-reset">
-                <button type="button" onclick={ checker } class="admin-comment-submit" name="submit" value="Update Project Database">Update Project Database</button>
         </div>
     </div>
-    </div>
-    <div class="col-sm-12 text-left admin-container padding-reset shadow">
+    <div class="col-sm-12 text-left admin-container padding-reset row-verify shadow">
         <div class="col-sm-12 admin-box no-gutter">
             <div class="col-sm-2">
                 <p class="admin-text">NAME</p>
@@ -116,28 +116,21 @@
             <div class="col-sm-3">
                 <p class="admin-text">EMAIL</p>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-7">
                 <p class="admin-text">COMMENT</p>
             </div>
-            <div class="col-sm-1 text-center">
-                <p class="admin-text">READ</p>
+        </div>
+        <div class="col-sm-12 admin-data-box no-gutter" each={ adminComments }>
+            <div class="col-sm-2">
+                <p class="admin-text">{ fname }</p>
+            </div>
+            <div class="col-sm-3">
+                <p class="admin-text">{ email }</p>
+            </div>
+            <div class="col-sm-7">
+                <p class="admin-text">{ comment }</p>
             </div>
         </div>
-            <div class="col-sm-12 admin-data-box no-gutter">
-                <div class="col-sm-2">
-                    <p class="admin-text">Mason Halstead</p>
-                </div>
-                <div class="col-sm-3">
-                    <p class="admin-text">Mason@krowdspace.com</p>
-                </div>
-                <div class="col-sm-6">
-                    <p class="admin-text">Comment can go here.</p>
-                </div>
-                <div class="col-sm-1 text-center">
-                    <input class="admin-radio-alt" name="uniqueID" type="radio" value="0">
-                    <input class="admin-radio-alt" name="uniqueID" type="radio" value="1">
-                </div>
-            </div>
     </div>
     <script type="text/javascript">
         krowdspace.projects.explore().then((res) =>
@@ -150,13 +143,24 @@
         {
             console.log(err)
         });
-
-
-        this.checker = function checker()
+        
+        krowdspace.admin.getComments().then((res) =>
         {
-            let forms = this.refs.formHolder.getElementsByClassName('projF');
+            this.adminComments = res.data;
+            this.adminComments.reverse();
+            this.update();            
+        },
+        (err)=>
+        {
+            console.log(err)
+        });
+        
+        
+        this.adminPanel = function adminPanel()
+        {
+            let forms = this.refs.adminForm.getElementsByClassName('adminPanel');
             let sendO = [];
-
+        
             for(let form of forms)
             {
                 let lO = {};
@@ -167,10 +171,17 @@
                 }
                 sendO.push(lO);
             }
-
-            console.log(sendO);
-        }
-    
         
+            let ADMINSUBMIT = sendO;
+        
+            krowdspace.admin.submit(ADMINSUBMIT).then((res)=>
+            {
+                $('#admin-update-confirm').modal('show');
+            },
+            (err) => 
+            {
+        
+            });
+        }
     </script>
 </admin-page>

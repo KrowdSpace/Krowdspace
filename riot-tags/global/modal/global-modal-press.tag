@@ -16,7 +16,7 @@
                         </button>
                         <p class="modal-heading logo-push">KROWDSPACE LOGO</p>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v1.png">
+                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v1.png" alt="Krowdspace Press Logo 1">
                             <div class="col-xs-6 press-download-left">
                                 <a href="img/press/krowdspace-icon-v1.png" download>
                                 <p class="download-font">PNG</p>
@@ -31,7 +31,7 @@
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
                             <div class="press-img">
                                 <div class="checker no-gutter">
-                                    <img class="img-responsive" src="img/press/krowdspace-icon-v2.png">
+                                    <img class="img-responsive" src="img/press/krowdspace-icon-v2.png" alt="Krowdspace Press Logo 2">
                                 </div>
                             </div>
                                 <div class="col-xs-6 press-download-left">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v3.png">
+                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v3.png" alt="Krowdspace Press Logo 3">
                             <div class="col-xs-6 press-download-left">
                                 <a href="img/press/krowdspace-icon-v3.png" download>
                                 <p class="download-font">PNG</p>
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3 col-xs-6 text-center no-gutter press-box">
-                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v4.png">
+                            <img class="img-responsive press-img" src="img/press/krowdspace-icon-v4.png" alt="Krowdspace Press Logo 4">
                             <div class="col-xs-6 press-download-left">
                                 <a href="img/press/krowdspace-icon-v4.png" download>
                                 <p class="download-font">PNG</p>
@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 no-gutter press-box">
-                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v6.png">
+                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v6.png" alt="Krowdspace Press Logo 6">
                             <div class="col-xs-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v6.png" download>
                                 <p class="download-font png-left">PNG</p>
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 no-gutter press-box">
-                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v7.png">
+                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v7.png" alt="Krowdspace Press Logo 7">
                             <div class="col-xs-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v7.png" download>
                                 <p class="download-font png-left">PNG</p>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 no-gutter press-box">
-                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v5.png">
+                            <img class="img-responsive press-img-alt" src="img/press/krowdspace-icon-v5.png" alt="Krowdspace Press Logo 5">
                             <div class="col-xs-6 text-right press-download-left">
                                 <a href="img/press/krowdspace-icon-v5.png" download>
                                 <p class="download-font png-left">PNG</p>

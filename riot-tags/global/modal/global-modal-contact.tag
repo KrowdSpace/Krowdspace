@@ -3,7 +3,7 @@
       <div class="krowdspace-modal-custom col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
          <div id="modal">
             <div class="modal-body modal-custom">
-                <form onsubmit={ contactMessageModal }>
+                <form ref="commentForm2" onsubmit={ contactMessageModal }>
                 <div class="text-left modal-box-alt modal-max-box-alt">
                     <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
                         <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
@@ -30,18 +30,19 @@
 <script> 
 contactMessageModal(e)
     {
-        e.preventDefault();
+        e.preventDefault(); 
         
         let FULLNAME = this.refs.contactName.value,
+            LASTNAME = 'not needed',
             EMAIL = this.refs.contactEmail.value,
             COMMENT = this.refs.contactMessage.value;
     
-        krowdspace.register.contact_us(FULLNAME,EMAIL,COMMENT).then
+        krowdspace.register.contact_us(FULLNAME,LASTNAME,EMAIL,COMMENT).then
         ((res) => 
         {
             $('#modal-global-contact').modal('hide');
             $('#modal-comment').modal('show');
-            this.refs.commentForm.reset();
+            this.refs.commentForm2.reset();
         },
         (err) => 
         {

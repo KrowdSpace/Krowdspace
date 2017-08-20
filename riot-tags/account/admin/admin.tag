@@ -5,16 +5,19 @@
 	<div class="container-stand-alone">
 		<div class="col-sm-10 col-sm-offset-1 padding-reset">
 			<div class="row dash-row no-gutter">
-				<admin-login show={ !logged_in }></admin-login>
-				<admin-page show={ logged_in } uri={ opts.uri }></admin-page>
+				<admin-login show={ !admin_login }></admin-login>
+				<admin-page show={ admin_login } uri={ opts.uri }></admin-page>
 			</div>
 		</div>  
 	</div>
+	<admin-form-confirm></admin-form-confirm>
 	<script>	
-		krowdspace.v1.check().then((res)=>
+		krowdspace.users.user().then((res)=>
 			{
-				logged_in = true;
-				this.update();
+				if(res.data.level == 4){
+					admin_login = true;
+					this.update();
+				}
 			},
 			(err)=>
 			{

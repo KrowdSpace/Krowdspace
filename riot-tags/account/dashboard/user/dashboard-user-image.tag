@@ -52,7 +52,7 @@
 <div class="col-md-6 project-image-responsive padding-reset">
     <div class="single-item-dashboard slider"> 
         <div class="landing-banner" each= { ExploreBannerFilter }>
-            <img class="img-responsive landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }">
+            <img class="img-responsive landing-slider { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ project_data.meta_data.title }">
             <div class="landing-banner-box">
                 <div class="col-xs-10 padding-reset">
                     <span class="explore-title">{ name }</span>
@@ -93,6 +93,7 @@
                             },
                             meta_data:
                             {
+                                title: 'Featured Projects on Krowdspace',
                                 mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
@@ -121,6 +122,7 @@
                         {
                             meta_data:
                             {
+                                title: 'Featured Projects on Krowdspace',
                                 mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },

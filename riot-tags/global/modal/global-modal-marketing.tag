@@ -8,7 +8,7 @@
                 </button>
                 <img class="img-responsive" src="img/social-content/krowdspace-marketing.jpg"/>
                 <div class="col-sm-12 text-left market-container-modal">
-                    <p class="cta-header">If you have ever backed a crowdfunding project on Kickstarter or Indiegogo then you have to check out Krowdspace.com! If you dont, you will be missing out on free secret perks and extra rewards associated with every campaign.</p>
+                    <p class="cta-header">If you have ever backed a crowdfunding project on Kickstarter or Indiegogo then you have to check out <a href="https://www.krowdspace.com" class="home-links" target="_blank">Krowdspace.com</a>! If you dont, you will be missing out on free secret perks and extra rewards associated with every campaign.</p>
                     <p class="cta-header">Project owners from Indeigogo and Kickstarter submit their projects to Krowdspace with exclusive rewards to gain a larger community. Members on Krowdspace will then have access to these secret rewards and perks and receive them upon backing the campaign. Check to see if the project you want to support has already submitted to Krowdspace. It is that simple and 100% free.</p> 
                     <p class="cta-header">You can register by using the form below!</p>
                 </div>
@@ -16,6 +16,10 @@
                 <div class="col-sm-12 text-left market-container-modal">
                    <p class="modal-heading modal-heading-alt">Krowdspace Register</p>
                     <p class="text-left cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
+                    <div id="errorRegisterMarketing" class="alert alert-danger alert-dismissable fade in">
+                        <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
+                        <strong>Error:</strong> Username or email is already in use.
+                    </div>
                     <div class="form-group form-split-right">
                         <input type="text" ref="firstname" class="form-control" placeholder="First Name" required="required">
                     </div>
@@ -107,12 +111,12 @@ submitRegister(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
-                $('#modal-global-marketing').modal('hide');
-                $('#modal-submission').modal('show');
+        $('#modal-global-marketing').modal('hide');
+        $('#modal-submission').modal('show');
 	},
 	(err) => 
 	{
-		console.log(err);
+        $("#errorRegisterMarketing").show();
 	});
 }    
 </script>

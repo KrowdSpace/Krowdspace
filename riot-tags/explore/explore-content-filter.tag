@@ -36,7 +36,7 @@
         {
             let rewardFilter = res.data;
             this.exploreCards = rewardFilter.filter((element) => {
-                return (element.project_data.info_data.rewardValid == 0);
+                return (element.project_data.info_data.rewardValid == 1);
             });
             
 

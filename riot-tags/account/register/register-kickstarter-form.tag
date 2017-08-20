@@ -30,10 +30,10 @@
             <!-- KICKSTARTER PAGE 1 QUESTION 3 -->
             <div class="form-group col-sm-12 no-gutter">
                 <p class="text-left">Please provide your live crowdfunding project url.</p>
-                <div class="col-xs-4 form-group link-left">
+                <div class="col-sm-4 col-xs-6 form-group link-left">
                     <input type="text" class="form-control" value="Kickstarter.com" readonly>
                 </div>
-                <div class="form-group col-xs-8 link-right">
+                <div class="form-group col-sm-8 col-xs-6 link-right">
                     <input ref="kickstarterLink" type="text" class="form-control" name="kickstarterProject" placeholder="/project/project-url">
                 </div>
             </div>
@@ -105,7 +105,7 @@
                 </div>
             </div>
             <div class="register-controls" >
-                <div class="col-xs-offset-3 col-xs-6">
+                <div class="col-sm-offset-3 col-sm-6 col-xs-offset-2 col-xs-8">
                     <p class="pull-left"><a class="back-project previous-ks">PREVIOUS</a></p>
                     <p class="pull-right"><input class="back-project" type="submit" value="SUBMIT" name="submit" /></p>
                 </div>

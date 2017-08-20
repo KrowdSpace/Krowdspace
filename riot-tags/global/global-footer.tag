@@ -2,7 +2,7 @@
     <footer id="contacts" class="alternate-background">
         <div class="footer-custom">
 			<div class="container">
-                <div class="row" style="margin: 0px;">
+                <div class="row text-reset">
                     <div class="col-md-3 hidden-sm hidden-xs static">
                         <p class="footer-title">
                             <strong>Quick Links</strong>
@@ -25,16 +25,16 @@
                         <p class="text-left social-footer">We are constantly building our social media community. Connect with us for updates on the latest news, promotions and exclusive giveaways.
                         </p>
                         <div class="text-left social-icons">
-                            <a href="https://www.facebook.com/Krowdspaced" target="_blank">
+                            <a href="https://www.facebook.com/Krowdspaced" target="_blank" alt="Krowdspace Facebook">
                             <i class="fa fa-facebook footer-social-icon filterprimary"></i>
                             </a>
-                            <a href="https://www.pinterest.com/Krowdspace" target="_blank">
+                            <a href="https://www.pinterest.com/Krowdspace" target="_blank" alt="Krowdspace Pinterest">
                             <i class="fa fa-pinterest footer-social-icon filterprimary"></i>
                             </a>
-                            <a href="https://www.twitter.com/Krowdspaced" target="_blank">
+                            <a href="https://www.twitter.com/Krowdspaced" target="_blank" alt="Krowdspace Twitter">
                             <i class="fa fa-twitter footer-social-icon filterprimary"></i>
                             </a>
-                            <a href="https://www.instagram.com/Krowdspace" target="_blank">
+                            <a href="https://www.instagram.com/Krowdspace" target="_blank" alt="Krowdspace Instagram">
                             <i class="fa fa-instagram footer-social-icon filterprimary"></i>
                             </a>
                         </div>
@@ -67,12 +67,13 @@
       contactMessage(e)
         {
             e.preventDefault();
-            
+             
             let FULLNAME = this.refs.fullname.value,
+                LASTNAME = 'not needed',
                 EMAIL = this.refs.email.value,
-                COMMENT = this.refs.commentForm.value;
+                COMMENT = this.refs.comment.value;
         
-            krowdspace.register.contact_us(FULLNAME,EMAIL,COMMENT).then
+            krowdspace.register.contact_us(FULLNAME,LASTNAME,EMAIL,COMMENT).then
             ((res) => 
             {
                 $('#modal-comment').modal('show');

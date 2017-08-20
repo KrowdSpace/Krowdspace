@@ -52,7 +52,7 @@
             <div class="row dash-row no-gutter shadow">
                 <dashboard-project-wysiwyg show={ project } project={ project }></dashboard-project-wysiwyg>
             </div>
-            <div class="row dash-row no-gutter shadow">
+            <div class="row dash-row no-gutter hidden-xs shadow">
                 <dashboard-project-bar show={ project } project = { project }></dashboard-project-bar>
                 <dashboard-user-bar show={ !project }></dashboard-user-bar>
             </div>

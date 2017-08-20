@@ -37,7 +37,7 @@
                 svgStyle: {width: '100%', height: '100%'}
             });
         
-        bar.animate(numberMax);  // Number from 0.0 to 1.0
+        bar.animate(numberMax || 1);  // Number from 0.0 to 1.0
         this.update();
         
     },

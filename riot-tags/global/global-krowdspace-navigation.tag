@@ -1,6 +1,6 @@
 <global-krowdspace-navigation>
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-alt explore-fixed-top" >
-        <div class="container">
+        <div class="container" style="min-width: 1px;">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#explore-nav-collapse">
                     <span class="sr-only">Toggle navigation</span><i class="fa fa-bars hamburger"></i>

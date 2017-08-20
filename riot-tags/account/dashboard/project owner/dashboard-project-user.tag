@@ -109,7 +109,7 @@
                 pending = true;
                 warning = false;
 
-            }else if(res.data[0].project_data.info_data.rewardValid == 1)
+            }else if(res.data[0].project_data.info_data.rewardValid == 1 || 4)
             {
                 approved = true;
                 pending = false;
