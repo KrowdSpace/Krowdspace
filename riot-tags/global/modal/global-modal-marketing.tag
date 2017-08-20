@@ -16,6 +16,10 @@
                 <div class="col-sm-12 text-left market-container-modal">
                    <p class="modal-heading modal-heading-alt">Krowdspace Register</p>
                     <p class="text-left cta-header">Discover extra rewards for projects you love or submit your own crowdfunding project!</p>
+                    <div id="errorRegisterMarketing" class="alert alert-danger alert-dismissable fade in">
+                        <a class="close" onclick="$('.alert').hide()"><i class="fa fa-close"></i></a>
+                        <strong>Error:</strong> Username is already in use.
+                    </div>
                     <div class="form-group form-split-right">
                         <input type="text" ref="firstname" class="form-control" placeholder="First Name" required="required">
                     </div>
@@ -107,12 +111,12 @@ submitRegister(e)
 	krowdspace.register.user(FNAME, LNAME, EMAIL, USERNAME, PASSWORD, KSUSER, IGUSER).then
 	((res) => 
 	{
-                $('#modal-global-marketing').modal('hide');
-                $('#modal-submission').modal('show');
+        $('#modal-global-marketing').modal('hide');
+        $('#modal-submission').modal('show');
 	},
 	(err) => 
 	{
-		console.log(err);
+        $("#errorRegisterMarketing").show();
 	});
 }    
 </script>

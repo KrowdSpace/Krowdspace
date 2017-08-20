@@ -48,10 +48,10 @@
     <div class="home-banner">
         <div class="autoplay-explore slider explore-header">
             <div class="landing-banner" each= { ExploreBannerFilter }>
-                <img class="landing-slider img-responsive { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ name }">
+                <img class="landing-slider img-responsive { project_data.meta_data.mainImg || 'indiegogo-image-small' }" src="{ project_data.meta_data.mainImg || project_data.meta_data.altImg }" alt="{ project_data.meta_data.title }">
                 <div class="landing-banner-box">
                     <div class="col-xs-9 padding-reset">
-                        <span class="explore-title">{ name }</span>
+                        <span class="explore-title">{ project_data.meta_data.title }</span>
                         <div class="explore-box-text">
                             <span class="explore-title">{ project_data.info_data.reward }</span>
                         </div>
@@ -84,6 +84,7 @@
                             },
                             meta_data: 
                             {
+                                title: 'Featured Projects on Krowdspace',
                                 mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
@@ -99,6 +100,7 @@
                             },
                             meta_data: 
                             {
+                                title: 'Join Krowdspace Today!',
                                 mainImg: '/img/content/krowdspace-join.jpg',
                             },
                         },
@@ -134,6 +136,7 @@
                             },
                             meta_data: 
                             {
+                                title: 'Featured Projects on Krowdspace',
                                 mainImg: '/img/content/krowdspace-banner-1.jpg',
                             },
                         },
@@ -149,6 +152,7 @@
                             },
                             meta_data: 
                             {
+                                title: 'Join Krowdspace Today!',
                                 mainImg: '/img/content/krowdspace-join.jpg',
                             },
                         },

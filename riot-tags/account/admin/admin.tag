@@ -10,6 +10,7 @@
 			</div>
 		</div>  
 	</div>
+	<admin-form-confirm></admin-form-confirm>
 	<script>	
 		krowdspace.v1.check().then((res)=>
 			{

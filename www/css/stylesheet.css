@@ -502,7 +502,7 @@ display: inline;
     overflow-x: hidden;
 }
 .modal-custom {
-    padding: 0px 50px;
+    padding: 0px;
 }
 .krowdspace-modal {
     margin-top: 50px;
@@ -1079,6 +1079,13 @@ background-color: #fed136;
 #errorLog {
     font-size: 14px;
     padding: 9px;
+    display: none; 
+    position: relative;
+}
+#errorRegister, #errorRegisterModal, #errorRegisterMarketing {
+    font-size: 14px;
+    padding: 9px;
+    margin-bottom: 10px;
     display: none; 
     position: relative;
 }
@@ -1952,17 +1959,17 @@ border: 1px solid #3f434f;
         margin: 0px;
         padding: 0px;
     }
-    .krowdspace-modal-custom {
-        padding-right: 0px;
-        padding-left: 0px;
-    }
     .modal-custom {
         margin: 20px 0px;
-        padding: 0px;
     }
     .marketing-modal {
         margin: 0px;
         padding: 0px;
+    }
+    .container-page {
+        border: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
     }
     .landing-header {
         margin-top: 0px !important;
@@ -2011,10 +2018,14 @@ border: 1px solid #3f434f;
     .project-add-text {
         display: inline-block;
         padding: 10px 8px 8px;
+        height: 33px;
         font-size: 13px;
         line-height: 1;
         margin-top: 1px;
         border: 1px solid #3f434f;
+    }
+    .project-add-btn {
+        height: 33px;
     }
     .project-yield {
         display: inline-block;
@@ -2082,6 +2093,9 @@ border: 1px solid #3f434f;
         }
         .register-controls {
            position: relative;
+        }
+        .social-metric {
+            font-size: 16px;
         }
     }
 @media screen and (min-width: 551px) {
