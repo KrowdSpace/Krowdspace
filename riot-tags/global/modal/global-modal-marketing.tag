@@ -33,7 +33,7 @@
                         <input type="text" ref="usernameform" class="form-control" placeholder="Username" required="required" minlength="5">
                     </div>
                     <div class="input-group">
-                        <input type="password" ref="passwordform" placeholder="New Password" id="PASSWORD2" class="masked form-control" required="required" minlength="5">
+                        <input type="password" ref="passwordform" placeholder="New Password" id="PASSWORD3" class="masked form-control" required="required" minlength="5">
                         <div class="input-group-btn">
                             <button type="button" id="eyeRegister" class="btn btn-eye">
                             <i class="fa fa-eye fa-lg"></i>
@@ -64,12 +64,12 @@ this.on('mount', function()
 {
 	function show() 
 	{
-		let pass = document.getElementById('PASSWORD2');
+		let pass = document.getElementById('PASSWORD3');
 		pass.setAttribute('type', 'text');
 	}
 	function hide() 
 	{
-		let pass = document.getElementById('PASSWORD2');
+		let pass = document.getElementById('PASSWORD3');
 		pass.setAttribute('type', 'password');
 	}
 	

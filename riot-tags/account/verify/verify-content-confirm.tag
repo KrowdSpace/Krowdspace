@@ -1,5 +1,5 @@
 <verify-content-confirm>
-    <div class="row row-verify">
+    <div class="row-verify">
         <p class="text-center verify-confirmation">Thank you for registering with Krowdspace!</p>
         <div class="col-sm-12">
             <p class="verify-tag">Enjoy our...</p>
