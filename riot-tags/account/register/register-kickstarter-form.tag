@@ -29,7 +29,7 @@
             </div>
             <!-- KICKSTARTER PAGE 1 QUESTION 3 -->
             <div class="form-group col-sm-12 no-gutter">
-                <p class="text-left">Please provide your live crowdfunding project url.</p>
+                <p class="text-left">Please provide your live crowdfunding project url. <a href="#modal-register-link" data-toggle="modal" class="home-links">Need Help?</a></p>
                 <div class="col-sm-4 col-xs-6 form-group link-left">
                     <input type="text" class="form-control" value="Kickstarter.com" readonly>
                 </div>
@@ -48,7 +48,7 @@
         <fieldset id="reward_information" class="reward_information">
             <!-- KICKSTARTER PAGE 2 QUESTION 1-->
             <div class="form-group col-sm-12">
-                <p class="text-left">Please provide an exclusive reward for our Krowdspace users.</p>
+                <p class="text-left">Please provide an <a href="#modal-global-rewards" data-toggle="modal" class="home-links">exclusive reward</a> for our Krowdspace users.</p>
                 <input ref="kickstarterReward" class="form-control" name="kickstarterReward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
             </div>
             <!-- KICKSTARTER PAGE 2 QUESTION 2-->

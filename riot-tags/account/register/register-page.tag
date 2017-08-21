@@ -11,6 +11,7 @@
 			</div>
         </div>
     <register-project-perk></register-project-perk>
+    <register-project-link></register-project-link>
     <register-project-id></register-project-id>
     <register-project-error></register-project-error>
     <global-footer></global-footer>
