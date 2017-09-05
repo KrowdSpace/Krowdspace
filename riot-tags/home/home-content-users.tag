@@ -36,8 +36,9 @@
 
            let kickstarterTotalRaised = res.data.platforms[0].raisedAmount,
                indiegogoTotalRaised = res.data.platforms[1].raisedAmount,
-               raisedValue = kickstarterTotalRaised + indiegogoTotalRaised;
-           this.krowdspaceTotalRaised = raisedValue.toLocaleString();
+               raisedValue = kickstarterTotalRaised + indiegogoTotalRaised,
+               roundedValue = Math.round(raisedValue);
+           this.krowdspaceTotalRaised = roundedValue.toLocaleString();
            this.update();
 
         },
