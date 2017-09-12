@@ -32,9 +32,14 @@
     {
         this.filterTag = opts.filtersearch;
 
-        krowdspace.projects.explore().catch(err=>console.log('error: ', err)).then((res) =>
+        let DATA = {
+            LIMIT: 50,
+        };
+        
+        krowdspace.projects.explore(DATA).catch(err=>console.log('error: ', err)).then((res) =>
         {
             let rewardFilter = res.data;
+            console.log(rewardFilter);
             this.exploreCards = rewardFilter.filter((element) => {
                 return (element.project_data.info_data.rewardValid == 1);
             });
