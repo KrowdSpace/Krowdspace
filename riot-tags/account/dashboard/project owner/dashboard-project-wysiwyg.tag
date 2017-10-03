@@ -18,6 +18,7 @@
         {
             $('.wysiwyg').froalaEditor()
             $('.wysiwyg').froalaEditor('html.set', projectContent);
+            $('.wysiwyg').froalaEditor('events.trigger', 'charCounter.update');
         });
     });
     

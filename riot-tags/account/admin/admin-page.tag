@@ -139,6 +139,7 @@
         krowdspace.projects.explore(DATA).then((res) =>
         {
             this.adminData = res.data;
+            console.log(this.adminData);
             this.adminData.reverse();
             this.update();            
         },

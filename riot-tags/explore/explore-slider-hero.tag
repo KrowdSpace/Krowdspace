@@ -3,8 +3,8 @@
         .landing-banner {
             height:310px;
             overflow: hidden;
-            width: 550px; 
-            background-color: #000; 
+            width: 550px;
+            background-color: #000;
             position: relative;
             border-top:1px solid #000;
             border-bottom:1px solid #000;
@@ -33,8 +33,8 @@
             width: auto;
         }
         .landing-banner {
-            width: 400px; 
-            background-color: #000; 
+            width: 400px;
+            background-color: #000;
             position: relative;
         }
         .home-banner {
@@ -65,10 +65,14 @@
         </div>
     </div>
     <script type="text/javascript">
-        krowdspace.projects.explore().then((res) =>
+    let DATA = {
+            LIMIT: 50,
+        };
+
+        krowdspace.projects.explore(DATA).then((res) =>
         {
             let ExploreBannerData = res.data;
-            
+
                 FilterExplore = ExploreBannerData.filter((element) => {
                 return (element.project_data.info_data.explore);
             });
@@ -76,13 +80,13 @@
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
-                        project_data: 
+                        project_data:
                         {
-                            info_data: 
+                            info_data:
                             {
                                 reward: ''
                             },
-                            meta_data: 
+                            meta_data:
                             {
                                 title: 'Featured Projects on Krowdspace',
                                 mainImg: '/img/content/krowdspace-banner-1.jpg',
@@ -92,13 +96,13 @@
             let newObject2={
                         unique_url: '#modal-global-register',
                         name: 'Join Krowdspace Today!',
-                        project_data: 
+                        project_data:
                         {
-                            info_data: 
+                            info_data:
                             {
                                 reward: 'Discover Extra Rewards For Projects You Love!'
                             },
-                            meta_data: 
+                            meta_data:
                             {
                                 title: 'Join Krowdspace Today!',
                                 mainImg: '/img/content/krowdspace-join.jpg',
@@ -107,7 +111,7 @@
                     };
 
             FilterExplore.unshift(newObject, newObject2);
-            FilterExplore.reverse(); 
+            FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
@@ -128,13 +132,13 @@
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
-                        project_data: 
+                        project_data:
                         {
-                            info_data: 
+                            info_data:
                             {
                                 reward: ''
                             },
-                            meta_data: 
+                            meta_data:
                             {
                                 title: 'Featured Projects on Krowdspace',
                                 mainImg: '/img/content/krowdspace-banner-1.jpg',
@@ -144,13 +148,13 @@
             let newObject2={
                         unique_url: '#modal-global-register',
                         name: 'Join Krowdspace Today!',
-                        project_data: 
+                        project_data:
                         {
-                            info_data: 
+                            info_data:
                             {
                                 reward: 'Discover Extra Rewards For Projects You Love!'
                             },
-                            meta_data: 
+                            meta_data:
                             {
                                 title: 'Join Krowdspace Today!',
                                 mainImg: '/img/content/krowdspace-join.jpg',
@@ -159,7 +163,7 @@
                     };
 
             FilterExplore.unshift(newObject, newObject2);
-            FilterExplore.reverse(); 
+            FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
 
