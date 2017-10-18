@@ -133,9 +133,13 @@
         </div>
     </div>
     <script type="text/javascript">
-        krowdspace.projects.explore().then((res) =>
+        let DATA = {
+            LIMIT: 50,
+        };
+        krowdspace.projects.explore(DATA).then((res) =>
         {
             this.adminData = res.data;
+            console.log(this.adminData);
             this.adminData.reverse();
             this.update();            
         },

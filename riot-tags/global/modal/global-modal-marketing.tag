@@ -6,7 +6,7 @@
                 <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
                     <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                 </button>
-                <img class="img-responsive" src="img/social-content/krowdspace-marketing.jpg"/>
+                <img class="img-responsive" alt="Krowdspace Marketing with Kickstarter and Indiegogo" src="img/social-content/krowdspace-marketing.jpg"/>
                 <div class="col-sm-12 text-left market-container-modal">
                     <p class="cta-header">If you have ever backed a crowdfunding project on Kickstarter or Indiegogo then you have to check out <a href="https://www.krowdspace.com" class="home-links" target="_blank">Krowdspace.com</a>! If you dont, you will be missing out on free secret perks and extra rewards associated with every campaign.</p>
                     <p class="cta-header">Project owners from Indeigogo and Kickstarter submit their projects to Krowdspace with exclusive rewards to gain a larger community. Members on Krowdspace will then have access to these secret rewards and perks and receive them upon backing the campaign. Check to see if the project you want to support has already submitted to Krowdspace. It is that simple and 100% free.</p> 
@@ -33,9 +33,9 @@
                         <input type="text" ref="usernameform" class="form-control" placeholder="Username" required="required" minlength="5">
                     </div>
                     <div class="input-group">
-                        <input type="password" ref="passwordform" placeholder="New Password" id="PASSWORD2" class="masked form-control" required="required" minlength="5">
+                        <input type="password" ref="passwordform" placeholder="New Password" id="PASSWORD3" class="masked form-control" required="required" minlength="5">
                         <div class="input-group-btn">
-                            <button type="button" id="eyeRegister" class="btn btn-eye">
+                            <button type="button" id="eyeRegister2" class="btn btn-eye">
                             <i class="fa fa-eye fa-lg"></i>
                             </button>
                         </div>
@@ -64,18 +64,18 @@ this.on('mount', function()
 {
 	function show() 
 	{
-		let pass = document.getElementById('PASSWORD2');
+		let pass = document.getElementById('PASSWORD3');
 		pass.setAttribute('type', 'text');
 	}
 	function hide() 
 	{
-		let pass = document.getElementById('PASSWORD2');
+		let pass = document.getElementById('PASSWORD3');
 		pass.setAttribute('type', 'password');
 	}
 	
 	let pwShown = 0;
 	
-	document.getElementById("eyeRegister").addEventListener("click", function () 
+	document.getElementById("eyeRegister2").addEventListener("click", function () 
 	{
 		if (pwShown == 0) 
 		{

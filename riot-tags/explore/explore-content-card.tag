@@ -60,6 +60,10 @@
                     remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
+                    
+                if(daysMax == 0){
+                    daysMax = "∞";
+                }
                 
                 element.ExploreCard = (
                     {

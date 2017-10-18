@@ -14,7 +14,7 @@
                 </a>
             </div>
             <div class="col-xs-6 text-center backed-box-right" >
-                <p class="social-metric">{ counterProject || 0 } DAYS LEFT</p>
+                <p class="social-metric">{ counterProject } DAYS LEFT</p>
             </div>
         </div>
     </div>
@@ -40,8 +40,11 @@
                 end = new Date(endTime),
                 remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000;
                 daysMax = Math.max(0, remaining);
-        
-            this.counterProject = Math.floor(daysMax);
+                daysFloor = Math.floor(daysMax)
+            if(daysFloor == 0){
+                daysFloor = '∞';
+            };
+            this.counterProject = daysFloor;
             this.update();
         },
         (err)=> 

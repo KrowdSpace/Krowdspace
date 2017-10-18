@@ -49,9 +49,9 @@
             <div show={ project } class="row dash-row no-gutter">
                 <dashboard-project-featured project={ project }> </dashboard-project-featured>
             </div>
-            <div class="row dash-row no-gutter shadow">
+            <!-- <div class="row dash-row no-gutter shadow">
                 <dashboard-project-wysiwyg show={ project } project={ project }></dashboard-project-wysiwyg>
-            </div>
+            </div> -->
             <div class="row dash-row no-gutter hidden-xs shadow">
                 <dashboard-project-bar show={ project } project = { project }></dashboard-project-bar>
                 <dashboard-user-bar show={ !project }></dashboard-user-bar>
@@ -73,22 +73,22 @@
         this.projectNum = 0;
         this.projectIndex = 0;
         this.projects = [];
-        
+
         this.project = null;
         this.projectIndex = 0;
         this.user = null;
-        
+
         this.userkey = "";
-        
+
         this.on('mount', ()=>
         {
         	krowdspace.users.user()
         	.catch(err=>err)
         	.then((res)=>
-        	{	
+        	{
         		this.user = res.data;
         		this.userkey = res.data.username;
-        
+
         		return krowdspace.projects.project(this.userkey);
         	})
         	.catch((err)=>
@@ -107,7 +107,7 @@
         			this.setProject(res.data[0]);
         		}
         	});
-        
+
         });
         setProject(proj)
         {
@@ -115,7 +115,7 @@
         	this.projectIndex = this.projects.indexOf(proj);
         	this.update();
         }
-        
+
         makeButtF(proj)
         {
         	let p = proj;

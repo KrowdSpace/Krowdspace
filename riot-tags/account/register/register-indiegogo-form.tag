@@ -54,7 +54,7 @@
         <fieldset id="reward_information" class="reward_information2">
             <!-- INDIEGOGO PAGE 2 QUESTION 1 -->
             <div class="form-group col-sm-12">
-                <p class="text-left">Please provide an exclusive reward for our Krowdspace users.</p>
+                <p class="text-left">Please provide an <a href="#modal-global-rewards" data-toggle="modal" class="home-links">exclusive reward</a> for our Krowdspace users.</p>
                 <input ref="indiegogoReward" class="form-control" name="indiegogoReward" maxlength="110" placeholder="See Sample Rewards Below ( Max Character 110 )">
             </div>
             <!-- INDIEGOGO PAGE 2 QUESTION 2 -->

@@ -24,7 +24,7 @@
                         <button type="button" class="close btn-modal" data-dismiss="modal" aria-hidden="true">
                         <i class="fa fa-2x fa-times krowdspace" aria-hidden="true"></i>
                         </button>
-                        <img class="img-responsive" src="/img/content/landing-purchase.jpg"/>
+                        <img class="img-responsive" alt="Landing Purchase" src="/img/content/landing-purchase.jpg"/>
                         <div class="purchase-price-box no-gutter">
                             <div class="col-sm-6 text-center divider-inside-right">
                                 <p class="purchase-text">LANDING BANNER</p>

@@ -3,8 +3,8 @@
         .landing-banner {
             height:310px;
             overflow: hidden;
-            width: 550px; 
-            background-color: #000; 
+            width: 550px;
+            background-color: #000;
             position: relative;
             border-top:1px solid #3f434f;
             border-bottom:1px solid #3f434f;
@@ -33,8 +33,8 @@
             width: auto;
         }
         .landing-banner {
-            width: 400px; 
-            background-color: #000; 
+            width: 400px;
+            background-color: #000;
             position: relative;
         }
         .home-banner {
@@ -65,31 +65,34 @@
         </div>
     </div>
     <script type="text/javascript">
-        krowdspace.projects.explore().then((res) =>
+        let DATA = {
+            LIMIT: 50,
+        };
+        krowdspace.projects.explore(DATA).then((res) =>
         {
             let ExploreBannerData = res.data,
                 FilterExplore = ExploreBannerData.filter((element) => {
                 return (element.project_data.info_data.landing);
         });
-        
+
         let newObject= {
                     unique_id: '#modal-feature-info',
                     name: '',
                     platform: 'kickstarter',
-                    project_data: 
+                    project_data:
                     {
-                        web_data: 
+                        web_data:
                         {
-                            description: 
+                            description:
                             {
                                 content: '',
                             },
                         },
-                        info_data: 
+                        info_data:
                         {
                             reward: ''
                         },
-                        meta_data: 
+                        meta_data:
                         {
                             title: 'Featured Projects on Krowdspace',
                             mainImg: '/img/content/krowdspace-banner-1.jpg',
@@ -101,32 +104,32 @@
                     unique_url: '#modal-global-register',
                     name: 'Join Krowdspace Today!',
                     platform: 'kickstarter',
-                    project_data: 
+                    project_data:
                     {
-                        web_data: 
+                        web_data:
                         {
-                            description: 
+                            description:
                             {
                                 content: '',
                             },
                         },
-                        info_data: 
+                        info_data:
                         {
                             reward: 'Discover Extra Rewards For Projects You Love!'
                         },
-                        meta_data: 
+                        meta_data:
                         {
                             title: 'Join Krowdspace Today!',
                             mainImg: '/img/content/krowdspace-join.jpg',
                         },
                     },
                 };
-        
+
             FilterExplore.unshift(newObject, newObject2);
-            FilterExplore.reverse(); 
+            FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
-        
+
             $('.autoplay-landing').slick
             ({
                 arrows: false,
@@ -145,20 +148,20 @@
                     unique_id: '#modal-feature-info',
                     name: '',
                     platform: 'kickstarter',
-                    project_data: 
+                    project_data:
                     {
-                        web_data: 
+                        web_data:
                         {
-                            description: 
+                            description:
                             {
                                 content: '',
                             },
                         },
-                        info_data: 
+                        info_data:
                         {
                             reward: ''
                         },
-                        meta_data: 
+                        meta_data:
                         {
                             title: 'Featured Projects on Krowdspace',
                             mainImg: '/img/content/krowdspace-banner-1.jpg',
@@ -170,32 +173,32 @@
                     unique_url: '#modal-global-register',
                     name: 'Join Krowdspace Today!',
                     platform: 'kickstarter',
-                    project_data: 
+                    project_data:
                     {
-                        web_data: 
+                        web_data:
                         {
-                            description: 
+                            description:
                             {
                                 content: '',
                             },
                         },
-                        info_data: 
+                        info_data:
                         {
                             reward: 'Discover Extra Rewards For Projects You Love!'
                         },
-                        meta_data: 
+                        meta_data:
                         {
                             title: 'Join Krowdspace Today!',
                             mainImg: '/img/content/krowdspace-join.jpg',
                         },
                     },
                 };
-        
+
             FilterExplore.unshift(newObject, newObject2);
-            FilterExplore.reverse(); 
+            FilterExplore.reverse();
             this.ExploreBannerFilter = FilterExplore;
             this.update();
-        
+
             $('.autoplay-landing').slick
             ({
                 arrows: false,
