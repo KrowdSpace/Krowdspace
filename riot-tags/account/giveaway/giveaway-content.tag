@@ -7,12 +7,11 @@
             <div class="col-sm-12">
                 <p class="privacy-title">Previous Giveaways</p>
                 <div class="giveaway-box text-left">
-                    <p class="privacy-title">$50 Bolt Action Pen - 10/17/17</p>
-                    <p class="privacy-title">$75 Amazon Card - 10/10/17</p>
                     <p class="privacy-title">$50 Amazon Card - 04/01/17</p>
                     <p class="privacy-title">$75 K POP Prize Package - 05/25/17</p>
                     <p class="privacy-title">$60 Krowdspace Party Pack - 07/22/17</p>
-                    <p class="privacy-title">$75 Krowdspace Launch Giveaway - 10/30/17</p>
+                    <p class="privacy-title">$75 Krowdspace Launch Giveaway - 10/10/17</p>
+                    <p class="privacy-title">$50 Bolt Action Pen - 10/17/17</p>
                 </div>
             </div>
         </div>
