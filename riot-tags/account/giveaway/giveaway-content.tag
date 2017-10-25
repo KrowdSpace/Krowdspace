@@ -99,7 +99,8 @@
     .profile-image-inner {
   width: 100%;
 }
-.profile-article-box, .profile-article-box-reverse {
+.profile-article-box, .profile-article-box-reverse, .giveaway-sm {
+  padding-top: 25px;
   width: 100%;
 }
   };
@@ -111,7 +112,7 @@
     <div class="col-sm-6 giveaway-box" style="padding: 0px;">
         <img id="giveaway7" class="giveaway img-responsive">
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 giveaway-sm">
         <p>The P01 Pioneer Bifold Wallet &amp; Pen Kickstarter Giveaway!</p>
         <p>Enter to win a Handcrafted D01 Dapper Wallet Worth $70 and help introduce the brand new P01 Pioneer Bifold Wallet &amp; Pen from Dango. Take a moment to admire these handcrafted Italian leather products made in the USA. Now funding on Kickstarter and being featured at Krowdspace.</p>
         <div class="giveaway-btn-box">
