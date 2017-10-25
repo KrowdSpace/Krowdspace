@@ -117,7 +117,7 @@
         <p>Enter to win a Handcrafted D01 Dapper Wallet Worth $70 and help introduce the brand new P01 Pioneer Bifold Wallet &amp; Pen from Dango. Take a moment to admire these handcrafted Italian leather products made in the USA. Now funding on Kickstarter and being featured at Krowdspace.</p>
         <div class="giveaway-btn-box">
             <a href="https://gleam.io/sMyBN/pioneer-bifold-wallet-pen" target="_blank">
-            <button class="btn back-project">ENTER GIVEAWAY</button>
+            <button class="btn back-project" style="padding: 10px 20px;">ENTER GIVEAWAY</button>
           </a>
         </div>
     </div>
