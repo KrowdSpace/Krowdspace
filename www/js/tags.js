@@ -44,7 +44,6 @@ riot.tag2('admin-page', '<global-logout class="hidden-xs" show="{logged_in}" uri
         krowdspace.projects.explore(DATA).then((res) =>
         {
             this.adminData = res.data;
-            console.log(this.adminData);
             this.adminData.reverse();
             this.update();
         },
@@ -92,6 +91,7 @@ riot.tag2('admin-page', '<global-logout class="hidden-xs" show="{logged_in}" uri
             });
         }
 });
+
 riot.tag2('admin', '<div class="row"> <global-krowdspace-navigation></global-krowdspace-navigation> </div> <div class="container-stand-alone"> <div class="col-sm-10 col-sm-offset-1 padding-reset"> <div class="row dash-row no-gutter"> <admin-login show="{!admin_login}"></admin-login> <admin-page show="{admin_login}" uri="{opts.uri}"></admin-page> </div> </div> </div> <admin-form-confirm></admin-form-confirm>', '', '', function(opts) {
 
 		krowdspace.users.user().then((res)=>
@@ -1725,7 +1725,6 @@ riot.tag2('explore-content-filter', '<div> <div class="col-sm-5 filter-rows"> <s
         krowdspace.projects.explore(DATA).catch(err=>console.log('error: ', err)).then((res) =>
         {
             let rewardFilter = res.data;
-            console.log(rewardFilter);
             this.exploreCards = rewardFilter.filter((element) => {
                 return (element.project_data.info_data.rewardValid == 1);
             });
@@ -1820,6 +1819,7 @@ riot.tag2('explore-content-filter', '<div> <div class="col-sm-5 filter-rows"> <s
         }
     };
 });
+
 riot.tag2('explore-page', '<div> <global-krowdspace-navigation></global-krowdspace-navigation> <explore-slider-hero></explore-slider-hero> </div> <div class="container explore-bottom"> <explore-content-filter filtersearch="{filter}"></explore-content-filter> <explore-content-card ref="filter"></explore-content-card> </div> <div class="row"> <global-footer></global-footer> </div> <explore-modal-login></explore-modal-login> <explore-modal-register></explore-modal-register>', '', '', function(opts) {
         this.on('mount', ()=>
         {

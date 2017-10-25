@@ -35,10 +35,10 @@
             <i class="fa fa-circle" style="color: #d9534f;" aria-hidden="true"></i> Returned
             </span>
             <span class="admin-options">
-            <i class="fa fa-circle" style="color: #fdb540;" aria-hidden="true"></i> Pending 
+            <i class="fa fa-circle" style="color: #fdb540;" aria-hidden="true"></i> Pending
             </span>
             <span class="admin-options">
-            <i class="fa fa-circle" style="color: #93e026;" aria-hidden="true"></i> Approved 
+            <i class="fa fa-circle" style="color: #93e026;" aria-hidden="true"></i> Approved
             </span>
             <span class="admin-options">
             <i class="fa fa-circle" style="color: #000000;" aria-hidden="true"></i> Expired
@@ -139,32 +139,31 @@
         krowdspace.projects.explore(DATA).then((res) =>
         {
             this.adminData = res.data;
-            console.log(this.adminData);
             this.adminData.reverse();
-            this.update();            
+            this.update();
         },
         (err)=>
         {
             console.log(err)
         });
-        
+
         krowdspace.admin.getComments().then((res) =>
         {
             this.adminComments = res.data;
             this.adminComments.reverse();
-            this.update();            
+            this.update();
         },
         (err)=>
         {
             console.log(err)
         });
-        
-        
+
+
         this.adminPanel = function adminPanel()
         {
             let forms = this.refs.adminForm.getElementsByClassName('adminPanel');
             let sendO = [];
-        
+
             for(let form of forms)
             {
                 let lO = {};
@@ -175,16 +174,16 @@
                 }
                 sendO.push(lO);
             }
-        
+
             let ADMINSUBMIT = sendO;
-        
+
             krowdspace.admin.submit(ADMINSUBMIT).then((res)=>
             {
                 $('#admin-update-confirm').modal('show');
             },
-            (err) => 
+            (err) =>
             {
-        
+
             });
         }
     </script>

@@ -19,7 +19,7 @@
                 </div>
             </form>
         </div>
-    </div>   
+    </div>
     <script>
 
     this.exploreCards = [];
@@ -35,15 +35,14 @@
         let DATA = {
             LIMIT: 50,
         };
-        
+
         krowdspace.projects.explore(DATA).catch(err=>console.log('error: ', err)).then((res) =>
         {
             let rewardFilter = res.data;
-            console.log(rewardFilter);
             this.exploreCards = rewardFilter.filter((element) => {
                 return (element.project_data.info_data.rewardValid == 1);
             });
-            
+
 
             let catSet = new Set();
 
@@ -75,18 +74,18 @@
         }
     };
 
-    this.onSearch = function onSearch() 
+    this.onSearch = function onSearch()
     {
         var value = this.refs.searchBox.value;
         var exploreCards = this.filterTag.exploreCards;
-       
+
         let filterArray = this.projectSorter( this.exploreCards.filter( this.categoriesFilter(value) ) );
 
         this.setExploreCards(filterArray);
     };
 
     this.onCatChange = function onCatChange()
-    {    
+    {
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value;
         this.onSearch();
@@ -105,9 +104,9 @@
         });
 
 
-        fpA.reverse(); 
-        
-        spA.reverse(); 
+        fpA.reverse();
+
+        spA.reverse();
 
 
         spA.splice(0, 0, ...fpA);
@@ -115,11 +114,11 @@
         return spA;
     };
 
-    this.categoriesFilter = function categoriesFilter(filterText) 
+    this.categoriesFilter = function categoriesFilter(filterText)
     {
         let o = this.refs.options;
         let option = o.options[o.selectedIndex].value.toLowerCase();
-        filterText = filterText.toLowerCase();  
+        filterText = filterText.toLowerCase();
 
         return function(el)
         {
@@ -131,8 +130,8 @@
             }
             else
             {
-                return cat.includes( option ) 
-                    && (filterText == '' || el.name.toLowerCase().includes( filterText ));    
+                return cat.includes( option )
+                    && (filterText == '' || el.name.toLowerCase().includes( filterText ));
             }
         }
     };
