@@ -38,17 +38,17 @@
     </div>
     <script>
         this.displayCards = [];
-        
+
         this.fixMetaCrap = function fixMetaCrap(pa)
         {
             let res = {data: pa};
-        
+
             let projectArray = res.data;
-        
+
             projectArray.forEach((element) =>
             {
                 let goalValue = element.project_data.meta_data.funding || 0,
-                    goalLocale = goalValue.toLocaleString(),
+                    goalLocale = Math.round(parseFloat(element.project_data.meta_data.funding.toLocaleString().replace(/,/g, ''))).toLocaleString() || 0,
 
                     raisedValue = element.project_data.meta_data.raised || 0,
                     raisedLocale = raisedValue.toLocaleString(),
@@ -60,14 +60,14 @@
                     remaining = new Date( end.getTime() - ( new Date().getTime() ) ).getTime() / 86400000,
                     countdown = Math.floor(remaining),
                     daysMax = Math.max(0, countdown);
-                    
+
                 if(daysMax == 0){
                     daysMax = "∞";
                 }
-                
+
                 element.ExploreCard = (
                     {
-                        data: 
+                        data:
                         {
                             'platform': element.platform,
                             'id': element.unique_id,
@@ -78,7 +78,7 @@
                             'backed': raisedLocale,
                             'goal': goalLocale,
                             'percent': percentWhole,
-                            'days': daysMax, 
+                            'days': daysMax,
                             'title': element.project_data.meta_data.title,
                             'reward': element.project_data.info_data.reward,
                         }
@@ -87,14 +87,14 @@
             });
             return projectArray;
         }
-        
+
         this.setExploreCards = function setExploreCards(neA)
         {
             this.displayCards = neA;
             this.fixMetaCrap(this.displayCards);
-        
+
             this.update();
         };
-        
+
     </script>
 </explore-content-card>
