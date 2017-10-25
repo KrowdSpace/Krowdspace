@@ -57,15 +57,15 @@
             <div class="col-xs-4 no-gutters text-center user-stat-box">
             <p class="dashboard-user user-text-alt">Kickstarter</p>
                 <p class="social-metric">{ kickstarterTotal }</p>
-            </div> 
+            </div>
             <div class="col-xs-4 no-gutters text-center user-stat-box">
                 <p class="dashboard-user user-text-alt">Indiegogo</p>
                     <p class="social-metric">{ indiegogoTotal }</p>
-            </div> 
+            </div>
             <div class="col-xs-4 no-gutters text-center user-stat-box">
                 <p class="dashboard-user user-text-alt">Rewards</p>
                     <p class="social-metric">${ krowdspaceTotalReward || 0}</p>
-            </div> 
+            </div>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -79,21 +79,21 @@ this.on('mount', () => {
         let kickstarterTotalReward = res.data.platforms[0].rewardAmmount,
             indiegogoTotalReward = res.data.platforms[1].rewardAmmount,
             rewardValue = kickstarterTotalReward + indiegogoTotalReward;
-        this.krowdspaceTotalReward = rewardValue.toLocaleString();
+        this.krowdspaceTotalReward = Math.round(rewardValue).toLocaleString();
 
         this.update();
 
     },
-    (err)=> 
+    (err)=>
     {
         console.log(err);
     })
 });
-</script> 
+</script>
 <script>
     this.on('update', ()=>
     {
-        if(!opts.user) 
+        if(!opts.user)
             return;
 
         let userRes = { data: opts.user },

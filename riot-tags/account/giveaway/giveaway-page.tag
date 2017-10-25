@@ -11,4 +11,9 @@
 			</div>
         </div>
     <global-footer></global-footer>
+    <script>
+    $(document).ready(function () {
+          $(window).scrollTop(0);
+        });
+    </script>
 </giveaway-page>
