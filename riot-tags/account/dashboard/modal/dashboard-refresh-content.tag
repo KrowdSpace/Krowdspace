@@ -29,41 +29,41 @@
        {
            if(!opts.project)
                return;
-      
+
            let res = {data: [opts.project]};
        });
-       
-       submitRefresh(e) 
+
+       submitRefresh(e)
        {
            e.preventDefault();
-      
+
            if(!opts.project)
                return;
-      
+
            let userRes = {data: opts.user}
                projRes = {data: [opts.project]};
-      
+
            this.setUserDeets(userRes, projRes);
-      
-       }; 
-      
+
+       };
+
        setUserDeets(res, pRes)
        {
            let project = pRes.data[0].unique_id,
-               projectData = 
+               projectData =
                {
-                   project_data: 
+                   project_data:
                    {
-                       info_data: 
+                       info_data:
                        {
                            refresh : true,
                        }
                    }
            };
-      
+
            this.setProjDeets(project, projectData);
        }
-       
+
        setProjDeets(project, projectData)
        {
            krowdspace.projects.update_project(project).then((res)=>
