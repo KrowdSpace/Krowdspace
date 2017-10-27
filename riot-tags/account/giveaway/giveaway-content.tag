@@ -146,7 +146,7 @@
         to provide a prize worth $50 or more for elegibility.</p>
       <div class="row" style="margin-left: 0px; margin-right: 0px; margin-top: 50px;">
         <div class="col-sm-6 giveaway-box" style="padding: 0px;">
-          <img id="giveaway7" class="giveaway img-responsive">
+          <img id="giveaway8" class="giveaway img-responsive">
         </div>
         <div class="col-sm-6 giveaway-sm">
           <p>T01 Tactical Wallet + Tether + Extra Band Bundle Giveaway</p>
