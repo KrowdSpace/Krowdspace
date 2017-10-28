@@ -80,7 +80,6 @@
                 FilterExplore = ExploreBannerData.filter((element) => {
                 return (element.project_data.info_data.explore);
             });
-            console.log(FilterExplore);
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
