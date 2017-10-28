@@ -39,6 +39,11 @@
         krowdspace.projects.explore(DATA).catch(err=>console.log('error: ', err)).then((res) =>
         {
             let rewardFilter = res.data;
+
+            rewardFilter.sort(function(a,b) {
+                return new Date(a.date_added).getTime() - new Date(b.date_added).getTime()
+            });
+
             this.exploreCards = rewardFilter.filter((element) => {
                 return (element.project_data.info_data.rewardValid == 1);
             });

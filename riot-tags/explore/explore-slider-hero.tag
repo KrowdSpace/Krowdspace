@@ -73,10 +73,14 @@
         {
             let ExploreBannerData = res.data;
 
+            ExploreBannerData.sort(function(a,b) {
+                return new Date(a.date_added).getTime() - new Date(b.date_added).getTime()
+            });
+
                 FilterExplore = ExploreBannerData.filter((element) => {
                 return (element.project_data.info_data.explore);
             });
-
+            console.log(FilterExplore);
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',
