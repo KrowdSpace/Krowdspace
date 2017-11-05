@@ -91,7 +91,7 @@ module.exports = {
             template: 'src/views/index.html'
         }),
         new ExtractTextWebpackPlugin({
-            filename: "/css/[name].css",
+            filename: "[name].css",
             disable: !isProd,
             allChunks: true
         }),
