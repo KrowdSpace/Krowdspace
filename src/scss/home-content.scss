@@ -174,15 +174,20 @@ flex-wrap: wrap;
 .benefits-row-flex {
   margin-top: 50px;
   display: flex;
+  flex-direction: row;
   align-content: stretch;
   flex-wrap: wrap;
 }
 .landing-banner-box {
-  display: block;
-  margin: auto;
-  padding: 0px 40px;
-}
 
+  margin: auto 0px;
+  padding: 0px 40px;
+  width: 49.9%;
+}
+.landing-banner-box-content {
+  width: 50%;
+  padding: 0px 15px;
+}
 .home-carousel {
 @include aspect-ratio(16,
 9);

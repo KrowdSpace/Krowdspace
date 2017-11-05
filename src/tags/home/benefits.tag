@@ -1,6 +1,6 @@
 <benefits>
-    <div class="row benefits-row-flex">
-        <div class="col-xs-12 col-sm-6 landing-banner-box">
+    <div class="row benefits-row-flex ">
+        <div class="landing-banner-box">
             <div class="landing slider">
                 <div class="home-carousel" each={ LandingData }>
                     <div class="item">
@@ -16,7 +16,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-6 toggle-full-width">
+        <div class="landing-banner-box-content toggle-full-width">
             <h2 id="benefits">How does Krowdspace work?</h2>
             <h3 class="feature-header">Project Creators</h3>
             <p>As a project creator you can submit your live Kickstarter or Indiegogo campaigns to Krowdspace for an additional audience outside your own crowdfunding platform. In order to have your project published, an exclusive reward must be attached to your campaign for backers who support you through the Krowdspace community. Additionally, you will have access to our <a class="anchor-link" href="/#/resource/main">free crowdfunding guides</a> and <a class="anchor-link" href="/#/account/dashboard">promotional tools</a> built around our own crowdfunding experience. When it comes to crowdfunding, reaching every qualified backer counts.</p>

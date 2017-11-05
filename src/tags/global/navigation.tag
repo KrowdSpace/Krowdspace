@@ -88,12 +88,12 @@
                     });
         };
         faqButton() {
+          window.location.replace("/#/info/faq");
           location.reload();
-          window.location = '/#/info/faq';
         };
         benefitsButton() {
+          window.location.replace("/#/info/benefits");
           location.reload();
-          window.location = '/#/info/benefits';
         };
     </script>
 </navigation>
