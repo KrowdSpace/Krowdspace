@@ -1,0 +1,142 @@
+.register-row {
+  margin-top: 50px;
+  padding: 0px 15px;
+}
+.register-body-row {
+  margin-top: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.register-header-box {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid $hr-border;
+}
+.register-title {
+  font-size: 16px;
+  padding: 0px;
+  margin: 20px 0px 25px 0px;
+}
+.register-description {
+  padding: 0px;
+}
+.register-number {
+  font-family: 'latoregular';
+  background-color: $brand-primary;
+  padding: 1px 10px;
+  border-radius: 25px;
+  color: white;
+  margin-right: 10px;
+}
+.register-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+}
+.register-step-description {
+  margin: 0px;
+}
+.register-rewards-box {
+  border-top: 1px solid $hr-border;
+  padding-top: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.register-header-title {
+  font-size: 16px;
+  padding: 0px;
+}
+.reward-list {
+  margin-bottom: 0px;
+}
+.reward-list>li {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.project-form-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.register-form-box {
+  width: 600px;
+  border: 1px solid #d5d5d5;
+  padding:0px;
+}
+.register-btn-kickstarter {
+  width: 50%;
+  border-radius: 0px;
+  float: left;
+  border: none;
+}
+.register-btn-indiegogo {
+  width: 50%;
+  border-radius: 0px;
+  border: none;
+  background-color: #eb1478;
+
+}
+.register-btn-indiegogo:active:hover, .register-btn-indiegogo:active:focus, .register-btn-indiegogo[disabled]:hover, {
+  background-color: #eb1478;
+}
+.register-btn-indiegogo:hover, .register-btn-indiegogo:focus {
+  background-color: darken(#eb1478, 15%);
+}
+.kickstarter-full {
+  height: 20px;
+  margin: 10px 0px;
+  content: url('../images/kickstarter-full.svg');
+}
+.indiegogo-full {
+  height: 20px;
+  margin: 10px 0px;
+  content: url('../images/indiegogo-full.svg');
+}
+.select-campaign-text {
+  text-align: center;
+  font-size: 12px;
+}
+button.submission_form {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  border-radius: 0px;
+}
+button.submission_terms {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  border-radius: 0px;
+}
+.submission_form>.form-group {
+  position: relative;
+}
+.submission_terms {
+  display:none;
+}
+#previous {
+  float: right;
+}
+.krowdspace-featured {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  content: url('../images/brand/krowdspace-featured.svg');
+}
+.register-checkbox {
+  padding-left: 5px;
+  padding-top: 10px;
+}
+.registration-title-terms {
+  font-size: 16px;
+  margin: 25px 0px;
+}
+.errors {
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  font-size: 12px;
+}
+.break-word {
+  word-wrap: break-word;
+}

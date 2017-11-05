@@ -1,0 +1,617 @@
+@media (max-width: 1150px) {
+  .project-child-flex-bottom {
+    display: none;
+  }
+  .project-child-flex-top {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 991px) {
+  .brand-assets-btn {
+    display: none;
+  }
+  .reset-flex {
+    flex-direction: column-reverse;
+  }
+  .reset-box-left {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .reset-box-right {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (max-width: 894px) {
+  .navbar {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-left,
+  .navbar-right {
+    float: none !important;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+  .navbar-nav {
+    float: none !important;
+    margin-top: 7.5px;
+  }
+  .navbar-nav > li {
+    float: none;
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .collapse.in {
+    display: block !important;
+  }
+  .nav-push {
+    border-right: none;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #fff;
+    background-color: transparent;
+  }
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: #cccccc;
+    background-color: transparent;
+  }
+  .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 20px;
+  }
+  .navbar-nav .open .dropdown-menu > li > a,
+  .navbar-nav .open .dropdown-menu .dropdown-header {
+    padding: 5px 15px 5px 25px;
+  }
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .navbar-nav > li > .dropdown-menu {
+    margin-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .open > .dropdown-menu {
+    display: block;
+  }
+  .dropdown-menu > li {
+    border: none;
+  }
+  .toggle-hidden {
+    display: none !important;
+  }
+  .toggle-show {
+    display: block !important;
+  }
+  .dash-flex-row {
+    flex-direction: column;
+    margin-top: 103px;
+  }
+  .dash-header-left {
+    width: 100%;
+    border: none;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .dash-header-right {
+    width: 100%;
+  }
+  .dash-body-row {
+    flex-direction: column;
+  }
+  .dash-offset-left {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+  .dash-offset-right {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dash-offset-flex {
+    padding: 0px;
+  }
+  .dash-offset {
+    padding-left: 0px;
+  }
+  .chart-flex {
+    margin: 0 auto;
+  }
+  .chart-box {
+    margin-left: 0px;
+  }
+  .dash-button-box {
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+  }
+  .dash-button-box-inner {
+    display: inline;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+  }
+  .dash-bottom-box-bottom {
+    display: none;
+  }
+  .dash-buttons {
+    margin: 0px 5px;
+  }
+  .dash-buttons:hover {
+    width: 36px;
+  }
+  .dash-buttons:hover .dash-buttons-text {
+    display: none;
+  }
+  .explore {
+    margin-top: 53px;
+  }
+  #profile-menu,
+  #resource-menu {
+    display: none;
+  }
+  #profile-center,
+  #resource-center {
+    width: 100%;
+    border: none;
+    padding: 0px;
+  }
+  #profile-right,
+  #resource-right {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .profile-flex {
+    margin-top: 103px;
+    flex-wrap: wrap;
+  }
+  .article-box-flex {
+    flex-direction: column;
+  }
+  .article-flex-reverse {
+    flex-direction: column;
+  }
+  .profile-image-inner {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-article-box {
+    max-width: 100%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-article-box-reverse {
+    max-width: 100%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .project-child-flex-bottom {
+    display: block;
+  }
+  .project-flex {
+    flex-direction: column;
+    margin-top: 103px;
+  }
+  .giveaway-flex,
+  .register-row {
+    margin-top: 103px;
+  }
+  .project-data {
+    width: 100%;
+  }
+  #project-image {
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom: none;
+  }
+  .register-header-box {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .project-campaign-data {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .project-share-absolute {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+  }
+  .project-share-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .reset-flex {
+    margin-top: 103px;
+  }
+  .register-rewards-box {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #giveaway-box {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .dash-header-right {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #project-stats {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .feature-row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .giveaway-block-reverse {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .giveaway-image-reverse {
+    margin-bottom: 25px;
+    padding-left: 0px;
+  }
+  .giveaway-block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  .giveaway-image {
+    margin-bottom: 25px;
+    padding-right: 0px;
+  }
+  .resource-flex {
+    margin-top: 103px;
+    flex-direction: column;
+  }
+  .affiliate-flex {
+    flex-direction: row;
+  }
+  .affiliate-left {
+    padding-right: 15px;
+  }
+  .affiliate-right {
+    padding-left: 15px;
+  }
+  .affiliate-flex-content {
+    width: 50%;
+  }
+  .media-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .media-content-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px;
+  }
+  .press-release-guide {
+    width: 100%;
+    padding: 0px;
+  }
+  .press-release-example {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0px;
+  }
+  .email-template-example {
+    width: 100%;
+    margin-top: 50px;
+    padding: 0px;
+  }
+  .email-release-guide {
+    width: 100%;
+    padding: 0px;
+  }
+  .social-guide-left {
+    width: 100%;
+    padding: 0px;
+  }
+  .social-guide-right {
+    width: 100%;
+    padding: 0px;
+  }
+  .social-media-left {
+    width: 100%;
+    padding: 0px;
+  }
+  .social-media-right {
+    width: 100%;
+    padding: 0px;
+  }
+  .secondary-affiliate-push {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .landing-banner-box {
+    display: none;
+  }
+  .toggle-full-width {
+    width: 100%;
+    text-align: center;
+  }
+  .toggle-full-width > * {
+    text-align: center;
+  }
+  .btn-benefits-left {
+    margin: 10px;
+    width: 155px;
+  }
+  .btn-benefits-right {
+    margin: 10px;
+    width: 155px;
+  }
+  .dash-header-right {
+    padding-left: 0px;
+    padding-right: 50px;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .header-title {
+    margin-top: 75px;
+    font-size: 30px;
+    line-height: 34px;
+  }
+  #giveaway-box > giveaway-live > .giveaway-box {
+    padding-right: 0px;
+  }
+  .crowdfunding-sm {
+    margin-bottom: 75px;
+  }
+  .btn-cta-left {
+    margin: 10px;
+    width: 300px;
+  }
+  .btn-cta-right {
+    margin: 10px;
+    width: 300px;
+  }
+  .btn-benefits-left {
+    margin: 25px 10px 0px 10px;
+    width: 300px;
+  }
+  .btn-benefits-right {
+    margin: 25px 10px 0px 10px;
+    width: 300px;
+  }
+  .landing-banner-box {
+    margin-bottom: 50px;
+    padding: 0px;
+  }
+  .toggle-full-width {
+    text-align: center;
+  }
+  .toggle-full-width > * {
+    text-align: center;
+  }
+  .metrics-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .metrics-section {
+    width: 100%;
+  }
+  .join-footer-btn {
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+  }
+  .footer-sm-transition {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+  }
+  .footer-float {
+    margin-bottom: 30px;
+  }
+  #project-status {
+    display: none;
+  }
+  .feature-purchase-left,
+  .feature-purchase-right {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .dash-offset-flex {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .register-row {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 103px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .giveaway-box {
+    padding: 20px 15px;
+  }
+  .dash-giveaway .giveaway-box {
+    padding: 20px 15px;
+  }
+  .reset-box-left {
+    width: 100%;
+  }
+  .article-box-flex,
+  .article-flex-reverse {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .footer-absolute {
+    padding-bottom: 658px;
+  }
+  #home-giveaway > giveaway-live > .giveaway-block {
+    margin-top: 0px;
+  }
+  #home-giveaway > giveaway-live > .giveaway-block > .giveaway-image {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  #home-giveaway > giveaway-live > .giveaway-block > .giveaway-text-block {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .resource-gradient-right {
+    top: 0;
+    z-index: 1;
+    background: #fff;
+  }
+  .krowdspace-design {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .krowdspace-social {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 550px) {
+  .explore-carousel {
+    width: 500px;
+  }
+}
+@media (max-width: 500px) {
+  .explore-carousel {
+    width: 450px;
+  }
+  .affiliate-flex {
+    flex-direction: column;
+  }
+  .affiliate-left {
+    padding-right: 0px;
+  }
+  .affiliate-right {
+    padding-left: 0px;
+  }
+  .affiliate-flex-content {
+    width: 100%;
+  }
+  .secondary-affiliate-push {
+    margin-top: 25px;
+  }
+}
+@media (max-width: 450px) {
+  .explore-carousel {
+    width: 400px;
+  }
+  .modal-dialog {
+    margin: 0px;
+  }
+  .modal-content {
+    width: 100%;
+    padding-bottom: 15px;
+    border: none;
+  }
+  .modal-login-height {
+    height: 100vh;
+  }
+  .mobile-hidden {
+    display: none;
+  }
+  .modal-img-box {
+    margin: 25px;
+  }
+  .modal-heading {
+    margin: 10px;
+  }
+  .login-btn {
+    width: 94%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+  }
+  .form-left,
+  .form-right {
+    padding: 0px;
+  }
+  .profile-form-inputs {
+    width: 100%;
+  }
+  .btn-profile-dash,
+  .btn-profile-save {
+    right: 0;
+    width: 100%;
+  }
+  #giveaway-box > giveaway-live > .giveaway-box {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .register-form-box {
+    border: none;
+  }
+  .about-image {
+    display: none;
+  }
+  .story-box-right,
+  .story-box-left {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .header-title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 400px) {
+  .explore-carousel {
+    width: 350px;
+  }
+}
+@media (max-width: 350px) {
+  .footer-absolute {
+    padding-bottom: 708px;
+  }
+}

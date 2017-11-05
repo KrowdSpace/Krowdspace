@@ -1,0 +1,209 @@
+// Home Content Hero Banner CSS //
+// Home Content Hero Banner CSS //
+
+header {
+    background-image: url('../images/krowdspace-header.png');
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+}
+.hero-filter {
+  background: rgba(0, 0, 0, 0.6);
+}
+.header-title {
+  margin-top: 150px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+.header-text {
+  margin-bottom: 40px;
+  color: #fff;
+}
+.btn-cta-left {
+  padding: 16px 31px;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+.btn-cta-right {
+  padding: 15px 30px;
+  font-size: 12px;
+  background-color: transparent;
+  border: 1px solid #fff;
+}
+
+.btn-cta-right:hover,
+.btn-cta-right:active:hover,
+.btn-cta-right:focus,
+{
+  padding: 15px 30px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, .1);
+  border: 1px solid #fff;
+}
+.crowdfunding-sm {
+    margin-top: 20px;
+    margin-bottom: 160px;
+    color: #fff;
+}
+
+
+// Home Content Features Content CSS //
+// Home Content Features Content CSS //
+
+.features-row {
+    margin-top: 50px;
+}
+.feature-flex {
+    display: flex;
+    align-content: stretch;
+    flex-wrap: wrap;
+    margin: 0px 10px;
+}
+.feature-items {
+    max-width: 350px;
+    position: relative;
+    border: 1px solid $hr-border;
+    padding: 20px 20px 45px 20px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.feature-items>h2 {
+  font-size: 24px;
+}
+.feature-title {
+    margin: 0px;
+}
+
+.feature-text {
+    margin-bottom: 40px;
+    font-size: 14px;
+}
+.feature-btn {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 115px;
+}
+
+// Home Content Metrics Content CSS //
+// Home Content Metrics Content CSS //
+
+.metrics-row-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    border: 1px solid $navbar-inverse-border;
+    margin-top: 50px;
+    background: $navbar-inverse-bg;
+}
+.metrics-section {
+  width: 30%;
+}
+.metrics-title {
+    color: #fff;
+    font-size: 50px;
+    line-height: 64px;
+}
+
+.metrics-text {
+    color: $brand-primary;
+    font-family: 'ralewaysemibold';
+    letter-spacing: 1px;
+    font-size: 12px;
+    margin-top: 0px;
+    text-transform: uppercase;
+}
+
+// Home Content Questions Content CSS //
+// Home Content Questions Content CSS //
+
+.questions-row {
+  margin-top: 50px;
+}
+.questions-row-flex {
+margin-top: 65px;
+display: flex;
+align-content: stretch;
+flex-wrap: wrap;
+}
+.question-box {
+  width: 500px;
+  margin: 0 auto;
+}
+.faq-box {
+  border: 1px solid $hr-border;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0px 5px 40px 5px;
+}
+
+.faq-btn {
+  float: right;
+  height: 34px;
+  padding: 8px 16px 8px 17px;
+  border-radius: 0px;
+  border: none;
+}
+
+.faq-question {
+  margin: 0px;
+  height: 34px;
+  line-height: 32px;
+  padding-left: 10px;
+  padding-right: 0px;
+}
+
+.faq-answer {
+  border-top: 1px solid $hr-border;
+  padding: 10px;
+  margin: 0px;
+}
+
+.faq-mobile-message {
+  text-align: center;
+  font-size: 11px;
+}
+
+// Home Content Benefits Content CSS //
+// Home Content Benefits Content CSS //
+
+.benefits-row-flex {
+  margin-top: 50px;
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+.landing-banner-box {
+  display: block;
+  margin: auto;
+  padding: 0px 40px;
+}
+
+.home-carousel {
+@include aspect-ratio(16,
+9);
+border: 1px solid $hr-border;
+background-color: $navbar-inverse-bg;
+}
+.feature-header {
+  font-family: 'latoregular';
+  margin-left: 0px;
+}
+.btn-benefits-left {
+  margin: 25px 35px 20px 0px;
+}
+
+.btn-benefits-right {
+  margin: 25px 0px 20px 0px;
+}
+// Home Content Giveaway Content CSS //
+// Home Content Giveaway Content CSS //
+
+.giveaway-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

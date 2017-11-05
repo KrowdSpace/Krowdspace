@@ -1,0 +1,47 @@
+.reset-flex {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+.reset-box-left {
+  width: 45%;
+  padding-left: 75px;
+  padding-right: 15px;
+}
+.reset-box-right {
+  width: 55%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.reset-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+}
+.reset-number {
+  font-family: 'latoregular';
+  background-color: $brand-primary;
+  padding: 1px 10px;
+  border-radius: 25px;
+  color: white;
+  margin-right: 10px;
+}
+.reset-box {
+  border: 1px solid $hr-border;
+}
+.reset-description {
+    padding-top: 25px;
+    text-align: left;
+}
+.modal-body-inline {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.reset-btn {
+    width: 100%;
+    border-radius: 0px;
+    padding: 12px;
+    border-color: $brand-primary;
+}
+

@@ -1,0 +1,339 @@
+html {
+  height: 100%;
+}
+html, body {
+  min-height: 100%;
+  position: relative;
+}
+*:hover {
+    transition: all 0.3s ease 0s;
+}
+a:hover, a:focus {
+  cursor: pointer;
+  text-decoration: none;
+}
+h1 {
+    font-family: 'latoregular';
+    font-size: 35px;
+    line-height: 42px;
+    padding: 0px 5px;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 40px;
+    padding: 0px 5px;
+}
+
+h3 {
+    max-width: 885px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 5px;
+    font-size: 15px;
+    line-height: 26px;
+}
+
+h4 {
+    font-size: 11px;
+    padding: 0px 5px;
+}
+
+p {
+    line-height: 26px;
+    padding: 0px 5px;
+}
+
+hr {
+    margin: 150px 0px;
+}
+
+button:focus {
+    outline: none !important;
+}
+ul {
+  list-style: none;
+  padding: 0px;
+}
+li {
+  padding: 0px 5px;
+  line-height: 20px;
+  font-size: 13px;
+}
+.no-gutters > [class^="col-"],
+.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.container-fluid {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container-hero {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.page {
+    background: #fff;
+    position: relative;
+}
+.modal-backdrop.in {
+  opacity: .8;
+}
+.flex {
+  display: flex;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.giveaway-block-reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+.giveaway-image-reverse {
+  padding-left: 50px;
+}
+.giveaway-block {
+  display: flex;
+  flex-direction: row;
+}
+.giveaway-image {
+  padding-right: 50px;
+}
+.giveaway-box {
+  padding: 0px 40px;
+}
+.anchor-link {
+color: $brand-primary;
+}
+.btn {
+  font-family: 'ralewaysemibold';
+  padding: 8px 16px;
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.terms-label {
+  min-height: 20px;
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+// Dashboard + Project CSS //
+// Dashboard + Project CSS //
+.dash-buttons {
+  position: relative;
+  border-radius: 36px;
+  height: 36px;
+  width: 36px;
+  padding: 0px;
+  letter-spacing: 0px;
+  margin-bottom: 5px;
+}
+.dash-icon {
+  padding: 0px 11px;
+}
+.icon-sm {
+  padding: 0px 13px;
+}
+.dash-buttons-text {
+  display: none;
+  padding: 0px 11px 0px 0px;
+}
+.dash-buttons:hover {
+  width: 100%;
+  transition: all 0s ease 0s;
+}
+.dash-buttons:hover .dash-buttons-text {
+  display: inline-block;
+}
+.project-child-flex-top {
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: auto;
+}
+.project-child-flex-bottom {
+  align-self: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}
+.statistics-flex {
+  display: flex;
+  flex-direction: row;
+}
+.statistics-flex-child {
+  flex-grow: 1;
+}
+.statistic {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.progress {
+  margin-bottom: 25px;
+  border-radius: 0px;
+  border: 1px solid $hr-border;
+  border-top: none;
+}
+.statistics-title {
+  margin: 0px;
+}
+// Global Carousel CSS //
+// Global Carousel CSS //
+
+.btn-explore-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .7), ;
+  opacity: 0;
+  -o-transition: opacity .2s ease-in-out;
+  -ms-transition: opacity .2s ease-in-out;
+  -moz-transition: opacity .2s ease-in-out;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.item:hover .btn-explore-box {
+  opacity: 1;
+}
+
+.btn-explore {
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 2px solid $brand-primary;
+}
+.text-slider {
+  line-height: 20px;
+  padding: 5px 10px;
+  margin: 0px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .7), ;
+  width: 100%;
+}
+.img-slider {
+  background-color: $navbar-inverse-bg;
+  height: 100% !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.image-slider-square {
+  display: block;
+    width: auto;
+}
+// Quicklinks Side Navigation //
+// Quicklinks Side Navigation //
+
+.quick-box {
+  border: 1px solid $hr-border;
+  width: 180px;
+}
+#quicklinks-logo {
+  background-color: $brand-primary;
+  border-radius: 30px;
+  display: inline-block;
+  padding: 15px;
+  margin: 25px 0px;
+}
+#profile-quicklinks {
+  width: 30px;
+  display: inline-block;
+  content: url('../images/krowdspace-logo-white.svg');
+}
+#profile-links {
+  margin: 0px;
+}
+#profile-links>li {
+  padding: 0px;
+}
+#profile-links>li>a {
+  display: block;
+  padding: 8px 10px;
+  color: #292929;
+  border-top: 1px solid $hr-border;
+  text-decoration: none;
+}
+#profile-links>li>a:hover {
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+// Dashboard + Giveaway CSS //
+// Dashboard + Giveaway CSS //
+#giveaway-box {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#home-giveaway>giveaway-live>.giveaway-block>.giveaway-image {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+#home-giveaway>giveaway-live>.giveaway-block>.giveaway-text-block {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.giveaway {
+  border: 1px solid $hr-border;
+}
+.giveaway-box {
+  padding: 0px 40px 0px 20px;
+}
+// Profile + Giveaway CSS //
+
+.profile-body-flex {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+.article-flex-reverse {
+  display: flex;
+  justify-content: center;
+  padding: 0px 15px;
+  margin-bottom: 50px;
+  flex-direction: row-reverse;
+}
+.profile-image-inner {
+  @include aspect-ratio(16,9);
+  width: 300px;
+  background-color: $navbar-inverse-bg;
+  border: 1px solid $hr-border;
+}
+.profile-article-image {
+  background-color: $navbar-inverse-bg;
+  height: 100% !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.profile-article-box-reverse {
+  max-width: 600px;
+  margin-right: 25px;
+}
+.profile-article-title {
+  font-size: 16px;
+  padding: 0px 5px;
+}
+.article-box-flex {
+  display: flex;
+  justify-content: center;
+  padding: 0px 15px;
+  margin-bottom: 50px;
+}
+.profile-article-box {
+  max-width: 600px;
+  margin-left: 25px;
+}
+
+

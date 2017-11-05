@@ -1,0 +1,273 @@
+.dash-body-row {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+.dash-body-row-giveaway {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+.dash-offset {
+  padding-left: 75px;
+  width: 100%;
+}
+.dash-offset-left {
+  width: 60%;
+  padding-left: 75px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  position: relative;
+}
+.dash-offset-right {
+  width: 40%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  position: relative;
+}
+.dash-offset-flex {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 75px;
+}
+.feature-purchase-left {
+  padding-left: 0px;
+}
+.feature-purchase-right {
+  padding-right: 0px;
+}
+.dashboard-title {
+  font-size: 16px;
+}
+#project-status {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+}
+.project-status-icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 10px;
+}
+.status-icon-flex {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+}
+.coupon-code {
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 16px;
+  border: 2px solid $brand-primary;
+  padding: 5px 50px;
+  margin: 0px 5px;
+}
+.chart-flex {
+  display: flex;
+  flex-direction: row;
+}
+.chart-box {
+  margin: 20px 20px 0px auto;
+}
+.chart-label-box {
+  margin: 20px auto 0px 20px;
+}
+.chart-statistics {
+  font-size: 20px;
+}
+#dashChart {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+.refresh-text {
+  text-align: center;
+  margin: 20px 0px 0px 0px;
+  font-size: 12px;
+}
+.refresh-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.dash-buttons-static {
+  border-radius: 36px;
+  height: 36px;
+  width: 36px;
+  padding: 0px;
+  letter-spacing: 0px;
+  margin-bottom: 5px;
+}
+.image-inner {
+  @include aspect-ratio(16,9);
+  background-color: $navbar-inverse-bg;
+  border: 1px solid $hr-border;
+}
+.dashboard-image {
+  content: url('../images/krowdspace-header.png');
+  background-color: $navbar-inverse-bg;
+  height: 100% !important;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dash-button-box {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.dash-inner-flex {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.dash-button-box-inner {
+  display: flex;
+  flex-direction: column;
+}
+.dash-bottom-box-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+#featurePurchase {
+  margin-top: 0px;
+}
+.campaign-media-box {
+  margin-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.media-columns {
+  width: 175px;
+  margin-bottom: 15px;
+}
+.media-columns-bottom {
+  width: 175px;
+}
+#media-letters {
+  padding-left: 15px;
+}
+.media-icons {
+  color: #fff;
+}
+.media-column-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 0px;
+}
+.media-column-flex>[class^="col-"]>p {
+  padding: 0px;
+}
+.media-links {
+  color: #666;
+  text-decoration: none !important;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+#dash-giveaway>giveaway-live>.giveaway-block>.giveaway-image {
+  padding-left: 5px;
+}
+#dash-giveaway {
+  margin-top: 50px;
+}
+.project-pending {
+  content: url('../images/status/status-icon-02.svg');
+}
+.project-expired {
+  content: url('../images/status/status-icon-01.svg');
+}
+.project-approved {
+  content: url('../images/status/status-icon-03.svg');
+}
+.icon-pending {
+  content: url('../images/status/icon-pending.svg');
+}
+.icon-expired {
+  content: url('../images/status/icon-expired.svg');
+}
+.icon-approved {
+  content: url('../images/status/icon-approved.svg');
+}
+.dash-flex-row {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+.dash-header-left {
+  width: 50%;
+  padding-left: 75px;
+  padding-right: 15px;
+  border-bottom: 1px solid $hr-border;
+}
+.dash-header-right {
+  position: relative;
+  width: 50%;
+  padding-left: 15px;
+  padding-right: 50px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid $hr-border;
+}
+.project-dash-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.project-flex-child-top {
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: auto;
+}
+.project-flex-child-bottom {
+  align-self: flex-end;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.project-title {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.purchase-box {
+  margin-top: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.project-id-btn {
+  padding: 10px 11px 10px 40px;
+}
+.krowdspace {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 9px 11px 11px 9px;
+  content: url('../images/krowdspace-logo-white.svg');
+}
+.kickstarter {
+  width: 36px;
+  height: 36px;
+  padding: 9px 11px 11px 9px;
+  content: url('../images/kickstarter.svg');
+}
+.indiegogo {
+  width: 36px;
+  height: 36px;
+  padding: 9px 9px 11px 6px;
+  content: url('../images/indiegogo.svg');
+}

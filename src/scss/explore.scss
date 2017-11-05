@@ -1,0 +1,74 @@
+.explore-carousel {
+  @include aspect-ratio(16,
+  9);
+  background-color: $navbar-inverse-bg;
+  width: 550px;
+}
+.filter-row-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.filter-items {
+  max-width: 450px;
+  margin:15px;
+}
+.btn-void {
+  height: 34px;
+}
+.explore-card-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.explore-card {
+  @include aspect-ratio(16,
+  9);
+  border: 1px solid $hr-border;
+  background-color: $navbar-inverse-bg;
+}
+.explore-box {
+  width: 400px;
+  margin: 25px 5px;
+  position: relative;
+}
+.explore-card-text-box {
+  height: 125px;
+  padding: 5px;
+  border: 1px solid $hr-border;
+  border-top: none;
+}
+.explore-text {
+  font-size: 13px;
+  line-height: 1.25;
+}
+.explore-goal-flex {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  right: 5px;
+}
+.goal-info {
+  width: 33%;
+}
+.featured-icon {
+  position: absolute;
+  padding: 9px 5px 7px 5px;
+  border-radius: 20px;
+  background-color: $brand-primary;
+  color: #fff;
+  top: 8px;
+  left: 10px;
+}
+.explore-progress {
+  margin: 0px;
+}
+

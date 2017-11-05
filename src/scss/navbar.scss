@@ -1,0 +1,88 @@
+.navbar-inverse .navbar-nav>li>a {
+    font-family: 'ralewaysemibold';
+    letter-spacing: 1px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.navbar-nav>li {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.navbar-inverse .navbar-brand {
+    padding: 8px 8px;
+    font-family: 'ralewaysemibold';
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar-inverse {
+    border-radius: 0px;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: transparent;
+    color: #cccccc;
+}
+
+.dropdown-menu {
+    padding: 0px;
+    font-family: 'ralewaysemibold';
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 11px;
+    background-color: #fff;
+    border: none;
+    border-top: 1px solid transparent;
+    border-radius: 0px;
+}
+
+.dropdown-menu>li>a {
+    padding: 10px 20px;
+    color: $navbar-inverse-bg;
+}
+
+.dropdown-menu>li {
+    border: 1px solid $hr-border;
+    border-top: none;
+    padding: 0px;
+    font-size: 11px;
+}
+
+.dropdown-menu>li>a:hover {
+    color: $navbar-inverse-bg;
+}
+
+.btn-nav {
+    margin: 10px;
+    margin-left: 25px;
+}
+
+.nav-push {
+    padding-right: 15px;
+    border-right: 1px solid $navbar-inverse-border;
+}
+
+.krowdspace-logo-text {
+    line-height: 37px;
+}
+
+img.krowdspace-logo {
+    width: 31px;
+    padding-bottom: 3px;
+    margin-right: 10px;
+    height: 100%;
+    display: inline-block;
+    content: url('../images/krowdspace-logo.svg');
+}
+.toggle-hidden {
+    display: block;
+}
+.toggle-show {
+    display: none !important;
+}
+#anchor-nav {
+  margin: 0px;
+  padding: 0px;
+}

@@ -1,0 +1,93 @@
+.join-footer-btn {
+  margin-right: 25px;
+}
+
+.footer-title {
+  font-family: 'ralewaysemibold';
+  letter-spacing: 1px;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.footer-row {
+  margin-top: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: $navbar-inverse-bg;
+  color: white;
+}
+
+.footer-sub {
+  border-top: 1px solid #171717;
+  background: #212121;
+}
+
+.footer-sub-left {
+  border-top: 1px solid #3f3f3f;
+  padding-right: 0px;
+}
+
+.footer-sub-right {
+  border-top: 1px solid #3f3f3f;
+  padding-left: 0px;
+}
+
+.footer-sub-right>p {
+  line-height: 50px;
+  margin: 0px;
+}
+
+.footer-row>ul {
+  margin-bottom: 20px;
+}
+
+.footer-float {
+  float: left;
+  margin-right: 30px;
+}
+.footer-float>li>a {
+color: #fff;
+}
+.footer-float>li>a:hover {
+color: $brand-primary;
+}
+.footer-float-hidden {
+float: left;
+margin-right: 30px;
+}
+.footer-float-hidden>li>a {
+color: #fff;
+}
+.footer-float-hidden>li>a:hover {
+color: $brand-primary;
+}
+.footer-text {
+  line-height: 20px;
+  margin-bottom: 35px;
+  font-size: 13px;
+  max-width: 370px;
+}
+
+.copyright {
+  color: #fff;
+  font-size: 13px;
+  margin: 0px;
+  line-height: 50px;
+}
+
+.social-primary {
+  color: #fff;
+  margin: 0px 5px;
+}
+.social-primary:hover {
+color: $brand-primary;
+}
+.footer-absolute {
+  padding-bottom: 368px;
+}
+.footer-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

@@ -1,0 +1,69 @@
+.profile-flex {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+#profile-menu {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.profile-data {
+  border-bottom: 1px solid $hr-border;
+}
+.profile-data-flex {
+  display: flex;
+  align-items: stretch;
+  padding: 0px 15px;
+  border-bottom: 1px solid $hr-border;
+}
+#profile-center {
+  width: 60%;
+}
+#profile-right {
+  width: 40%;
+  padding-left: 15px;
+}
+.profile-relative {
+  position: relative;
+}
+.profile-padding {
+  padding-bottom: 75px;
+}
+.profile-title {
+  font-size: 16px;
+  padding: 0px;
+}
+.interest-data-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 75px;
+}
+.interest-checks {
+  margin: 20px 5px 10px 0px;
+  width: 100px;
+}
+.btn-profile-save {
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+}
+#pebble {
+  content: url('../images/pebble.png');
+}
+#kaisr {
+  content: url('../images/kaisr.jpeg');
+}
+#backers {
+  content: url('../images/krowdspace-header.png');
+}
+.btn-profile-dash {
+  position: absolute;
+  bottom: 25px;
+  left: 0;
+}
+.profile-last-article {
+  margin-bottom: 0px;
+}

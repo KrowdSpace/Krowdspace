@@ -1,0 +1,334 @@
+.modal-dialog {
+  max-width: 450px;
+  margin: 65px auto;
+  margin-bottom: 25px;
+}
+.modal-dialog-full {
+  max-width: 850px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-dialog-medium {
+  max-width: 600px;
+}
+.modal-content {
+  border-radius: 0px;
+  border: 2px solid $brand-primary;;
+  background-clip: border-box;
+}
+.modal-header {
+  border: none;
+}
+.modal-img-box {
+  background-color: $brand-primary;
+  border-radius: 30px;
+  display: inline-block;
+  padding: 15px;
+}
+#krowdspace-modal-cta {
+  position: fixed;
+  display: none;
+  z-index: 1;
+  bottom: 25px;
+  left: 10px;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .4);
+}
+.krowdspace-image-white {
+  width: 30px;
+  display: inline-block;
+  content: url('../images/krowdspace-logo-white.svg');
+}
+#krowdspace-modal-text {
+  display: none;
+  margin: 0px 10px;
+  }
+.project-coupon-code {
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  border: 2px solid $brand-primary;
+  padding: 10px 50px;
+  margin: 0px 5px;
+  font-family: 'latobold';
+  color: $brand-primary;
+  letter-spacing: 2px;
+  font-size: 26px;
+}
+.primary-highlight {
+  background-color: #bbffbb;
+  padding:0px 5px;
+}
+.svg-download {
+  margin-right: 10px;
+}
+.png-download {
+  margin-left: 10px;
+}
+.indiegogo-help-01 {
+  content: url('../images/indiegogo-help-01.jpg');
+  margin: 25px 0px;
+}
+.indiegogo-help-02 {
+  content: url('../images/indiegogo-help-02.jpg');
+  margin: 25px 0px;
+}
+.about-image-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid $hr-border;
+}
+#brand1 {
+  width: 150px;
+  height: auto;
+  content: url('../images/brand/krowdspace-primary.svg');
+}
+#brand2 {
+  width: 150px;
+  height: auto;
+  content: url('../images/brand/krowdspace-reverse-primary.svg');
+}
+#brand3 {
+  width: 150px;
+  height: auto;
+  content: url('../images/brand/krowdspace-alternative.svg');
+}
+#brand4 {
+  width: 150px;
+  height: auto;
+  content: url('../images/brand/krowdspace-reverse-alternative.svg');
+}
+#brand5 {
+  width: 500px;
+  height: auto;
+  content: url('../images/brand/krowdspace-featured.svg');
+}
+#brand6 {
+  width: 500px;
+  height: auto;
+  content: url('../images/brand/krowdspace-featured-alternative.svg');
+}
+#profile-mason {
+width: 125px;
+height: auto;
+content: url('../images/about/mason.png');
+}
+#profile-david {
+width: 125px;
+height: auto;
+content: url('../images/about/david.png');
+}
+#profile-ben {
+width: 125px;
+height: auto;
+content: url('../images/about/ben.png');
+}
+#profile-andre {
+width: 125px;
+height: auto;
+content: url('../images/about/andre.png');
+}
+.about-image {
+  width: 100px;
+}
+#About1 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-01.png');
+}
+#About2 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-02.png');
+}
+#About3 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-03.png');
+}
+#About4 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-04.png');
+}
+#About5 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-05.png');
+}
+#About6 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-06.png');
+}
+#About7 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/about/about-07.png');
+}
+#About8 {
+  width: 100px;
+  height: 100px;
+  content: url('../images/brand/krowdspace-primary.svg');
+}
+.modal-heading {
+  font-size: 24px;
+  margin: 15px 0px 0px 0px;
+  line-height: 24px;
+}
+.close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 15px;
+  opacity: 1;
+}
+.modal-footer {
+  border: none;
+  padding: 0px;
+  margin-top: 25px;
+}
+.brand-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.brand-box {
+  border: 1px solid $hr-border;
+  position: relative;
+
+  margin: 15px 20px;
+  padding: 30px 50px;
+}
+.brand-btn {
+  margin-top: 25px;
+}
+.brand-box-banner {
+  border: 1px solid $hr-border;
+  position: relative;
+  margin: 15px 20px;
+  padding: 20px 30px;
+}
+.color-code-primary {
+  color: $brand-primary;
+}
+.color-code-alternative {
+  color: #333333;
+}
+.brand-title {
+  margin-top: 25px;
+  margin-bottom: 0px;
+  font-size: 20px;
+}
+.brand-absolute-top {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  left: 0;
+}
+.brand-absolute-bottom {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+}
+.about-story-flex {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin-top: 50px;
+}
+.about-story-flex-reverse {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  margin-top: 50px;
+}
+.about-story-title {
+  font-size: 16px;
+}
+.names-title {
+  margin: 0px;
+  font-size: 15px;
+}
+.legal-title {
+  margin-top: 40px;
+  font-size: 16px;
+  font-family: 'latoregular';
+}
+.legal-title-subtext {
+  font-size: 14px;
+  margin-top: 25px;
+  font-family: 'latoregular';
+}
+.story-box-left {
+  margin-left: 15px;
+}
+.story-box-right {
+  margin-right: 15px;
+}
+.modal-body-text {
+  text-align: left;
+  padding: 0px;
+  margin-bottom: 25px;
+}
+.checkbox {
+  float:left;
+  margin-top: 0px;
+}
+.login-password {
+  float:right;
+  line-height: 20px;
+}
+.login-btn {
+  width: 100%;
+  border-radius: 0px;
+  padding: 12px;
+  border-color: $brand-primary;
+}
+.login-question {
+  text-align: center;
+  color: #fff;
+  margin: 15px;
+}
+.login-question-alt {
+  color: $brand-primary;
+}
+.login-question-alt:hover {
+  cursor: pointer;
+  color: $link-hover-color;
+}
+.form-left {
+  padding: 0px;
+  padding-right: 7px;
+}
+.form-right {
+  padding: 0px;
+  padding-left: 7px;
+}
+.login-form {
+  border-radius: 0px;
+}
+.form-control-feedback {
+  line-height: 34px;
+  font-size: 13px;
+}
+.masked {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.password-btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.login-relative {
+  position: relative;
+}

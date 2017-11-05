@@ -1,0 +1,53 @@
+#giveaway1 {
+  content: url('../images/giveaway/giveaway-01.png');
+}
+#giveaway2 {
+  content: url('../images/giveaway/giveaway-02.jpg');
+}
+#giveaway3 {
+  content: url('../images/giveaway/giveaway-03.jpg');
+}
+#giveaway4 {
+  content: url('../images/giveaway/giveaway-04.jpg');
+}
+#giveaway5 {
+  content: url('../images/giveaway/giveaway-05.jpg');
+}
+#giveaway6 {
+  content: url('../images/giveaway/giveaway-06.jpg');
+}
+#giveaway7 {
+  content: url('../images/giveaway/giveaway-07.jpg');
+}
+#giveaway8 {
+  content: url('../images/giveaway/giveaway-08.jpg');
+}
+#giveaway9 {
+  content: url('../images/giveaway/giveaway-09.png');
+}
+.giveaway-flex {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 15px;
+  margin-top: 50px;
+}
+.giveaway-data {
+  padding-bottom: 25px;
+  border-bottom: 1px solid $hr-border;
+}
+.giveaway-title {
+  font-size: 16px;
+  padding: 0px;
+}
+.giveaway-description {
+  margin-bottom: 25px;
+  padding: 0px;
+}
+.giveaway-btn-box {
+  margin-top: 25px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.last-giveaway {
+  margin-bottom: 0px;
+}
