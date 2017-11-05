@@ -44,6 +44,7 @@ riot.tag2('admin-page', '<global-logout class="hidden-xs" show="{logged_in}" uri
         krowdspace.projects.explore(DATA).then((res) =>
         {
             this.adminData = res.data;
+            console.log(this.adminData);
             this.adminData.reverse();
             this.update();
         },
@@ -1853,7 +1854,6 @@ riot.tag2('explore-slider-hero', '<div class="home-banner"> <div class="autoplay
                 FilterExplore = ExploreBannerData.filter((element) => {
                 return (element.project_data.info_data.explore);
             });
-            console.log(FilterExplore);
             let newObject={
                         unique_url: '#modal-feature-info',
                         name: '',

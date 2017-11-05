@@ -66,7 +66,7 @@
     </div>
     <script type="text/javascript">
     let DATA = {
-            LIMIT: 50,
+            LIMIT: 100,
         };
 
         krowdspace.projects.explore(DATA).then((res) =>
