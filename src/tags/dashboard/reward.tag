@@ -1,7 +1,7 @@
 <reward>
     <div id="Reward" class="modal fade">
         <div class="modal-dialog" role="document">
-            <form ref="loginform" onsubmit={ rewardSubmit }>
+            <form ref="loginform" onsubmit={ rewardSubmit } novalidate>
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
@@ -24,8 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="question3">Edit Reward Type</label>
-                        <select ref="rewardOption" class="form-control" name="question3" required>
-                           <option disabled selected value>Choose an Option</option>
+                        <select ref="rewardOption" class="form-control" name="question3">
                            <option value="Yes">Reward has a Value</option>
                            <option value="No">Reward is a Discount</option>
                         </select>
