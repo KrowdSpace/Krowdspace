@@ -4,8 +4,6 @@ const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
 const boostrapEntryPoints = require("./webpack.bootstrap.config");
-const glob = require('glob');
-const PurifyCSSPlugin = require('purifycss-webpack');
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -98,9 +96,6 @@ module.exports = {
             allChunks: true
         }),
         new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new PurifyCSSPlugin({
-            paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        })
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
