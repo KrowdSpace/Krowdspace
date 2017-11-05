@@ -25,7 +25,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'www')
     },
     module: {
         rules: [{
@@ -76,7 +76,7 @@ module.exports = {
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, 'www'),
         compress: true,
         hot: true,
         stats: 'errors-only',
