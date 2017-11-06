@@ -6,7 +6,7 @@
           <span each={ p, index in projects }>
               <dash-button onclick={ makeButtF(p) } project = { p }>
                 <button class="btn btn-primary dash-buttons">
-                    <img class="krowdspace" aria-hidden="true" />
+                    <img src="/images/krowdspace-logo-white.svg" class="krowdspace" aria-hidden="true" />
                     <span class="dash-buttons-text project-id-btn">Project ID: { project.unique_id }</span>
                 </button>
               </dash-button>

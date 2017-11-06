@@ -1,6 +1,6 @@
 <home-modals>
     <a href="/#/explore"><button id="krowdspace-modal-cta" class="btn btn-primary">
-    <img class="krowdspace-image-white" /><span id="krowdspace-modal-text">EXPLORE NOW</span>
+    <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" /><span id="krowdspace-modal-text">EXPLORE NOW</span>
 </button></a>
 <script>
 $(document).ready(function () {

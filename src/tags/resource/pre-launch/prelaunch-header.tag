@@ -16,7 +16,7 @@
                     <div class="affiliate-flex">
                         <div class="affiliate-flex-content affiliate-left">
                             <p class="affiliate-push">Learn from the best and receive 50% off the LaunchBoom Academy. A full 8-week course designed to take you from a novice to an expert campaign creator.</p>
-                            <a href="https://go.launchboom.com/academy-open?afmc=1p" target="_blank"><img class="launchboom img-responsive"></a>
+                            <a href="https://go.launchboom.com/academy-open?afmc=1p" target="_blank"><img src="/images/launchboom.png" class="launchboom img-responsive"></a>
                         </div>
                     </div>
                 </div>

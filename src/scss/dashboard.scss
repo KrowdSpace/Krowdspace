@@ -110,14 +110,6 @@
   background-color: $navbar-inverse-bg;
   border: 1px solid $hr-border;
 }
-.dashboard-image {
-  content: url('../images/krowdspace-header.png');
-  background-color: $navbar-inverse-bg;
-  height: 100% !important;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
 .dash-button-box {
   position: absolute;
   top: 50px;
@@ -184,23 +176,14 @@
 #dash-giveaway {
   margin-top: 50px;
 }
-.project-pending {
+.project-pending, .project-pending:after {
   content: url('../images/status/status-icon-02.svg');
 }
-.project-expired {
+.project-expired, .project-expired:after  {
   content: url('../images/status/status-icon-01.svg');
 }
-.project-approved {
+.project-approved, .project-approved:after {
   content: url('../images/status/status-icon-03.svg');
-}
-.icon-pending {
-  content: url('../images/status/icon-pending.svg');
-}
-.icon-expired {
-  content: url('../images/status/icon-expired.svg');
-}
-.icon-approved {
-  content: url('../images/status/icon-approved.svg');
 }
 .dash-flex-row {
   display: flex;
@@ -257,17 +240,14 @@
   top: 0;
   left: 0;
   padding: 9px 11px 11px 9px;
-  content: url('../images/krowdspace-logo-white.svg');
 }
 .kickstarter {
   width: 36px;
   height: 36px;
   padding: 9px 11px 11px 9px;
-  content: url('../images/kickstarter.svg');
 }
 .indiegogo {
   width: 36px;
   height: 36px;
   padding: 9px 9px 11px 6px;
-  content: url('../images/indiegogo.svg');
 }

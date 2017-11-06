@@ -18,7 +18,7 @@
                     <div class="affiliate-flex">
                         <div class="affiliate-flex-content affiliate-left">
                             <p class="affiliate-push">Spread the Word has you covered for all your post campaign fulfillment needs!</p>
-                            <a href="http://www.spreadtheword.net/" target="_blank"><img class="spread-the-word img-responsive"></a>
+                            <a href="http://www.spreadtheword.net/" target="_blank"><img src="/images/spread-the-word.png" class="spread-the-word img-responsive"></a>
                         </div>
                     </div>
                 </div>

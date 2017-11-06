@@ -4,7 +4,7 @@
             <div class="modal-content modal-login-height">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img class="krowdspace-image-white" />
+                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2>Project Submission Error</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

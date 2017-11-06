@@ -22,14 +22,14 @@
             </div>
             <div class="press-release-example">
                 <a href="{ pressExample }" target="_blank">
-                <img class="krowdspace-press img-responsive">
+                <img src="/images/krowdspace-press-release.jpg" class="krowdspace-press img-responsive">
               </a>
             </div>
         </div>
         <div class="resource-content media-content-reverse">
             <div class="email-template-example">
                 <a href="/brand/krowdspace-email-format.pdf" target="_blank">
-                <img class="krowdspace-email img-responsive">
+                <img src="/images/krowdspace-email-template.jpg" class="krowdspace-email img-responsive">
                 </a>
             </div>
             <div class="email-release-guide">

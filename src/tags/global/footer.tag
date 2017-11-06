@@ -68,8 +68,9 @@
     this.year = new Date().getFullYear();
     this.update();
     faqReload() {
-      window.location.reload();
+
       window.location.replace("/#/info/faq");
+      window.location.reload();
     }
     </script>
 </footer>

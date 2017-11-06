@@ -5,7 +5,7 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img class="krowdspace-image-white" />
+                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2 class="modal-heading">Edit Project Reward</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

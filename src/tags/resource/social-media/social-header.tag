@@ -9,7 +9,7 @@
                     <p class="resource-page-title">Krowdspace Social Media</p>
                     <p>Download one of our social media image templates for the correct profile and banner dimensions for Facebook, Instagram, Pinterest and Twitter. Also read through our social media tips on best practices when making posts.</p>
                     <p class="resource-block">Social media has influenced the success for many crowdfunding campaigns. Krowdspace can post your campaign on our 4 social media channels that reach over 8,500 user. Find out how by submitting your campaign to Krowdspace!</p>
-                    <a href="{ socialCheck }"><img class="krowdspace-social img-responsive"></a>
+                    <a href="{ socialCheck }"><img src="/images/krowdspace-social.png" class="krowdspace-social img-responsive"></a>
                 </div>
             </div>
             <div id="resource-right" class="resource-data resource-data-flex">

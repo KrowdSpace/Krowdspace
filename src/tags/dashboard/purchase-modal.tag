@@ -4,7 +4,7 @@
             <div class="modal-content modal-login-height">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img class="krowdspace-image-white" />
+                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2 show={ featured } class="modal-heading">Featured Icon</h2>
                     <h2 show={ explore } class="modal-heading">Explore Feature</h2>

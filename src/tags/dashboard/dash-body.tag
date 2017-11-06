@@ -5,14 +5,14 @@
             <p>Upon successful completion of your crowdfunding campaign you have agreed to send out any additional rewards to the members who have supported you. Please use the below coupon code to validate members coming from Krowdspace. If you have submitted an Indiegogo campaign, then Krowdspace members will go directly to your secret perk link.</p>
             <p class="coupon-code">{ ownerCoupon }</p>
             <div class="dash-bottom-box-bottom">
-                <a href="/#/project/{ campaignLink }"><button class="btn btn-primary dash-buttons"><img class="krowdspace" aria-hidden="true" />
+                <a href="/#/project/{ campaignLink }"><button class="btn btn-primary dash-buttons"><img src="/images/krowdspace-logo-white.svg" class="krowdspace" aria-hidden="true" />
         <span class="dash-buttons-text project-id-btn"> Project Link</span>
         </button></a>
-        <a show= { campaignSwitch } href="{ ownerLink }" target="_blank"><button class="btn btn-primary dash-buttons"><img class="kickstarter" aria-hidden="true" />
+        <a show= { campaignSwitch } href="{ ownerLink }" target="_blank"><button class="btn btn-primary dash-buttons"><img src="/images/kickstarter.svg" class="kickstarter" aria-hidden="true" />
         <span class="dash-buttons-text"> Campaign Link</span>
         </button></a>
         <a show= { !campaignSwitch } href="{ ownerLink }" target="_blank">
-                <button class="btn btn-primary dash-buttons"><img class="indiegogo" aria-hidden="true" />
+                <button class="btn btn-primary dash-buttons"><img src="/images/indiegogo.svg" class="indiegogo" aria-hidden="true" />
           <span class="dash-buttons-text"> Campaign Link</span>
           </button></a>
             </div>

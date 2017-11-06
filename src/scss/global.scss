@@ -60,6 +60,7 @@ li {
   line-height: 20px;
   font-size: 13px;
 }
+
 .no-gutters > [class^="col-"],
 .no-gutters > [class*=" col-"] {
   padding-right: 0;
@@ -250,7 +251,6 @@ color: $brand-primary;
 #profile-quicklinks {
   width: 30px;
   display: inline-block;
-  content: url('../images/krowdspace-logo-white.svg');
 }
 #profile-links {
   margin: 0px;

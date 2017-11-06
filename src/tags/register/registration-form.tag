@@ -1,8 +1,8 @@
 <registration-form>
     <div class="row project-form-flex">
             <div class="register-form-box">
-                <button class="btn btn-primary register-btn-kickstarter" onClick={ kickstarterForm }><img class="kickstarter-full"></button>
-                <button class="btn btn-primary register-btn-indiegogo" onClick={ indiegogoForm }><img class="indiegogo-full"></button>
+                <button class="btn btn-primary register-btn-kickstarter" onClick={ kickstarterForm }><img src="/images/kickstarter-full.svg" class="kickstarter-full"></button>
+                <button class="btn btn-primary register-btn-indiegogo" onClick={ indiegogoForm }><img src="/images/indiegogo-full.svg" class="indiegogo-full"></button>
                 <p class="submission_form select-campaign-text">Please select which crowdfunding platform your campaign is being hosted on.</p>
                 <form id="registrationForm" onsubmit={ submission }>
                     <div class="col-xs-12 submission_form">
@@ -61,7 +61,7 @@
                     </div>
                     <button class="btn btn-primary next submission_form" type="button">Submit Project</button>
                     <div class="col-xs-12 submission_terms">
-                      <img class="img-responsive krowdspace-featured">
+                      <img src="/images/krowdspace-featured.svg" class="img-responsive krowdspace-featured">
                         <p>Please upload our "Featured on Krowdspace" image to your Kickstarter or Indiegogo Campaign page with a link back to Krowdspace.com. You can also choose an alternative image from our <a class="anchor-link" data-toggle="modal" data-target="#Brand">Brand Assets</a>. This will prevent any false submissions and let us know you are indeed the owner.</p>
                         <p class="registration-title-terms">Additional Terms and Conditions</p>
                         <p>Krowdspace is not liable for any damages or losses related to using our services.</p>
