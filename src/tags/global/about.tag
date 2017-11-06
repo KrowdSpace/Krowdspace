@@ -36,7 +36,12 @@
                         </div>
                     </div>
                     <div class="about-story-flex">
-                        <img id="About8" src="/images/krowdspace-logo-white.svg" class="about-image img-responsive">
+
+                      <div id="About8" class="about-image">
+                        <span class="about-logo-box">
+                        <img src="/images/krowdspace-logo-white.svg" class="about-image img-responsive">
+                      </span>
+                      </div>
                         <div class="story-box-left">
                             <p class="about-story-title">Krowdspace 2.0 - November 2017</p>
                             <p>We have done a complete overhaul of Krowdspace based on user feedback and feature requests. All of our interfaces have been upgraded to seamlessly fit together in a robust and beautiful design. The Krowdspace logo has been redesigned and we have transitioned our branding colors.
