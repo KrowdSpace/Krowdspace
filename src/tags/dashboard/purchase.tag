@@ -104,6 +104,7 @@
               krowdspace.projects.purchase(stripePurchase).then((res)=>
               {
                 console.log(res);
+                window.location.reload();
               },(err) => {
                   console.log(err);
           });
