@@ -92,8 +92,8 @@
               this.ended = false;
             }
 
-            this.ownerGoal = Math.round(parseFloat(opts.project.project_data.meta_data.funding.toLocaleString().replace(/,/g, ''))).toLocaleString() || 0;
-            this.ownerRaised = Math.round(parseFloat(opts.project.project_data.meta_data.funding.toLocaleString().replace(/,/g, '')) * opts.project.project_data.meta_data.raisedPercent).toLocaleString() || 0;
+            this.ownerGoal = Math.round(parseFloat(opts.project.project_data.meta_data.funding.toLocaleString('en-US').replace(/,/g, ''))).toLocaleString('en-US') || 0;
+            this.ownerRaised = Math.round(parseFloat(opts.project.project_data.meta_data.funding.toLocaleString('en-US').replace(/,/g, '')) * opts.project.project_data.meta_data.raisedPercent).toLocaleString('en-US') || 0;
 
             let bar = null;
 

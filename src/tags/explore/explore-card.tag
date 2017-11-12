@@ -32,8 +32,8 @@
 
             let projectArray = res.data;
             projectArray.forEach((element) => {
-                let Goal = Math.round(parseFloat(element.project_data.meta_data.funding.toLocaleString().replace(/,/g, ''))).toLocaleString() || 0,
-                    Raised = Math.round(parseFloat(element.project_data.meta_data.funding.toLocaleString().replace(/,/g, '')) * element.project_data.meta_data.raisedPercent).toLocaleString() || 0,
+                let Goal = Math.round(parseFloat(element.project_data.meta_data.funding.toLocaleString('en-US').replace(/,/g, ''))).toLocaleString('en-US') || 0,
+                    Raised = Math.round(parseFloat(element.project_data.meta_data.funding.toLocaleString('en-US').replace(/,/g, '')) * element.project_data.meta_data.raisedPercent).toLocaleString('en-US') || 0,
                     percentWhole = element.project_data.meta_data.raisedPercent * 100,
                     endDate = new Date(element.project_data.meta_data.endTime),
                     remainingTime = new Date(endDate.getTime() - (new Date().getTime())).getTime() / 86400000,

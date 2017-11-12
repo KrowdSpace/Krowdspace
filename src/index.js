@@ -69,6 +69,8 @@ require("./images/affiliates/launchboom.png");
 require("./images/affiliates/nuuk.png");
 require("./images/affiliates/spread-the-word.png");
 require("./images/affiliates/sweeties.png");
+require("./images/affiliates/fundbeam.png");
+require("./images/affiliates/fundbeam-sm.jpg");
 
 require("./images/status/icon-approved.svg");
 require("./images/status/icon-expired.svg");

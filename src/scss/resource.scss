@@ -77,6 +77,23 @@
   margin-right: auto;
   width: 200px;
 }
+.float-left {
+  float: left;
+}
+.fundbeam{
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+}
+.fundbeam-sm{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+}
+.fundbeam-text {
+  line-height: 1.5;
+  overflow: hidden;
+}
 .sweeties{
   margin-left: auto;
   margin-right: auto;
@@ -130,7 +147,7 @@
 .pdf-flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .pdf-icon {
   margin-top: 25px;
@@ -171,6 +188,7 @@
 .btn-resource {
   position: absolute;
   top: 18%;
+  left: 45%;
   border-radius: 20px;
   padding: 0px;
   height: 40px;

@@ -55,7 +55,7 @@
                     <h2 class="brand-title">Krowdspace Featured Banner</h2>
                     <div class="brand-flex">
                         <div class="brand-box-banner">
-                            <img src="/images/krowdspace-featured-alternative.svg" id="brand5" class="img-responsive">
+                            <img src="/images/krowdspace-featured.svg" id="brand5" class="img-responsive">
                             <div class="brand-absolute-bottom text-center"><span><a class="anchor-link svg-download" href="/images/krowdspace-featured.svg" download>SVG</a> | <a class="anchor-link png-download" href="/images/krowdspace-featured.png" download>PNG</a></span>
                             </div>
                         </div>

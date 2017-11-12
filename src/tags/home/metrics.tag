@@ -19,10 +19,10 @@
       this.krowdspaceCampaigns = res.data.totalProjects;
 
       let totalReward = res.data.platforms[1].rewardAmmount + res.data.platforms[0].rewardAmmount;
-      this.krowdspaceTotalReward = Math.round(totalReward).toLocaleString();
+      this.krowdspaceTotalReward = Math.round(totalReward).toLocaleString('en-US');
 
       let raisedValue = res.data.platforms[0].raisedAmount + res.data.platforms[1].raisedAmount;
-      this.krowdspaceTotalRaised = Math.round(raisedValue).toLocaleString();
+      this.krowdspaceTotalRaised = Math.round(raisedValue).toLocaleString('en-US');
 
       this.update();
 
