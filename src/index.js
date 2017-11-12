@@ -88,4 +88,4 @@ require("./images/krowdspace-header.png");
 require("./images/krowdspace-logo-white.svg");
 require("./images/krowdspace-logo.svg");
 
-krowdspace.setDomain("http://api.dev.krowdspace.com");
+krowdspace.setDomain("https://api.krowdspace.com");
