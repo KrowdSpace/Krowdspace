@@ -1,5 +1,5 @@
 <dash-buttons class="dash-button-box-inner">
-  <a data-toggle="modal" data-target="#Reward">
+  <a href="#" data-toggle="modal" data-target="#Reward">
     <button class="btn btn-primary dash-buttons"><i class="fa fa-lg fa-edit dash-icon" aria-hidden="true"></i>
       <span class="dash-buttons-text"> Edit Reward</span>
    </button>

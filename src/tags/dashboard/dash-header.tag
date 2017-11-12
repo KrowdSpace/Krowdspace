@@ -3,11 +3,11 @@
         <div class="dash-header-left">
             <div class="image-inner">
                 <div class="item">
-                    <a data-toggle="modal" data-target="#Reward">
+                    <a href="#" data-toggle="modal" data-target="#Reward">
                     <img class="img-slider { ownerClass }" src="{ ownerSource }" />
                     </a>
                     <div class="btn-explore-box">
-                      <a data-toggle="modal" data-target="#Reward">
+                      <a href="#" data-toggle="modal" data-target="#Reward">
                         <button class="btn btn-primary btn-explore">Edit Reward</button>
                       </a>
                     </div>
@@ -18,7 +18,7 @@
               </div>
         </div>
         <div class="text-left dash-header-right">
-          <a data-toggle="modal" data-target="#Verify">
+          <a href="#" data-toggle="modal" data-target="#Verify">
             <img id="project-status" class="project-status" />
           </a>
             <div class="project-dash-flex">

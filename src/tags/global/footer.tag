@@ -4,18 +4,18 @@
             <div class="footer-sm-transition">
                 <p class="footer-title">Quick Links</p>
                 <ul class="footer-float">
-                    <li><a data-toggle="modal" data-target="#About">Krowdspace Team</a></li>
-                    <li><a data-toggle="modal" data-target="#Brand">Brand Assets</a></li>
+                    <li><a href="#"data-toggle="modal" data-target="#About">Krowdspace Team</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#Brand">Brand Assets</a></li>
                     <li><a onclick={ faqReload }>General Questions</a></li>
-                    <li><a data-toggle="modal" data-target="#Contact">Contact Krowdspace</a></li>
-                    <li class="hidden-xs"><a data-toggle="modal" data-target="#Privacy">Privacy Policy</a></li>
-                    <li class="hidden-xs"><a data-toggle="modal" data-target="#Service">Terms of Service</a></li>
-                    <li class="hidden-xs"><a data-toggle="modal" data-target="#Disclaimer">Disclaimer</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#Contact">Contact Krowdspace</a></li>
+                    <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#Privacy">Privacy Policy</a></li>
+                    <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#Service">Terms of Service</a></li>
+                    <li class="hidden-xs"><a href="#" data-toggle="modal" data-target="#Disclaimer">Disclaimer</a></li>
                 </ul>
                 <ul class="footer-float-hidden hidden-xl hidden-lg hidden-md hidden-sm">
-                    <li><a data-toggle="modal" data-target="#Privacy">Privacy Policy</a></li>
-                    <li><a data-toggle="modal" data-target="#Service">Terms of Service</a></li>
-                    <li><a data-toggle="modal" data-target="#Disclaimer">Disclaimer</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#Privacy">Privacy Policy</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#Service">Terms of Service</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#Disclaimer">Disclaimer</a></li>
                 </ul>
             </div>
         </div>

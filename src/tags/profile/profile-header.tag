@@ -11,7 +11,7 @@
                         <li show={ projectLevel }><a href="/#/account/dashboard">Project Dashboard</a></li>
                         <li><a href="/#/resource/main">Project Resources</a></li>
                         <li><a href="/#/giveaway">Krowdspace Giveaways</a></li>
-                        <li><a data-toggle="modal" data-target="#Contact">Contact Krowdspace</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#Contact">Contact Krowdspace</a></li>
                     </ul>
                 </div>
             </div>

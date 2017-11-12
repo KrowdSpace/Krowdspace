@@ -46,7 +46,7 @@
                     <p>Reward: { projectReward }</p>
                 </div>
                 <div>
-                    <a data-toggle="modal" data-target="#Coupon">
+                    <a href="#" data-toggle="modal" data-target="#Coupon">
                   <button class="btn btn-primary" show={ supportbtn }>Receive Coupon Code</button>
                 </a>
                     <a href="{ indiegogoLink }" target="_blank">

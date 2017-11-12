@@ -9,7 +9,7 @@
                     <p class="resource-page-title">Krowdspace Resources</p>
                     <p>We want to give every advantage to our project creators, Krowdspace has gathered some of the best free resources to run a crowdfunding campaign from start to finish! If you would like some extra help we have also provided some great paid resources as well. </p>
                     <p class="resource-block">Krowdspace can build custom websites or landing pages for you or your company. Please contact us directly for quotes as each project is unique and will have multiple considerations for pricing.</p>
-                    <a data-toggle="modal" data-target="#Contact"><img src="/images/krowdspace-design.png" class="krowdspace-design img-responsive"></a>
+                    <a href="#" data-toggle="modal" data-target="#Contact"><img src="/images/krowdspace-design.png" class="krowdspace-design img-responsive"></a>
                 </div>
             </div>
             <div id="resource-right" class="resource-data resource-data-flex">
