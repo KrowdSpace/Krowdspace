@@ -105,6 +105,7 @@
               {
                 console.log(res);
                 window.location.reload();
+                setTimeout(function() { $('#Purchase').modal({})}, 500);
               },(err) => {
                   console.log(err);
           });

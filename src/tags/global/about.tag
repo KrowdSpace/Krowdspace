@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
+                        <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2>About Krowdspace</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -15,22 +15,22 @@
                     <p>Krowdspace consists of a small team from the Seattle Washington area. We started this project at the end of 2016 and have been growing our brand ever since. Krowdspace was built as a response to our own crowdfunding campaign and the difficulties we were having finding relevent places to display and market our project. Support us on this journey and see Krowdspace take shape.</p>
                     <div class="about-image-flex">
                         <div class="text-center">
-                            <img id="profile-mason" src="/images/mason.png">
+                            <img alt="Mason Halstead" id="profile-mason" src="/images/mason.png">
                             <p class="names-title">Mason Halstead</p>
                             <p>FrontEnd Developer</p>
                         </div>
                         <div class="text-center">
-                            <img id="profile-david" src="/images/david.png">
+                            <img alt="David Barron" id="profile-david" src="/images/david.png">
                             <p class="names-title">David Barron</p>
                             <p>Content Writer</p>
                         </div>
                         <div class="text-center">
-                            <img id="profile-ben" src="/images/ben.png">
+                            <img alt="Ben McLean" id="profile-ben" src="/images/ben.png">
                             <p class="names-title">Ben McLean</p>
                             <p>BackEnd Developer</p>
                         </div>
                         <div class="text-center">
-                            <img id="profile-andre" src="/images/andre.png">
+                            <img alt="Andre Dinh" id="profile-andre" src="/images/andre.png">
                             <p class="names-title">Andre Dinh</p>
                             <p>FrontEnd Developer</p>
                         </div>
@@ -39,7 +39,7 @@
 
                       <div id="About8" class="about-image">
                         <span class="about-logo-box">
-                        <img src="/images/krowdspace-logo-white.svg" class="about-image img-responsive">
+                        <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="about-image img-responsive">
                       </span>
                       </div>
                         <div class="story-box-left">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex-reverse">
-                        <img id="About7" src="/images/about-07.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #7" id="About7" src="/images/about-07.png" class="about-image img-responsive">
                         <div class="text-right story-box-right">
                             <p class="about-story-title">Krowdspace Launch - August 2017</p>
                             <p>
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex">
-                        <img id="About6" src="/images/about-06.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #6" id="About6" src="/images/about-06.png" class="about-image img-responsive">
                         <div class="story-box-left">
                             <p class="about-story-title">Finish Strong - June 2017</p>
                             <p>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex-reverse">
-                        <img id="About5" src="/images/about-05.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #5" id="About5" src="/images/about-05.png" class="about-image img-responsive">
                         <div class="text-right story-box-right">
                             <p class="about-story-title">Krowdspace Landing Page - March 2017</p>
                             <p>
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex">
-                        <img id="About4" src="/images/about-04.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #4" id="About4" src="/images/about-04.png" class="about-image img-responsive">
                         <div class="story-box-left">
                             <p class="about-story-title">Building the Site - January 2017</p>
                             <p>
@@ -85,7 +85,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex-reverse">
-                        <img id="About3" src="/images/about-03.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #3" id="About3" src="/images/about-03.png" class="about-image img-responsive">
                         <div class="text-right story-box-right">
                             <p class="about-story-title">Krowdspace is Born - December 2016</p>
                             <p>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex">
-                        <img id="About2" src="/images/about-02.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #2" id="About2" src="/images/about-02.png" class="about-image img-responsive">
                         <div class="story-box-left">
                             <p class="about-story-title">The Seed is Planted - November 2016</p>
                             <p>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="about-story-flex-reverse">
-                        <img id="About1" src="/images/about-01.png" class="about-image img-responsive">
+                        <img alt="Krowdspace About #1" id="About1" src="/images/about-01.png" class="about-image img-responsive">
                         <div class="text-right story-box-right">
                             <p class="about-story-title">The Crowdfunding Experiment - October 2016</p>
                             <p>

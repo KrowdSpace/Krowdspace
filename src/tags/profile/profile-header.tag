@@ -3,7 +3,7 @@
             <div id="profile-menu" class="profile-data">
                 <div class="text-center quick-box">
                     <div id="quicklinks-logo">
-                        <img src="/images/krowdspace-logo-white.svg" id="profile-quicklinks">
+                        <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" id="profile-quicklinks">
                     </div>
                     <ul id="profile-links" class="text-left">
                         <li><a href="/#/explore">Explore Projects</a></li>

@@ -4,7 +4,7 @@
             <div class="modal-content modal-login-height">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
+                        <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2 class="modal-heading">Secret Perk Link</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">

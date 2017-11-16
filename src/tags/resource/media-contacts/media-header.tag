@@ -19,13 +19,13 @@
                     <div class="affiliate-flex">
                         <div class="affiliate-flex-content affiliate-left">
                             <p class="affiliate-push">Sweeties Sweeps has provided premium resources to give our Krowdspace Giveaways the maximum exposure!</p>
-                            <a href="http://sweetiessweeps.com/" target="_blank"><img src="/images/sweeties.png" class="sweeties img-responsive"></a>
+                            <a href="http://sweetiessweeps.com/" target="_blank"><img alt="Sweeties Sweeps" src="/images/sweeties.png" class="sweeties img-responsive"></a>
                         </div>
 
                     <div class="affiliate-flex-content affiliate-right">
                         <p class="secondary-affiliate-push">FundBeam reports on all types of crowdfunding projects from poetry to new technology. Visit their site for more tips about running your own campaign.</p>
                         <a href="http://fundbeam.com/" target="_blank">
-                      <img src="/images/fundbeam.png" class="fundbeam img-responsive">
+                      <img alt="FundBeam" src="/images/fundbeam.png" class="fundbeam img-responsive">
                     </a>
                     </div>
                   </div>

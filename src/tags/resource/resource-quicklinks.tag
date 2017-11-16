@@ -1,7 +1,7 @@
 <resource-quicklinks>
         <div class="text-center quick-box">
             <div id="quicklinks-logo">
-                <img src="/images/krowdspace-logo-white.svg" id="profile-quicklinks">
+                <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" id="profile-quicklinks">
             </div>
             <ul id="profile-links" class="text-left">
                 <li><a href="/#/resource/main">Krowdspace Resources</a></li>

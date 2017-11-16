@@ -39,21 +39,21 @@
 						<div class="affiliate-flex-content affiliate-left">
 							<p class="affiliate-push">FundBeam scouts the web for the best new crowdfunding projects and writes indepth articles ranging from video production to campaign tips and tricks.</p>
 							<a class="float-left" href="http://fundbeam.com/tips-crowdfunding-press/" target="_blank">
-                <img src="/images/fundbeam-sm.jpg" class="fundbeam-sm img-responsive">
+                <img alt="FundBeam Small" src="/images/fundbeam-sm.jpg" class="fundbeam-sm img-responsive">
               </a>
 							<a href="http://fundbeam.com/tips-crowdfunding-press/" target="_blank">
 								<p class="fundbeam-text">30 Tips for Getting Press for your Kickstarter Crowdfunding Campaign</p>
-              </a>
-              <div class="clearfix" style="margin-top: 25px;"></div>
+							</a>
+							<div class="clearfix" style="margin-top: 25px;"></div>
 							<a class="float-left" href="http://fundbeam.com/the-5-step-press-kit/" target="_blank">
-                <img src="/images/fundbeam-sm.jpg" class="fundbeam-sm img-responsive">
+                <img alt="FundBeam Small" src="/images/fundbeam-sm.jpg" class="fundbeam-sm img-responsive">
               </a>
 							<a href="http://fundbeam.com/the-5-step-press-kit/" target="_blank">
 								<p class="fundbeam-text">How To Create A Press Kit For Kickstarter and Indiegogo</p>
-              </a>
-              <div class="clearfix" style="margin-top: 25px;"></div>
+							</a>
+							<div class="clearfix" style="margin-top: 25px;"></div>
 							<a class="float-left" href="http://fundbeam.com/crowdfunding-marketing/" target="_blank">
-                <img src="/images/fundbeam-sm.jpg" class="fundbeam-sm img-responsive">
+                <img alt="FundBeam Small" src="/images/fundbeam-sm.jpg" class="fundbeam-sm img-responsive">
               </a>
 							<a href="http://fundbeam.com/crowdfunding-marketing/" target="_blank">
 								<p class="fundbeam-text">Crowdfunding Marketing Plan - A Free Strategy Handbook</p>

@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
+                        <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2>Krowdspace Brand Assets</h2>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -20,7 +20,7 @@
                     <h2 class="brand-title">Krowdspace Logo</h2>
                     <div class="brand-flex">
                         <div class="brand-box">
-                            <img src="/images/krowdspace-primary.svg" id="brand1" class="img-responsive">
+                            <img alt="Krowdspace Primary" src="/images/krowdspace-primary.svg" id="brand1" class="img-responsive">
                             <div class="brand-absolute-top text-center">
                                 <span><i class="fa fa-square color-code-primary" aria-hidden="true"></i> #81E281</span>
                             </div>
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="brand-box">
-                            <img src="/images/krowdspace-reverse-primary.svg" id="brand2" class="img-responsive">
+                            <img alt="Krowdspace Reverse Primary" src="/images/krowdspace-reverse-primary.svg" id="brand2" class="img-responsive">
                             <div class="brand-absolute-top text-center">
                                 <span><i class="fa fa-square color-code-primary" aria-hidden="true"></i> #81E281</span>
                             </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="brand-box">
-                            <img src="/images/krowdspace-alternative.svg" id="brand3" class="img-responsive">
+                            <img alt="Krowdspace Alternative" src="/images/krowdspace-alternative.svg" id="brand3" class="img-responsive">
                             <div class="brand-absolute-top text-center">
                                 <span><i class="fa fa-square color-code-alternative" aria-hidden="true"></i> #333333</span>
                             </div>
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="brand-box">
-                            <img src="/images/krowdspace-reverse-alternative.svg" id="brand4" class="img-responsive">
+                            <img alt="Krowdspace Reverse Alternative" src="/images/krowdspace-reverse-alternative.svg" id="brand4" class="img-responsive">
                             <div class="brand-absolute-top text-center">
                                 <span><i class="fa fa-square color-code-alternative" aria-hidden="true"></i> #333333</span>
                             </div>
@@ -55,12 +55,12 @@
                     <h2 class="brand-title">Krowdspace Featured Banner</h2>
                     <div class="brand-flex">
                         <div class="brand-box-banner">
-                            <img src="/images/krowdspace-featured.svg" id="brand5" class="img-responsive">
+                            <img alt="Krowdspace Featured" src="/images/krowdspace-featured.svg" id="brand5" class="img-responsive">
                             <div class="brand-absolute-bottom text-center"><span><a class="anchor-link svg-download" href="/images/krowdspace-featured.svg" download>SVG</a> | <a class="anchor-link png-download" href="/images/krowdspace-featured.png" download>PNG</a></span>
                             </div>
                         </div>
                         <div class="brand-box-banner">
-                            <img src="/images/krowdspace-featured-alternative.svg" id="brand6" class="img-responsive">
+                            <img alt="Krowdspace Featured Alternative" src="/images/krowdspace-featured-alternative.svg" id="brand6" class="img-responsive">
                             <div class="brand-absolute-bottom text-center"><span><a class="anchor-link svg-download" href="/images/krowdspace-featured-alternative.svg" download>SVG</a> | <a class="anchor-link png-download" href="/images/krowdspace-featured-alternative.png" download>PNG</a></span>
                             </div>
                         </div>

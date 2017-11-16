@@ -19,7 +19,7 @@
         </div>
         <div class="text-left dash-header-right">
           <a href="#" data-toggle="modal" data-target="#Verify">
-            <img id="project-status" class="project-status" />
+            <img alt="Project Status" id="project-status" class="project-status" />
           </a>
             <div class="project-dash-flex">
                 <div class="project-child-flex-top">

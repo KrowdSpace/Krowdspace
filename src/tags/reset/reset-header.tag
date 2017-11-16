@@ -5,7 +5,7 @@
                 <div class="reset-box">
                     <div class="modal-header text-center">
                         <div class="modal-img-box">
-                            <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
+                            <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                         </div>
                         <h2 show={ !successReset } class="modal-heading">Reset Password</h2>
                         <h2 show={ successReset } class="modal-heading">Success!</h2>

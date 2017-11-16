@@ -1,7 +1,7 @@
 <giveaway-live>
     <div class="giveaway-block">
         <div class="giveaway-image">
-            <img src="/images/giveaway-09.png" class="giveaway img-responsive">
+            <img alt="Krowdspace Giveaway #9" src="/images/giveaway-09.png" class="giveaway img-responsive">
         </div>
         <div class="giveaway-text-block">
             <p>The First Convertible Tote Bag of its Kind From Krowdspace!</p>

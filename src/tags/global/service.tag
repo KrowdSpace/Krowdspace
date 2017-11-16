@@ -4,7 +4,7 @@
             <div class="modal-content">
                 <div class="modal-header text-center">
                     <div class="modal-img-box">
-                        <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
+                        <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                     </div>
                     <h2>Terms of Service</h2>
                     <p>Last Updated October 25, 2017</p>

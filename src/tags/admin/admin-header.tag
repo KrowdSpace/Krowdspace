@@ -21,11 +21,11 @@
 						<input name="projectId" type="hidden" value="{ adminBlock.data.id }">
 						<div class="adminLink">
 							<a href="/#/project/{ adminBlock.data.id }">
-                <button type="button" class="btn btn-primary admin-buttons"><img class="admin-krowdspace" aria-hidden="true" />
+                <button type="button" class="btn btn-primary admin-buttons"><img alt="Krowdspace" class="admin-krowdspace" aria-hidden="true" />
                 </button>
               </a>
 							<a href="{ adminBlock.data.url }" target="_blank">
-                <button type="button" class="btn btn-primary admin-buttons"><img class="admin-{ adminBlock.data.platform }" aria-hidden="true" />
+                <button type="button" class="btn btn-primary admin-buttons"><img alt="Krowdspace Platform Logo" class="admin-{ adminBlock.data.platform }" aria-hidden="true" />
                 </button>
               </a>
 							<p class="admin-project-id">{ adminBlock.data.id }</p>

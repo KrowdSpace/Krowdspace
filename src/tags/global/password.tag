@@ -5,7 +5,7 @@
                 <div class="modal-content modal-login-height">
                     <div class="modal-header text-center">
                         <div class="modal-img-box">
-                            <img src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
+                            <img alt="Krowdspace" src="/images/krowdspace-logo-white.svg" class="krowdspace-image-white" />
                         </div>
                         <h2 show={ !successEmail } class="modal-heading">Forgot Your Password?</h2>
                         <h2 show={ successEmail } class="modal-heading">Email Sent!</h2>

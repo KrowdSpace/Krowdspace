@@ -3,7 +3,7 @@
         <div class="article-flex-reverse">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-08.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #8" src="/images/giveaway-08.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box-reverse">
@@ -15,7 +15,7 @@
         <div class="article-box-flex">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-07.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #7" src="/images/giveaway-07.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box">
@@ -27,7 +27,7 @@
         <div class="article-flex-reverse">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-06.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #6" src="/images/giveaway-06.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box-reverse">
@@ -39,7 +39,7 @@
         <div class="article-box-flex">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-05.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #5" src="/images/giveaway-05.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box">
@@ -51,7 +51,7 @@
         <div class="article-flex-reverse">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-04.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #4" src="/images/giveaway-04.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box-reverse">
@@ -63,7 +63,7 @@
         <div class="article-box-flex">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-03.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #3" src="/images/giveaway-03.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box">
@@ -75,7 +75,7 @@
         <div class="article-flex-reverse">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-02.jpg" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #2" src="/images/giveaway-02.jpg" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box-reverse">
@@ -87,7 +87,7 @@
         <div class="article-box-flex last-giveaway">
             <div class="profile-image-inner">
                 <div class="item">
-                    <img src="/images/giveaway-01.png" class="img-slider profile-article-image" />
+                    <img alt="Krowdspace Giveaway #1" src="/images/giveaway-01.png" class="img-slider profile-article-image" />
                 </div>
             </div>
             <div class="profile-article-box">

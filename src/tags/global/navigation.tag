@@ -7,7 +7,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
 			        	</button>
-                <a class="navbar-brand" href="/"><img src="/images/krowdspace-logo.svg" class="krowdspace-logo"/><span class="krowdspace-logo-text">Krowdspace</span></a>
+                <a class="navbar-brand" href="/"><img alt="Krowdspace" src="/images/krowdspace-logo.svg" class="krowdspace-logo"/><span class="krowdspace-logo-text">Krowdspace</span></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">

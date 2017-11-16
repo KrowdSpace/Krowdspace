@@ -7,6 +7,7 @@
           this.on('mount', () => {
           krowdspace.users.user().then((res) => {
               this.user = res.data;
+              console.log(this.user);
               this.userkey = res.data.username;
               this.update();
               return krowdspace.projects.project(this.userkey);

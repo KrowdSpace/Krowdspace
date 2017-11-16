@@ -3,7 +3,7 @@
       <div class="article-box-flex">
           <div class="profile-image-inner">
               <div class="item">
-                  <img src="/images/pebble.png" id="pebble" class="img-slider profile-article-image" />
+                  <img alt="Pebble Article" src="/images/pebble.png" id="pebble" class="img-slider profile-article-image" />
                   <div class="btn-explore-box">
                     <a href="https://www.kickstarter.com/discover/most-funded" target="_blank">
                       <button class="btn btn-primary btn-explore">View</button>
@@ -19,7 +19,7 @@
       <div class="article-flex-reverse">
           <div class="profile-image-inner">
               <div class="item">
-                  <img src="/images/kaisr.jpeg" id="kaisr" class="img-slider profile-article-image" />
+                  <img alt="Kaisr Article" src="/images/kaisr.jpeg" id="kaisr" class="img-slider profile-article-image" />
                   <div class="btn-explore-box">
                     <a href="https://go.indiegogo.com/blog/2016/05/top-crowdfunding-campaigns-2016.html" target="_blank">
                       <button class="btn btn-primary btn-explore">View Article</button>
@@ -35,7 +35,7 @@
       <div class="article-box-flex profile-last-article">
           <div class="profile-image-inner">
               <div class="item">
-                  <img src="/images/krowdspace-header.png" id="backers" class="img-slider profile-article-image" />
+                  <img alt="Krowdspace Article" src="/images/krowdspace-header.png" id="backers" class="img-slider profile-article-image" />
                   <div class="btn-explore-box">
                     <a href="https://news.ncsu.edu/2017/03/crowdfunding-backers-success-2017/" target="_blank">
                       <button class="btn btn-primary btn-explore">View Article</button>
