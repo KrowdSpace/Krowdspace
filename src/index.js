@@ -33,6 +33,10 @@ require("./images/brand/krowdspace-reverse-alternative.png");
 require("./images/brand/krowdspace-reverse-primary.svg");
 require("./images/brand/krowdspace-reverse-primary.png");
 
+require("./images/thunderclap.jpg");
+require("./images/prefundia.jpg");
+require("./images/launchrock.jpg");
+
 require("./images/icons/krowdspace-favicon.jpg");
 require("./images/icons/krowdspace-icon-57x57.jpg");
 require("./images/icons/krowdspace-icon-72x72.jpg");

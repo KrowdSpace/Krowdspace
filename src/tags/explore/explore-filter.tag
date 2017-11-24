@@ -6,7 +6,7 @@
             </select>
         <form role="search" class="filter-items">
             <div class="input-group">
-                <input type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup={ onSearch }>
+                <input style="min-width: 350px;" type="text" ref="searchBox" class="form-control" placeholder="Search Projects" onkeyup={ onSearch }>
                 <div class="input-group-btn">
                     <div class="btn btn-primary btn-void">
                         <i class="fa fa-search fa-lg"></i>

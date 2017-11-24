@@ -307,6 +307,9 @@ height: auto;
   line-height: 34px;
   font-size: 13px;
 }
+.form-control {
+  line-height: initial;
+}
 .masked {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
@@ -317,4 +320,13 @@ height: auto;
 }
 .login-relative {
   position: relative;
+}
+.prelaunch-box {
+  border: 1px solid #d5d5d5;
+  max-width: 200px;
+  margin-top: 50px;
+}
+.prelaunch-box:hover {
+  border: 1px solid $brand-primary;
+
 }

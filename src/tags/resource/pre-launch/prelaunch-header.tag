@@ -7,7 +7,7 @@
             <div id="resource-center" class="resource-data-flex">
                 <div class="resource-relative resource-padding">
                     <p class="resource-page-title">Krowdspace Pre-Launch Services</p>
-                    <p>Coming Soon!</p>
+                    <p>Building a community around your campaign starts weeks or months before actually launching on Kickstarter or Indiegogo. We are currently building a free landing page service to gather your community base so that you can launch with confidence. In the meantime, take a look at these other pre-launch service  reviews!</p>
                 </div>
             </div>
             <div id="resource-right" class="resource-data resource-data-flex">

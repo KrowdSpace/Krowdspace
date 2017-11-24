@@ -3,7 +3,7 @@
     <div class="text-left dash-offset-flex">
         <div class="col-xs-12 col-sm-6 feature-purchase-left">
             <div class="dash-inner-flex">
-                <p class="dashboard-title">Featured Icon</p>
+                <p class="dashboard-title">Featured Icon Upgrade (Extended Duration)</p>
                 <p>Featured projects will have a heart icon located in the corner of your project image. Having the icon will allow your project to have priority filtering and will always show ahead of other projects without the icon. This icon will last for the duration of your campaign.</p>
                 <div class="purchase-box">
                     <button show={ !activeFeature } id="featuredButton" class="btn btn-primary">Purchase $10</button>
@@ -13,7 +13,7 @@
         </div>
         <div class="col-xs-12 col-sm-6 feature-purchase-right">
             <div class="dash-inner-flex">
-              <p class="dashboard-title">Social Media Posts</p>
+              <p class="dashboard-title">Social Media Posts on 4 Primary Channels</p>
               <p>We will post your project on our 4 social media channels. By purchasing this package, you will see your project on our Facebook, Twitter, Pinterest and Instagram accounts with a link to your crowdfunding site when applicable. We currently have over 8,500 combined followers!</p>
               <div class="purchase-box">
                   <button show={ !activeSocial } id="socialButton" class="btn btn-primary">Purchase $10</button>
@@ -27,8 +27,8 @@
     <div class="text-left dash-offset-flex">
         <div class="col-xs-12 col-sm-6 feature-purchase-left">
             <div class="dash-inner-flex">
-                <p class="dashboard-title">Explore Feature</p>
-                <p>Your project will be displayed on our rotating banner located on the explore page as the main focal point of Krowdspace. Our explore page banner will provide increased viewership and a higher click through rate compared to only having the featured icon. This feature will last for a minimum of 10 days.</p>
+                <p class="dashboard-title">Explore Banner Upgrade (Extended Duration)</p>
+                <p>Your project will be displayed on our rotating banner located on the explore page as the main focal point of Krowdspace. Our explore page banner will provide increased viewership and a higher click through rate compared to only having the featured icon. This feature will last for the duration of your campaign.</p>
                 <div class="purchase-box">
                     <button show={ !activeExplore } id="exploreButton" class="btn btn-primary">Purchase $15</button>
                     <button show={ activeExplore } class="btn btn-primary" disabled>Feature Active</button>
@@ -37,8 +37,8 @@
         </div>
         <div class="col-xs-12 col-sm-6 feature-purchase-right">
             <div class="dash-inner-flex">
-                <p class="dashboard-title">Landing Feature</p>
-                <p>Our landing page package will bring the most traffic to your campaign. Every project owner that purchases this package will be featured on the Krowdspace landing page rotating banner. Your project will stay on our homepage for 10 days.</p>
+                <p class="dashboard-title">Landing Banner Upgrade (Extended Duration)</p>
+                <p>Our landing page package will bring the most traffic to your campaign. Every project owner that purchases this package will be featured on the Krowdspace landing page rotating banner. This feature will last for the duration of your campaign.</p>
                 <div class="purchase-box">
                     <button show={ !activeLanding } id="landingButton" class="btn btn-primary">Purchase $20</button>
                     <button show={ activeLanding } class="btn btn-primary" disabled>Feature Active</button>
