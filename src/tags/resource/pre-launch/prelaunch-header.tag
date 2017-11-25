@@ -22,11 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="row resource-row">
-            <div class="resource-content" >
-                <prelaunch-body></prelaunch-body>
-            </div>
-        </div>
+          <prelaunch-body></prelaunch-body>
     </div>
     <script>
     $(document).ready(function () {
