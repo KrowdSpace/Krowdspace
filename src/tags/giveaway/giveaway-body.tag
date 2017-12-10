@@ -1,5 +1,17 @@
 <giveaway-body>
     <div class="row profile-body-flex">
+        <div class="article-box-flex">
+            <div class="profile-image-inner">
+                <div class="item">
+                    <img alt="Krowdspace Giveaway #9" src="/images/giveaway-09.png" class="img-slider profile-article-image" />
+                </div>
+            </div>
+            <div class="profile-article-box">
+                <p class="profile-article-title">The First Convertible Tote Bag of its Kind From Krowdspace!</p>
+                <p>Enter to win a Bahari Bag - the worlds only convertible tote bag! This bag converts from a towel or wrap into a tote through an innovative rope mechanism. Made with the finest materials and handcrafted in Africa to support local communities, this bag retails at over $80 and is exclusively available through this giveaway sponsored by Krowdspace.</p>
+                <p>Winner Picked on 12/01/17 - Congratulations Paula G.</p>
+            </div>
+        </div>
         <div class="article-flex-reverse">
             <div class="profile-image-inner">
                 <div class="item">

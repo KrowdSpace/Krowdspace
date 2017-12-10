@@ -52,6 +52,7 @@ require("./images/giveaway/giveaway-06.jpg");
 require("./images/giveaway/giveaway-07.jpg");
 require("./images/giveaway/giveaway-08.jpg");
 require("./images/giveaway/giveaway-09.png");
+require("./images/giveaway/giveaway-10.jpg");
 
 require("./images/about/about-01.png");
 require("./images/about/about-02.png");

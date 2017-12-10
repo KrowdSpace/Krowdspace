@@ -1,13 +1,13 @@
 <giveaway-live>
     <div class="giveaway-block">
         <div class="giveaway-image">
-            <img alt="Krowdspace Giveaway #9" src="/images/giveaway-09.png" class="giveaway img-responsive">
+            <img alt="Krowdspace Giveaway #10" src="/images/giveaway-10.jpg" class="giveaway img-responsive">
         </div>
         <div class="giveaway-text-block">
-            <p>The First Convertible Tote Bag of its Kind From Krowdspace!</p>
-            <p>Enter to win a Bahari Bag - the worlds only convertible tote bag! This bag converts from a towel or wrap into a tote through an innovative rope mechanism. Made with the finest materials and handcrafted in Africa to support local communities, this bag retails at over $80 and is exclusively available through this giveaway sponsored by Krowdspace.</p>
+            <p>QuikSnap&trade; Car Window Sunshades Kickstarter Giveaway! </p>
+            <p>Enter to win a customized QuickSnap car window sunshade set for all four windows! Every set is designed for your car and has an estimated retail value of $60. This revolutionary automotive accessory snaps on and off instantly to provide protection without using any clips, magnets or support. Now funding on Kickstarter and being featured at Krowdspace.</p>
             <div class="giveaway-btn-box">
-                <a show={ giveawayLink } href="https://gleam.io/9YdZZ/bahari-bag-giveaway" target="_blank">
+                <a show={ giveawayLink } href="https://gleam.io/FqJ5n/quiksnap-car-window-sunshades-kickstarter-giveaway" target="_blank">
                   <button class="btn btn-primary">Enter Giveaway</button>
                 </a>
                   <a show={ !giveawayLink } href="/#/giveaway">
