@@ -1,0 +1,26 @@
+{
+    "navigation": {
+        "brand": {
+            "title": "React-Bootstrap",
+            "href": "/#"
+        },
+        "links": [
+            { "title": "Home","href": "/" },
+            { "title": "About","href": "/dynamic"},
+            { "title": "Pages","href": "/" }
+        ]
+    },
+    "home": {
+      "header": {
+        "title": [
+          { "title": "Emily and Mason's Reception" },
+          { "title": "Join us for a celebration on"}
+        ],
+        "subtitle": "Saturday 6:00pm, August 25, 2018"
+      }
+    },
+    "footer": {
+        "copyright": "asjh asdhasdh ",
+        "designer": "sfhs dfhfskj f"
+    }
+}

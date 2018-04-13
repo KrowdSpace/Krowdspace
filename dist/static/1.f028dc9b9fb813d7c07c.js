@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{224:function(e,a,n){"use strict";Object.defineProperty(a,"__esModule",{value:!0});var t=d(n(0)),u=n(65),l=d(n(90));function d(e){return e&&e.__esModule?e:{default:e}}a.default=function(){return t.default.createElement(l.default,null,t.default.createElement(u.Header,{as:"h2"},"Dynamic Page"),t.default.createElement("p",null,"This page was loasdsded asynchronously!!!"))}}}]);
+//# sourceMappingURL=1.f028dc9b9fb813d7c07c.js.map
